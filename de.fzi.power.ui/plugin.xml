@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="de.fzi.power.ui.configuration.extendedmeasureproviderconfigurationui" name="Extended Measure Provider Configuration UI" schema="schema/de.fzi.power.ui.configuration.extendedmeasureproviderconfigurationui.exsd"/>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="de.fzi.power.ui.category"
+            name="Power Consumption">
+      </category>
+      <view
+            allowMultiple="false"
+            category="de.fzi.power.ui.category"
+            class="de.fzi.power.ui.views.navigator.Navigator"
+            icon="icons/tree_root.gif"
+            id="de.fzi.power.ui.views.navigator"
+            name="Power Consumption Analysis"
+            restorable="true">
+      </view>
+   </extension>
+  <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.fzi.power.ui.category.analysis"
+            defaultHandler="de.fzi.power.ui.commands.AnalyzeConsumptionHandler"
+            description="Performs a power consumption analysis for the given element and parameters."
+            id="de.fzi.power.commands.AnalyzeConsumption"
+            name="Analyze Power Consumption">
+      </command>
+      <category
+      		id="de.fzi.power.ui.category.analysis"
+     		name="Analysis">
+      </category>
+  </extension>   
+     <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="toolbar:de.fzi.power.ui.views.navigator">
+         <command
+               commandId="de.fzi.power.commands.AnalyzeConsumption"
+               icon="icons/add_datasource.gif"
+               label="Analyze"
+               style="push"
+               tooltip="Starts a power consumption analysis and opens a graph visualization">
+         </command>
+      </menuContribution>
+   </extension>
+</plugin>
