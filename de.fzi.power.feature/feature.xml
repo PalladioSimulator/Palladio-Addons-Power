@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.fzi.power.feature"
-      label="Feature"
+      label="Power Consumption Analyzer Feature"
       version="1.0.0.qualifier">
 
    <description url="https://sdqweb.ipd.kit.edu/wiki/Power_Consumption_Analyzer">
