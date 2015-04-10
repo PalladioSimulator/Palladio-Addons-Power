@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.fzi.power.interpreter.measureprovider.extendedmeasureprovider">
+      <measureProvider
+            provider="de.fzi.power.interpreter.measureprovider.utilization.UtilizationFilterMeasureProvider"></measureProvider>
+   </extension>
+   <extension
+         point="de.fzi.power.ui.configuration.extendedmeasureproviderconfigurationui">
+      <ConfigurationUIElement
+            uiElement="de.fzi.power.interpreter.measureprovider.utilization.ui.UtilizationFilterConfigurationTab">
+      </ConfigurationUIElement>
+   </extension>
+
+</plugin>
