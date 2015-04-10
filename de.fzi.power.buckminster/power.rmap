@@ -120,7 +120,7 @@
   </rm:searchPath>
   <rm:searchPath name="Power">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn">
-      <rm:uri format="https://svnserver.informatik.kit.edu/i43/svn/code/Palladio/Addons/Energy/{0}">
+      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Addons/Energy/{0}">
         <bc:propertyRef key="buckminster.component"/>
       </rm:uri>
     </rm:provider>
