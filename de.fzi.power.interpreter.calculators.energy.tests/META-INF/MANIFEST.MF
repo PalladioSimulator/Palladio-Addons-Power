@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: de.fzi.power.interpreter.calculators.energy.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fz.power.interpreter.calculators.energy.tests.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ de.fzi.power.interpreter.calculators.energy;bundle-version="1.0.0",
+ org.junit,
+ org.jscience;bundle-version="4.1.3"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
