@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="power" nsURI="http://www.fzi.de/Power/1.0" nsPrefix="de.fzi">
+  <eSubpackages name="util" nsURI="http://www.fzi.de/Power/Util/1.0" nsPrefix="de.fzi.power">
+    <eClassifiers xsi:type="ecore:EDataType" name="Power" instanceClassName="javax.measure.quantity.Power"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//util/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="specification" nsURI="http://www.fzi.de/Power/Specification/1.0"
+      nsPrefix="de.fzi.power">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerModelRepository" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelSpecifications"
+          upperBound="-1" eType="#//specification/PowerModelSpecification" containment="true"
+          eOpposite="#//specification/PowerModelSpecification/powermodelrepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerModelSpecification" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powermodelrepository"
+          eType="#//specification/PowerModelRepository" eOpposite="#//specification/PowerModelRepository/powerModelSpecifications"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="consumptionFactors" upperBound="-1"
+          eType="#//specification/ConsumptionFactor" containment="true" eOpposite="#//specification/ConsumptionFactor/powerModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerModelSpecification" eSuperTypes="#//specification/PowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerModelSpecification"
+        eSuperTypes="#//specification/PowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FixedFactor" eSuperTypes="#//specification/ConsumptionFactor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ConsumptionFactor" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerModel" eType="#//specification/PowerModelSpecification"
+          eOpposite="#//specification/PowerModelSpecification/consumptionFactors"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MeasuredFactor" eSuperTypes="#//specification/ConsumptionFactor">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="metricType" lowerBound="1"
+          eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="binding" nsURI="http://www.fzi.de/Power/Binding/1.0" nsPrefix="de.fzi.power">
+    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" lowerBound="1"
+          eType="#//specification/FixedFactor"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+          <eTypeArguments eClassifier="#//util/Power"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerBinding"
+          eOpposite="#//binding/PowerBinding/fixedFactorValues"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerBindingRepository" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindings" upperBound="-1"
+          eType="#//binding/PowerBinding" containment="true" eOpposite="#//binding/PowerBinding/powerBindingRepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerBinding" abstract="true" eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindingRepository"
+          eType="#//binding/PowerBindingRepository" eOpposite="#//binding/PowerBindingRepository/powerBindings"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues" upperBound="-1"
+          eType="#//binding/FixedFactorValue" containment="true" eOpposite="#//binding/FixedFactorValue/powerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerModelSpecification"
+          lowerBound="1" eType="#//specification/ResourcePowerModelSpecification"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerBinding" eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="distributionPowerModel"
+          lowerBound="1" eType="#//specification/DistributionPowerModelSpecification"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="infrastructure" nsURI="http://www.fzi.de/Power/Infrastructure/1.0"
+      nsPrefix="de.fzi.power">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerDistributionUnit" eSuperTypes="#//infrastructure/PowerConsumingProvidingEntity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingProvidingEntity" abstract="true"
+        eSuperTypes="#//infrastructure/PowerConsumingEntity #//infrastructure/PowerProvidingEntity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerProvidingEntity" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nestedPowerConsumingEntities"
+          ordered="false" upperBound="-1" eType="#//infrastructure/PowerConsumingEntity"
+          containment="true" eOpposite="#//infrastructure/PowerConsumingEntity/powerProvidingEntity"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="suppliablePeakPower"
+          ordered="false" lowerBound="1" defaultValueLiteral="">
+        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
+          <eTypeArguments/>
+          <eTypeArguments eClassifier="#//util/Power"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerInfrastructureModel"
+          eType="#//infrastructure/PowerInfrastructureRepository" eOpposite="#//infrastructure/PowerInfrastructureRepository/containedPowerProvidingEntities"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="distributionPowerAssemblyContext"
+          eType="#//binding/DistributionPowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingEntity" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerProvidingEntity"
+          ordered="false" eType="#//infrastructure/PowerProvidingEntity" eOpposite="#//infrastructure/PowerProvidingEntity/nestedPowerConsumingEntities"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MountedPowerDistributionUnit" eSuperTypes="#//infrastructure/PowerDistributionUnit">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceContainer" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResource" eSuperTypes="#//infrastructure/PowerConsumingEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecification"
+          ordered="false" lowerBound="1" eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerAssemblyContext"
+          eType="#//binding/ResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerInfrastructureRepository">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedPowerProvidingEntities"
+          upperBound="-1" eType="#//infrastructure/PowerProvidingEntity" containment="true"
+          eOpposite="#//infrastructure/PowerProvidingEntity/powerInfrastructureModel"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated power -->
+      <package
+            uri="http://www.fzi.de/Power/Util/1.0"
+            class="de.fzi.power.util.UtilPackage"
+            genModel="model/power.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated power -->
+      <parser
+            type="util"
+            class="de.fzi.power.util.util.UtilResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated power -->
+      <package
+            uri="http://www.fzi.de/Power/Specification/1.0"
+            class="de.fzi.power.specification.SpecificationPackage"
+            genModel="model/power.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated power -->
+      <parser
+            type="spec"
+            class="de.fzi.power.specification.util.SpecificationResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated power -->
+      <package
+            uri="http://www.fzi.de/Power/Binding/1.0"
+            class="de.fzi.power.binding.BindingPackage"
+            genModel="model/power.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated power -->
+      <parser
+            type="binding"
+            class="de.fzi.power.binding.util.BindingResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated power -->
+      <package
+            uri="http://www.fzi.de/Power/Infrastructure/1.0"
+            class="de.fzi.power.infrastructure.InfrastructurePackage"
+            genModel="model/power.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated power -->
+      <parser
+            type="infrastructure"
+            class="de.fzi.power.infrastructure.util.InfrastructureResourceFactoryImpl"/>
+   </extension>
+
+</plugin>
