@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerInfrastructureRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Infrastructure/1.0" xmlns:identifier="http://sdq.ipd.uka.de/Identifier/2.1">
+  <containedPowerProvidingEntities xsi:type="de.fzi.power:PowerDistributionUnit" identifier:id="_98ByQEWMEeSZH5zlL3RMGg" name="pdu" suppliablePeakPower="5,000 W" distributionPowerAssemblyContext="testBinding.binding#_GtCDAUTLEeS52Npf6Ife0Q">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" identifier:id="_q2a94UWNEeSZH5zlL3RMGg" name="mountedPdu" suppliablePeakPower="2,000 W" distributionPowerAssemblyContext="testBinding.binding#_GtCDAUTLEeS52Npf6Ife0Q" resourceContainer="testEnv.resourceenvironment#_QMPaQUWNEeSZH5zlL3RMGg">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" identifier:id="_w2HPekWNEeSZH5zlL3RMGg" name="nestedMountedPdu1" suppliablePeakPower="2,000 W" distributionPowerAssemblyContext="testBinding.binding#_GtCDAUTLEeS52Npf6Ife0Q" resourceContainer="testEnv.resourceenvironment#_Rm_hAUWNEeSZH5zlL3RMGg">
+        <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" identifier:id="_7PKt80WNEeSZH5zlL3RMGg" name="powerConsumingCpu1" processingResourceSpecification="testEnv.resourceenvironment#cpu1" resourcePowerAssemblyContext="testBinding.binding#_GPH70ETHEeSB-oPaAunQcg"/>
+      </nestedPowerConsumingEntities>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" identifier:id="_AUGAZkWOEeSZH5zlL3RMGg" name="nestedMountedPdu1" suppliablePeakPower="3,000 W" distributionPowerAssemblyContext="testBinding.binding#_GtCDAUTLEeS52Npf6Ife0Q" resourceContainer="testEnv.resourceenvironment#_dCO1Q0WNEeSZH5zlL3RMGg">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" identifier:id="_D-t4A0WOEeSZH5zlL3RMGg" name="powerConsumingCpu2" processingResourceSpecification="testEnv.resourceenvironment#cpu2" resourcePowerAssemblyContext="testBinding.binding#_wRNoEEWMEeSZH5zlL3RMGg"/>
+    </nestedPowerConsumingEntities>
+  </containedPowerProvidingEntities>
+</de.fzi.power:PowerInfrastructureRepository>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" xmlns:identifier="http://sdq.ipd.uka.de/Identifier/2.1" identifier:id="_Ey4nUETHEeSB-oPaAunQcg">
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_GPH70ETHEeSB-oPaAunQcg" name="highEndCpu" resourcePowerModelSpecification="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ">
+    <fixedFactorValues identifier:id="_MEZtI0THEeSB-oPaAunQcg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA" value="600 W"/>
+    <fixedFactorValues identifier:id="_qxDLIUWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA" value="400 W"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" identifier:id="_GtCDAUTLEeS52Npf6Ife0Q" name="losslessDistribution" distributionPowerModel="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw">
+    <fixedFactorValues identifier:id="_sdNyAEWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw" value="0 W"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_wRNoEEWMEeSZH5zlL3RMGg" name="efficientCpu" resourcePowerModelSpecification="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ">
+    <fixedFactorValues identifier:id="_ywGsYEWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA" value="300 W"/>
+    <fixedFactorValues identifier:id="_2KOC0EWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA" value="200 W"/>
+  </powerBindings>
+</de.fzi.power:PowerBindingRepository>

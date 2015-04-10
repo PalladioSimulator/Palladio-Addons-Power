@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://sdq.ipd.uka.de/PalladioComponentModel/ResourceEnvironment/5.0" entityName="dc">
+  <resourceContainer_ResourceEnvironment id="_QMPaQUWNEeSZH5zlL3RMGg" entityName="rack">
+    <nestedResourceContainers__ResourceContainer id="_Rm_hAUWNEeSZH5zlL3RMGg" entityName="node1">
+      <activeResourceSpecifications_ResourceContainer id="cpu1">
+        <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+        <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+        <processingRate_ProcessingResourceSpecification specification="3.4 * 10 ^ 9"/>
+      </activeResourceSpecifications_ResourceContainer>
+    </nestedResourceContainers__ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_dCO1Q0WNEeSZH5zlL3RMGg" entityName="node2">
+    <activeResourceSpecifications_ResourceContainer id="cpu2" requiredByContainer="true">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+      <processingRate_ProcessingResourceSpecification specification="3.2 * 10 ^ 9"/>
+    </activeResourceSpecifications_ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+</resourceenvironment:ResourceEnvironment>
