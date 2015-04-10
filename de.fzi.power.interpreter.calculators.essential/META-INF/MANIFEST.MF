@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Essential Calculators
+Bundle-SymbolicName: de.fzi.power.interpreter.calculators.essential;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: de.fzi.power.interpreter,
+ de.fzi.power,
+ de.fzi.power.specification.resources;bundle-version="1.0.0",
+ org.jscience,
+ org.palladiosimulator.measurementframework
+Export-Package: de.fzi.power.interpreter.calculators.essential
