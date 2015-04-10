@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated powerprovisioningmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.powerprovisioningmodel.presentation.PowerprovisioningmodelModelWizardID"
+            name="%_UI_PowerprovisioningmodelModelWizard_label"
+            class="de.fzi.powerprovisioningmodel.presentation.PowerprovisioningmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PowerprovisioningmodelModelFile.gif">
+         <description>%_UI_PowerprovisioningmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated power -->
+      <editor
+            id="de.fzi.power.binding.presentation.BindingEditorID"
+            name="%_UI_BindingEditor_label"
+            icon="icons/full/obj16/BindingModelFile.gif"
+            extensions="binding"
+            class="de.fzi.power.binding.presentation.BindingEditor"
+            contributorClass="de.fzi.power.binding.presentation.BindingActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated power -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.power.infrastructure.presentation.InfrastructureModelWizardID"
+            name="%_UI_InfrastructureModelWizard_label"
+            class="de.fzi.power.infrastructure.presentation.InfrastructureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/InfrastructureModelFile.gif">
+         <description>%_UI_InfrastructureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated power -->
+      <editor
+            id="de.fzi.power.infrastructure.presentation.InfrastructureEditorID"
+            name="%_UI_InfrastructureEditor_label"
+            icon="icons/full/obj16/InfrastructureModelFile.gif"
+            extensions="infrastructure"
+            class="de.fzi.power.infrastructure.presentation.InfrastructureEditor"
+            contributorClass="de.fzi.power.infrastructure.presentation.InfrastructureActionBarContributor">
+      </editor>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated power -->
+      <editor
+            id="de.fzi.power.specification.presentation.SpecificationEditorID"
+            name="%_UI_SpecificationEditor_label"
+            icon="icons/full/obj16/SpecificationModelFile.gif"
+            extensions="spec"
+            class="de.fzi.power.specification.presentation.SpecificationEditor"
+            contributorClass="de.fzi.power.specification.presentation.SpecificationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated power -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.power.binding.presentation.BindingModelWizardID"
+            name="%_UI_BindingModelWizard_label"
+            class="de.fzi.power.binding.presentation.BindingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BindingModelFile.gif">
+         <description>%_UI_BindingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated power -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.power.util.presentation.UtilModelWizardID"
+            name="%_UI_UtilModelWizard_label"
+            class="de.fzi.power.util.presentation.UtilModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UtilModelFile.gif">
+         <description>%_UI_UtilModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated power -->
+      <editor
+            id="de.fzi.power.util.presentation.UtilEditorID"
+            name="%_UI_UtilEditor_label"
+            icon="icons/full/obj16/UtilModelFile.gif"
+            extensions="util"
+            class="de.fzi.power.util.presentation.UtilEditor"
+            contributorClass="de.fzi.power.util.presentation.UtilActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated power -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.power.specification.presentation.SpecificationModelWizardID"
+            name="%_UI_SpecificationModelWizard_label"
+            class="de.fzi.power.specification.presentation.SpecificationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpecificationModelFile.gif">
+         <description>%_UI_SpecificationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated powerprovisioningmodel -->
+      <editor
+            id="de.fzi.powerprovisioningmodel.consumptionannotations.presentation.ConsumptionannotationsEditorID"
+            name="%_UI_ConsumptionannotationsEditor_label"
+            icon="icons/full/obj16/ConsumptionannotationsModelFile.gif"
+            extensions="consumptionannotations"
+            class="de.fzi.powerprovisioningmodel.consumptionannotations.presentation.ConsumptionannotationsEditor"
+            contributorClass="de.fzi.powerprovisioningmodel.consumptionannotations.presentation.ConsumptionannotationsActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated powerprovisioningmodel -->
+      <editor
+            id="de.fzi.powerprovisioningmodel.powermodel.presentation.PowermodelEditorID"
+            name="%_UI_PowermodelEditor_label"
+            icon="icons/full/obj16/PowermodelModelFile.gif"
+            extensions="powermodel"
+            class="de.fzi.powerprovisioningmodel.powermodel.presentation.PowermodelEditor"
+            contributorClass="de.fzi.powerprovisioningmodel.powermodel.presentation.PowermodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated powerprovisioningmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.powerprovisioningmodel.consumptionannotations.presentation.ConsumptionannotationsModelWizardID"
+            name="%_UI_ConsumptionannotationsModelWizard_label"
+            class="de.fzi.powerprovisioningmodel.consumptionannotations.presentation.ConsumptionannotationsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ConsumptionannotationsModelFile.gif">
+         <description>%_UI_ConsumptionannotationsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated powerprovisioningmodel -->
+      <editor
+            id="de.fzi.powerprovisioningmodel.presentation.PowerprovisioningmodelEditorID"
+            name="%_UI_PowerprovisioningmodelEditor_label"
+            icon="icons/full/obj16/PowerprovisioningmodelModelFile.gif"
+            extensions="powerprovisioningmodel"
+            class="de.fzi.powerprovisioningmodel.presentation.PowerprovisioningmodelEditor"
+            contributorClass="de.fzi.powerprovisioningmodel.presentation.PowerprovisioningmodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated powerprovisioningmodel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.powerprovisioningmodel.powermodel.presentation.PowermodelModelWizardID"
+            name="%_UI_PowermodelModelWizard_label"
+            class="de.fzi.powerprovisioningmodel.powermodel.presentation.PowermodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PowermodelModelFile.gif">
+         <description>%_UI_PowermodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+</plugin>
