@@ -3,8 +3,5 @@
 <plugin>
    <extension-point id="de.fzi.power.interpreter.measureprovider.extendedmeasureprovider" name="Extended Measure Provider Extension Point" schema="schema/de.fzi.power.interpreter.measureprovider.extendedmeasureprovider.exsd"/>
    <extension-point id="de.fzi.power.interpreter.calculators.calculatorfactory" name="Power Model Calculator Factory Extension Point" schema="schema/de.fzi.power.interpreter.calculators.calculatorfactory.exsd"/>
-   <extension
-         point="de.uka.ipd.sdq.workflow.job">
-   </extension>
 
 </plugin>
