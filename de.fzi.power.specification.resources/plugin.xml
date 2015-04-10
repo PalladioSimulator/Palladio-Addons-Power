@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://POWER_MODELS_MODELS/"
+            target="platform:/plugin/de.fzi.power.specification.resources/">
+      </mapping>
+   </extension>
+
+</plugin>
