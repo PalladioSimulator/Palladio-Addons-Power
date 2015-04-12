@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.uka.de/PalladioComponentModel/Allocation/5.0" id="_fqSTYG5TEd-P3_YMIIvGXQ" entityName="defaultAllocation">
+  <targetResourceEnvironment_Allocation href="mediastore.resourceenvironment#/"/>
+  <system_Allocation href="mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+  <allocationContexts_Allocation id="_jHuDkG5TEd-P3_YMIIvGXQ" entityName="Allocation_Assembly_WebGUI &lt;WebGUI> &lt;WebGUI>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_bod5MG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_kjqdIG5TEd-P3_YMIIvGXQ" entityName="Allocation_Assembly_UserManagement &lt;UserManagement> &lt;UserManagement>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_dveB8G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_lkCVAG5TEd-P3_YMIIvGXQ" entityName="Allocation_Assembly_MediaStore &lt;MediaStore> &lt;MediaStore>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_emdUUG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_p6ibMG5TEd-P3_YMIIvGXQ" entityName="Allocation_Assembly_Watermarking &lt;Watermarking> &lt;Watermarking>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_f71y4G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_uxYOUG5TEd-P3_YMIIvGXQ" entityName="Allocation_Assembly_Encoder &lt;Encoder> &lt;Encoder>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_gk-PcG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_eE_58HMcEd-OM-GcqxKR7A" entityName="Allocation_Assembly_UserDBAdapter &lt;UserDBAdapter> &lt;UserDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_2gcaIHB0Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_hKRo0HMcEd-OM-GcqxKR7A" entityName="Allocation_Assembly_AudiDBAdapter &lt;AudiDBAdapter> &lt;AudiDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_bQrAsHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_ueTDoHMcEd-OM-GcqxKR7A" entityName="Allocation_Assembly_DB &lt;DB> &lt;DB>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_DTQlUHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_-5f0QJr8Ed-na7JpHxG0Qg" entityName="Allocation_Assembly_Packageing &lt;Packageing> &lt;Packaging>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_O58UkHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_jlNFIA6WEeCYXqK1PdLiiw" entityName="Allocation_Assembly_InMemoryCache &lt;InMemoryCache> &lt;InMemoryCache>">
+    <resourceContainer_AllocationContext href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

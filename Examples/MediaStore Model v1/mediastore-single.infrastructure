@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerInfrastructureRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Infrastructure/1.0">
+  <containedPowerProvidingEntities xsi:type="de.fzi.power:PowerDistributionUnit" id="_buRiEHAWEeSEWPynnE6Mzg">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_iQU50XAWEeSEWPynnE6Mzg" name="singleServerPsu">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_hcYUYnAWEeSEWPynnE6Mzg" name="singleServerCpu">
+        <processingResourceSpecification href="mediastore.resourceenvironment#_jWoPoS3gEeSRnLET4toMRg"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_fnnwUGnCEeSeo-pFM7s_nQ"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+    </nestedPowerConsumingEntities>
+    <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+  </containedPowerProvidingEntities>
+</de.fzi.power:PowerInfrastructureRepository>

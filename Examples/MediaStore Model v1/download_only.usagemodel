@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UsageModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://sdq.ipd.uka.de/PalladioComponentModel/UsageModel/5.0" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2">
+  <usageScenario_UsageModel id="_RrsQcA6XEeCYXqK1PdLiiw" entityName="defaultUsageScenario">
+    <scenarioBehaviour_UsageScenario id="_RrsQcQ6XEeCYXqK1PdLiiw" entityName="defaultUsageScenarioBehaviour">
+      <actions_ScenarioBehaviour xsi:type="Start" id="_RrsQcg6XEeCYXqK1PdLiiw" successor="_Ht9mkA6YEeCYXqK1PdLiiw"/>
+      <actions_ScenarioBehaviour xsi:type="Stop" id="_RrsQcw6XEeCYXqK1PdLiiw" predecessor="_Ht9mkA6YEeCYXqK1PdLiiw"/>
+      <actions_ScenarioBehaviour xsi:type="EntryLevelSystemCall" id="_Ht9mkA6YEeCYXqK1PdLiiw" successor="_RrsQcw6XEeCYXqK1PdLiiw" predecessor="_RrsQcg6XEeCYXqK1PdLiiw">
+        <providedRole_EntryLevelSystemCall href="mediastore.system#_ZLjx4G5SEd-P3_YMIIvGXQ"/>
+        <operationSignature__EntryLevelSystemCall href="mediastore.repository#_rUaOoPlwEd-oZoBqn14siQ"/>
+      </actions_ScenarioBehaviour>
+    </scenarioBehaviour_UsageScenario>
+    <workload_UsageScenario xsi:type="ClosedWorkload" population="1">
+      <thinkTime_ClosedWorkload specification="0.0"/>
+    </workload_UsageScenario>
+  </usageScenario_UsageModel>
+  <userData_UsageModel>
+    <assemblyContext_userData href="mediastore.system#_bQrAsHB1Ed-IWI8P600PCg"/>
+    <userDataParameterUsages_UserData>
+      <variableCharacterisation_VariableUsage type="BYTESIZE">
+        <specification_VariableCharacterisation specification="Trunc(1000000 * DoublePDF[ (0.16; 0.00000000) (1.0; 0.03000000) (2.0; 0.02000000) (3.0; 0.04000000) (4.0; 0.22000000) (5.0; 0.24000000) (6.0; 0.16000000) (7.0; 0.08000000) (8.0; 0.04000000) (9.0; 0.06000000) (10.0; 0.06000000) (11.0; 0.02000000) (12.0; 0.02000000) (12.7; 0.01000000) ])"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="FileSizeDistribution"/>
+    </userDataParameterUsages_UserData>
+  </userData_UsageModel>
+  <userData_UsageModel>
+    <assemblyContext_userData href="mediastore.system#_emdUUG5SEd-P3_YMIIvGXQ"/>
+    <userDataParameterUsages_UserData>
+      <variableCharacterisation_VariableUsage type="BYTESIZE">
+        <specification_VariableCharacterisation specification="Trunc(1000000 * DoublePDF[ (0.16; 0.00000000) (1.0; 0.03000000) (2.0; 0.02000000) (3.0; 0.04000000) (4.0; 0.22000000) (5.0; 0.24000000) (6.0; 0.16000000) (7.0; 0.08000000) (8.0; 0.04000000) (9.0; 0.06000000) (10.0; 0.06000000) (11.0; 0.02000000) (12.0; 0.02000000) (12.7; 0.01000000) ])"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="FileSizeDistribution"/>
+    </userDataParameterUsages_UserData>
+  </userData_UsageModel>
+  <userData_UsageModel>
+    <assemblyContext_userData href="mediastore.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+    <userDataParameterUsages_UserData>
+      <variableCharacterisation_VariableUsage type="BYTESIZE">
+        <specification_VariableCharacterisation specification="Trunc(1000000 * DoublePDF[ (0.16; 0.00000000) (1.0; 0.03000000) (2.0; 0.02000000) (3.0; 0.04000000) (4.0; 0.22000000) (5.0; 0.24000000) (6.0; 0.16000000) (7.0; 0.08000000) (8.0; 0.04000000) (9.0; 0.06000000) (10.0; 0.06000000) (11.0; 0.02000000) (12.0; 0.02000000) (12.7; 0.01000000) ])"/>
+      </variableCharacterisation_VariableUsage>
+      <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="FileSizeDistribution"/>
+    </userDataParameterUsages_UserData>
+  </userData_UsageModel>
+</UsageModel>

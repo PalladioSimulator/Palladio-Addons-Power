@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.uka.de/PalladioComponentModel/Allocation/5.0" id="_VCIIQH6-EeSb_oQ8woj-Zg">
+  <targetResourceEnvironment_Allocation href="mediastore-four-servers.resourceenvironment#/"/>
+  <system_Allocation href="replicated_mediastore3.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+  <allocationContexts_Allocation id="_vt-DUH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_WebGUI &lt;WebGUI> &lt;WebGUI>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_bod5MG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_yWlEUH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_UserManagement &lt;UserManagement> &lt;UserManagement>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_dveB8G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_zifd0H6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_MediaStore &lt;MediaStore> &lt;MediaStore>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_emdUUG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_1EcYwH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_Watermarking &lt;Watermarking> &lt;Watermarking>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_f71y4G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_3Aq04H6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_UserDBAdapter &lt;UserDBAdapter> &lt;UserDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_2gcaIHB0Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_44sGcH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_Packageing &lt;Packageing> &lt;Packaging>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_O58UkHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_6rC04H6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_AudioDBAdapter &lt;AudioDBAdapter> &lt;AudioDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_bQrAsHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_9KkLUH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_InMemoryCache &lt;InMemoryCache> &lt;InMemoryCache>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_2J-dcH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_EncoderLB3 &lt;Encoder> &lt;EncoderLoadBalancerTriple>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_gk-PcG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_qVCPwH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_EncoderServer1 &lt;Encoder> &lt;Encoder>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#__U7nYG_oEeS7GKaoZ24ozQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_-qCaAH6_EeSb_oQ8woj-Zg" entityName="Allocation_Assembly_EncoderServer2 &lt;Encoder> &lt;Encoder>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_BZoDAG_pEeS7GKaoZ24ozQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_ApXNcH7AEeSb_oQ8woj-Zg" entityName="Allocation_Assembly_EncoderServer3 &lt;Encoder>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ4"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_SRwkUH68EeSb_oQ8woj-Zg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_NVndoH7AEeSb_oQ8woj-Zg" entityName="Allocation_Assembly_DB &lt;DB> &lt;DB>">
+    <resourceContainer_AllocationContext href="mediastore-four-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <assemblyContext_AllocationContext href="replicated_mediastore3.system#_DTQlUHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

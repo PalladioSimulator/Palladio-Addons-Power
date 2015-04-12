@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExperimentAutomation.Experiments:ExperimentRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ExperimentAutomation.Experiments="http://palladiosimulator.org/ExperimentAutomation/Experiments/1.0" xmlns:ExperimentAutomation.Experiments.AbstractSimulation="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0" xmlns:ExperimentAutomation.Variation="http://palladiosimulator.org/ExperimentAutomation/Variation/1.0" xmlns:simulizartooladapter="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/SimuLizar/1.0">
+  <experiments id="1" name="name" description="MediaStore varied exponential workload" repetitions="1">
+    <variations maxValue="100" maxVariations="10" variedObjectId="_1JXrIG5TEd-P3_YMIIvGXQ" name="var">
+      <type xsi:type="ExperimentAutomation.Variation:ValueVariation" href="pcm.variation#_59qtgBU-EeKgFO0nt5OPnA"/>
+      <valueProvider xsi:type="ExperimentAutomation.Experiments:ExponentialValueProvider"/>
+    </variations>
+    <toolConfiguration xsi:type="simulizartooladapter:SimuLizarConfiguration" name="Default EDP2 SimuLizar Configuration">
+      <stopConditions xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:MeasurementCountStopCondition" measurementCount="1000"/>
+      <stopConditions xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:SimTimeStopCondition" simulationTime="-1"/>
+      <datasource xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:FileDatasource" location="C:/data/experimentAutomation"/>
+    </toolConfiguration>
+    <stopConditions xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:MeasurementCountStopCondition" measurementCount="200"/>
+    <stopConditions xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:SimTimeStopCondition" simulationTime="-1"/>
+    <experimentDesign xsi:type="ExperimentAutomation.Experiments:FullFactorialDesign"/>
+    <responseMeasurement xsi:type="ExperimentAutomation.Experiments:SimulationDurationMeasurement"/>
+    <initialModel>
+      <usageModel href="varying_mediastore.usagemodel#/"/>
+      <allocation href="mediastore.allocation#_fqSTYG5TEd-P3_YMIIvGXQ"/>
+      <middlewareRepository href="pathmap://PCM_MODELS/Glassfish.repository#_yQk9oIX1EdyWta7nHuXiHQ"/>
+      <eventMiddleWareRepository href="pathmap://PCM_MODELS/default_event_middleware.repository#_Onc7cMALEd-LKvNtxXAQbQ"/>
+      <platformMonitoringSpecification href="MediaStore.pms#/"/>
+      <serviceLevelObjectives href="MediaStore.slo#/"/>
+      <repository href="mediastore.repository#_NB5W4GzdEd-01LD3kQvFig"/>
+      <system href="mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+      <resourceEnvironment href="mediastore.resourceenvironment#/"/>
+    </initialModel>
+  </experiments>
+</ExperimentAutomation.Experiments:ExperimentRepository>

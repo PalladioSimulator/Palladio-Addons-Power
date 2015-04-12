@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="CompositeModel" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2002" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5012"/>
+    <children xsi:type="notation:DecorationNode" type="7002">
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_kErfkGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_Yk30YGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_Zfb_MGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_bod5MG5SEd-P3_YMIIvGXQ"/>
+        <layoutConstraint xsi:type="notation:Bounds"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_h_wacGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_akIWYGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_dveB8G5SEd-P3_YMIIvGXQ"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="295" y="20"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_jQXtwGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_bZU5AGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_b6ZlwGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_ckazIGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_v5atsHByEd-IWI8P600PCg"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_dR2A4PlyEd-oZoBqn14siQ"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_emdUUG5SEd-P3_YMIIvGXQ"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="300" y="406"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_dYR5AGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_f71y4G5SEd-P3_YMIIvGXQ"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="350" y="165"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_3TJmcG_hEeS7GKaoZ24ozQ10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_6H9QYG_hEeS7GKaoZ24ozQ10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_-LMcUG_hEeS7GKaoZ24ozQ10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_dsJ71XitEeSgrMlFqt3tegq3dQ10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_5dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_6dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_7dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_8dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_9dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_10dsJ71XitEeSgrMltwq25tw5w2Q10"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_gk-PcG5SEd-P3_YMIIvGXQ"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="800" y="513"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_g95U0GzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_X9_2YHByEd-IWI8P600PCg"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_2gcaIHB0Ed-IWI8P600PCg"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1000"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_ZpaPUHByEd-IWI8P600PCg"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_DTQlUHB1Ed-IWI8P600PCg"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1200"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_xSYrwHByEd-IWI8P600PCg"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_O58UkHB1Ed-IWI8P600PCg"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1400"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_egZXoGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <children xsi:type="notation:Shape" type="3008" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5008">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_W1sKgHByEd-IWI8P600PCg"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_bQrAsHB1Ed-IWI8P600PCg"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1600"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_5pqc8PlwEd-oZoBqn14siQ"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1800"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_1wUw0H-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="860" y="335"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_3T-U4H-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1350" y="360"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_414MgH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1397" y="567"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_5fOEcH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1523" y="433"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_6Ig5EH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1317" y="741"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_6tCicH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1065" y="740"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_7o3RgH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="800" y="760"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_8X2ecH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="543" y="729"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_-PwbQH-PEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="1175" y="290"/>
+      </children>
+      <children xsi:type="notation:Shape" type="3006" fontName="Segoe UI">
+        <children xsi:type="notation:DecorationNode" type="5009"/>
+        <children xsi:type="notation:Shape" type="3007" fontName="Segoe UI">
+          <children xsi:type="notation:DecorationNode" type="5007">
+            <layoutConstraint xsi:type="notation:Location" y="5"/>
+          </children>
+          <element href="mediastore.repository#_eHg9kGzpEd-01LD3kQvFig"/>
+          <layoutConstraint xsi:type="notation:Bounds"/>
+        </children>
+        <element href="replicated_mediastore10.system#_JSBVMH-YEeSn2bKrhZq8NA"/>
+        <layoutConstraint xsi:type="notation:Bounds" x="820" y="670"/>
+      </children>
+    </children>
+    <children xsi:type="notation:Shape" type="3011" fontName="Segoe UI">
+      <children xsi:type="notation:DecorationNode" type="5013">
+        <layoutConstraint xsi:type="notation:Location" y="5"/>
+      </children>
+      <element href="replicated_mediastore10.system#_ZLjx4G5SEd-P3_YMIIvGXQ"/>
+      <layoutConstraint xsi:type="notation:Bounds"/>
+    </children>
+    <element href="replicated_mediastore10.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+    <layoutConstraint xsi:type="notation:Bounds" width="2241" height="896"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <element href="replicated_mediastore10.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.0/@children.3" target="//@children.0/@children.1/@children.1/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_s-AosG5SEd-P3_YMIIvGXQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 165, -48]$[-159, 45, -1, -3]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.0/@children.2" target="//@children.0/@children.1/@children.2/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_xyKUMG5SEd-P3_YMIIvGXQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 155, -20]$[-149, 19, -1, -1]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.2/@children.4" target="//@children.0/@children.1/@children.3/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_yQRMgG5SEd-P3_YMIIvGXQ"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, 128, -87]$[-130, 75, -2, -4]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.1/@children.2" target="//@children.0/@children.1/@children.5/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_AqZssHB1Ed-IWI8P600PCg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 135, -40]$[-129, 37, -1, -3]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.5/@children.2" target="//@children.0/@children.1/@children.6/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_MjO74HB1Ed-IWI8P600PCg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 165, -10]$[-159, 9, -1, -1]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.2/@children.5" target="//@children.0/@children.1/@children.7/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_VtP0YHB1Ed-IWI8P600PCg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, 50, -127]$[-55, 111, -5, -8]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.8/@children.2" target="//@children.0/@children.1/@children.6/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_iK-gYHB1Ed-IWI8P600PCg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 195, 20]$[-189, -21, -1, -1]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.2/@children.2" target="//@children.0/@children.1/@children.8/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_j6QFoHB1Ed-IWI8P600PCg"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, 115, -60]$[-109, 56, -1, -4]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.2/@children.6" target="//@children.0/@children.1/@children.9/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_iTDgwA6WEeCYXqK1PdLiiw"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, -8, -147]$[0, 130, -8, -9]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4006" source="//@children.0/@children.2" target="//@children.0/@children.1/@children.0/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_NdX0QI2SEd-d3M9ihwsG0w"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[30, 0, -199, -40]$[214, 38, -15, -2]"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.2/@children.3" target="//@children.0/@children.1/@children.4/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_z-KPoH-PEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, -270, -158]$[277, 162, 0, 4]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.5,0.8666666666666667)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.6" target="//@children.0/@children.1/@children.10/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_BZt10H-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, 13, 112]$[-17, -124, -4, -4]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.13333333333333333,0.13333333333333333)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.5" target="//@children.0/@children.1/@children.18/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_CM_s4H-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, -267, 144]$[260, -151, -7, 1]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.26666666666666666,0.16666666666666666)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.23333333333333334,0.5666666666666667)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.4" target="//@children.0/@children.1/@children.11/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_DElcMH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, -8, -412, 76]$[411, -82, -1, 2]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.26666666666666666,0.03333333333333333)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.3" target="//@children.0/@children.1/@children.13/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_DqPuAH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, -558, 43]$[570, -44, 5, -1]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.13333333333333333,0.13333333333333333)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.8333333333333334,0.4666666666666667)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.2" target="//@children.0/@children.1/@children.12/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_EdP4QH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, -410, -55]$[414, 55, -3, 0]"/>
+    <sourceAnchor xsi:type="notation:IdentityAnchor" id="(0.13333333333333333,0.2)"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.1,0.5333333333333333)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.11" target="//@children.0/@children.1/@children.14/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_FP5dMH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[7, 0, -330, -214]$[334, 212, -3, -2]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.1,0.3333333333333333)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.10" target="//@children.0/@children.1/@children.15/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_GLHIQH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 7, -147, -175]$[144, 180, -3, -2]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.1,0.3)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.8" target="//@children.0/@children.1/@children.16/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_HKQREH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 7, 39, -211]$[-44, 223, -5, 5]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.2,0.8333333333333334)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.7" target="//@children.0/@children.1/@children.17/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_IaP5UH-QEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[-8, 0, 263, -266]$[-272, 266, -1, 0]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.03333333333333333,0.8666666666666667)"/>
+  </edges>
+  <edges xsi:type="notation:Connector" type="4004" source="//@children.0/@children.1/@children.4/@children.9" target="//@children.0/@children.1/@children.19/@children.1">
+    <styles xsi:type="notation:FontStyle" fontName="Segoe UI"/>
+    <element href="replicated_mediastore10.system#_K5m-EH-YEeSn2bKrhZq8NA"/>
+    <bendpoints xsi:type="notation:RelativeBendpoints" points="[0, 8, 73, -153]$[-72, 166, 1, 5]"/>
+    <targetAnchor xsi:type="notation:IdentityAnchor" id="(0.13333333333333333,0.8666666666666667)"/>
+  </edges>
+</notation:Diagram>

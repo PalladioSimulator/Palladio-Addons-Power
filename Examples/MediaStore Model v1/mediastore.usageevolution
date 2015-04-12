@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<usageevolution:UsageEvolution xmlns:usageevolution="http://usageevolution/1.0" id="_5MeOdY9wEeSL3Zl1clxS4g" entityName="Evolution">
+  <usages id="_5MeOdo9wEeSL3Zl1clxS4g" entityName="Initial">
+    <loadEvolution href="mediastoreElsbeereOpenWL.dlim#/"/>
+    <scenario href="calibratedmediastore.usagemodel#_1JXrIG5TEd-P3_YMIIvGXQ"/>
+  </usages>
+</usageevolution:UsageEvolution>

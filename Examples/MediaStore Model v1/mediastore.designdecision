@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ASCII"?>
+<designdecision:DecisionSpace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://sdq.ipd.uka.de/PalladioComponentModel/ResourceEnvironment/5.0" xmlns:_1="http://sdq.ipd.uka.de/PalladioComponentModel/Core/Composition/5.0" xmlns:_2="http://sdq.ipd.uka.de/PalladioComponentModel/Repository/5.0" xmlns:_3="http://sdq.ipd.uka.de/PalladioComponentModel/Allocation/5.0" xmlns:designdecision="http://sdq.ipd.uka.de/DesignDecision/1.0">
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="15000.0" from="7500.0">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="2.5E8" from="2.4E7">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="15000.0" from="7500.0">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="2.5E8" from="2.4E7">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="15000.0" from="7500.0">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:ContinuousProcessingRateDegree" lowerBoundIncluded="false" to="2.5E8" from="2.4E7">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_BIjHoQ3KEdyouMqirZIhzQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AssembledComponentDegree">
+    <primaryChanged xsi:type="_1:AssemblyContext" href="mediastore.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+    <classDesignOptions xsi:type="_2:BasicComponent" href="mediastore.repository#_nfnFcGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="_2:BasicComponent" href="mediastore.repository#_thg_YPlwEd-oZoBqn14siQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_Uvw7IGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_V7w0MGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_WfE8oGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_XIDoMGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_YPIlAGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_Y1uq8GXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_Z0wfAGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_aubR8GXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_baPPEGXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:AllocationDegree">
+    <primaryChanged xsi:type="_3:AllocationContext" href="mediastore-three-servers.allocation#_cB320GXbEeCes9hvlOTf6A"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <classDesignOptions xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:NumberOfCoresDegree" to="4" from="1">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:NumberOfCoresDegree" to="4" from="1">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+  <degreesOfFreedom xsi:type="designdecision:NumberOfCoresDegree" to="4" from="1">
+    <primaryChanged xsi:type="ResourceContainer" href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <processingresourcetype href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+  </degreesOfFreedom>
+</designdecision:DecisionSpace>

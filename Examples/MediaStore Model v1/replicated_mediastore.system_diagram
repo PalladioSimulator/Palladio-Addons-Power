@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" type="CompositeModel" measurementUnit="Pixel">
+  <children xsi:type="notation:Shape" type="2002" fontName="Segoe UI">
+    <children xsi:type="notation:DecorationNode" type="5012"/>
+    <children xsi:type="notation:DecorationNode" type="7002"/>
+    <element href="replicated_mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+    <layoutConstraint xsi:type="notation:Bounds" width="1036"/>
+  </children>
+  <styles xsi:type="notation:DiagramStyle"/>
+  <element href="replicated_mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+</notation:Diagram>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerInfrastructureRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Infrastructure/1.0">
+  <containedPowerProvidingEntities xsi:type="de.fzi.power:PowerDistributionUnit" id="_NaNmQJE2EeSE5smRtL0GKg" name="centralPDU">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_OZf5AZE2EeSE5smRtL0GKg" name="appServer1">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_h0W5wpE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTME2XREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_PHZg0ZE2EeSE5smRtL0GKg" name="appServer2">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_j4iYApE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTMGmXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_QJXUIZE2EeSE5smRtL0GKg" name="appServer3">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_m7vDQpE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTMIWXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_Q6J34ZE2EeSE5smRtL0GKg" name="appServer4">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_oAEOEpE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTMKGXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ4"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_SfSpsZE2EeSE5smRtL0GKg" name="appServer5">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_rGX3spE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTML2XREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ5"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_9wjUUJE2EeSE5smRtL0GKg" name="appServer6">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_tVbJMpE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTzJWXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ6"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_-QYD4ZE2EeSE5smRtL0GKg" name="appServer7">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_ujCL0pE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krTzLGXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ7"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_-rFC4ZE2EeSE5smRtL0GKg" name="appServer8">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_vtyHspE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krUaMmXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ8"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="__JdoAZE2EeSE5smRtL0GKg" name="appServer9">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_3WYQwpE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krpxZmXREeSwGqGpGxSy7g"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ9"/>
+    </nestedPowerConsumingEntities>
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="__qfRcZE2EeSE5smRtL0GKg" name="appServer10">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_4utVopE3EeSE5smRtL0GKg" name="cpus">
+        <processingResourceSpecification href="mediastore-ten-servers.resourceenvironment#_krpxZmXREeSwGqGpGxSy7g10"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-ten-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ10"/>
+    </nestedPowerConsumingEntities>
+    <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+  </containedPowerProvidingEntities>
+</de.fzi.power:PowerInfrastructureRepository>

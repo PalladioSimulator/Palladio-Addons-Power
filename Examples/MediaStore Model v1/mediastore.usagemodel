@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usagemodel:UsageModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" xmlns:usagemodel="http://sdq.ipd.uka.de/PalladioComponentModel/UsageModel/5.0">
+  <usageScenario_UsageModel id="_1JXrIG5TEd-P3_YMIIvGXQ" entityName="defaultUsageScenario">
+    <scenarioBehaviour_UsageScenario id="_1JXrIW5TEd-P3_YMIIvGXQ" entityName="defaultUsageScenarioBehaviour">
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_1JXrIm5TEd-P3_YMIIvGXQ" successor="_7ST_UG5TEd-P3_YMIIvGXQ"/>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_1JXrI25TEd-P3_YMIIvGXQ" predecessor="_7ST_UG5TEd-P3_YMIIvGXQ"/>
+      <actions_ScenarioBehaviour xsi:type="usagemodel:Branch" id="_7ST_UG5TEd-P3_YMIIvGXQ" successor="_1JXrI25TEd-P3_YMIIvGXQ" predecessor="_1JXrIm5TEd-P3_YMIIvGXQ">
+        <branchTransitions_Branch branchProbability="0.5">
+          <branchedBehaviour_BranchTransition id="_opFRcJAgEd-WRpKD4HC1gg">
+            <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_vPTXgJAgEd-WRpKD4HC1gg" successor="_6cS9IJyREd-sn4zMn56efg"/>
+            <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_wOrw4JAgEd-WRpKD4HC1gg" predecessor="_6cS9IJyREd-sn4zMn56efg"/>
+            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_6cS9IJyREd-sn4zMn56efg" successor="_wOrw4JAgEd-WRpKD4HC1gg" predecessor="_vPTXgJAgEd-WRpKD4HC1gg">
+              <providedRole_EntryLevelSystemCall href="mediastore.system#_ZLjx4G5SEd-P3_YMIIvGXQ"/>
+              <operationSignature__EntryLevelSystemCall href="mediastore.repository#_rUbcwflwEd-oZoBqn14siQ"/>
+              <inputParameterUsages_EntryLevelSystemCall>
+                <variableCharacterisation_VariableUsage type="NUMBER_OF_ELEMENTS">
+                  <specification_VariableCharacterisation specification="5"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:VariableReference" referenceName="idsAndBitrates"/>
+              </inputParameterUsages_EntryLevelSystemCall>
+            </actions_ScenarioBehaviour>
+          </branchedBehaviour_BranchTransition>
+        </branchTransitions_Branch>
+        <branchTransitions_Branch branchProbability="0.5">
+          <branchedBehaviour_BranchTransition id="_paeSIJAgEd-WRpKD4HC1gg">
+            <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_0c2acJAgEd-WRpKD4HC1gg" successor="_R2HjQJySEd-sn4zMn56efg"/>
+            <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_1r0H8JAgEd-WRpKD4HC1gg" predecessor="_R2HjQJySEd-sn4zMn56efg"/>
+            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_R2HjQJySEd-sn4zMn56efg" successor="_1r0H8JAgEd-WRpKD4HC1gg" predecessor="_0c2acJAgEd-WRpKD4HC1gg">
+              <providedRole_EntryLevelSystemCall href="mediastore.system#_ZLjx4G5SEd-P3_YMIIvGXQ"/>
+              <operationSignature__EntryLevelSystemCall href="mediastore.repository#_rUaOoPlwEd-oZoBqn14siQ"/>
+            </actions_ScenarioBehaviour>
+          </branchedBehaviour_BranchTransition>
+        </branchTransitions_Branch>
+      </actions_ScenarioBehaviour>
+    </scenarioBehaviour_UsageScenario>
+    <workload_UsageScenario xsi:type="usagemodel:ClosedWorkload" population="1">
+      <thinkTime_ClosedWorkload specification="4"/>
+    </workload_UsageScenario>
+  </usageScenario_UsageModel>
+</usagemodel:UsageModel>

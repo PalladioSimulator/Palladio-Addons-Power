@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cost:CostRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://sdq.ipd.uka.de/PalladioComponentModel/Repository/5.0" xmlns:cost="http://sdq.ipd.uka.de/CostModel/1.0">
+  <cost xsi:type="cost:ComponentCost" componentInitialCost="200.0">
+    <repositoryComponent xsi:type="BasicComponent" href="mediastore.repository#_thg_YPlwEd-oZoBqn14siQ"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="numberOfReplicas.VALUE*0.7665*((procRate.VALUE/10000*2)^6.2539)+145"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.0/@activeResourceSpecifications_ResourceContainer.0"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="numberOfReplicas.VALUE*0.7665*((procRate.VALUE/10000*2)^6.2539)+145"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.1/@activeResourceSpecifications_ResourceContainer.0"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="numberOfReplicas.VALUE*0.7665*((procRate.VALUE/10000*2)^6.2539)+145"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.2/@activeResourceSpecifications_ResourceContainer.0"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="0.9082*(procRate.VALUE/1000000)+23"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.0/@activeResourceSpecifications_ResourceContainer.1"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="0.9082*(procRate.VALUE/1000000)+23"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.1/@activeResourceSpecifications_ResourceContainer.1"/>
+  </cost>
+  <cost xsi:type="cost:VariableProcessingResourceCost">
+    <processingRateInitialFunction specification="0.9082*(procRate.VALUE/1000000)+23"/>
+    <processingresourcespecification href="mediastore-three-servers.resourceenvironment#//@resourceContainer_ResourceEnvironment.2/@activeResourceSpecifications_ResourceContainer.1"/>
+  </cost>
+</cost:CostRepository>

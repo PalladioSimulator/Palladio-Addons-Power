@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://sdq.ipd.uka.de/PalladioComponentModel/Allocation/5.0" id="_p_AhEGXQEeC4dfbOdIWSzw" entityName="defaultAllocation">
+  <targetResourceEnvironment_Allocation href="mediastore-many-servers.resourceenvironment#/"/>
+  <system_Allocation href="mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
+  <allocationContexts_Allocation id="_qe47AGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_WebGUI &lt;WebGUI> &lt;WebGUI>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_bod5MG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_rHkroGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_UserManagement &lt;UserManagement> &lt;UserManagement>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_dveB8G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_sPZPUGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_MediaStore &lt;MediaStore> &lt;MediaStore>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_emdUUG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_taphgGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_Watermarking &lt;Watermarking> &lt;Watermarking>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ4"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_f71y4G5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_uwCAEGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_Encoder &lt;Encoder> &lt;Encoder>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ5"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_gk-PcG5SEd-P3_YMIIvGXQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_wVzrEGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_UserDBAdapter &lt;UserDBAdapter> &lt;UserDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ6"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_2gcaIHB0Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_x2go0GXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_DB &lt;DB> &lt;DB>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ7"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_DTQlUHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_y4OkgGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_Packageing &lt;Packageing> &lt;Packaging>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ8"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_O58UkHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_zlO0cGXQEeC4dfbOdIWSzw" entityName="Allocation_Assembly_AudioDBAdapter &lt;AudioDBAdapter> &lt;AudioDBAdapter>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ9"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_bQrAsHB1Ed-IWI8P600PCg"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_HWVncGXREeC4dfbOdIWSzw" entityName="Allocation_Assembly_InMemoryCache &lt;InMemoryCache> &lt;InMemoryCache>">
+    <resourceContainer_AllocationContext href="mediastore-many-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <assemblyContext_AllocationContext href="mediastore.system#_hPej4A6WEeCYXqK1PdLiiw"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

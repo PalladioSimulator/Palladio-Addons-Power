@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerInfrastructureRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Infrastructure/1.0">
+  <containedPowerProvidingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_6SvsQYqJEeSWsKmwGgxORw" name="Elsbeere" suppliablePeakPower="500 W">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_8oie8oqJEeSWsKmwGgxORw" name="cpu1">
+      <processingResourceSpecification href="mediastore.resourceenvironment#_jWoPoS3gEeSRnLET4toMRg"/>
+      <resourcePowerAssemblyContext href="mediastore.binding#_ZbcSgIqeEeSWsKmwGgxORw"/>
+    </nestedPowerConsumingEntities>
+    <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+    <resourceContainer href="mediastore.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
+  </containedPowerProvidingEntities>
+</de.fzi.power:PowerInfrastructureRepository>
