@@ -13,17 +13,6 @@
 the Palladio Research Group, University of Karlsruhe.
    </copyright>
 
-   <url>
-      <discovery label="Palladio Commons" url="http://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
-      <discovery label="ProbeFramework" url="http://sdqweb.ipd.kit.edu/eclipse/probeframework/nightly/"/>
-      <discovery label="RecorderFramework" url="http://sdqweb.ipd.kit.edu/eclipse/recorderframework/nightly/"/>
-      <discovery label="Palladio Third Party Wrapper" url="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
-      <discovery label="EDP2" url="http://sdqweb.ipd.kit.edu/eclipse/edp2/nightly/"/>
-      <discovery label="Palladio" url="http://sdqweb.ipd.kit.edu/eclipse/palladio/nightly/"/>
-      <discovery label="Eclipse Luna" url="http://download.eclipse.org/releases/luna"/>
-      <discovery label="Eclipse Orbit" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
-   </url>
-
    <license url="https://www.eclipse.org/legal/epl-v10.html">
       Eclipse Public License -v 1.0
 
@@ -114,9 +103,25 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
    </license>
 
+   <url>
+      <discovery label="Palladio Commons" url="http://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
+      <discovery label="ProbeFramework" url="http://sdqweb.ipd.kit.edu/eclipse/probeframework/nightly/"/>
+      <discovery label="RecorderFramework" url="http://sdqweb.ipd.kit.edu/eclipse/recorderframework/nightly/"/>
+      <discovery label="Palladio Third Party Wrapper" url="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
+      <discovery label="EDP2" url="http://sdqweb.ipd.kit.edu/eclipse/edp2/nightly/"/>
+      <discovery label="Palladio" url="http://sdqweb.ipd.kit.edu/eclipse/palladio/nightly/"/>
+      <discovery label="Eclipse Luna" url="http://download.eclipse.org/releases/luna"/>
+      <discovery label="Eclipse Orbit" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
+   </url>
+
    <includes
          id="de.fzi.power.feature"
          version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter"/>
+      <import plugin="org.palladiosimulator.experimentanalysis"/>
+   </requires>
 
    <plugin
          id="de.fzi.power.tests"

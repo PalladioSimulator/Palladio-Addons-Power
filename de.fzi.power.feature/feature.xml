@@ -141,7 +141,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.eclipse.core.databinding.property" version="1.4.200" match="greaterOrEqual"/>
       <import plugin="org.eclipse.jface.databinding"/>
       <import plugin="org.palladiosimulator.edp2.visualization"/>
-      <import plugin="org.apache.commons.collections15" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.experimentanalysis"/>
       <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter.tests"/>
    </requires>
