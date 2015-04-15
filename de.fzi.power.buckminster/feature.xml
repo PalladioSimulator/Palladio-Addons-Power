@@ -108,6 +108,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <discovery label="ProbeFramework" url="http://sdqweb.ipd.kit.edu/eclipse/probeframework/nightly/"/>
       <discovery label="RecorderFramework" url="http://sdqweb.ipd.kit.edu/eclipse/recorderframework/nightly/"/>
       <discovery label="Palladio Third Party Wrapper" url="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
+      <discovery label="ExperimentAnalysis" url="https://sdqweb.ipd.kit.edu/eclipse/palladio/addons/experimentanalysis/nightly/"/>
       <discovery label="EDP2" url="http://sdqweb.ipd.kit.edu/eclipse/edp2/nightly/"/>
       <discovery label="Palladio" url="http://sdqweb.ipd.kit.edu/eclipse/palladio/nightly/"/>
       <discovery label="Eclipse Luna" url="http://download.eclipse.org/releases/luna"/>
