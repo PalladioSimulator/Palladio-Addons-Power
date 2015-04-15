@@ -13,6 +13,17 @@
 the Palladio Research Group, University of Karlsruhe.
    </copyright>
 
+   <url>
+      <discovery label="Palladio Commons" url="http://sdqweb.ipd.kit.edu/eclipse/commons/nightly/"/>
+      <discovery label="ProbeFramework" url="http://sdqweb.ipd.kit.edu/eclipse/probeframework/nightly/"/>
+      <discovery label="RecorderFramework" url="http://sdqweb.ipd.kit.edu/eclipse/recorderframework/nightly/"/>
+      <discovery label="Palladio Third Party Wrapper" url="http://sdqweb.ipd.kit.edu/eclipse/thirdpartywrapper/nightly/"/>
+      <discovery label="EDP2" url="http://sdqweb.ipd.kit.edu/eclipse/edp2/nightly/"/>
+      <discovery label="Palladio" url="http://sdqweb.ipd.kit.edu/eclipse/palladio/nightly/"/>
+      <discovery label="Eclipse Luna" url="http://download.eclipse.org/releases/luna"/>
+      <discovery label="Eclipse Orbit" url="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
+   </url>
+
    <license url="https://www.eclipse.org/legal/epl-v10.html">
       Eclipse Public License -v 1.0
 
