@@ -120,8 +120,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
          version="0.0.0"/>
 
    <requires>
-      <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter"/>
-      <import plugin="org.palladiosimulator.experimentanalysis"/>
    </requires>
 
    <plugin
