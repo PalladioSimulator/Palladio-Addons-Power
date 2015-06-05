@@ -2,26 +2,23 @@
  */
 package de.fzi.power.binding.impl;
 
-import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.DistributionPowerBinding;
-
-import de.fzi.power.specification.DistributionPowerModelSpecification;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.DistributionPowerBinding;
+import de.fzi.power.specification.DistributionPowerModelSpecification;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Distribution Power Binding</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Distribution Power Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel <em>Distribution Power Model</em>}</li>
+ * <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel <em>
+ * Distribution Power Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,9 +26,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class DistributionPowerBindingImpl extends PowerBindingImpl implements DistributionPowerBinding {
     /**
-     * The cached value of the '{@link #getDistributionPowerModel() <em>Distribution Power Model</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getDistributionPowerModel()
+     * <em>Distribution Power Model</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getDistributionPowerModel()
      * @generated
      * @ordered
@@ -39,8 +36,8 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
     protected DistributionPowerModelSpecification distributionPowerModel;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected DistributionPowerBindingImpl() {
@@ -48,8 +45,8 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -58,107 +55,117 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public DistributionPowerModelSpecification getDistributionPowerModel() {
-        if (distributionPowerModel != null && distributionPowerModel.eIsProxy()) {
-            InternalEObject oldDistributionPowerModel = (InternalEObject) distributionPowerModel;
-            distributionPowerModel = (DistributionPowerModelSpecification) eResolveProxy(oldDistributionPowerModel);
-            if (distributionPowerModel != oldDistributionPowerModel) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.distributionPowerModel != null && this.distributionPowerModel.eIsProxy())
+        {
+            final InternalEObject oldDistributionPowerModel = (InternalEObject) this.distributionPowerModel;
+            this.distributionPowerModel = (DistributionPowerModelSpecification) this
+                    .eResolveProxy(oldDistributionPowerModel);
+            if (this.distributionPowerModel != oldDistributionPowerModel)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
-                            oldDistributionPowerModel, distributionPowerModel));
+                            oldDistributionPowerModel, this.distributionPowerModel));
+                }
             }
         }
-        return distributionPowerModel;
+        return this.distributionPowerModel;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public DistributionPowerModelSpecification basicGetDistributionPowerModel() {
-        return distributionPowerModel;
+        return this.distributionPowerModel;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setDistributionPowerModel(DistributionPowerModelSpecification newDistributionPowerModel) {
-        DistributionPowerModelSpecification oldDistributionPowerModel = distributionPowerModel;
-        distributionPowerModel = newDistributionPowerModel;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setDistributionPowerModel(final DistributionPowerModelSpecification newDistributionPowerModel) {
+        final DistributionPowerModelSpecification oldDistributionPowerModel = this.distributionPowerModel;
+        this.distributionPowerModel = newDistributionPowerModel;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, oldDistributionPowerModel,
-                    distributionPowerModel));
+                    this.distributionPowerModel));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            if (resolve)
-                return getDistributionPowerModel();
-            return basicGetDistributionPowerModel();
+            if (resolve) {
+                return this.getDistributionPowerModel();
+            }
+            return this.basicGetDistributionPowerModel();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            setDistributionPowerModel((DistributionPowerModelSpecification) newValue);
+            this.setDistributionPowerModel((DistributionPowerModelSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            setDistributionPowerModel((DistributionPowerModelSpecification) null);
+            this.setDistributionPowerModel((DistributionPowerModelSpecification) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            return distributionPowerModel != null;
+            return this.distributionPowerModel != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //DistributionPowerBindingImpl
+} // DistributionPowerBindingImpl

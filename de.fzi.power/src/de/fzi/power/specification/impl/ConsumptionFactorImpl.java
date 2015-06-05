@@ -2,30 +2,26 @@
  */
 package de.fzi.power.specification.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import de.fzi.power.specification.ConsumptionFactor;
 import de.fzi.power.specification.PowerModelSpecification;
 import de.fzi.power.specification.SpecificationPackage;
-
 import de.fzi.power.util.impl.EntityImpl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Consumption Factor</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Consumption Factor</b></em>
+ * '. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.specification.impl.ConsumptionFactorImpl#getPowerModel <em>Power Model</em>}</li>
+ * <li>{@link de.fzi.power.specification.impl.ConsumptionFactorImpl#getPowerModel <em>Power Model
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -33,8 +29,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  */
 public abstract class ConsumptionFactorImpl extends EntityImpl implements ConsumptionFactor {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected ConsumptionFactorImpl() {
@@ -42,8 +38,8 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -52,94 +48,108 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public PowerModelSpecification getPowerModel() {
-        if (eContainerFeatureID() != SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL)
+        if (this.eContainerFeatureID() != SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL) {
             return null;
-        return (PowerModelSpecification) eInternalContainer();
+        }
+        return (PowerModelSpecification) this.eInternalContainer();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public NotificationChain basicSetPowerModel(PowerModelSpecification newPowerModel, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newPowerModel,
+    public NotificationChain basicSetPowerModel(final PowerModelSpecification newPowerModel, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newPowerModel,
                 SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL, msgs);
         return msgs;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setPowerModel(PowerModelSpecification newPowerModel) {
-        if (newPowerModel != eInternalContainer()
-                || (eContainerFeatureID() != SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL && newPowerModel != null)) {
-            if (EcoreUtil.isAncestor(this, newPowerModel))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setPowerModel(final PowerModelSpecification newPowerModel) {
+        if (newPowerModel != this.eInternalContainer()
+                || (this.eContainerFeatureID() != SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL && newPowerModel != null))
+        {
+            if (EcoreUtil.isAncestor(this, newPowerModel)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newPowerModel != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newPowerModel != null) {
                 msgs = ((InternalEObject) newPowerModel).eInverseAdd(this,
                         SpecificationPackage.POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS,
                         PowerModelSpecification.class, msgs);
-            msgs = basicSetPowerModel(newPowerModel, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetPowerModel(newPowerModel, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL,
+            }
+        }
+        else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL,
                     newPowerModel, newPowerModel));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetPowerModel((PowerModelSpecification) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetPowerModel((PowerModelSpecification) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            return basicSetPowerModel(null, msgs);
+            return this.basicSetPowerModel(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID())
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            return eInternalContainer().eInverseRemove(this,
+            return this.eInternalContainer().eInverseRemove(this,
                     SpecificationPackage.POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS, PowerModelSpecification.class,
                     msgs);
         }
@@ -147,61 +157,65 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            return getPowerModel();
+            return this.getPowerModel();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            setPowerModel((PowerModelSpecification) newValue);
+            this.setPowerModel((PowerModelSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            setPowerModel((PowerModelSpecification) null);
+            this.setPowerModel((PowerModelSpecification) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case SpecificationPackage.CONSUMPTION_FACTOR__POWER_MODEL:
-            return getPowerModel() != null;
+            return this.getPowerModel() != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //ConsumptionFactorImpl
+} // ConsumptionFactorImpl

@@ -2,26 +2,23 @@
  */
 package de.fzi.power.binding.impl;
 
-import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.ResourcePowerBinding;
-
-import de.fzi.power.specification.ResourcePowerModelSpecification;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.specification.ResourcePowerModelSpecification;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource Power Binding</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Resource Power Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}</li>
+ * <li>{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl#getResourcePowerModelSpecification
+ * <em>Resource Power Model Specification</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,9 +26,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ResourcePowerBindingImpl extends PowerBindingImpl implements ResourcePowerBinding {
     /**
-     * The cached value of the '{@link #getResourcePowerModelSpecification() <em>Resource Power Model Specification</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getResourcePowerModelSpecification()
+     * <em>Resource Power Model Specification</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @see #getResourcePowerModelSpecification()
      * @generated
      * @ordered
@@ -39,8 +37,8 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
     protected ResourcePowerModelSpecification resourcePowerModelSpecification;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected ResourcePowerBindingImpl() {
@@ -48,8 +46,8 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -58,107 +56,118 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ResourcePowerModelSpecification getResourcePowerModelSpecification() {
-        if (resourcePowerModelSpecification != null && resourcePowerModelSpecification.eIsProxy()) {
-            InternalEObject oldResourcePowerModelSpecification = (InternalEObject) resourcePowerModelSpecification;
-            resourcePowerModelSpecification = (ResourcePowerModelSpecification) eResolveProxy(oldResourcePowerModelSpecification);
-            if (resourcePowerModelSpecification != oldResourcePowerModelSpecification) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.resourcePowerModelSpecification != null && this.resourcePowerModelSpecification.eIsProxy())
+        {
+            final InternalEObject oldResourcePowerModelSpecification = (InternalEObject) this.resourcePowerModelSpecification;
+            this.resourcePowerModelSpecification = (ResourcePowerModelSpecification) this
+                    .eResolveProxy(oldResourcePowerModelSpecification);
+            if (this.resourcePowerModelSpecification != oldResourcePowerModelSpecification)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
-                            oldResourcePowerModelSpecification, resourcePowerModelSpecification));
+                            oldResourcePowerModelSpecification, this.resourcePowerModelSpecification));
+                }
             }
         }
-        return resourcePowerModelSpecification;
+        return this.resourcePowerModelSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ResourcePowerModelSpecification basicGetResourcePowerModelSpecification() {
-        return resourcePowerModelSpecification;
+        return this.resourcePowerModelSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setResourcePowerModelSpecification(ResourcePowerModelSpecification newResourcePowerModelSpecification) {
-        ResourcePowerModelSpecification oldResourcePowerModelSpecification = resourcePowerModelSpecification;
-        resourcePowerModelSpecification = newResourcePowerModelSpecification;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setResourcePowerModelSpecification(
+            final ResourcePowerModelSpecification newResourcePowerModelSpecification) {
+        final ResourcePowerModelSpecification oldResourcePowerModelSpecification = this.resourcePowerModelSpecification;
+        this.resourcePowerModelSpecification = newResourcePowerModelSpecification;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
-                    oldResourcePowerModelSpecification, resourcePowerModelSpecification));
+                    oldResourcePowerModelSpecification, this.resourcePowerModelSpecification));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            if (resolve)
-                return getResourcePowerModelSpecification();
-            return basicGetResourcePowerModelSpecification();
+            if (resolve) {
+                return this.getResourcePowerModelSpecification();
+            }
+            return this.basicGetResourcePowerModelSpecification();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            setResourcePowerModelSpecification((ResourcePowerModelSpecification) newValue);
+            this.setResourcePowerModelSpecification((ResourcePowerModelSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            setResourcePowerModelSpecification((ResourcePowerModelSpecification) null);
+            this.setResourcePowerModelSpecification((ResourcePowerModelSpecification) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            return resourcePowerModelSpecification != null;
+            return this.resourcePowerModelSpecification != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //ResourcePowerBindingImpl
+} // ResourcePowerBindingImpl

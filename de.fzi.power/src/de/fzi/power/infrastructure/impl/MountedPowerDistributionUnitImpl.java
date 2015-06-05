@@ -2,27 +2,24 @@
  */
 package de.fzi.power.infrastructure.impl;
 
-import de.fzi.power.infrastructure.InfrastructurePackage;
-import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
-
-import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceContainer;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.fzi.power.infrastructure.InfrastructurePackage;
+import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
+import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceContainer;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mounted Power Distribution Unit</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Mounted Power Distribution Unit</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl#getResourceContainer <em>Resource Container</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl#getResourceContainer
+ * <em>Resource Container</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl implements MountedPowerDistributionUnit {
     /**
-     * The cached value of the '{@link #getResourceContainer() <em>Resource Container</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getResourceContainer() <em>Resource Container</em>}'
+     * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getResourceContainer()
      * @generated
      * @ordered
@@ -40,8 +37,8 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
     protected ResourceContainer resourceContainer;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected MountedPowerDistributionUnitImpl() {
@@ -49,8 +46,8 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -59,107 +56,116 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ResourceContainer getResourceContainer() {
-        if (resourceContainer != null && ((EObject) resourceContainer).eIsProxy()) {
-            InternalEObject oldResourceContainer = (InternalEObject) resourceContainer;
-            resourceContainer = (ResourceContainer) eResolveProxy(oldResourceContainer);
-            if (resourceContainer != oldResourceContainer) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.resourceContainer != null && this.resourceContainer.eIsProxy())
+        {
+            final InternalEObject oldResourceContainer = (InternalEObject) this.resourceContainer;
+            this.resourceContainer = (ResourceContainer) this.eResolveProxy(oldResourceContainer);
+            if (this.resourceContainer != oldResourceContainer)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
-                            oldResourceContainer, resourceContainer));
+                            oldResourceContainer, this.resourceContainer));
+                }
             }
         }
-        return resourceContainer;
+        return this.resourceContainer;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ResourceContainer basicGetResourceContainer() {
-        return resourceContainer;
+        return this.resourceContainer;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setResourceContainer(ResourceContainer newResourceContainer) {
-        ResourceContainer oldResourceContainer = resourceContainer;
-        resourceContainer = newResourceContainer;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setResourceContainer(final ResourceContainer newResourceContainer) {
+        final ResourceContainer oldResourceContainer = this.resourceContainer;
+        this.resourceContainer = newResourceContainer;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER, oldResourceContainer,
-                    resourceContainer));
+                    this.resourceContainer));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            if (resolve)
-                return getResourceContainer();
-            return basicGetResourceContainer();
+            if (resolve) {
+                return this.getResourceContainer();
+            }
+            return this.basicGetResourceContainer();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            setResourceContainer((ResourceContainer) newValue);
+            this.setResourceContainer((ResourceContainer) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            setResourceContainer((ResourceContainer) null);
+            this.setResourceContainer((ResourceContainer) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            return resourceContainer != null;
+            return this.resourceContainer != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //MountedPowerDistributionUnitImpl
+} // MountedPowerDistributionUnitImpl

@@ -2,38 +2,34 @@
  */
 package de.fzi.power.binding.impl;
 
-import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.FixedFactorValue;
-import de.fzi.power.binding.PowerBinding;
-import de.fzi.power.binding.PowerBindingRepository;
-
-import de.fzi.power.util.impl.EntityImpl;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.PowerBinding;
+import de.fzi.power.binding.PowerBindingRepository;
+import de.fzi.power.util.impl.EntityImpl;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Power Binding</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Power Binding</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getPowerBindingRepository <em>Power Binding Repository</em>}</li>
- *   <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getFixedFactorValues <em>Fixed Factor Values</em>}</li>
+ * <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getPowerBindingRepository <em>Power Binding
+ * Repository</em>}</li>
+ * <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getFixedFactorValues <em>Fixed Factor
+ * Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,9 +37,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public abstract class PowerBindingImpl extends EntityImpl implements PowerBinding {
     /**
-     * The cached value of the '{@link #getFixedFactorValues() <em>Fixed Factor Values</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getFixedFactorValues() <em>Fixed Factor Values</em>}'
+     * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getFixedFactorValues()
      * @generated
      * @ordered
@@ -51,8 +47,8 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
     protected EList<FixedFactorValue> fixedFactorValues;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected PowerBindingImpl() {
@@ -60,8 +56,8 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -70,188 +66,208 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public PowerBindingRepository getPowerBindingRepository() {
-        if (eContainerFeatureID() != BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY)
+        if (this.eContainerFeatureID() != BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY) {
             return null;
-        return (PowerBindingRepository) eInternalContainer();
+        }
+        return (PowerBindingRepository) this.eInternalContainer();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public NotificationChain basicSetPowerBindingRepository(PowerBindingRepository newPowerBindingRepository,
+    public NotificationChain basicSetPowerBindingRepository(final PowerBindingRepository newPowerBindingRepository,
             NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newPowerBindingRepository,
+        msgs = this.eBasicSetContainer((InternalEObject) newPowerBindingRepository,
                 BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY, msgs);
         return msgs;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setPowerBindingRepository(PowerBindingRepository newPowerBindingRepository) {
-        if (newPowerBindingRepository != eInternalContainer()
-                || (eContainerFeatureID() != BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY && newPowerBindingRepository != null)) {
-            if (EcoreUtil.isAncestor(this, newPowerBindingRepository))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setPowerBindingRepository(final PowerBindingRepository newPowerBindingRepository) {
+        if (newPowerBindingRepository != this.eInternalContainer()
+                || (this.eContainerFeatureID() != BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY && newPowerBindingRepository != null))
+        {
+            if (EcoreUtil.isAncestor(this, newPowerBindingRepository)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newPowerBindingRepository != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newPowerBindingRepository != null) {
                 msgs = ((InternalEObject) newPowerBindingRepository).eInverseAdd(this,
                         BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS, PowerBindingRepository.class, msgs);
-            msgs = basicSetPowerBindingRepository(newPowerBindingRepository, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetPowerBindingRepository(newPowerBindingRepository, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        }
+        else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY, newPowerBindingRepository,
                     newPowerBindingRepository));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EList<FixedFactorValue> getFixedFactorValues() {
-        if (fixedFactorValues == null) {
-            fixedFactorValues = new EObjectContainmentWithInverseEList<FixedFactorValue>(FixedFactorValue.class, this,
+        if (this.fixedFactorValues == null)
+        {
+            this.fixedFactorValues = new EObjectContainmentWithInverseEList<FixedFactorValue>(FixedFactorValue.class,
+                    this,
                     BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES, BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING);
         }
-        return fixedFactorValues;
+        return this.fixedFactorValues;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetPowerBindingRepository((PowerBindingRepository) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetPowerBindingRepository((PowerBindingRepository) otherEnd, msgs);
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getFixedFactorValues())
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getFixedFactorValues())
                     .basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return basicSetPowerBindingRepository(null, msgs);
+            return this.basicSetPowerBindingRepository(null, msgs);
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            return ((InternalEList<?>) getFixedFactorValues()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getFixedFactorValues()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID())
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return eInternalContainer().eInverseRemove(this, BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+            return this.eInternalContainer().eInverseRemove(this,
+                    BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
                     PowerBindingRepository.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return getPowerBindingRepository();
+            return this.getPowerBindingRepository();
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            return getFixedFactorValues();
+            return this.getFixedFactorValues();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            setPowerBindingRepository((PowerBindingRepository) newValue);
+            this.setPowerBindingRepository((PowerBindingRepository) newValue);
             return;
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            getFixedFactorValues().clear();
-            getFixedFactorValues().addAll((Collection<? extends FixedFactorValue>) newValue);
+            this.getFixedFactorValues().clear();
+            this.getFixedFactorValues().addAll((Collection<? extends FixedFactorValue>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            setPowerBindingRepository((PowerBindingRepository) null);
+            this.setPowerBindingRepository((PowerBindingRepository) null);
             return;
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            getFixedFactorValues().clear();
+            this.getFixedFactorValues().clear();
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return getPowerBindingRepository() != null;
+            return this.getPowerBindingRepository() != null;
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
-            return fixedFactorValues != null && !fixedFactorValues.isEmpty();
+            return this.fixedFactorValues != null && !this.fixedFactorValues.isEmpty();
         }
         return super.eIsSet(featureID);
     }
 
-} //PowerBindingImpl
+} // PowerBindingImpl

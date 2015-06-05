@@ -2,14 +2,19 @@
  */
 package de.fzi.power.specification.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+
 import de.fzi.power.binding.BindingPackage;
-
 import de.fzi.power.binding.impl.BindingPackageImpl;
-
 import de.fzi.power.infrastructure.InfrastructurePackage;
-
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
-
 import de.fzi.power.specification.ConsumptionFactor;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
@@ -19,95 +24,75 @@ import de.fzi.power.specification.PowerModelSpecification;
 import de.fzi.power.specification.ResourcePowerModelSpecification;
 import de.fzi.power.specification.SpecificationFactory;
 import de.fzi.power.specification.SpecificationPackage;
-
 import de.fzi.power.util.UtilPackage;
-
 import de.fzi.power.util.impl.UtilPackageImpl;
-
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
-
 import de.uka.ipd.sdq.pcm.PcmPackage;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
-
-import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
-
-import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
-
-import org.palladiosimulator.metricspec.MetricSpecPackage;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Package</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SpecificationPackageImpl extends EPackageImpl implements SpecificationPackage {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass powerModelRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass powerModelSpecificationEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass resourcePowerModelSpecificationEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass distributionPowerModelSpecificationEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass fixedFactorEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass consumptionFactorEClass = null;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private EClass measuredFactorEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-     * package URI value.
-     * <p>Note: the correct way to create the package is via the static
-     * factory method {@link #init init()}, which also performs
-     * initialization of the package, or returns the registered package,
-     * if one already exists.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
+     * value.
+     * <p>
+     * Note: the correct way to create the package is via the static factory method {@link #init
+     * init()}, which also performs initialization of the package, or returns the registered
+     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.specification.SpecificationPackage#eNS_URI
      * @see #init()
@@ -118,32 +103,35 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
+     * upon which it depends.
+     *
+     * <p>
+     * This method is used to initialize {@link SpecificationPackage#eINSTANCE} when that field is
+     * accessed. Clients should not invoke it directly. Instead, they should simply access that
+     * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
      * 
-     * <p>This method is used to initialize {@link SpecificationPackage#eINSTANCE} when that field is accessed.
-     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
      * @generated
      */
     public static SpecificationPackage init() {
-        if (isInited)
+        if (isInited) {
             return (SpecificationPackage) EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI);
+        }
 
         // Obtain or create and register package
-        SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
+        final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                : new SpecificationPackageImpl());
+                        : new SpecificationPackageImpl());
 
         isInited = true;
 
@@ -154,14 +142,16 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
-        UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
+        final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
                 .getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
-        BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
+        final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
-        InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
+                        .getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
+        final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(InfrastructurePackage.eNS_URI) : InfrastructurePackage.eINSTANCE);
+                        .getEPackage(InfrastructurePackage.eNS_URI)
+                : InfrastructurePackage.eINSTANCE);
 
         // Create package meta-data objects
         theSpecificationPackage.createPackageContents();
@@ -184,204 +174,204 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getPowerModelRepository() {
-        return powerModelRepositoryEClass;
+        return this.powerModelRepositoryEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getPowerModelRepository_PowerModelSpecifications() {
-        return (EReference) powerModelRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EReference) this.powerModelRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getPowerModelSpecification() {
-        return powerModelSpecificationEClass;
+        return this.powerModelSpecificationEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getPowerModelSpecification_Powermodelrepository() {
-        return (EReference) powerModelSpecificationEClass.getEStructuralFeatures().get(0);
+        return (EReference) this.powerModelSpecificationEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getPowerModelSpecification_ConsumptionFactors() {
-        return (EReference) powerModelSpecificationEClass.getEStructuralFeatures().get(1);
+        return (EReference) this.powerModelSpecificationEClass.getEStructuralFeatures().get(1);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getResourcePowerModelSpecification() {
-        return resourcePowerModelSpecificationEClass;
+        return this.resourcePowerModelSpecificationEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getDistributionPowerModelSpecification() {
-        return distributionPowerModelSpecificationEClass;
+        return this.distributionPowerModelSpecificationEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getFixedFactor() {
-        return fixedFactorEClass;
+        return this.fixedFactorEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getConsumptionFactor() {
-        return consumptionFactorEClass;
+        return this.consumptionFactorEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getConsumptionFactor_PowerModel() {
-        return (EReference) consumptionFactorEClass.getEStructuralFeatures().get(0);
+        return (EReference) this.consumptionFactorEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EClass getMeasuredFactor() {
-        return measuredFactorEClass;
+        return this.measuredFactorEClass;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EReference getMeasuredFactor_MetricType() {
-        return (EReference) measuredFactorEClass.getEStructuralFeatures().get(0);
+        return (EReference) this.measuredFactorEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public SpecificationFactory getSpecificationFactory() {
-        return (SpecificationFactory) getEFactoryInstance();
+        return (SpecificationFactory) this.getEFactoryInstance();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package.  This method is
-     * guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the meta-model objects for the package. This method is guarded to have no affect on
+     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public void createPackageContents() {
-        if (isCreated)
+        if (this.isCreated) {
             return;
-        isCreated = true;
+        }
+        this.isCreated = true;
 
         // Create classes and their features
-        powerModelRepositoryEClass = createEClass(POWER_MODEL_REPOSITORY);
-        createEReference(powerModelRepositoryEClass, POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS);
+        this.powerModelRepositoryEClass = this.createEClass(POWER_MODEL_REPOSITORY);
+        this.createEReference(this.powerModelRepositoryEClass, POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS);
 
-        powerModelSpecificationEClass = createEClass(POWER_MODEL_SPECIFICATION);
-        createEReference(powerModelSpecificationEClass, POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY);
-        createEReference(powerModelSpecificationEClass, POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS);
+        this.powerModelSpecificationEClass = this.createEClass(POWER_MODEL_SPECIFICATION);
+        this.createEReference(this.powerModelSpecificationEClass, POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY);
+        this.createEReference(this.powerModelSpecificationEClass, POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS);
 
-        resourcePowerModelSpecificationEClass = createEClass(RESOURCE_POWER_MODEL_SPECIFICATION);
+        this.resourcePowerModelSpecificationEClass = this.createEClass(RESOURCE_POWER_MODEL_SPECIFICATION);
 
-        distributionPowerModelSpecificationEClass = createEClass(DISTRIBUTION_POWER_MODEL_SPECIFICATION);
+        this.distributionPowerModelSpecificationEClass = this.createEClass(DISTRIBUTION_POWER_MODEL_SPECIFICATION);
 
-        fixedFactorEClass = createEClass(FIXED_FACTOR);
+        this.fixedFactorEClass = this.createEClass(FIXED_FACTOR);
 
-        consumptionFactorEClass = createEClass(CONSUMPTION_FACTOR);
-        createEReference(consumptionFactorEClass, CONSUMPTION_FACTOR__POWER_MODEL);
+        this.consumptionFactorEClass = this.createEClass(CONSUMPTION_FACTOR);
+        this.createEReference(this.consumptionFactorEClass, CONSUMPTION_FACTOR__POWER_MODEL);
 
-        measuredFactorEClass = createEClass(MEASURED_FACTOR);
-        createEReference(measuredFactorEClass, MEASURED_FACTOR__METRIC_TYPE);
+        this.measuredFactorEClass = this.createEClass(MEASURED_FACTOR);
+        this.createEReference(this.measuredFactorEClass, MEASURED_FACTOR__METRIC_TYPE);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model.  This
-     * method is guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Complete the initialization of the package and its meta-model. This method is guarded to have
+     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public void initializePackageContents() {
-        if (isInitialized)
+        if (this.isInitialized) {
             return;
-        isInitialized = true;
+        }
+        this.isInitialized = true;
 
         // Initialize package
-        setName(eNAME);
-        setNsPrefix(eNS_PREFIX);
-        setNsURI(eNS_URI);
+        this.setName(eNAME);
+        this.setNsPrefix(eNS_PREFIX);
+        this.setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
+        final IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
                 .getEPackage(IdentifierPackage.eNS_URI);
-        UtilPackage theUtilPackage = (UtilPackage) EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-        MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage) EPackage.Registry.INSTANCE
+        final UtilPackage theUtilPackage = (UtilPackage) EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+        final MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage) EPackage.Registry.INSTANCE
                 .getEPackage(MetricSpecPackage.eNS_URI);
 
         // Create type parameters
@@ -389,57 +379,60 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        powerModelRepositoryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
-        powerModelSpecificationEClass.getESuperTypes().add(theUtilPackage.getEntity());
-        resourcePowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
-        distributionPowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
-        fixedFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
-        consumptionFactorEClass.getESuperTypes().add(theUtilPackage.getEntity());
-        measuredFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
+        this.powerModelRepositoryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        this.powerModelSpecificationEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        this.resourcePowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
+        this.distributionPowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
+        this.fixedFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
+        this.consumptionFactorEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        this.measuredFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
 
-        // Initialize classes, features, and operations; add parameters
-        initEClass(powerModelRepositoryEClass, PowerModelRepository.class, "PowerModelRepository", !IS_ABSTRACT,
+        // Initialize classes and features; add operations and parameters
+        this.initEClass(this.powerModelRepositoryEClass, PowerModelRepository.class, "PowerModelRepository",
+                !IS_ABSTRACT,
                 !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getPowerModelRepository_PowerModelSpecifications(), this.getPowerModelSpecification(),
+        this.initEReference(this.getPowerModelRepository_PowerModelSpecifications(), this.getPowerModelSpecification(),
                 this.getPowerModelSpecification_Powermodelrepository(), "powerModelSpecifications", null, 0, -1,
                 PowerModelRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(powerModelSpecificationEClass, PowerModelSpecification.class, "PowerModelSpecification",
+        this.initEClass(this.powerModelSpecificationEClass, PowerModelSpecification.class, "PowerModelSpecification",
                 IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getPowerModelSpecification_Powermodelrepository(), this.getPowerModelRepository(),
+        this.initEReference(this.getPowerModelSpecification_Powermodelrepository(), this.getPowerModelRepository(),
                 this.getPowerModelRepository_PowerModelSpecifications(), "powermodelrepository", null, 0, 1,
                 PowerModelSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getPowerModelSpecification_ConsumptionFactors(), this.getConsumptionFactor(),
+        this.initEReference(this.getPowerModelSpecification_ConsumptionFactors(), this.getConsumptionFactor(),
                 this.getConsumptionFactor_PowerModel(), "consumptionFactors", null, 0, -1,
                 PowerModelSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(resourcePowerModelSpecificationEClass, ResourcePowerModelSpecification.class,
+        this.initEClass(this.resourcePowerModelSpecificationEClass, ResourcePowerModelSpecification.class,
                 "ResourcePowerModelSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(distributionPowerModelSpecificationEClass, DistributionPowerModelSpecification.class,
+        this.initEClass(this.distributionPowerModelSpecificationEClass, DistributionPowerModelSpecification.class,
                 "DistributionPowerModelSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(fixedFactorEClass, FixedFactor.class, "FixedFactor", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(this.fixedFactorEClass, FixedFactor.class, "FixedFactor", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
 
-        initEClass(consumptionFactorEClass, ConsumptionFactor.class, "ConsumptionFactor", IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(this.consumptionFactorEClass, ConsumptionFactor.class, "ConsumptionFactor", IS_ABSTRACT,
+                !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getConsumptionFactor_PowerModel(), this.getPowerModelSpecification(),
+        this.initEReference(this.getConsumptionFactor_PowerModel(), this.getPowerModelSpecification(),
                 this.getPowerModelSpecification_ConsumptionFactors(), "powerModel", null, 0, 1,
                 ConsumptionFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        initEClass(measuredFactorEClass, MeasuredFactor.class, "MeasuredFactor", !IS_ABSTRACT, !IS_INTERFACE,
+        this.initEClass(this.measuredFactorEClass, MeasuredFactor.class, "MeasuredFactor", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getMeasuredFactor_MetricType(), theMetricSpecPackage.getNumericalBaseMetricDescription(), null,
+        this.initEReference(this.getMeasuredFactor_MetricType(),
+                theMetricSpecPackage.getNumericalBaseMetricDescription(), null,
                 "metricType", null, 1, 1, MeasuredFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
-        createResource(eNS_URI);
+        this.createResource(eNS_URI);
     }
 
-} //SpecificationPackageImpl
+} // SpecificationPackageImpl

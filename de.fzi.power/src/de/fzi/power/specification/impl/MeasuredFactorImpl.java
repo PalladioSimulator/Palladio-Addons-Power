@@ -2,26 +2,23 @@
  */
 package de.fzi.power.specification.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
+
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.SpecificationPackage;
 
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Measured Factor</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Measured Factor</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.specification.impl.MeasuredFactorImpl#getMetricType <em>Metric Type</em>}</li>
+ * <li>{@link de.fzi.power.specification.impl.MeasuredFactorImpl#getMetricType <em>Metric Type</em>}
+ * </li>
  * </ul>
  * </p>
  *
@@ -29,9 +26,9 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
  */
 public class MeasuredFactorImpl extends ConsumptionFactorImpl implements MeasuredFactor {
     /**
-     * The cached value of the '{@link #getMetricType() <em>Metric Type</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getMetricType() <em>Metric Type</em>}' reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
      * @see #getMetricType()
      * @generated
      * @ordered
@@ -39,8 +36,8 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
     protected NumericalBaseMetricDescription metricType;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected MeasuredFactorImpl() {
@@ -48,8 +45,8 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -58,105 +55,115 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public NumericalBaseMetricDescription getMetricType() {
-        if (metricType != null && metricType.eIsProxy()) {
-            InternalEObject oldMetricType = (InternalEObject) metricType;
-            metricType = (NumericalBaseMetricDescription) eResolveProxy(oldMetricType);
-            if (metricType != oldMetricType) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE, oldMetricType, metricType));
+        if (this.metricType != null && this.metricType.eIsProxy())
+        {
+            final InternalEObject oldMetricType = (InternalEObject) this.metricType;
+            this.metricType = (NumericalBaseMetricDescription) this.eResolveProxy(oldMetricType);
+            if (this.metricType != oldMetricType)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+                            SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE, oldMetricType, this.metricType));
+                }
             }
         }
-        return metricType;
+        return this.metricType;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public NumericalBaseMetricDescription basicGetMetricType() {
-        return metricType;
+        return this.metricType;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setMetricType(NumericalBaseMetricDescription newMetricType) {
-        NumericalBaseMetricDescription oldMetricType = metricType;
-        metricType = newMetricType;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
-                    oldMetricType, metricType));
+    public void setMetricType(final NumericalBaseMetricDescription newMetricType) {
+        final NumericalBaseMetricDescription oldMetricType = this.metricType;
+        this.metricType = newMetricType;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
+                    SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
+                    oldMetricType, this.metricType));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            if (resolve)
-                return getMetricType();
-            return basicGetMetricType();
+            if (resolve) {
+                return this.getMetricType();
+            }
+            return this.basicGetMetricType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            setMetricType((NumericalBaseMetricDescription) newValue);
+            this.setMetricType((NumericalBaseMetricDescription) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            setMetricType((NumericalBaseMetricDescription) null);
+            this.setMetricType((NumericalBaseMetricDescription) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            return metricType != null;
+            return this.metricType != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //MeasuredFactorImpl
+} // MeasuredFactorImpl

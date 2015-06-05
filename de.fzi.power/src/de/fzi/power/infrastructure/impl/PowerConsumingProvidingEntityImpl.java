@@ -2,56 +2,58 @@
  */
 package de.fzi.power.infrastructure.impl;
 
-import de.fzi.power.binding.DistributionPowerBinding;
+import java.util.Collection;
 
+import javax.measure.Measure;
+import javax.measure.quantity.Power;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 
-import java.util.Collection;
-
-import javax.measure.Measure;
-
-import javax.measure.quantity.Power;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Power Consuming Providing Entity</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Power Consuming Providing Entity</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getNestedPowerConsumingEntities <em>Nested Power Consuming Entities</em>}</li>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getSuppliablePeakPower <em>Suppliable Peak Power</em>}</li>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getPowerInfrastructureModel <em>Power Infrastructure Model</em>}</li>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getDistributionPowerAssemblyContext <em>Distribution Power Assembly Context</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getNestedPowerConsumingEntities
+ * <em>Nested Power Consuming Entities</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getSuppliablePeakPower
+ * <em>Suppliable Peak Power</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getPowerInfrastructureModel
+ * <em>Power Infrastructure Model</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getDistributionPowerAssemblyContext
+ * <em>Distribution Power Assembly Context</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEntityImpl implements
-        PowerConsumingProvidingEntity {
+PowerConsumingProvidingEntity {
     /**
-     * The cached value of the '{@link #getNestedPowerConsumingEntities() <em>Nested Power Consuming Entities</em>}' containment reference list.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getNestedPowerConsumingEntities()
+     * <em>Nested Power Consuming Entities</em>}' containment reference list. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     * 
      * @see #getNestedPowerConsumingEntities()
      * @generated
      * @ordered
@@ -59,9 +61,9 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     protected EList<PowerConsumingEntity> nestedPowerConsumingEntities;
 
     /**
-     * The cached value of the '{@link #getSuppliablePeakPower() <em>Suppliable Peak Power</em>}' attribute.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getSuppliablePeakPower() <em>Suppliable Peak Power</em>}'
+     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @see #getSuppliablePeakPower()
      * @generated
      * @ordered
@@ -69,9 +71,10 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     protected Measure<?, Power> suppliablePeakPower;
 
     /**
-     * The cached value of the '{@link #getDistributionPowerAssemblyContext() <em>Distribution Power Assembly Context</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getDistributionPowerAssemblyContext()
+     * <em>Distribution Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @see #getDistributionPowerAssemblyContext()
      * @generated
      * @ordered
@@ -79,8 +82,8 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     protected DistributionPowerBinding distributionPowerAssemblyContext;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected PowerConsumingProvidingEntityImpl() {
@@ -88,8 +91,8 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -98,189 +101,210 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public EList<PowerConsumingEntity> getNestedPowerConsumingEntities() {
-        if (nestedPowerConsumingEntities == null) {
-            nestedPowerConsumingEntities = new EObjectContainmentWithInverseEList<PowerConsumingEntity>(
+        if (this.nestedPowerConsumingEntities == null)
+        {
+            this.nestedPowerConsumingEntities = new EObjectContainmentWithInverseEList<PowerConsumingEntity>(
                     PowerConsumingEntity.class, this,
                     InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
                     InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY);
         }
-        return nestedPowerConsumingEntities;
+        return this.nestedPowerConsumingEntities;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public Measure<?, Power> getSuppliablePeakPower() {
-        return suppliablePeakPower;
+        return this.suppliablePeakPower;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setSuppliablePeakPower(Measure<?, Power> newSuppliablePeakPower) {
-        Measure<?, Power> oldSuppliablePeakPower = suppliablePeakPower;
-        suppliablePeakPower = newSuppliablePeakPower;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setSuppliablePeakPower(final Measure<?, Power> newSuppliablePeakPower) {
+        final Measure<?, Power> oldSuppliablePeakPower = this.suppliablePeakPower;
+        this.suppliablePeakPower = newSuppliablePeakPower;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER,
-                    oldSuppliablePeakPower, suppliablePeakPower));
+                    oldSuppliablePeakPower, this.suppliablePeakPower));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public PowerInfrastructureRepository getPowerInfrastructureModel() {
-        if (eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL)
+        if (this.eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL) {
             return null;
-        return (PowerInfrastructureRepository) eInternalContainer();
+        }
+        return (PowerInfrastructureRepository) this.eInternalContainer();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public NotificationChain basicSetPowerInfrastructureModel(
-            PowerInfrastructureRepository newPowerInfrastructureModel, NotificationChain msgs) {
-        msgs = eBasicSetContainer((InternalEObject) newPowerInfrastructureModel,
+            final PowerInfrastructureRepository newPowerInfrastructureModel, NotificationChain msgs) {
+        msgs = this.eBasicSetContainer((InternalEObject) newPowerInfrastructureModel,
                 InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL, msgs);
         return msgs;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setPowerInfrastructureModel(PowerInfrastructureRepository newPowerInfrastructureModel) {
-        if (newPowerInfrastructureModel != eInternalContainer()
-                || (eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL && newPowerInfrastructureModel != null)) {
-            if (EcoreUtil.isAncestor(this, newPowerInfrastructureModel))
-                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+    public void setPowerInfrastructureModel(final PowerInfrastructureRepository newPowerInfrastructureModel) {
+        if (newPowerInfrastructureModel != this.eInternalContainer()
+                || (this.eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL && newPowerInfrastructureModel != null))
+        {
+            if (EcoreUtil.isAncestor(this, newPowerInfrastructureModel)) {
+                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
+            }
             NotificationChain msgs = null;
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            if (newPowerInfrastructureModel != null)
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            if (newPowerInfrastructureModel != null) {
                 msgs = ((InternalEObject) newPowerInfrastructureModel).eInverseAdd(this,
                         InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
                         PowerInfrastructureRepository.class, msgs);
-            msgs = basicSetPowerInfrastructureModel(newPowerInfrastructureModel, msgs);
-            if (msgs != null)
+            }
+            msgs = this.basicSetPowerInfrastructureModel(newPowerInfrastructureModel, msgs);
+            if (msgs != null) {
                 msgs.dispatch();
-        } else if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+            }
+        }
+        else if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL,
                     newPowerInfrastructureModel, newPowerInfrastructureModel));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public DistributionPowerBinding getDistributionPowerAssemblyContext() {
-        if (distributionPowerAssemblyContext != null && distributionPowerAssemblyContext.eIsProxy()) {
-            InternalEObject oldDistributionPowerAssemblyContext = (InternalEObject) distributionPowerAssemblyContext;
-            distributionPowerAssemblyContext = (DistributionPowerBinding) eResolveProxy(oldDistributionPowerAssemblyContext);
-            if (distributionPowerAssemblyContext != oldDistributionPowerAssemblyContext) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(
+        if (this.distributionPowerAssemblyContext != null && this.distributionPowerAssemblyContext.eIsProxy())
+        {
+            final InternalEObject oldDistributionPowerAssemblyContext = (InternalEObject) this.distributionPowerAssemblyContext;
+            this.distributionPowerAssemblyContext = (DistributionPowerBinding) this
+                    .eResolveProxy(oldDistributionPowerAssemblyContext);
+            if (this.distributionPowerAssemblyContext != oldDistributionPowerAssemblyContext)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(
                             this,
                             Notification.RESOLVE,
                             InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
-                            oldDistributionPowerAssemblyContext, distributionPowerAssemblyContext));
+                            oldDistributionPowerAssemblyContext, this.distributionPowerAssemblyContext));
+                }
             }
         }
-        return distributionPowerAssemblyContext;
+        return this.distributionPowerAssemblyContext;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public DistributionPowerBinding basicGetDistributionPowerAssemblyContext() {
-        return distributionPowerAssemblyContext;
+        return this.distributionPowerAssemblyContext;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setDistributionPowerAssemblyContext(DistributionPowerBinding newDistributionPowerAssemblyContext) {
-        DistributionPowerBinding oldDistributionPowerAssemblyContext = distributionPowerAssemblyContext;
-        distributionPowerAssemblyContext = newDistributionPowerAssemblyContext;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setDistributionPowerAssemblyContext(final DistributionPowerBinding newDistributionPowerAssemblyContext) {
+        final DistributionPowerBinding oldDistributionPowerAssemblyContext = this.distributionPowerAssemblyContext;
+        this.distributionPowerAssemblyContext = newDistributionPowerAssemblyContext;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
-                    oldDistributionPowerAssemblyContext, distributionPowerAssemblyContext));
+                    oldDistributionPowerAssemblyContext, this.distributionPowerAssemblyContext));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) getNestedPowerConsumingEntities()).basicAdd(
-                    otherEnd, msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getNestedPowerConsumingEntities())
+                    .basicAdd(
+                            otherEnd, msgs);
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            if (eInternalContainer() != null)
-                msgs = eBasicRemoveFromContainer(msgs);
-            return basicSetPowerInfrastructureModel((PowerInfrastructureRepository) otherEnd, msgs);
+            if (this.eInternalContainer() != null) {
+                msgs = this.eBasicRemoveFromContainer(msgs);
+            }
+            return this.basicSetPowerInfrastructureModel((PowerInfrastructureRepository) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-        switch (featureID) {
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            return ((InternalEList<?>) getNestedPowerConsumingEntities()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) this.getNestedPowerConsumingEntities()).basicRemove(otherEnd, msgs);
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            return basicSetPowerInfrastructureModel(null, msgs);
+            return this.basicSetPowerInfrastructureModel(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-        switch (eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
+        switch (this.eContainerFeatureID())
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            return eInternalContainer().eInverseRemove(this,
+            return this.eInternalContainer().eInverseRemove(this,
                     InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
                     PowerInfrastructureRepository.class, msgs);
         }
@@ -288,106 +312,113 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            return getNestedPowerConsumingEntities();
+            return this.getNestedPowerConsumingEntities();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
-            return getSuppliablePeakPower();
+            return this.getSuppliablePeakPower();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            return getPowerInfrastructureModel();
+            return this.getPowerInfrastructureModel();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT:
-            if (resolve)
-                return getDistributionPowerAssemblyContext();
-            return basicGetDistributionPowerAssemblyContext();
+            if (resolve) {
+                return this.getDistributionPowerAssemblyContext();
+            }
+            return this.basicGetDistributionPowerAssemblyContext();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            getNestedPowerConsumingEntities().clear();
-            getNestedPowerConsumingEntities().addAll((Collection<? extends PowerConsumingEntity>) newValue);
+            this.getNestedPowerConsumingEntities().clear();
+            this.getNestedPowerConsumingEntities().addAll((Collection<? extends PowerConsumingEntity>) newValue);
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
-            setSuppliablePeakPower((Measure<?, Power>) newValue);
+            this.setSuppliablePeakPower((Measure<?, Power>) newValue);
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            setPowerInfrastructureModel((PowerInfrastructureRepository) newValue);
+            this.setPowerInfrastructureModel((PowerInfrastructureRepository) newValue);
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT:
-            setDistributionPowerAssemblyContext((DistributionPowerBinding) newValue);
+            this.setDistributionPowerAssemblyContext((DistributionPowerBinding) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            getNestedPowerConsumingEntities().clear();
+            this.getNestedPowerConsumingEntities().clear();
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
-            setSuppliablePeakPower((Measure<?, Power>) null);
+            this.setSuppliablePeakPower((Measure<?, Power>) null);
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            setPowerInfrastructureModel((PowerInfrastructureRepository) null);
+            this.setPowerInfrastructureModel((PowerInfrastructureRepository) null);
             return;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT:
-            setDistributionPowerAssemblyContext((DistributionPowerBinding) null);
+            this.setDistributionPowerAssemblyContext((DistributionPowerBinding) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            return nestedPowerConsumingEntities != null && !nestedPowerConsumingEntities.isEmpty();
+            return this.nestedPowerConsumingEntities != null && !this.nestedPowerConsumingEntities.isEmpty();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
-            return suppliablePeakPower != null;
+            return this.suppliablePeakPower != null;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
-            return getPowerInfrastructureModel() != null;
+            return this.getPowerInfrastructureModel() != null;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT:
-            return distributionPowerAssemblyContext != null;
+            return this.distributionPowerAssemblyContext != null;
         }
         return super.eIsSet(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-        if (baseClass == PowerProvidingEntity.class) {
-            switch (derivedFeatureID) {
+    public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
+        if (baseClass == PowerProvidingEntity.class)
+        {
+            switch (derivedFeatureID)
+            {
             case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
                 return InfrastructurePackage.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES;
             case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
@@ -404,14 +435,16 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-        if (baseClass == PowerProvidingEntity.class) {
-            switch (baseFeatureID) {
+    public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
+        if (baseClass == PowerProvidingEntity.class)
+        {
+            switch (baseFeatureID)
+            {
             case InfrastructurePackage.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
                 return InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES;
             case InfrastructurePackage.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
@@ -428,20 +461,21 @@ public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEn
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public String toString() {
-        if (eIsProxy())
+        if (this.eIsProxy()) {
             return super.toString();
+        }
 
-        StringBuffer result = new StringBuffer(super.toString());
+        final StringBuffer result = new StringBuffer(super.toString());
         result.append(" (suppliablePeakPower: ");
-        result.append(suppliablePeakPower);
+        result.append(this.suppliablePeakPower);
         result.append(')');
         return result.toString();
     }
 
-} //PowerConsumingProvidingEntityImpl
+} // PowerConsumingProvidingEntityImpl

@@ -2,46 +2,50 @@
  */
 package de.fzi.power.specification.impl;
 
-import de.fzi.power.specification.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.fzi.power.specification.DistributionPowerModelSpecification;
+import de.fzi.power.specification.FixedFactor;
+import de.fzi.power.specification.MeasuredFactor;
+import de.fzi.power.specification.PowerModelRepository;
+import de.fzi.power.specification.ResourcePowerModelSpecification;
+import de.fzi.power.specification.SpecificationFactory;
+import de.fzi.power.specification.SpecificationPackage;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SpecificationFactoryImpl extends EFactoryImpl implements SpecificationFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public static SpecificationFactory init() {
-        try {
-            SpecificationFactory theSpecificationFactory = (SpecificationFactory) EPackage.Registry.INSTANCE
+        try
+        {
+            final SpecificationFactory theSpecificationFactory = (SpecificationFactory) EPackage.Registry.INSTANCE
                     .getEFactory(SpecificationPackage.eNS_URI);
-            if (theSpecificationFactory != null) {
+            if (theSpecificationFactory != null)
+            {
                 return theSpecificationFactory;
             }
-        } catch (Exception exception) {
+        } catch (final Exception exception)
+        {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new SpecificationFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public SpecificationFactoryImpl() {
@@ -49,96 +53,97 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
+    public EObject create(final EClass eClass) {
+        switch (eClass.getClassifierID())
+        {
         case SpecificationPackage.POWER_MODEL_REPOSITORY:
-            return createPowerModelRepository();
+            return this.createPowerModelRepository();
         case SpecificationPackage.RESOURCE_POWER_MODEL_SPECIFICATION:
-            return createResourcePowerModelSpecification();
+            return this.createResourcePowerModelSpecification();
         case SpecificationPackage.DISTRIBUTION_POWER_MODEL_SPECIFICATION:
-            return createDistributionPowerModelSpecification();
+            return this.createDistributionPowerModelSpecification();
         case SpecificationPackage.FIXED_FACTOR:
-            return createFixedFactor();
+            return this.createFixedFactor();
         case SpecificationPackage.MEASURED_FACTOR:
-            return createMeasuredFactor();
+            return this.createMeasuredFactor();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public PowerModelRepository createPowerModelRepository() {
-        PowerModelRepositoryImpl powerModelRepository = new PowerModelRepositoryImpl();
+        final PowerModelRepositoryImpl powerModelRepository = new PowerModelRepositoryImpl();
         return powerModelRepository;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ResourcePowerModelSpecification createResourcePowerModelSpecification() {
-        ResourcePowerModelSpecificationImpl resourcePowerModelSpecification = new ResourcePowerModelSpecificationImpl();
+        final ResourcePowerModelSpecificationImpl resourcePowerModelSpecification = new ResourcePowerModelSpecificationImpl();
         return resourcePowerModelSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public DistributionPowerModelSpecification createDistributionPowerModelSpecification() {
-        DistributionPowerModelSpecificationImpl distributionPowerModelSpecification = new DistributionPowerModelSpecificationImpl();
+        final DistributionPowerModelSpecificationImpl distributionPowerModelSpecification = new DistributionPowerModelSpecificationImpl();
         return distributionPowerModelSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public FixedFactor createFixedFactor() {
-        FixedFactorImpl fixedFactor = new FixedFactorImpl();
+        final FixedFactorImpl fixedFactor = new FixedFactorImpl();
         return fixedFactor;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public MeasuredFactor createMeasuredFactor() {
-        MeasuredFactorImpl measuredFactor = new MeasuredFactorImpl();
+        final MeasuredFactorImpl measuredFactor = new MeasuredFactorImpl();
         return measuredFactor;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public SpecificationPackage getSpecificationPackage() {
-        return (SpecificationPackage) getEPackage();
+        return (SpecificationPackage) this.getEPackage();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @deprecated
      * @generated
      */
@@ -147,4 +152,4 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
         return SpecificationPackage.eINSTANCE;
     }
 
-} //SpecificationFactoryImpl
+} // SpecificationFactoryImpl

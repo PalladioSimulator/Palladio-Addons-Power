@@ -2,46 +2,49 @@
  */
 package de.fzi.power.binding.impl;
 
-import de.fzi.power.binding.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.fzi.power.binding.BindingFactory;
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.DistributionPowerBinding;
+import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.PowerBindingRepository;
+import de.fzi.power.binding.ResourcePowerBinding;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
     /**
-     * Creates the default factory implementation.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public static BindingFactory init() {
-        try {
-            BindingFactory theBindingFactory = (BindingFactory) EPackage.Registry.INSTANCE
+        try
+        {
+            final BindingFactory theBindingFactory = (BindingFactory) EPackage.Registry.INSTANCE
                     .getEFactory(BindingPackage.eNS_URI);
-            if (theBindingFactory != null) {
+            if (theBindingFactory != null)
+            {
                 return theBindingFactory;
             }
-        } catch (Exception exception) {
+        } catch (final Exception exception)
+        {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new BindingFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public BindingFactoryImpl() {
@@ -49,83 +52,84 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public EObject create(EClass eClass) {
-        switch (eClass.getClassifierID()) {
+    public EObject create(final EClass eClass) {
+        switch (eClass.getClassifierID())
+        {
         case BindingPackage.FIXED_FACTOR_VALUE:
-            return createFixedFactorValue();
+            return this.createFixedFactorValue();
         case BindingPackage.POWER_BINDING_REPOSITORY:
-            return createPowerBindingRepository();
+            return this.createPowerBindingRepository();
         case BindingPackage.RESOURCE_POWER_BINDING:
-            return createResourcePowerBinding();
+            return this.createResourcePowerBinding();
         case BindingPackage.DISTRIBUTION_POWER_BINDING:
-            return createDistributionPowerBinding();
+            return this.createDistributionPowerBinding();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public FixedFactorValue createFixedFactorValue() {
-        FixedFactorValueImpl fixedFactorValue = new FixedFactorValueImpl();
+        final FixedFactorValueImpl fixedFactorValue = new FixedFactorValueImpl();
         return fixedFactorValue;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public PowerBindingRepository createPowerBindingRepository() {
-        PowerBindingRepositoryImpl powerBindingRepository = new PowerBindingRepositoryImpl();
+        final PowerBindingRepositoryImpl powerBindingRepository = new PowerBindingRepositoryImpl();
         return powerBindingRepository;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ResourcePowerBinding createResourcePowerBinding() {
-        ResourcePowerBindingImpl resourcePowerBinding = new ResourcePowerBindingImpl();
+        final ResourcePowerBindingImpl resourcePowerBinding = new ResourcePowerBindingImpl();
         return resourcePowerBinding;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public DistributionPowerBinding createDistributionPowerBinding() {
-        DistributionPowerBindingImpl distributionPowerBinding = new DistributionPowerBindingImpl();
+        final DistributionPowerBindingImpl distributionPowerBinding = new DistributionPowerBindingImpl();
         return distributionPowerBinding;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public BindingPackage getBindingPackage() {
-        return (BindingPackage) getEPackage();
+        return (BindingPackage) this.getEPackage();
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @deprecated
      * @generated
      */
@@ -134,4 +138,4 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
         return BindingPackage.eINSTANCE;
     }
 
-} //BindingFactoryImpl
+} // BindingFactoryImpl

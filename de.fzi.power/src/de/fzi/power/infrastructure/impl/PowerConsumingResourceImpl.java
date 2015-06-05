@@ -2,30 +2,28 @@
  */
 package de.fzi.power.infrastructure.impl;
 
-import de.fzi.power.binding.ResourcePowerBinding;
-
-import de.fzi.power.infrastructure.InfrastructurePackage;
-import de.fzi.power.infrastructure.PowerConsumingResource;
-
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.infrastructure.InfrastructurePackage;
+import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Power Consuming Resource</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Power Consuming Resource</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getProcessingResourceSpecification <em>Processing Resource Specification</em>}</li>
- *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getResourcePowerAssemblyContext <em>Resource Power Assembly Context</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getProcessingResourceSpecification
+ * <em>Processing Resource Specification</em>}</li>
+ * <li>
+ * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getResourcePowerAssemblyContext
+ * <em>Resource Power Assembly Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,9 +31,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl implements PowerConsumingResource {
     /**
-     * The cached value of the '{@link #getProcessingResourceSpecification() <em>Processing Resource Specification</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getProcessingResourceSpecification()
+     * <em>Processing Resource Specification</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @see #getProcessingResourceSpecification()
      * @generated
      * @ordered
@@ -43,9 +42,10 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
     protected ProcessingResourceSpecification processingResourceSpecification;
 
     /**
-     * The cached value of the '{@link #getResourcePowerAssemblyContext() <em>Resource Power Assembly Context</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The cached value of the '{@link #getResourcePowerAssemblyContext()
+     * <em>Resource Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @see #getResourcePowerAssemblyContext()
      * @generated
      * @ordered
@@ -53,8 +53,8 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
     protected ResourcePowerBinding resourcePowerAssemblyContext;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected PowerConsumingResourceImpl() {
@@ -62,8 +62,8 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -72,163 +72,180 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ProcessingResourceSpecification getProcessingResourceSpecification() {
-        if (processingResourceSpecification != null && ((EObject) processingResourceSpecification).eIsProxy()) {
-            InternalEObject oldProcessingResourceSpecification = (InternalEObject) processingResourceSpecification;
-            processingResourceSpecification = (ProcessingResourceSpecification) eResolveProxy(oldProcessingResourceSpecification);
-            if (processingResourceSpecification != oldProcessingResourceSpecification) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.processingResourceSpecification != null && this.processingResourceSpecification.eIsProxy())
+        {
+            final InternalEObject oldProcessingResourceSpecification = (InternalEObject) this.processingResourceSpecification;
+            this.processingResourceSpecification = (ProcessingResourceSpecification) this
+                    .eResolveProxy(oldProcessingResourceSpecification);
+            if (this.processingResourceSpecification != oldProcessingResourceSpecification)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                            oldProcessingResourceSpecification, processingResourceSpecification));
+                            oldProcessingResourceSpecification, this.processingResourceSpecification));
+                }
             }
         }
-        return processingResourceSpecification;
+        return this.processingResourceSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ProcessingResourceSpecification basicGetProcessingResourceSpecification() {
-        return processingResourceSpecification;
+        return this.processingResourceSpecification;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setProcessingResourceSpecification(ProcessingResourceSpecification newProcessingResourceSpecification) {
-        ProcessingResourceSpecification oldProcessingResourceSpecification = processingResourceSpecification;
-        processingResourceSpecification = newProcessingResourceSpecification;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setProcessingResourceSpecification(
+            final ProcessingResourceSpecification newProcessingResourceSpecification) {
+        final ProcessingResourceSpecification oldProcessingResourceSpecification = this.processingResourceSpecification;
+        this.processingResourceSpecification = newProcessingResourceSpecification;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                    oldProcessingResourceSpecification, processingResourceSpecification));
+                    oldProcessingResourceSpecification, this.processingResourceSpecification));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public ResourcePowerBinding getResourcePowerAssemblyContext() {
-        if (resourcePowerAssemblyContext != null && resourcePowerAssemblyContext.eIsProxy()) {
-            InternalEObject oldResourcePowerAssemblyContext = (InternalEObject) resourcePowerAssemblyContext;
-            resourcePowerAssemblyContext = (ResourcePowerBinding) eResolveProxy(oldResourcePowerAssemblyContext);
-            if (resourcePowerAssemblyContext != oldResourcePowerAssemblyContext) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+        if (this.resourcePowerAssemblyContext != null && this.resourcePowerAssemblyContext.eIsProxy())
+        {
+            final InternalEObject oldResourcePowerAssemblyContext = (InternalEObject) this.resourcePowerAssemblyContext;
+            this.resourcePowerAssemblyContext = (ResourcePowerBinding) this
+                    .eResolveProxy(oldResourcePowerAssemblyContext);
+            if (this.resourcePowerAssemblyContext != oldResourcePowerAssemblyContext)
+            {
+                if (this.eNotificationRequired()) {
+                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
                             InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                            oldResourcePowerAssemblyContext, resourcePowerAssemblyContext));
+                            oldResourcePowerAssemblyContext, this.resourcePowerAssemblyContext));
+                }
             }
         }
-        return resourcePowerAssemblyContext;
+        return this.resourcePowerAssemblyContext;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     public ResourcePowerBinding basicGetResourcePowerAssemblyContext() {
-        return resourcePowerAssemblyContext;
+        return this.resourcePowerAssemblyContext;
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void setResourcePowerAssemblyContext(ResourcePowerBinding newResourcePowerAssemblyContext) {
-        ResourcePowerBinding oldResourcePowerAssemblyContext = resourcePowerAssemblyContext;
-        resourcePowerAssemblyContext = newResourcePowerAssemblyContext;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET,
+    public void setResourcePowerAssemblyContext(final ResourcePowerBinding newResourcePowerAssemblyContext) {
+        final ResourcePowerBinding oldResourcePowerAssemblyContext = this.resourcePowerAssemblyContext;
+        this.resourcePowerAssemblyContext = newResourcePowerAssemblyContext;
+        if (this.eNotificationRequired()) {
+            this.eNotify(new ENotificationImpl(this, Notification.SET,
                     InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                    oldResourcePowerAssemblyContext, resourcePowerAssemblyContext));
+                    oldResourcePowerAssemblyContext, this.resourcePowerAssemblyContext));
+        }
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            if (resolve)
-                return getProcessingResourceSpecification();
-            return basicGetProcessingResourceSpecification();
+            if (resolve) {
+                return this.getProcessingResourceSpecification();
+            }
+            return this.basicGetProcessingResourceSpecification();
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            if (resolve)
-                return getResourcePowerAssemblyContext();
-            return basicGetResourcePowerAssemblyContext();
+            if (resolve) {
+                return this.getResourcePowerAssemblyContext();
+            }
+            return this.basicGetResourcePowerAssemblyContext();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            setProcessingResourceSpecification((ProcessingResourceSpecification) newValue);
+            this.setProcessingResourceSpecification((ProcessingResourceSpecification) newValue);
             return;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            setResourcePowerAssemblyContext((ResourcePowerBinding) newValue);
+            this.setResourcePowerAssemblyContext((ResourcePowerBinding) newValue);
             return;
         }
         super.eSet(featureID, newValue);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
+    public void eUnset(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            setProcessingResourceSpecification((ProcessingResourceSpecification) null);
+            this.setProcessingResourceSpecification((ProcessingResourceSpecification) null);
             return;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            setResourcePowerAssemblyContext((ResourcePowerBinding) null);
+            this.setResourcePowerAssemblyContext((ResourcePowerBinding) null);
             return;
         }
         super.eUnset(featureID);
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
+    public boolean eIsSet(final int featureID) {
+        switch (featureID)
+        {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            return processingResourceSpecification != null;
+            return this.processingResourceSpecification != null;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            return resourcePowerAssemblyContext != null;
+            return this.resourcePowerAssemblyContext != null;
         }
         return super.eIsSet(featureID);
     }
 
-} //PowerConsumingResourceImpl
+} // PowerConsumingResourceImpl
