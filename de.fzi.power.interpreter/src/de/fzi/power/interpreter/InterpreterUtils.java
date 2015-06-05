@@ -51,7 +51,7 @@ public final class InterpreterUtils {
     private static final MeasuringpointSwitch<ProcessingResourceSpecification> MEASURINGPOINT_SWITCH = new MeasuringpointSwitch<ProcessingResourceSpecification>() {
         @Override
         public ProcessingResourceSpecification caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint point) {
-            return RESOURCEENV_SWITCH.doSwitch(EMFLoadHelper.loadModel(point.getResourceURI()));
+            return RESOURCEENV_SWITCH.doSwitch(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI()));
         }
     };
 
@@ -126,7 +126,7 @@ public final class InterpreterUtils {
 
             @Override
             public PowerProvidingEntity caseResourceURIMeasuringPoint(ResourceURIMeasuringPoint mp) {
-                EObject modeObject = EMFLoadHelper.loadModel(mp.getResourceURI());
+                EObject modeObject = EMFLoadHelper.loadAndResolveEObject(mp.getResourceURI());
                 return infSwitch.doSwitch(modeObject);
             }
         }.doSwitch(measuringPoint);
