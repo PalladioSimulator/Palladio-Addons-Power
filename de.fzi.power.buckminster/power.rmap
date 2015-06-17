@@ -14,11 +14,8 @@
   <rm:locator pattern="^de\.fzi\.power.*" searchPathRef="Power" failOnError="false"/>
   <rm:locator searchPathRef="MDSDProfiles" failOnError="false"/>
   <rm:locator searchPathRef="pcm" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\..*" searchPathRef="luna" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.simulizar.*" searchPathRef="SimuLizar"/>
-  <rm:locator searchPathRef="orbit" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\.xtend.*" searchPathRef="xtext" failOnError="false"/>
-  <rm:locator pattern="^org\.eclipse\.xtext.*" searchPathRef="xtext" failOnError="false"/>
+  <rm:locator pattern="^org\.eclipse\..*" failOnError="false"/>
+  <rm:redirect pattern=".*" href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Build/trunk/org.palladiosimulator.targetPlatformBuild/pcm_base.rmap"/>
   <rm:searchPath name="xtext">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
       <rm:property key="buckminster.source" value="false"/>
@@ -68,13 +65,6 @@
       <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/recorderframework/nightly/"/>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="SimuLizar">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/simulizar/nightly/"/>
-    </rm:provider>
-  </rm:searchPath>
   <rm:searchPath name="localresources">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="local">
       <rm:uri format="file:///{0}/{1}/">
@@ -102,20 +92,6 @@
       <rm:property key="buckminster.source" value="false"/>
       <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="http://sdqweb.ipd.kit.edu/eclipse/palladio/nightly/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="luna">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="http://download.eclipse.org/releases/luna/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="orbit">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="Power">
