@@ -18,20 +18,6 @@
             restorable="true">
       </view>
    </extension>
-  <extension
-         point="org.eclipse.ui.commands">
-      <command
-            categoryId="de.fzi.power.ui.category.analysis"
-            defaultHandler="de.fzi.power.ui.commands.AnalyzeConsumptionHandler"
-            description="Performs a power consumption analysis for the given element and parameters."
-            id="de.fzi.power.commands.AnalyzeConsumption"
-            name="Analyze Power Consumption">
-      </command>
-      <category
-      		id="de.fzi.power.ui.category.analysis"
-     		name="Analysis">
-      </category>
-  </extension>   
      <extension
          point="org.eclipse.ui.menus">
       <menuContribution
