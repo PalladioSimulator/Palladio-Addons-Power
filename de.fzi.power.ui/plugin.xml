@@ -18,18 +18,4 @@
             restorable="true">
       </view>
    </extension>
-     <extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="true"
-            locationURI="toolbar:de.fzi.power.ui.views.navigator">
-         <command
-               commandId="de.fzi.power.commands.AnalyzeConsumption"
-               icon="icons/add_datasource.gif"
-               label="Analyze"
-               style="push"
-               tooltip="Starts a power consumption analysis and opens a graph visualization">
-         </command>
-      </menuContribution>
-   </extension>
 </plugin>
