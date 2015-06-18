@@ -12,7 +12,7 @@
             allowMultiple="false"
             category="de.fzi.power.ui.category"
             class="de.fzi.power.ui.views.navigator.Navigator"
-            icon="icons/tree_root.gif"
+            icon="icons/pca_small.gif"
             id="de.fzi.power.ui.views.navigator"
             name="Power Consumption Analysis"
             restorable="true">
