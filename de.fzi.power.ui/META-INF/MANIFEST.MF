@@ -13,4 +13,8 @@ Require-Bundle: de.fzi.power.editor,
  org.palladiosimulator.edp2.visualization
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: de.fzi.power.ui.views.configuration
+Export-Package: de.fzi.power.ui,
+ de.fzi.power.ui.adapters,
+ de.fzi.power.ui.views.configuration,
+ de.fzi.power.ui.views.navigator,
+ de.fzi.power.ui.views.util
