@@ -19,8 +19,9 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
 public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantiator {
 
     public static final String CALCULATOR_FACTORY_EXTENSION_POINT = "de.fzi.power.interpreter.calculators.calculatorfactory";
-    private static final String CALCULATOR_FACTORY_PROPERTY_NAME = "factory";
+    private static final String CALCULATOR_FACTORY_ATTRIBUTE_NAME = "factory";
     private static final int DEFAULT_SIZE = 4; // required to ensure backward compatibility
+    private static final String CALCULATOR_FACTORY_ELEMENT_NAME = "calculatorFactory";
 
     protected final PriorityQueue<CalculatorFactory> factoryQueue = new PriorityQueue<CalculatorFactory>(DEFAULT_SIZE,
             new Comparator<CalculatorFactory>() {
@@ -38,7 +39,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
     private void retrieveFactories() {
         //retrieve all registered calculator factories
         Collection<CalculatorFactory> factories = ExtensionHelper.getExecutableExtensions(
-                CALCULATOR_FACTORY_EXTENSION_POINT, CALCULATOR_FACTORY_PROPERTY_NAME);
+                CALCULATOR_FACTORY_EXTENSION_POINT, CALCULATOR_FACTORY_ELEMENT_NAME, CALCULATOR_FACTORY_ATTRIBUTE_NAME);
         this.factoryQueue.addAll(factories);
     }
 
