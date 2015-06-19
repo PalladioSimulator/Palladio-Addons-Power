@@ -28,6 +28,7 @@ public class EssentialCalculatorsFactory extends AbstractCalculatorFactory {
                     PowerModelConstants.INTERPOLATION_MODEL.getId()));
     
     public EssentialCalculatorsFactory() {
+        super();
     }
     
     @Override
