@@ -3,6 +3,8 @@ package de.fzi.power.interpreter.calculators.essential;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
+import de.fzi.power.specification.resources.PowerModelConstants;
+
 public class Activator implements BundleActivator {
 
     private static BundleContext context;
@@ -17,6 +19,7 @@ public class Activator implements BundleActivator {
      */
     public void start(BundleContext bundleContext) throws Exception {
         Activator.context = bundleContext;
+        PowerModelConstants.class.getClass();
     }
 
     /*
