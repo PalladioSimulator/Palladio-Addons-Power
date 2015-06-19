@@ -27,6 +27,8 @@ public class EssentialCalculatorsFactory extends AbstractCalculatorFactory {
                     PowerModelConstants.NONLINEAR_REGRESSION_MODEL.getId(),
                     PowerModelConstants.INTERPOLATION_MODEL.getId()));
     
+    public EssentialCalculatorsFactory() {
+    }
     
     @Override
     public AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
