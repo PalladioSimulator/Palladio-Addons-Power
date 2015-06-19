@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-ClassPath: .
 Bundle-Name: Tests
 Bundle-SymbolicName: de.fzi.power.interpreter.calculators.energy.tests
 Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
 Bundle-Activator: de.fz.power.interpreter.calculators.energy.tests.Activator
 Require-Bundle: org.eclipse.core.runtime,
  de.fzi.power.interpreter.calculators.energy;bundle-version="1.0.0",
