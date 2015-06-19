@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Bundle-ClassPath: .
 Bundle-Name: Essential Calculators
 Bundle-SymbolicName: de.fzi.power.interpreter.calculators.essential;singleton:=true
 Bundle-Version: 1.0.0.qualifier
