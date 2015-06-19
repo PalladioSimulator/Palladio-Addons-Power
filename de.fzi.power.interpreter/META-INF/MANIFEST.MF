@@ -12,7 +12,7 @@ Require-Bundle: de.fzi.power;bundle-version="1.0.0";visibility:=reexport,
  org.palladiosimulator.pcm.edp2.measuringpoint;visibility:=reexport,
  org.palladiosimulator.commons;bundle-version="1.0.0";visibility:=reexport,
  org.palladiosimulator.experimentanalysis.utilizationfilter;visibility:=reexport,
- org.eclipse.ui.workbench
+ org.eclipse.ui.workbench;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.fzi.power.interpreter,
