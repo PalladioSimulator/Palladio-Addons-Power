@@ -9,7 +9,6 @@ Bundle-Vendor: FZI Forschungszentrum Informatik
 Require-Bundle: de.fzi.power.editor,
  de.fzi.power.interpreter,
  de.fzi.power.interpreter.calculators.energy,
- org.apache.commons.collections15,
  org.palladiosimulator.edp2.visualization
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
