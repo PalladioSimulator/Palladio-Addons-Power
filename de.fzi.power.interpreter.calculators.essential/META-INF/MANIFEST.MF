@@ -10,3 +10,5 @@ Require-Bundle: de.fzi.power.interpreter,
  org.jscience,
  org.palladiosimulator.measurementframework
 Export-Package: de.fzi.power.interpreter.calculators.essential
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: de.fzi.power.interpreter.calculators.essential.Activator
