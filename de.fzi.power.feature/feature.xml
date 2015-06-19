@@ -125,23 +125,19 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="org.eclipse.ui"/>
       <import plugin="org.palladiosimulator.measurementframework"/>
       <import plugin="org.palladiosimulator.edp2.datastream"/>
       <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
-      <import plugin="org.palladiosimulator.commons" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.junit"/>
-      <import plugin="org.apache.commons.collections15"/>
-      <import plugin="org.palladiosimulator.edp2.datastream" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.measurementframework" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.commons"/>
+      <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter"/>
       <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.emf.databinding"/>
-      <import plugin="org.eclipse.core.databinding.property" version="1.4.200" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.jface.databinding"/>
+      <import plugin="org.apache.commons.collections15"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.palladiosimulator.edp2.datastream"/>
+      <import plugin="org.palladiosimulator.measurementframework"/>
+      <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
       <import plugin="org.palladiosimulator.edp2.visualization"/>
-      <import plugin="org.palladiosimulator.experimentanalysis" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.fzi.power"/>
    </requires>
 
    <plugin
