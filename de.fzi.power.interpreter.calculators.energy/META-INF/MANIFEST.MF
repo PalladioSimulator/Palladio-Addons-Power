@@ -4,9 +4,8 @@ Bundle-Name: Energy
 Bundle-SymbolicName: de.fzi.power.interpreter.calculators.energy;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.fzi.pow
-Require-Bundle: org.eclipse.core.runtime,
- org.jscience,
- org.apache.commons.collections15,
- de.fzi.power.specification.resources
+Require-Bundle: org.apache.commons.collections15;visibility:=reexport,
+ de.fzi.power.specification.resources;visibility:=reexport,
+ org.jscience;bundle-version="4.1.3";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.fzi.power.interpreter.calculators.energy

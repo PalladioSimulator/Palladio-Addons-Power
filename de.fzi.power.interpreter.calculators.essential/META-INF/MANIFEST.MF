@@ -4,11 +4,8 @@ Bundle-Name: Essential Calculators
 Bundle-SymbolicName: de.fzi.power.interpreter.calculators.essential;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Require-Bundle: de.fzi.power.interpreter,
- de.fzi.power,
- de.fzi.power.specification.resources;bundle-version="1.0.0",
- org.jscience,
- org.palladiosimulator.measurementframework
+Require-Bundle: de.fzi.power.interpreter;visibility:=reexport,
+ org.palladiosimulator.measurementframework;visibility:=reexport
 Export-Package: de.fzi.power.interpreter.calculators.essential
 Bundle-ActivationPolicy: lazy
 Bundle-Activator: de.fzi.power.interpreter.calculators.essential.Activator
