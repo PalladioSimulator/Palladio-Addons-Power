@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: de.fzi.power.util.provider.PowerEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.fzi.power.binding.provider,
  de.fzi.power.infrastructure.provider,
  de.fzi.power.specification.provider,
