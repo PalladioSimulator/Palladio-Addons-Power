@@ -2,6 +2,7 @@ package de.fzi.power.interpreter.tests;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 public class Activator implements BundleActivator {
 
@@ -17,6 +18,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
+		MetricDescriptionConstants.class.getClass();
 	}
 
 	/*
