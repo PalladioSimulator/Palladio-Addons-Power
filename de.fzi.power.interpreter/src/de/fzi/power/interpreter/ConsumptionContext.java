@@ -12,13 +12,13 @@ import org.apache.commons.collections15.CollectionUtils;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 /**
  * Subsumes all the required information for evaluating the power consumption of a software system.

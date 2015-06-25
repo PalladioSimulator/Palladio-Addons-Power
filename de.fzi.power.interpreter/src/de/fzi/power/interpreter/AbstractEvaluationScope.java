@@ -17,9 +17,9 @@ import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 
 public abstract class AbstractEvaluationScope implements

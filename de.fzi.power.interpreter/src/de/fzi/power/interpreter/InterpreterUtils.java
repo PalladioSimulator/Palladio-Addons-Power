@@ -16,6 +16,8 @@ import org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointSwitc
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
+import org.palladiosimulator.pcm.resourceenvironment.util.ResourceenvironmentSwitch;
 import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.pcmmeasuringpoint.util.PcmmeasuringpointSwitch;
 
@@ -24,8 +26,6 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.uka.ipd.sdq.identifier.Identifier;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
-import de.uka.ipd.sdq.pcm.resourceenvironment.util.ResourceenvironmentSwitch;
 
 /**
  * Utility class that contains common classes, methods or objects used at 

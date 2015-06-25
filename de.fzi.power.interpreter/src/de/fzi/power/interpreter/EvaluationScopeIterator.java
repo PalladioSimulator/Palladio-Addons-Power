@@ -10,8 +10,7 @@ import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
-
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 /**
  * The interface EvaluationScopeIterator encapsulated the Iterator specification for the 
