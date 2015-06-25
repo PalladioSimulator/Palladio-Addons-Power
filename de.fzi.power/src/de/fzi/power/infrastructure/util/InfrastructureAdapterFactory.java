@@ -22,21 +22,21 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
  * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- * 
+ *
  * @see de.fzi.power.infrastructure.InfrastructurePackage
  * @generated
  */
 public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected static InfrastructurePackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public InfrastructureAdapterFactory() {
@@ -50,7 +50,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc
      * --> This implementation returns <code>true</code> if the object is either the model's package
      * or is an instance object of the model. <!-- end-user-doc -->
-     * 
+     *
      * @return whether this factory is applicable for the type of the object.
      * @generated
      */
@@ -70,7 +70,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
     /**
      * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected InfrastructureSwitch<Adapter> modelSwitch = new InfrastructureSwitch<Adapter>()
@@ -144,7 +144,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 
             /**
              * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
@@ -161,7 +161,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
              * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
              * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
              * end-user-doc -->
-             * 
+             *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerDistributionUnit
              * @generated
@@ -176,7 +176,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Power Consuming Providing Entity</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerConsumingProvidingEntity
              * @generated
@@ -191,7 +191,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
              * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
              * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
              * end-user-doc -->
-             * 
+             *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerProvidingEntity
              * @generated
@@ -206,7 +206,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
              * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
              * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
              * end-user-doc -->
-             * 
+             *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerConsumingEntity
              * @generated
@@ -221,7 +221,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Mounted Power Distribution Unit</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.MountedPowerDistributionUnit
              * @generated
@@ -236,7 +236,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily
      * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerConsumingResource
              * @generated
@@ -251,7 +251,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Power Infrastructure Repository</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.infrastructure.PowerInfrastructureRepository
              * @generated
@@ -265,7 +265,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.uka.ipd.sdq.identifier.Identifier
              * @generated
@@ -279,7 +279,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.util.NamedElement
              * @generated
@@ -293,7 +293,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
      * <em>Entity</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
      * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
      * cases anyway. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @see de.fzi.power.util.Entity
              * @generated
@@ -305,7 +305,7 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
             /**
              * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
      * implementation returns null. <!-- end-user-doc -->
-     * 
+     *
      * @return the new adapter.
              * @generated
              */

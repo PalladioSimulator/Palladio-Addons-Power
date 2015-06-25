@@ -47,7 +47,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
     /**
      * The cached value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getValue()
      * @generated
      * @ordered
@@ -56,7 +56,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected FixedFactorValueImpl() {
@@ -65,7 +65,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -97,7 +97,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public FixedFactor basicGetBoundFactor() {
@@ -106,7 +106,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -160,7 +160,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerBinding(final PowerBinding newPowerBinding, NotificationChain msgs) {
@@ -172,7 +172,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -223,7 +223,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -239,7 +239,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +255,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -277,7 +277,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -300,7 +300,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -322,7 +322,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -341,7 +341,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements FixedFactorV
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

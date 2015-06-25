@@ -97,11 +97,11 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MountedPowerDistributionUnit" eSuperTypes="#//infrastructure/PowerDistributionUnit">
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceContainer" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+          lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResource" eSuperTypes="#//infrastructure/PowerConsumingEntity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecification"
-          ordered="false" lowerBound="1" eType="ecore:EClass ../../de.uka.ipd.sdq.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
+          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerAssemblyContext"
           eType="#//binding/ResourcePowerBinding"/>
     </eClassifiers>

@@ -4,12 +4,12 @@ package de.fzi.power.infrastructure.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceContainer;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -29,16 +29,16 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
     /**
      * The cached value of the '{@link #getResourceContainer() <em>Resource Container</em>}'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getResourceContainer()
      * @generated
      * @ordered
      */
-    protected ResourceContainer resourceContainer;
+    protected org.palladiosimulator.pcm.resourceenvironment.ResourceContainer resourceContainer;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MountedPowerDistributionUnitImpl() {
@@ -47,7 +47,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -57,15 +57,16 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public ResourceContainer getResourceContainer() {
-        if (this.resourceContainer != null && this.resourceContainer.eIsProxy())
+    public org.palladiosimulator.pcm.resourceenvironment.ResourceContainer getResourceContainer() {
+        if (this.resourceContainer != null && ((EObject) this.resourceContainer).eIsProxy())
         {
             final InternalEObject oldResourceContainer = (InternalEObject) this.resourceContainer;
-            this.resourceContainer = (ResourceContainer) this.eResolveProxy(oldResourceContainer);
+            this.resourceContainer = (org.palladiosimulator.pcm.resourceenvironment.ResourceContainer) this
+                    .eResolveProxy(oldResourceContainer);
             if (this.resourceContainer != oldResourceContainer)
             {
                 if (this.eNotificationRequired()) {
@@ -80,21 +81,23 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    public ResourceContainer basicGetResourceContainer() {
+    public org.palladiosimulator.pcm.resourceenvironment.ResourceContainer basicGetResourceContainer() {
         return this.resourceContainer;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
-    public void setResourceContainer(final ResourceContainer newResourceContainer) {
-        final ResourceContainer oldResourceContainer = this.resourceContainer;
+    public void setResourceContainer(
+            final org.palladiosimulator.pcm.resourceenvironment.ResourceContainer newResourceContainer)
+    {
+        final org.palladiosimulator.pcm.resourceenvironment.ResourceContainer oldResourceContainer = this.resourceContainer;
         this.resourceContainer = newResourceContainer;
         if (this.eNotificationRequired()) {
             this.eNotify(new ENotificationImpl(this, Notification.SET,
@@ -105,7 +108,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -123,7 +126,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -131,7 +134,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
         switch (featureID)
         {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            this.setResourceContainer((ResourceContainer) newValue);
+            this.setResourceContainer((org.palladiosimulator.pcm.resourceenvironment.ResourceContainer) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -139,7 +142,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -147,7 +150,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
         switch (featureID)
         {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            this.setResourceContainer((ResourceContainer) null);
+            this.setResourceContainer((org.palladiosimulator.pcm.resourceenvironment.ResourceContainer) null);
             return;
         }
         super.eUnset(featureID);
@@ -155,7 +158,7 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

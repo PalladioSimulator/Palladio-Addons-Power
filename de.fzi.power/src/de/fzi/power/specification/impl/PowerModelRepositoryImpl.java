@@ -34,7 +34,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
      * The cached value of the '{@link #getPowerModelSpecifications()
      * <em>Power Model Specifications</em>}' containment reference list. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getPowerModelSpecifications()
      * @generated
      * @ordered
@@ -43,7 +43,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerModelRepositoryImpl() {
@@ -52,7 +52,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -79,7 +79,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -97,7 +97,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -113,7 +113,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -128,7 +128,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -146,7 +146,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -162,7 +162,7 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

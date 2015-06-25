@@ -29,7 +29,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
      * The cached value of the '{@link #getResourcePowerModelSpecification()
      * <em>Resource Power Model Specification</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see #getResourcePowerModelSpecification()
      * @generated
      * @ordered
@@ -38,7 +38,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ResourcePowerBindingImpl() {
@@ -47,7 +47,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -57,7 +57,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -81,7 +81,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public ResourcePowerModelSpecification basicGetResourcePowerModelSpecification() {
@@ -90,7 +90,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -107,7 +107,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -157,7 +157,7 @@ public class ResourcePowerBindingImpl extends PowerBindingImpl implements Resour
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

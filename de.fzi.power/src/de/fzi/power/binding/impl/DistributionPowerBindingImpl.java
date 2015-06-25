@@ -28,7 +28,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
     /**
      * The cached value of the '{@link #getDistributionPowerModel()
      * <em>Distribution Power Model</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getDistributionPowerModel()
      * @generated
      * @ordered
@@ -37,7 +37,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected DistributionPowerBindingImpl() {
@@ -46,7 +46,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -56,7 +56,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -80,7 +80,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public DistributionPowerModelSpecification basicGetDistributionPowerModel() {
@@ -89,7 +89,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -123,7 +123,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -139,7 +139,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

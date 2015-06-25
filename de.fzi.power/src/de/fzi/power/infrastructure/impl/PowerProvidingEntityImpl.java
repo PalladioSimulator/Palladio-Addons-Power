@@ -50,7 +50,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
      * The cached value of the '{@link #getNestedPowerConsumingEntities()
      * <em>Nested Power Consuming Entities</em>}' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNestedPowerConsumingEntities()
      * @generated
      * @ordered
@@ -60,7 +60,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
     /**
      * The cached value of the '{@link #getSuppliablePeakPower() <em>Suppliable Peak Power</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getSuppliablePeakPower()
      * @generated
      * @ordered
@@ -71,7 +71,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
      * The cached value of the '{@link #getDistributionPowerAssemblyContext()
      * <em>Distribution Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see #getDistributionPowerAssemblyContext()
      * @generated
      * @ordered
@@ -80,7 +80,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerProvidingEntityImpl() {
@@ -89,7 +89,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -99,7 +99,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -116,7 +116,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerInfrastructureModel(
@@ -167,7 +167,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -201,7 +201,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -225,7 +225,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public DistributionPowerBinding basicGetDistributionPowerAssemblyContext() {
@@ -234,7 +234,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -250,7 +250,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -273,7 +273,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -291,7 +291,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -308,7 +308,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -332,7 +332,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -359,7 +359,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -384,7 +384,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -405,7 +405,7 @@ public abstract class PowerProvidingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

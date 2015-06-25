@@ -26,45 +26,44 @@ import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
-import de.uka.ipd.sdq.pcm.PcmPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass fixedFactorValueEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerBindingRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerBindingEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass resourcePowerBindingEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass distributionPowerBindingEClass = null;
@@ -77,7 +76,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.binding.BindingPackage#eNS_URI
      * @see #init()
@@ -89,7 +88,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private static boolean isInited = false;
@@ -102,7 +101,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * This method is used to initialize {@link BindingPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -124,7 +123,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        PcmPackage.eINSTANCE.eClass();
+        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
@@ -161,7 +160,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -171,7 +170,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -181,7 +180,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -191,7 +190,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -201,7 +200,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -211,7 +210,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -221,7 +220,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -231,7 +230,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -241,7 +240,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -251,7 +250,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -261,7 +260,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -271,7 +270,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -281,7 +280,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -291,7 +290,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -301,7 +300,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isCreated = false;
@@ -309,7 +308,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void createPackageContents() {
@@ -341,7 +340,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isInitialized = false;
@@ -349,7 +348,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void initializePackageContents() {

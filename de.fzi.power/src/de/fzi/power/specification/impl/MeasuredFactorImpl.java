@@ -4,6 +4,7 @@ package de.fzi.power.specification.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
@@ -37,7 +38,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected MeasuredFactorImpl() {
@@ -46,7 +47,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -56,12 +57,12 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public NumericalBaseMetricDescription getMetricType() {
-        if (this.metricType != null && this.metricType.eIsProxy())
+        if (this.metricType != null && ((EObject) this.metricType).eIsProxy())
         {
             final InternalEObject oldMetricType = (InternalEObject) this.metricType;
             this.metricType = (NumericalBaseMetricDescription) this.eResolveProxy(oldMetricType);
@@ -78,7 +79,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NumericalBaseMetricDescription basicGetMetricType() {
@@ -87,7 +88,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -103,7 +104,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -121,7 +122,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -137,7 +138,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -153,7 +154,7 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

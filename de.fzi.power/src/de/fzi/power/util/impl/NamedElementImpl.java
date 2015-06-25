@@ -26,7 +26,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getName()
      * @generated
      * @ordered
@@ -36,7 +36,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
     /**
      * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @see #getName()
      * @generated
      * @ordered
@@ -45,7 +45,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected NamedElementImpl() {
@@ -54,7 +54,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -64,7 +64,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -74,7 +74,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -104,7 +104,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -120,7 +120,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -136,7 +136,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -151,7 +151,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

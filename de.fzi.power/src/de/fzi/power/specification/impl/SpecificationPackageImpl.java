@@ -27,59 +27,58 @@ import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
-import de.uka.ipd.sdq.pcm.PcmPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SpecificationPackageImpl extends EPackageImpl implements SpecificationPackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerModelRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerModelSpecificationEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass resourcePowerModelSpecificationEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass distributionPowerModelSpecificationEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass fixedFactorEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass consumptionFactorEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass measuredFactorEClass = null;
@@ -92,7 +91,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.specification.SpecificationPackage#eNS_URI
      * @see #init()
@@ -104,7 +103,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private static boolean isInited = false;
@@ -117,7 +116,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
      * This method is used to initialize {@link SpecificationPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -139,7 +138,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        PcmPackage.eINSTANCE.eClass();
+        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
@@ -175,7 +174,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -185,7 +184,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -195,7 +194,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,7 +204,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -215,7 +214,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -225,7 +224,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -235,7 +234,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -245,7 +244,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +254,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -265,7 +264,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -275,7 +274,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -285,7 +284,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -295,7 +294,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -305,7 +304,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isCreated = false;
@@ -313,7 +312,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void createPackageContents() {
@@ -345,7 +344,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isInitialized = false;
@@ -353,7 +352,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void initializePackageContents() {

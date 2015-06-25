@@ -20,7 +20,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see de.fzi.power.util.UtilFactory
  * @model kind="package"
  * @generated
@@ -28,28 +28,28 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 public interface UtilPackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNAME = "util";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_URI = "http://www.fzi.de/Power/Util/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_PREFIX = "de.fzi.power";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     UtilPackage eINSTANCE = de.fzi.power.util.impl.UtilPackageImpl.init();
@@ -57,7 +57,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.util.impl.EntityImpl <em>Entity</em>}' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.util.impl.EntityImpl
      * @see de.fzi.power.util.impl.UtilPackageImpl#getEntity()
      * @generated
@@ -67,7 +67,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -76,7 +76,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -85,7 +85,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Entity</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -94,7 +94,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.util.impl.NamedElementImpl
      * <em>Named Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.util.impl.NamedElementImpl
      * @see de.fzi.power.util.impl.UtilPackageImpl#getNamedElement()
      * @generated
@@ -104,7 +104,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -113,7 +113,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Named Element</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -122,7 +122,7 @@ public interface UtilPackage extends EPackage {
     /**
      * The meta object id for the '<em>Power</em>' data type. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see javax.measure.quantity.Power
      * @see de.fzi.power.util.impl.UtilPackageImpl#getPower()
      * @generated
@@ -132,7 +132,7 @@ public interface UtilPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.util.Entity <em>Entity</em>}'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Entity</em>'.
      * @see de.fzi.power.util.Entity
      * @generated
@@ -142,7 +142,7 @@ public interface UtilPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.util.NamedElement
      * <em>Named Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Named Element</em>'.
      * @see de.fzi.power.util.NamedElement
      * @generated
@@ -152,7 +152,7 @@ public interface UtilPackage extends EPackage {
     /**
      * Returns the meta object for the attribute '{@link de.fzi.power.util.NamedElement#getName
      * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Name</em>'.
      * @see de.fzi.power.util.NamedElement#getName()
      * @see #getNamedElement()
@@ -163,7 +163,7 @@ public interface UtilPackage extends EPackage {
     /**
      * Returns the meta object for data type '{@link javax.measure.quantity.Power <em>Power</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for data type '<em>Power</em>'.
      * @see javax.measure.quantity.Power
      * @model instanceClass="javax.measure.quantity.Power"
@@ -174,7 +174,7 @@ public interface UtilPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -190,14 +190,14 @@ public interface UtilPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     interface Literals {
         /**
          * The meta object literal for the '{@link de.fzi.power.util.impl.EntityImpl
          * <em>Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.util.impl.EntityImpl
          * @see de.fzi.power.util.impl.UtilPackageImpl#getEntity()
          * @generated
@@ -207,7 +207,7 @@ public interface UtilPackage extends EPackage {
         /**
          * The meta object literal for the '{@link de.fzi.power.util.impl.NamedElementImpl
          * <em>Named Element</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.util.impl.NamedElementImpl
          * @see de.fzi.power.util.impl.UtilPackageImpl#getNamedElement()
          * @generated
@@ -217,7 +217,7 @@ public interface UtilPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
@@ -225,7 +225,7 @@ public interface UtilPackage extends EPackage {
         /**
          * The meta object literal for the '<em>Power</em>' data type. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see javax.measure.quantity.Power
          * @see de.fzi.power.util.impl.UtilPackageImpl#getPower()
          * @generated

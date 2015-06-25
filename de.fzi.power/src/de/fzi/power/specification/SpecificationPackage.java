@@ -20,7 +20,7 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see de.fzi.power.specification.SpecificationFactory
  * @model kind="package"
  * @generated
@@ -28,28 +28,28 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 public interface SpecificationPackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNAME = "specification";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_URI = "http://www.fzi.de/Power/Specification/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_PREFIX = "de.fzi.power";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     SpecificationPackage eINSTANCE = de.fzi.power.specification.impl.SpecificationPackageImpl.init();
@@ -57,7 +57,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.specification.impl.PowerModelRepositoryImpl
      * <em>Power Model Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.PowerModelRepositoryImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelRepository()
      * @generated
@@ -67,7 +67,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -76,7 +76,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Model Specifications</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -85,7 +85,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Model Repository</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -95,7 +95,7 @@ public interface SpecificationPackage extends EPackage {
      * The meta object id for the '
      * {@link de.fzi.power.specification.impl.PowerModelSpecificationImpl
      * <em>Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.PowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelSpecification()
      * @generated
@@ -105,7 +105,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -114,7 +114,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -123,7 +123,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -132,7 +132,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -141,7 +141,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Model Specification</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -152,7 +152,7 @@ public interface SpecificationPackage extends EPackage {
      * {@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
      * <em>Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getResourcePowerModelSpecification()
      * @generated
@@ -162,7 +162,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -171,7 +171,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -180,7 +180,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -189,7 +189,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -198,7 +198,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Resource Power Model Specification</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -209,7 +209,7 @@ public interface SpecificationPackage extends EPackage {
      * {@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
      * <em>Distribution Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDistributionPowerModelSpecification()
      * @generated
@@ -219,7 +219,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -228,7 +228,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -237,7 +237,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -246,7 +246,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -255,7 +255,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Distribution Power Model Specification</em>'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -264,7 +264,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.specification.impl.ConsumptionFactorImpl
      * <em>Consumption Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.ConsumptionFactorImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getConsumptionFactor()
      * @generated
@@ -274,7 +274,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -283,7 +283,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -292,7 +292,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Model</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -301,7 +301,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Consumption Factor</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -310,7 +310,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.specification.impl.FixedFactorImpl
      * <em>Fixed Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.FixedFactorImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getFixedFactor()
      * @generated
@@ -320,7 +320,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -329,7 +329,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -338,7 +338,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Model</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -347,7 +347,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Fixed Factor</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -356,7 +356,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.specification.impl.MeasuredFactorImpl
      * <em>Measured Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.specification.impl.MeasuredFactorImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getMeasuredFactor()
      * @generated
@@ -366,7 +366,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -375,7 +375,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -384,7 +384,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Model</b></em>' container reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -393,7 +393,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Metric Type</b></em>' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -402,7 +402,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Measured Factor</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -411,7 +411,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.PowerModelRepository
      * <em>Power Model Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Model Repository</em>'.
      * @see de.fzi.power.specification.PowerModelRepository
      * @generated
@@ -422,7 +422,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications
      * <em>Power Model Specifications</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '
      *         <em>Power Model Specifications</em>'.
      * @see de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications()
@@ -434,7 +434,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.PowerModelSpecification
      * <em>Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Model Specification</em>'.
      * @see de.fzi.power.specification.PowerModelSpecification
      * @generated
@@ -445,7 +445,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository
      * <em>Powermodelrepository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the container reference '<em>Powermodelrepository</em>'.
      * @see de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository()
      * @see #getPowerModelSpecification()
@@ -457,7 +457,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link de.fzi.power.specification.PowerModelSpecification#getConsumptionFactors
      * <em>Consumption Factors</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '<em>Consumption Factors</em>'.
      * @see de.fzi.power.specification.PowerModelSpecification#getConsumptionFactors()
      * @see #getPowerModelSpecification()
@@ -469,7 +469,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for class '
      * {@link de.fzi.power.specification.ResourcePowerModelSpecification
      * <em>Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Resource Power Model Specification</em>'.
      * @see de.fzi.power.specification.ResourcePowerModelSpecification
      * @generated
@@ -481,7 +481,7 @@ public interface SpecificationPackage extends EPackage {
      * {@link de.fzi.power.specification.DistributionPowerModelSpecification
      * <em>Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @return the meta object for class '<em>Distribution Power Model Specification</em>'.
      * @see de.fzi.power.specification.DistributionPowerModelSpecification
      * @generated
@@ -491,7 +491,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.FixedFactor
      * <em>Fixed Factor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Fixed Factor</em>'.
      * @see de.fzi.power.specification.FixedFactor
      * @generated
@@ -501,7 +501,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.ConsumptionFactor
      * <em>Consumption Factor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Consumption Factor</em>'.
      * @see de.fzi.power.specification.ConsumptionFactor
      * @generated
@@ -512,7 +512,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link de.fzi.power.specification.ConsumptionFactor#getPowerModel <em>Power Model</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the container reference '<em>Power Model</em>'.
      * @see de.fzi.power.specification.ConsumptionFactor#getPowerModel()
      * @see #getConsumptionFactor()
@@ -523,7 +523,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.MeasuredFactor
      * <em>Measured Factor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Measured Factor</em>'.
      * @see de.fzi.power.specification.MeasuredFactor
      * @generated
@@ -534,7 +534,7 @@ public interface SpecificationPackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link de.fzi.power.specification.MeasuredFactor#getMetricType <em>Metric Type</em>}'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Metric Type</em>'.
      * @see de.fzi.power.specification.MeasuredFactor#getMetricType()
      * @see #getMeasuredFactor()
@@ -545,7 +545,7 @@ public interface SpecificationPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -561,7 +561,7 @@ public interface SpecificationPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     interface Literals {
@@ -569,7 +569,7 @@ public interface SpecificationPackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.specification.impl.PowerModelRepositoryImpl
          * <em>Power Model Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.PowerModelRepositoryImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelRepository()
          * @generated
@@ -579,7 +579,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Power Model Specifications</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS = eINSTANCE
@@ -589,7 +589,7 @@ public interface SpecificationPackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.specification.impl.PowerModelSpecificationImpl
          * <em>Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.PowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelSpecification()
          * @generated
@@ -599,7 +599,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Powermodelrepository</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = eINSTANCE
@@ -608,7 +608,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Consumption Factors</b></em>' containment
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = eINSTANCE
@@ -619,7 +619,7 @@ public interface SpecificationPackage extends EPackage {
          * {@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
          * <em>Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getResourcePowerModelSpecification()
          * @generated
@@ -631,7 +631,7 @@ public interface SpecificationPackage extends EPackage {
          * {@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
          * <em>Distribution Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDistributionPowerModelSpecification()
          * @generated
@@ -641,7 +641,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '{@link de.fzi.power.specification.impl.FixedFactorImpl
          * <em>Fixed Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.FixedFactorImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getFixedFactor()
          * @generated
@@ -652,7 +652,7 @@ public interface SpecificationPackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.specification.impl.ConsumptionFactorImpl <em>Consumption Factor</em>}
          * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.ConsumptionFactorImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getConsumptionFactor()
          * @generated
@@ -662,7 +662,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Power Model</b></em>' container reference
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference CONSUMPTION_FACTOR__POWER_MODEL = eINSTANCE.getConsumptionFactor_PowerModel();
@@ -671,7 +671,7 @@ public interface SpecificationPackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.specification.impl.MeasuredFactorImpl <em>Measured Factor</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.specification.impl.MeasuredFactorImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getMeasuredFactor()
          * @generated
@@ -681,7 +681,7 @@ public interface SpecificationPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Metric Type</b></em>' reference feature. <!--
          * begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference MEASURED_FACTOR__METRIC_TYPE = eINSTANCE.getMeasuredFactor_MetricType();

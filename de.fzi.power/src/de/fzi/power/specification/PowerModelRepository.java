@@ -3,6 +3,7 @@
 package de.fzi.power.specification;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -22,7 +23,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface PowerModelRepository extends Identifier {
+public interface PowerModelRepository extends EObject, Identifier {
     /**
      * Returns the value of the '<em><b>Power Model Specifications</b></em>' containment reference
      * list. The list contents are of type
@@ -35,7 +36,7 @@ public interface PowerModelRepository extends Identifier {
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Power Model Specifications</em>' containment reference list.
      * @see de.fzi.power.specification.SpecificationPackage#getPowerModelRepository_PowerModelSpecifications()
      * @see de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository

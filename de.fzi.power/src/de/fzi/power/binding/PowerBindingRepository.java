@@ -3,6 +3,7 @@
 package de.fzi.power.binding;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -21,7 +22,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface PowerBindingRepository extends Identifier {
+public interface PowerBindingRepository extends EObject, Identifier {
     /**
      * Returns the value of the '<em><b>Power Bindings</b></em>' containment reference list. The
      * list contents are of type {@link de.fzi.power.binding.PowerBinding}. It is bidirectional and
@@ -32,7 +33,7 @@ public interface PowerBindingRepository extends Identifier {
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Power Bindings</em>' containment reference list.
      * @see de.fzi.power.binding.BindingPackage#getPowerBindingRepository_PowerBindings()
      * @see de.fzi.power.binding.PowerBinding#getPowerBindingRepository

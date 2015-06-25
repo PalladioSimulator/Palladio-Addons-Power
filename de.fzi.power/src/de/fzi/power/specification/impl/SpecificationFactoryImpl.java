@@ -18,13 +18,13 @@ import de.fzi.power.specification.SpecificationPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SpecificationFactoryImpl extends EFactoryImpl implements SpecificationFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static SpecificationFactory init() {
@@ -45,7 +45,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public SpecificationFactoryImpl() {
@@ -54,7 +54,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -100,7 +100,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -122,7 +122,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -133,7 +133,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

@@ -17,13 +17,13 @@ import de.fzi.power.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static UtilFactory init() {
@@ -44,7 +44,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public UtilFactoryImpl() {
@@ -53,7 +53,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -69,7 +69,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -85,7 +85,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -101,7 +101,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -112,7 +112,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public Power createPowerFromString(final EDataType eDataType, final String initialValue) {
@@ -121,7 +121,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public String convertPowerToString(final EDataType eDataType, final Object instanceValue) {
@@ -130,7 +130,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -140,7 +140,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

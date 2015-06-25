@@ -53,7 +53,7 @@ PowerConsumingProvidingEntity {
      * The cached value of the '{@link #getNestedPowerConsumingEntities()
      * <em>Nested Power Consuming Entities</em>}' containment reference list. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getNestedPowerConsumingEntities()
      * @generated
      * @ordered
@@ -63,7 +63,7 @@ PowerConsumingProvidingEntity {
     /**
      * The cached value of the '{@link #getSuppliablePeakPower() <em>Suppliable Peak Power</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getSuppliablePeakPower()
      * @generated
      * @ordered
@@ -74,7 +74,7 @@ PowerConsumingProvidingEntity {
      * The cached value of the '{@link #getDistributionPowerAssemblyContext()
      * <em>Distribution Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @see #getDistributionPowerAssemblyContext()
      * @generated
      * @ordered
@@ -83,7 +83,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerConsumingProvidingEntityImpl() {
@@ -92,7 +92,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -102,7 +102,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -158,7 +158,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerInfrastructureModel(
@@ -170,7 +170,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -204,7 +204,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -230,7 +230,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public DistributionPowerBinding basicGetDistributionPowerAssemblyContext() {
@@ -239,7 +239,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +255,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -278,7 +278,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -296,7 +296,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -313,7 +313,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -337,7 +337,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -364,7 +364,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -389,7 +389,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -410,7 +410,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -436,7 +436,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -462,7 +462,7 @@ PowerConsumingProvidingEntity {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

@@ -20,7 +20,7 @@ import de.fzi.power.util.UtilPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see de.fzi.power.infrastructure.InfrastructureFactory
  * @model kind="package"
  * @generated
@@ -28,28 +28,28 @@ import de.fzi.power.util.UtilPackage;
 public interface InfrastructurePackage extends EPackage {
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNAME = "infrastructure";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_URI = "http://www.fzi.de/Power/Infrastructure/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     String eNS_PREFIX = "de.fzi.power";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     InfrastructurePackage eINSTANCE = de.fzi.power.infrastructure.impl.InfrastructurePackageImpl.init();
@@ -57,7 +57,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl
      * <em>Power Consuming Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingEntity()
      * @generated
@@ -67,7 +67,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -76,7 +76,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -85,7 +85,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -94,7 +94,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Consuming Entity</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -105,7 +105,7 @@ public interface InfrastructurePackage extends EPackage {
      * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl
      * <em>Power Consuming Providing Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingProvidingEntity()
      * @generated
@@ -115,7 +115,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -124,7 +124,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -133,7 +133,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -142,7 +142,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Nested Power Consuming Entities</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -151,7 +151,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Suppliable Peak Power</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -160,7 +160,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Infrastructure Model</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -169,7 +169,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Distribution Power Assembly Context</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -178,7 +178,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Consuming Providing Entity</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -188,7 +188,7 @@ public interface InfrastructurePackage extends EPackage {
      * The meta object id for the '
      * {@link de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
      * <em>Power Distribution Unit</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerDistributionUnit()
      * @generated
@@ -198,7 +198,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -207,7 +207,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -216,7 +216,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -225,7 +225,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Nested Power Consuming Entities</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -234,7 +234,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Suppliable Peak Power</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -243,7 +243,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Infrastructure Model</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -252,7 +252,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Distribution Power Assembly Context</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -261,7 +261,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Distribution Unit</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -270,7 +270,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The meta object id for the '{@link de.fzi.power.infrastructure.impl.PowerProvidingEntityImpl
      * <em>Power Providing Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerProvidingEntityImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerProvidingEntity()
      * @generated
@@ -280,7 +280,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -289,7 +289,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -298,7 +298,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Nested Power Consuming Entities</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -307,7 +307,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Suppliable Peak Power</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -316,7 +316,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Infrastructure Model</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -325,7 +325,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Distribution Power Assembly Context</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -334,7 +334,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Providing Entity</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -345,7 +345,7 @@ public interface InfrastructurePackage extends EPackage {
      * {@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl
      * <em>Mounted Power Distribution Unit</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getMountedPowerDistributionUnit()
      * @generated
@@ -355,7 +355,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -364,7 +364,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -373,7 +373,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -382,7 +382,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Nested Power Consuming Entities</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -391,7 +391,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Suppliable Peak Power</b></em>' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -400,7 +400,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Infrastructure Model</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -409,7 +409,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Distribution Power Assembly Context</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -418,7 +418,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Resource Container</b></em>' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -427,7 +427,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Mounted Power Distribution Unit</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -437,7 +437,7 @@ public interface InfrastructurePackage extends EPackage {
      * The meta object id for the '
      * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
      * <em>Power Consuming Resource</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingResource()
      * @generated
@@ -447,7 +447,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -456,7 +456,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -465,7 +465,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -474,7 +474,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Processing Resource Specification</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -483,7 +483,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Resource Power Assembly Context</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -492,7 +492,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Consuming Resource</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -503,7 +503,7 @@ public interface InfrastructurePackage extends EPackage {
      * {@link de.fzi.power.infrastructure.impl.PowerInfrastructureRepositoryImpl
      * <em>Power Infrastructure Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     * 
+     *
      * @see de.fzi.power.infrastructure.impl.PowerInfrastructureRepositoryImpl
      * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerInfrastructureRepository()
      * @generated
@@ -513,7 +513,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The feature id for the '<em><b>Contained Power Providing Entities</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -522,7 +522,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * The number of structural features of the '<em>Power Infrastructure Repository</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      * @ordered
      */
@@ -531,7 +531,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerDistributionUnit
      * <em>Power Distribution Unit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Distribution Unit</em>'.
      * @see de.fzi.power.infrastructure.PowerDistributionUnit
      * @generated
@@ -542,7 +542,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for class '
      * {@link de.fzi.power.infrastructure.PowerConsumingProvidingEntity
      * <em>Power Consuming Providing Entity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Consuming Providing Entity</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingProvidingEntity
      * @generated
@@ -552,7 +552,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerProvidingEntity
      * <em>Power Providing Entity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Providing Entity</em>'.
      * @see de.fzi.power.infrastructure.PowerProvidingEntity
      * @generated
@@ -563,7 +563,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link de.fzi.power.infrastructure.PowerProvidingEntity#getNestedPowerConsumingEntities
      * <em>Nested Power Consuming Entities</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '
      *         <em>Nested Power Consuming Entities</em>'.
      * @see de.fzi.power.infrastructure.PowerProvidingEntity#getNestedPowerConsumingEntities()
@@ -576,7 +576,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the attribute '
      * {@link de.fzi.power.infrastructure.PowerProvidingEntity#getSuppliablePeakPower
      * <em>Suppliable Peak Power</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the attribute '<em>Suppliable Peak Power</em>'.
      * @see de.fzi.power.infrastructure.PowerProvidingEntity#getSuppliablePeakPower()
      * @see #getPowerProvidingEntity()
@@ -588,7 +588,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link de.fzi.power.infrastructure.PowerProvidingEntity#getPowerInfrastructureModel
      * <em>Power Infrastructure Model</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the container reference '<em>Power Infrastructure Model</em>'.
      * @see de.fzi.power.infrastructure.PowerProvidingEntity#getPowerInfrastructureModel()
      * @see #getPowerProvidingEntity()
@@ -600,7 +600,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link de.fzi.power.infrastructure.PowerProvidingEntity#getDistributionPowerAssemblyContext
      * <em>Distribution Power Assembly Context</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Distribution Power Assembly Context</em>'.
      * @see de.fzi.power.infrastructure.PowerProvidingEntity#getDistributionPowerAssemblyContext()
      * @see #getPowerProvidingEntity()
@@ -611,7 +611,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerConsumingEntity
      * <em>Power Consuming Entity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Consuming Entity</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingEntity
      * @generated
@@ -622,7 +622,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the container reference '
      * {@link de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity
      * <em>Power Providing Entity</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the container reference '<em>Power Providing Entity</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity()
      * @see #getPowerConsumingEntity()
@@ -634,7 +634,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for class '
      * {@link de.fzi.power.infrastructure.MountedPowerDistributionUnit
      * <em>Mounted Power Distribution Unit</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Mounted Power Distribution Unit</em>'.
      * @see de.fzi.power.infrastructure.MountedPowerDistributionUnit
      * @generated
@@ -645,7 +645,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer
      * <em>Resource Container</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Resource Container</em>'.
      * @see de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer()
      * @see #getMountedPowerDistributionUnit()
@@ -656,7 +656,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerConsumingResource
      * <em>Power Consuming Resource</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Consuming Resource</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingResource
      * @generated
@@ -667,7 +667,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification
      * <em>Processing Resource Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Processing Resource Specification</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification()
      * @see #getPowerConsumingResource()
@@ -679,7 +679,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the reference '
      * {@link de.fzi.power.infrastructure.PowerConsumingResource#getResourcePowerAssemblyContext
      * <em>Resource Power Assembly Context</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the reference '<em>Resource Power Assembly Context</em>'.
      * @see de.fzi.power.infrastructure.PowerConsumingResource#getResourcePowerAssemblyContext()
      * @see #getPowerConsumingResource()
@@ -691,7 +691,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for class '
      * {@link de.fzi.power.infrastructure.PowerInfrastructureRepository
      * <em>Power Infrastructure Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for class '<em>Power Infrastructure Repository</em>'.
      * @see de.fzi.power.infrastructure.PowerInfrastructureRepository
      * @generated
@@ -702,7 +702,7 @@ public interface InfrastructurePackage extends EPackage {
      * Returns the meta object for the containment reference list '
      * {@link de.fzi.power.infrastructure.PowerInfrastructureRepository#getContainedPowerProvidingEntities
      * <em>Contained Power Providing Entities</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @return the meta object for the containment reference list '
      *         <em>Contained Power Providing Entities</em>'.
      * @see de.fzi.power.infrastructure.PowerInfrastructureRepository#getContainedPowerProvidingEntities()
@@ -714,7 +714,7 @@ public interface InfrastructurePackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -730,7 +730,7 @@ public interface InfrastructurePackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     interface Literals {
@@ -738,7 +738,7 @@ public interface InfrastructurePackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
          * <em>Power Distribution Unit</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerDistributionUnit()
          * @generated
@@ -750,7 +750,7 @@ public interface InfrastructurePackage extends EPackage {
          * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl
          * <em>Power Consuming Providing Entity</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingProvidingEntity()
          * @generated
@@ -761,7 +761,7 @@ public interface InfrastructurePackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.infrastructure.impl.PowerProvidingEntityImpl
          * <em>Power Providing Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerProvidingEntityImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerProvidingEntity()
          * @generated
@@ -771,7 +771,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Nested Power Consuming Entities</b></em>'
          * containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES = eINSTANCE
@@ -780,7 +780,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Suppliable Peak Power</b></em>' attribute
          * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EAttribute POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER = eINSTANCE
@@ -789,7 +789,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Power Infrastructure Model</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL = eINSTANCE
@@ -798,7 +798,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Distribution Power Assembly Context</b></em>'
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT = eINSTANCE
@@ -808,7 +808,7 @@ public interface InfrastructurePackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl
          * <em>Power Consuming Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingEntity()
          * @generated
@@ -818,7 +818,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Power Providing Entity</b></em>' container
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY = eINSTANCE
@@ -829,7 +829,7 @@ public interface InfrastructurePackage extends EPackage {
          * {@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl
          * <em>Mounted Power Distribution Unit</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getMountedPowerDistributionUnit()
          * @generated
@@ -839,7 +839,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Resource Container</b></em>' reference feature.
          * <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER = eINSTANCE
@@ -849,7 +849,7 @@ public interface InfrastructurePackage extends EPackage {
          * The meta object literal for the '
          * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
          * <em>Power Consuming Resource</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingResource()
          * @generated
@@ -859,7 +859,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Processing Resource Specification</b></em>'
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = eINSTANCE
@@ -868,7 +868,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Resource Power Assembly Context</b></em>'
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT = eINSTANCE
@@ -879,7 +879,7 @@ public interface InfrastructurePackage extends EPackage {
          * {@link de.fzi.power.infrastructure.impl.PowerInfrastructureRepositoryImpl
          * <em>Power Infrastructure Repository</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         * 
+         *
          * @see de.fzi.power.infrastructure.impl.PowerInfrastructureRepositoryImpl
          * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerInfrastructureRepository()
          * @generated
@@ -889,7 +889,7 @@ public interface InfrastructurePackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Contained Power Providing Entities</b></em>'
          * containment reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         * 
+         *
          * @generated
          */
         EReference POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES = eINSTANCE

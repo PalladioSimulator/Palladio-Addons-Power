@@ -39,7 +39,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
     /**
      * The cached value of the '{@link #getFixedFactorValues() <em>Fixed Factor Values</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getFixedFactorValues()
      * @generated
      * @ordered
@@ -48,7 +48,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerBindingImpl() {
@@ -57,7 +57,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,7 +67,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -80,7 +80,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerBindingRepository(final PowerBindingRepository newPowerBindingRepository,
@@ -92,7 +92,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -163,7 +163,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -181,7 +181,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -198,7 +198,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -215,7 +215,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -236,7 +236,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -255,7 +255,7 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

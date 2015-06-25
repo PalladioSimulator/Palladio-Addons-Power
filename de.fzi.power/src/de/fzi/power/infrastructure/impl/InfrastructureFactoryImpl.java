@@ -17,13 +17,13 @@ import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructureFactoryImpl extends EFactoryImpl implements InfrastructureFactory {
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public static InfrastructureFactory init() {
@@ -44,7 +44,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public InfrastructureFactoryImpl() {
@@ -53,7 +53,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -86,7 +86,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -97,7 +97,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -108,7 +108,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -119,7 +119,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -129,7 +129,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @deprecated
      * @generated
      */

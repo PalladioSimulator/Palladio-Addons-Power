@@ -33,7 +33,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
     /**
      * The cached value of the '{@link #getPowerBindings() <em>Power Bindings</em>}' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getPowerBindings()
      * @generated
      * @ordered
@@ -42,7 +42,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerBindingRepositoryImpl() {
@@ -51,7 +51,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -61,7 +61,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -77,7 +77,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -95,7 +95,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -111,7 +111,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -144,7 +144,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -160,7 +160,7 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

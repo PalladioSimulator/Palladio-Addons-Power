@@ -28,11 +28,11 @@ import de.fzi.power.infrastructure.util.InfrastructureAdapterFactory;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructureItemProviderAdapterFactory extends InfrastructureAdapterFactory implements
-ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+        ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -52,14 +52,14 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public InfrastructureItemProviderAdapterFactory() {
@@ -74,7 +74,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.infrastructure.PowerDistributionUnit} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerDistributionUnitItemProvider powerDistributionUnitItemProvider;
@@ -87,7 +87,8 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
      */
     @Override
     public Adapter createPowerDistributionUnitAdapter() {
-        if (this.powerDistributionUnitItemProvider == null) {
+        if (this.powerDistributionUnitItemProvider == null)
+        {
             this.powerDistributionUnitItemProvider = new PowerDistributionUnitItemProvider(this);
         }
 
@@ -107,12 +108,13 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
      * This creates an adapter for a
      * {@link de.fzi.power.infrastructure.MountedPowerDistributionUnit}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createMountedPowerDistributionUnitAdapter() {
-        if (this.mountedPowerDistributionUnitItemProvider == null) {
+        if (this.mountedPowerDistributionUnitItemProvider == null)
+        {
             this.mountedPowerDistributionUnitItemProvider = new MountedPowerDistributionUnitItemProvider(this);
         }
 
@@ -123,7 +125,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.infrastructure.PowerConsumingResource} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerConsumingResourceItemProvider powerConsumingResourceItemProvider;
@@ -131,12 +133,13 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This creates an adapter for a {@link de.fzi.power.infrastructure.PowerConsumingResource}.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createPowerConsumingResourceAdapter() {
-        if (this.powerConsumingResourceItemProvider == null) {
+        if (this.powerConsumingResourceItemProvider == null)
+        {
             this.powerConsumingResourceItemProvider = new PowerConsumingResourceItemProvider(this);
         }
 
@@ -156,12 +159,13 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
      * This creates an adapter for a
      * {@link de.fzi.power.infrastructure.PowerInfrastructureRepository}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Adapter createPowerInfrastructureRepositoryAdapter() {
-        if (this.powerInfrastructureRepositoryItemProvider == null) {
+        if (this.powerInfrastructureRepositoryItemProvider == null)
+        {
             this.powerInfrastructureRepositoryItemProvider = new PowerInfrastructureRepositoryItemProvider(this);
         }
 
@@ -171,7 +175,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -182,7 +186,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -192,7 +196,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -213,14 +217,16 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type)) {
+        if (this.isFactoryForType(type))
+        {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
+            {
                 return adapter;
             }
         }
@@ -230,7 +236,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -240,7 +246,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -258,7 +264,8 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null) {
+        if (this.parentAdapterFactory != null)
+        {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
@@ -266,7 +273,7 @@ ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

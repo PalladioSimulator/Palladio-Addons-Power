@@ -30,7 +30,7 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class ConsumptionFactorImpl extends EntityImpl implements ConsumptionFactor {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected ConsumptionFactorImpl() {
@@ -39,7 +39,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -49,7 +49,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerModel(final PowerModelSpecification newPowerModel, NotificationChain msgs) {
@@ -73,7 +73,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -107,7 +107,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -125,7 +125,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -141,7 +141,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -158,7 +158,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -173,7 +173,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -189,7 +189,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -205,7 +205,7 @@ public abstract class ConsumptionFactorImpl extends EntityImpl implements Consum
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

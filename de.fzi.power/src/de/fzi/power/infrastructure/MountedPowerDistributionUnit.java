@@ -2,17 +2,15 @@
  */
 package de.fzi.power.infrastructure;
 
-import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceContainer;
-
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Mounted Power Distribution Unit</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Mounted Power Distribution Unit</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer <em>Resource Container</em>}</li>
+ * <li>{@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer <em>
+ * Resource Container</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +20,32 @@ import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceContainer;
  */
 public interface MountedPowerDistributionUnit extends PowerDistributionUnit {
     /**
-     * Returns the value of the '<em><b>Resource Container</b></em>' reference.
-     * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Resource Container</b></em>' reference. <!-- begin-user-doc
+     * -->
      * <p>
-     * If the meaning of the '<em>Resource Container</em>' reference isn't clear,
-     * there really should be more of a description here...
+     * If the meaning of the '<em>Resource Container</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
+     *
      * @return the value of the '<em>Resource Container</em>' reference.
-     * @see #setResourceContainer(ResourceContainer)
+     * @see #setResourceContainer(org.palladiosimulator.pcm.resourceenvironment.ResourceContainer)
      * @see de.fzi.power.infrastructure.InfrastructurePackage#getMountedPowerDistributionUnit_ResourceContainer()
      * @model required="true" ordered="false"
      * @generated
      */
-    ResourceContainer getResourceContainer();
+    org.palladiosimulator.pcm.resourceenvironment.ResourceContainer getResourceContainer();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer <em>Resource Container</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Resource Container</em>' reference.
+     * Sets the value of the '
+     * {@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer
+     * <em>Resource Container</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Resource Container</em>' reference.
      * @see #getResourceContainer()
      * @generated
      */
-    void setResourceContainer(ResourceContainer value);
+    void setResourceContainer(org.palladiosimulator.pcm.resourceenvironment.ResourceContainer value);
 
 } // MountedPowerDistributionUnit

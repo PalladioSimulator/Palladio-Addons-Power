@@ -13,14 +13,14 @@ import de.fzi.power.infrastructure.InfrastructurePackage;
 /**
  * This class contains helper methods to serialize and deserialize XML documents <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructureXMLProcessor extends XMLProcessor {
 
     /**
      * Public constructor to instantiate the helper. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public InfrastructureXMLProcessor() {
@@ -31,7 +31,7 @@ public class InfrastructureXMLProcessor extends XMLProcessor {
     /**
      * Register for "*" and "xml" file extensions the InfrastructureResourceFactoryImpl factory.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

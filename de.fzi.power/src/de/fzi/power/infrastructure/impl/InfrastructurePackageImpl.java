@@ -27,60 +27,58 @@ import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
-import de.uka.ipd.sdq.pcm.PcmPackage;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceenvironmentPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class InfrastructurePackageImpl extends EPackageImpl implements InfrastructurePackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerDistributionUnitEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerConsumingProvidingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerProvidingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerConsumingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass mountedPowerDistributionUnitEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerConsumingResourceEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private EClass powerInfrastructureRepositoryEClass = null;
@@ -93,7 +91,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.infrastructure.InfrastructurePackage#eNS_URI
      * @see #init()
@@ -105,7 +103,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private static boolean isInited = false;
@@ -118,7 +116,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
      * This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -140,7 +138,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        PcmPackage.eINSTANCE.eClass();
+        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
@@ -176,7 +174,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -186,7 +184,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -196,7 +194,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -206,7 +204,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -216,7 +214,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -226,7 +224,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -236,7 +234,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -246,7 +244,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -256,7 +254,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -266,7 +264,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -276,7 +274,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -286,7 +284,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -296,7 +294,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -306,7 +304,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -316,7 +314,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -326,7 +324,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -336,7 +334,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -346,7 +344,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isCreated = false;
@@ -354,7 +352,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void createPackageContents() {
@@ -395,7 +393,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     private boolean isInitialized = false;
@@ -403,7 +401,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public void initializePackageContents() {
@@ -423,8 +421,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
                 .getEPackage(ExperimentDataPackage.eNS_URI);
         final BindingPackage theBindingPackage = (BindingPackage) EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI);
-        final ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage) EPackage.Registry.INSTANCE
-                .getEPackage(ResourceenvironmentPackage.eNS_URI);
+        final org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage theResourceenvironmentPackage = (org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage) EPackage.Registry.INSTANCE
+                .getEPackage(org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.eNS_URI);
 
         // Create type parameters
 

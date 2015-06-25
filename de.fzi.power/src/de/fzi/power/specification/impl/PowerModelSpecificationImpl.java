@@ -39,7 +39,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
     /**
      * The cached value of the '{@link #getConsumptionFactors() <em>Consumption Factors</em>}'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @see #getConsumptionFactors()
      * @generated
      * @ordered
@@ -48,7 +48,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerModelSpecificationImpl() {
@@ -57,7 +57,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -67,7 +67,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -80,7 +80,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowermodelrepository(final PowerModelRepository newPowermodelrepository,
@@ -92,7 +92,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -143,7 +143,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -166,7 +166,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -184,7 +184,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -201,7 +201,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -218,7 +218,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -239,7 +239,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -258,7 +258,7 @@ public abstract class PowerModelSpecificationImpl extends EntityImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

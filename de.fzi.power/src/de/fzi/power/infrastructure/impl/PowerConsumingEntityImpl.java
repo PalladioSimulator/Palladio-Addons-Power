@@ -30,7 +30,7 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class PowerConsumingEntityImpl extends EntityImpl implements PowerConsumingEntity {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected PowerConsumingEntityImpl() {
@@ -39,7 +39,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -49,7 +49,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -62,7 +62,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public NotificationChain basicSetPowerProvidingEntity(final PowerProvidingEntity newPowerProvidingEntity,
@@ -74,7 +74,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -108,7 +108,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -142,7 +142,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -159,7 +159,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -174,7 +174,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -190,7 +190,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -206,7 +206,7 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override

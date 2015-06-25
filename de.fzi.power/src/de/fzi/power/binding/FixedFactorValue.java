@@ -5,6 +5,8 @@ package de.fzi.power.binding;
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
 
+import org.eclipse.emf.ecore.EObject;
+
 import de.fzi.power.specification.FixedFactor;
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -25,7 +27,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * @model
  * @generated
  */
-public interface FixedFactorValue extends Identifier {
+public interface FixedFactorValue extends EObject, Identifier {
     /**
      * Returns the value of the '<em><b>Bound Factor</b></em>' reference. <!-- begin-user-doc -->
      * <p>
@@ -33,7 +35,7 @@ public interface FixedFactorValue extends Identifier {
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Bound Factor</em>' reference.
      * @see #setBoundFactor(FixedFactor)
      * @see de.fzi.power.binding.BindingPackage#getFixedFactorValue_BoundFactor()
@@ -45,7 +47,7 @@ public interface FixedFactorValue extends Identifier {
     /**
      * Sets the value of the '{@link de.fzi.power.binding.FixedFactorValue#getBoundFactor
      * <em>Bound Factor</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Bound Factor</em>' reference.
      * @see #getBoundFactor()
@@ -60,7 +62,7 @@ public interface FixedFactorValue extends Identifier {
      * a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Value</em>' attribute.
      * @see #setValue(Measure)
      * @see de.fzi.power.binding.BindingPackage#getFixedFactorValue_Value()
@@ -73,7 +75,7 @@ public interface FixedFactorValue extends Identifier {
     /**
      * Sets the value of the '{@link de.fzi.power.binding.FixedFactorValue#getValue <em>Value</em>}'
      * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Value</em>' attribute.
      * @see #getValue()
@@ -91,7 +93,7 @@ public interface FixedFactorValue extends Identifier {
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * 
+     *
      * @return the value of the '<em>Power Binding</em>' container reference.
      * @see #setPowerBinding(PowerBinding)
      * @see de.fzi.power.binding.BindingPackage#getFixedFactorValue_PowerBinding()
@@ -104,7 +106,7 @@ public interface FixedFactorValue extends Identifier {
     /**
      * Sets the value of the '{@link de.fzi.power.binding.FixedFactorValue#getPowerBinding
      * <em>Power Binding</em>}' container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @param value
      *            the new value of the '<em>Power Binding</em>' container reference.
      * @see #getPowerBinding()
