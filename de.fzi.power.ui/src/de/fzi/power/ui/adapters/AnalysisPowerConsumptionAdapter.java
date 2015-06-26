@@ -36,6 +36,7 @@ import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
@@ -48,7 +49,6 @@ import de.fzi.power.interpreter.PowerModelUpdaterSwitch;
 import de.fzi.power.interpreter.calculators.ExtensibleCalculatorInstantiatorImpl;
 import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.fzi.power.interpreter.measureprovider.MeasureProviderHelper;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implements IPersistable, IPersistableElement,
         IPropertyListener {
