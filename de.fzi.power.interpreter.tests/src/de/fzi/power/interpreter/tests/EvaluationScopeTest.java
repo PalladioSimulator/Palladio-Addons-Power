@@ -37,6 +37,8 @@ import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
+import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentFactory;
 import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.pcmmeasuringpoint.PcmmeasuringpointFactory;
 
@@ -44,8 +46,6 @@ import de.fzi.power.interpreter.EvaluationScope;
 import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.fzi.power.interpreter.measureprovider.utilization.UtilizationFilterMeasureProvider;
 import de.fzi.power.interpreter.tests.utils.MockStateOfActiveResourceTupleDataSource;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ProcessingResourceSpecification;
-import de.uka.ipd.sdq.pcm.resourceenvironment.ResourceenvironmentFactory;
 
 public class EvaluationScopeTest {
 
