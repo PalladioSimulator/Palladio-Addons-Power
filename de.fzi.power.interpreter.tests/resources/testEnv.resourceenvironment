@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://sdq.ipd.uka.de/PalladioComponentModel/ResourceEnvironment/5.0" entityName="dc">
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.0" entityName="dc">
   <resourceContainer_ResourceEnvironment id="_QMPaQUWNEeSZH5zlL3RMGg" entityName="rack">
     <nestedResourceContainers__ResourceContainer id="_Rm_hAUWNEeSZH5zlL3RMGg" entityName="node1">
       <activeResourceSpecifications_ResourceContainer id="cpu1">
