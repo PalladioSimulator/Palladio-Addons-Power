@@ -81,6 +81,15 @@ public class AnalysisCumulativeEnergyConsumptionAdapter extends AbstractAdapter 
     }
     
     @Override
+	public boolean canAccept(IDataSource dataSource) {
+		if (null == dataSource || dataSource.getDataStream() == null) {
+			return false;
+		}
+		return dataSource.getDataStream().isCompatibleWith(ADAPTER_INPUT_METRIC);
+			
+	}
+    
+    @Override
     @SuppressWarnings("unchecked")
     public IDataStream<MeasuringValue> getDataStream() {
         IDataSource source = getDataSource();
