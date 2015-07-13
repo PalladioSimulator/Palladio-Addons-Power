@@ -109,7 +109,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.palladiosimulator.edp2"/>
       <import plugin="de.uka.ipd.sdq.identifier"/>
       <import plugin="org.palladiosimulator.metricspec"/>
-      <import plugin="de.uka.ipd.sdq.pcm"/>
       <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="de.uka.ipd.sdq.stoex"/>
       <import plugin="de.uka.ipd.sdq.units"/>
@@ -118,7 +117,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.palladiosimulator.edp2.edit"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
       <import plugin="org.palladiosimulator.metricspec.edit"/>
-      <import plugin="de.uka.ipd.sdq.pcm.edit"/>
       <import plugin="de.uka.ipd.sdq.probfunction.edit"/>
       <import plugin="de.uka.ipd.sdq.stoex.edit"/>
       <import plugin="de.uka.ipd.sdq.units.edit"/>
@@ -138,6 +136,8 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
       <import plugin="org.palladiosimulator.edp2.visualization"/>
       <import plugin="de.fzi.power"/>
+      <import plugin="org.palladiosimulator.pcm"/>
+      <import plugin="org.palladiosimulator.pcm.edit"/>
    </requires>
 
    <plugin
