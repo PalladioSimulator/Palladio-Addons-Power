@@ -39,14 +39,14 @@ import de.fzi.power.util.presentation.PowerEditorPlugin;
 /**
  * This is the action bar contributor for the Specification model editor. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
-public class SpecificationActionBarContributor extends EditingDomainActionBarContributor implements
-ISelectionChangedListener {
+public class SpecificationActionBarContributor extends EditingDomainActionBarContributor
+        implements ISelectionChangedListener {
     /**
      * This keeps track of the active editor. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IEditorPart activeEditorPart;
@@ -61,21 +61,16 @@ ISelectionChangedListener {
 
     /**
      * This action opens the Properties view. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IAction showPropertiesViewAction = new Action(
-            PowerEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item"))
-    {
+            PowerEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) {
         @Override
-        public void run()
-        {
-            try
-            {
+        public void run() {
+            try {
                 SpecificationActionBarContributor.this.getPage().showView("org.eclipse.ui.views.PropertySheet");
-            }
-            catch (final PartInitException exception)
-            {
+            } catch (final PartInitException exception) {
                 PowerEditorPlugin.INSTANCE.log(exception);
             }
         }
@@ -85,27 +80,22 @@ ISelectionChangedListener {
      * This action refreshes the viewer of the current editor if the editor implements
      * {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IAction refreshViewerAction = new Action(
-            PowerEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item"))
-    {
+            PowerEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) {
         @Override
-        public boolean isEnabled()
-        {
+        public boolean isEnabled() {
             return SpecificationActionBarContributor.this.activeEditorPart instanceof IViewerProvider;
         }
 
         @Override
-        public void run()
-        {
-            if (SpecificationActionBarContributor.this.activeEditorPart instanceof IViewerProvider)
-            {
+        public void run() {
+            if (SpecificationActionBarContributor.this.activeEditorPart instanceof IViewerProvider) {
                 final Viewer viewer = ((IViewerProvider) SpecificationActionBarContributor.this.activeEditorPart)
                         .getViewer();
-                if (viewer != null)
-                {
+                if (viewer != null) {
                     viewer.refresh();
                 }
             }
@@ -124,7 +114,7 @@ ISelectionChangedListener {
     /**
      * This is the menu manager into which menu contribution items should be added for CreateChild
      * actions. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IMenuManager createChildMenuManager;
@@ -133,7 +123,7 @@ ISelectionChangedListener {
      * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction}
      * corresponding to each descriptor generated for the current selection by the item provider.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<IAction> createSiblingActions;
@@ -141,14 +131,14 @@ ISelectionChangedListener {
     /**
      * This is the menu manager into which menu contribution items should be added for CreateSibling
      * actions. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected IMenuManager createSiblingMenuManager;
 
     /**
      * This creates an instance of the contributor. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     public SpecificationActionBarContributor() {
@@ -161,7 +151,7 @@ ISelectionChangedListener {
     /**
      * This adds Separators for editor additions to the tool bar. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -173,7 +163,7 @@ ISelectionChangedListener {
     /**
      * This adds to the menu bar a menu and some separators for editor additions, as well as the
      * sub-menus for object creation items. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -191,7 +181,8 @@ ISelectionChangedListener {
 
         // Prepare for CreateChild item addition or removal.
         //
-        this.createChildMenuManager = new MenuManager(PowerEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
+        this.createChildMenuManager = new MenuManager(
+                PowerEditorPlugin.INSTANCE.getString("_UI_CreateChild_menu_item"));
         submenuManager.insertBefore("additions", this.createChildMenuManager);
 
         // Prepare for CreateSibling item addition or removal.
@@ -202,12 +193,9 @@ ISelectionChangedListener {
 
         // Force an update because Eclipse hides empty menus now.
         //
-        submenuManager.addMenuListener
-        (new IMenuListener()
-        {
+        submenuManager.addMenuListener(new IMenuListener() {
             @Override
-            public void menuAboutToShow(final IMenuManager menuManager)
-            {
+            public void menuAboutToShow(final IMenuManager menuManager) {
                 menuManager.updateAll(true);
             }
         });
@@ -218,7 +206,7 @@ ISelectionChangedListener {
     /**
      * When the active editor changes, this remembers the change and registers with it as a
      * selection provider. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
@@ -228,25 +216,20 @@ ISelectionChangedListener {
 
         // Switch to the new selection provider.
         //
-        if (this.selectionProvider != null)
-        {
+        if (this.selectionProvider != null) {
             this.selectionProvider.removeSelectionChangedListener(this);
         }
-        if (part == null)
-        {
+        if (part == null) {
             this.selectionProvider = null;
-        }
-        else
-        {
+        } else {
             this.selectionProvider = part.getSite().getSelectionProvider();
             this.selectionProvider.addSelectionChangedListener(this);
 
             // Fake a selection changed event to update the menus.
             //
-            if (this.selectionProvider.getSelection() != null)
-            {
-                this.selectionChanged(new SelectionChangedEvent(this.selectionProvider, this.selectionProvider
-                        .getSelection()));
+            if (this.selectionProvider.getSelection() != null) {
+                this.selectionChanged(
+                        new SelectionChangedEvent(this.selectionProvider, this.selectionProvider.getSelection()));
             }
         }
     }
@@ -263,12 +246,10 @@ ISelectionChangedListener {
     public void selectionChanged(final SelectionChangedEvent event) {
         // Remove any menu items for old selection.
         //
-        if (this.createChildMenuManager != null)
-        {
+        if (this.createChildMenuManager != null) {
             this.depopulateManager(this.createChildMenuManager, this.createChildActions);
         }
-        if (this.createSiblingMenuManager != null)
-        {
+        if (this.createSiblingMenuManager != null) {
             this.depopulateManager(this.createSiblingMenuManager, this.createSiblingActions);
         }
 
@@ -278,8 +259,7 @@ ISelectionChangedListener {
         Collection<?> newSiblingDescriptors = null;
 
         final ISelection selection = event.getSelection();
-        if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1)
-        {
+        if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
             final Object object = ((IStructuredSelection) selection).getFirstElement();
 
             final EditingDomain domain = ((IEditingDomainProvider) this.activeEditorPart).getEditingDomain();
@@ -293,13 +273,11 @@ ISelectionChangedListener {
         this.createChildActions = this.generateCreateChildActions(newChildDescriptors, selection);
         this.createSiblingActions = this.generateCreateSiblingActions(newSiblingDescriptors, selection);
 
-        if (this.createChildMenuManager != null)
-        {
+        if (this.createChildMenuManager != null) {
             this.populateManager(this.createChildMenuManager, this.createChildActions, null);
             this.createChildMenuManager.update(true);
         }
-        if (this.createSiblingMenuManager != null)
-        {
+        if (this.createSiblingMenuManager != null) {
             this.populateManager(this.createSiblingMenuManager, this.createSiblingActions, null);
             this.createSiblingMenuManager.update(true);
         }
@@ -309,15 +287,14 @@ ISelectionChangedListener {
      * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in
      * <code>descriptors</code>, and returns the collection of these actions. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
-    protected Collection<IAction> generateCreateChildActions(final Collection<?> descriptors, final ISelection selection) {
+    protected Collection<IAction> generateCreateChildActions(final Collection<?> descriptors,
+            final ISelection selection) {
         final Collection<IAction> actions = new ArrayList<IAction>();
-        if (descriptors != null)
-        {
-            for (final Object descriptor : descriptors)
-            {
+        if (descriptors != null) {
+            for (final Object descriptor : descriptors) {
                 actions.add(new CreateChildAction(this.activeEditorPart, selection, descriptor));
             }
         }
@@ -328,16 +305,14 @@ ISelectionChangedListener {
      * This generates a {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} for each object
      * in <code>descriptors</code>, and returns the collection of these actions. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected Collection<IAction> generateCreateSiblingActions(final Collection<?> descriptors,
             final ISelection selection) {
         final Collection<IAction> actions = new ArrayList<IAction>();
-        if (descriptors != null)
-        {
-            for (final Object descriptor : descriptors)
-            {
+        if (descriptors != null) {
+            for (final Object descriptor : descriptors) {
                 actions.add(new CreateSiblingAction(this.activeEditorPart, selection, descriptor));
             }
         }
@@ -351,21 +326,16 @@ ISelectionChangedListener {
      * by inserting them before the specified contribution item <code>contributionID</code>. If
      * <code>contributionID</code> is <code>null</code>, they are simply added. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void populateManager(final IContributionManager manager, final Collection<? extends IAction> actions,
             final String contributionID) {
-        if (actions != null)
-        {
-            for (final IAction action : actions)
-            {
-                if (contributionID != null)
-                {
+        if (actions != null) {
+            for (final IAction action : actions) {
+                if (contributionID != null) {
                     manager.insertBefore(contributionID, action);
-                }
-                else
-                {
+                } else {
                     manager.add(action);
                 }
             }
@@ -377,29 +347,25 @@ ISelectionChangedListener {
      * {@link org.eclipse.jface.action.ActionContributionItem}s based on the
      * {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     protected void depopulateManager(final IContributionManager manager, final Collection<? extends IAction> actions) {
-        if (actions != null)
-        {
+        if (actions != null) {
             final IContributionItem[] items = manager.getItems();
             for (final IContributionItem item : items) {
                 // Look into SubContributionItems
                 //
                 IContributionItem contributionItem = item;
-                while (contributionItem instanceof SubContributionItem)
-                {
+                while (contributionItem instanceof SubContributionItem) {
                     contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
                 }
 
                 // Delete the ActionContributionItems with matching action.
                 //
-                if (contributionItem instanceof ActionContributionItem)
-                {
+                if (contributionItem instanceof ActionContributionItem) {
                     final IAction action = ((ActionContributionItem) contributionItem).getAction();
-                    if (actions.contains(action))
-                    {
+                    if (actions.contains(action)) {
                         manager.remove(contributionItem);
                     }
                 }
@@ -430,7 +396,7 @@ ISelectionChangedListener {
     /**
      * This inserts global actions before the "additions-end" separator. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * 
+     *
      * @generated
      */
     @Override
