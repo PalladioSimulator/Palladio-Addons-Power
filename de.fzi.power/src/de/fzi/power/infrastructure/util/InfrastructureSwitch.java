@@ -42,8 +42,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
      * @generated
      */
     public InfrastructureSwitch() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = InfrastructurePackage.eINSTANCE;
         }
     }
@@ -52,7 +51,8 @@ public class InfrastructureSwitch<T> extends Switch<T> {
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
-     * @parameter ePackage the package in question.
+     * @param ePackage
+     *            the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
@@ -70,8 +70,7 @@ public class InfrastructureSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID)
-        {
+        switch (classifierID) {
         case InfrastructurePackage.POWER_DISTRIBUTION_UNIT: {
             final PowerDistributionUnit powerDistributionUnit = (PowerDistributionUnit) theEObject;
             T result = this.casePowerDistributionUnit(powerDistributionUnit);

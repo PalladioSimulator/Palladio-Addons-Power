@@ -28,16 +28,13 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
      * @generated
      */
     public static SpecificationFactory init() {
-        try
-        {
+        try {
             final SpecificationFactory theSpecificationFactory = (SpecificationFactory) EPackage.Registry.INSTANCE
                     .getEFactory(SpecificationPackage.eNS_URI);
-            if (theSpecificationFactory != null)
-            {
+            if (theSpecificationFactory != null) {
                 return theSpecificationFactory;
             }
-        } catch (final Exception exception)
-        {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new SpecificationFactoryImpl();
@@ -59,8 +56,7 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID())
-        {
+        switch (eClass.getClassifierID()) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY:
             return this.createPowerModelRepository();
         case SpecificationPackage.RESOURCE_POWER_MODEL_SPECIFICATION:

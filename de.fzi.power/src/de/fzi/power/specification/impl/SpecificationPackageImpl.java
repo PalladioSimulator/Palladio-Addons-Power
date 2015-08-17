@@ -10,6 +10,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
+import org.palladiosimulator.pcm.PcmPackage;
 
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.impl.BindingPackageImpl;
@@ -138,19 +139,19 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
         final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
+                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
         final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(InfrastructurePackage.eNS_URI)
-                : InfrastructurePackage.eINSTANCE);
+                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI)
+                        : InfrastructurePackage.eINSTANCE);
 
         // Create package meta-data objects
         theSpecificationPackage.createPackageContents();
@@ -388,8 +389,7 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.powerModelRepositoryEClass, PowerModelRepository.class, "PowerModelRepository",
-                !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getPowerModelRepository_PowerModelSpecifications(), this.getPowerModelSpecification(),
                 this.getPowerModelSpecification_Powermodelrepository(), "powerModelSpecifications", null, 0, -1,
                 PowerModelRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
@@ -416,19 +416,18 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
                 IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.consumptionFactorEClass, ConsumptionFactor.class, "ConsumptionFactor", IS_ABSTRACT,
-                !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getConsumptionFactor_PowerModel(), this.getPowerModelSpecification(),
-                this.getPowerModelSpecification_ConsumptionFactors(), "powerModel", null, 0, 1,
-                ConsumptionFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
-                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                this.getPowerModelSpecification_ConsumptionFactors(), "powerModel", null, 0, 1, ConsumptionFactor.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+                IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.measuredFactorEClass, MeasuredFactor.class, "MeasuredFactor", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getMeasuredFactor_MetricType(),
-                theMetricSpecPackage.getNumericalBaseMetricDescription(), null,
-                "metricType", null, 1, 1, MeasuredFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                theMetricSpecPackage.getNumericalBaseMetricDescription(), null, "metricType", null, 1, 1,
+                MeasuredFactor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         this.createResource(eNS_URI);

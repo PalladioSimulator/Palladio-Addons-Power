@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.pcm.PcmPackage;
+import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.impl.BindingPackageImpl;
@@ -138,19 +140,19 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
         final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(SpecificationPackage.eNS_URI)
-                : SpecificationPackage.eINSTANCE);
+                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
+                        : SpecificationPackage.eINSTANCE);
         final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
+                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
 
         // Create package meta-data objects
         theInfrastructurePackage.createPackageContents();
@@ -421,8 +423,8 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
                 .getEPackage(ExperimentDataPackage.eNS_URI);
         final BindingPackage theBindingPackage = (BindingPackage) EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI);
-        final org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage theResourceenvironmentPackage = (org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage) EPackage.Registry.INSTANCE
-                .getEPackage(org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage.eNS_URI);
+        final ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage) EPackage.Registry.INSTANCE
+                .getEPackage(ResourceenvironmentPackage.eNS_URI);
 
         // Create type parameters
 
@@ -439,17 +441,14 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.powerDistributionUnitEClass, PowerDistributionUnit.class, "PowerDistributionUnit",
-                !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.powerConsumingProvidingEntityEClass, PowerConsumingProvidingEntity.class,
                 "PowerConsumingProvidingEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.powerProvidingEntityEClass, PowerProvidingEntity.class, "PowerProvidingEntity",
-                IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerProvidingEntity_NestedPowerConsumingEntities(),
-                this.getPowerConsumingEntity(),
+                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getPowerProvidingEntity_NestedPowerConsumingEntities(), this.getPowerConsumingEntity(),
                 this.getPowerConsumingEntity_PowerProvidingEntity(), "nestedPowerConsumingEntities", null, 0, -1,
                 PowerProvidingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -472,8 +471,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.powerConsumingEntityEClass, PowerConsumingEntity.class, "PowerConsumingEntity",
-                IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getPowerConsumingEntity_PowerProvidingEntity(), this.getPowerProvidingEntity(),
                 this.getPowerProvidingEntity_NestedPowerConsumingEntities(), "powerProvidingEntity", null, 0, 1,
                 PowerConsumingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
@@ -487,8 +485,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
         this.initEClass(this.powerConsumingResourceEClass, PowerConsumingResource.class, "PowerConsumingResource",
-                !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getPowerConsumingResource_ProcessingResourceSpecification(),
                 theResourceenvironmentPackage.getProcessingResourceSpecification(), null,
                 "processingResourceSpecification", null, 1, 1, PowerConsumingResource.class, !IS_TRANSIENT,

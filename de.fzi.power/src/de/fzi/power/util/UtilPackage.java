@@ -195,8 +195,8 @@ public interface UtilPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '{@link de.fzi.power.util.impl.EntityImpl
-         * <em>Entity</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the '{@link de.fzi.power.util.impl.EntityImpl <em>Entity</em>
+         * }' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.util.impl.EntityImpl
          * @see de.fzi.power.util.impl.UtilPackageImpl#getEntity()

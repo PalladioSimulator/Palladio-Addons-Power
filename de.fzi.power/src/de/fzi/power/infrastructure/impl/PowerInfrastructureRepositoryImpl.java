@@ -8,9 +8,8 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
@@ -21,28 +20,16 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
  * <em><b>Power Infrastructure Repository</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link de.fzi.power.infrastructure.impl.PowerInfrastructureRepositoryImpl#getContainedPowerProvidingEntities
  * <em>Contained Power Providing Entities</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class PowerInfrastructureRepositoryImpl extends MinimalEObjectImpl.Container implements
-PowerInfrastructureRepository {
-    /**
-     * The cached value of the '{@link #getContainedPowerProvidingEntities()
-     * <em>Contained Power Providing Entities</em>}' containment reference list. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getContainedPowerProvidingEntities()
-     * @generated
-     * @ordered
-     */
-    protected EList<PowerProvidingEntity> containedPowerProvidingEntities;
-
+public class PowerInfrastructureRepositoryImpl extends CDOObjectImpl implements PowerInfrastructureRepository {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -68,15 +55,22 @@ PowerInfrastructureRepository {
      * @generated
      */
     @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
     public EList<PowerProvidingEntity> getContainedPowerProvidingEntities() {
-        if (this.containedPowerProvidingEntities == null)
-        {
-            this.containedPowerProvidingEntities = new EObjectContainmentWithInverseEList<PowerProvidingEntity>(
-                    PowerProvidingEntity.class, this,
-                    InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
-                    InfrastructurePackage.POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL);
-        }
-        return this.containedPowerProvidingEntities;
+        return (EList<PowerProvidingEntity>) this.eDynamicGet(
+                InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
+                InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
+                true, true);
     }
 
     /**
@@ -88,12 +82,10 @@ PowerInfrastructureRepository {
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getContainedPowerProvidingEntities())
-                    .basicAdd(
-                            otherEnd, msgs);
+                    .basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
@@ -106,8 +98,7 @@ PowerInfrastructureRepository {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             return ((InternalEList<?>) this.getContainedPowerProvidingEntities()).basicRemove(otherEnd, msgs);
         }
@@ -121,8 +112,7 @@ PowerInfrastructureRepository {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             return this.getContainedPowerProvidingEntities();
         }
@@ -137,8 +127,7 @@ PowerInfrastructureRepository {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             this.getContainedPowerProvidingEntities().clear();
             this.getContainedPowerProvidingEntities().addAll((Collection<? extends PowerProvidingEntity>) newValue);
@@ -154,8 +143,7 @@ PowerInfrastructureRepository {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             this.getContainedPowerProvidingEntities().clear();
             return;
@@ -170,10 +158,9 @@ PowerInfrastructureRepository {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
-            return this.containedPowerProvidingEntities != null && !this.containedPowerProvidingEntities.isEmpty();
+            return !this.getContainedPowerProvidingEntities().isEmpty();
         }
         return super.eIsSet(featureID);
     }

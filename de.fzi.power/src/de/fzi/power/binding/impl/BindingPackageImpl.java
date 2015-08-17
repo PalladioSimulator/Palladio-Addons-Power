@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.pcm.PcmPackage;
 
 import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.BindingPackage;
@@ -113,9 +114,9 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         }
 
         // Obtain or create and register package
-        final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE
-                .get(eNS_URI)
-                : new BindingPackageImpl());
+        final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
+                .get(eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+                        : new BindingPackageImpl());
 
         isInited = true;
 
@@ -123,20 +124,20 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
-                .getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+                .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
         final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(SpecificationPackage.eNS_URI)
-                : SpecificationPackage.eINSTANCE);
+                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
+                        : SpecificationPackage.eINSTANCE);
         final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(InfrastructurePackage.eNS_URI)
-                : InfrastructurePackage.eINSTANCE);
+                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI)
+                        : InfrastructurePackage.eINSTANCE);
 
         // Create package meta-data objects
         theBindingPackage.createPackageContents();
@@ -335,7 +336,8 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
                 RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION);
 
         this.distributionPowerBindingEClass = this.createEClass(DISTRIBUTION_POWER_BINDING);
-        this.createEReference(this.distributionPowerBindingEClass, DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL);
+        this.createEReference(this.distributionPowerBindingEClass,
+                DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL);
     }
 
     /**
@@ -384,8 +386,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.fixedFactorValueEClass, FixedFactorValue.class, "FixedFactorValue", !IS_ABSTRACT,
-                !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getFixedFactorValue_BoundFactor(), theSpecificationPackage.getFixedFactor(), null,
                 "boundFactor", null, 1, 1, FixedFactorValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -395,16 +396,14 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         g2 = this.createEGenericType(theUtilPackage.getPower());
         g1.getETypeArguments().add(g2);
         this.initEAttribute(this.getFixedFactorValue_Value(), g1, "value", null, 0, 1, FixedFactorValue.class,
-                !IS_TRANSIENT,
-                !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEReference(this.getFixedFactorValue_PowerBinding(), this.getPowerBinding(),
                 this.getPowerBinding_FixedFactorValues(), "powerBinding", null, 0, 1, FixedFactorValue.class,
                 !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.powerBindingRepositoryEClass, PowerBindingRepository.class, "PowerBindingRepository",
-                !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getPowerBindingRepository_PowerBindings(), this.getPowerBinding(),
                 this.getPowerBinding_PowerBindingRepository(), "powerBindings", null, 0, -1,
                 PowerBindingRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
@@ -422,15 +421,13 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
                 IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.resourcePowerBindingEClass, ResourcePowerBinding.class, "ResourcePowerBinding",
-                !IS_ABSTRACT,
-                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getResourcePowerBinding_ResourcePowerModelSpecification(),
                 theSpecificationPackage.getResourcePowerModelSpecification(), null, "resourcePowerModelSpecification",
                 null, 1, 1, ResourcePowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.distributionPowerBindingEClass, DistributionPowerBinding.class,
-                "DistributionPowerBinding",
+        this.initEClass(this.distributionPowerBindingEClass, DistributionPowerBinding.class, "DistributionPowerBinding",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getDistributionPowerBinding_DistributionPowerModel(),
                 theSpecificationPackage.getDistributionPowerModelSpecification(), null, "distributionPowerModel", null,

@@ -5,16 +5,16 @@ package de.fzi.power.binding;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Distribution Power Binding</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>Distribution Power Binding</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel <em>Distribution Power Model</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel
+ * <em>Distribution Power Model</em>}</li>
+ * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getDistributionPowerBinding()
  * @model
@@ -22,13 +22,14 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  */
 public interface DistributionPowerBinding extends PowerBinding {
     /**
-     * Returns the value of the '<em><b>Distribution Power Model</b></em>' reference.
-     * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Distribution Power Model</b></em>' reference. <!--
+     * begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Distribution Power Model</em>' reference isn't clear,
-     * there really should be more of a description here...
+     * If the meaning of the '<em>Distribution Power Model</em>' reference isn't clear, there really
+     * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
+     *
      * @return the value of the '<em>Distribution Power Model</em>' reference.
      * @see #setDistributionPowerModel(DistributionPowerModelSpecification)
      * @see de.fzi.power.binding.BindingPackage#getDistributionPowerBinding_DistributionPowerModel()
@@ -38,10 +39,12 @@ public interface DistributionPowerBinding extends PowerBinding {
     DistributionPowerModelSpecification getDistributionPowerModel();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel <em>Distribution Power Model</em>}' reference.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Distribution Power Model</em>' reference.
+     * Sets the value of the '
+     * {@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel
+     * <em>Distribution Power Model</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Distribution Power Model</em>' reference.
      * @see #getDistributionPowerModel()
      * @generated
      */

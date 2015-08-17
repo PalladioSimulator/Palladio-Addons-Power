@@ -27,16 +27,13 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      * @generated
      */
     public static UtilFactory init() {
-        try
-        {
+        try {
             final UtilFactory theUtilFactory = (UtilFactory) EPackage.Registry.INSTANCE
                     .getEFactory(UtilPackage.eNS_URI);
-            if (theUtilFactory != null)
-            {
+            if (theUtilFactory != null) {
                 return theUtilFactory;
             }
-        } catch (final Exception exception)
-        {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new UtilFactoryImpl();
@@ -58,8 +55,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID())
-        {
+        switch (eClass.getClassifierID()) {
         case UtilPackage.NAMED_ELEMENT:
             return this.createNamedElement();
         default:
@@ -74,8 +70,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      */
     @Override
     public Object createFromString(final EDataType eDataType, final String initialValue) {
-        switch (eDataType.getClassifierID())
-        {
+        switch (eDataType.getClassifierID()) {
         case UtilPackage.POWER:
             return this.createPowerFromString(eDataType, initialValue);
         default:
@@ -90,8 +85,7 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
      */
     @Override
     public String convertToString(final EDataType eDataType, final Object instanceValue) {
-        switch (eDataType.getClassifierID())
-        {
+        switch (eDataType.getClassifierID()) {
         case UtilPackage.POWER:
             return this.convertPowerToString(eDataType, instanceValue);
         default:

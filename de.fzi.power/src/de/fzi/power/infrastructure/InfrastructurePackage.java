@@ -173,7 +173,8 @@ public interface InfrastructurePackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 3;
+    int POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT = POWER_CONSUMING_ENTITY_FEATURE_COUNT
+            + 3;
 
     /**
      * The number of structural features of the '<em>Power Consuming Providing Entity</em>' class.
@@ -185,8 +186,7 @@ public interface InfrastructurePackage extends EPackage {
     int POWER_CONSUMING_PROVIDING_ENTITY_FEATURE_COUNT = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 4;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
+     * The meta object id for the '{@link de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl
      * <em>Power Distribution Unit</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see de.fzi.power.infrastructure.impl.PowerDistributionUnitImpl

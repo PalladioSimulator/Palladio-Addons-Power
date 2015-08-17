@@ -36,8 +36,7 @@ public class InfrastructureXMLProcessor extends XMLProcessor {
      */
     @Override
     protected Map<String, Resource.Factory> getRegistrations() {
-        if (this.registrations == null)
-        {
+        if (this.registrations == null) {
             super.getRegistrations();
             this.registrations.put(XML_EXTENSION, new InfrastructureResourceFactoryImpl());
             this.registrations.put(STAR_EXTENSION, new InfrastructureResourceFactoryImpl());

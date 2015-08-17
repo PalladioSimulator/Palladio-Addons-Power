@@ -33,8 +33,7 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public UtilAdapterFactory() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = UtilPackage.eINSTANCE;
         }
     }
@@ -49,12 +48,10 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType(final Object object) {
-        if (object == modelPackage)
-        {
+        if (object == modelPackage) {
             return true;
         }
-        if (object instanceof EObject)
-        {
+        if (object instanceof EObject) {
             return ((EObject) object).eClass().getEPackage() == modelPackage;
         }
         return false;
@@ -66,97 +63,92 @@ public class UtilAdapterFactory extends AdapterFactoryImpl {
      *
      * @generated
      */
-    protected UtilSwitch<Adapter> modelSwitch = new UtilSwitch<Adapter>()
-            {
+    protected UtilSwitch<Adapter> modelSwitch = new UtilSwitch<Adapter>() {
         @Override
-        public Adapter caseEntity(final Entity object)
-        {
+        public Adapter caseEntity(final Entity object) {
             return UtilAdapterFactory.this.createEntityAdapter();
         }
 
         @Override
-        public Adapter caseNamedElement(final NamedElement object)
-        {
+        public Adapter caseNamedElement(final NamedElement object) {
             return UtilAdapterFactory.this.createNamedElementAdapter();
         }
 
         @Override
-        public Adapter caseIdentifier(final Identifier object)
-        {
+        public Adapter caseIdentifier(final Identifier object) {
             return UtilAdapterFactory.this.createIdentifierAdapter();
         }
 
         @Override
-        public Adapter defaultCase(final EObject object)
-        {
+        public Adapter defaultCase(final EObject object) {
             return UtilAdapterFactory.this.createEObjectAdapter();
         }
-            };
+    };
 
-            /**
-             * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
+    /**
+     * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
-             * @generated
-             */
-            @Override
-            public Adapter createAdapter(final Notifier target) {
-                return this.modelSwitch.doSwitch((EObject) target);
-            }
+     * @generated
+     */
+    @Override
+    public Adapter createAdapter(final Notifier target) {
+        return this.modelSwitch.doSwitch((EObject) target);
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity
-     * <em>Entity</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity <em>Entity</em>
+     * }'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+     * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.util.Entity
-             * @generated
-             */
-            public Adapter createEntityAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.util.Entity
+     * @generated
+     */
+    public Adapter createEntityAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement
      * <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.util.NamedElement
-             * @generated
-             */
-            public Adapter createNamedElementAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.util.NamedElement
+     * @generated
+     */
+    public Adapter createNamedElementAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
+    /**
+     * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
      * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.uka.ipd.sdq.identifier.Identifier
-             * @generated
-             */
-            public Adapter createIdentifierAdapter() {
-                return null;
-            }
+     * @see de.uka.ipd.sdq.identifier.Identifier
+     * @generated
+     */
+    public Adapter createIdentifierAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
+    /**
+     * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
      * implementation returns null. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @generated
-             */
-            public Adapter createEObjectAdapter() {
-                return null;
-            }
+     * @generated
+     */
+    public Adapter createEObjectAdapter() {
+        return null;
+    }
 
 } // UtilAdapterFactory

@@ -2,11 +2,8 @@
  */
 package de.fzi.power.infrastructure.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructurePackage;
@@ -17,6 +14,7 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
  * <em><b>Power Consuming Resource</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getProcessingResourceSpecification
@@ -25,33 +23,10 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
  * {@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl#getResourcePowerAssemblyContext
  * <em>Resource Power Assembly Context</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl implements PowerConsumingResource {
-    /**
-     * The cached value of the '{@link #getProcessingResourceSpecification()
-     * <em>Processing Resource Specification</em>}' reference. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getProcessingResourceSpecification()
-     * @generated
-     * @ordered
-     */
-    protected org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification processingResourceSpecification;
-
-    /**
-     * The cached value of the '{@link #getResourcePowerAssemblyContext()
-     * <em>Resource Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getResourcePowerAssemblyContext()
-     * @generated
-     * @ordered
-     */
-    protected ResourcePowerBinding resourcePowerAssemblyContext;
-
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -77,22 +52,10 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      * @generated
      */
     @Override
-    public org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification getProcessingResourceSpecification() {
-        if (this.processingResourceSpecification != null && ((EObject) this.processingResourceSpecification).eIsProxy())
-        {
-            final InternalEObject oldProcessingResourceSpecification = (InternalEObject) this.processingResourceSpecification;
-            this.processingResourceSpecification = (org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification) this
-                    .eResolveProxy(oldProcessingResourceSpecification);
-            if (this.processingResourceSpecification != oldProcessingResourceSpecification)
-            {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                            oldProcessingResourceSpecification, this.processingResourceSpecification));
-                }
-            }
-        }
-        return this.processingResourceSpecification;
+    public ProcessingResourceSpecification getProcessingResourceSpecification() {
+        return (ProcessingResourceSpecification) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION, true, true);
     }
 
     /**
@@ -100,8 +63,11 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      *
      * @generated
      */
-    public org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification basicGetProcessingResourceSpecification() {
-        return this.processingResourceSpecification;
+    public ProcessingResourceSpecification basicGetProcessingResourceSpecification() {
+        return (ProcessingResourceSpecification) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION, false,
+                true);
     }
 
     /**
@@ -111,15 +77,10 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public void setProcessingResourceSpecification(
-            final org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification newProcessingResourceSpecification)
-    {
-        final org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification oldProcessingResourceSpecification = this.processingResourceSpecification;
-        this.processingResourceSpecification = newProcessingResourceSpecification;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                    oldProcessingResourceSpecification, this.processingResourceSpecification));
-        }
+            final ProcessingResourceSpecification newProcessingResourceSpecification) {
+        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
+                newProcessingResourceSpecification);
     }
 
     /**
@@ -129,21 +90,9 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public ResourcePowerBinding getResourcePowerAssemblyContext() {
-        if (this.resourcePowerAssemblyContext != null && this.resourcePowerAssemblyContext.eIsProxy())
-        {
-            final InternalEObject oldResourcePowerAssemblyContext = (InternalEObject) this.resourcePowerAssemblyContext;
-            this.resourcePowerAssemblyContext = (ResourcePowerBinding) this
-                    .eResolveProxy(oldResourcePowerAssemblyContext);
-            if (this.resourcePowerAssemblyContext != oldResourcePowerAssemblyContext)
-            {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                            oldResourcePowerAssemblyContext, this.resourcePowerAssemblyContext));
-                }
-            }
-        }
-        return this.resourcePowerAssemblyContext;
+        return (ResourcePowerBinding) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT, true, true);
     }
 
     /**
@@ -152,7 +101,9 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      * @generated
      */
     public ResourcePowerBinding basicGetResourcePowerAssemblyContext() {
-        return this.resourcePowerAssemblyContext;
+        return (ResourcePowerBinding) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT, false, true);
     }
 
     /**
@@ -162,13 +113,9 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public void setResourcePowerAssemblyContext(final ResourcePowerBinding newResourcePowerAssemblyContext) {
-        final ResourcePowerBinding oldResourcePowerAssemblyContext = this.resourcePowerAssemblyContext;
-        this.resourcePowerAssemblyContext = newResourcePowerAssemblyContext;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                    oldResourcePowerAssemblyContext, this.resourcePowerAssemblyContext));
-        }
+        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
+                newResourcePowerAssemblyContext);
     }
 
     /**
@@ -178,8 +125,7 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
             if (resolve) {
                 return this.getProcessingResourceSpecification();
@@ -201,10 +147,9 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            this.setProcessingResourceSpecification((org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification) newValue);
+            this.setProcessingResourceSpecification((ProcessingResourceSpecification) newValue);
             return;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
             this.setResourcePowerAssemblyContext((ResourcePowerBinding) newValue);
@@ -220,10 +165,9 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            this.setProcessingResourceSpecification((org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification) null);
+            this.setProcessingResourceSpecification((ProcessingResourceSpecification) null);
             return;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
             this.setResourcePowerAssemblyContext((ResourcePowerBinding) null);
@@ -239,12 +183,11 @@ public class PowerConsumingResourceImpl extends PowerConsumingEntityImpl impleme
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            return this.processingResourceSpecification != null;
+            return this.basicGetProcessingResourceSpecification() != null;
         case InfrastructurePackage.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            return this.resourcePowerAssemblyContext != null;
+            return this.basicGetResourcePowerAssemblyContext() != null;
         }
         return super.eIsSet(featureID);
     }

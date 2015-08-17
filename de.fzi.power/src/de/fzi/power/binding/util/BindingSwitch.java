@@ -40,8 +40,7 @@ public class BindingSwitch<T> extends Switch<T> {
      * @generated
      */
     public BindingSwitch() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = BindingPackage.eINSTANCE;
         }
     }
@@ -50,7 +49,8 @@ public class BindingSwitch<T> extends Switch<T> {
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
-     * @parameter ePackage the package in question.
+     * @param ePackage
+     *            the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
@@ -68,8 +68,7 @@ public class BindingSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID)
-        {
+        switch (classifierID) {
         case BindingPackage.FIXED_FACTOR_VALUE: {
             final FixedFactorValue fixedFactorValue = (FixedFactorValue) theEObject;
             T result = this.caseFixedFactorValue(fixedFactorValue);

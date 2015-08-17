@@ -7,14 +7,10 @@ import java.util.Collection;
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import de.fzi.power.binding.DistributionPowerBinding;
@@ -29,6 +25,7 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
  * <em><b>Power Consuming Providing Entity</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>
  * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getNestedPowerConsumingEntities
@@ -43,44 +40,11 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
  * {@link de.fzi.power.infrastructure.impl.PowerConsumingProvidingEntityImpl#getDistributionPowerAssemblyContext
  * <em>Distribution Power Assembly Context</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEntityImpl implements
-PowerConsumingProvidingEntity {
-    /**
-     * The cached value of the '{@link #getNestedPowerConsumingEntities()
-     * <em>Nested Power Consuming Entities</em>}' containment reference list. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @see #getNestedPowerConsumingEntities()
-     * @generated
-     * @ordered
-     */
-    protected EList<PowerConsumingEntity> nestedPowerConsumingEntities;
-
-    /**
-     * The cached value of the '{@link #getSuppliablePeakPower() <em>Suppliable Peak Power</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getSuppliablePeakPower()
-     * @generated
-     * @ordered
-     */
-    protected Measure<?, Power> suppliablePeakPower;
-
-    /**
-     * The cached value of the '{@link #getDistributionPowerAssemblyContext()
-     * <em>Distribution Power Assembly Context</em>}' reference. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @see #getDistributionPowerAssemblyContext()
-     * @generated
-     * @ordered
-     */
-    protected DistributionPowerBinding distributionPowerAssemblyContext;
-
+public abstract class PowerConsumingProvidingEntityImpl extends PowerConsumingEntityImpl
+        implements PowerConsumingProvidingEntity {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -105,16 +69,12 @@ PowerConsumingProvidingEntity {
      *
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
     public EList<PowerConsumingEntity> getNestedPowerConsumingEntities() {
-        if (this.nestedPowerConsumingEntities == null)
-        {
-            this.nestedPowerConsumingEntities = new EObjectContainmentWithInverseEList<PowerConsumingEntity>(
-                    PowerConsumingEntity.class, this,
-                    InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
-                    InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY);
-        }
-        return this.nestedPowerConsumingEntities;
+        return (EList<PowerConsumingEntity>) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES, true, true);
     }
 
     /**
@@ -124,7 +84,9 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public Measure<?, Power> getSuppliablePeakPower() {
-        return this.suppliablePeakPower;
+        return (Measure<?, Power>) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER, true, true);
     }
 
     /**
@@ -134,13 +96,8 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public void setSuppliablePeakPower(final Measure<?, Power> newSuppliablePeakPower) {
-        final Measure<?, Power> oldSuppliablePeakPower = this.suppliablePeakPower;
-        this.suppliablePeakPower = newSuppliablePeakPower;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER,
-                    oldSuppliablePeakPower, this.suppliablePeakPower));
-        }
+        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER, newSuppliablePeakPower);
     }
 
     /**
@@ -150,10 +107,9 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public PowerInfrastructureRepository getPowerInfrastructureModel() {
-        if (this.eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL) {
-            return null;
-        }
-        return (PowerInfrastructureRepository) this.eInternalContainer();
+        return (PowerInfrastructureRepository) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL, true, true);
     }
 
     /**
@@ -175,31 +131,9 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public void setPowerInfrastructureModel(final PowerInfrastructureRepository newPowerInfrastructureModel) {
-        if (newPowerInfrastructureModel != this.eInternalContainer()
-                || (this.eContainerFeatureID() != InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL && newPowerInfrastructureModel != null))
-        {
-            if (EcoreUtil.isAncestor(this, newPowerInfrastructureModel)) {
-                throw new IllegalArgumentException("Recursive containment not allowed for " + this.toString());
-            }
-            NotificationChain msgs = null;
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            if (newPowerInfrastructureModel != null) {
-                msgs = ((InternalEObject) newPowerInfrastructureModel).eInverseAdd(this,
-                        InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
-                        PowerInfrastructureRepository.class, msgs);
-            }
-            msgs = this.basicSetPowerInfrastructureModel(newPowerInfrastructureModel, msgs);
-            if (msgs != null) {
-                msgs.dispatch();
-            }
-        }
-        else if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL,
-                    newPowerInfrastructureModel, newPowerInfrastructureModel));
-        }
+        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL,
+                newPowerInfrastructureModel);
     }
 
     /**
@@ -209,23 +143,9 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public DistributionPowerBinding getDistributionPowerAssemblyContext() {
-        if (this.distributionPowerAssemblyContext != null && this.distributionPowerAssemblyContext.eIsProxy())
-        {
-            final InternalEObject oldDistributionPowerAssemblyContext = (InternalEObject) this.distributionPowerAssemblyContext;
-            this.distributionPowerAssemblyContext = (DistributionPowerBinding) this
-                    .eResolveProxy(oldDistributionPowerAssemblyContext);
-            if (this.distributionPowerAssemblyContext != oldDistributionPowerAssemblyContext)
-            {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(
-                            this,
-                            Notification.RESOLVE,
-                            InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
-                            oldDistributionPowerAssemblyContext, this.distributionPowerAssemblyContext));
-                }
-            }
-        }
-        return this.distributionPowerAssemblyContext;
+        return (DistributionPowerBinding) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT, true, true);
     }
 
     /**
@@ -234,7 +154,10 @@ PowerConsumingProvidingEntity {
      * @generated
      */
     public DistributionPowerBinding basicGetDistributionPowerAssemblyContext() {
-        return this.distributionPowerAssemblyContext;
+        return (DistributionPowerBinding) this.eDynamicGet(
+                InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT, false,
+                true);
     }
 
     /**
@@ -243,14 +166,11 @@ PowerConsumingProvidingEntity {
      * @generated
      */
     @Override
-    public void setDistributionPowerAssemblyContext(final DistributionPowerBinding newDistributionPowerAssemblyContext) {
-        final DistributionPowerBinding oldDistributionPowerAssemblyContext = this.distributionPowerAssemblyContext;
-        this.distributionPowerAssemblyContext = newDistributionPowerAssemblyContext;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
-                    oldDistributionPowerAssemblyContext, this.distributionPowerAssemblyContext));
-        }
+    public void setDistributionPowerAssemblyContext(
+            final DistributionPowerBinding newDistributionPowerAssemblyContext) {
+        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
+                newDistributionPowerAssemblyContext);
     }
 
     /**
@@ -261,12 +181,10 @@ PowerConsumingProvidingEntity {
     @SuppressWarnings("unchecked")
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
             return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getNestedPowerConsumingEntities())
-                    .basicAdd(
-                            otherEnd, msgs);
+                    .basicAdd(otherEnd, msgs);
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
@@ -284,8 +202,7 @@ PowerConsumingProvidingEntity {
     @Override
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
             return ((InternalEList<?>) this.getNestedPowerConsumingEntities()).basicRemove(otherEnd, msgs);
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
@@ -301,8 +218,7 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID())
-        {
+        switch (this.eContainerFeatureID()) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
             return this.eInternalContainer().eInverseRemove(this,
                     InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
@@ -318,8 +234,7 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
             return this.getNestedPowerConsumingEntities();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
@@ -343,8 +258,7 @@ PowerConsumingProvidingEntity {
     @SuppressWarnings("unchecked")
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
             this.getNestedPowerConsumingEntities().clear();
             this.getNestedPowerConsumingEntities().addAll((Collection<? extends PowerConsumingEntity>) newValue);
@@ -369,8 +283,7 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
             this.getNestedPowerConsumingEntities().clear();
             return;
@@ -394,16 +307,15 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
-            return this.nestedPowerConsumingEntities != null && !this.nestedPowerConsumingEntities.isEmpty();
+            return !this.getNestedPowerConsumingEntities().isEmpty();
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
-            return this.suppliablePeakPower != null;
+            return this.getSuppliablePeakPower() != null;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL:
             return this.getPowerInfrastructureModel() != null;
         case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT:
-            return this.distributionPowerAssemblyContext != null;
+            return this.basicGetDistributionPowerAssemblyContext() != null;
         }
         return super.eIsSet(featureID);
     }
@@ -415,10 +327,8 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public int eBaseStructuralFeatureID(final int derivedFeatureID, final Class<?> baseClass) {
-        if (baseClass == PowerProvidingEntity.class)
-        {
-            switch (derivedFeatureID)
-            {
+        if (baseClass == PowerProvidingEntity.class) {
+            switch (derivedFeatureID) {
             case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
                 return InfrastructurePackage.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES;
             case InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
@@ -441,10 +351,8 @@ PowerConsumingProvidingEntity {
      */
     @Override
     public int eDerivedStructuralFeatureID(final int baseFeatureID, final Class<?> baseClass) {
-        if (baseClass == PowerProvidingEntity.class)
-        {
-            switch (baseFeatureID)
-            {
+        if (baseClass == PowerProvidingEntity.class) {
+            switch (baseFeatureID) {
             case InfrastructurePackage.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES:
                 return InfrastructurePackage.POWER_CONSUMING_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES;
             case InfrastructurePackage.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
@@ -458,24 +366,6 @@ PowerConsumingProvidingEntity {
             }
         }
         return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (suppliablePeakPower: ");
-        result.append(this.suppliablePeakPower);
-        result.append(')');
-        return result.toString();
     }
 
 } // PowerConsumingProvidingEntityImpl

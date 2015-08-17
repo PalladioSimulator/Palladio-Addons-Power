@@ -35,8 +35,7 @@ public class UtilSwitch<T> extends Switch<T> {
      * @generated
      */
     public UtilSwitch() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = UtilPackage.eINSTANCE;
         }
     }
@@ -45,7 +44,8 @@ public class UtilSwitch<T> extends Switch<T> {
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
-     * @parameter ePackage the package in question.
+     * @param ePackage
+     *            the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
@@ -63,8 +63,7 @@ public class UtilSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID)
-        {
+        switch (classifierID) {
         case UtilPackage.ENTITY: {
             final Entity entity = (Entity) theEObject;
             T result = this.caseEntity(entity);

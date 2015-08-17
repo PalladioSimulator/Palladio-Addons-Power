@@ -1,92 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fzi.power/src" modelPluginID="de.fzi.power"
-    modelName="Power" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
-    copyrightFields="false" usedGenPackages="../../org.palladiosimulator.edp2/model/EDP2.genmodel#//models ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm ../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex ../../de.uka.ipd.sdq.units/model/Units.genmodel#//units"
-    importOrganizing="true" cleanup="true">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.fzi.power/src" modelPluginID="de.fzi.power" modelName="Power" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="6.0" copyrightFields="false" providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" importOrganizing="true" cleanup="true">
   <foreignModel>power.ecore</foreignModel>
-  <genPackages prefix="Power" basePackage="de.fzi" disposableProviderFactory="true"
-      ecorePackage="power.ecore#/">
-    <nestedGenPackages prefix="Util" basePackage="de.fzi.power" resource="XML" disposableProviderFactory="true"
-        ecorePackage="power.ecore#//util">
-      <genDataTypes ecoreDataType="power.ecore#//util/Power"/>
-      <genClasses image="false" ecoreClass="power.ecore#//util/Entity"/>
-      <genClasses ecoreClass="power.ecore#//util/NamedElement">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute power.ecore#//util/NamedElement/name"/>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Power" basePackage="de.fzi" disposableProviderFactory="true">
+    <ecorePackage href="power.ecore#/"/>
+    <nestedGenPackages prefix="Util" basePackage="de.fzi.power" resource="XML" disposableProviderFactory="true">
+      <ecorePackage href="power.ecore#//util"/>
+      <genDataTypes>
+        <ecoreDataType href="power.ecore#//util/Power"/>
+      </genDataTypes>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//util/Entity"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="power.ecore#//util/NamedElement"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="power.ecore#//util/NamedElement/name"/>
+        </genFeatures>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Specification" basePackage="de.fzi.power" resource="XML"
-        disposableProviderFactory="true" fileExtensions="spec" ecorePackage="power.ecore#//specification">
-      <genClasses ecoreClass="power.ecore#//specification/PowerModelRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//specification/PowerModelRepository/powerModelSpecifications"/>
+    <nestedGenPackages prefix="Specification" basePackage="de.fzi.power" resource="XML" disposableProviderFactory="true" fileExtensions="spec">
+      <ecorePackage href="power.ecore#//specification"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/PowerModelRepository"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//specification/PowerModelRepository/powerModelSpecifications"/>
+        </genFeatures>
       </genClasses>
-      <genClasses image="false" ecoreClass="power.ecore#//specification/PowerModelSpecification">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//specification/PowerModelSpecification/powermodelrepository"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//specification/PowerModelSpecification/consumptionFactors"/>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//specification/PowerModelSpecification"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//specification/PowerModelSpecification/powermodelrepository"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//specification/PowerModelSpecification/consumptionFactors"/>
+        </genFeatures>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//specification/ResourcePowerModelSpecification"/>
-      <genClasses ecoreClass="power.ecore#//specification/DistributionPowerModelSpecification"/>
-      <genClasses ecoreClass="power.ecore#//specification/FixedFactor"/>
-      <genClasses ecoreClass="power.ecore#//specification/ConsumptionFactor">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//specification/ConsumptionFactor/powerModel"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/ResourcePowerModelSpecification"/>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//specification/MeasuredFactor">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//specification/MeasuredFactor/metricType"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/DistributionPowerModelSpecification"/>
       </genClasses>
-    </nestedGenPackages>
-    <nestedGenPackages prefix="Binding" basePackage="de.fzi.power" resource="XML"
-        disposableProviderFactory="true" ecorePackage="power.ecore#//binding">
-      <genClasses ecoreClass="power.ecore#//binding/FixedFactorValue">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//binding/FixedFactorValue/boundFactor"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute power.ecore#//binding/FixedFactorValue/value"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//binding/FixedFactorValue/powerBinding"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/FixedFactor"/>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//binding/PowerBindingRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/PowerBindingRepository/powerBindings"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/ConsumptionFactor"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//specification/ConsumptionFactor/powerModel"/>
+        </genFeatures>
       </genClasses>
-      <genClasses image="false" ecoreClass="power.ecore#//binding/PowerBinding">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//binding/PowerBinding/powerBindingRepository"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/PowerBinding/fixedFactorValues"/>
-      </genClasses>
-      <genClasses ecoreClass="power.ecore#//binding/ResourcePowerBinding">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//binding/ResourcePowerBinding/resourcePowerModelSpecification"/>
-      </genClasses>
-      <genClasses ecoreClass="power.ecore#//binding/DistributionPowerBinding">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//binding/DistributionPowerBinding/distributionPowerModel"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//specification/MeasuredFactor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//specification/MeasuredFactor/metricType"/>
+        </genFeatures>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Infrastructure" basePackage="de.fzi.power" resource="XML"
-        disposableProviderFactory="true" ecorePackage="power.ecore#//infrastructure">
-      <genClasses ecoreClass="power.ecore#//infrastructure/PowerDistributionUnit"/>
-      <genClasses image="false" ecoreClass="power.ecore#//infrastructure/PowerConsumingProvidingEntity"/>
-      <genClasses image="false" ecoreClass="power.ecore#//infrastructure/PowerProvidingEntity">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerProvidingEntity/nestedPowerConsumingEntities"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute power.ecore#//infrastructure/PowerProvidingEntity/suppliablePeakPower"/>
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerProvidingEntity/powerInfrastructureModel"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerProvidingEntity/distributionPowerAssemblyContext"/>
+    <nestedGenPackages prefix="Binding" basePackage="de.fzi.power" resource="XML" disposableProviderFactory="true">
+      <ecorePackage href="power.ecore#//binding"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//binding/FixedFactorValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/FixedFactorValue/boundFactor"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="power.ecore#//binding/FixedFactorValue/value"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/FixedFactorValue/powerBinding"/>
+        </genFeatures>
       </genClasses>
-      <genClasses image="false" ecoreClass="power.ecore#//infrastructure/PowerConsumingEntity">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerConsumingEntity/powerProvidingEntity"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//binding/PowerBindingRepository"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/PowerBindingRepository/powerBindings"/>
+        </genFeatures>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//infrastructure/MountedPowerDistributionUnit">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//infrastructure/MountedPowerDistributionUnit/resourceContainer"/>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//binding/PowerBinding"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/PowerBinding/powerBindingRepository"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/PowerBinding/fixedFactorValues"/>
+        </genFeatures>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//infrastructure/PowerConsumingResource">
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerConsumingResource/processingResourceSpecification"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerConsumingResource/resourcePowerAssemblyContext"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//binding/ResourcePowerBinding"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/ResourcePowerBinding/resourcePowerModelSpecification"/>
+        </genFeatures>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//infrastructure/PowerInfrastructureRepository">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//infrastructure/PowerInfrastructureRepository/containedPowerProvidingEntities"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//binding/DistributionPowerBinding"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//binding/DistributionPowerBinding/distributionPowerModel"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Infrastructure" basePackage="de.fzi.power" resource="XML" disposableProviderFactory="true">
+      <ecorePackage href="power.ecore#//infrastructure"/>
+      <genClasses>
+        <ecoreClass href="power.ecore#//infrastructure/PowerDistributionUnit"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//infrastructure/PowerConsumingProvidingEntity"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//infrastructure/PowerProvidingEntity"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerProvidingEntity/nestedPowerConsumingEntities"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="power.ecore#//infrastructure/PowerProvidingEntity/suppliablePeakPower"/>
+        </genFeatures>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerProvidingEntity/powerInfrastructureModel"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerProvidingEntity/distributionPowerAssemblyContext"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="power.ecore#//infrastructure/PowerConsumingEntity"/>
+        <genFeatures property="None" notify="false" createChild="false">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerConsumingEntity/powerProvidingEntity"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="power.ecore#//infrastructure/MountedPowerDistributionUnit"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/MountedPowerDistributionUnit/resourceContainer"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="power.ecore#//infrastructure/PowerConsumingResource"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerConsumingResource/processingResourceSpecification"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerConsumingResource/resourcePowerAssemblyContext"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="power.ecore#//infrastructure/PowerInfrastructureRepository"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="power.ecore#//infrastructure/PowerInfrastructureRepository/containedPowerProvidingEntities"/>
+        </genFeatures>
       </genClasses>
     </nestedGenPackages>
   </genPackages>
+  <usedGenPackages href="../../org.palladiosimulator.edp2/model/EDP2.genmodel#//models"/>
+  <usedGenPackages href="../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"/>
+  <usedGenPackages href="../../org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec"/>
+  <usedGenPackages href="../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm"/>
+  <usedGenPackages href="../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction"/>
+  <usedGenPackages href="../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex"/>
+  <usedGenPackages href="../../de.uka.ipd.sdq.units/model/Units.genmodel#//units"/>
 </genmodel:GenModel>

@@ -2,10 +2,8 @@
  */
 package de.fzi.power.util.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
 import de.fzi.power.util.NamedElement;
 import de.fzi.power.util.UtilPackage;
@@ -15,14 +13,14 @@ import de.fzi.power.util.UtilPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  * <li>{@link de.fzi.power.util.impl.NamedElementImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
-public class NamedElementImpl extends MinimalEObjectImpl.Container implements NamedElement {
+public class NamedElementImpl extends CDOObjectImpl implements NamedElement {
     /**
      * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
@@ -32,16 +30,6 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      * @ordered
      */
     protected static final String NAME_EDEFAULT = null;
-
-    /**
-     * The cached value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
-    protected String name = NAME_EDEFAULT;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -68,8 +56,19 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      * @generated
      */
     @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public String getName() {
-        return this.name;
+        return (String) this.eDynamicGet(UtilPackage.NAMED_ELEMENT__NAME, UtilPackage.Literals.NAMED_ELEMENT__NAME,
+                true, true);
     }
 
     /**
@@ -79,12 +78,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      */
     @Override
     public void setName(final String newName) {
-        final String oldName = this.name;
-        this.name = newName;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET, UtilPackage.NAMED_ELEMENT__NAME, oldName,
-                    this.name));
-        }
+        this.eDynamicSet(UtilPackage.NAMED_ELEMENT__NAME, UtilPackage.Literals.NAMED_ELEMENT__NAME, newName);
     }
 
     /**
@@ -94,8 +88,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case UtilPackage.NAMED_ELEMENT__NAME:
             return this.getName();
         }
@@ -109,8 +102,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case UtilPackage.NAMED_ELEMENT__NAME:
             this.setName((String) newValue);
             return;
@@ -125,8 +117,7 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case UtilPackage.NAMED_ELEMENT__NAME:
             this.setName(NAME_EDEFAULT);
             return;
@@ -141,30 +132,11 @@ public class NamedElementImpl extends MinimalEObjectImpl.Container implements Na
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case UtilPackage.NAMED_ELEMENT__NAME:
-            return NAME_EDEFAULT == null ? this.name != null : !NAME_EDEFAULT.equals(this.name);
+            return NAME_EDEFAULT == null ? this.getName() != null : !NAME_EDEFAULT.equals(this.getName());
         }
         return super.eIsSet(featureID);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String toString() {
-        if (this.eIsProxy()) {
-            return super.toString();
-        }
-
-        final StringBuffer result = new StringBuffer(super.toString());
-        result.append(" (name: ");
-        result.append(this.name);
-        result.append(')');
-        return result.toString();
     }
 
 } // NamedElementImpl

@@ -2,6 +2,8 @@
  */
 package de.fzi.power.infrastructure;
 
+import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
+
 import de.fzi.power.binding.ResourcePowerBinding;
 
 /**
@@ -10,13 +12,13 @@ import de.fzi.power.binding.ResourcePowerBinding;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification
  * <em>Processing Resource Specification</em>}</li>
  * <li>{@link de.fzi.power.infrastructure.PowerConsumingResource#getResourcePowerAssemblyContext
  * <em>Resource Power Assembly Context</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.fzi.power.infrastructure.InfrastructurePackage#getPowerConsumingResource()
  * @model
@@ -38,7 +40,7 @@ public interface PowerConsumingResource extends PowerConsumingEntity {
      * @model required="true" ordered="false"
      * @generated
      */
-    org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification getProcessingResourceSpecification();
+    ProcessingResourceSpecification getProcessingResourceSpecification();
 
     /**
      * Sets the value of the '
@@ -51,8 +53,7 @@ public interface PowerConsumingResource extends PowerConsumingEntity {
      * @see #getProcessingResourceSpecification()
      * @generated
      */
-    void setProcessingResourceSpecification(
-            org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification value);
+    void setProcessingResourceSpecification(ProcessingResourceSpecification value);
 
     /**
      * Returns the value of the '<em><b>Resource Power Assembly Context</b></em>' reference. <!--

@@ -3,7 +3,6 @@
 package de.fzi.power.specification;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -13,17 +12,17 @@ import de.uka.ipd.sdq.identifier.Identifier;
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications <em>Power
- * Model Specifications</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications
+ * <em>Power Model Specifications</em>}</li>
+ * </ul>
  *
  * @see de.fzi.power.specification.SpecificationPackage#getPowerModelRepository()
  * @model
  * @generated
  */
-public interface PowerModelRepository extends EObject, Identifier {
+public interface PowerModelRepository extends Identifier {
     /**
      * Returns the value of the '<em><b>Power Model Specifications</b></em>' containment reference
      * list. The list contents are of type

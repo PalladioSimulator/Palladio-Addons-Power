@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+import org.palladiosimulator.pcm.PcmPackage;
 
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.impl.BindingPackageImpl;
@@ -97,9 +98,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         }
 
         // Obtain or create and register package
-        final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE
-                .get(eNS_URI)
-                : new UtilPackageImpl());
+        final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
+                .get(eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+                        : new UtilPackageImpl());
 
         isInited = true;
 
@@ -107,20 +108,20 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
-        org.palladiosimulator.pcm.PcmPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
         final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(SpecificationPackage.eNS_URI)
-                : SpecificationPackage.eINSTANCE);
+                .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
+                        : SpecificationPackage.eINSTANCE);
         final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
+                .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
         final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
-                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE
-                        .getEPackage(InfrastructurePackage.eNS_URI)
-                : InfrastructurePackage.eINSTANCE);
+                .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI)
+                        : InfrastructurePackage.eINSTANCE);
 
         // Create package meta-data objects
         theUtilPackage.createPackageContents();
@@ -264,8 +265,8 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         this.initEClass(this.namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
         this.initEAttribute(this.getNamedElement_Name(), this.ecorePackage.getEString(), "name", null, 0, 1,
-                NamedElement.class,
-                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+                NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
         this.initEDataType(this.powerEDataType, Power.class, "Power", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

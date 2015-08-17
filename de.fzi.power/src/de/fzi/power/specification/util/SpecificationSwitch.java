@@ -42,8 +42,7 @@ public class SpecificationSwitch<T> extends Switch<T> {
      * @generated
      */
     public SpecificationSwitch() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = SpecificationPackage.eINSTANCE;
         }
     }
@@ -52,7 +51,8 @@ public class SpecificationSwitch<T> extends Switch<T> {
      * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
-     * @parameter ePackage the package in question.
+     * @param ePackage
+     *            the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
@@ -70,8 +70,7 @@ public class SpecificationSwitch<T> extends Switch<T> {
      */
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
-        switch (classifierID)
-        {
+        switch (classifierID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY: {
             final PowerModelRepository powerModelRepository = (PowerModelRepository) theEObject;
             T result = this.casePowerModelRepository(powerModelRepository);

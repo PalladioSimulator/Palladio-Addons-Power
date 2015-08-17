@@ -2,17 +2,19 @@
  */
 package de.fzi.power.infrastructure;
 
+import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
+
 /**
  * <!-- begin-user-doc --> A representation of the model object '
  * <em><b>Mounted Power Distribution Unit</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
- * <ul>
- * <li>{@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer <em>
- * Resource Container</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.fzi.power.infrastructure.MountedPowerDistributionUnit#getResourceContainer
+ * <em>Resource Container</em>}</li>
+ * </ul>
  *
  * @see de.fzi.power.infrastructure.InfrastructurePackage#getMountedPowerDistributionUnit()
  * @model
@@ -29,12 +31,12 @@ public interface MountedPowerDistributionUnit extends PowerDistributionUnit {
      * <!-- end-user-doc -->
      *
      * @return the value of the '<em>Resource Container</em>' reference.
-     * @see #setResourceContainer(org.palladiosimulator.pcm.resourceenvironment.ResourceContainer)
+     * @see #setResourceContainer(ResourceContainer)
      * @see de.fzi.power.infrastructure.InfrastructurePackage#getMountedPowerDistributionUnit_ResourceContainer()
      * @model required="true" ordered="false"
      * @generated
      */
-    org.palladiosimulator.pcm.resourceenvironment.ResourceContainer getResourceContainer();
+    ResourceContainer getResourceContainer();
 
     /**
      * Sets the value of the '
@@ -46,6 +48,6 @@ public interface MountedPowerDistributionUnit extends PowerDistributionUnit {
      * @see #getResourceContainer()
      * @generated
      */
-    void setResourceContainer(org.palladiosimulator.pcm.resourceenvironment.ResourceContainer value);
+    void setResourceContainer(ResourceContainer value);
 
 } // MountedPowerDistributionUnit

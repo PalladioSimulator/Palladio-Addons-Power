@@ -2,10 +2,7 @@
  */
 package de.fzi.power.binding.impl;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.DistributionPowerBinding;
@@ -16,25 +13,15 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  * <em><b>Distribution Power Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * <ul>
- * <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel <em>
- * Distribution Power Model</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel
+ * <em>Distribution Power Model</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class DistributionPowerBindingImpl extends PowerBindingImpl implements DistributionPowerBinding {
-    /**
-     * The cached value of the '{@link #getDistributionPowerModel()
-     * <em>Distribution Power Model</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getDistributionPowerModel()
-     * @generated
-     * @ordered
-     */
-    protected DistributionPowerModelSpecification distributionPowerModel;
-
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -61,21 +48,9 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public DistributionPowerModelSpecification getDistributionPowerModel() {
-        if (this.distributionPowerModel != null && this.distributionPowerModel.eIsProxy())
-        {
-            final InternalEObject oldDistributionPowerModel = (InternalEObject) this.distributionPowerModel;
-            this.distributionPowerModel = (DistributionPowerModelSpecification) this
-                    .eResolveProxy(oldDistributionPowerModel);
-            if (this.distributionPowerModel != oldDistributionPowerModel)
-            {
-                if (this.eNotificationRequired()) {
-                    this.eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-                            BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
-                            oldDistributionPowerModel, this.distributionPowerModel));
-                }
-            }
-        }
-        return this.distributionPowerModel;
+        return (DistributionPowerModelSpecification) this.eDynamicGet(
+                BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
+                BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, true, true);
     }
 
     /**
@@ -84,7 +59,9 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      * @generated
      */
     public DistributionPowerModelSpecification basicGetDistributionPowerModel() {
-        return this.distributionPowerModel;
+        return (DistributionPowerModelSpecification) this.eDynamicGet(
+                BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
+                BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, false, true);
     }
 
     /**
@@ -94,13 +71,9 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public void setDistributionPowerModel(final DistributionPowerModelSpecification newDistributionPowerModel) {
-        final DistributionPowerModelSpecification oldDistributionPowerModel = this.distributionPowerModel;
-        this.distributionPowerModel = newDistributionPowerModel;
-        if (this.eNotificationRequired()) {
-            this.eNotify(new ENotificationImpl(this, Notification.SET,
-                    BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, oldDistributionPowerModel,
-                    this.distributionPowerModel));
-        }
+        this.eDynamicSet(BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
+                BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
+                newDistributionPowerModel);
     }
 
     /**
@@ -110,8 +83,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
             if (resolve) {
                 return this.getDistributionPowerModel();
@@ -128,8 +100,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public void eSet(final int featureID, final Object newValue) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
             this.setDistributionPowerModel((DistributionPowerModelSpecification) newValue);
             return;
@@ -144,8 +115,7 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public void eUnset(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
             this.setDistributionPowerModel((DistributionPowerModelSpecification) null);
             return;
@@ -160,10 +130,9 @@ public class DistributionPowerBindingImpl extends PowerBindingImpl implements Di
      */
     @Override
     public boolean eIsSet(final int featureID) {
-        switch (featureID)
-        {
+        switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            return this.distributionPowerModel != null;
+            return this.basicGetDistributionPowerModel() != null;
         }
         return super.eIsSet(featureID);
     }

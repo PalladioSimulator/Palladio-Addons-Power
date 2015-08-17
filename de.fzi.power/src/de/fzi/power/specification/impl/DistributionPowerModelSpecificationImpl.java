@@ -2,25 +2,22 @@
  */
 package de.fzi.power.specification.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.SpecificationPackage;
 
-import org.eclipse.emf.ecore.EClass;
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Distribution Power Model Specification</b></em>'.
- * <!-- end-user-doc -->
- * <p>
- * </p>
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Distribution Power Model Specification</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public class DistributionPowerModelSpecificationImpl extends PowerModelSpecificationImpl implements
-        DistributionPowerModelSpecification {
+public class DistributionPowerModelSpecificationImpl extends PowerModelSpecificationImpl
+        implements DistributionPowerModelSpecification {
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     protected DistributionPowerModelSpecificationImpl() {
@@ -28,8 +25,8 @@ public class DistributionPowerModelSpecificationImpl extends PowerModelSpecifica
     }
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -37,4 +34,4 @@ public class DistributionPowerModelSpecificationImpl extends PowerModelSpecifica
         return SpecificationPackage.Literals.DISTRIBUTION_POWER_MODEL_SPECIFICATION;
     }
 
-} //DistributionPowerModelSpecificationImpl
+} // DistributionPowerModelSpecificationImpl

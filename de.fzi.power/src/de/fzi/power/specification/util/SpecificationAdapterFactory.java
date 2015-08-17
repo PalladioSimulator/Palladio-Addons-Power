@@ -40,8 +40,7 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public SpecificationAdapterFactory() {
-        if (modelPackage == null)
-        {
+        if (modelPackage == null) {
             modelPackage = SpecificationPackage.eINSTANCE;
         }
     }
@@ -56,12 +55,10 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
      */
     @Override
     public boolean isFactoryForType(final Object object) {
-        if (object == modelPackage)
-        {
+        if (object == modelPackage) {
             return true;
         }
-        if (object instanceof EObject)
-        {
+        if (object instanceof EObject) {
             return ((EObject) object).eClass().getEPackage() == modelPackage;
         }
         return false;
@@ -73,243 +70,231 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
      *
      * @generated
      */
-    protected SpecificationSwitch<Adapter> modelSwitch = new SpecificationSwitch<Adapter>()
-            {
+    protected SpecificationSwitch<Adapter> modelSwitch = new SpecificationSwitch<Adapter>() {
         @Override
-        public Adapter casePowerModelRepository(final PowerModelRepository object)
-        {
+        public Adapter casePowerModelRepository(final PowerModelRepository object) {
             return SpecificationAdapterFactory.this.createPowerModelRepositoryAdapter();
         }
 
         @Override
-        public Adapter casePowerModelSpecification(final PowerModelSpecification object)
-        {
+        public Adapter casePowerModelSpecification(final PowerModelSpecification object) {
             return SpecificationAdapterFactory.this.createPowerModelSpecificationAdapter();
         }
 
         @Override
-        public Adapter caseResourcePowerModelSpecification(final ResourcePowerModelSpecification object)
-        {
+        public Adapter caseResourcePowerModelSpecification(final ResourcePowerModelSpecification object) {
             return SpecificationAdapterFactory.this.createResourcePowerModelSpecificationAdapter();
         }
 
         @Override
-        public Adapter caseDistributionPowerModelSpecification(final DistributionPowerModelSpecification object)
-        {
+        public Adapter caseDistributionPowerModelSpecification(final DistributionPowerModelSpecification object) {
             return SpecificationAdapterFactory.this.createDistributionPowerModelSpecificationAdapter();
         }
 
         @Override
-        public Adapter caseFixedFactor(final FixedFactor object)
-        {
+        public Adapter caseFixedFactor(final FixedFactor object) {
             return SpecificationAdapterFactory.this.createFixedFactorAdapter();
         }
 
         @Override
-        public Adapter caseConsumptionFactor(final ConsumptionFactor object)
-        {
+        public Adapter caseConsumptionFactor(final ConsumptionFactor object) {
             return SpecificationAdapterFactory.this.createConsumptionFactorAdapter();
         }
 
         @Override
-        public Adapter caseMeasuredFactor(final MeasuredFactor object)
-        {
+        public Adapter caseMeasuredFactor(final MeasuredFactor object) {
             return SpecificationAdapterFactory.this.createMeasuredFactorAdapter();
         }
 
         @Override
-        public Adapter caseIdentifier(final Identifier object)
-        {
+        public Adapter caseIdentifier(final Identifier object) {
             return SpecificationAdapterFactory.this.createIdentifierAdapter();
         }
 
         @Override
-        public Adapter caseNamedElement(final NamedElement object)
-        {
+        public Adapter caseNamedElement(final NamedElement object) {
             return SpecificationAdapterFactory.this.createNamedElementAdapter();
         }
 
         @Override
-        public Adapter caseEntity(final Entity object)
-        {
+        public Adapter caseEntity(final Entity object) {
             return SpecificationAdapterFactory.this.createEntityAdapter();
         }
 
         @Override
-        public Adapter defaultCase(final EObject object)
-        {
+        public Adapter defaultCase(final EObject object) {
             return SpecificationAdapterFactory.this.createEObjectAdapter();
         }
-            };
+    };
 
-            /**
-             * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
+    /**
+     * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
-             * @generated
-             */
-            @Override
-            public Adapter createAdapter(final Notifier target) {
-                return this.modelSwitch.doSwitch((EObject) target);
-            }
+     * @generated
+     */
+    @Override
+    public Adapter createAdapter(final Notifier target) {
+        return this.modelSwitch.doSwitch((EObject) target);
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
+    /**
+     * Creates a new adapter for an object of class '
      * {@link de.fzi.power.specification.PowerModelRepository <em>Power Model Repository</em>}'.
-             * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
-             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-             * end-user-doc -->
-             *
+     * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
      * @return the new adapter.
-             * @see de.fzi.power.specification.PowerModelRepository
-             * @generated
-             */
-            public Adapter createPowerModelRepositoryAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.specification.PowerModelRepository
+     * @generated
+     */
+    public Adapter createPowerModelRepositoryAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
+    /**
+     * Creates a new adapter for an object of class '
      * {@link de.fzi.power.specification.PowerModelSpecification <em>Power Model Specification</em>}
      * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily
      * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
      * <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.specification.PowerModelSpecification
-             * @generated
-             */
-            public Adapter createPowerModelSpecificationAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.specification.PowerModelSpecification
+     * @generated
+     */
+    public Adapter createPowerModelSpecificationAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
+    /**
+     * Creates a new adapter for an object of class '
      * {@link de.fzi.power.specification.ResourcePowerModelSpecification
      * <em>Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.specification.ResourcePowerModelSpecification
-             * @generated
-             */
-            public Adapter createResourcePowerModelSpecificationAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.specification.ResourcePowerModelSpecification
+     * @generated
+     */
+    public Adapter createResourcePowerModelSpecificationAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
+    /**
+     * Creates a new adapter for an object of class '
      * {@link de.fzi.power.specification.DistributionPowerModelSpecification
      * <em>Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.specification.DistributionPowerModelSpecification
-             * @generated
-             */
-            public Adapter createDistributionPowerModelSpecificationAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.specification.DistributionPowerModelSpecification
+     * @generated
+     */
+    public Adapter createDistributionPowerModelSpecificationAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.fzi.power.specification.FixedFactor
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.specification.FixedFactor
      * <em>Fixed Factor</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.specification.FixedFactor
-             * @generated
-             */
-            public Adapter createFixedFactorAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.specification.FixedFactor
+     * @generated
+     */
+    public Adapter createFixedFactorAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
-             * {@link de.fzi.power.specification.ConsumptionFactor <em>Consumption Factor</em>}'. <!--
-             * begin-user-doc --> This default implementation returns null so that we can easily ignore
-             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-             * end-user-doc -->
-             *
-             * @return the new adapter.
-             * @see de.fzi.power.specification.ConsumptionFactor
-             * @generated
-             */
-            public Adapter createConsumptionFactorAdapter() {
-                return null;
-            }
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.ConsumptionFactor <em>Consumption Factor</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can easily ignore
+     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.ConsumptionFactor
+     * @generated
+     */
+    public Adapter createConsumptionFactorAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '
-             * {@link de.fzi.power.specification.MeasuredFactor <em>Measured Factor</em>}'. <!--
-             * begin-user-doc --> This default implementation returns null so that we can easily ignore
-             * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-             * end-user-doc -->
-             *
-             * @return the new adapter.
-             * @see de.fzi.power.specification.MeasuredFactor
-             * @generated
-             */
-            public Adapter createMeasuredFactorAdapter() {
-                return null;
-            }
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.MeasuredFactor <em>Measured Factor</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can easily ignore
+     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.MeasuredFactor
+     * @generated
+     */
+    public Adapter createMeasuredFactorAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
+    /**
+     * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier
      * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.uka.ipd.sdq.identifier.Identifier
-             * @generated
-             */
-            public Adapter createIdentifierAdapter() {
-                return null;
-            }
+     * @see de.uka.ipd.sdq.identifier.Identifier
+     * @generated
+     */
+    public Adapter createIdentifierAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement
      * <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.util.NamedElement
-             * @generated
-             */
-            public Adapter createNamedElementAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.util.NamedElement
+     * @generated
+     */
+    public Adapter createNamedElementAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity
-     * <em>Entity</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
-     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
-     * cases anyway. <!-- end-user-doc -->
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity <em>Entity</em>
+     * }'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+     * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @see de.fzi.power.util.Entity
-             * @generated
-             */
-            public Adapter createEntityAdapter() {
-                return null;
-            }
+     * @see de.fzi.power.util.Entity
+     * @generated
+     */
+    public Adapter createEntityAdapter() {
+        return null;
+    }
 
-            /**
-             * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
+    /**
+     * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
      * implementation returns null. <!-- end-user-doc -->
      *
      * @return the new adapter.
-             * @generated
-             */
-            public Adapter createEObjectAdapter() {
-                return null;
-            }
+     * @generated
+     */
+    public Adapter createEObjectAdapter() {
+        return null;
+    }
 
 } // SpecificationAdapterFactory

@@ -27,16 +27,13 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
      * @generated
      */
     public static BindingFactory init() {
-        try
-        {
+        try {
             final BindingFactory theBindingFactory = (BindingFactory) EPackage.Registry.INSTANCE
                     .getEFactory(BindingPackage.eNS_URI);
-            if (theBindingFactory != null)
-            {
+            if (theBindingFactory != null) {
                 return theBindingFactory;
             }
-        } catch (final Exception exception)
-        {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new BindingFactoryImpl();
@@ -58,8 +55,7 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID())
-        {
+        switch (eClass.getClassifierID()) {
         case BindingPackage.FIXED_FACTOR_VALUE:
             return this.createFixedFactorValue();
         case BindingPackage.POWER_BINDING_REPOSITORY:

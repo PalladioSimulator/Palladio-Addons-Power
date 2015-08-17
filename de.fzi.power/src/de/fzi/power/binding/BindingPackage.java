@@ -580,8 +580,8 @@ public interface BindingPackage extends EPackage {
 
         /**
          * The meta object literal for the '
-         * {@link de.fzi.power.binding.impl.ResourcePowerBindingImpl
-         * <em>Resource Power Binding</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * {@link de.fzi.power.binding.impl.ResourcePowerBindingImpl <em>Resource Power Binding</em>
+         * }' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.binding.impl.ResourcePowerBindingImpl
          * @see de.fzi.power.binding.impl.BindingPackageImpl#getResourcePowerBinding()

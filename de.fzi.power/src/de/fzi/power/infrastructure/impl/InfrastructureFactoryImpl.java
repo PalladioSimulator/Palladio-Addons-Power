@@ -27,16 +27,13 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
      * @generated
      */
     public static InfrastructureFactory init() {
-        try
-        {
+        try {
             final InfrastructureFactory theInfrastructureFactory = (InfrastructureFactory) EPackage.Registry.INSTANCE
                     .getEFactory(InfrastructurePackage.eNS_URI);
-            if (theInfrastructureFactory != null)
-            {
+            if (theInfrastructureFactory != null) {
                 return theInfrastructureFactory;
             }
-        } catch (final Exception exception)
-        {
+        } catch (final Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new InfrastructureFactoryImpl();
@@ -58,8 +55,7 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
      */
     @Override
     public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID())
-        {
+        switch (eClass.getClassifierID()) {
         case InfrastructurePackage.POWER_DISTRIBUTION_UNIT:
             return this.createPowerDistributionUnit();
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT:

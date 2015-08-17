@@ -5,8 +5,6 @@ package de.fzi.power.binding;
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
 
-import org.eclipse.emf.ecore.EObject;
-
 import de.fzi.power.specification.FixedFactor;
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -16,18 +14,18 @@ import de.uka.ipd.sdq.identifier.Identifier;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  * <li>{@link de.fzi.power.binding.FixedFactorValue#getBoundFactor <em>Bound Factor</em>}</li>
  * <li>{@link de.fzi.power.binding.FixedFactorValue#getValue <em>Value</em>}</li>
  * <li>{@link de.fzi.power.binding.FixedFactorValue#getPowerBinding <em>Power Binding</em>}</li>
  * </ul>
- * </p>
  *
  * @see de.fzi.power.binding.BindingPackage#getFixedFactorValue()
  * @model
  * @generated
  */
-public interface FixedFactorValue extends EObject, Identifier {
+public interface FixedFactorValue extends Identifier {
     /**
      * Returns the value of the '<em><b>Bound Factor</b></em>' reference. <!-- begin-user-doc -->
      * <p>
