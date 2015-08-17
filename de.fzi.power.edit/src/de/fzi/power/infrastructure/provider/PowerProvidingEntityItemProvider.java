@@ -23,14 +23,14 @@ import de.fzi.power.util.provider.PowerEditPlugin;
 /**
  * This is the item provider adapter for a {@link de.fzi.power.infrastructure.PowerProvidingEntity}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class PowerProvidingEntityItemProvider extends EntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public PowerProvidingEntityItemProvider(final AdapterFactory adapterFactory) {
@@ -40,13 +40,12 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
             this.addSuppliablePeakPowerPropertyDescriptor(object);
@@ -58,26 +57,17 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
     /**
      * This adds a property descriptor for the Suppliable Peak Power feature. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addSuppliablePeakPowerPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors
-                .add
-                (this.createItemPropertyDescriptor
-                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                        this.getResourceLocator(),
-                        this.getString("_UI_PowerProvidingEntity_suppliablePeakPower_feature"),
-                        this.getString("_UI_PropertyDescriptor_description",
-                                "_UI_PowerProvidingEntity_suppliablePeakPower_feature",
-                                "_UI_PowerProvidingEntity_type"),
-                                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER,
-                                true,
-                                false,
-                                false,
-                                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-                                null,
-                                null));
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_PowerProvidingEntity_suppliablePeakPower_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_PowerProvidingEntity_suppliablePeakPower_feature", "_UI_PowerProvidingEntity_type"),
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -87,22 +77,14 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
      * @generated
      */
     protected void addDistributionPowerAssemblyContextPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors
-        .add
-                (this.createItemPropertyDescriptor
-                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                        this.getResourceLocator(),
-                        this.getString("_UI_PowerProvidingEntity_distributionPowerAssemblyContext_feature"),
-                        this.getString("_UI_PropertyDescriptor_description",
-                                "_UI_PowerProvidingEntity_distributionPowerAssemblyContext_feature",
-                                "_UI_PowerProvidingEntity_type"),
-                                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT,
-                                true,
-                                false,
-                                true,
-                                null,
-                                null,
-                                null));
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_PowerProvidingEntity_distributionPowerAssemblyContext_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_PowerProvidingEntity_distributionPowerAssemblyContext_feature",
+                        "_UI_PowerProvidingEntity_type"),
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT, true, false,
+                true, null, null, null));
     }
 
     /**
@@ -116,8 +98,7 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null)
-        {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
             this.childrenFeatures
                     .add(InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES);
@@ -127,7 +108,7 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,24 +128,22 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((PowerProvidingEntity) object).getName();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_PowerProvidingEntity_type") :
-                this.getString("_UI_PowerProvidingEntity_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_PowerProvidingEntity_type")
+                : this.getString("_UI_PowerProvidingEntity_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(PowerProvidingEntity.class))
-        {
+        switch (notification.getFeatureID(PowerProvidingEntity.class)) {
         case InfrastructurePackage.POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
             return;
@@ -178,33 +157,30 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
-                        InfrastructureFactory.eINSTANCE.createPowerDistributionUnit()));
+        newChildDescriptors.add(this.createChildParameter(
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
+                InfrastructureFactory.eINSTANCE.createPowerDistributionUnit()));
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
-                        InfrastructureFactory.eINSTANCE.createMountedPowerDistributionUnit()));
+        newChildDescriptors.add(this.createChildParameter(
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
+                InfrastructureFactory.eINSTANCE.createMountedPowerDistributionUnit()));
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
-                        InfrastructureFactory.eINSTANCE.createPowerConsumingResource()));
+        newChildDescriptors.add(this.createChildParameter(
+                InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
+                InfrastructureFactory.eINSTANCE.createPowerConsumingResource()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

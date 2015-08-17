@@ -16,14 +16,14 @@ import de.fzi.power.specification.SpecificationPackage;
 /**
  * This is the item provider adapter for a {@link de.fzi.power.specification.MeasuredFactor} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class MeasuredFactorItemProvider extends ConsumptionFactorItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public MeasuredFactorItemProvider(final AdapterFactory adapterFactory) {
@@ -33,13 +33,12 @@ public class MeasuredFactorItemProvider extends ConsumptionFactorItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
             this.addMetricTypePropertyDescriptor(object);
@@ -50,30 +49,21 @@ public class MeasuredFactorItemProvider extends ConsumptionFactorItemProvider {
     /**
      * This adds a property descriptor for the Metric Type feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addMetricTypePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add
-                (this.createItemPropertyDescriptor
-                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                        this.getResourceLocator(),
-                        this.getString("_UI_MeasuredFactor_metricType_feature"),
-                        this.getString("_UI_PropertyDescriptor_description",
-                                "_UI_MeasuredFactor_metricType_feature",
-                                "_UI_MeasuredFactor_type"),
-                                SpecificationPackage.Literals.MEASURED_FACTOR__METRIC_TYPE,
-                                true,
-                                false,
-                                true,
-                                null,
-                                null,
-                                null));
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_MeasuredFactor_metricType_feature"),
+                this.getString("_UI_PropertyDescriptor_description", "_UI_MeasuredFactor_metricType_feature",
+                        "_UI_MeasuredFactor_type"),
+                SpecificationPackage.Literals.MEASURED_FACTOR__METRIC_TYPE, true, false, true, null, null, null));
     }
 
     /**
      * This returns MeasuredFactor.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -90,16 +80,15 @@ public class MeasuredFactorItemProvider extends ConsumptionFactorItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((MeasuredFactor) object).getName();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_MeasuredFactor_type") :
-                this.getString("_UI_MeasuredFactor_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_MeasuredFactor_type")
+                : this.getString("_UI_MeasuredFactor_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -111,7 +100,7 @@ public class MeasuredFactorItemProvider extends ConsumptionFactorItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

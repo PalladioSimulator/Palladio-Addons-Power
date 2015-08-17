@@ -28,7 +28,7 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public PowerBindingItemProvider(final AdapterFactory adapterFactory) {
@@ -38,13 +38,12 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
@@ -62,8 +61,7 @@ public class PowerBindingItemProvider extends EntityItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null)
-        {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(BindingPackage.Literals.POWER_BINDING__FIXED_FACTOR_VALUES);
         }
@@ -72,7 +70,7 @@ public class PowerBindingItemProvider extends EntityItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -92,24 +90,22 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((PowerBinding) object).getName();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_PowerBinding_type") :
-                this.getString("_UI_PowerBinding_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_PowerBinding_type")
+                : this.getString("_UI_PowerBinding_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(PowerBinding.class))
-        {
+        switch (notification.getFeatureID(PowerBinding.class)) {
         case BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -120,23 +116,21 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (BindingPackage.Literals.POWER_BINDING__FIXED_FACTOR_VALUES,
-                        BindingFactory.eINSTANCE.createFixedFactorValue()));
+        newChildDescriptors.add(this.createChildParameter(BindingPackage.Literals.POWER_BINDING__FIXED_FACTOR_VALUES,
+                BindingFactory.eINSTANCE.createFixedFactorValue()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

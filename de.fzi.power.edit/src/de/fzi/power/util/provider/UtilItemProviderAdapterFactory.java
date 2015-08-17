@@ -28,11 +28,11 @@ import de.fzi.power.util.util.UtilAdapterFactory;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
-public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implements ComposeableAdapterFactory,
-        IChangeNotifier, IDisposable {
+public class UtilItemProviderAdapterFactory extends UtilAdapterFactory
+        implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -52,14 +52,14 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public UtilItemProviderAdapterFactory() {
@@ -73,7 +73,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This keeps track of the one adapter used for all {@link de.fzi.power.util.NamedElement}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NamedElementItemProvider namedElementItemProvider;
@@ -81,13 +81,12 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This creates an adapter for a {@link de.fzi.power.util.NamedElement}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Adapter createNamedElementAdapter() {
-        if (this.namedElementItemProvider == null)
-        {
+        if (this.namedElementItemProvider == null) {
             this.namedElementItemProvider = new NamedElementItemProvider(this);
         }
 
@@ -97,7 +96,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -108,7 +107,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -118,7 +117,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -139,16 +138,14 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type))
-        {
+        if (this.isFactoryForType(type)) {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-            {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
                 return adapter;
             }
         }
@@ -158,7 +155,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -168,7 +165,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -186,8 +183,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null)
-        {
+        if (this.parentAdapterFactory != null) {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
@@ -195,7 +191,7 @@ public class UtilItemProviderAdapterFactory extends UtilAdapterFactory implement
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

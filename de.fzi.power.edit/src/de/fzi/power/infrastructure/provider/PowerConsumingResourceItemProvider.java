@@ -17,14 +17,14 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
  * This is the item provider adapter for a
  * {@link de.fzi.power.infrastructure.PowerConsumingResource} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public PowerConsumingResourceItemProvider(final AdapterFactory adapterFactory) {
@@ -34,13 +34,12 @@ public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItem
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
             this.addProcessingResourceSpecificationPropertyDescriptor(object);
@@ -56,22 +55,14 @@ public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItem
      * @generated
      */
     protected void addProcessingResourceSpecificationPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors
-        .add
-                (this.createItemPropertyDescriptor
-                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                        this.getResourceLocator(),
-                        this.getString("_UI_PowerConsumingResource_processingResourceSpecification_feature"),
-                        this.getString("_UI_PropertyDescriptor_description",
-                                "_UI_PowerConsumingResource_processingResourceSpecification_feature",
-                                "_UI_PowerConsumingResource_type"),
-                                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                                true,
-                                false,
-                                true,
-                                null,
-                                null,
-                                null));
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_PowerConsumingResource_processingResourceSpecification_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_PowerConsumingResource_processingResourceSpecification_feature",
+                        "_UI_PowerConsumingResource_type"),
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION, true, false,
+                true, null, null, null));
     }
 
     /**
@@ -81,27 +72,19 @@ public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItem
      * @generated
      */
     protected void addResourcePowerAssemblyContextPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors
-        .add
-                (this.createItemPropertyDescriptor
-                (((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(),
-                        this.getResourceLocator(),
-                        this.getString("_UI_PowerConsumingResource_resourcePowerAssemblyContext_feature"),
-                        this.getString("_UI_PropertyDescriptor_description",
-                                "_UI_PowerConsumingResource_resourcePowerAssemblyContext_feature",
-                                "_UI_PowerConsumingResource_type"),
-                                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                                true,
-                                false,
-                                true,
-                                null,
-                                null,
-                                null));
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_PowerConsumingResource_resourcePowerAssemblyContext_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_PowerConsumingResource_resourcePowerAssemblyContext_feature",
+                        "_UI_PowerConsumingResource_type"),
+                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT, true, false,
+                true, null, null, null));
     }
 
     /**
      * This returns PowerConsumingResource.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -118,16 +101,15 @@ public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItem
     @Override
     public String getText(final Object object) {
         final String label = ((PowerConsumingResource) object).getName();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_PowerConsumingResource_type") :
-                this.getString("_UI_PowerConsumingResource_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_PowerConsumingResource_type")
+                : this.getString("_UI_PowerConsumingResource_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -139,7 +121,7 @@ public class PowerConsumingResourceItemProvider extends PowerConsumingEntityItem
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

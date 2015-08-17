@@ -21,14 +21,14 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 /**
  * This is the item provider adapter for a {@link de.fzi.power.specification.PowerModelRepository}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public PowerModelRepositoryItemProvider(final AdapterFactory adapterFactory) {
@@ -38,13 +38,12 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
@@ -62,8 +61,7 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null)
-        {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
             this.childrenFeatures.add(SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS);
         }
@@ -72,7 +70,7 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -85,7 +83,7 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
 
     /**
      * This returns PowerModelRepository.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -102,24 +100,22 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
     @Override
     public String getText(final Object object) {
         final String label = ((PowerModelRepository) object).getId();
-        return label == null || label.length() == 0 ?
-                this.getString("_UI_PowerModelRepository_type") :
-                this.getString("_UI_PowerModelRepository_type") + " " + label;
+        return label == null || label.length() == 0 ? this.getString("_UI_PowerModelRepository_type")
+                : this.getString("_UI_PowerModelRepository_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(PowerModelRepository.class))
-        {
+        switch (notification.getFeatureID(PowerModelRepository.class)) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -130,28 +126,26 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
-                        SpecificationFactory.eINSTANCE.createResourcePowerModelSpecification()));
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createResourcePowerModelSpecification()));
 
-        newChildDescriptors.add
-                (this.createChildParameter
-                (SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
-                        SpecificationFactory.eINSTANCE.createDistributionPowerModelSpecification()));
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createDistributionPowerModelSpecification()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

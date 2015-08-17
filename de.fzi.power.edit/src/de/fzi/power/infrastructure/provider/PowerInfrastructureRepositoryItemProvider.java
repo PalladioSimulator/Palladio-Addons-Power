@@ -5,6 +5,7 @@ package de.fzi.power.infrastructure.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.cdo.edit.CDOItemProviderAdapter;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -15,7 +16,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.fzi.power.infrastructure.InfrastructureFactory;
@@ -27,16 +27,16 @@ import de.fzi.power.util.provider.PowerEditPlugin;
  * This is the item provider adapter for a
  * {@link de.fzi.power.infrastructure.PowerInfrastructureRepository} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
-public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapter implements
-        IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider,
-        IItemPropertySource {
+public class PowerInfrastructureRepositoryItemProvider extends CDOItemProviderAdapter
+        implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider,
+        IItemLabelProvider, IItemPropertySource {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public PowerInfrastructureRepositoryItemProvider(final AdapterFactory adapterFactory) {
@@ -46,13 +46,12 @@ public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapt
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null)
-        {
+        if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
@@ -70,18 +69,17 @@ public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapt
      */
     @Override
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null)
-        {
+        if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
-            this.childrenFeatures
-                    .add(InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES);
+            this.childrenFeatures.add(
+                    InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES);
         }
         return this.childrenFeatures;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -94,13 +92,13 @@ public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapt
 
     /**
      * This returns PowerInfrastructureRepository.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Object getImage(final Object object) {
-        return this
-                .overlayImage(object, this.getResourceLocator().getImage("full/obj16/PowerInfrastructureRepository"));
+        return this.overlayImage(object,
+                this.getResourceLocator().getImage("full/obj16/PowerInfrastructureRepository"));
     }
 
     /**
@@ -118,15 +116,14 @@ public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapt
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(PowerInfrastructureRepository.class))
-        {
+        switch (notification.getFeatureID(PowerInfrastructureRepository.class)) {
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
@@ -137,30 +134,26 @@ public class PowerInfrastructureRepositoryItemProvider extends ItemProviderAdapt
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors
-        .add
-                (this.createChildParameter
-                (InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
-                        InfrastructureFactory.eINSTANCE.createPowerDistributionUnit()));
+        newChildDescriptors.add(this.createChildParameter(
+                InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
+                InfrastructureFactory.eINSTANCE.createPowerDistributionUnit()));
 
-        newChildDescriptors
-        .add
-                (this.createChildParameter
-                (InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
-                        InfrastructureFactory.eINSTANCE.createMountedPowerDistributionUnit()));
+        newChildDescriptors.add(this.createChildParameter(
+                InfrastructurePackage.Literals.POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES,
+                InfrastructureFactory.eINSTANCE.createMountedPowerDistributionUnit()));
     }
 
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

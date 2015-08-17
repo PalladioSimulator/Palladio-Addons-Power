@@ -28,11 +28,11 @@ import de.fzi.power.specification.util.SpecificationAdapterFactory;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
-public class SpecificationItemProviderAdapterFactory extends SpecificationAdapterFactory implements
-        ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class SpecificationItemProviderAdapterFactory extends SpecificationAdapterFactory
+        implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -52,14 +52,14 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public SpecificationItemProviderAdapterFactory() {
@@ -74,7 +74,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.specification.PowerModelRepository} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected PowerModelRepositoryItemProvider powerModelRepositoryItemProvider;
@@ -87,8 +87,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      */
     @Override
     public Adapter createPowerModelRepositoryAdapter() {
-        if (this.powerModelRepositoryItemProvider == null)
-        {
+        if (this.powerModelRepositoryItemProvider == null) {
             this.powerModelRepositoryItemProvider = new PowerModelRepositoryItemProvider(this);
         }
 
@@ -108,13 +107,12 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      * This creates an adapter for a
      * {@link de.fzi.power.specification.ResourcePowerModelSpecification}. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Adapter createResourcePowerModelSpecificationAdapter() {
-        if (this.resourcePowerModelSpecificationItemProvider == null)
-        {
+        if (this.resourcePowerModelSpecificationItemProvider == null) {
             this.resourcePowerModelSpecificationItemProvider = new ResourcePowerModelSpecificationItemProvider(this);
         }
 
@@ -134,13 +132,12 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      * This creates an adapter for a
      * {@link de.fzi.power.specification.DistributionPowerModelSpecification}. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Adapter createDistributionPowerModelSpecificationAdapter() {
-        if (this.distributionPowerModelSpecificationItemProvider == null)
-        {
+        if (this.distributionPowerModelSpecificationItemProvider == null) {
             this.distributionPowerModelSpecificationItemProvider = new DistributionPowerModelSpecificationItemProvider(
                     this);
         }
@@ -152,7 +149,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.specification.FixedFactor} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedFactorItemProvider fixedFactorItemProvider;
@@ -165,8 +162,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      */
     @Override
     public Adapter createFixedFactorAdapter() {
-        if (this.fixedFactorItemProvider == null)
-        {
+        if (this.fixedFactorItemProvider == null) {
             this.fixedFactorItemProvider = new FixedFactorItemProvider(this);
         }
 
@@ -177,7 +173,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.specification.MeasuredFactor} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected MeasuredFactorItemProvider measuredFactorItemProvider;
@@ -190,8 +186,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
      */
     @Override
     public Adapter createMeasuredFactorAdapter() {
-        if (this.measuredFactorItemProvider == null)
-        {
+        if (this.measuredFactorItemProvider == null) {
             this.measuredFactorItemProvider = new MeasuredFactorItemProvider(this);
         }
 
@@ -201,7 +196,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -212,7 +207,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -222,7 +217,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -243,16 +238,14 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type))
-        {
+        if (this.isFactoryForType(type)) {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-            {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
                 return adapter;
             }
         }
@@ -262,7 +255,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -272,7 +265,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -290,8 +283,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null)
-        {
+        if (this.parentAdapterFactory != null) {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
@@ -299,7 +291,7 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

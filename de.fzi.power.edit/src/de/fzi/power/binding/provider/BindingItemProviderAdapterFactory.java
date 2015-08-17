@@ -28,11 +28,11 @@ import de.fzi.power.binding.util.BindingAdapterFactory;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
-public class BindingItemProviderAdapterFactory extends BindingAdapterFactory implements ComposeableAdapterFactory,
-        IChangeNotifier, IDisposable {
+public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
+        implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -52,14 +52,14 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public BindingItemProviderAdapterFactory() {
@@ -74,7 +74,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.FixedFactorValue} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected FixedFactorValueItemProvider fixedFactorValueItemProvider;
@@ -87,8 +87,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      */
     @Override
     public Adapter createFixedFactorValueAdapter() {
-        if (this.fixedFactorValueItemProvider == null)
-        {
+        if (this.fixedFactorValueItemProvider == null) {
             this.fixedFactorValueItemProvider = new FixedFactorValueItemProvider(this);
         }
 
@@ -99,7 +98,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.PowerBindingRepository} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected PowerBindingRepositoryItemProvider powerBindingRepositoryItemProvider;
@@ -112,8 +111,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      */
     @Override
     public Adapter createPowerBindingRepositoryAdapter() {
-        if (this.powerBindingRepositoryItemProvider == null)
-        {
+        if (this.powerBindingRepositoryItemProvider == null) {
             this.powerBindingRepositoryItemProvider = new PowerBindingRepositoryItemProvider(this);
         }
 
@@ -124,7 +122,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.ResourcePowerBinding} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ResourcePowerBindingItemProvider resourcePowerBindingItemProvider;
@@ -137,8 +135,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      */
     @Override
     public Adapter createResourcePowerBindingAdapter() {
-        if (this.resourcePowerBindingItemProvider == null)
-        {
+        if (this.resourcePowerBindingItemProvider == null) {
             this.resourcePowerBindingItemProvider = new ResourcePowerBindingItemProvider(this);
         }
 
@@ -149,7 +146,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.DistributionPowerBinding} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DistributionPowerBindingItemProvider distributionPowerBindingItemProvider;
@@ -162,8 +159,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
      */
     @Override
     public Adapter createDistributionPowerBindingAdapter() {
-        if (this.distributionPowerBindingItemProvider == null)
-        {
+        if (this.distributionPowerBindingItemProvider == null) {
             this.distributionPowerBindingItemProvider = new DistributionPowerBindingItemProvider(this);
         }
 
@@ -173,7 +169,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -184,7 +180,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -194,7 +190,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -215,16 +211,14 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
     public Object adapt(final Object object, final Object type) {
-        if (this.isFactoryForType(type))
-        {
+        if (this.isFactoryForType(type)) {
             final Object adapter = super.adapt(object, type);
-            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter)))
-            {
+            if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
                 return adapter;
             }
         }
@@ -234,7 +228,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -244,7 +238,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -262,8 +256,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
     public void fireNotifyChanged(final Notification notification) {
         this.changeNotifier.fireNotifyChanged(notification);
 
-        if (this.parentAdapterFactory != null)
-        {
+        if (this.parentAdapterFactory != null) {
             this.parentAdapterFactory.fireNotifyChanged(notification);
         }
     }
@@ -271,7 +264,7 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory imp
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
