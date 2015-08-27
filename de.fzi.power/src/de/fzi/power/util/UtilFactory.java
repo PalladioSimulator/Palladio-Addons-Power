@@ -13,30 +13,30 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface UtilFactory extends EFactory {
-    /**
-     * The singleton instance of the factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    UtilFactory eINSTANCE = de.fzi.power.util.impl.UtilFactoryImpl.init();
+	/**
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	UtilFactory eINSTANCE = de.fzi.power.util.impl.UtilFactoryImpl.init();
 
-    /**
-     * Returns a new object of class '<em>Named Element</em>'.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return a new object of class '<em>Named Element</em>'.
-     * @generated
-     */
-    NamedElement createNamedElement();
+	/**
+	 * Returns a new object of class '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Named Element</em>'.
+	 * @generated
+	 */
+	NamedElement createNamedElement();
 
-    /**
-     * Returns the package supported by this factory.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @return the package supported by this factory.
-     * @generated
-     */
-    UtilPackage getUtilPackage();
+	/**
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
+	UtilPackage getUtilPackage();
 
 } //UtilFactory

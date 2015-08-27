@@ -12,5 +12,6 @@ package de.fzi.power.infrastructure;
  * @model abstract="true"
  * @generated
  */
-public interface PowerConsumingProvidingEntity extends PowerConsumingEntity, PowerProvidingEntity {
+public interface PowerConsumingProvidingEntity extends PowerConsumingEntity,
+		PowerProvidingEntity {
 } // PowerConsumingProvidingEntity

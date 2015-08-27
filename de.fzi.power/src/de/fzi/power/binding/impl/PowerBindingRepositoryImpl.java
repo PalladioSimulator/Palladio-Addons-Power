@@ -20,136 +20,131 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * <em><b>Power Binding Repository</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
- * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.PowerBindingRepositoryImpl#getPowerBindings
- * <em>Power Bindings</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.PowerBindingRepositoryImpl#getPowerBindings <em>Power Bindings</em>}</li>
  * </ul>
+ * </p>
  *
  * @generated
  */
-public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerBindingRepository {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected PowerBindingRepositoryImpl() {
-        super();
-    }
+public class PowerBindingRepositoryImpl extends IdentifierImpl implements
+		PowerBindingRepository {
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PowerBindingRepositoryImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return BindingPackage.Literals.POWER_BINDING_REPOSITORY;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return BindingPackage.Literals.POWER_BINDING_REPOSITORY;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public EList<PowerBinding> getPowerBindings() {
-        return (EList<PowerBinding>) this.eDynamicGet(BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
-                BindingPackage.Literals.POWER_BINDING_REPOSITORY__POWER_BINDINGS, true, true);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<PowerBinding> getPowerBindings() {
+		return (EList<PowerBinding>) eDynamicGet(
+				BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+				BindingPackage.Literals.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+				true, true);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPowerBindings()).basicAdd(otherEnd,
-                    msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPowerBindings())
+					.basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return ((InternalEList<?>) this.getPowerBindings()).basicRemove(otherEnd, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd,
+			int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			return ((InternalEList<?>) getPowerBindings()).basicRemove(
+					otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return this.getPowerBindings();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			return getPowerBindings();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            this.getPowerBindings().clear();
-            this.getPowerBindings().addAll((Collection<? extends PowerBinding>) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			getPowerBindings().clear();
+			getPowerBindings().addAll(
+					(Collection<? extends PowerBinding>) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            this.getPowerBindings().clear();
-            return;
-        }
-        super.eUnset(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			getPowerBindings().clear();
+			return;
+		}
+		super.eUnset(featureID);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return !this.getPowerBindings().isEmpty();
-        }
-        return super.eIsSet(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+		case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
+			return !getPowerBindings().isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } // PowerBindingRepositoryImpl
