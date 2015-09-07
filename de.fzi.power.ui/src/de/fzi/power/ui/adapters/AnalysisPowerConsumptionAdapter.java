@@ -105,6 +105,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implemen
                 measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
                 ((StringMeasuringPoint) measuringPoint)
                         .setMeasuringPoint(AnalysisPowerConsumptionAdapter.this.powerProvidingEntity.getName());
+                measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
             }
         }
         return measuringPoint;

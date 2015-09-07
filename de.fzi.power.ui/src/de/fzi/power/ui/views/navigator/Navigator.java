@@ -29,6 +29,7 @@ import org.palladiosimulator.edp2.datastream.configurable.IPropertyConfigurable;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.visualization.AbstractVisualizationInput;
+import org.palladiosimulator.edp2.visualization.AbstractVisualizationSingleDatastreamConfiguration;
 import org.palladiosimulator.edp2.visualization.IVisualisationInput;
 import org.palladiosimulator.edp2.visualization.IVisualisationSingleDatastreamInput;
 import org.palladiosimulator.measurementframework.MeasuringValue;
@@ -68,6 +69,8 @@ public class Navigator extends ViewPart {
     private static final String SCATTER_PLOT_ID = "org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput";
     private static final String CHART_TITLE = "Power Consumption over Time";
     private static final String CHART_TITLE_ATTRIBUTE = "title";
+
+    private static final String ENERGY_TITLE = "Cumulative Energy Consumption over Time";
 
     public Navigator() {
         super();
@@ -168,6 +171,7 @@ public class Navigator extends ViewPart {
             }
             // add chart title
             elementProperties.put(CHART_TITLE_ATTRIBUTE, CHART_TITLE);
+            elementProperties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, CHART_TITLE);
             configurable.setProperties(elementProperties);
             final ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
                     element.getAttribute(NAME_ATTRIBUTE), adapter, configurable);
@@ -222,7 +226,8 @@ public class Navigator extends ViewPart {
                         property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
             }
             // add chart title
-            elementProperties.put(CHART_TITLE_ATTRIBUTE, "Cumulative Energy Consumption over Time");
+            elementProperties.put(CHART_TITLE_ATTRIBUTE, ENERGY_TITLE);
+            elementProperties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, ENERGY_TITLE);
             configurable.setProperties(elementProperties);
             final ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
                     element.getAttribute(NAME_ATTRIBUTE), energyAdapter, configurable);
