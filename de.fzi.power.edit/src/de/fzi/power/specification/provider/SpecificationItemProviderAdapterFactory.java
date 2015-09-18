@@ -191,6 +191,30 @@ public class SpecificationItemProviderAdapterFactory extends
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fzi.power.specification.DeclarativePowerModelSpecification} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DeclarativePowerModelSpecificationItemProvider declarativePowerModelSpecificationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fzi.power.specification.DeclarativePowerModelSpecification}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDeclarativePowerModelSpecificationAdapter() {
+		if (declarativePowerModelSpecificationItemProvider == null) {
+			declarativePowerModelSpecificationItemProvider = new DeclarativePowerModelSpecificationItemProvider(
+					this);
+		}
+
+		return declarativePowerModelSpecificationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,6 +328,8 @@ public class SpecificationItemProviderAdapterFactory extends
 			fixedFactorItemProvider.dispose();
 		if (measuredFactorItemProvider != null)
 			measuredFactorItemProvider.dispose();
+		if (declarativePowerModelSpecificationItemProvider != null)
+			declarativePowerModelSpecificationItemProvider.dispose();
 	}
 
 }

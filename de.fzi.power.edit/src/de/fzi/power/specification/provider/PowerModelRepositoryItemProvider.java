@@ -147,6 +147,12 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
 						SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
 						SpecificationFactory.eINSTANCE
 								.createDistributionPowerModelSpecification()));
+
+		newChildDescriptors
+				.add(createChildParameter(
+						SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+						SpecificationFactory.eINSTANCE
+								.createDeclarativePowerModelSpecification()));
 	}
 
 	/**
