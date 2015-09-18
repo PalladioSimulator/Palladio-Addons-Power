@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Simple
+Bundle-SymbolicName: org.simpleframwork.xml_2.7.1
+Bundle-Version: 2.7.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.simpleframework.xml,
+ org.simpleframework.xml.convert,
+ org.simpleframework.xml.core,
+ org.simpleframework.xml.filter,
+ org.simpleframework.xml.strategy,
+ org.simpleframework.xml.stream,
+ org.simpleframework.xml.transform,
+ org.simpleframework.xml.util
