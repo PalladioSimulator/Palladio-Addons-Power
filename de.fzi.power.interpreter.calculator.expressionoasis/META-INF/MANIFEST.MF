@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Expressionoasis Calculator
+Bundle-SymbolicName: de.fzi.power.interpreter.calculator.expressionoasis;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fzi.power.interpreter.calculator.expressionoasis.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ de.fzi.power.interpreter;bundle-version="1.0.0",
+ org.jscience,
+ org.palladiosimulator.metricspec,
+ org.palladiosimulator.measurementframework,
+ de.fzi.power;bundle-version="1.0.0",
+ org.vedantatree.expressionoasis
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.commons.collections15
+Export-Package: de.fzi.power.interpreter.calculator.expressionoasis
