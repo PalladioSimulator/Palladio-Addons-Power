@@ -36,7 +36,7 @@
           eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeclarativePowerModelSpecification"
-        eSuperTypes="#//specification/PowerModelSpecification">
+        eSuperTypes="#//specification/ResourcePowerModelSpecification #//specification/DistributionPowerModelSpecification">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalExpression"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
