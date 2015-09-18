@@ -2,6 +2,7 @@
  */
 package de.fzi.power.specification.util;
 
+import de.fzi.power.specification.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -162,6 +163,21 @@ public class SpecificationSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case SpecificationPackage.DECLARATIVE_POWER_MODEL_SPECIFICATION: {
+			DeclarativePowerModelSpecification declarativePowerModelSpecification = (DeclarativePowerModelSpecification) theEObject;
+			T result = caseDeclarativePowerModelSpecification(declarativePowerModelSpecification);
+			if (result == null)
+				result = casePowerModelSpecification(declarativePowerModelSpecification);
+			if (result == null)
+				result = caseEntity(declarativePowerModelSpecification);
+			if (result == null)
+				result = caseIdentifier(declarativePowerModelSpecification);
+			if (result == null)
+				result = caseNamedElement(declarativePowerModelSpecification);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -259,6 +275,22 @@ public class SpecificationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseMeasuredFactor(MeasuredFactor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Declarative Power Model Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Declarative Power Model Specification</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeclarativePowerModelSpecification(
+			DeclarativePowerModelSpecification object) {
 		return null;
 	}
 

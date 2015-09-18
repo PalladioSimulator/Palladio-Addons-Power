@@ -17,6 +17,7 @@ import de.fzi.power.binding.impl.BindingPackageImpl;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -28,6 +29,7 @@ import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -76,6 +78,13 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	private EClass measuredFactorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass declarativePowerModelSpecificationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -277,6 +286,27 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDeclarativePowerModelSpecification() {
+		return declarativePowerModelSpecificationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDeclarativePowerModelSpecification_FunctionalExpression() {
+		return (EAttribute) declarativePowerModelSpecificationEClass
+				.getEStructuralFeatures().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -325,6 +355,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 
 		measuredFactorEClass = createEClass(MEASURED_FACTOR);
 		createEReference(measuredFactorEClass, MEASURED_FACTOR__METRIC_TYPE);
+
+		declarativePowerModelSpecificationEClass = createEClass(DECLARATIVE_POWER_MODEL_SPECIFICATION);
+		createEAttribute(declarativePowerModelSpecificationEClass,
+				DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION);
 	}
 
 	/**
@@ -374,6 +408,8 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 		consumptionFactorEClass.getESuperTypes()
 				.add(theUtilPackage.getEntity());
 		measuredFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
+		declarativePowerModelSpecificationEClass.getESuperTypes().add(
+				this.getPowerModelSpecification());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(powerModelRepositoryEClass, PowerModelRepository.class,
@@ -436,6 +472,17 @@ public class SpecificationPackageImpl extends EPackageImpl implements
 				"metricType", null, 1, 1, MeasuredFactor.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(declarativePowerModelSpecificationEClass,
+				DeclarativePowerModelSpecification.class,
+				"DeclarativePowerModelSpecification", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(
+				getDeclarativePowerModelSpecification_FunctionalExpression(),
+				ecorePackage.getEString(), "functionalExpression", null, 1, 1,
+				DeclarativePowerModelSpecification.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

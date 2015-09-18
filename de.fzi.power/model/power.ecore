@@ -35,6 +35,11 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="metricType" lowerBound="1"
           eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DeclarativePowerModelSpecification"
+        eSuperTypes="#//specification/PowerModelSpecification">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalExpression"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="binding" nsURI="http://www.fzi.de/Power/Binding/1.0" nsPrefix="de.fzi.power">
     <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">

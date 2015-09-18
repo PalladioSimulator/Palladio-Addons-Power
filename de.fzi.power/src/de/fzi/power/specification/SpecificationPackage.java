@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import de.fzi.power.util.UtilPackage;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import org.eclipse.emf.ecore.EAttribute;
 
 /**
  * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta
@@ -396,6 +397,70 @@ public interface SpecificationPackage extends EPackage {
 	int MEASURED_FACTOR_FEATURE_COUNT = CONSUMPTION_FACTOR_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl <em>Declarative Power Model Specification</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
+	 * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativePowerModelSpecification()
+	 * @generated
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION__ID = POWER_MODEL_SPECIFICATION__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION__NAME = POWER_MODEL_SPECIFICATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+	/**
+	 * The feature id for the '<em><b>Functional Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Declarative Power Model Specification</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link de.fzi.power.specification.PowerModelRepository <em>Power Model Repository</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Power Model Repository</em>'.
@@ -512,6 +577,27 @@ public interface SpecificationPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getMeasuredFactor_MetricType();
+
+	/**
+	 * Returns the meta object for class '{@link de.fzi.power.specification.DeclarativePowerModelSpecification <em>Declarative Power Model Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Declarative Power Model Specification</em>'.
+	 * @see de.fzi.power.specification.DeclarativePowerModelSpecification
+	 * @generated
+	 */
+	EClass getDeclarativePowerModelSpecification();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression <em>Functional Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Functional Expression</em>'.
+	 * @see de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression()
+	 * @see #getDeclarativePowerModelSpecification()
+	 * @generated
+	 */
+	EAttribute getDeclarativePowerModelSpecification_FunctionalExpression();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -643,6 +729,26 @@ public interface SpecificationPackage extends EPackage {
 		 */
 		EReference MEASURED_FACTOR__METRIC_TYPE = eINSTANCE
 				.getMeasuredFactor_MetricType();
+
+		/**
+		 * The meta object literal for the '{@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl <em>Declarative Power Model Specification</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
+		 * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativePowerModelSpecification()
+		 * @generated
+		 */
+		EClass DECLARATIVE_POWER_MODEL_SPECIFICATION = eINSTANCE
+				.getDeclarativePowerModelSpecification();
+
+		/**
+		 * The meta object literal for the '<em><b>Functional Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = eINSTANCE
+				.getDeclarativePowerModelSpecification_FunctionalExpression();
 
 	}
 

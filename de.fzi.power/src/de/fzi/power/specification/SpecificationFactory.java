@@ -68,6 +68,15 @@ public interface SpecificationFactory extends EFactory {
 	MeasuredFactor createMeasuredFactor();
 
 	/**
+	 * Returns a new object of class '<em>Declarative Power Model Specification</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Declarative Power Model Specification</em>'.
+	 * @generated
+	 */
+	DeclarativePowerModelSpecification createDeclarativePowerModelSpecification();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

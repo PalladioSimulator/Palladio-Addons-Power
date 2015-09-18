@@ -2,6 +2,7 @@
  */
 package de.fzi.power.specification.impl;
 
+import de.fzi.power.specification.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -65,6 +66,8 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 			return createFixedFactor();
 		case SpecificationPackage.MEASURED_FACTOR:
 			return createMeasuredFactor();
+		case SpecificationPackage.DECLARATIVE_POWER_MODEL_SPECIFICATION:
+			return createDeclarativePowerModelSpecification();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -119,6 +122,17 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements
 	public MeasuredFactor createMeasuredFactor() {
 		MeasuredFactorImpl measuredFactor = new MeasuredFactorImpl();
 		return measuredFactor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DeclarativePowerModelSpecification createDeclarativePowerModelSpecification() {
+		DeclarativePowerModelSpecificationImpl declarativePowerModelSpecification = new DeclarativePowerModelSpecificationImpl();
+		return declarativePowerModelSpecification;
 	}
 
 	/**
