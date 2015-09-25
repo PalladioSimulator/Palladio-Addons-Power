@@ -13,5 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.vedantatree.expressionoasis
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Eclipse-RegisterBuddy: org.vedantatree.expressionoasis
 Import-Package: org.apache.commons.collections15
-Export-Package: de.fzi.power.interpreter.calculator.expressionoasis
+Export-Package: de.fzi.power.interpreter.calculator.expressionoasis,
+ de.fzi.power.interpreter.calculator.expressionoasis.custom,
+ de.fzi.power.interpreter.calculator.expressionoasis.custom.expressions

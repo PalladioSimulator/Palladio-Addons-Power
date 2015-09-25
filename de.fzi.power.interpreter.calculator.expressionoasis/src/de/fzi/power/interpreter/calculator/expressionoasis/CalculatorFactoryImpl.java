@@ -1,20 +1,25 @@
 package de.fzi.power.interpreter.calculator.expressionoasis;
 
+import java.util.Objects;
+
+import org.eclipse.emf.ecore.EClass;
+
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.interpreter.calculators.CalculatorFactory;
 import de.fzi.power.specification.PowerModelSpecification;
+import de.fzi.power.specification.SpecificationPackage;
 
 public class CalculatorFactoryImpl implements CalculatorFactory {
-    
+
+    private static final EClass COMPATIBLE_POWER_MODEL_SPEC_ECLASS = SpecificationPackage.Literals.DECLARATIVE_POWER_MODEL_SPECIFICATION;
 
     @Override
     public boolean isCompatibleWith(PowerModelSpecification specification) {
-        return specification.getName().startsWith(
-                ExpressionOasisPowerModelCalculator.REGRESSION_POWER_MODEL_IDENTIFIER 
-                + ExpressionOasisPowerModelCalculator.MODEL_NAME_SPECIFICATION_SEPARATOR);
+        return Objects.requireNonNull(specification, "Given specification must not be null.")
+                .eClass() == COMPATIBLE_POWER_MODEL_SPEC_ECLASS;
     }
 
     @Override
@@ -25,14 +30,15 @@ public class CalculatorFactoryImpl implements CalculatorFactory {
     @Override
     public AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
             PowerProvidingEntity forEntity) {
-        throw new UnsupportedOperationException("This calculator factory only supports "
-                + "resource power model calculators");
+        return new ExpressionOasisDistributionPowerModelCalculator(
+                Objects.requireNonNull(forEntity, "Given PowerProvidingEntity must not be null."));
     }
 
     @Override
     public AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
             PowerConsumingResource forResource) {
-        return new ExpressionOasisPowerModelCalculator(forResource);
+        return new ExpressionOasisResourcePowerModelCalculator(
+                Objects.requireNonNull(forResource, "Given PowerConsumingResource must not be null."));
     }
 
 }
