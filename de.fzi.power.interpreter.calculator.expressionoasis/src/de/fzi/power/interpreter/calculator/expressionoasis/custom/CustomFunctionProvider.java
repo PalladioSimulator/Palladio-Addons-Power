@@ -14,7 +14,6 @@ import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
-import de.fzi.power.interpreter.calculator.expressionoasis.helper.MeasuredValuesCompositeValueObject;
 
 public final class CustomFunctionProvider implements FunctionProvider {
 

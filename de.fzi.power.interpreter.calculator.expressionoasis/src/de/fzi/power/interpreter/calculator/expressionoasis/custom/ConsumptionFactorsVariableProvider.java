@@ -26,7 +26,6 @@ import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.interpreter.InterpreterUtils;
-import de.fzi.power.interpreter.calculator.expressionoasis.helper.MeasuredValuesCompositeValueObject;
 import de.fzi.power.specification.ConsumptionFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.util.SpecificationSwitch;

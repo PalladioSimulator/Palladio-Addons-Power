@@ -20,7 +20,6 @@ import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
-import de.fzi.power.interpreter.calculator.expressionoasis.helper.MeasuredValuesCompositeValueObject;
 import de.fzi.power.specification.ConsumptionFactor;
 
 public class CustomExpressionContext extends ExpressionContext {

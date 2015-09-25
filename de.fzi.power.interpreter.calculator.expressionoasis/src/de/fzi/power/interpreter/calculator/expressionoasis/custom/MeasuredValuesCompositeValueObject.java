@@ -1,11 +1,9 @@
-package de.fzi.power.interpreter.calculator.expressionoasis.helper;
+package de.fzi.power.interpreter.calculator.expressionoasis.custom;
 
 import java.util.Collection;
 import java.util.Objects;
 
 import org.vedantatree.expressionoasis.types.ValueObject;
-
-import de.fzi.power.interpreter.calculator.expressionoasis.custom.CustomExpressionContext;
 
 public final class MeasuredValuesCompositeValueObject extends ValueObject {
 

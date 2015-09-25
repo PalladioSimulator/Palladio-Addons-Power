@@ -11,8 +11,8 @@ import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.interpreter.calculator.expressionoasis.custom.CustomExpressionContext;
+import de.fzi.power.interpreter.calculator.expressionoasis.custom.MeasuredValuesCompositeValueObject;
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
-import de.fzi.power.interpreter.calculator.expressionoasis.helper.MeasuredValuesCompositeValueObject;
 
 public final class ExtendedMultExpression extends MultiplyExpression {
 
