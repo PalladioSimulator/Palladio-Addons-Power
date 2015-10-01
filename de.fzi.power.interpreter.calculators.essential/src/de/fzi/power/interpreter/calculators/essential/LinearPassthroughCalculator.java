@@ -37,30 +37,31 @@ public class LinearPassthroughCalculator extends AbstractDistributionPowerModelC
     public LinearPassthroughCalculator(PowerProvidingEntity powerProvidingEntity) {
         super(powerProvidingEntity);
         DistributionPowerBinding binding = this.powerProvidingEntity.getDistributionPowerAssemblyContext();
-        if (!binding.getDistributionPowerModel().getId().equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getId())) {
+        if (!binding.getDistributionPowerModel().getId()
+                .equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getId())) {
             throw new IllegalArgumentException("Referred model wasn't the linear power model from"
                     + PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getName() + ".");
         }
 
         for (FixedFactorValue value : binding.getFixedFactorValues()) {
-            if (value.getBoundFactor().getId().equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS.getId())) {
+            if (value.getBoundFactor().getId()
+                    .equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS.getId())) {
                 Unit<Power> unit = value.getValue().getUnit();
                 Amount<Power> valueInAmount = Amount.valueOf(value.getValue().doubleValue(unit), unit);
                 this.constantLoss = valueInAmount;
             } else {
-                throw new IllegalArgumentException("Factor value referred to constant "
-                        + value.getBoundFactor().getId() + "that didn't match up wih "
+                throw new IllegalArgumentException("Factor value referred to constant " + value.getBoundFactor().getId()
+                        + "that didn't match up wih "
                         + PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS);
             }
         }
     }
 
-    // TODO actually implement this; will involve metamodel changes (added parameters
     @Override
     public Amount<Power> calculate(Map<PowerConsumingEntity, Amount<Power>> outletConsumptions) {
         Amount<Power> sum = PowerModelConstants.ZERO_POWER;
         for (Amount<Power> power : outletConsumptions.values()) {
-            sum.plus(power);
+            sum = sum.plus(power);
         }
         return sum.minus(this.constantLoss);
     }
