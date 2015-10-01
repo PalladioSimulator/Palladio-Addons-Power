@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 
 import org.palladiosimulator.commons.designpatterns.AbstractObservable;
@@ -17,15 +18,15 @@ import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator
 /**
  * Registry through which the power models of the resources and distribution units are managed.
  * 
- * @author stier
+ * @author Christian Stier, Florian Rosenthal
  *
  */
 public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryChangeListener> {
 
     // List of calculators per active resource.
-    private HashMap<PowerConsumingResource, AbstractResourcePowerModelCalculator> calculatorsPerResource;
+    private final HashMap<PowerConsumingResource, AbstractResourcePowerModelCalculator> calculatorsPerResource;
     // List of calculators per power distribution unit.
-    private HashMap<PowerProvidingEntity, AbstractDistributionPowerModelCalculator> calculatorsPerPdu;
+    private final HashMap<PowerProvidingEntity, AbstractDistributionPowerModelCalculator> calculatorsPerPdu;
 
     /**
      * Create a power model registry.
@@ -36,7 +37,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
     }
 
     /**
-     * Update the power model of a specific resource.
+     * Updates the power model of a specific resource.
      * 
      * @param powerConsumingResource
      *            The resource for which the power model specification is updated.
@@ -51,19 +52,19 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
         if (!calculatorsPerResource.containsKey(powerConsumingResource)
                 || !calculatorsPerResource.get(powerConsumingResource).equals(resourceCalculator)) {
             calculatorsPerResource.put(powerConsumingResource, resourceCalculator);
-            getEventDispatcher().resourcePowerModelChanged(resourceCalculator, 
-                    powerConsumingResource);
+            getEventDispatcher().resourcePowerModelChanged(resourceCalculator, powerConsumingResource);
         }
 
     }
 
     /**
-     * Update the power model of a {@link PowerProvidingEntity}.
+     * Updates the power model of a {@link PowerProvidingEntity}.
      * 
      * @param ppe
      *            the entity for which the power model is set.
      * @param pduCalculator
-     *            The calculator for the power distribution model of {@code ppe}.
+     *            The {@link AbstractDistributionPowerModelCalculator} instance for the power
+     *            distribution model of {@code ppe}.
      */
     public void updateDistributionPowerModel(PowerProvidingEntity ppe,
             AbstractDistributionPowerModelCalculator pduCalculator) {
@@ -76,26 +77,31 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
         }
     }
 
-     /**
-     * Get the calculator that is set for a specific {@link PowerConsumingResource}.
+    /**
+     * Gets the calculator that is set for a specific resource.
      * 
      * @param resource
-     *            The resource for which the calculator is retrieved.
-     * @return The calculator set for the {@code resource}.
+     *            The {@link PowerConsumingResource} for which the calculator shall be retrieved.
+     * @return The {@link AbstractResourcePowerModelCalculator} set for the {@code resource}, or
+     *         {@code null} if none is found.
+     * @throws NullPointerException
+     *             In case {@code resource == null}.
      */
     public AbstractResourcePowerModelCalculator getCalculator(PowerConsumingResource resource) {
-        return this.calculatorsPerResource.get(resource);
+        return this.calculatorsPerResource.get(Objects.requireNonNull(resource));
     }
 
     /**
-     * Gets the calculator set for a specific {@link PowerProvidingEntity}.
+     * Gets the calculator that is set for a specific power providing entity.
      * 
      * @param entity
-     *            The entity for which the distribution power model is retrieved.
-     * @return The predicted power consumption.
+     *            The {@link PowerProvidingEntity} for which the calculator shall be retrieved.
+     * @return The {@link AbstractDistributionPowerModelCalculator} set for the {@code entity}, or
+     *         {@code null} if none is found. * @throws NullPointerException In case
+     *         {@code entity == null}.
      */
     public AbstractDistributionPowerModelCalculator getCalculator(PowerProvidingEntity entity) {
-        return this.calculatorsPerPdu.get(entity);
+        return this.calculatorsPerPdu.get(Objects.requireNonNull(entity));
     }
 
     /**
@@ -103,7 +109,8 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * the associated {@link AbstractResourcePowerModelCalculator} to calculate the power
      * consumption values
      * 
-     * @return an UNMODIFIABLE map linking {@link PowerConsumingResource}s to multiple {@link MetricDescription}s
+     * @return an UNMODIFIABLE map linking {@link PowerConsumingResource}s to multiple
+     *         {@link MetricDescription}s
      */
     public Map<PowerConsumingResource, Set<MetricDescription>> getRequiredMetricsForRegisteredCalculators() {
         Map<PowerConsumingResource, Set<MetricDescription>> result = new HashMap<PowerConsumingResource, Set<MetricDescription>>(

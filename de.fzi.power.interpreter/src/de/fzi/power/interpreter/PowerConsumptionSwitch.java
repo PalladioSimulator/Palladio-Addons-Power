@@ -3,6 +3,11 @@
  */
 package de.fzi.power.interpreter;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 import javax.measure.quantity.Power;
 
 import org.jscience.physics.amount.Amount;
@@ -39,10 +44,13 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
 
     /**
      * Creates a power consumption switch. It is used to evaluate the power consumption for a given
-     * evaluation scope. Changes to the properties of {@code ctx} are considered in the
-     * evaluation of the power consumption.
-     * @param ctx A {@link ConsumptionContext} instance denoting the initial evaluation context.
-     * @throws IllegalArgumentException In case the given consumption context was {@code null}.
+     * evaluation scope. Changes to the properties of {@code ctx} are considered in the evaluation
+     * of the power consumption.
+     * 
+     * @param ctx
+     *            A {@link ConsumptionContext} instance denoting the initial evaluation context.
+     * @throws IllegalArgumentException
+     *             In case the given consumption context was {@code null}.
      * @return The PowerConsumptionSwitch to be used for the evaluation.
      */
     public static PowerConsumptionSwitch createPowerConsumptionSwitch(ConsumptionContext ctx) {
@@ -56,7 +64,8 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * 
      * @param ctx
      *            The {@link ConsumptionContext} to set.
-     * @throws IllegalArgumentException In case {@code ctx == null}. 
+     * @throws IllegalArgumentException
+     *             In case {@code ctx == null}.
      */
     public void setConsumptionContext(ConsumptionContext ctx) {
         if (ctx == null) {
@@ -87,12 +96,13 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      */
     @Override
     public Amount<Power> casePowerConsumingProvidingEntity(PowerConsumingProvidingEntity providingConsumingEntity) {
-        Amount<Power> sum = PowerModelConstants.ZERO_POWER;
-        // Sums up the power consumption of the nested elements.
-        for (PowerConsumingEntity consumingEntity : providingConsumingEntity.getNestedPowerConsumingEntities()) {
-            sum = sum.plus(this.doSwitch(consumingEntity));
+        Collection<PowerConsumingEntity> consumingEntities = Objects.requireNonNull(providingConsumingEntity)
+                .getNestedPowerConsumingEntities();
+        Map<PowerConsumingEntity, Amount<Power>> consumers = new HashMap<>(consumingEntities.size());
+        for (PowerConsumingEntity consumingEntity : consumingEntities) {
+            consumers.put(consumingEntity, doSwitch(consumingEntity));
         }
-        return sum;
+        return this.consumptionContext.evaluateDistributionPowerConsumption(providingConsumingEntity, consumers);
     }
 
     /**
@@ -111,8 +121,8 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
     }
 
     /**
-     * Evaluates the power consumption of a PowerConsumingEntity. Uses {@see
-     * PowerConsumptionSwitch#doSwitch(int, org.eclipse.emf.ecore.EObject)} to evaluate the
+     * Evaluates the power consumption of a PowerConsumingEntity. Uses
+     * {@see PowerConsumptionSwitch#doSwitch(int, org.eclipse.emf.ecore.EObject)} to evaluate the
      * consumption using the case of this switch that is the actual type of {@code object}.
      * 
      * @param powerConsumingEntity
