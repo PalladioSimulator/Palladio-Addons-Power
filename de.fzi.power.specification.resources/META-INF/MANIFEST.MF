@@ -8,10 +8,8 @@ Bundle-Activator: de.fzi.power.specification.resources.Activator
 Require-Bundle: org.eclipse.ui;visibility:=reexport,
  org.eclipse.core.runtime;visibility:=reexport,
  org.jscience;visibility:=reexport,
- org.palladiosimulator.measurementframework;visibility:=reexport,
- org.palladiosimulator.metricspec;visibility:=reexport,
  de.fzi.power;visibility:=reexport,
- org.palladiosimulator.pcm.edp2.measuringpoint;bundle-version="1.0.0";visibility:=reexport
+ org.eclipse.emf.ecore
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: de.fzi.power.specification.resources

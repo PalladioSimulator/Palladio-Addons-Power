@@ -41,9 +41,10 @@
       <metricType href="pathmap://METRIC_SPEC_MODELS/models/commonMetrics.metricspec#_QIb6cikUEeSuf8LV7cHLgA"/>
     </consumptionFactors>
   </powerModelSpecifications>
-  <powerModelSpecifications xsi:type="de.fzi.power:DeclarativePowerModelSpecification" id="_iIhDwGd-EeWSzN49MVDdQw" name="Declarative Linear Passthrough Model" functionalExpression="SUM(Consumers)">
+  <powerModelSpecifications xsi:type="de.fzi.power:DeclarativePowerModelSpecification" id="_iIhDwGd-EeWSzN49MVDdQw" name="Declarative Linear Passthrough Model" functionalExpression="SUM(Consumers)-ConstantLoss">
     <consumptionFactors xsi:type="de.fzi.power:MeasuredFactor" id="_xYoX0Wd-EeWSzN49MVDdQw" name="Consumers">
       <metricType href="pathmap://METRIC_SPEC_MODELS/models/commonMetrics.metricspec#_NbIowlt_EeS0LdH-diVVEQ"/>
     </consumptionFactors>
+    <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_5v610GghEeWM8bUtzui0_Q" name="ConstantLoss"/>
   </powerModelSpecifications>
 </de.fzi.power:PowerModelRepository>
