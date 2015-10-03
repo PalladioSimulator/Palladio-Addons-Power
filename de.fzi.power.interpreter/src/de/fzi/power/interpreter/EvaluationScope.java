@@ -9,6 +9,8 @@ import java.util.Set;
 
 import javax.measure.Measure;
 
+import org.apache.commons.collections15.CollectionUtils;
+import org.apache.commons.collections15.Predicate;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.measurementframework.MeasuringValue;
@@ -107,38 +109,32 @@ public final class EvaluationScope extends AbstractEvaluationScope {
     @Override
     public void setResourceMetricsToEvaluate(Map<ProcessingResourceSpecification, Set<MetricDescription>> metricsMap) {
         for (Entry<ProcessingResourceSpecification, Set<MetricDescription>> entry : metricsMap.entrySet()) {
-            Set<IDataSource> availableSourcesForResource = availableMeasurements.get(entry.getKey());
+            Set<IDataSource> availableSourcesForResource = availableMeasurements.get(entry.getKey());            
+            Map<MetricDescription, IDataSource> availableDataExtended = InterpreterUtils
+                    .determineDataSourcesForAvailableMetrics(availableSourcesForResource, extendedMeasureProviders);
+            Set<MetricDescription> extendedMetricSet = availableDataExtended.keySet();
+            
+            for (final MetricDescription desc : entry.getValue()) {
+                MetricDescription description = CollectionUtils.find(extendedMetricSet,
+                        
+                        new Predicate<MetricDescription>() {
+                            @Override
+                            public boolean evaluate(MetricDescription arg0) {
+                                return InterpreterUtils.isRequiredMetricSatisfiedBy(desc, arg0);
+                            }
+                            
+                });
+                
 
-            for (MetricDescription desc : entry.getValue()) {
-                boolean handled = false;
-                for (IDataSource source : availableSourcesForResource) {         
-                    if (InterpreterUtils.isRequiredMetricSatisfiedBy(desc, source.getMetricDesciption())) {
-                        this.resourceMeasurements.get(entry.getKey()).add(
-                                source.<MeasuringValue>getDataStream());
-                        handled = true;
-                        break;
-                    } 
-                }
-                
-                if (!handled) {
-                    for (ExtendedMeasureProvider prov : extendedMeasureProviders) {
-                        if (prov.canProvideMetric(desc, availableSourcesForResource)) {
-                            this.resourceMeasurements.get(entry.getKey()).add(
-                                    prov.getDataStream(availableSourcesForResource));
-                            handled = true;
-                            break;
-                        }
-                    }
-                }
-                
-                if (!handled) {
+                if (description == null) {
                     throw new IllegalArgumentException("No data source available for processing resource " + 
                             entry.getKey() + " for the metric: " + desc.getName());
                 }
+                
+                this.resourceMeasurements.get(entry.getKey()).add(
+                        availableDataExtended.get(description).<MeasuringValue>getDataStream());
             }
         }
         this.reset();
     }
-    
-
 }

@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
+import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.ResourceURIMeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.util.MeasuringpointSwitch;
@@ -25,6 +26,7 @@ import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
+import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
@@ -141,10 +143,15 @@ public final class InterpreterUtils {
      * 
      * @return true, the required metric is satisfied by Measurements of the available metric
      */
-    public static boolean isRequiredMetricSatisfiedBy(MetricDescription required, MetricDescription available) {
+    public static boolean isRequiredMetricSatisfiedBy(final MetricDescription required, final MetricDescription available) {
         boolean result = false;
-
-        if (required.equals(available)) {
+        if(MetricSpecPackage.eINSTANCE.getMetricSetDescription().isInstance(required)) {
+            final MetricSetDescription requiredSet = (MetricSetDescription) required;
+            result = true;
+            for(MetricDescription subsumedMetric : requiredSet.getSubsumedMetrics()) {
+                result &= isRequiredMetricSatisfiedBy(subsumedMetric, available);              
+            }
+        } else if (required.equals(available)) {
             result = true;
         } else if (required.getId().equals(available.getId())) {
             result = true;
@@ -283,6 +290,34 @@ public final class InterpreterUtils {
             return resultSet;
         }
 
+    }
+    
+    public static Map<MetricDescription, IDataSource> determineDataSourcesForAvailableMetrics(
+            Set<IDataSource> dataSources, Set<ExtendedMeasureProvider> measureProviders) {
+        Map<MetricDescription, IDataSource> metricToDataSource = createIdentifierMatchingHashMap();
+        
+        for (IDataSource inputSource : dataSources) {
+            metricToDataSource.put(inputSource.getMetricDesciption(), inputSource);
+        }
+        
+        int oldSize;
+        
+        do {
+            oldSize = metricToDataSource.size();
+            for (ExtendedMeasureProvider provider : measureProviders) {
+                for (MetricDescription m : provider.getTargetMetrics()) {
+                    if (metricToDataSource.containsKey(m)) {
+                        continue;
+                    }
+                    if (provider.canProvideMetric(m, metricToDataSource.keySet())) {
+                        
+                        metricToDataSource.put(m, provider.getDataSource(new HashSet<IDataSource>(metricToDataSource.values())));
+                    }
+                }
+            }
+        } while (metricToDataSource.size() > oldSize);
+        
+        return Collections.unmodifiableMap(metricToDataSource);
     }
 
 }

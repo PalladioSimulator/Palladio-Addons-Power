@@ -43,11 +43,11 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
 
     
     @Override
-    public IDataStream<MeasuringValue> getDataStream(Set<IDataSource> availableDataSources)  {
+    public IDataSource getDataSource(Set<IDataSource> availableDataSources)  {
         for (IDataSource source : availableDataSources) {
             if (source.getMetricDesciption().equals(getSourceMetric())) {
                 filter.setDataSource(source);
-                return filter.getDataStream();
+                return filter;
             }
         }
     
