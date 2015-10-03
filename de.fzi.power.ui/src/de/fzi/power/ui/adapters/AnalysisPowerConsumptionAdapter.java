@@ -50,8 +50,8 @@ import de.fzi.power.interpreter.calculators.ExtensibleCalculatorInstantiatorImpl
 import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.fzi.power.interpreter.measureprovider.MeasureProviderHelper;
 
-public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implements IPersistable, IPersistableElement,
-        IPropertyListener {
+public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
+        implements IPersistable, IPersistableElement, IPropertyListener {
 
     private static final MetricSetDescription FILTER_OUTPUT_METRIC = MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE;
 
@@ -81,8 +81,9 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implemen
 
                 @Override
                 public boolean evaluate(Measurement measurement) {
-                    ProcessingResourceSpecification proc = InterpreterUtils.PCMMEASURINGPOINT_SWITCH
-                            .doSwitch(measurement.getMeasuringType().getMeasuringPoint());
+                    ProcessingResourceSpecification proc = InterpreterUtils
+                            .getProcessingResourceSpecificationFromMeasuringPoint(
+                                    measurement.getMeasuringType().getMeasuringPoint());
                     return proc != null && proc.getId().equals(spec.getId());
                 }
             }, resourceMeasurements);
@@ -101,14 +102,14 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implemen
         if (this.powerProvidingEntity == null) {
             return null;
         } else {
-            if (measuringPoint == null) {
-                measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
-                ((StringMeasuringPoint) measuringPoint)
+            if (this.measuringPoint == null) {
+                this.measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
+                ((StringMeasuringPoint) this.measuringPoint)
                         .setMeasuringPoint(AnalysisPowerConsumptionAdapter.this.powerProvidingEntity.getName());
-                measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
+                this.measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
             }
         }
-        return measuringPoint;
+        return this.measuringPoint;
     }
 
     private Collection<MeasuringValue> obtainPowerConsumptionMeasurements(PowerBindingRepository bindingRepo,
@@ -152,9 +153,8 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implemen
             PowerBindingRepository bindingRepo = this.powerProvidingEntity.getDistributionPowerAssemblyContext()
                     .getPowerBindingRepository();
 
-            evaluatedPowerMeasurements = obtainPowerConsumptionMeasurements(bindingRepo,
-                    collectScopeDataSources(InterpreterUtils
-                            .getProcessingResourceSpecsFromInfrastructureElement(this.powerProvidingEntity)));
+            evaluatedPowerMeasurements = obtainPowerConsumptionMeasurements(bindingRepo, collectScopeDataSources(
+                    InterpreterUtils.getProcessingResourceSpecsFromInfrastructureElement(this.powerProvidingEntity)));
         }
 
         final Collection<MeasuringValue> powerMeasurements = this.evaluatedPowerMeasurements;
@@ -217,8 +217,8 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource implemen
     @Override
     protected PropertyConfigurable createProperties() {
         if (extendedMeasureProviders == null) {
-            extendedMeasureProviders = new HashSet<ExtendedMeasureProvider>(Arrays.asList(MeasureProviderHelper
-                    .getMeasureProviderExtensions()));
+            extendedMeasureProviders = new HashSet<ExtendedMeasureProvider>(
+                    Arrays.asList(MeasureProviderHelper.getMeasureProviderExtensions()));
         }
         PropertyConfigurable properties = new NestedPropertyConfigurableConfiguration(extendedMeasureProviders);
         properties.addObserver(this);
