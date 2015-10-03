@@ -24,7 +24,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
 
 public final class PowerModelConstants {
 
-    private static final String PATHMAP_POWER_MODEL_MODELS_COMMON_POWER_MODELS_POWERMODEL = "pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec";
+    public static final String PATHMAP_POWER_MODEL_MODELS_COMMON_POWER_MODELS_POWERMODEL = "pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec";
 
     // Constants for linear power model, TODO consolidate
     public static final ResourcePowerModelSpecification LINEAR_POWER_MODEL;
