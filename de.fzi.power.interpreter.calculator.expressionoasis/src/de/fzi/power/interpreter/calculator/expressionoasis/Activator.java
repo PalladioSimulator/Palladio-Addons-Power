@@ -1,10 +1,7 @@
 package de.fzi.power.interpreter.calculator.expressionoasis;
 
-import java.net.URL;
-
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.vedantatree.expressionoasis.config.ConfigFactory;
 
 public class Activator implements BundleActivator {
 
@@ -22,8 +19,6 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext bundleContext) throws Exception {
         Activator.context = bundleContext;
-        URL url = context.getBundle().getEntry("config/config.xml");
-        System.setProperty(ConfigFactory.CONFIG_FILE_PATH_KEY, url.toString());
     }
 
     /*
