@@ -6,9 +6,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
@@ -30,17 +33,18 @@ import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.uka.ipd.sdq.identifier.Identifier;
 
 /**
- * Utility class that contains common classes, methods or objects used at 
- * multiple locations in the power interpreter project.
- *  
+ * Utility class that contains common classes, methods or objects used at multiple locations in the
+ * power interpreter project.
+ * 
  * @author Sebastian Krach, Florian Rosenthal
  * 
  */
 public final class InterpreterUtils {
 
-    public static final PcmmeasuringpointSwitch<ProcessingResourceSpecification> PCMMEASURINGPOINT_SWITCH = new PcmmeasuringpointSwitch<ProcessingResourceSpecification>() {
+    private static final PcmmeasuringpointSwitch<ProcessingResourceSpecification> PCMMEASURINGPOINT_SWITCH = new PcmmeasuringpointSwitch<ProcessingResourceSpecification>() {
         @Override
-        public ProcessingResourceSpecification caseActiveResourceMeasuringPoint(final ActiveResourceMeasuringPoint point) {
+        public ProcessingResourceSpecification caseActiveResourceMeasuringPoint(
+                final ActiveResourceMeasuringPoint point) {
             return point.getActiveResource();
         }
 
@@ -53,7 +57,16 @@ public final class InterpreterUtils {
     private static final MeasuringpointSwitch<ProcessingResourceSpecification> MEASURINGPOINT_SWITCH = new MeasuringpointSwitch<ProcessingResourceSpecification>() {
         @Override
         public ProcessingResourceSpecification caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint point) {
-            return RESOURCEENV_SWITCH.doSwitch(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI()));
+            URI resourceUri = URI.createURI(point.getResourceURI());
+            if (resourceUri.fragment() != null) {
+                // this check avoids an illegal argument exception thrown in the loadAndResolve
+                // method
+                // in case no fragment is present
+                // this is the case if point is a ReconfigurationMeasuringPoint instance
+                return RESOURCEENV_SWITCH
+                        .doSwitch(EMFLoadHelper.loadAndResolveEObject(new ResourceSetImpl(), resourceUri));
+            }
+            return null;
         }
     };
 
@@ -65,8 +78,24 @@ public final class InterpreterUtils {
         }
     };
 
+    /**
+     * Gets the processing resource specification that is associated with the given measuring point.
+     * 
+     * @param measuringPoint
+     *            A {@link MeasuringPoint} of arbitrary kind.
+     * @return The {@link ProcessingResourceSpecification} that is associated with the given
+     *         measuring point, or {@code null}.
+     * @throws NullPointerException
+     *             In case the given measuring point is {@code null}.
+     */
+    public static ProcessingResourceSpecification getProcessingResourceSpecificationFromMeasuringPoint(
+            MeasuringPoint measuringPoint) {
+        return PCMMEASURINGPOINT_SWITCH
+                .doSwitch(Objects.requireNonNull(measuringPoint, "Given measuring point must not be null."));
+    }
+
     private static final InfrastructureSwitch<Set<ProcessingResourceSpecification>> INFRASTRUCTURE_SWITCH = new InfrastructureSwitch<Set<ProcessingResourceSpecification>>() {
-        
+
         // inner node (composite nodes): just step down until we reach a leaf
         @Override
         public Set<ProcessingResourceSpecification> casePowerProvidingEntity(PowerProvidingEntity ppe) {
@@ -83,35 +112,46 @@ public final class InterpreterUtils {
             return Collections.singleton(resource.getProcessingResourceSpecification());
 
         }
-        
+
         @Override
         public Set<ProcessingResourceSpecification> defaultCase(EObject obj) {
             return Collections.emptySet();
         }
     };
-    
+
     /**
-     * Gets all the processing resource specifications that are subsumed by the given model element. That is,
-     * a top down search for {@code ProcessingResourceSpecification}s is started at the given element, yielding all specifications that are associated
-     * with leafs (e.g, {@code PowerConsumingEntity}s of the corresponding infrastructure model.
-     * @param infModelElement An {@link EObject} representing an element from an infrastructure model.
-     * @return A set (i.e., a unique collection) containing all collected {@code ProcessingResourceSpecification}s. If none were found, an empty set is returned.
-     * @throws IllegalArgumentException An {@link IllegalArgumentException} is thrown, if the given argument is {@code null}.
+     * Gets all the processing resource specifications that are subsumed by the given model element.
+     * That is, a top down search for {@code ProcessingResourceSpecification}s is started at the
+     * given element, yielding all specifications that are associated with leafs (e.g,
+     * {@code PowerConsumingEntity}s of the corresponding infrastructure model.
+     * 
+     * @param infModelElement
+     *            An {@link EObject} representing an element from an infrastructure model.
+     * @return A set (i.e., a unique collection) containing all collected
+     *         {@code ProcessingResourceSpecification}s. If none were found, an empty set is
+     *         returned.
+     * @throws NullPointerException
+     *             A {@link NullPointerException} is thrown, if the given argument is {@code null}.
      */
-    public static Set<ProcessingResourceSpecification> getProcessingResourceSpecsFromInfrastructureElement(EObject infModelElement) {
-        if (infModelElement == null) {
-            throw new IllegalArgumentException("Given EObject must not be null.");
-        }
-        return INFRASTRUCTURE_SWITCH.doSwitch(infModelElement);
+    public static Set<ProcessingResourceSpecification> getProcessingResourceSpecsFromInfrastructureElement(
+            EObject infModelElement) {
+        return INFRASTRUCTURE_SWITCH
+                .doSwitch(Objects.requireNonNull(infModelElement, "Given EObject must not be null."));
     }
-    
+
     /**
      * Gets the {@link PowerProvidingEntity} the given measuring point points to.<br>
-     * In the current implementation, only {@link ResourceURIMeasuringPoint}s are processed as this is sufficient for all contemporary use cases.
-     * That is, for all other types of measuring points {@code null} is returned.
-     * @param measuringPoint A reference to a {@link MeasuringPoint} model object.
-     * @return The {@link PowerProvidingEntity} model element the given measuring point is associated with, {@code null} otherwise.
-     * @throws IllegalArgumentException An {@link IllegalArgumentException} is thrown, if the given argument is {@code null}.
+     * In the current implementation, only {@link ResourceURIMeasuringPoint}s are processed as this
+     * is sufficient for all contemporary use cases. That is, for all other types of measuring
+     * points {@code null} is returned.
+     * 
+     * @param measuringPoint
+     *            A reference to a {@link MeasuringPoint} model object.
+     * @return The {@link PowerProvidingEntity} model element the given measuring point is
+     *         associated with, {@code null} otherwise.
+     * @throws IllegalArgumentException
+     *             An {@link IllegalArgumentException} is thrown, if the given argument is
+     *             {@code null}.
      */
     public static PowerProvidingEntity getPowerProvindingEntityFromMeasuringPoint(MeasuringPoint measuringPoint) {
         if (measuringPoint == null) {
@@ -119,7 +159,7 @@ public final class InterpreterUtils {
         }
         return new MeasuringpointSwitch<PowerProvidingEntity>() {
 
-            private InfrastructureSwitch<PowerProvidingEntity> infSwitch = new InfrastructureSwitch<PowerProvidingEntity>() {
+            private final InfrastructureSwitch<PowerProvidingEntity> infSwitch = new InfrastructureSwitch<PowerProvidingEntity>() {
                 @Override
                 public PowerProvidingEntity casePowerProvidingEntity(PowerProvidingEntity ppe) {
                     return ppe;
@@ -128,18 +168,27 @@ public final class InterpreterUtils {
 
             @Override
             public PowerProvidingEntity caseResourceURIMeasuringPoint(ResourceURIMeasuringPoint mp) {
-                EObject modeObject = EMFLoadHelper.loadAndResolveEObject(mp.getResourceURI());
-                return infSwitch.doSwitch(modeObject);
+                URI resourceUri = URI.createURI(mp.getResourceURI());
+                if (resourceUri.fragment() != null) {
+                    // this check avoids an illegal argument exception thrown in the loadAndResolve
+                    // method
+                    // in case no fragment is present
+                    // this is the case if point is a ReconfigurationMeasuringPoint instance
+                    return infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(new ResourceSetImpl(), resourceUri));
+                }
+                return null;
             }
         }.doSwitch(measuringPoint);
     }
-    
+
     /**
-     * Helper method that checks whether the required metric ({@code required}) equals the provided one
-     * ({@code available}) or is subsumed by it..
+     * Helper method that checks whether the required metric ({@code required}) equals the provided
+     * one ({@code available}) or is subsumed by it..
      *
-     * @param required the required metric 
-     * @param available the available metric 
+     * @param required
+     *            the required metric
+     * @param available
+     *            the available metric
      * 
      * @return true, the required metric is satisfied by Measurements of the available metric
      */
@@ -165,8 +214,8 @@ public final class InterpreterUtils {
     }
 
     /**
-     * Creates a new {@link HashMap} decorated with an {@link IdentifierMatchingMapDecorator)
-     * to allow to use EMF model elements from potentially different sources as key.
+     * Creates a new {@link HashMap} decorated with an {@link IdentifierMatchingMapDecorator) to
+     * allow to use EMF model elements from potentially different sources as key.
      * 
      * @return a decorated map
      */
@@ -175,10 +224,11 @@ public final class InterpreterUtils {
     }
 
     /**
-     * Creates a new {@link HashMap} decorated with an {@link IdentifierMatchingMapDecorator)
-     * to allow to use EMF model elements from potentially different sources as key.
+     * Creates a new {@link HashMap} decorated with an {@link IdentifierMatchingMapDecorator) to
+     * allow to use EMF model elements from potentially different sources as key.
      * 
-     * @param size the size of the initial map
+     * @param size
+     *            the size of the initial map
      * 
      * @return a decorated map
      */
@@ -186,23 +236,26 @@ public final class InterpreterUtils {
         return new IdentifierMatchingMapDecorator<K, V>(new HashMap<String, V>(size), new HashMap<String, K>(size));
     }
 
-    
     /**
-     * A Decorator the allows to use EMF model objects as key as long as they are uniquely identified
-     * their {@code Id}. 
+     * A Decorator the allows to use EMF model objects as key as long as they are uniquely
+     * identified their {@code Id}.
      *
-     * @param <K> the key type
-     * @param <V> the value type
+     * @param <K>
+     *            the key type
+     * @param <V>
+     *            the value type
      */
     public static class IdentifierMatchingMapDecorator<K extends Identifier, V> implements Map<K, V> {
-        private Map<String, V> decoratedMap;
-        private Map<String, K> keyMap;
+        private final Map<String, V> decoratedMap;
+        private final Map<String, K> keyMap;
 
         /**
          * Creates a new decorator based on two subsumed maps.
          * 
-         * @param decoratedMap the decorated map linking the identifier to the actual value
-         * @param keyMap the decorated map linking the identifier to the key object
+         * @param decoratedMap
+         *            the decorated map linking the identifier to the actual value
+         * @param keyMap
+         *            the decorated map linking the identifier to the key object
          */
         public IdentifierMatchingMapDecorator(Map<String, V> decoratedMap, Map<String, K> keyMap) {
             this.decoratedMap = decoratedMap;
