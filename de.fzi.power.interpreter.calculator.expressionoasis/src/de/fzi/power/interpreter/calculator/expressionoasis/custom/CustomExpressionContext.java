@@ -2,7 +2,6 @@ package de.fzi.power.interpreter.calculator.expressionoasis.custom;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Objects;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
@@ -32,6 +31,7 @@ public class CustomExpressionContext extends ExpressionContext {
         super();
         this.variableProvider = new ConsumptionFactorsVariableProvider(fixedFactorValues, consumptionFactors);
         this.addVariableProvider(this.variableProvider);
+        this.addFunctionProvider(new CustomFunctionProvider());
     }
 
     public void addBasicMeasurement(MeasuringValue measuringValue) {
@@ -54,15 +54,23 @@ public class CustomExpressionContext extends ExpressionContext {
         return this.variableProvider.getMeasuredFactors();
     }
 
+    public boolean isMeasuredFactorAvailable(String measuredFactorName) {
+        return this.variableProvider.providesMeasuredFactor(measuredFactorName);
+    }
+
+    public boolean isMeasuredFactorAvailable(MetricDescription measuredFactorMetricDescription) {
+        return this.variableProvider.providesMeasuredFactor(measuredFactorMetricDescription);
+    }
+
     public double toDouble(ValueObject valueObject) {
         double result = 0d;
-        if (Objects.requireNonNull(valueObject) instanceof MeasuredValuesCompositeValueObject) {
+        if (ExpressionOasisHelper.hasCompositeType(valueObject)) {
             Iterable<Double> objectValues = ((MeasuredValuesCompositeValueObject) valueObject).getValue();
             Iterator<Double> valuesIterator = objectValues.iterator();
             if (valuesIterator.hasNext()) {
                 result = valuesIterator.next();
             }
-        } else if (ExpressionOasisHelper.isNumericType(valueObject.getValueType())) {
+        } else if (ExpressionOasisHelper.hasNumericType(valueObject)) {
             result = Double.parseDouble(valueObject.getValue().toString());
         }
         return result;

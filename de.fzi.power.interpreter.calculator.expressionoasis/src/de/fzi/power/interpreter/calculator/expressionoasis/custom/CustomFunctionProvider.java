@@ -2,7 +2,6 @@ package de.fzi.power.interpreter.calculator.expressionoasis.custom;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 import org.vedantatree.expressionoasis.ExpressionContext;
@@ -17,17 +16,17 @@ import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasi
 
 public final class CustomFunctionProvider implements FunctionProvider {
 
-    private static final String MULT = "MULT";
-    private static final String SUM = "SUM";
     private static final String POW = "POW";
+    private static final String SQRT = "SQRT";
 
-    private static final List<String> KNOWN_FUNCTIONS = Arrays.asList(SUM, MULT, POW);
+    private static final List<String> KNOWN_FUNCTIONS = Arrays.asList(POW, SQRT);
 
     public CustomFunctionProvider() {
     }
 
     @Override
     public void initialize(ExpressionContext expressionContext) throws ExpressionEngineException {
+        ExpressionOasisHelper.assertCorrectExpressionContext(expressionContext, getClass());
         Grammar grammar = ExpressionEngine.getGrammar();
         for (String function : KNOWN_FUNCTIONS) {
             grammar.addFunction(function);
@@ -38,72 +37,48 @@ public final class CustomFunctionProvider implements FunctionProvider {
     public Type getFunctionType(String functionName, Type[] parameterTypes) throws ExpressionEngineException {
         Type resultType = null;
         if (supportsFunction(functionName, parameterTypes)) {
-            if (functionName.equals(POW) && !ExpressionOasisHelper.typesEqual(parameterTypes[0],
-                    CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)) {
-                resultType = CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE;
-            } else {
-                resultType = Type.DOUBLE;
-            }
+            resultType = Type.DOUBLE;
         }
         return resultType;
     }
 
-    private ValueObject evaluateSum(ValueObject[] parameters) {
-        assert parameters != null && parameters.length == 1;
-        double result = 0;
-        for (ValueObject param : parameters) {
-            if (ExpressionOasisHelper.typesEqual(param.getValueType(),
-                    CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)) {
-                @SuppressWarnings("unchecked")
-                Collection<Double> values = (Collection<Double>) param.getValue();
-                for (double value : values) {
-                    result += value;
-                }
-            } else {
-                result += (double) param.getValue();
-            }
-        }
-        return new ValueObject(result, Type.DOUBLE);
-    }
-
-    private ValueObject evaluateMult(ValueObject[] parameters) {
-        assert parameters != null && parameters.length == 1;
-
-        double result = 1;
-        for (ValueObject param : parameters) {
-            if (ExpressionOasisHelper.typesEqual(param.getValueType(),
-                    CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)) {
-                @SuppressWarnings("unchecked")
-                Collection<Double> values = (Collection<Double>) param.getValue();
-                for (double value : values) {
-                    result *= value;
-                }
-            } else {
-                result *= (double) param.getValue();
-            }
-        }
-        return new ValueObject(result, Type.DOUBLE);
-    }
-
     private ValueObject evaluatePow(ValueObject[] parameters) {
         assert parameters != null && parameters.length == 2;
-        double exponent = (double) parameters[1].getValue();
+        Number exponent = (Number) parameters[1].getValue();
         ValueObject result = null;
-        if (ExpressionOasisHelper.typesEqual(parameters[0].getValueType(),
-                CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)) {
-            @SuppressWarnings("unchecked")
-            Collection<Double> values = (Collection<Double>) parameters[0].getValue();
+        ValueObject firstParam = parameters[0];
+        if (ExpressionOasisHelper.hasCompositeType(firstParam)) {
+            Iterable<Double> values = ((MeasuredValuesCompositeValueObject) firstParam).getValue();
             List<Double> resultValues = new ArrayList<>();
             for (double base : values) {
-                resultValues.add(Math.pow(base, exponent));
+                resultValues.add(Math.pow(base, exponent.doubleValue()));
             }
             result = new MeasuredValuesCompositeValueObject(resultValues);
         } else {
             // this reduces to a simple exponentiation of a value
-            double base = (double) parameters[0].getValue();
-            result = new ValueObject(Math.pow(base, exponent), Type.DOUBLE);
+            double base = (double) firstParam.getValue();
+            result = new ValueObject(Math.pow(base, exponent.doubleValue()), Type.DOUBLE);
         }
 
+        return result;
+    }
+
+    private ValueObject evaluateSqrt(ValueObject[] parameters) {
+        assert parameters != null && parameters.length == 1;
+
+        ValueObject result = null;
+        ValueObject radicandValueObj = parameters[0];
+        if (ExpressionOasisHelper.hasCompositeType(radicandValueObj)) {
+            Iterable<Double> radicands = ((MeasuredValuesCompositeValueObject) radicandValueObj).getValue();
+            List<Double> squareRoots = new ArrayList<>();
+            for (double radicand : radicands) {
+                squareRoots.add(Math.sqrt(radicand));
+            }
+            result = new MeasuredValuesCompositeValueObject(squareRoots);
+        } else {
+            Number radicand = (Number) radicandValueObj.getValue();
+            result = new ValueObject(Math.sqrt(radicand.doubleValue()), Type.DOUBLE);
+        }
         return result;
     }
 
@@ -111,30 +86,22 @@ public final class CustomFunctionProvider implements FunctionProvider {
     public ValueObject getFunctionValue(String functionName, ValueObject[] parameters)
             throws ExpressionEngineException {
         switch (functionName) {
-        case SUM:
-            return evaluateSum(parameters);
-        case MULT:
-            return evaluateMult(parameters);
         case POW:
             return evaluatePow(parameters);
+        case SQRT:
+            return evaluateSqrt(parameters);
         default:
             return null;
         }
     }
 
-    private boolean typesMatch(String functionName, Type[] paramTypes) {
+    private static boolean typesMatch(String functionName, Type[] paramTypes) {
         switch (functionName) {
-        case SUM:
-        case MULT:
-            return paramTypes.length == 1 && (ExpressionOasisHelper.typesEqual(paramTypes[0],
-                    CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)
-                    || ExpressionOasisHelper.isNumericType(paramTypes[0]));
         case POW:
-            return paramTypes.length == 2
-                    && (ExpressionOasisHelper.typesEqual(paramTypes[0],
-                            CustomExpressionContext.MEASURED_VALUES_COMPOSITE_TYPE)
-                    || ExpressionOasisHelper.isNumericType(paramTypes[0]))
+            return paramTypes.length == 2 && ExpressionOasisHelper.isNumericType(paramTypes[0])
                     && ExpressionOasisHelper.isNumericType(paramTypes[1]);
+        case SQRT:
+            return paramTypes.length == 1 && ExpressionOasisHelper.isNumericType(paramTypes[0]);
         }
         return false;
     }
