@@ -31,6 +31,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricDescription;
@@ -79,12 +80,20 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
             CollectionUtils.select(this.experimentRun.getMeasurement(), new Predicate<Measurement>() {
 
+                // we cannot handle existing utilization measurements of a processing resource
+                // specification so far
+                // reason: they might been taken based on a different sliding window length/
+                // increment
+                // hence, those must be excluded here
                 @Override
                 public boolean evaluate(Measurement measurement) {
                     ProcessingResourceSpecification proc = InterpreterUtils
                             .getProcessingResourceSpecificationFromMeasuringPoint(
                                     measurement.getMeasuringType().getMeasuringPoint());
-                    return proc != null && proc.getId().equals(spec.getId());
+                    return proc != null && proc.getId().equals(spec.getId())
+                            && !MetricDescriptionUtility.metricDescriptionIdsEqual(
+                                    MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE_TUPLE,
+                                    measurement.getMeasuringType().getMetric());
                 }
             }, resourceMeasurements);
 
@@ -101,13 +110,11 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     public MeasuringPoint getMeasuringPoint() {
         if (this.powerProvidingEntity == null) {
             return null;
-        } else {
-            if (this.measuringPoint == null) {
-                this.measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
-                ((StringMeasuringPoint) this.measuringPoint)
-                        .setMeasuringPoint(AnalysisPowerConsumptionAdapter.this.powerProvidingEntity.getName());
-                this.measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
-            }
+        } else if (this.measuringPoint == null) {
+            this.measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
+            ((StringMeasuringPoint) this.measuringPoint)
+                    .setMeasuringPoint(AnalysisPowerConsumptionAdapter.this.powerProvidingEntity.getName());
+            this.measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
         }
         return this.measuringPoint;
     }
@@ -118,10 +125,8 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
         this.modelUpdaterSwitch.doSwitch(this.powerProvidingEntity);
 
-        EvaluationScope scope = EvaluationScope.createScope(scopeDataSources, extendedMeasureProviders);
-
+        EvaluationScope scope = EvaluationScope.createScope(scopeDataSources, this.extendedMeasureProviders);
         ConsumptionContext context = ConsumptionContext.createConsumptionContext(bindingRepo, scope, this.registry);
-
         PowerConsumptionSwitch consumptionSwitch = PowerConsumptionSwitch.createPowerConsumptionSwitch(context);
 
         while (scope.hasNext()) {
@@ -153,7 +158,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
             PowerBindingRepository bindingRepo = this.powerProvidingEntity.getDistributionPowerAssemblyContext()
                     .getPowerBindingRepository();
 
-            evaluatedPowerMeasurements = obtainPowerConsumptionMeasurements(bindingRepo, collectScopeDataSources(
+            this.evaluatedPowerMeasurements = obtainPowerConsumptionMeasurements(bindingRepo, collectScopeDataSources(
                     InterpreterUtils.getProcessingResourceSpecsFromInfrastructureElement(this.powerProvidingEntity)));
         }
 
@@ -216,11 +221,11 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
     @Override
     protected PropertyConfigurable createProperties() {
-        if (extendedMeasureProviders == null) {
-            extendedMeasureProviders = new HashSet<ExtendedMeasureProvider>(
+        if (this.extendedMeasureProviders == null) {
+            this.extendedMeasureProviders = new HashSet<ExtendedMeasureProvider>(
                     Arrays.asList(MeasureProviderHelper.getMeasureProviderExtensions()));
         }
-        PropertyConfigurable properties = new NestedPropertyConfigurableConfiguration(extendedMeasureProviders);
+        PropertyConfigurable properties = new NestedPropertyConfigurableConfiguration(this.extendedMeasureProviders);
         properties.addObserver(this);
         return properties;
     }
