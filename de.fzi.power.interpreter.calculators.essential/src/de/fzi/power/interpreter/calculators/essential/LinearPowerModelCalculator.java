@@ -2,6 +2,7 @@ package de.fzi.power.interpreter.calculators.essential;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.measure.Measure;
@@ -10,7 +11,9 @@ import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
 
 import org.jscience.physics.amount.Amount;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.MeasuringValue;
+import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
@@ -20,11 +23,14 @@ import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator
 import de.fzi.power.specification.resources.PowerModelConstants;
 
 /**
- * Creates a calculator that evaluates the power consumption of a {@link PowerConsumingResource} by
- * interpolating between the resource's minimum and maximum power consumption using the utilization
- * of the specific resource.
+ * Creates a calculator that evaluates the power consumption <code>P</code> of a
+ * {@link PowerConsumingResource} by interpolating between the resource's minimum <code>P_min</code>
+ * and maximum power consumption <code>P_min</code> using the utilization <code>Util</code> of the
+ * specific resource:<br>
+ * <br>
+ * <code>P = P_min + Util * (P_max - P_min)</code>
  * 
- * @author stier
+ * @author Christian Stier
  *
  */
 public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalculator {
@@ -33,7 +39,9 @@ public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalcul
     private Amount<Power> maximumPower;
     // Minimum power consumption of the resource.
     private Amount<Power> minimumPower;
-    private final static MetricDescription utilMetric = MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE;
+    private final static MetricDescription UTIL_METRIC = MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE;
+
+    private final Amount<Power> powerDifference;
 
     /**
      * Create a calculator for a linear power model.
@@ -44,7 +52,8 @@ public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalcul
     public LinearPowerModelCalculator(PowerConsumingResource powerConsumingResource) {
         super(powerConsumingResource);
 
-        if (!binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.LINEAR_POWER_MODEL.getId())) {
+        if (!binding.getResourcePowerModelSpecification().getId()
+                .equals(PowerModelConstants.LINEAR_POWER_MODEL.getId())) {
             throw new IllegalArgumentException("Referred model wasn't the linear power model from"
                     + PowerModelConstants.LINEAR_POWER_MODEL.eResource().getURI() + ".");
         }
@@ -54,50 +63,57 @@ public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalcul
             Unit<Power> unit = value.getValue().getUnit();
             Amount<Power> valueInAmount = Amount.valueOf(value.getValue().doubleValue(unit), unit);
             if (boundFactorId.equals(PowerModelConstants.LINEAR_POWER_MODEL_MIN_CONSUMPTION.getId())) {
-                minimumPower = valueInAmount;
+                this.minimumPower = valueInAmount;
             } else if (boundFactorId.equals(PowerModelConstants.LINEAR_POWER_MODEL_MAX_CONSUMPTION.getId())) {
-                maximumPower = valueInAmount;
+                this.maximumPower = valueInAmount;
             } else {
                 throw new IllegalArgumentException("One of the factor values wasn't a min or max consumption value.");
             }
         }
-
+        // cache difference between both values as it is needed for each calculation
+        this.powerDifference = this.maximumPower.minus(this.minimumPower);
     }
 
     /**
      * Calculate the power consumption using a linear power model.
      * 
      * @param measurements
-     *            The utilization parameter used in the evaluation. The linear power model
-     *            calculator expects that the list has a length of {@code 1} and contains a singular
-     *            {@link MetricDescriptionConstants#UTILIZATION_OF_ACTIVE_RESOURCE} measurement.
+     *            The {@link MeasuringValue}s used for evaluation. More precisely, this calculator
+     *            type requires that the collection contain at least one element of that represents
+     *            a utilization measurement.<br>
+     *            However, an empty collection is also valid: This is treated like a sole
+     *            measurement that represents idleness (zero utilization).
      * @return The evaluated power consumption.
      * @see de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator#calculate(Collection)
      */
     @Override
     public Amount<Power> calculate(Collection<MeasuringValue> measurements) {
-        checkMeasurementConsistency(measurements);
-
-        Measure<Double, Dimensionless> utilization = measurements.iterator().next().getMeasureForMetric(utilMetric);
-        Amount<Dimensionless> utilAmount = Amount.valueOf(utilization.getValue(), utilization.getUnit());
-        return minimumPower.plus(utilAmount.times(maximumPower.minus(minimumPower)));
+        Amount<Power> result = null;
+        if (Objects.requireNonNull(measurements, "Passed collection of measurements must not be null!").isEmpty()) {
+            // no utilization given, thus we return the minimum power here, according to model!
+            result = this.minimumPower;
+        } else {
+            result = calculateInternal(measurements);
+        }
+        return result;
     }
-    
+
+    private Amount<Power> calculateInternal(Collection<MeasuringValue> measurements) {
+        assert measurements != null;
+
+        MeasuringValue firstMeasurement = measurements.iterator().next();
+        if (!MetricDescriptionUtility.isBaseMetricDescriptionSubsumedByMetricDescription(
+                (BaseMetricDescription) UTIL_METRIC, firstMeasurement.getMetricDesciption())) {
+            throw new IllegalArgumentException(
+                    "Linear power model expects measurements of type MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE");
+        }
+        Measure<Double, Dimensionless> utilization = measurements.iterator().next().getMeasureForMetric(UTIL_METRIC);
+        Amount<Dimensionless> utilAmount = Amount.valueOf(utilization.getValue(), utilization.getUnit());
+        return this.minimumPower.plus(utilAmount.times(this.powerDifference));
+    }
 
     @Override
     public Set<MetricDescription> getInputMetrics() {
-        return Collections.singleton(utilMetric);
+        return Collections.singleton(UTIL_METRIC);
     }
-
-    /**
-     * Checks the consistency of passed arguments of {@link this#calculate(Collection)}.
-     * @param measurements The passed measurement argument.
-     */
-    private static void checkMeasurementConsistency(Collection<MeasuringValue> measurements) {
-        if (measurements == null || measurements.size() != 1 || measurements.iterator().next().getMeasureForMetric(utilMetric) == null) {
-            throw new IllegalArgumentException(
-                    "Linear power model expects one parameter of type MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE");
-        }
-    }
-
 }
