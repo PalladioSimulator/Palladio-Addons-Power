@@ -1,40 +1,17 @@
 package de.fzi.power.interpreter.measureprovider;
 
-import java.util.Vector;
+import java.util.List;
 
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IConfigurationElement;
-import org.eclipse.core.runtime.IExtension;
-import org.eclipse.core.runtime.Platform;
+import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 
 public final class MeasureProviderHelper {
 
-    // TODO: implement extension point and resolve providers this way
+    private static final String EXTENSION_POINT_ID = "de.fzi.power.interpreter.measureprovider.extendedmeasureprovider";
+    private static final String ATTRIBUTE_NAME = "provider";
+
     public static ExtendedMeasureProvider[] getMeasureProviderExtensions() {
-        Vector<ExtendedMeasureProvider> providers = new Vector<ExtendedMeasureProvider>();
-        // TODO eventually extract into helper class
-        IExtension[] extensions = Platform.getExtensionRegistry()
-                .getExtensionPoint("de.fzi.power.interpreter.measureprovider.extendedmeasureprovider")
-                .getExtensions();
-        for (IExtension extension : extensions) {
-
-            for (IConfigurationElement element : extension.getConfigurationElements()) {
-                ExtendedMeasureProvider provider;
-
-                try {
-                    provider = (ExtendedMeasureProvider) element.createExecutableExtension("provider");
-
-                    if (provider != null) {
-                        providers.add(provider);
-                    }
-
-                } catch (CoreException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-        }
-
+        List<ExtendedMeasureProvider> providers = ExtensionHelper.getExecutableExtensions(EXTENSION_POINT_ID,
+                ATTRIBUTE_NAME);
         return providers.toArray(new ExtendedMeasureProvider[providers.size()]);
     }
 
