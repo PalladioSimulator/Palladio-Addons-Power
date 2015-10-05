@@ -12,10 +12,27 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 
+/**
+ * This class is an {@link AbstractDistributionPowerModelCalculator} that makes use of the
+ * ExpressionOasis library to calculate the power consumption of {@link PowerProvidingEntity}s whose
+ * behavior is specified by {@link DeclarativePowerModelSpecification}s.
+ * 
+ * @see CalculatorFactoryImpl
+ * @author Florian Rosenthal
+ *
+ */
 public class ExpressionOasisDistributionPowerModelCalculator extends AbstractDistributionPowerModelCalculator {
 
     private final InternalExpressionOasisCalculator calculator;
 
+    /**
+     * Initializes a new instance of the {@link ExpressionOasisDistributionPowerModelCalculator}.
+     * 
+     * @param powerProvidingEntity
+     *            The {@link PowerProvidingEntity} whose consumption shall be calculated.
+     * @throws NullPointerException
+     *             In case the given argument is {@code null}.
+     */
     ExpressionOasisDistributionPowerModelCalculator(PowerProvidingEntity powerProvidingEntity) {
         super(Objects.requireNonNull(powerProvidingEntity));
         this.calculator = new InternalExpressionOasisCalculator(

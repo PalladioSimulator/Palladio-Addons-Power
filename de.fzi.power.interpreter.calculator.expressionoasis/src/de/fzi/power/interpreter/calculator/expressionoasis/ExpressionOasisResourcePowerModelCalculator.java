@@ -15,10 +15,27 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 
+/**
+ * This class is an {@link AbstractResourcePowerModelCalculator} that makes use of the
+ * ExpressionOasis library to calculate the power consumption of {@link PowerConsumingResource}s
+ * whose behavior is specified by {@link DeclarativePowerModelSpecification}s.
+ * 
+ * @see CalculatorFactoryImpl
+ * @author Florian Rosenthal
+ *
+ */
 public class ExpressionOasisResourcePowerModelCalculator extends AbstractResourcePowerModelCalculator {
 
     private final InternalExpressionOasisCalculator calculator;
 
+    /**
+     * Initializes a new instance of the {@link ExpressionOasisResourcePowerModelCalculator}.
+     * 
+     * @param powerConsumingResource
+     *            The {@link PowerConsumingResource} whose consumption shall be calculated.
+     * @throws NullPointerException
+     *             In case the given argument is {@code null}.
+     */
     ExpressionOasisResourcePowerModelCalculator(PowerConsumingResource powerConsumingResource) {
         super(Objects.requireNonNull(powerConsumingResource));
 

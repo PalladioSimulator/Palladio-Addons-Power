@@ -20,6 +20,7 @@ import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.vedantatree.expressionoasis.ExpressionContext;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
+import org.vedantatree.expressionoasis.expressions.Expression;
 import org.vedantatree.expressionoasis.extensions.DefaultVariableProvider;
 import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
@@ -28,9 +29,18 @@ import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.interpreter.InterpreterUtils;
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.util.SpecificationSwitch;
 
+/**
+ * A specialized {@link DefaultVariableProvider}, tailored to handle {@link Expression} variables
+ * that represent {@link FixedFactor}s or {@link MeasuredFactor}s.
+ * 
+ * @see CustomExpressionContext
+ * @author Florian Rosenthal
+ *
+ */
 final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
 
     private final Map<MetricDescription, String> measuredFactors;
@@ -54,6 +64,14 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         }
     };
 
+    /**
+     * Initializes a new instance of the {@link ConsumptionFactorsVariableProvider} class.
+     * 
+     * @param fixedFactorValues
+     *            An {@link Iterable} of {@link FixedFactorValue}s to be managed by this instance.
+     * @param consumptionFactors
+     *            An {@link Iterable} of {@link ConsumptionFactor}s to be managed by this instance.
+     */
     ConsumptionFactorsVariableProvider(Iterable<FixedFactorValue> fixedFactorValues,
             Iterable<ConsumptionFactor> consumptionFactors) {
         this.defaultUnits = new HashMap<>();
@@ -136,7 +154,6 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         if (metricOfVariable == null) {
             result = super.getVariableValue(variableName);
         } else if (!this.measuredValues.containsKey(metricOfVariable)) {
-            // result = new MeasuredValuesCompositeValueObject(Collections.<Double> emptyList());
             result = new ValueObject(0d, Type.DOUBLE);
         } else {
             List<Measure<Number, Quantity>> foundMeasures = this.measuredValues.get(metricOfVariable);

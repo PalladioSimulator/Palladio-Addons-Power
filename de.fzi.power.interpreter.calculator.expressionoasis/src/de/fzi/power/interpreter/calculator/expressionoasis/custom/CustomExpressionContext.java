@@ -14,18 +14,48 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import org.vedantatree.expressionoasis.ExpressionContext;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
-import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerDistributionUnit;
+import de.fzi.power.interpreter.calculator.expressionoasis.ExpressionOasisDistributionPowerModelCalculator;
+import de.fzi.power.interpreter.calculator.expressionoasis.ExpressionOasisResourcePowerModelCalculator;
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.FixedFactor;
 
+/**
+ * This class is an extension of the {@link ExpressionContext} class, tailored to deal with
+ * {@link Expressions} that contain {@link FixedFactor}s and {@link ConsumptionFactor} s. It is used
+ * by the {@link ExpressionOasisDistributionPowerModelCalculator} and the
+ * {@link ExpressionOasisResourcePowerModelCalculator} to handle
+ * {@link DeclarativePowerModelSpecification}s.<br>
+ * The peculiarity of a measured factor is that while it is denoted by a variable within an
+ * expression, it might be composed of several values at simulation-time. For example, a measured
+ * factor {@code outletConsumption} may refer to all {@link PowerConsumingResource}s that are
+ * supplied by a {@link PowerDistributionUnit}. Thus, variables that represent measured factors are
+ * polymorphic in some way, but it cannot be determined beforehand whether they are composite
+ * variables or not.
+ * 
+ * @author Florian Rosenthal
+ *
+ */
 public class CustomExpressionContext extends ExpressionContext {
 
     private final ConsumptionFactorsVariableProvider variableProvider;
-    public static final Type MEASURED_VALUES_COMPOSITE_TYPE = Type.createType("measuredValuesType");
 
+    /**
+     * Initializes a new instance of the {@link CustomExpressionContext} class.
+     * 
+     * @param fixedFactorValues
+     *            An {@link Iterable} of {@link FixedFactorValue}s to be managed by this instance.
+     * @param consumptionFactors
+     *            An {@link Iterable} of {@link ConsumptionFactor}s to be managed by this instance.
+     * @throws ExpressionEngineException
+     *             In case something goes wrong in the super-constructor.
+     */
     public CustomExpressionContext(Iterable<FixedFactorValue> fixedFactorValues,
             Iterable<ConsumptionFactor> consumptionFactors) throws ExpressionEngineException {
         super();
