@@ -192,13 +192,14 @@ public final class InterpreterUtils {
      * 
      * @return true, the required metric is satisfied by Measurements of the available metric
      */
-    public static boolean isRequiredMetricSatisfiedBy(final MetricDescription required, final MetricDescription available) {
+    public static boolean isRequiredMetricSatisfiedBy(final MetricDescription required,
+            final MetricDescription available) {
         boolean result = false;
-        if(MetricSpecPackage.eINSTANCE.getMetricSetDescription().isInstance(required)) {
+        if (MetricSpecPackage.eINSTANCE.getMetricSetDescription().isInstance(required)) {
             final MetricSetDescription requiredSet = (MetricSetDescription) required;
             result = true;
-            for(MetricDescription subsumedMetric : requiredSet.getSubsumedMetrics()) {
-                result &= isRequiredMetricSatisfiedBy(subsumedMetric, available);              
+            for (MetricDescription subsumedMetric : requiredSet.getSubsumedMetrics()) {
+                result &= isRequiredMetricSatisfiedBy(subsumedMetric, available);
             }
         } else if (required.equals(available)) {
             result = true;
@@ -245,7 +246,7 @@ public final class InterpreterUtils {
      * @param <V>
      *            the value type
      */
-    public static class IdentifierMatchingMapDecorator<K extends Identifier, V> implements Map<K, V> {
+    private static class IdentifierMatchingMapDecorator<K extends Identifier, V> implements Map<K, V> {
         private final Map<String, V> decoratedMap;
         private final Map<String, K> keyMap;
 
@@ -257,7 +258,7 @@ public final class InterpreterUtils {
          * @param keyMap
          *            the decorated map linking the identifier to the key object
          */
-        public IdentifierMatchingMapDecorator(Map<String, V> decoratedMap, Map<String, K> keyMap) {
+        private IdentifierMatchingMapDecorator(Map<String, V> decoratedMap, Map<String, K> keyMap) {
             this.decoratedMap = decoratedMap;
             this.keyMap = keyMap;
         }
@@ -344,17 +345,17 @@ public final class InterpreterUtils {
         }
 
     }
-    
+
     public static Map<MetricDescription, IDataSource> determineDataSourcesForAvailableMetrics(
             Set<IDataSource> dataSources, Set<ExtendedMeasureProvider> measureProviders) {
         Map<MetricDescription, IDataSource> metricToDataSource = createIdentifierMatchingHashMap();
-        
+
         for (IDataSource inputSource : dataSources) {
             metricToDataSource.put(inputSource.getMetricDesciption(), inputSource);
         }
-        
+
         int oldSize;
-        
+
         do {
             oldSize = metricToDataSource.size();
             for (ExtendedMeasureProvider provider : measureProviders) {
@@ -363,13 +364,14 @@ public final class InterpreterUtils {
                         continue;
                     }
                     if (provider.canProvideMetric(m, metricToDataSource.keySet())) {
-                        
-                        metricToDataSource.put(m, provider.getDataSource(new HashSet<IDataSource>(metricToDataSource.values())));
+
+                        metricToDataSource.put(m,
+                                provider.getDataSource(new HashSet<IDataSource>(metricToDataSource.values())));
                     }
                 }
             }
         } while (metricToDataSource.size() > oldSize);
-        
+
         return Collections.unmodifiableMap(metricToDataSource);
     }
 
