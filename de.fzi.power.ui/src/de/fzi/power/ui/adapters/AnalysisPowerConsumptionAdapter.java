@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
-import java.util.Vector;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Duration;
@@ -73,9 +73,9 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     }
 
     private Set<IDataSource> collectScopeDataSources(Set<ProcessingResourceSpecification> processingResourceSpecs) {
-        Vector<Measurement> scopeMeasurements = new Vector<>();
+        List<Measurement> scopeMeasurements = new ArrayList<>();
         for (final ProcessingResourceSpecification spec : processingResourceSpecs) {
-            Vector<Measurement> resourceMeasurements = new Vector<>();
+            Collection<Measurement> resourceMeasurements = new ArrayList<>();
 
             CollectionUtils.select(this.experimentRun.getMeasurement(), new Predicate<Measurement>() {
 
