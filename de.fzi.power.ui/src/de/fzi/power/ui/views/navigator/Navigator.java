@@ -21,6 +21,7 @@ import org.eclipse.ui.ISelectionService;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
+import org.palladiosimulator.edp2.datastream.AbstractDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataSourceListener;
 import org.palladiosimulator.edp2.datastream.IDataStream;
@@ -50,10 +51,10 @@ public class Navigator extends ViewPart {
 
     private static final Logger LOGGER = Logger.getLogger(Navigator.class.getCanonicalName());
 
-    private ISelectionListener listener = new PowerInfrastructureEntititySelectionListener(this);
+    private final ISelectionListener listener = new PowerInfrastructureEntititySelectionListener(this);
     private PowerProvidingEntity powerProvidingEntity = null;
 
-    private ISelectionListener edp2listener = new Edp2RunSelectionListener(this);
+    private final ISelectionListener edp2listener = new Edp2RunSelectionListener(this);
     private ExperimentRun run;
 
     private ExtendedMeasureProviderConfigurationContainer configurationContainer;
@@ -69,6 +70,7 @@ public class Navigator extends ViewPart {
     private static final String SCATTER_PLOT_ID = "org.palladiosimulator.edp2.visualization.inputs.ScatterPlotInput";
     private static final String CHART_TITLE = "Power Consumption over Time";
     private static final String CHART_TITLE_ATTRIBUTE = "title";
+    private static final String CHART_EDITOR = "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor";
 
     private static final String ENERGY_TITLE = "Cumulative Energy Consumption over Time";
 
@@ -101,24 +103,24 @@ public class Navigator extends ViewPart {
                 // todo do this with strategy pattern or utility methods returning a Boolean
                 if (powerProvidingEntity == null || run == null) {
                     if (powerProvidingEntity == null) {
-                        MessageDialog
-                                .openError(
-                                        Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
-                                        "No PowerProvidingEntity selected",
-                                        "Make sure to select a PowerProvidingEntity in one of the EMF-based tree editors, e.g. a MountedPowerDistributionUnit instance.");
+                        MessageDialog.openError(
+                                Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
+                                "No PowerProvidingEntity selected",
+                                "Make sure to select a PowerProvidingEntity in one of the EMF-based tree editors, e.g. a MountedPowerDistributionUnit instance.");
                     } else if (run == null) {
-                        MessageDialog.openError(Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
-                                .getShell(), "No ExperimentRun selected",
+                        MessageDialog.openError(
+                                Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
+                                "No ExperimentRun selected",
                                 "Make sure to select an ExperimentRun in EDP2's 'Experiment' View.");
                     }
                 } else if (!configurationContainer.isValid()) {
-                    MessageDialog.openError(
-                            Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
+                    MessageDialog.openError(Activator.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(),
                             "Configuration Validation Error", configurationContainer.getErrorMessage());
                 } else {
                     AnalysisPowerConsumptionAdapter powerAdapter = createAndOpenPowerConsumptionChart();
-                    if (powerAdapter != null)
+                    if (powerAdapter != null) {
                         createAndOpenEnergyConsumptionChart(powerAdapter);
+                    }
                 }
             }
 
@@ -136,15 +138,14 @@ public class Navigator extends ViewPart {
 
         IPropertyConfigurable configurable = null;
         IConfigurationElement element = null;
-        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
-                DATASINK_EXTENSION_POINT_ID);
+        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(DATASINK_EXTENSION_POINT_ID);
         for (IConfigurationElement e : visualizationExtensions) {
             if (e.getAttribute(ID_ATTRIBUTE).equals(SCATTER_PLOT_ID)) {
                 try {
                     configurable = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
                 } catch (CoreException e1) {
-                    LOGGER.log(
-                            Level.SEVERE,
+                    LOGGER.log(Level.SEVERE,
                             "Error in creating a Visualization referenced in an extension: Respective Id is "
                                     + e.getAttribute(ID_ATTRIBUTE) + ".");
                     LOGGER.log(Level.SEVERE, e1.getMessage());
@@ -157,37 +158,22 @@ public class Navigator extends ViewPart {
         if (configurable != null) {
             adapter = new AnalysisPowerConsumptionAdapter();
 
-            adapter.setExperimentRun(run);
-            adapter.setPowerProvidingEntity(powerProvidingEntity);
+            adapter.setExperimentRun(this.run);
+            adapter.setPowerProvidingEntity(this.powerProvidingEntity);
 
             Map<String, Object> adapterConfiguration = adapter.getProperties();
-            configurationContainer.performApply(adapterConfiguration);
+            this.configurationContainer.performApply(adapterConfiguration);
             adapter.setProperties(adapterConfiguration);
 
-            Map<String, Object> elementProperties = new HashMap<String, Object>(configurable.getProperties());
-            for (final IConfigurationElement property : element.getChildren(ELEMENT_ID_PROPERTY)) {
-                elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
-                        property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
-            }
+            Map<String, Object> elementProperties = createElementProperties(element, configurable);
             // add chart title
             elementProperties.put(CHART_TITLE_ATTRIBUTE, CHART_TITLE);
             elementProperties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, CHART_TITLE);
             configurable.setProperties(elementProperties);
-            final ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
+            ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
                     element.getAttribute(NAME_ATTRIBUTE), adapter, configurable);
 
-            @SuppressWarnings("unchecked")
-            IVisualisationInput<IVisualisationSingleDatastreamInput> input = (IVisualisationInput<IVisualisationSingleDatastreamInput>) chainDescription
-                    .getVisualizationInput();
-            input.addInput(input.createNewInput(adapter));
-
-            try {
-                final IWorkbenchPage page = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
-                        .getActivePage();
-                page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
-            } catch (final PartInitException exception) {
-                throw new RuntimeException(exception);
-            }
+            tryOpenChartEditor(chainDescription, adapter);
         }
         return adapter;
     }
@@ -196,15 +182,14 @@ public class Navigator extends ViewPart {
 
         IPropertyConfigurable configurable = null;
         IConfigurationElement element = null;
-        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry().getConfigurationElementsFor(
-                DATASINK_EXTENSION_POINT_ID);
+        IConfigurationElement[] visualizationExtensions = Platform.getExtensionRegistry()
+                .getConfigurationElementsFor(DATASINK_EXTENSION_POINT_ID);
         for (IConfigurationElement e : visualizationExtensions) {
             if (e.getAttribute(ID_ATTRIBUTE).equals(SCATTER_PLOT_ID)) {
                 try {
                     configurable = (AbstractVisualizationInput<?>) e.createExecutableExtension(CLASS_ATTRIBUTE);
                 } catch (CoreException e1) {
-                    LOGGER.log(
-                            Level.SEVERE,
+                    LOGGER.log(Level.SEVERE,
                             "Error in creating a Visualization referenced in an extension: Respective Id is "
                                     + e.getAttribute(ID_ATTRIBUTE) + ".");
                     LOGGER.log(Level.SEVERE, e1.getMessage());
@@ -219,33 +204,45 @@ public class Navigator extends ViewPart {
             AnalysisCumulativeEnergyConsumptionAdapter energyAdapter = new AnalysisCumulativeEnergyConsumptionAdapter(
                     energyCalculator);
             energyAdapter.setDataSource(new EnergyAdapterDataSource(powerAdapter, configurable));
-            
-            Map<String, Object> elementProperties = new HashMap<String, Object>(configurable.getProperties());
-            for (final IConfigurationElement property : element.getChildren(ELEMENT_ID_PROPERTY)) {
-                elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
-                        property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
-            }
+
+            Map<String, Object> elementProperties = createElementProperties(element, configurable);
             // add chart title
             elementProperties.put(CHART_TITLE_ATTRIBUTE, ENERGY_TITLE);
             elementProperties.put(AbstractVisualizationSingleDatastreamConfiguration.INPUT_NAME_KEY, ENERGY_TITLE);
             configurable.setProperties(elementProperties);
-            final ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
+            ChainDescription chainDescription = new ChainDescription(element.getAttribute(ID_ATTRIBUTE),
                     element.getAttribute(NAME_ATTRIBUTE), energyAdapter, configurable);
 
-            @SuppressWarnings("unchecked")
-            IVisualisationInput<IVisualisationSingleDatastreamInput> input = (IVisualisationInput<IVisualisationSingleDatastreamInput>) chainDescription
-                    .getVisualizationInput();
-            input.addInput(input.createNewInput(energyAdapter));
-
-            try {
-                final IWorkbenchPage page = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
-                        .getActivePage();
-                page.openEditor(input, "org.palladiosimulator.edp2.visualization.editors.JFreeChartEditor");
-            } catch (final PartInitException exception) {
-                throw new RuntimeException(exception);
-            }
+            tryOpenChartEditor(chainDescription, energyAdapter);
         }
 
+    }
+
+    private Map<String, Object> createElementProperties(IConfigurationElement element,
+            IPropertyConfigurable configurable) {
+        Map<String, Object> elementProperties = new HashMap<String, Object>(configurable.getProperties());
+        for (IConfigurationElement property : element.getChildren(ELEMENT_ID_PROPERTY)) {
+            elementProperties.put(property.getAttribute(PROPERTY_KEY_ATTRIBUTE),
+                    property.getAttribute(PROPERTY_VALUE_ATTRIBUTE));
+        }
+        return elementProperties;
+    }
+
+    private void tryOpenChartEditor(ChainDescription chainDescription, AbstractDataSource inputAdapter) {
+        assert chainDescription != null && inputAdapter != null;
+
+        @SuppressWarnings("unchecked")
+        IVisualisationInput<IVisualisationSingleDatastreamInput> chartInput = (IVisualisationInput<IVisualisationSingleDatastreamInput>) chainDescription
+                .getVisualizationInput();
+        chartInput.addInput(chartInput.createNewInput(inputAdapter));
+
+        try {
+            final IWorkbenchPage page = Activator.getDefault().getWorkbench().getActiveWorkbenchWindow()
+                    .getActivePage();
+            page.openEditor(chartInput, CHART_EDITOR);
+        } catch (final PartInitException exception) {
+            throw new RuntimeException(exception);
+        }
     }
 
     @Override
@@ -264,12 +261,12 @@ public class Navigator extends ViewPart {
 
         private final AnalysisPowerConsumptionAdapter powerAdapter;
         private final IPropertyConfigurable conf;
-        
+
         public EnergyAdapterDataSource(AnalysisPowerConsumptionAdapter powerAdapter, IPropertyConfigurable conf) {
             this.powerAdapter = powerAdapter;
             this.conf = conf;
         }
-        
+
         @Override
         public boolean isCompatibleWith(MetricDescription other) {
             return getMetricDesciption().equals(other);
@@ -307,6 +304,6 @@ public class Navigator extends ViewPart {
         public void removeObserver(IDataSourceListener observer) {
             // don't do nothing
         }
-        
+
     }
 }
