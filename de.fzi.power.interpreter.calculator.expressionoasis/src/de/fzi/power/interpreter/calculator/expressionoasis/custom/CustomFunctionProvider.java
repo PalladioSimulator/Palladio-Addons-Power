@@ -13,17 +13,29 @@ import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
+import de.fzi.power.specification.MeasuredFactor;
 
 public final class CustomFunctionProvider implements FunctionProvider {
 
-    private static final String POW = "POW";
-    private static final String SQRT = "SQRT";
+    /**
+     * The provided composite 'POW' function.
+     */
+    public static final String POW = "POW";
+    /**
+     * The provided composite 'SQRT' function.
+     */
+    public static final String SQRT = "SQRT";
 
     private static final List<String> KNOWN_FUNCTIONS = Arrays.asList(POW, SQRT);
 
     public CustomFunctionProvider() {
     }
 
+    /**
+     * @throws AssertionError
+     *             In case the passed {@link ExpressionContext} is not a
+     *             {@link CustomExpressionContext} instance.
+     */
     @Override
     public void initialize(ExpressionContext expressionContext) {
         ExpressionOasisHelper.assertCorrectExpressionContext(expressionContext, getClass());
@@ -33,13 +45,13 @@ public final class CustomFunctionProvider implements FunctionProvider {
         }
     }
 
+    /**
+     * @return {@link Type#DOUBLE} in case {@link #supportsFunction(String, Type[])} called with the
+     *         given arguments returns {@code true}, otherwise {@code null}.
+     */
     @Override
     public Type getFunctionType(String functionName, Type[] parameterTypes) throws ExpressionEngineException {
-        Type resultType = null;
-        if (supportsFunction(functionName, parameterTypes)) {
-            resultType = Type.DOUBLE;
-        }
-        return resultType;
+        return supportsFunction(functionName, parameterTypes) ? Type.DOUBLE : null;
     }
 
     private ValueObject evaluatePow(ValueObject[] parameters) {
@@ -82,6 +94,18 @@ public final class CustomFunctionProvider implements FunctionProvider {
         return result;
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @return
+     *         <ul>
+     *         <li>{@code null} is returned in case the function denoted by the given name is not
+     *         provided by this instance.</li>
+     *         <li>A {@link ValueObject} of {@link Type#DOUBLE} is returned if none of the
+     *         parameters is a {@link MeasuredFactor}.</li>
+     *         <li>A {@link MeasuredValuesCompositeValueObject} is returned in any other case.</li>
+     *         </ul>
+     */
     @Override
     public ValueObject getFunctionValue(String functionName, ValueObject[] parameters)
             throws ExpressionEngineException {
