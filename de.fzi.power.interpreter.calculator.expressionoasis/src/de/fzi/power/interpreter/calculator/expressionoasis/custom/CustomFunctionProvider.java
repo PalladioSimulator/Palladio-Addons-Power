@@ -25,7 +25,7 @@ public final class CustomFunctionProvider implements FunctionProvider {
     }
 
     @Override
-    public void initialize(ExpressionContext expressionContext) throws ExpressionEngineException {
+    public void initialize(ExpressionContext expressionContext) {
         ExpressionOasisHelper.assertCorrectExpressionContext(expressionContext, getClass());
         Grammar grammar = ExpressionEngine.getGrammar();
         for (String function : KNOWN_FUNCTIONS) {
