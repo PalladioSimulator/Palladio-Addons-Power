@@ -114,6 +114,33 @@ public class SumExpressionTest {
         Expression sumExpression = ExpressionEngine.compileExpression("SUM(" + MEASURED_FACTOR_NAME + " * 10.0)",
                 this.context, true);
         assertEquals(Double.valueOf(8000d), sumExpression.getValue().getValue());
+
+    }
+
+    @Test
+    public void testGetValueMeasuredValuesWithConstDivisor() throws ExpressionEngineException {
+        BasicMeasurement<Double, Power> measuringValue = new BasicMeasurement<>(Measure.valueOf(400d, Power.UNIT),
+                POWER_METRIC_DESCRIPTION);
+        this.context.addBasicMeasurement(measuringValue);
+        this.context.addBasicMeasurement(measuringValue);
+
+        Expression sumExpression = ExpressionEngine.compileExpression("SUM( 1 / " + MEASURED_FACTOR_NAME + ")",
+                this.context, true);
+
+        assertEquals(Double.valueOf(1 / 200d), sumExpression.getValue().getValue());
+    }
+
+    @Test
+    public void testGetValueMeasuredValuesWithConstDividend() throws ExpressionEngineException {
+        BasicMeasurement<Double, Power> measuringValue = new BasicMeasurement<>(Measure.valueOf(400d, Power.UNIT),
+                POWER_METRIC_DESCRIPTION);
+        this.context.addBasicMeasurement(measuringValue);
+        this.context.addBasicMeasurement(measuringValue);
+
+        Expression sumExpression = ExpressionEngine.compileExpression("SUM(" + MEASURED_FACTOR_NAME + " / 2)",
+                this.context, true);
+
+        assertEquals(Double.valueOf(400d), sumExpression.getValue().getValue());
     }
 
     @Test
@@ -156,6 +183,43 @@ public class SumExpressionTest {
         Expression sumExpression = ExpressionEngine
                 .compileExpression("SUM(POW(" + MEASURED_FACTOR_NAME + ", 2) * factor)", this.context, true);
         assertEquals(Double.valueOf(4000d), sumExpression.getValue().getValue());
+    }
+
+    @Test
+    public void testGetValueMeasuredValuesWithMultiplicationAndExponentiation2() throws ExpressionEngineException {
+        BasicMeasurement<Double, Power> measuringValue = new BasicMeasurement<>(Measure.valueOf(10d, Power.UNIT),
+                POWER_METRIC_DESCRIPTION);
+        this.context.addBasicMeasurement(measuringValue);
+        this.context.addBasicMeasurement(measuringValue);
+        DefaultVariableProvider provider = new DefaultVariableProvider();
+        provider.addVariable("factor", new ValueObject(2.5, Type.DOUBLE));
+        this.context.addVariableProvider(provider);
+
+        // POW(SUM(measuredFactor * factor), 3) should yield 125000: (10*2.5 + 10*2.5)^3
+        Expression sumExpression = ExpressionEngine
+                .compileExpression("POW(SUM(" + MEASURED_FACTOR_NAME + " * factor), 3)", this.context, true);
+        assertEquals(Double.valueOf(125000d), sumExpression.getValue().getValue());
+    }
+
+    @Test
+    public void testGetValueQuadraticPolynomial() throws ExpressionEngineException {
+        BasicMeasurement<Double, Power> measuringValue = new BasicMeasurement<>(Measure.valueOf(10d, Power.UNIT),
+                POWER_METRIC_DESCRIPTION);
+        this.context.addBasicMeasurement(measuringValue);
+        this.context.addBasicMeasurement(measuringValue);
+        DefaultVariableProvider provider = new DefaultVariableProvider();
+        provider.addVariable("firstFactor", new ValueObject(2.5, Type.DOUBLE));
+        provider.addVariable("secondFactor", new ValueObject(5.0, Type.DOUBLE));
+        this.context.addVariableProvider(provider);
+
+        // ax² + bx + c:
+        // SUM(factor * POW(measuredFactor, 2)) + SUM(secondFactor * measuredFactor) + 42 should
+        // yield
+        // 642:
+        // (2.5 * 10^2 + 2.5 * 10^2) + (5 * 10 + 5 * 10) + 42
+        Expression sumExpression = ExpressionEngine.compileExpression("SUM(firstFactor * POW(" + MEASURED_FACTOR_NAME
+                + ", 2)) + SUM(secondFactor * " + MEASURED_FACTOR_NAME + ") + 42", this.context, true);
+        assertEquals(Double.valueOf(642d), sumExpression.getValue().getValue());
     }
 
     @Test
