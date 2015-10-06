@@ -1,4 +1,4 @@
-package de.fzi.power.interpreter.calculator.expressionoasis.tests;
+package de.fzi.power.interpreter.calculator.expressionoasis;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
