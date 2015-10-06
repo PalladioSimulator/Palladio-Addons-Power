@@ -65,12 +65,14 @@ public class SumExpressionTest {
 
     @Test
     public void testSumNoMeasuredFactor() throws ExpressionEngineException {
+        DecimalExpression argument = new DecimalExpression();
+        argument.initialize(this.context, new String("42"), true);
         this.expectedException.expect(ExpressionEngineException.class);
         this.expectedException.expectCause(CoreMatchers.nullValue(Throwable.class));
         this.expectedException.expectMessage(CoreMatchers
                 .startsWith("Operand is not supported by \"SUM\", for it does not contain any measured factor!"));
         // this should fail now
-        ExpressionEngine.compileExpression("SUM(42)", this.context, true);
+        new SumExpression().initialize(this.context, argument, true);
     }
 
     @Test
