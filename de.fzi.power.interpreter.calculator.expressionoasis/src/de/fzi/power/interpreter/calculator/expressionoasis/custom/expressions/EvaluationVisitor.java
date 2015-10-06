@@ -21,7 +21,7 @@ import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasi
 
 /**
  * {@link ExpressionVisitor} implementation to evaluate {@link MeasuredFactorsFoldExpression}s. In
- * particular, this class provides the {@code fold} method that is used to processthe set of
+ * particular, this class provides the {@code fold} method that is used to process the set of
  * measurements.
  * 
  * @author Florian Rosenthal
@@ -46,6 +46,14 @@ abstract class EvaluationVisitor implements ExpressionVisitor {
         return new ValueObject(fold(this.values), Type.DOUBLE);
     }
 
+    /**
+     * This method has to be implemented by subclasses in order to determine how to fold/reduce the
+     * a collection of values.
+     * 
+     * @param values
+     *            The {@link Iterable} of double values to fold.
+     * @return The result of the fold operation.
+     */
     protected abstract double fold(Iterable<Double> values);
 
     private void reset() {
