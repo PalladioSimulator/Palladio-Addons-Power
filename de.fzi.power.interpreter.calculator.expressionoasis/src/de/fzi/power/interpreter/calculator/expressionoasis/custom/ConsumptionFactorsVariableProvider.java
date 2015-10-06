@@ -43,7 +43,15 @@ import de.fzi.power.specification.util.SpecificationSwitch;
  */
 final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
 
+    /**
+     * maps each measured factor (by its metric) to its name -> only one measured factor per metric
+     * description possible
+     */
     private final Map<MetricDescription, String> measuredFactors;
+
+    /**
+     * maps each measured factor (by its name) to its default unit
+     */
     private final Map<String, Unit<Quantity>> defaultUnits;
     private final Map<MetricDescription, List<Measure<Number, Quantity>>> measuredValues;
 
@@ -91,10 +99,30 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         return Collections.unmodifiableCollection(this.measuredFactors.keySet());
     }
 
+    /**
+     * Gets whether the {@link MeasuredFactor}, denoted by the given name, is known to this class.
+     * 
+     * @param measuredFactorName
+     *            A {@link String} which is the name of a {@link MeasuredFactor}.
+     * @return {@code true} if the given measured factor is known to this class, {@code false}
+     *         otherwise.
+     * @throws NullPointerException
+     *             In case the argument is {@code null}.
+     */
     boolean providesMeasuredFactor(String measuredFactorName) {
         return this.measuredFactors.containsValue(Objects.requireNonNull(measuredFactorName));
     }
 
+    /**
+     * Gets whether the this instance provides a {@link MeasuredFactor} with the given metric.
+     * 
+     * @param measuredFactorMetric
+     *            A {@link MetricDescription}.
+     * @return {@code true} if a measured factor with the given metric is known to this class,
+     *         {@code false} otherwise.
+     * @throws NullPointerException
+     *             In case the argument is {@code null}.
+     */
     boolean providesMeasuredFactor(MetricDescription measuredFactorMetric) {
         return this.measuredFactors.containsKey(Objects.requireNonNull(measuredFactorMetric));
     }
@@ -103,7 +131,7 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         assert measuringValue != null;
 
         MetricDescription description = measuringValue.getMetricDesciption();
-        if (this.measuredFactors.containsKey(description)) {
+        if (providesMeasuredFactor(description)) {
             List<Measure<Number, Quantity>> valuesForFactor = this.measuredValues.get(description);
             if (valuesForFactor == null) {
                 valuesForFactor = new ArrayList<>();
@@ -113,12 +141,22 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         }
     }
 
-    void addMeasurementForMeasuredFactor(MeasuringValue measuringValue) {
+    /**
+     * Adds the given measured value (measurement).<br>
+     * This method does nothing, if the given measured value is {@code null} or cannot be associated
+     * with any known measured factor. This association is done by examining the metric of the given
+     * measured value.
+     * 
+     * @param measuringValue
+     *            A {@link MeasuringValue} which should belong to a measured factor known to this
+     *            instance.
+     */
+    void addMeasuredValue(MeasuringValue measuringValue) {
         if (measuringValue instanceof BasicMeasurement<?, ?>) {
             internalAdd(measuringValue);
         } else if (measuringValue instanceof TupleMeasurement) {
             for (MeasuringValue m : ((TupleMeasurement) measuringValue).getSubsumedMeasurements()) {
-                addMeasurementForMeasuredFactor(m);
+                addMeasuredValue(m);
             }
         }
     }
@@ -127,53 +165,91 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         this.measuredValues.clear();
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @throws AssertionError
+     *             In case the passed {@link ExpressionContext} is not a
+     *             {@link CustomExpressionContext} instance.
+     */
     @Override
     public void initialize(ExpressionContext expressionContext) throws ExpressionEngineException {
         ExpressionOasisHelper.assertCorrectExpressionContext(expressionContext, this.getClass());
         super.initialize(expressionContext);
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @return {@link Type#DOUBLE} in case the given {@code variableName} denotes a measured factor
+     *         known to this instance, {@code super.getVariableType(variableName)} otherwise.
+     * @throws NullPointerException
+     *             In case {@code variableName == null}.
+     * @see #providesMeasuredFactor(String)
+     */
     @Override
     public Type getVariableType(String variableName) throws ExpressionEngineException {
-        if (this.measuredFactors.containsValue(Objects.requireNonNull(variableName))) {
-            return Type.DOUBLE;
-        }
-        return super.getVariableType(variableName);
+        return providesMeasuredFactor(variableName) ? Type.DOUBLE : super.getVariableType(variableName);
     }
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @return
+     *         <ul>
+     *         <li>The result of {@code super.getVariableValue(variableName)} is returned in case
+     *         the given variable name does not denote a known {@link MeasuredFactor}.</li>
+     *         <li>A {@link ValueObject} of {@link Type#DOUBLE} is returned, if the given variable
+     *         name denotes a known {@link MeasuredFactor} with 0 or 1 measurements available.</li>
+     *         <li>A {@link MeasuredValuesCompositeValueObject} is returned in any other case.</li>
+     *         </ul>
+     */
     @Override
     public ValueObject getVariableValue(String variableName) throws ExpressionEngineException {
-        MetricDescription metricOfVariable = null;
         ValueObject result = null;
+        if (!providesMeasuredFactor(variableName)) {
+            result = super.getVariableValue(variableName);
+        } else {
+            result = getVariableValueForMeasuredFactor(variableName);
+        }
+        return result;
+    }
+
+    private ValueObject getVariableValueForMeasuredFactor(String measuredFactorName) {
+        assert measuredFactorName != null && !measuredFactorName.isEmpty();
+        ValueObject result = null;
+
+        MetricDescription metricOfVariable = null;
         for (Entry<MetricDescription, String> entry : this.measuredFactors.entrySet()) {
-            if (entry.getValue().equals(variableName)) {
+            if (entry.getValue().equals(measuredFactorName)) {
                 metricOfVariable = entry.getKey();
                 break;
             }
         }
-        if (metricOfVariable == null) {
-            result = super.getVariableValue(variableName);
-        } else if (!this.measuredValues.containsKey(metricOfVariable)) {
+        assert metricOfVariable != null;
+
+        if (!this.measuredValues.containsKey(metricOfVariable)) {
+            // no measurements (measured values) available for this measured factor
             result = new ValueObject(0d, Type.DOUBLE);
         } else {
             List<Measure<Number, Quantity>> foundMeasures = this.measuredValues.get(metricOfVariable);
-            Collection<Double> resultValues = new ArrayList<>(foundMeasures.size());
+            List<Double> resultValues = new ArrayList<>(foundMeasures.size());
             for (Measure<Number, Quantity> foundMeasure : foundMeasures) {
-                resultValues.add(foundMeasure.doubleValue(this.defaultUnits.get(variableName)));
+                resultValues.add(foundMeasure.doubleValue(this.defaultUnits.get(measuredFactorName)));
             }
             if (foundMeasures.size() == 1) {
-                result = new ValueObject(resultValues.iterator().next(), Type.DOUBLE);
+                result = new ValueObject(resultValues.get(0), Type.DOUBLE);
             } else {
                 result = new MeasuredValuesCompositeValueObject(resultValues);
             }
         }
         return result;
+
     }
 
     @Override
     public boolean supportsVariable(String variableName) throws ExpressionEngineException {
-        return this.measuredFactors.containsValue(Objects.requireNonNull(variableName))
-                || super.supportsVariable(variableName);
+        return providesMeasuredFactor(variableName) || super.supportsVariable(variableName);
     }
 
 }

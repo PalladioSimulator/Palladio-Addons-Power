@@ -37,7 +37,8 @@ import de.fzi.power.specification.FixedFactor;
  * factor {@code outletConsumption} may refer to all {@link PowerConsumingResource}s that are
  * supplied by a {@link PowerDistributionUnit}. Thus, variables that represent measured factors are
  * polymorphic in some way, but it cannot be determined beforehand whether they are composite
- * variables or not.
+ * variables or not.<br>
+ * Moreover, this class also serves as a facade to all other non-public classes in this package.
  * 
  * @author Florian Rosenthal
  *
@@ -65,7 +66,7 @@ public class CustomExpressionContext extends ExpressionContext {
     }
 
     public void addBasicMeasurement(MeasuringValue measuringValue) {
-        this.variableProvider.addMeasurementForMeasuredFactor(measuringValue);
+        this.variableProvider.addMeasuredValue(measuringValue);
     }
 
     public void addPowerConsumptions(Iterable<Amount<Power>> outletConsumptions) {
