@@ -252,4 +252,9 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         return providesMeasuredFactor(variableName) || super.supportsVariable(variableName);
     }
 
+    @Override
+    public void clear() {
+        super.clear();
+        this.clearMeasuredFactors();
+    }
 }
