@@ -52,7 +52,7 @@
             id="de.fzi.power.specification.presentation.SpecificationEditorID"
             name="%_UI_SpecificationEditor_label"
             icon="icons/full/obj16/SpecificationModelFile.gif"
-            extensions="spec"
+            extensions="spec,specification"
             class="de.fzi.power.specification.presentation.SpecificationEditor"
             contributorClass="de.fzi.power.specification.presentation.SpecificationActionBarContributor">
       </editor>
