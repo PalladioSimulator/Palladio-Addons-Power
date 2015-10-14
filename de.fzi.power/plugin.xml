@@ -34,6 +34,9 @@
       <parser
             type="spec"
             class="de.fzi.power.specification.util.SpecificationResourceFactoryImpl"/>
+      <parser
+            type="specification"
+            class="de.fzi.power.specification.util.SpecificationResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -64,6 +67,13 @@
       <parser
             type="infrastructure"
             class="de.fzi.power.infrastructure.util.InfrastructureResourceFactoryImpl"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.extension_parser">
+      <parser
+            class="de.fzi.power.specification.util.SpecificationResourceFactoryImpl"
+            type="specification">
+      </parser>
    </extension>
 
 </plugin>

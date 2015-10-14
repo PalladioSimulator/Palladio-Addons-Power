@@ -3,14 +3,14 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="power" nsURI="http://www.fzi.de/Power/1.0" nsPrefix="de.fzi">
   <eSubpackages name="util" nsURI="http://www.fzi.de/Power/Util/1.0" nsPrefix="de.fzi.power">
     <eClassifiers xsi:type="ecore:EDataType" name="Power" instanceClassName="javax.measure.quantity.Power"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//util/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Entity" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//util/NamedElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="specification" nsURI="http://www.fzi.de/Power/Specification/1.0"
       nsPrefix="de.fzi.power">
-    <eClassifiers xsi:type="ecore:EClass" name="PowerModelRepository" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerModelRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerModelSpecifications"
           upperBound="-1" eType="#//specification/PowerModelSpecification" containment="true"
           eOpposite="#//specification/PowerModelSpecification/powermodelrepository"/>
@@ -42,7 +42,7 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="binding" nsURI="http://www.fzi.de/Power/Binding/1.0" nsPrefix="de.fzi.power">
-    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" lowerBound="1"
           eType="#//specification/FixedFactor"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
@@ -54,7 +54,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerBinding"
           eOpposite="#//binding/PowerBinding/fixedFactorValues"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PowerBindingRepository" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerBindingRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindings" upperBound="-1"
           eType="#//binding/PowerBinding" containment="true" eOpposite="#//binding/PowerBinding/powerBindingRepository"/>
     </eClassifiers>

@@ -19,7 +19,7 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Specification" basePackage="de.fzi.power" resource="XML"
-        disposableProviderFactory="true" fileExtensions="spec" ecorePackage="power.ecore#//specification">
+        disposableProviderFactory="true" fileExtensions="spec,specification" ecorePackage="power.ecore#//specification">
       <genClasses ecoreClass="power.ecore#//specification/PowerModelRepository">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//specification/PowerModelRepository/powerModelSpecifications"/>
       </genClasses>

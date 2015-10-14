@@ -11,5 +11,6 @@ package de.fzi.power.specification;
  * @model
  * @generated
  */
-public interface ResourcePowerModelSpecification extends PowerModelSpecification {
+public interface ResourcePowerModelSpecification extends
+		PowerModelSpecification {
 } // ResourcePowerModelSpecification
