@@ -8,6 +8,7 @@ import java.util.Set;
 
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.PowerModelSpecification;
 import de.fzi.power.specification.ResourcePowerModelSpecification;
@@ -27,6 +28,10 @@ public abstract class AbstractCalculatorFactory implements CalculatorFactory {
         
         public Boolean caseResourcePowerModelSpecification(ResourcePowerModelSpecification object) {
             return getSupportedResourcePowerModelIds().contains(object.getId());
+        };
+        
+        public Boolean caseDeclarativePowerModelSpecification(DeclarativePowerModelSpecification object) {
+            return false;
         };
     };
 
