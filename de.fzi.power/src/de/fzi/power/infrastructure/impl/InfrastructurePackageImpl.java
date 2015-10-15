@@ -456,7 +456,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 		g2 = createEGenericType(theUtilPackage.getPower());
 		g1.getETypeArguments().add(g2);
 		initEAttribute(getPowerProvidingEntity_SuppliablePeakPower(), g1,
-				"suppliablePeakPower", "", 1, 1, PowerProvidingEntity.class,
+				"suppliablePeakPower", "", 0, 1, PowerProvidingEntity.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(

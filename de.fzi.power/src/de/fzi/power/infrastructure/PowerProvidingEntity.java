@@ -59,7 +59,7 @@ public interface PowerProvidingEntity extends Entity {
 	 * @return the value of the '<em>Suppliable Peak Power</em>' attribute.
 	 * @see #setSuppliablePeakPower(Measure)
 	 * @see de.fzi.power.infrastructure.InfrastructurePackage#getPowerProvidingEntity_SuppliablePeakPower()
-	 * @model default="" dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSMeasure<?, de.fzi.power.util.Power>" required="true" ordered="false"
+	 * @model default="" dataType="org.palladiosimulator.edp2.models.ExperimentData.EJSMeasure<?, de.fzi.power.util.Power>" ordered="false"
 	 * @generated
 	 */
 	Measure<?, Power> getSuppliablePeakPower();

@@ -84,7 +84,7 @@
           ordered="false" upperBound="-1" eType="#//infrastructure/PowerConsumingEntity"
           containment="true" eOpposite="#//infrastructure/PowerConsumingEntity/powerProvidingEntity"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="suppliablePeakPower"
-          ordered="false" lowerBound="1" defaultValueLiteral="">
+          ordered="false" defaultValueLiteral="">
         <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
           <eTypeArguments/>
           <eTypeArguments eClassifier="#//util/Power"/>
