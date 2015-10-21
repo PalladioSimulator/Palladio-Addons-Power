@@ -28,7 +28,7 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.stoex.edit;visibility:=reexport,
  de.uka.ipd.sdq.units;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
- org.jscience;bundle-version="4.1.3",
+ org.jscience,
  de.fzi.power;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.emf.cdo.edit
 Bundle-ActivationPolicy: lazy
