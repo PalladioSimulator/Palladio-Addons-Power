@@ -112,7 +112,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="de.uka.ipd.sdq.stoex"/>
       <import plugin="de.uka.ipd.sdq.units"/>
-      <import plugin="org.jscience" version="4.1.3" match="greaterOrEqual"/>
+      <import plugin="org.jscience"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.palladiosimulator.edp2.edit"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit"/>
