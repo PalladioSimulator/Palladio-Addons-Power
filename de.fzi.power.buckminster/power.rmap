@@ -4,7 +4,7 @@
   <rm:locator pattern="^de\.fzi\.power.*" searchPathRef="Power" failOnError="false"/>
   <rm:locator pattern="^org\.codehouse\.stax.*" searchPathRef="Power" failOnError="false"/>
   <rm:locator pattern="^org\.vedantree\.expressionoasis.*" searchPathRef="Power" failOnError="false"/>
-  <rm:locator pattern="^org\.simpleframework\.xml.*" searchPathRef="Power" failOnError="false"/>
+  <rm:locator pattern="^org\.simpleframework.*" searchPathRef="Power" failOnError="false"/>
   <rm:redirect pattern=".*" href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/Editors/org.palladiosimulator.editors.buckminster/editors.rmap"/>
   <rm:searchPath name="Power">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn">
