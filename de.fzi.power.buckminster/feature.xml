@@ -119,18 +119,8 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="de.fzi.power.feature"
          version="0.0.0"/>
 
-   <requires>
-   </requires>
-
    <plugin
          id="de.fzi.power.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="de.fzi.power.interpreter.tests"
          download-size="0"
          install-size="0"
          version="0.0.0"
