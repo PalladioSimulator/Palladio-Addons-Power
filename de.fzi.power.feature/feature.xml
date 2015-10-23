@@ -124,7 +124,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.palladiosimulator.measurementframework"/>
-      <import plugin="org.palladiosimulator.edp2.datastream"/>
       <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
       <import plugin="org.palladiosimulator.commons"/>
       <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter"/>
@@ -132,8 +131,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.apache.commons.collections15"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.palladiosimulator.edp2.datastream"/>
-      <import plugin="org.palladiosimulator.measurementframework"/>
-      <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
       <import plugin="org.palladiosimulator.edp2.visualization"/>
       <import plugin="de.fzi.power"/>
       <import plugin="org.palladiosimulator.pcm"/>
