@@ -119,6 +119,21 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="de.fzi.power.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.palladiosimulator.experimentanalysis.utilizationfilter"/>
+      <import plugin="org.junit" version="4.11.0" match="greaterOrEqual"/>
+      <import plugin="de.fzi.power.interpreter.measureprovider.utilization"/>
+      <import plugin="de.fzi.power.interpreter.calculators.essential"/>
+      <import plugin="de.fzi.power.specification.resources"/>
+      <import plugin="de.fzi.power.interpreter"/>
+      <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint"/>
+      <import plugin="org.palladiosimulator.edp2.datastream"/>
+      <import plugin="org.palladiosimulator.metricspec"/>
+      <import plugin="org.jscience"/>
+      <import plugin="org.palladiosimulator.pcm" version="4.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.metricspec.resources" version="1.0.0" match="greaterOrEqual"/>
+   </requires>
+
    <plugin
          id="de.fzi.power.tests"
          download-size="0"
