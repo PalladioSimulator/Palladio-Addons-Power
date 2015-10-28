@@ -78,7 +78,7 @@ public class CustomExpressionContext extends ExpressionContext {
     }
 
     public void clearMeasurements() {
-        this.variableProvider.clearMeasuredFactors();
+        this.variableProvider.clearMeasuredValues();
     }
 
     public Collection<MetricDescription> getMeasuredFactors() {

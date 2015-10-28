@@ -161,7 +161,11 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         }
     }
 
-    void clearMeasuredFactors() {
+    /**
+     * Discards all measured values (measurements) that have been added previously via calls to
+     * {@link #addMeasuredValue(MeasuringValue)}.
+     */
+    void clearMeasuredValues() {
         this.measuredValues.clear();
     }
 
@@ -206,13 +210,8 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
      */
     @Override
     public ValueObject getVariableValue(String variableName) throws ExpressionEngineException {
-        ValueObject result = null;
-        if (!providesMeasuredFactor(variableName)) {
-            result = super.getVariableValue(variableName);
-        } else {
-            result = getVariableValueForMeasuredFactor(variableName);
-        }
-        return result;
+        return !providesMeasuredFactor(variableName) ? super.getVariableValue(variableName)
+                : getVariableValueForMeasuredFactor(variableName);
     }
 
     private ValueObject getVariableValueForMeasuredFactor(String measuredFactorName) {
@@ -255,6 +254,6 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
     @Override
     public void clear() {
         super.clear();
-        this.clearMeasuredFactors();
+        this.clearMeasuredValues();
     }
 }
