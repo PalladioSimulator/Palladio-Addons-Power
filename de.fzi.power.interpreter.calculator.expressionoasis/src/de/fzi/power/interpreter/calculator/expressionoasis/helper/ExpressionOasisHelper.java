@@ -17,7 +17,7 @@ public final class ExpressionOasisHelper {
     /**
      * Gets whether the given value object has a numeric type.<br>
      * This method call is equivalent to (in case no exception occurs) calling
-     * {@code isNumericType(valueObject.getValueType()}.
+     * {@code isNumericType(valueObject.getValueType())}.
      * 
      * @param valueObject
      *            A {@link ValueObject}.
