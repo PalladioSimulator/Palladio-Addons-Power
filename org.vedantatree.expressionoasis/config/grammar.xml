@@ -119,6 +119,7 @@
 		<operator name="!" precedence="12"/>
 		<operator name="()" precedence="12"/>
 		<operator precedence="12" name="SUM"/>
+		<operator precedence="12" name="MUL"/>
 	</unaryOperators>
 	
 	<!-- 

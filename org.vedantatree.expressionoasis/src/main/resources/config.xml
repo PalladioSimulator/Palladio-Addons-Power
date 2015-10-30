@@ -30,6 +30,7 @@
 
     <expressions>
     	<expression name ="SUM" className="de.fzi.power.interpreter.calculator.expressionoasis.custom.expressions.SumExpression" type="unary"/>
+        <expression name ="MUL" className="de.fzi.power.interpreter.calculator.expressionoasis.custom.expressions.MulExpression" type="unary"/>
         <expression name="?" className="org.vedantatree.expressionoasis.expressions.booleanexp.ConditionTernaryExpression" type="binary"/>
         <expression name=":" className="org.vedantatree.expressionoasis.expressions.booleanexp.ResultTernaryExpression" type="binary"/>
 
