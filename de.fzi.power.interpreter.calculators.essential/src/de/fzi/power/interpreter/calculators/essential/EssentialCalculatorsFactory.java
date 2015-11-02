@@ -11,7 +11,7 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractCalculatorFactory;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
-import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
+import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
 public class EssentialCalculatorsFactory extends AbstractCalculatorFactory {
@@ -32,21 +32,20 @@ public class EssentialCalculatorsFactory extends AbstractCalculatorFactory {
     }
     
     @Override
-    public AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
-            PowerConsumingResource forResource) {
-        AbstractResourcePowerModelCalculator calculator = null;
-        ResourcePowerBinding context = forResource.getResourcePowerAssemblyContext();
+    public IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
+            final ResourcePowerBinding binding) {
+        IResourcePowerModelCalculator calculator = null;
         
-        if (context.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.LINEAR_POWER_MODEL.getId())) {
-            calculator = new LinearPowerModelCalculator(forResource);
-        } else if(context.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.NONLINEAR_REGRESSION_MODEL.getId())) {
-            calculator = new NonlinearRegressionCalculator(forResource);
-        } else if(context.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.INTERPOLATION_MODEL.getId())) {
-            calculator = new InterpolationModelCalculator(forResource);
+        if (binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.LINEAR_POWER_MODEL.getId())) {
+            calculator = new LinearPowerModelCalculator(binding);
+        } else if(binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.NONLINEAR_REGRESSION_MODEL.getId())) {
+            calculator = new NonlinearRegressionCalculator(binding);
+        } else if(binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.INTERPOLATION_MODEL.getId())) {
+            calculator = new InterpolationModelCalculator(binding);
         }
         
         return calculator != null ? calculator : 
-            super.instantiateResourcePowerModelCalculator(forResource);
+            super.instantiateResourcePowerModelCalculator(binding);
     }
     
     @Override

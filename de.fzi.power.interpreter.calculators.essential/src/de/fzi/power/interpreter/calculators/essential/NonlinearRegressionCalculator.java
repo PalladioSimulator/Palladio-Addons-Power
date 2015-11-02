@@ -15,6 +15,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
@@ -26,8 +27,8 @@ public class NonlinearRegressionCalculator extends AbstractResourcePowerModelCal
     private Amount<Dimensionless> exponent;
     private final static MetricDescription utilMetric = MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE;
     
-    public NonlinearRegressionCalculator(PowerConsumingResource powerConsumingResource) {
-        super(powerConsumingResource);
+    public NonlinearRegressionCalculator(final ResourcePowerBinding binding) {
+        super(binding);
         
         if (!binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.NONLINEAR_REGRESSION_MODEL.getId())) {
             throw new IllegalArgumentException("Referred model wasn't the non-linear regression power model from"

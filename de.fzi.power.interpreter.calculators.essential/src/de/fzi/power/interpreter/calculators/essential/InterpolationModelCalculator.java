@@ -14,14 +14,15 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
 public class InterpolationModelCalculator extends AbstractResourcePowerModelCalculator {
     
-    public InterpolationModelCalculator(PowerConsumingResource powerConsumingResource) {
-        super(powerConsumingResource);
+    public InterpolationModelCalculator(final ResourcePowerBinding binding) {
+        super(binding);
         if(!binding.getResourcePowerModelSpecification().getId().equals(PowerModelConstants.INTERPOLATION_MODEL.getId())) {
             throw new IllegalArgumentException("Referred model wasn't the linear power model from"
                     + PowerModelConstants.LINEAR_POWER_MODEL.eResource().getURI() + ".");

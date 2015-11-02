@@ -18,6 +18,7 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
@@ -49,8 +50,8 @@ public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalcul
      * @param powerConsumingResource
      *            The resource for which the calculator is created.
      */
-    public LinearPowerModelCalculator(PowerConsumingResource powerConsumingResource) {
-        super(powerConsumingResource);
+    public LinearPowerModelCalculator(final ResourcePowerBinding binding) {
+        super(binding);
 
         if (!binding.getResourcePowerModelSpecification().getId()
                 .equals(PowerModelConstants.LINEAR_POWER_MODEL.getId())) {
