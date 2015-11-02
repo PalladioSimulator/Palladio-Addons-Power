@@ -2,6 +2,7 @@
  */
 package de.fzi.power.infrastructure.impl;
 
+import de.fzi.power.infrastructure.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -58,10 +59,12 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements
 			return createPowerDistributionUnit();
 		case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT:
 			return createMountedPowerDistributionUnit();
-		case InfrastructurePackage.POWER_CONSUMING_RESOURCE:
-			return createPowerConsumingResource();
 		case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY:
 			return createPowerInfrastructureRepository();
+		case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE:
+			return createStatefulPowerConsumingResource();
+		case InfrastructurePackage.POWER_CONSUMING_RESOURCE:
+			return createPowerConsumingResource();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -106,6 +109,17 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements
 	public PowerInfrastructureRepository createPowerInfrastructureRepository() {
 		PowerInfrastructureRepositoryImpl powerInfrastructureRepository = new PowerInfrastructureRepositoryImpl();
 		return powerInfrastructureRepository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StatefulPowerConsumingResource createStatefulPowerConsumingResource() {
+		StatefulPowerConsumingResourceImpl statefulPowerConsumingResource = new StatefulPowerConsumingResourceImpl();
+		return statefulPowerConsumingResource;
 	}
 
 	/**

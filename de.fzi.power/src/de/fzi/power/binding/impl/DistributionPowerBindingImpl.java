@@ -20,8 +20,8 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  *
  * @generated
  */
-public class DistributionPowerBindingImpl extends PowerBindingImpl implements
-		DistributionPowerBinding {
+public class DistributionPowerBindingImpl extends PowerFactorBindingImpl
+		implements DistributionPowerBinding {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated

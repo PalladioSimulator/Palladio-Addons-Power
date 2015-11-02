@@ -19,7 +19,7 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  * @model
  * @generated
  */
-public interface DistributionPowerBinding extends PowerBinding {
+public interface DistributionPowerBinding extends PowerFactorBinding {
 	/**
 	 * Returns the value of the '<em><b>Distribution Power Model</b></em>' reference. <!--
 	 * begin-user-doc -->

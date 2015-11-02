@@ -51,8 +51,8 @@
           <eTypeArguments eClassifier="#//util/Power"/>
         </eGenericType>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerBinding"
-          eOpposite="#//binding/PowerBinding/fixedFactorValues"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerFactorBinding"
+          eOpposite="#//binding/PowerFactorBinding/fixedFactorValues"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerBindingRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindings" upperBound="-1"
@@ -61,16 +61,29 @@
     <eClassifiers xsi:type="ecore:EClass" name="PowerBinding" abstract="true" eSuperTypes="#//util/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindingRepository"
           eType="#//binding/PowerBindingRepository" eOpposite="#//binding/PowerBindingRepository/powerBindings"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues" upperBound="-1"
-          eType="#//binding/FixedFactorValue" containment="true" eOpposite="#//binding/FixedFactorValue/powerBinding"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
+    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerBinding" eSuperTypes="#//binding/PowerFactorBinding">
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerModelSpecification"
           lowerBound="1" eType="#//specification/ResourcePowerModelSpecification"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerBinding" eSuperTypes="#//binding/PowerBinding">
+    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerBinding" eSuperTypes="#//binding/PowerFactorBinding">
       <eStructuralFeatures xsi:type="ecore:EReference" name="distributionPowerModel"
           lowerBound="1" eType="#//specification/DistributionPowerModelSpecification"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerState" eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
+          eType="#//binding/StatefulResourcePowerBinding" eOpposite="#//binding/StatefulResourcePowerBinding/powerStates"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="binding" lowerBound="1"
+          eType="#//binding/ResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StatefulResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStates" lowerBound="1"
+          upperBound="-1" eType="#//binding/PowerState" containment="true" eOpposite="#//binding/PowerState/statefulResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerFactorBinding" abstract="true"
+        eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues" upperBound="-1"
+          eType="#//binding/FixedFactorValue" containment="true" eOpposite="#//binding/FixedFactorValue/powerBinding"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="infrastructure" nsURI="http://www.fzi.de/Power/Infrastructure/1.0"
@@ -104,16 +117,25 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceContainer" ordered="false"
           lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResource" eSuperTypes="#//infrastructure/PowerConsumingEntity">
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerConsumingResource" abstract="true"
+        eSuperTypes="#//infrastructure/PowerConsumingEntity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecification"
           ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerAssemblyContext"
-          eType="#//binding/ResourcePowerBinding"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerInfrastructureRepository">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedPowerProvidingEntities"
           upperBound="-1" eType="#//infrastructure/PowerProvidingEntity" containment="true"
           eOpposite="#//infrastructure/PowerProvidingEntity/powerInfrastructureModel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StatefulPowerConsumingResource" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerState" lowerBound="1"
+          eType="#//binding/PowerState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
+          lowerBound="1" eType="#//binding/StatefulResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResource" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerAssemblyContext"
+          eType="#//binding/ResourcePowerBinding"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

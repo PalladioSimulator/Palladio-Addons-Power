@@ -2,6 +2,7 @@
  */
 package de.fzi.power.infrastructure.util;
 
+import de.fzi.power.infrastructure.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -150,9 +151,50 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE: {
+			AbstractPowerConsumingResource abstractPowerConsumingResource = (AbstractPowerConsumingResource) theEObject;
+			T result = caseAbstractPowerConsumingResource(abstractPowerConsumingResource);
+			if (result == null)
+				result = casePowerConsumingEntity(abstractPowerConsumingResource);
+			if (result == null)
+				result = caseEntity(abstractPowerConsumingResource);
+			if (result == null)
+				result = caseIdentifier(abstractPowerConsumingResource);
+			if (result == null)
+				result = caseNamedElement(abstractPowerConsumingResource);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY: {
+			PowerInfrastructureRepository powerInfrastructureRepository = (PowerInfrastructureRepository) theEObject;
+			T result = casePowerInfrastructureRepository(powerInfrastructureRepository);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE: {
+			StatefulPowerConsumingResource statefulPowerConsumingResource = (StatefulPowerConsumingResource) theEObject;
+			T result = caseStatefulPowerConsumingResource(statefulPowerConsumingResource);
+			if (result == null)
+				result = caseAbstractPowerConsumingResource(statefulPowerConsumingResource);
+			if (result == null)
+				result = casePowerConsumingEntity(statefulPowerConsumingResource);
+			if (result == null)
+				result = caseEntity(statefulPowerConsumingResource);
+			if (result == null)
+				result = caseIdentifier(statefulPowerConsumingResource);
+			if (result == null)
+				result = caseNamedElement(statefulPowerConsumingResource);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case InfrastructurePackage.POWER_CONSUMING_RESOURCE: {
 			PowerConsumingResource powerConsumingResource = (PowerConsumingResource) theEObject;
 			T result = casePowerConsumingResource(powerConsumingResource);
+			if (result == null)
+				result = caseAbstractPowerConsumingResource(powerConsumingResource);
 			if (result == null)
 				result = casePowerConsumingEntity(powerConsumingResource);
 			if (result == null)
@@ -161,13 +203,6 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 				result = caseIdentifier(powerConsumingResource);
 			if (result == null)
 				result = caseNamedElement(powerConsumingResource);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY: {
-			PowerInfrastructureRepository powerInfrastructureRepository = (PowerInfrastructureRepository) theEObject;
-			T result = casePowerInfrastructureRepository(powerInfrastructureRepository);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -245,6 +280,22 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Power Consuming Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Power Consuming Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractPowerConsumingResource(
+			AbstractPowerConsumingResource object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Power Consuming Resource</em>'.
 	 * <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc -->
@@ -268,6 +319,22 @@ public class InfrastructureSwitch<T> extends Switch<T> {
 	 */
 	public T casePowerInfrastructureRepository(
 			PowerInfrastructureRepository object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stateful Power Consuming Resource</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stateful Power Consuming Resource</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatefulPowerConsumingResource(
+			StatefulPowerConsumingResource object) {
 		return null;
 	}
 

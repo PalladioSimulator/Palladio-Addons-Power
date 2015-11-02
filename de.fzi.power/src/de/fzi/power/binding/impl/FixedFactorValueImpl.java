@@ -4,14 +4,12 @@ package de.fzi.power.binding.impl;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.FixedFactorValue;
-import de.fzi.power.binding.PowerBinding;
+import de.fzi.power.binding.PowerFactorBinding;
 import de.fzi.power.specification.FixedFactor;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
@@ -108,30 +106,32 @@ public class FixedFactorValueImpl extends IdentifierImpl implements
 	 * @generated
 	 */
 	@Override
-	public PowerBinding getPowerBinding() {
-		return (PowerBinding) eDynamicGet(
+	public PowerFactorBinding getPowerBinding() {
+		return (PowerFactorBinding) eDynamicGet(
 				BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING,
 				BindingPackage.Literals.FIXED_FACTOR_VALUE__POWER_BINDING,
 				true, true);
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPowerBinding(PowerBinding newPowerBinding,
-			NotificationChain msgs) {
+	public NotificationChain basicSetPowerBinding(
+			PowerFactorBinding newPowerBinding, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newPowerBinding,
 				BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void setPowerBinding(PowerBinding newPowerBinding) {
+	public void setPowerBinding(PowerFactorBinding newPowerBinding) {
 		eDynamicSet(BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING,
 				BindingPackage.Literals.FIXED_FACTOR_VALUE__POWER_BINDING,
 				newPowerBinding);
@@ -148,7 +148,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements
 		case BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING:
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetPowerBinding((PowerBinding) otherEnd, msgs);
+			return basicSetPowerBinding((PowerFactorBinding) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -177,8 +177,8 @@ public class FixedFactorValueImpl extends IdentifierImpl implements
 		switch (eContainerFeatureID()) {
 		case BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING:
 			return eInternalContainer().eInverseRemove(this,
-					BindingPackage.POWER_BINDING__FIXED_FACTOR_VALUES,
-					PowerBinding.class, msgs);
+					BindingPackage.POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES,
+					PowerFactorBinding.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -217,7 +217,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements
 			setValue((Measure<Double, Power>) newValue);
 			return;
 		case BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING:
-			setPowerBinding((PowerBinding) newValue);
+			setPowerBinding((PowerFactorBinding) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -237,7 +237,7 @@ public class FixedFactorValueImpl extends IdentifierImpl implements
 			setValue((Measure<Double, Power>) null);
 			return;
 		case BindingPackage.FIXED_FACTOR_VALUE__POWER_BINDING:
-			setPowerBinding((PowerBinding) null);
+			setPowerBinding((PowerFactorBinding) null);
 			return;
 		}
 		super.eUnset(featureID);

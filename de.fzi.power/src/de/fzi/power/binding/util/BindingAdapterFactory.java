@@ -2,6 +2,7 @@
  */
 package de.fzi.power.binding.util;
 
+import de.fzi.power.binding.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -91,6 +92,22 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
 		public Adapter caseDistributionPowerBinding(
 				DistributionPowerBinding object) {
 			return createDistributionPowerBindingAdapter();
+		}
+
+		@Override
+		public Adapter casePowerState(PowerState object) {
+			return createPowerStateAdapter();
+		}
+
+		@Override
+		public Adapter caseStatefulResourcePowerBinding(
+				StatefulResourcePowerBinding object) {
+			return createStatefulResourcePowerBindingAdapter();
+		}
+
+		@Override
+		public Adapter casePowerFactorBinding(PowerFactorBinding object) {
+			return createPowerFactorBindingAdapter();
 		}
 
 		@Override
@@ -192,6 +209,48 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDistributionPowerBindingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fzi.power.binding.PowerState <em>Power State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fzi.power.binding.PowerState
+	 * @generated
+	 */
+	public Adapter createPowerStateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fzi.power.binding.StatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fzi.power.binding.StatefulResourcePowerBinding
+	 * @generated
+	 */
+	public Adapter createStatefulResourcePowerBindingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fzi.power.binding.PowerFactorBinding <em>Power Factor Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fzi.power.binding.PowerFactorBinding
+	 * @generated
+	 */
+	public Adapter createPowerFactorBindingAdapter() {
 		return null;
 	}
 

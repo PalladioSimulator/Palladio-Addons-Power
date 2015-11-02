@@ -2,6 +2,7 @@
  */
 package de.fzi.power.binding.util;
 
+import de.fzi.power.binding.*;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
@@ -100,6 +101,8 @@ public class BindingSwitch<T> extends Switch<T> {
 			ResourcePowerBinding resourcePowerBinding = (ResourcePowerBinding) theEObject;
 			T result = caseResourcePowerBinding(resourcePowerBinding);
 			if (result == null)
+				result = casePowerFactorBinding(resourcePowerBinding);
+			if (result == null)
 				result = casePowerBinding(resourcePowerBinding);
 			if (result == null)
 				result = caseEntity(resourcePowerBinding);
@@ -115,6 +118,8 @@ public class BindingSwitch<T> extends Switch<T> {
 			DistributionPowerBinding distributionPowerBinding = (DistributionPowerBinding) theEObject;
 			T result = caseDistributionPowerBinding(distributionPowerBinding);
 			if (result == null)
+				result = casePowerFactorBinding(distributionPowerBinding);
+			if (result == null)
 				result = casePowerBinding(distributionPowerBinding);
 			if (result == null)
 				result = caseEntity(distributionPowerBinding);
@@ -122,6 +127,49 @@ public class BindingSwitch<T> extends Switch<T> {
 				result = caseIdentifier(distributionPowerBinding);
 			if (result == null)
 				result = caseNamedElement(distributionPowerBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BindingPackage.POWER_STATE: {
+			PowerState powerState = (PowerState) theEObject;
+			T result = casePowerState(powerState);
+			if (result == null)
+				result = caseEntity(powerState);
+			if (result == null)
+				result = caseIdentifier(powerState);
+			if (result == null)
+				result = caseNamedElement(powerState);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING: {
+			StatefulResourcePowerBinding statefulResourcePowerBinding = (StatefulResourcePowerBinding) theEObject;
+			T result = caseStatefulResourcePowerBinding(statefulResourcePowerBinding);
+			if (result == null)
+				result = casePowerBinding(statefulResourcePowerBinding);
+			if (result == null)
+				result = caseEntity(statefulResourcePowerBinding);
+			if (result == null)
+				result = caseIdentifier(statefulResourcePowerBinding);
+			if (result == null)
+				result = caseNamedElement(statefulResourcePowerBinding);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case BindingPackage.POWER_FACTOR_BINDING: {
+			PowerFactorBinding powerFactorBinding = (PowerFactorBinding) theEObject;
+			T result = casePowerFactorBinding(powerFactorBinding);
+			if (result == null)
+				result = casePowerBinding(powerFactorBinding);
+			if (result == null)
+				result = caseEntity(powerFactorBinding);
+			if (result == null)
+				result = caseIdentifier(powerFactorBinding);
+			if (result == null)
+				result = caseNamedElement(powerFactorBinding);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -193,6 +241,52 @@ public class BindingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDistributionPowerBinding(DistributionPowerBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Power State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Power State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePowerState(PowerState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Stateful Resource Power Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Stateful Resource Power Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatefulResourcePowerBinding(
+			StatefulResourcePowerBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Power Factor Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Power Factor Binding</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePowerFactorBinding(PowerFactorBinding object) {
 		return null;
 	}
 

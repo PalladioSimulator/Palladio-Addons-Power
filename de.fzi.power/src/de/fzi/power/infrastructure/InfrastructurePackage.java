@@ -423,67 +423,68 @@ public interface InfrastructurePackage extends EPackage {
 	int MOUNTED_POWER_DISTRIBUTION_UNIT_FEATURE_COUNT = POWER_DISTRIBUTION_UNIT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl <em>Abstract Power Consuming Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl
+	 * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getAbstractPowerConsumingResource()
+	 * @generated
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE__ID = POWER_CONSUMING_ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE__NAME = POWER_CONSUMING_ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY = POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Processing Resource Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Power Consuming Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl <em>Power Consuming Resource</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
 	 * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getPowerConsumingResource()
 	 * @generated
 	 */
-	int POWER_CONSUMING_RESOURCE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE__ID = POWER_CONSUMING_ENTITY__ID;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE__NAME = POWER_CONSUMING_ENTITY__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY = POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Processing Resource Specification</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Resource Power Assembly Context</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Power Consuming Resource</em>' class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_CONSUMING_RESOURCE_FEATURE_COUNT = POWER_CONSUMING_ENTITY_FEATURE_COUNT + 2;
+	int POWER_CONSUMING_RESOURCE = 8;
 
 	/**
 	 * The meta object id for the '
@@ -512,6 +513,133 @@ public interface InfrastructurePackage extends EPackage {
 	 * @ordered
 	 */
 	int POWER_INFRASTRUCTURE_REPOSITORY_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link de.fzi.power.infrastructure.impl.StatefulPowerConsumingResourceImpl <em>Stateful Power Consuming Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.infrastructure.impl.StatefulPowerConsumingResourceImpl
+	 * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getStatefulPowerConsumingResource()
+	 * @generated
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__ID = ABSTRACT_POWER_CONSUMING_RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__NAME = ABSTRACT_POWER_CONSUMING_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY = ABSTRACT_POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Processing Resource Specification</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Power State</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE = ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Stateful Resource Power Binding</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING = ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Stateful Power Consuming Resource</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_POWER_CONSUMING_RESOURCE_FEATURE_COUNT = ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE__ID = ABSTRACT_POWER_CONSUMING_RESOURCE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE__NAME = ABSTRACT_POWER_CONSUMING_RESOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Power Providing Entity</b></em>' container reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY = ABSTRACT_POWER_CONSUMING_RESOURCE__POWER_PROVIDING_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Processing Resource Specification</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION;
+
+	/**
+	 * The feature id for the '<em><b>Resource Power Assembly Context</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT = ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Power Consuming Resource</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_CONSUMING_RESOURCE_FEATURE_COUNT = ABSTRACT_POWER_CONSUMING_RESOURCE_FEATURE_COUNT + 1;
 
 	/**
 	 * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerDistributionUnit <em>Power Distribution Unit</em>}'.
@@ -619,6 +747,27 @@ public interface InfrastructurePackage extends EPackage {
 	EReference getMountedPowerDistributionUnit_ResourceContainer();
 
 	/**
+	 * Returns the meta object for class '{@link de.fzi.power.infrastructure.AbstractPowerConsumingResource <em>Abstract Power Consuming Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Power Consuming Resource</em>'.
+	 * @see de.fzi.power.infrastructure.AbstractPowerConsumingResource
+	 * @generated
+	 */
+	EClass getAbstractPowerConsumingResource();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fzi.power.infrastructure.AbstractPowerConsumingResource#getProcessingResourceSpecification <em>Processing Resource Specification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Processing Resource Specification</em>'.
+	 * @see de.fzi.power.infrastructure.AbstractPowerConsumingResource#getProcessingResourceSpecification()
+	 * @see #getAbstractPowerConsumingResource()
+	 * @generated
+	 */
+	EReference getAbstractPowerConsumingResource_ProcessingResourceSpecification();
+
+	/**
 	 * Returns the meta object for class '{@link de.fzi.power.infrastructure.PowerConsumingResource <em>Power Consuming Resource</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Power Consuming Resource</em>'.
@@ -626,16 +775,6 @@ public interface InfrastructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPowerConsumingResource();
-
-	/**
-	 * Returns the meta object for the reference '{@link de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification <em>Processing Resource Specification</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Processing Resource Specification</em>'.
-	 * @see de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification()
-	 * @see #getPowerConsumingResource()
-	 * @generated
-	 */
-	EReference getPowerConsumingResource_ProcessingResourceSpecification();
 
 	/**
 	 * Returns the meta object for the reference '{@link de.fzi.power.infrastructure.PowerConsumingResource#getResourcePowerAssemblyContext <em>Resource Power Assembly Context</em>}'.
@@ -665,6 +804,38 @@ public interface InfrastructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPowerInfrastructureRepository_ContainedPowerProvidingEntities();
+
+	/**
+	 * Returns the meta object for class '{@link de.fzi.power.infrastructure.StatefulPowerConsumingResource <em>Stateful Power Consuming Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stateful Power Consuming Resource</em>'.
+	 * @see de.fzi.power.infrastructure.StatefulPowerConsumingResource
+	 * @generated
+	 */
+	EClass getStatefulPowerConsumingResource();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fzi.power.infrastructure.StatefulPowerConsumingResource#getPowerState <em>Power State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Power State</em>'.
+	 * @see de.fzi.power.infrastructure.StatefulPowerConsumingResource#getPowerState()
+	 * @see #getStatefulPowerConsumingResource()
+	 * @generated
+	 */
+	EReference getStatefulPowerConsumingResource_PowerState();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fzi.power.infrastructure.StatefulPowerConsumingResource#getStatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Stateful Resource Power Binding</em>'.
+	 * @see de.fzi.power.infrastructure.StatefulPowerConsumingResource#getStatefulResourcePowerBinding()
+	 * @see #getStatefulPowerConsumingResource()
+	 * @generated
+	 */
+	EReference getStatefulPowerConsumingResource_StatefulResourcePowerBinding();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -785,6 +956,26 @@ public interface InfrastructurePackage extends EPackage {
 				.getMountedPowerDistributionUnit_ResourceContainer();
 
 		/**
+		 * The meta object literal for the '{@link de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl <em>Abstract Power Consuming Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl
+		 * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getAbstractPowerConsumingResource()
+		 * @generated
+		 */
+		EClass ABSTRACT_POWER_CONSUMING_RESOURCE = eINSTANCE
+				.getAbstractPowerConsumingResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Processing Resource Specification</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = eINSTANCE
+				.getAbstractPowerConsumingResource_ProcessingResourceSpecification();
+
+		/**
 		 * The meta object literal for the '{@link de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl <em>Power Consuming Resource</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see de.fzi.power.infrastructure.impl.PowerConsumingResourceImpl
@@ -792,14 +983,6 @@ public interface InfrastructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass POWER_CONSUMING_RESOURCE = eINSTANCE.getPowerConsumingResource();
-
-		/**
-		 * The meta object literal for the '<em><b>Processing Resource Specification</b></em>' reference feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION = eINSTANCE
-				.getPowerConsumingResource_ProcessingResourceSpecification();
 
 		/**
 		 * The meta object literal for the '<em><b>Resource Power Assembly Context</b></em>' reference feature.
@@ -827,6 +1010,35 @@ public interface InfrastructurePackage extends EPackage {
 		 */
 		EReference POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES = eINSTANCE
 				.getPowerInfrastructureRepository_ContainedPowerProvidingEntities();
+
+		/**
+		 * The meta object literal for the '{@link de.fzi.power.infrastructure.impl.StatefulPowerConsumingResourceImpl <em>Stateful Power Consuming Resource</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.infrastructure.impl.StatefulPowerConsumingResourceImpl
+		 * @see de.fzi.power.infrastructure.impl.InfrastructurePackageImpl#getStatefulPowerConsumingResource()
+		 * @generated
+		 */
+		EClass STATEFUL_POWER_CONSUMING_RESOURCE = eINSTANCE
+				.getStatefulPowerConsumingResource();
+
+		/**
+		 * The meta object literal for the '<em><b>Power State</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE = eINSTANCE
+				.getStatefulPowerConsumingResource_PowerState();
+
+		/**
+		 * The meta object literal for the '<em><b>Stateful Resource Power Binding</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE
+				.getStatefulPowerConsumingResource_StatefulResourcePowerBinding();
 
 	}
 

@@ -20,7 +20,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
  *
  * @generated
  */
-public class ResourcePowerBindingImpl extends PowerBindingImpl implements
+public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements
 		ResourcePowerBinding {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

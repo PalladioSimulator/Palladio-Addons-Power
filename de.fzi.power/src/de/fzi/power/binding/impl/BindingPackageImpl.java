@@ -19,7 +19,10 @@ import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.binding.PowerBinding;
 import de.fzi.power.binding.PowerBindingRepository;
+import de.fzi.power.binding.PowerFactorBinding;
+import de.fzi.power.binding.PowerState;
 import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.binding.StatefulResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
 import de.fzi.power.specification.SpecificationPackage;
@@ -62,6 +65,27 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 	 * @generated
 	 */
 	private EClass distributionPowerBindingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass powerStateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statefulResourcePowerBindingEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass powerFactorBindingEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -231,15 +255,6 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPowerBinding_FixedFactorValues() {
-		return (EReference) powerBindingEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getResourcePowerBinding() {
 		return resourcePowerBindingEClass;
 	}
@@ -271,6 +286,78 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 	public EReference getDistributionPowerBinding_DistributionPowerModel() {
 		return (EReference) distributionPowerBindingEClass
 				.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPowerState() {
+		return powerStateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPowerState_Binding() {
+		return (EReference) powerStateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPowerState_StatefulResourcePowerBinding() {
+		return (EReference) powerStateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getStatefulResourcePowerBinding() {
+		return statefulResourcePowerBindingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStatefulResourcePowerBinding_PowerStates() {
+		return (EReference) statefulResourcePowerBindingEClass
+				.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getPowerFactorBinding() {
+		return powerFactorBindingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPowerFactorBinding_FixedFactorValues() {
+		return (EReference) powerFactorBindingEClass.getEStructuralFeatures()
+				.get(0);
 	}
 
 	/**
@@ -314,7 +401,6 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 		powerBindingEClass = createEClass(POWER_BINDING);
 		createEReference(powerBindingEClass,
 				POWER_BINDING__POWER_BINDING_REPOSITORY);
-		createEReference(powerBindingEClass, POWER_BINDING__FIXED_FACTOR_VALUES);
 
 		resourcePowerBindingEClass = createEClass(RESOURCE_POWER_BINDING);
 		createEReference(resourcePowerBindingEClass,
@@ -323,6 +409,19 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 		distributionPowerBindingEClass = createEClass(DISTRIBUTION_POWER_BINDING);
 		createEReference(distributionPowerBindingEClass,
 				DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL);
+
+		powerStateEClass = createEClass(POWER_STATE);
+		createEReference(powerStateEClass,
+				POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING);
+		createEReference(powerStateEClass, POWER_STATE__BINDING);
+
+		statefulResourcePowerBindingEClass = createEClass(STATEFUL_RESOURCE_POWER_BINDING);
+		createEReference(statefulResourcePowerBindingEClass,
+				STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES);
+
+		powerFactorBindingEClass = createEClass(POWER_FACTOR_BINDING);
+		createEReference(powerFactorBindingEClass,
+				POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES);
 	}
 
 	/**
@@ -367,9 +466,14 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 		powerBindingRepositoryEClass.getESuperTypes().add(
 				theIdentifierPackage.getIdentifier());
 		powerBindingEClass.getESuperTypes().add(theUtilPackage.getEntity());
-		resourcePowerBindingEClass.getESuperTypes().add(this.getPowerBinding());
+		resourcePowerBindingEClass.getESuperTypes().add(
+				this.getPowerFactorBinding());
 		distributionPowerBindingEClass.getESuperTypes().add(
+				this.getPowerFactorBinding());
+		powerStateEClass.getESuperTypes().add(theUtilPackage.getEntity());
+		statefulResourcePowerBindingEClass.getESuperTypes().add(
 				this.getPowerBinding());
+		powerFactorBindingEClass.getESuperTypes().add(this.getPowerBinding());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(fixedFactorValueEClass, FixedFactorValue.class,
@@ -391,11 +495,12 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getFixedFactorValue_PowerBinding(),
-				this.getPowerBinding(),
-				this.getPowerBinding_FixedFactorValues(), "powerBinding", null,
-				0, 1, FixedFactorValue.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+				this.getPowerFactorBinding(),
+				this.getPowerFactorBinding_FixedFactorValues(), "powerBinding",
+				null, 0, 1, FixedFactorValue.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(powerBindingRepositoryEClass, PowerBindingRepository.class,
 				"PowerBindingRepository", !IS_ABSTRACT, !IS_INTERFACE,
@@ -416,12 +521,6 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getPowerBinding_FixedFactorValues(),
-				this.getFixedFactorValue(),
-				this.getFixedFactorValue_PowerBinding(), "fixedFactorValues",
-				null, 0, -1, PowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourcePowerBindingEClass, ResourcePowerBinding.class,
 				"ResourcePowerBinding", !IS_ABSTRACT, !IS_INTERFACE,
@@ -443,6 +542,42 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 				"distributionPowerModel", null, 1, 1,
 				DistributionPowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(powerStateEClass, PowerState.class, "PowerState",
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPowerState_StatefulResourcePowerBinding(),
+				this.getStatefulResourcePowerBinding(),
+				this.getStatefulResourcePowerBinding_PowerStates(),
+				"statefulResourcePowerBinding", null, 0, 1, PowerState.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPowerState_Binding(), this.getResourcePowerBinding(),
+				null, "binding", null, 1, 1, PowerState.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(statefulResourcePowerBindingEClass,
+				StatefulResourcePowerBinding.class,
+				"StatefulResourcePowerBinding", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatefulResourcePowerBinding_PowerStates(),
+				this.getPowerState(),
+				this.getPowerState_StatefulResourcePowerBinding(),
+				"powerStates", null, 1, -1, StatefulResourcePowerBinding.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(powerFactorBindingEClass, PowerFactorBinding.class,
+				"PowerFactorBinding", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPowerFactorBinding_FixedFactorValues(),
+				this.getFixedFactorValue(),
+				this.getFixedFactorValue_PowerBinding(), "fixedFactorValues",
+				null, 0, -1, PowerFactorBinding.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

@@ -2,6 +2,7 @@
  */
 package de.fzi.power.binding.impl;
 
+import de.fzi.power.binding.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -61,6 +62,10 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
 			return createResourcePowerBinding();
 		case BindingPackage.DISTRIBUTION_POWER_BINDING:
 			return createDistributionPowerBinding();
+		case BindingPackage.POWER_STATE:
+			return createPowerState();
+		case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING:
+			return createStatefulResourcePowerBinding();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName()
 					+ "' is not a valid classifier");
@@ -105,6 +110,28 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
 	public DistributionPowerBinding createDistributionPowerBinding() {
 		DistributionPowerBindingImpl distributionPowerBinding = new DistributionPowerBindingImpl();
 		return distributionPowerBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PowerState createPowerState() {
+		PowerStateImpl powerState = new PowerStateImpl();
+		return powerState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StatefulResourcePowerBinding createStatefulResourcePowerBinding() {
+		StatefulResourcePowerBindingImpl statefulResourcePowerBinding = new StatefulResourcePowerBindingImpl();
+		return statefulResourcePowerBinding;
 	}
 
 	/**

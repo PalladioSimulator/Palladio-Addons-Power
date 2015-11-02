@@ -16,6 +16,7 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.impl.BindingPackageImpl;
+import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
@@ -25,6 +26,7 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.util.UtilPackage;
@@ -67,6 +69,13 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 	private EClass mountedPowerDistributionUnitEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractPowerConsumingResourceEClass = null;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -77,6 +86,13 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	private EClass powerInfrastructureRepositoryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statefulPowerConsumingResourceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -270,6 +286,27 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAbstractPowerConsumingResource() {
+		return abstractPowerConsumingResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAbstractPowerConsumingResource_ProcessingResourceSpecification() {
+		return (EReference) abstractPowerConsumingResourceEClass
+				.getEStructuralFeatures().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -283,19 +320,9 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 	 * @generated
 	 */
 	@Override
-	public EReference getPowerConsumingResource_ProcessingResourceSpecification() {
-		return (EReference) powerConsumingResourceEClass
-				.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getPowerConsumingResource_ResourcePowerAssemblyContext() {
 		return (EReference) powerConsumingResourceEClass
-				.getEStructuralFeatures().get(1);
+				.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -315,6 +342,38 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 	public EReference getPowerInfrastructureRepository_ContainedPowerProvidingEntities() {
 		return (EReference) powerInfrastructureRepositoryEClass
 				.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getStatefulPowerConsumingResource() {
+		return statefulPowerConsumingResourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStatefulPowerConsumingResource_PowerState() {
+		return (EReference) statefulPowerConsumingResourceEClass
+				.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getStatefulPowerConsumingResource_StatefulResourcePowerBinding() {
+		return (EReference) statefulPowerConsumingResourceEClass
+				.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -366,15 +425,23 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 		createEReference(mountedPowerDistributionUnitEClass,
 				MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER);
 
-		powerConsumingResourceEClass = createEClass(POWER_CONSUMING_RESOURCE);
-		createEReference(powerConsumingResourceEClass,
-				POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION);
-		createEReference(powerConsumingResourceEClass,
-				POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT);
+		abstractPowerConsumingResourceEClass = createEClass(ABSTRACT_POWER_CONSUMING_RESOURCE);
+		createEReference(abstractPowerConsumingResourceEClass,
+				ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION);
 
 		powerInfrastructureRepositoryEClass = createEClass(POWER_INFRASTRUCTURE_REPOSITORY);
 		createEReference(powerInfrastructureRepositoryEClass,
 				POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES);
+
+		statefulPowerConsumingResourceEClass = createEClass(STATEFUL_POWER_CONSUMING_RESOURCE);
+		createEReference(statefulPowerConsumingResourceEClass,
+				STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE);
+		createEReference(statefulPowerConsumingResourceEClass,
+				STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING);
+
+		powerConsumingResourceEClass = createEClass(POWER_CONSUMING_RESOURCE);
+		createEReference(powerConsumingResourceEClass,
+				POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT);
 	}
 
 	/**
@@ -426,8 +493,12 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 				theUtilPackage.getEntity());
 		mountedPowerDistributionUnitEClass.getESuperTypes().add(
 				this.getPowerDistributionUnit());
-		powerConsumingResourceEClass.getESuperTypes().add(
+		abstractPowerConsumingResourceEClass.getESuperTypes().add(
 				this.getPowerConsumingEntity());
+		statefulPowerConsumingResourceEClass.getESuperTypes().add(
+				this.getAbstractPowerConsumingResource());
+		powerConsumingResourceEClass.getESuperTypes().add(
+				this.getAbstractPowerConsumingResource());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(powerDistributionUnitEClass, PowerDistributionUnit.class,
@@ -497,24 +568,18 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(powerConsumingResourceEClass, PowerConsumingResource.class,
-				"PowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(abstractPowerConsumingResourceEClass,
+				AbstractPowerConsumingResource.class,
+				"AbstractPowerConsumingResource", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(
-				getPowerConsumingResource_ProcessingResourceSpecification(),
+				getAbstractPowerConsumingResource_ProcessingResourceSpecification(),
 				theResourceenvironmentPackage
 						.getProcessingResourceSpecification(), null,
 				"processingResourceSpecification", null, 1, 1,
-				PowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				AbstractPowerConsumingResource.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(
-				getPowerConsumingResource_ResourcePowerAssemblyContext(),
-				theBindingPackage.getResourcePowerBinding(), null,
-				"resourcePowerAssemblyContext", null, 0, 1,
-				PowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(powerInfrastructureRepositoryEClass,
 				PowerInfrastructureRepository.class,
@@ -527,6 +592,34 @@ public class InfrastructurePackageImpl extends EPackageImpl implements
 				"containedPowerProvidingEntities", null, 0, -1,
 				PowerInfrastructureRepository.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(statefulPowerConsumingResourceEClass,
+				StatefulPowerConsumingResource.class,
+				"StatefulPowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getStatefulPowerConsumingResource_PowerState(),
+				theBindingPackage.getPowerState(), null, "powerState", null, 1,
+				1, StatefulPowerConsumingResource.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(
+				getStatefulPowerConsumingResource_StatefulResourcePowerBinding(),
+				theBindingPackage.getStatefulResourcePowerBinding(), null,
+				"statefulResourcePowerBinding", null, 1, 1,
+				StatefulPowerConsumingResource.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(powerConsumingResourceEClass, PowerConsumingResource.class,
+				"PowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(
+				getPowerConsumingResource_ResourcePowerAssemblyContext(),
+				theBindingPackage.getResourcePowerBinding(), null,
+				"resourcePowerAssemblyContext", null, 0, 1,
+				PowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

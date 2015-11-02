@@ -2,6 +2,7 @@
  */
 package de.fzi.power.infrastructure.util;
 
+import de.fzi.power.infrastructure.*;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
@@ -97,14 +98,26 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter casePowerConsumingResource(PowerConsumingResource object) {
-			return createPowerConsumingResourceAdapter();
+		public Adapter caseAbstractPowerConsumingResource(
+				AbstractPowerConsumingResource object) {
+			return createAbstractPowerConsumingResourceAdapter();
 		}
 
 		@Override
 		public Adapter casePowerInfrastructureRepository(
 				PowerInfrastructureRepository object) {
 			return createPowerInfrastructureRepositoryAdapter();
+		}
+
+		@Override
+		public Adapter caseStatefulPowerConsumingResource(
+				StatefulPowerConsumingResource object) {
+			return createStatefulPowerConsumingResourceAdapter();
+		}
+
+		@Override
+		public Adapter casePowerConsumingResource(PowerConsumingResource object) {
+			return createPowerConsumingResourceAdapter();
 		}
 
 		@Override
@@ -206,6 +219,20 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.fzi.power.infrastructure.AbstractPowerConsumingResource <em>Abstract Power Consuming Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fzi.power.infrastructure.AbstractPowerConsumingResource
+	 * @generated
+	 */
+	public Adapter createAbstractPowerConsumingResourceAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.fzi.power.infrastructure.PowerConsumingResource <em>Power Consuming Resource</em>}'.
 	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily
 	 * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -228,6 +255,20 @@ public class InfrastructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPowerInfrastructureRepositoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.fzi.power.infrastructure.StatefulPowerConsumingResource <em>Stateful Power Consuming Resource</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.fzi.power.infrastructure.StatefulPowerConsumingResource
+	 * @generated
+	 */
+	public Adapter createStatefulPowerConsumingResourceAdapter() {
 		return null;
 	}
 

@@ -19,7 +19,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
  * @model
  * @generated
  */
-public interface ResourcePowerBinding extends PowerBinding {
+public interface ResourcePowerBinding extends PowerFactorBinding {
 	/**
 	 * Returns the value of the '<em><b>Resource Power Model Specification</b></em>' reference. <!--
 	 * begin-user-doc -->

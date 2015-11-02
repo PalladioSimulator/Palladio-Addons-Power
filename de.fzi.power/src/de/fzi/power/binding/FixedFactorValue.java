@@ -78,7 +78,7 @@ public interface FixedFactorValue extends Identifier {
 
 	/**
 	 * Returns the value of the '<em><b>Power Binding</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link de.fzi.power.binding.PowerBinding#getFixedFactorValues <em>Fixed Factor Values</em>}'.
+	 * It is bidirectional and its opposite is '{@link de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues <em>Fixed Factor Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Power Binding</em>' container reference isn't clear, there really
@@ -86,21 +86,22 @@ public interface FixedFactorValue extends Identifier {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Power Binding</em>' container reference.
-	 * @see #setPowerBinding(PowerBinding)
+	 * @see #setPowerBinding(PowerFactorBinding)
 	 * @see de.fzi.power.binding.BindingPackage#getFixedFactorValue_PowerBinding()
-	 * @see de.fzi.power.binding.PowerBinding#getFixedFactorValues
+	 * @see de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues
 	 * @model opposite="fixedFactorValues" transient="false"
 	 * @generated
 	 */
-	PowerBinding getPowerBinding();
+	PowerFactorBinding getPowerBinding();
 
 	/**
 	 * Sets the value of the '{@link de.fzi.power.binding.FixedFactorValue#getPowerBinding <em>Power Binding</em>}' container reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Power Binding</em>' container reference.
 	 * @see #getPowerBinding()
 	 * @generated
 	 */
-	void setPowerBinding(PowerBinding value);
+	void setPowerBinding(PowerFactorBinding value);
 
 } // FixedFactorValue

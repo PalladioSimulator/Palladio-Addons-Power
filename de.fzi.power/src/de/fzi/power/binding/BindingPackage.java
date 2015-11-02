@@ -181,22 +181,68 @@ public interface BindingPackage extends EPackage {
 	int POWER_BINDING__POWER_BINDING_REPOSITORY = UtilPackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fixed Factor Values</b></em>' containment reference list. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 * @ordered
-	 */
-	int POWER_BINDING__FIXED_FACTOR_VALUES = UtilPackage.ENTITY_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Power Binding</em>' class.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int POWER_BINDING_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 2;
+	int POWER_BINDING_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.fzi.power.binding.impl.PowerFactorBindingImpl <em>Power Factor Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.binding.impl.PowerFactorBindingImpl
+	 * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerFactorBinding()
+	 * @generated
+	 */
+	int POWER_FACTOR_BINDING = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_FACTOR_BINDING__ID = POWER_BINDING__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_FACTOR_BINDING__NAME = POWER_BINDING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Power Binding Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_FACTOR_BINDING__POWER_BINDING_REPOSITORY = POWER_BINDING__POWER_BINDING_REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Fixed Factor Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES = POWER_BINDING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Power Factor Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_FACTOR_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl <em>Resource Power Binding</em>}' class.
@@ -214,7 +260,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING__ID = POWER_BINDING__ID;
+	int RESOURCE_POWER_BINDING__ID = POWER_FACTOR_BINDING__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -223,7 +269,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING__NAME = POWER_BINDING__NAME;
+	int RESOURCE_POWER_BINDING__NAME = POWER_FACTOR_BINDING__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Power Binding Repository</b></em>' container reference. <!--
@@ -232,7 +278,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_BINDING__POWER_BINDING_REPOSITORY;
+	int RESOURCE_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_FACTOR_BINDING__POWER_BINDING_REPOSITORY;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Factor Values</b></em>' containment reference list. <!--
@@ -241,7 +287,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING__FIXED_FACTOR_VALUES = POWER_BINDING__FIXED_FACTOR_VALUES;
+	int RESOURCE_POWER_BINDING__FIXED_FACTOR_VALUES = POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Resource Power Model Specification</b></em>' reference. <!--
@@ -250,7 +296,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION = POWER_BINDING_FEATURE_COUNT + 0;
+	int RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION = POWER_FACTOR_BINDING_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Resource Power Binding</em>' class. <!--
@@ -259,7 +305,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_POWER_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 1;
+	int RESOURCE_POWER_BINDING_FEATURE_COUNT = POWER_FACTOR_BINDING_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl <em>Distribution Power Binding</em>}' class.
@@ -277,7 +323,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING__ID = POWER_BINDING__ID;
+	int DISTRIBUTION_POWER_BINDING__ID = POWER_FACTOR_BINDING__ID;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -286,7 +332,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING__NAME = POWER_BINDING__NAME;
+	int DISTRIBUTION_POWER_BINDING__NAME = POWER_FACTOR_BINDING__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Power Binding Repository</b></em>' container reference. <!--
@@ -295,7 +341,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_BINDING__POWER_BINDING_REPOSITORY;
+	int DISTRIBUTION_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_FACTOR_BINDING__POWER_BINDING_REPOSITORY;
 
 	/**
 	 * The feature id for the '<em><b>Fixed Factor Values</b></em>' containment reference list. <!--
@@ -304,7 +350,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING__FIXED_FACTOR_VALUES = POWER_BINDING__FIXED_FACTOR_VALUES;
+	int DISTRIBUTION_POWER_BINDING__FIXED_FACTOR_VALUES = POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES;
 
 	/**
 	 * The feature id for the '<em><b>Distribution Power Model</b></em>' reference. <!--
@@ -313,7 +359,7 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL = POWER_BINDING_FEATURE_COUNT + 0;
+	int DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL = POWER_FACTOR_BINDING_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Distribution Power Binding</em>' class. <!--
@@ -322,7 +368,117 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DISTRIBUTION_POWER_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 1;
+	int DISTRIBUTION_POWER_BINDING_FEATURE_COUNT = POWER_FACTOR_BINDING_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.fzi.power.binding.impl.PowerStateImpl <em>Power State</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.binding.impl.PowerStateImpl
+	 * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerState()
+	 * @generated
+	 */
+	int POWER_STATE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_STATE__ID = UtilPackage.ENTITY__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_STATE__NAME = UtilPackage.ENTITY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Stateful Resource Power Binding</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = UtilPackage.ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Binding</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_STATE__BINDING = UtilPackage.ENTITY_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Power State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POWER_STATE_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl <em>Stateful Resource Power Binding</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl
+	 * @see de.fzi.power.binding.impl.BindingPackageImpl#getStatefulResourcePowerBinding()
+	 * @generated
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING__ID = POWER_BINDING__ID;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING__NAME = POWER_BINDING__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Power Binding Repository</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_BINDING__POWER_BINDING_REPOSITORY;
+
+	/**
+	 * The feature id for the '<em><b>Power States</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES = POWER_BINDING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Stateful Resource Power Binding</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEFUL_RESOURCE_POWER_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 1;
 
 	/**
 	 * Returns the meta object for class '{@link de.fzi.power.binding.FixedFactorValue <em>Fixed Factor Value</em>}'.
@@ -407,16 +563,6 @@ public interface BindingPackage extends EPackage {
 	EReference getPowerBinding_PowerBindingRepository();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.fzi.power.binding.PowerBinding#getFixedFactorValues <em>Fixed Factor Values</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fixed Factor Values</em>'.
-	 * @see de.fzi.power.binding.PowerBinding#getFixedFactorValues()
-	 * @see #getPowerBinding()
-	 * @generated
-	 */
-	EReference getPowerBinding_FixedFactorValues();
-
-	/**
 	 * Returns the meta object for class '{@link de.fzi.power.binding.ResourcePowerBinding <em>Resource Power Binding</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource Power Binding</em>'.
@@ -453,6 +599,80 @@ public interface BindingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDistributionPowerBinding_DistributionPowerModel();
+
+	/**
+	 * Returns the meta object for class '{@link de.fzi.power.binding.PowerState <em>Power State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Power State</em>'.
+	 * @see de.fzi.power.binding.PowerState
+	 * @generated
+	 */
+	EClass getPowerState();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.fzi.power.binding.PowerState#getBinding <em>Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Binding</em>'.
+	 * @see de.fzi.power.binding.PowerState#getBinding()
+	 * @see #getPowerState()
+	 * @generated
+	 */
+	EReference getPowerState_Binding();
+
+	/**
+	 * Returns the meta object for the container reference '{@link de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Stateful Resource Power Binding</em>'.
+	 * @see de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding()
+	 * @see #getPowerState()
+	 * @generated
+	 */
+	EReference getPowerState_StatefulResourcePowerBinding();
+
+	/**
+	 * Returns the meta object for class '{@link de.fzi.power.binding.StatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stateful Resource Power Binding</em>'.
+	 * @see de.fzi.power.binding.StatefulResourcePowerBinding
+	 * @generated
+	 */
+	EClass getStatefulResourcePowerBinding();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStates <em>Power States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Power States</em>'.
+	 * @see de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStates()
+	 * @see #getStatefulResourcePowerBinding()
+	 * @generated
+	 */
+	EReference getStatefulResourcePowerBinding_PowerStates();
+
+	/**
+	 * Returns the meta object for class '{@link de.fzi.power.binding.PowerFactorBinding <em>Power Factor Binding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Power Factor Binding</em>'.
+	 * @see de.fzi.power.binding.PowerFactorBinding
+	 * @generated
+	 */
+	EClass getPowerFactorBinding();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues <em>Fixed Factor Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fixed Factor Values</em>'.
+	 * @see de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues()
+	 * @see #getPowerFactorBinding()
+	 * @generated
+	 */
+	EReference getPowerFactorBinding_FixedFactorValues();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -545,14 +765,6 @@ public interface BindingPackage extends EPackage {
 				.getPowerBinding_PowerBindingRepository();
 
 		/**
-		 * The meta object literal for the '<em><b>Fixed Factor Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference POWER_BINDING__FIXED_FACTOR_VALUES = eINSTANCE
-				.getPowerBinding_FixedFactorValues();
-
-		/**
 		 * The meta object literal for the '{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl <em>Resource Power Binding</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see de.fzi.power.binding.impl.ResourcePowerBindingImpl
@@ -589,6 +801,72 @@ public interface BindingPackage extends EPackage {
 		 */
 		EReference DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL = eINSTANCE
 				.getDistributionPowerBinding_DistributionPowerModel();
+
+		/**
+		 * The meta object literal for the '{@link de.fzi.power.binding.impl.PowerStateImpl <em>Power State</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.binding.impl.PowerStateImpl
+		 * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerState()
+		 * @generated
+		 */
+		EClass POWER_STATE = eINSTANCE.getPowerState();
+
+		/**
+		 * The meta object literal for the '<em><b>Binding</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POWER_STATE__BINDING = eINSTANCE.getPowerState_Binding();
+
+		/**
+		 * The meta object literal for the '<em><b>Stateful Resource Power Binding</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE
+				.getPowerState_StatefulResourcePowerBinding();
+
+		/**
+		 * The meta object literal for the '{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl <em>Stateful Resource Power Binding</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl
+		 * @see de.fzi.power.binding.impl.BindingPackageImpl#getStatefulResourcePowerBinding()
+		 * @generated
+		 */
+		EClass STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE
+				.getStatefulResourcePowerBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Power States</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES = eINSTANCE
+				.getStatefulResourcePowerBinding_PowerStates();
+
+		/**
+		 * The meta object literal for the '{@link de.fzi.power.binding.impl.PowerFactorBindingImpl <em>Power Factor Binding</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.fzi.power.binding.impl.PowerFactorBindingImpl
+		 * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerFactorBinding()
+		 * @generated
+		 */
+		EClass POWER_FACTOR_BINDING = eINSTANCE.getPowerFactorBinding();
+
+		/**
+		 * The meta object literal for the '<em><b>Fixed Factor Values</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POWER_FACTOR_BINDING__FIXED_FACTOR_VALUES = eINSTANCE
+				.getPowerFactorBinding_FixedFactorValues();
 
 	}
 

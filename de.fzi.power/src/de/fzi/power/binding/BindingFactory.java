@@ -56,6 +56,24 @@ public interface BindingFactory extends EFactory {
 	DistributionPowerBinding createDistributionPowerBinding();
 
 	/**
+	 * Returns a new object of class '<em>Power State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Power State</em>'.
+	 * @generated
+	 */
+	PowerState createPowerState();
+
+	/**
+	 * Returns a new object of class '<em>Stateful Resource Power Binding</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Stateful Resource Power Binding</em>'.
+	 * @generated
+	 */
+	StatefulResourcePowerBinding createStatefulResourcePowerBinding();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the package supported by this factory.

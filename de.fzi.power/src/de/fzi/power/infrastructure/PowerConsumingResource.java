@@ -2,8 +2,6 @@
  */
 package de.fzi.power.infrastructure;
 
-import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
-
 import de.fzi.power.binding.ResourcePowerBinding;
 
 /**
@@ -13,7 +11,6 @@ import de.fzi.power.binding.ResourcePowerBinding;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification <em>Processing Resource Specification</em>}</li>
  *   <li>{@link de.fzi.power.infrastructure.PowerConsumingResource#getResourcePowerAssemblyContext <em>Resource Power Assembly Context</em>}</li>
  * </ul>
  * </p>
@@ -22,35 +19,7 @@ import de.fzi.power.binding.ResourcePowerBinding;
  * @model
  * @generated
  */
-public interface PowerConsumingResource extends PowerConsumingEntity {
-	/**
-	 * Returns the value of the '<em><b>Processing Resource Specification</b></em>' reference. <!--
-	 * begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Processing Resource Specification</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Processing Resource Specification</em>' reference.
-	 * @see #setProcessingResourceSpecification(ProcessingResourceSpecification)
-	 * @see de.fzi.power.infrastructure.InfrastructurePackage#getPowerConsumingResource_ProcessingResourceSpecification()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	ProcessingResourceSpecification getProcessingResourceSpecification();
-
-	/**
-	 * Sets the value of the '{@link de.fzi.power.infrastructure.PowerConsumingResource#getProcessingResourceSpecification <em>Processing Resource Specification</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Processing Resource Specification</em>' reference.
-	 * @see #getProcessingResourceSpecification()
-	 * @generated
-	 */
-	void setProcessingResourceSpecification(
-			ProcessingResourceSpecification value);
-
+public interface PowerConsumingResource extends AbstractPowerConsumingResource {
 	/**
 	 * Returns the value of the '<em><b>Resource Power Assembly Context</b></em>' reference. <!--
 	 * begin-user-doc -->
