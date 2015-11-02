@@ -59,7 +59,7 @@ public class LinearPowerModelCalculatorTest {
         this.maxConsumption.setValue(Measure.valueOf(400.0, SI.WATT));
         binding.getFixedFactorValues().add(this.maxConsumption);
 
-        this.calculatorUnderTest = new LinearPowerModelCalculator(this.resource);
+        this.calculatorUnderTest = new LinearPowerModelCalculator(this.resource.getResourcePowerAssemblyContext());
     }
 
     /**
