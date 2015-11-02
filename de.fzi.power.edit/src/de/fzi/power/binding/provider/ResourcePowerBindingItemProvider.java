@@ -18,7 +18,8 @@ import de.fzi.power.binding.ResourcePowerBinding;
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class ResourcePowerBindingItemProvider extends PowerBindingItemProvider {
+public class ResourcePowerBindingItemProvider extends
+		PowerFactorBindingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> <!--

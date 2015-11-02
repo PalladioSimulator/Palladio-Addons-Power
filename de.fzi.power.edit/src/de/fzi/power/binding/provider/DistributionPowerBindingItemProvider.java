@@ -19,7 +19,7 @@ import de.fzi.power.binding.DistributionPowerBinding;
  * @generated
  */
 public class DistributionPowerBindingItemProvider extends
-		PowerBindingItemProvider {
+		PowerFactorBindingItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc --> <!--

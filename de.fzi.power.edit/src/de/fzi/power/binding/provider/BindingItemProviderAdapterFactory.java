@@ -166,6 +166,53 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fzi.power.binding.PowerState} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PowerStateItemProvider powerStateItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fzi.power.binding.PowerState}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPowerStateAdapter() {
+		if (powerStateItemProvider == null) {
+			powerStateItemProvider = new PowerStateItemProvider(this);
+		}
+
+		return powerStateItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link de.fzi.power.binding.StatefulResourcePowerBinding} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StatefulResourcePowerBindingItemProvider statefulResourcePowerBindingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fzi.power.binding.StatefulResourcePowerBinding}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStatefulResourcePowerBindingAdapter() {
+		if (statefulResourcePowerBindingItemProvider == null) {
+			statefulResourcePowerBindingItemProvider = new StatefulResourcePowerBindingItemProvider(
+					this);
+		}
+
+		return statefulResourcePowerBindingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +324,10 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
 			resourcePowerBindingItemProvider.dispose();
 		if (distributionPowerBindingItemProvider != null)
 			distributionPowerBindingItemProvider.dispose();
+		if (powerStateItemProvider != null)
+			powerStateItemProvider.dispose();
+		if (statefulResourcePowerBindingItemProvider != null)
+			statefulResourcePowerBindingItemProvider.dispose();
 	}
 
 }

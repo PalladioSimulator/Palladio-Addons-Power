@@ -168,6 +168,30 @@ public class InfrastructureItemProviderAdapterFactory extends
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.fzi.power.infrastructure.StatefulPowerConsumingResource} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StatefulPowerConsumingResourceItemProvider statefulPowerConsumingResourceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.fzi.power.infrastructure.StatefulPowerConsumingResource}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStatefulPowerConsumingResourceAdapter() {
+		if (statefulPowerConsumingResourceItemProvider == null) {
+			statefulPowerConsumingResourceItemProvider = new StatefulPowerConsumingResourceItemProvider(
+					this);
+		}
+
+		return statefulPowerConsumingResourceItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -275,10 +299,12 @@ public class InfrastructureItemProviderAdapterFactory extends
 			powerDistributionUnitItemProvider.dispose();
 		if (mountedPowerDistributionUnitItemProvider != null)
 			mountedPowerDistributionUnitItemProvider.dispose();
-		if (powerConsumingResourceItemProvider != null)
-			powerConsumingResourceItemProvider.dispose();
 		if (powerInfrastructureRepositoryItemProvider != null)
 			powerInfrastructureRepositoryItemProvider.dispose();
+		if (statefulPowerConsumingResourceItemProvider != null)
+			statefulPowerConsumingResourceItemProvider.dispose();
+		if (powerConsumingResourceItemProvider != null)
+			powerConsumingResourceItemProvider.dispose();
 	}
 
 }

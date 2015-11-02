@@ -192,6 +192,12 @@ public class PowerProvidingEntityItemProvider extends EntityItemProvider {
 				.add(createChildParameter(
 						InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
 						InfrastructureFactory.eINSTANCE
+								.createStatefulPowerConsumingResource()));
+
+		newChildDescriptors
+				.add(createChildParameter(
+						InfrastructurePackage.Literals.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
+						InfrastructureFactory.eINSTANCE
 								.createPowerConsumingResource()));
 	}
 

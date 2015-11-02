@@ -147,6 +147,12 @@ public class PowerBindingRepositoryItemProvider extends IdentifierItemProvider {
 						BindingPackage.Literals.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
 						BindingFactory.eINSTANCE
 								.createDistributionPowerBinding()));
+
+		newChildDescriptors
+				.add(createChildParameter(
+						BindingPackage.Literals.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+						BindingFactory.eINSTANCE
+								.createStatefulResourcePowerBinding()));
 	}
 
 	/**
