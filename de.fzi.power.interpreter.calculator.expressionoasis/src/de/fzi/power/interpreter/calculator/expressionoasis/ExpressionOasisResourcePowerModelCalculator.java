@@ -11,6 +11,7 @@ import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
@@ -36,8 +37,8 @@ public class ExpressionOasisResourcePowerModelCalculator extends AbstractResourc
      * @throws NullPointerException
      *             In case the given argument is {@code null}.
      */
-    ExpressionOasisResourcePowerModelCalculator(PowerConsumingResource powerConsumingResource) {
-        super(Objects.requireNonNull(powerConsumingResource));
+    ExpressionOasisResourcePowerModelCalculator(final ResourcePowerBinding binding) {
+        super(Objects.requireNonNull(binding));
 
         this.calculator = new InternalExpressionOasisCalculator(super.binding,
                 (DeclarativePowerModelSpecification) super.binding.getResourcePowerModelSpecification());

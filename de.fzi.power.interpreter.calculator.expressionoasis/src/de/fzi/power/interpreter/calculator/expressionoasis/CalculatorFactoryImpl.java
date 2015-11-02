@@ -4,11 +4,12 @@ import java.util.Objects;
 
 import org.eclipse.emf.ecore.EClass;
 
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
-import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.interpreter.calculators.CalculatorFactory;
+import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.PowerModelSpecification;
 import de.fzi.power.specification.SpecificationPackage;
@@ -53,10 +54,10 @@ public class CalculatorFactoryImpl implements CalculatorFactory {
     }
 
     @Override
-    public AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
-            PowerConsumingResource forResource) {
+    public IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
+            final ResourcePowerBinding binding) {
         return new ExpressionOasisResourcePowerModelCalculator(
-                Objects.requireNonNull(forResource, "Given PowerConsumingResource must not be null."));
+                Objects.requireNonNull(binding, "Given PowerConsumingResource must not be null."));
     }
 
 }

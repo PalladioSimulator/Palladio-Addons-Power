@@ -14,7 +14,7 @@ import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.PowerBinding;
+import de.fzi.power.binding.PowerFactorBinding;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.interpreter.calculator.expressionoasis.custom.CustomExpressionContext;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
@@ -24,7 +24,8 @@ final class InternalExpressionOasisCalculator {
     private final CustomExpressionContext expressionContext;
     private final Expression predictorExpression;
 
-    InternalExpressionOasisCalculator(PowerBinding binding, DeclarativePowerModelSpecification specification) {
+    InternalExpressionOasisCalculator(final PowerFactorBinding binding,
+            final DeclarativePowerModelSpecification specification) {
         String functionalExpression = Objects.requireNonNull(specification).getFunctionalExpression();
         if (functionalExpression == null || functionalExpression.isEmpty()) {
             throw new IllegalArgumentException(
