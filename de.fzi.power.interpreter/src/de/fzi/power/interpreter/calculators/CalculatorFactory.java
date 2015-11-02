@@ -1,7 +1,9 @@
 package de.fzi.power.interpreter.calculators;
 
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.specification.PowerModelSpecification;
 
 // TODO: Auto-generated Javadoc
@@ -40,7 +42,7 @@ public interface CalculatorFactory {
      * @param forResource the for resource
      * @return the abstract resource power model calculator
      */
-    public abstract AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
-            PowerConsumingResource forResource);
-
+    public abstract IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
+            final ResourcePowerBinding binding);
+    
 }

@@ -6,6 +6,7 @@ package de.fzi.power.interpreter.calculators;
 import java.util.Collections;
 import java.util.Set;
 
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
@@ -64,8 +65,8 @@ public abstract class AbstractCalculatorFactory implements CalculatorFactory {
      * @see de.fzi.power.interpreter.calculators.CalculatorFactory#instantiateResourcePowerModelCalculator(de.fzi.power.infrastructure.PowerConsumingResource)
      */
     @Override
-    public AbstractResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
-            PowerConsumingResource forResource) {
+    public IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
+            final ResourcePowerBinding binding) {
         throw new UnsupportedOperationException("This calculator factory does not support"
                 + " the instantiation of resource power model calculators");
     }

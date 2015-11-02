@@ -16,12 +16,14 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.binding.PowerBindingRepository;
+import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
-import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
+import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 
 /**
@@ -122,8 +124,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      *            The PowerConsumingResource for which the power consumption is being evaluated.
      * @return The power consumed by the resource.
      */
-    public Amount<Power> evaluateResourcePowerConsumption(PowerConsumingResource resource) {
-        AbstractResourcePowerModelCalculator calculator = this.powerModelRegistry
+    public Amount<Power> evaluateResourcePowerConsumption(AbstractPowerConsumingResource resource) {
+        IResourcePowerModelCalculator calculator = this.powerModelRegistry
                 .getCalculator(Objects.requireNonNull(resource, "Given resource must not be null."));
         if (calculator == null) {
             throw new IllegalArgumentException("Cannot evaluate power consumption of given resource: "
@@ -132,6 +134,18 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
 
         Collection<MeasuringValue> args = this.scope.getMeasurements(resource.getProcessingResourceSpecification());
         return calculator.calculate(args);
+    }
+    
+    /**
+     * Evaluates the power consumption of a passed stateful resource. The consumption is evaluated in context
+     * to the current EvaluationScope.
+     * 
+     * @param resource
+     *            The PowerConsumingResource for which the power consumption is being evaluated.
+     * @return The power consumed by the resource.
+     */
+    public Amount<Power> evaluateStatefulResourcePowerConsumption(final StatefulPowerConsumingResource resource) {
+        return this.evaluateResourcePowerConsumption(resource);
     }
 
     /**
@@ -199,12 +213,12 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      * calculators
      */
     private void updateRequiredMetrics() {
-        Map<PowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
+        Map<AbstractPowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
                 .getRequiredMetricsForRegisteredCalculators();
         Map<ProcessingResourceSpecification, Set<MetricDescription>> prsRequiredMetrics = new HashMap<ProcessingResourceSpecification, Set<MetricDescription>>(
                 pcrRequiredMetrics.size());
 
-        for (Entry<PowerConsumingResource, Set<MetricDescription>> entry : pcrRequiredMetrics.entrySet()) {
+        for (Entry<AbstractPowerConsumingResource, Set<MetricDescription>> entry : pcrRequiredMetrics.entrySet()) {
             prsRequiredMetrics.put(entry.getKey().getProcessingResourceSpecification(), entry.getValue());
         }
 
@@ -212,14 +226,14 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
     }
 
     @Override
-    public void resourcePowerModelChanged(AbstractResourcePowerModelCalculator calculator,
-            PowerConsumingResource affectedResource) {
+    public void resourcePowerModelChanged(IResourcePowerModelCalculator calculator,
+            AbstractPowerConsumingResource affectedResource) {
         // check if new calculator can work with the same metrics that are already
         // evaluated for the resource. Otherwise throw exception.
         // if necessary, the scope could be updated to evaluate different metrics here
         // currently that is not supported
 
-        Map<PowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
+        Map<AbstractPowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
                 .getRequiredMetricsForRegisteredCalculators();
 
         if (!CollectionUtils.isSubCollection(calculator.getInputMetrics(), pcrRequiredMetrics.get(affectedResource))) {

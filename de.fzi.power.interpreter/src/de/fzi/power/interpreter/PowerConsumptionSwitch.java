@@ -19,6 +19,7 @@ import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
@@ -53,7 +54,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      *             In case the given consumption context was {@code null}.
      * @return The PowerConsumptionSwitch to be used for the evaluation.
      */
-    public static PowerConsumptionSwitch createPowerConsumptionSwitch(ConsumptionContext ctx) {
+    public static PowerConsumptionSwitch createPowerConsumptionSwitch(final ConsumptionContext ctx) {
         PowerConsumptionSwitch consumptionSwitch = new PowerConsumptionSwitch();
         consumptionSwitch.setConsumptionContext(ctx);
         return consumptionSwitch;
@@ -67,7 +68,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @throws IllegalArgumentException
      *             In case {@code ctx == null}.
      */
-    public void setConsumptionContext(ConsumptionContext ctx) {
+    public void setConsumptionContext(final ConsumptionContext ctx) {
         if (ctx == null) {
             throw new IllegalArgumentException("ConsumptionContext must not be null.");
         }
@@ -83,7 +84,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The power consumption evaluation result.
      */
     @Override
-    public Amount<Power> casePowerDistributionUnit(PowerDistributionUnit pdu) {
+    public Amount<Power> casePowerDistributionUnit(final PowerDistributionUnit pdu) {
         return this.casePowerConsumingProvidingEntity(pdu);
     }
 
@@ -95,7 +96,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The power consumption evaluation result.
      */
     @Override
-    public Amount<Power> casePowerConsumingProvidingEntity(PowerConsumingProvidingEntity providingConsumingEntity) {
+    public Amount<Power> casePowerConsumingProvidingEntity(final PowerConsumingProvidingEntity providingConsumingEntity) {
         Collection<PowerConsumingEntity> consumingEntities = Objects.requireNonNull(providingConsumingEntity)
                 .getNestedPowerConsumingEntities();
         Map<PowerConsumingEntity, Amount<Power>> consumers = new HashMap<>(consumingEntities.size());
@@ -115,7 +116,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The power consumption evaluation result.
      */
     @Override
-    public Amount<Power> casePowerProvidingEntity(PowerProvidingEntity ppEntity) {
+    public Amount<Power> casePowerProvidingEntity(final PowerProvidingEntity ppEntity) {
         // look for appropriate subclass in switch
         return this.doSwitch(ppEntity);
     }
@@ -129,7 +130,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      *            The entity for which the power consumption is evaluated.
      */
     @Override
-    public Amount<Power> casePowerConsumingEntity(PowerConsumingEntity powerConsumingEntity) {
+    public Amount<Power> casePowerConsumingEntity(final PowerConsumingEntity powerConsumingEntity) {
         // look for appropriate subclass in switch
         return this.doSwitch(powerConsumingEntity);
     }
@@ -142,7 +143,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The evaluated power consumption.
      */
     @Override
-    public Amount<Power> caseMountedPowerDistributionUnit(MountedPowerDistributionUnit mountedPdu) {
+    public Amount<Power> caseMountedPowerDistributionUnit(final MountedPowerDistributionUnit mountedPdu) {
         return this.casePowerDistributionUnit(mountedPdu);
     }
 
@@ -155,8 +156,13 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The amount of power consumed by the resource.
      */
     @Override
-    public Amount<Power> casePowerConsumingResource(PowerConsumingResource resource) {
+    public Amount<Power> casePowerConsumingResource(final PowerConsumingResource resource) {
         return this.consumptionContext.evaluateResourcePowerConsumption(resource);
+    }
+    
+    @Override
+    public Amount<Power> caseStatefulPowerConsumingResource(final StatefulPowerConsumingResource resource) {
+        return this.consumptionContext.evaluateStatefulResourcePowerConsumption(resource);
     }
 
     /**
@@ -168,7 +174,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The amount of power consumed throughout the whole repository model.
      */
     @Override
-    public Amount<Power> casePowerInfrastructureRepository(PowerInfrastructureRepository piModel) {
+    public Amount<Power> casePowerInfrastructureRepository(final PowerInfrastructureRepository piModel) {
         Amount<Power> sum = PowerModelConstants.ZERO_POWER;
         for (PowerProvidingEntity entity : piModel.getContainedPowerProvidingEntities()) {
             sum = sum.plus(this.casePowerProvidingEntity(entity));

@@ -11,7 +11,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
@@ -28,6 +28,7 @@ import org.palladiosimulator.pcmmeasuringpoint.util.PcmmeasuringpointSwitch;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.uka.ipd.sdq.identifier.Identifier;
@@ -64,7 +65,7 @@ public final class InterpreterUtils {
                 // in case no fragment is present
                 // this is the case if point is a ReconfigurationMeasuringPoint instance
                 return RESOURCEENV_SWITCH
-                        .doSwitch(EMFLoadHelper.loadAndResolveEObject(new ResourceSetImpl(), resourceUri));
+                        .doSwitch(EMFLoadHelper.loadAndResolveEObject(point.eResource().getResourceSet(), resourceUri));
             }
             return null;
         }
@@ -112,6 +113,12 @@ public final class InterpreterUtils {
             return Collections.singleton(resource.getProcessingResourceSpecification());
 
         }
+        
+        @Override
+        public Set<ProcessingResourceSpecification> caseStatefulPowerConsumingResource(
+                StatefulPowerConsumingResource resource) {
+            return Collections.singleton(resource.getProcessingResourceSpecification());
+        };
 
         @Override
         public Set<ProcessingResourceSpecification> defaultCase(EObject obj) {
@@ -153,7 +160,8 @@ public final class InterpreterUtils {
      *             An {@link IllegalArgumentException} is thrown, if the given argument is
      *             {@code null}.
      */
-    public static PowerProvidingEntity getPowerProvindingEntityFromMeasuringPoint(MeasuringPoint measuringPoint) {
+    public static PowerProvidingEntity getPowerProvidingEntityFromMeasuringPoint(final ResourceSet resourceSet,
+            MeasuringPoint measuringPoint) {
         if (measuringPoint == null) {
             throw new IllegalArgumentException("Given MeasuringPoint must not be null.");
         }
@@ -167,14 +175,14 @@ public final class InterpreterUtils {
             };
 
             @Override
-            public PowerProvidingEntity caseResourceURIMeasuringPoint(ResourceURIMeasuringPoint mp) {
+            public PowerProvidingEntity caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint mp) {
                 URI resourceUri = URI.createURI(mp.getResourceURI());
                 if (resourceUri.fragment() != null) {
                     // this check avoids an illegal argument exception thrown in the loadAndResolve
                     // method
                     // in case no fragment is present
                     // this is the case if point is a ReconfigurationMeasuringPoint instance
-                    return infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(new ResourceSetImpl(), resourceUri));
+                    return infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(resourceSet, resourceUri));
                 }
                 return null;
             }

@@ -5,15 +5,22 @@ package de.fzi.power.interpreter.calculators;
 
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 
+import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 
 /**
- * @author Sebastian Krach
+ * Implements a central hub for creating power consumption calculators based on a set of registered PowerFactory
+ * instances.
+ * @author Sebastian Krach, Christian Stier
  *
  */
 public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantiator {
@@ -51,17 +58,20 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
      * (de.fzi.power.infrastructure.PowerConsumingResource)
      */
     @Override
-    public AbstractResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResource resource) {
+    public IResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResource resource) {
+        return this.instantiateResourceCalculator(resource.getResourcePowerAssemblyContext());
+    }
+
+    protected IResourcePowerModelCalculator instantiateResourceCalculator(final ResourcePowerBinding binding) {
         for (CalculatorFactory factory : factoryQueue) {
-            if (factory.isCompatibleWith(resource.getResourcePowerAssemblyContext()
-                    .getResourcePowerModelSpecification())) {
-                return factory.instantiateResourcePowerModelCalculator(resource);
+            if (factory.isCompatibleWith(binding.getResourcePowerModelSpecification())) {
+                return factory.instantiateResourcePowerModelCalculator(binding);
             }
         }
 
         throw new IllegalArgumentException("The passed ResourcePowerAssemblyContext refers to an unknown power model.");
     }
-
+    
     /*
      * (non-Javadoc)
      * 
@@ -77,6 +87,17 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
         }
 
         throw new IllegalArgumentException("The passed PowerProvidingEntity refers to an unknown power model.");
+    }
+
+    @Override
+    public IResourcePowerModelCalculator instantiateStatefulResourcePowerModelCalculator(
+            final StatefulPowerConsumingResource resource) {
+        final Map<PowerState, IResourcePowerModelCalculator> powerCalculatorsPerState = new HashMap<PowerState, IResourcePowerModelCalculator>();
+        for(PowerState state : resource.getStatefulResourcePowerBinding().getPowerStates()) {
+            ResourcePowerBinding binding = state.getBinding();
+            powerCalculatorsPerState.put(state, this.instantiateResourceCalculator(binding));
+        }
+        return new StatefulPowerConsumingResourceCalculator(resource, powerCalculatorsPerState);
     }
 
 }

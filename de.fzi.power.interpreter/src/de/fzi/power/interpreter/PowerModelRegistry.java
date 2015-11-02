@@ -10,10 +10,13 @@ import java.util.Set;
 import org.palladiosimulator.commons.designpatterns.AbstractObservable;
 import org.palladiosimulator.metricspec.MetricDescription;
 
+import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
+import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 
 /**
  * Registry through which the power models of the resources and distribution units are managed.
@@ -24,7 +27,7 @@ import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator
 public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryChangeListener> {
 
     // List of calculators per active resource.
-    private final HashMap<PowerConsumingResource, AbstractResourcePowerModelCalculator> calculatorsPerResource;
+    private final HashMap<AbstractPowerConsumingResource, IResourcePowerModelCalculator> calculatorsPerResource;
     // List of calculators per power distribution unit.
     private final HashMap<PowerProvidingEntity, AbstractDistributionPowerModelCalculator> calculatorsPerPdu;
 
@@ -32,7 +35,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * Create a power model registry.
      */
     public PowerModelRegistry() {
-        this.calculatorsPerResource = new HashMap<PowerConsumingResource, AbstractResourcePowerModelCalculator>();
+        this.calculatorsPerResource = new HashMap<AbstractPowerConsumingResource, IResourcePowerModelCalculator>();
         this.calculatorsPerPdu = new HashMap<PowerProvidingEntity, AbstractDistributionPowerModelCalculator>();
     }
 
@@ -45,7 +48,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      *            The calculator used to evaluate the power consumption of a resource.
      */
     public void updateResourcePowerModel(PowerConsumingResource powerConsumingResource,
-            AbstractResourcePowerModelCalculator resourceCalculator) {
+            IResourcePowerModelCalculator resourceCalculator) {
         if (resourceCalculator == null || powerConsumingResource == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
         }
@@ -55,6 +58,15 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
             getEventDispatcher().resourcePowerModelChanged(resourceCalculator, powerConsumingResource);
         }
 
+    }
+    
+    public void updateStatefulPowerConsumingResource(StatefulPowerConsumingResource powerConsumingResource,
+            IResourcePowerModelCalculator resourceCalculator) {
+        if (!calculatorsPerResource.containsKey(powerConsumingResource)
+                || !calculatorsPerResource.get(powerConsumingResource).equals(resourceCalculator)) {
+            calculatorsPerResource.put(powerConsumingResource, resourceCalculator);
+            getEventDispatcher().resourcePowerModelChanged(resourceCalculator, powerConsumingResource);
+        }
     }
 
     /**
@@ -87,7 +99,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * @throws NullPointerException
      *             In case {@code resource == null}.
      */
-    public AbstractResourcePowerModelCalculator getCalculator(PowerConsumingResource resource) {
+    public IResourcePowerModelCalculator getCalculator(AbstractPowerConsumingResource resource) {
         return this.calculatorsPerResource.get(Objects.requireNonNull(resource));
     }
 
@@ -112,10 +124,10 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * @return an UNMODIFIABLE map linking {@link PowerConsumingResource}s to multiple
      *         {@link MetricDescription}s
      */
-    public Map<PowerConsumingResource, Set<MetricDescription>> getRequiredMetricsForRegisteredCalculators() {
-        Map<PowerConsumingResource, Set<MetricDescription>> result = new HashMap<PowerConsumingResource, Set<MetricDescription>>(
+    public Map<AbstractPowerConsumingResource, Set<MetricDescription>> getRequiredMetricsForRegisteredCalculators() {
+        Map<AbstractPowerConsumingResource, Set<MetricDescription>> result = new HashMap<AbstractPowerConsumingResource, Set<MetricDescription>>(
                 calculatorsPerResource.size());
-        for (Entry<PowerConsumingResource, AbstractResourcePowerModelCalculator> entry : calculatorsPerResource
+        for (Entry<AbstractPowerConsumingResource, IResourcePowerModelCalculator> entry : calculatorsPerResource
                 .entrySet()) {
             result.put(entry.getKey(), entry.getValue().getInputMetrics());
         }

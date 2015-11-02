@@ -2,6 +2,7 @@ package de.fzi.power.interpreter.calculators;
 
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 
 public interface CalculatorInstantiator {
 
@@ -15,7 +16,7 @@ public interface CalculatorInstantiator {
      *            The resource for which the calculator is created.
      * @return The created calculator.
      */
-    public abstract AbstractResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResource resource);
+    public abstract IResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResource resource);
 
     /**
      * Creates a {@link AbstractDistributionPowerModelCalculator} for a {@link PowerProvidingEntity}
@@ -28,5 +29,15 @@ public interface CalculatorInstantiator {
      */
     public abstract AbstractDistributionPowerModelCalculator instantiatePowerProvidingEntityCalculator(
             PowerProvidingEntity ppe);
+    
+    
+    /**
+     * Instantiate the resource power model calculator of a stateful resource.
+     *
+     * @param resource the resource for which the power model is generated.
+     * @return the abstract resource power model calculator
+     */
+    public abstract IResourcePowerModelCalculator instantiateStatefulResourcePowerModelCalculator(
+            StatefulPowerConsumingResource resource);
 
 }
