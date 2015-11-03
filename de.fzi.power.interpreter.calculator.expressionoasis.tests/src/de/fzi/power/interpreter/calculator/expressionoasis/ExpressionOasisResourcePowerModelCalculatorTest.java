@@ -80,7 +80,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
 
         CalculatorFactoryImpl calculatorFactory = new CalculatorFactoryImpl();
         this.calculatorUnderTest = (ExpressionOasisResourcePowerModelCalculator) calculatorFactory
-                .instantiateResourcePowerModelCalculator(this.powerConsumingResource);
+                .instantiateResourcePowerModelCalculator(this.binding);
     }
 
     @Test
