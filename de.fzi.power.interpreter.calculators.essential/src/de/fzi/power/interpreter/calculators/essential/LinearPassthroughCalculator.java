@@ -1,6 +1,7 @@
 package de.fzi.power.interpreter.calculators.essential;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
@@ -12,6 +13,7 @@ import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
+import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
 /**
@@ -33,6 +35,8 @@ public class LinearPassthroughCalculator extends AbstractDistributionPowerModelC
      * 
      * @param powerProvidingEntity
      *            The entity for which the calculator is created.
+     * @throws NullPointerException
+     *             In case the required {@link FixedFactor} is not set.
      */
     public LinearPassthroughCalculator(PowerProvidingEntity powerProvidingEntity) {
         super(powerProvidingEntity);
@@ -51,10 +55,12 @@ public class LinearPassthroughCalculator extends AbstractDistributionPowerModelC
                 this.constantLoss = valueInAmount;
             } else {
                 throw new IllegalArgumentException("Factor value referred to constant " + value.getBoundFactor().getId()
-                        + "that didn't match up wih "
+                        + "that didn't match up with "
                         + PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS);
             }
         }
+        Objects.requireNonNull(this.constantLoss,
+                "FixedFactor '" + PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS + "' not set!");
     }
 
     @Override
