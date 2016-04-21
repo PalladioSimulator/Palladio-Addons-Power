@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monitorrepository:MonitorRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:metricspec="http://palladiosimulator.org/MetricSpec/1.0" xmlns:monitorrepository="http://palladiosimulator.org/MonitorRepository/1.0" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/MeasuringPoint/1.0" id="_0mCngAe6EeagytBodq2q1g" entityName="Monitors">
+  <monitors id="_1xnp0Ae6EeagytBodq2q1g" entityName="usageScenarioMonitor">
+    <measurementSpecifications id="_6fMMMAe6EeagytBodq2q1g" statisticalCharacterization="ArithmeticMean">
+      <temporalRestriction xsi:type="monitorrepository:Intervall" id="_FqpYAAe7EeagytBodq2q1g" intervall="10.0"/>
+      <metricDescription xsi:type="metricspec:NumericalBaseMetricDescription" href="pathmap://METRIC_SPEC_MODELS/commonMetrics.metricspec#_6rYmYs7nEeOX_4BzImuHbA"/>
+    </measurementSpecifications>
+    <measuringPoint xsi:type="org.palladiosimulator.edp2.models:ResourceURIMeasuringPoint" href="My.measuringpoint#//@measuringPoints.0"/>
+  </monitors>
+</monitorrepository:MonitorRepository>

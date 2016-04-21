@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.palladiosimulator.edp2.models:ResourceURIMeasuringPoint xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/MeasuringPoint/0.9.1" measuringPoint="Usage Scenario: varyingWorkloadUsageScenario" resourceURI="platform:/resource/MediaStore%20Model%20v1/varying_mediastore.usagemodel#_1JXrIG5TEd-P3_YMIIvGXQ"/>
+<org.palladiosimulator.edp2.models:MeasuringPointRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.palladiosimulator.edp2.models="http://palladiosimulator.org/EDP2/MeasuringPoint/1.0" id="_UgyiUAe6EeagytBodq2q1g">
+  <measuringPoints xsi:type="org.palladiosimulator.edp2.models:ResourceURIMeasuringPoint" stringRepresentation="test" resourceURIRepresentation="platform:/MediaStore%20Model%20v1/varying_mediastore.usagemodel#_1JXrIG5TEd-P3_YMIIvGXQ" measuringPoint="test" resourceURI="platform:/MediaStore%20Model%20v1/varying_mediastore.usagemodel#_1JXrIG5TEd-P3_YMIIvGXQ"/>
+</org.palladiosimulator.edp2.models:MeasuringPointRepository>

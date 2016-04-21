@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" id="_pnz4UGnBEeSeo-pFM7s_nQ">
   <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" id="_-u70IWwTEeShkNmTEeIZtw" name="simpleLinear">
+    <fixedFactorValues id="_OsDNcAfDEeaG2snxyc_DQw" value="100 W">
+      <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw"/>
+    </fixedFactorValues>
     <distributionPowerModel href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_fnnwUGnCEeSeo-pFM7s_nQ" name="Elsbeere CPU Linear">
