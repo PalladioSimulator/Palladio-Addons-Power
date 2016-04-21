@@ -59,13 +59,12 @@ public final class InterpreterUtils {
         @Override
         public ProcessingResourceSpecification caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint point) {
             URI resourceUri = URI.createURI(point.getResourceURI());
-            if (resourceUri.fragment() != null) {
+            if (resourceUri.hasFragment()) {
                 // this check avoids an illegal argument exception thrown in the loadAndResolve
                 // method
                 // in case no fragment is present
                 // this is the case if point is a ReconfigurationMeasuringPoint instance
-                return RESOURCEENV_SWITCH
-                        .doSwitch(EMFLoadHelper.loadAndResolveEObject(point.eResource().getResourceSet(), resourceUri));
+                return RESOURCEENV_SWITCH.doSwitch(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI()));
             }
             return null;
         }
@@ -113,7 +112,7 @@ public final class InterpreterUtils {
             return Collections.singleton(resource.getProcessingResourceSpecification());
 
         }
-        
+
         @Override
         public Set<ProcessingResourceSpecification> caseStatefulPowerConsumingResource(
                 StatefulPowerConsumingResource resource) {
@@ -177,12 +176,12 @@ public final class InterpreterUtils {
             @Override
             public PowerProvidingEntity caseResourceURIMeasuringPoint(final ResourceURIMeasuringPoint mp) {
                 URI resourceUri = URI.createURI(mp.getResourceURI());
-                if (resourceUri.fragment() != null) {
+                if (resourceUri.hasFragment()) {
                     // this check avoids an illegal argument exception thrown in the loadAndResolve
                     // method
                     // in case no fragment is present
                     // this is the case if point is a ReconfigurationMeasuringPoint instance
-                    return infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(resourceSet, resourceUri));
+                    return this.infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(mp.getResourceURI()));
                 }
                 return null;
             }
