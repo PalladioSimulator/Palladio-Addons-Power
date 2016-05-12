@@ -1,11 +1,18 @@
 package de.fzi.power.ui.adapters;
 
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
+import static org.palladiosimulator.edp2.util.MeasurementsUtility.SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY;
+import static org.palladiosimulator.edp2.util.MeasurementsUtility.SLIDING_WINDOW_BASED_MEASUREMENT_TAG_VALUE;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.measure.Measure;
@@ -14,8 +21,7 @@ import javax.measure.quantity.Power;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.SI;
 
-import org.apache.commons.collections15.CollectionUtils;
-import org.apache.commons.collections15.Predicate;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.IPersistable;
 import org.eclipse.ui.IPersistableElement;
@@ -28,6 +34,8 @@ import org.palladiosimulator.edp2.datastream.configurable.PropertyConfigurable;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
+import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
@@ -55,6 +63,8 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
         implements IPersistable, IPersistableElement, IPropertyListener {
 
     private static final MetricSetDescription FILTER_OUTPUT_METRIC = MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE;
+    private static final MetricSetDescription STATE_OF_ACTIVE_RESOURCE_METRIC = MetricDescriptionConstants.STATE_OF_ACTIVE_RESOURCE_METRIC_TUPLE;
+    private static final MetricSetDescription OVERALL_UTILIZATION_METRIC = MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE_TUPLE;
 
     private final PowerModelRegistry registry = new PowerModelRegistry();
 
@@ -63,67 +73,83 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
     private Set<ExtendedMeasureProvider> extendedMeasureProviders;
 
-    private PowerProvidingEntity powerProvidingEntity;
-    private ExperimentRun experimentRun;
-    private MeasuringPoint measuringPoint;
+    private Optional<PowerProvidingEntity> powerProvidingEntity = Optional.empty();
+    private Optional<ExperimentRun> experimentRun = Optional.empty();
+    private Optional<MeasuringPoint> measuringPoint = Optional.empty();
 
-    private Collection<MeasuringValue> evaluatedPowerMeasurements = null;
+    private Optional<Collection<MeasuringValue>> evaluatedPowerMeasurements = Optional.empty();
 
     public AnalysisPowerConsumptionAdapter() {
         super(FILTER_OUTPUT_METRIC);
     }
 
-    private Set<IDataSource> collectScopeDataSources(Set<ProcessingResourceSpecification> processingResourceSpecs) {
-        List<Measurement> scopeMeasurements = new ArrayList<>();
-        for (final ProcessingResourceSpecification spec : processingResourceSpecs) {
-            Collection<Measurement> resourceMeasurements = new ArrayList<>();
+    private static Collection<IDataSource> collectScopeDataSources(
+            Set<ProcessingResourceSpecification> processingResourceSpecs, ExperimentRun experimentRun) {
 
-            CollectionUtils.select(this.experimentRun.getMeasurement(), new Predicate<Measurement>() {
+        List<String> processingResourceSpecIds = processingResourceSpecs.stream()
+                .collect(mapping(ProcessingResourceSpecification::getId, toList()));
 
-                // we cannot handle existing utilization measurements of a processing resource
-                // specification so far
-                // reason: they might been taken based on a different sliding window length/
-                // increment
-                // hence, those must be excluded here
-                @Override
-                public boolean evaluate(Measurement measurement) {
-                    ProcessingResourceSpecification proc = InterpreterUtils
-                            .getProcessingResourceSpecificationFromMeasuringPoint(
-                                    measurement.getMeasuringType().getMeasuringPoint());
-                    return proc != null && proc.getId().equals(spec.getId())
-                            && !MetricDescriptionUtility.metricDescriptionIdsEqual(
-                                    MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE_TUPLE,
-                                    measurement.getMeasuringType().getMetric());
-                }
-            }, resourceMeasurements);
+        return experimentRun.getMeasurement().stream().filter(m -> isDataSource(m, processingResourceSpecIds))
+                .map(Measurement::getMeasurementRanges).map(ranges -> ranges.get(0))
+                .map(MeasurementRange::getRawMeasurements).map(Edp2DataTupleDataSource::new).collect(toList());
 
-            scopeMeasurements.addAll(resourceMeasurements);
+    }
+
+    private static boolean isDataSource(Measurement measurement, List<String> processingResourceSpecIds) {
+        MeasuringType type = measurement.getMeasuringType();
+        boolean result = true;
+        ProcessingResourceSpecification correspondingProcessingResourceSpecification = InterpreterUtils
+                .getProcessingResourceSpecificationFromMeasuringPoint(type.getMeasuringPoint());
+        if (correspondingProcessingResourceSpecification == null
+                || !processingResourceSpecIds.contains(correspondingProcessingResourceSpecification.getId())) {
+            result = false;
+        } else {
+            // exclude if metric constraints are not met
+            MetricDescription measurementMetric = type.getMetric();
+            if (MetricDescriptionUtility.metricDescriptionIdsEqual(OVERALL_UTILIZATION_METRIC, measurementMetric)) {
+                // only use 'overall utilization' for power analysis of multi-core resource that has
+                // not been aggregated yet during runtime
+                // (those should have been tagged)
+                result = correspondingProcessingResourceSpecification.getNumberOfReplicas() > 1
+                        && !isTagged(measurement.getAdditionalInformation());
+            } else if (MetricDescriptionUtility.metricDescriptionIdsEqual(STATE_OF_ACTIVE_RESOURCE_METRIC,
+                    measurementMetric)) {
+                // consequently, only 'state of active resource' for utilization-based power
+                // analysis if we have a single-core resource
+                result = correspondingProcessingResourceSpecification.getNumberOfReplicas() == 1;
+            }
         }
-        Set<IDataSource> resultSet = new HashSet<IDataSource>(scopeMeasurements.size());
-        for (Measurement m : scopeMeasurements) {
-            resultSet.add(new Edp2DataTupleDataSource(m.getMeasurementRanges().get(0).getRawMeasurements()));
-        }
-        return resultSet;
+        return result;
+    }
+
+    private static boolean isTagged(EMap<String, Object> measInfo) {
+        return measInfo.containsKey(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY)
+                && Boolean.logicalAnd(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_VALUE,
+                        Boolean.valueOf(measInfo.get(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY).toString()));
     }
 
     @Override
     public MeasuringPoint getMeasuringPoint() {
-        if (this.powerProvidingEntity == null) {
-            return null;
-        } else if (this.measuringPoint == null) {
-            this.measuringPoint = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
-            ((StringMeasuringPoint) this.measuringPoint)
-                    .setMeasuringPoint(AnalysisPowerConsumptionAdapter.this.powerProvidingEntity.getName());
-            this.measuringPoint.setStringRepresentation(this.powerProvidingEntity.getName());
-        }
-        return this.measuringPoint;
+        return this.powerProvidingEntity.map((ppe) -> this.measuringPoint.orElse(createMeasuringPoint())).orElse(null);
+    }
+
+    private MeasuringPoint createMeasuringPoint() {
+        assert this.powerProvidingEntity.isPresent();
+
+        StringMeasuringPoint mp = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
+        mp.setMeasuringPoint(this.powerProvidingEntity.get().getName());
+        mp.setStringRepresentation(this.powerProvidingEntity.get().getName());
+
+        return mp;
     }
 
     private Collection<MeasuringValue> obtainPowerConsumptionMeasurements(PowerBindingRepository bindingRepo,
             Iterable<IDataSource> scopeDataSources) {
+        assert this.powerProvidingEntity.isPresent();
+
         Collection<MeasuringValue> result = new ArrayList<>();
 
-        this.modelUpdaterSwitch.doSwitch(this.powerProvidingEntity);
+        this.modelUpdaterSwitch.doSwitch(this.powerProvidingEntity.get());
 
         EvaluationScope scope = EvaluationScope.createScope(scopeDataSources, this.extendedMeasureProviders);
         ConsumptionContext context = ConsumptionContext.createConsumptionContext(bindingRepo, scope, this.registry);
@@ -131,7 +157,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
         while (scope.hasNext()) {
             scope.next();
-            Amount<Power> powerAmount = consumptionSwitch.doSwitch(this.powerProvidingEntity);
+            Amount<Power> powerAmount = consumptionSwitch.doSwitch(this.powerProvidingEntity.get());
             Measure<Double, ? extends Quantity> powerMeasure = Measure.valueOf(powerAmount.doubleValue(SI.WATT),
                     SI.WATT);
             Measure<Double, Duration> pointInTime = scope.getCurrentPointInTime();
@@ -146,23 +172,17 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     @SuppressWarnings("unchecked")
     @Override
     public IDataStream<MeasuringValue> getDataStream() {
-        if (this.powerProvidingEntity == null) {
-            throw new IllegalArgumentException("The given PowerProvidingEntity must not be null.");
-        }
-        if (this.experimentRun == null) {
-            throw new IllegalArgumentException(
-                    "Power consumption can only be analyzed with regards to an experiment run. Thus, this expRun must not be null.");
-        }
+        ExperimentRun run = this.experimentRun.orElseThrow(() -> new IllegalArgumentException(
+                "Power consumption can only be analyzed with regards to an experiment run. Thus, this expRun must not be null."));
 
-        if (this.evaluatedPowerMeasurements == null) {
-            PowerBindingRepository bindingRepo = this.powerProvidingEntity.getDistributionPowerAssemblyContext()
-                    .getPowerBindingRepository();
+        PowerProvidingEntity ppe = this.powerProvidingEntity
+                .orElseThrow(() -> new IllegalStateException("PowerProvidingEntity has not been set yet!"));
 
-            this.evaluatedPowerMeasurements = obtainPowerConsumptionMeasurements(bindingRepo, collectScopeDataSources(
-                    InterpreterUtils.getProcessingResourceSpecsFromInfrastructureElement(this.powerProvidingEntity)));
+        if (!this.evaluatedPowerMeasurements.isPresent()) {
+            this.evaluatedPowerMeasurements = Optional.of(obtainPowerConsumptionMeasurements(
+                    ppe.getDistributionPowerAssemblyContext().getPowerBindingRepository(), collectScopeDataSources(
+                            InterpreterUtils.getProcessingResourceSpecsFromInfrastructureElement(ppe), run)));
         }
-
-        final Collection<MeasuringValue> powerMeasurements = this.evaluatedPowerMeasurements;
 
         return new IDataStream<MeasuringValue>() {
             @Override
@@ -177,12 +197,12 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
             @Override
             public Iterator<MeasuringValue> iterator() {
-                return powerMeasurements.iterator();
+                return AnalysisPowerConsumptionAdapter.this.evaluatedPowerMeasurements.get().iterator();
             }
 
             @Override
             public int size() {
-                return powerMeasurements.size();
+                return AnalysisPowerConsumptionAdapter.this.evaluatedPowerMeasurements.get().size();
             }
 
             @Override
@@ -194,20 +214,21 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     }
 
     public void setPowerProvidingEntity(PowerProvidingEntity powerProvidingEntity) {
-        this.powerProvidingEntity = powerProvidingEntity;
+        this.powerProvidingEntity = Optional
+                .of(Objects.requireNonNull(powerProvidingEntity, "PowerProvidingEntity must not be null."));
 
         resetAdapter();
     }
 
     public void setExperimentRun(ExperimentRun experimentRun) {
-        this.experimentRun = experimentRun;
+        this.experimentRun = Optional.of(Objects.requireNonNull(experimentRun, "ExperimentRun must not be null."));
 
         resetAdapter();
     }
 
     private void resetAdapter() {
-        this.evaluatedPowerMeasurements = null;
-        this.measuringPoint = null;
+        this.evaluatedPowerMeasurements = Optional.empty();
+        this.measuringPoint = Optional.empty();
     }
 
     @Override
@@ -221,8 +242,10 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
     @Override
     protected PropertyConfigurable createProperties() {
+        // called from base class constructor due to dynamic binding!
+        // hence, the extended measure providers will be null
         if (this.extendedMeasureProviders == null) {
-            this.extendedMeasureProviders = new HashSet<ExtendedMeasureProvider>(
+            this.extendedMeasureProviders = new HashSet<>(
                     Arrays.asList(MeasureProviderHelper.getMeasureProviderExtensions()));
         }
         PropertyConfigurable properties = new NestedPropertyConfigurableConfiguration(this.extendedMeasureProviders);
@@ -232,7 +255,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
     @Override
     public void propertyChangeCompleted() {
-        this.evaluatedPowerMeasurements = null;
+        this.evaluatedPowerMeasurements = Optional.empty();
     }
 
     @Override
