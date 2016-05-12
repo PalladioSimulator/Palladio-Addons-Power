@@ -1,7 +1,8 @@
 package de.fzi.power.interpreter;
 
+import java.util.Objects;
+
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
-import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
@@ -11,8 +12,8 @@ import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.interpreter.calculators.CalculatorInstantiator;
 
 /**
- * Switch used by an interpreter to update the power models for elements depending on the {@see
- * PowerAssemblyContext} that has been set for them.
+ * Switch used by an interpreter to update the power models for elements depending on the
+ * {@see PowerAssemblyContext} that has been set for them.
  * 
  * @author stier
  *
@@ -20,9 +21,9 @@ import de.fzi.power.interpreter.calculators.CalculatorInstantiator;
 public class PowerModelUpdaterSwitch extends InfrastructureSwitch<Void> {
 
     // Factory used for instantiating calculators.
-    private CalculatorInstantiator calcInstantiator;
+    private final CalculatorInstantiator calcInstantiator;
     // Registry onto which created calculators are attached/registered to.
-    private PowerModelRegistry registry;
+    private final PowerModelRegistry registry;
 
     /**
      * Creates the switch for updating the power models registered in the {@link PowerModelRegistry}
@@ -34,15 +35,14 @@ public class PowerModelUpdaterSwitch extends InfrastructureSwitch<Void> {
      *            The factory used for instantiating the respective updated elements.
      */
     public PowerModelUpdaterSwitch(PowerModelRegistry registry, CalculatorInstantiator calcInstantiator) {
-        this.registry = registry;
-        this.calcInstantiator = calcInstantiator;
+        this.registry = Objects.requireNonNull(registry);
+        this.calcInstantiator = Objects.requireNonNull(calcInstantiator);
     }
 
+    @Override
     public Void casePowerInfrastructureRepository(PowerInfrastructureRepository repo) {
         // delegate switch to all nested (child) elements
-        for (PowerProvidingEntity ppe : repo.getContainedPowerProvidingEntities()) {
-            this.doSwitch(ppe);
-        }
+        repo.getContainedPowerProvidingEntities().forEach(this::doSwitch);
         return null;
     }
 
@@ -69,9 +69,7 @@ public class PowerModelUpdaterSwitch extends InfrastructureSwitch<Void> {
     @Override
     public Void casePowerProvidingEntity(PowerProvidingEntity ppe) {
         // process all nested elements first
-        for (PowerConsumingEntity pce : ppe.getNestedPowerConsumingEntities()) {
-            this.doSwitch(pce);
-        }
+        ppe.getNestedPowerConsumingEntities().forEach(this::doSwitch);
         this.registry.updateDistributionPowerModel(ppe,
                 this.calcInstantiator.instantiatePowerProvidingEntityCalculator(ppe));
         return null;
@@ -103,10 +101,11 @@ public class PowerModelUpdaterSwitch extends InfrastructureSwitch<Void> {
                 this.calcInstantiator.instantiateResourceCalculator(powerConsumingResource));
         return null;
     }
-    
+
     @Override
     public Void caseStatefulPowerConsumingResource(final StatefulPowerConsumingResource powerConsumingResource) {
-        this.registry.updateStatefulPowerConsumingResource(powerConsumingResource, this.calcInstantiator.instantiateStatefulResourcePowerModelCalculator(powerConsumingResource));
+        this.registry.updateStatefulPowerConsumingResource(powerConsumingResource,
+                this.calcInstantiator.instantiateStatefulResourcePowerModelCalculator(powerConsumingResource));
         return null;
     }
 

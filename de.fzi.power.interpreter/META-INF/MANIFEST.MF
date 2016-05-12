@@ -14,7 +14,7 @@ Require-Bundle: de.fzi.power;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.ui.workbench;visibility:=reexport,
  org.apache.commons.collections15;visibility:=reexport,
  de.fzi.power.specification.resources
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: de.fzi.power.interpreter,

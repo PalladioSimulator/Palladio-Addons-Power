@@ -1,9 +1,11 @@
 package de.fzi.power.interpreter;
 
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toMap;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Set;
 
@@ -35,8 +37,8 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * Create a power model registry.
      */
     public PowerModelRegistry() {
-        this.calculatorsPerResource = new HashMap<AbstractPowerConsumingResource, IResourcePowerModelCalculator>();
-        this.calculatorsPerPdu = new HashMap<PowerProvidingEntity, AbstractDistributionPowerModelCalculator>();
+        this.calculatorsPerResource = new HashMap<>();
+        this.calculatorsPerPdu = new HashMap<>();
     }
 
     /**
@@ -59,7 +61,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
         }
 
     }
-    
+
     public void updateStatefulPowerConsumingResource(StatefulPowerConsumingResource powerConsumingResource,
             IResourcePowerModelCalculator resourceCalculator) {
         if (!calculatorsPerResource.containsKey(powerConsumingResource)
@@ -125,13 +127,8 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      *         {@link MetricDescription}s
      */
     public Map<AbstractPowerConsumingResource, Set<MetricDescription>> getRequiredMetricsForRegisteredCalculators() {
-        Map<AbstractPowerConsumingResource, Set<MetricDescription>> result = new HashMap<AbstractPowerConsumingResource, Set<MetricDescription>>(
-                calculatorsPerResource.size());
-        for (Entry<AbstractPowerConsumingResource, IResourcePowerModelCalculator> entry : calculatorsPerResource
-                .entrySet()) {
-            result.put(entry.getKey(), entry.getValue().getInputMetrics());
-        }
-        return Collections.unmodifiableMap(result);
+        return this.calculatorsPerResource.entrySet().stream().collect(collectingAndThen(
+                toMap(e -> e.getKey(), e -> e.getValue().getInputMetrics()), Collections::unmodifiableMap));
     }
 
 }

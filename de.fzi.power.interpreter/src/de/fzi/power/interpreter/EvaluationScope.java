@@ -114,17 +114,17 @@ public final class EvaluationScope extends AbstractEvaluationScope {
             for (final MetricDescription desc : entry.getValue()) {
                 MetricDescription description = CollectionUtils.find(extendedMetricSet,
 
-                new Predicate<MetricDescription>() {
-                    @Override
-                    public boolean evaluate(MetricDescription arg0) {
-                        return InterpreterUtils.isRequiredMetricSatisfiedBy(desc, arg0);
-                    }
+                        new Predicate<MetricDescription>() {
+                            @Override
+                            public boolean evaluate(MetricDescription arg0) {
+                                return InterpreterUtils.isRequiredMetricSatisfiedBy(desc, arg0);
+                            }
 
-                });
+                        });
 
                 if (description == null) {
-                    throw new IllegalArgumentException("No data source available for processing resource "
-                            + entry.getKey() + " for the metric: " + desc.getName());
+                    throw new IllegalArgumentException("No data source available for processing resource '"
+                            + entry.getKey().getId() + "' for the metric: " + desc.getName());
                 }
 
                 this.resourceMeasurements.get(entry.getKey())

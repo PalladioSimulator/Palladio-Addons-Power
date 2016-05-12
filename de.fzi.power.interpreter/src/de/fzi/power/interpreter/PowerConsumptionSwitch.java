@@ -4,9 +4,10 @@
 package de.fzi.power.interpreter;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import javax.measure.quantity.Power;
 
@@ -96,13 +97,12 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The power consumption evaluation result.
      */
     @Override
-    public Amount<Power> casePowerConsumingProvidingEntity(final PowerConsumingProvidingEntity providingConsumingEntity) {
+    public Amount<Power> casePowerConsumingProvidingEntity(
+            final PowerConsumingProvidingEntity providingConsumingEntity) {
         Collection<PowerConsumingEntity> consumingEntities = Objects.requireNonNull(providingConsumingEntity)
                 .getNestedPowerConsumingEntities();
-        Map<PowerConsumingEntity, Amount<Power>> consumers = new HashMap<>(consumingEntities.size());
-        for (PowerConsumingEntity consumingEntity : consumingEntities) {
-            consumers.put(consumingEntity, doSwitch(consumingEntity));
-        }
+        Map<PowerConsumingEntity, Amount<Power>> consumers = consumingEntities.stream()
+                .collect(Collectors.toMap(Function.identity(), this::doSwitch));
         return this.consumptionContext.evaluateDistributionPowerConsumption(providingConsumingEntity, consumers);
     }
 
@@ -159,7 +159,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
     public Amount<Power> casePowerConsumingResource(final PowerConsumingResource resource) {
         return this.consumptionContext.evaluateResourcePowerConsumption(resource);
     }
-    
+
     @Override
     public Amount<Power> caseStatefulPowerConsumingResource(final StatefulPowerConsumingResource resource) {
         return this.consumptionContext.evaluateStatefulResourcePowerConsumption(resource);
@@ -175,10 +175,7 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      */
     @Override
     public Amount<Power> casePowerInfrastructureRepository(final PowerInfrastructureRepository piModel) {
-        Amount<Power> sum = PowerModelConstants.ZERO_POWER;
-        for (PowerProvidingEntity entity : piModel.getContainedPowerProvidingEntities()) {
-            sum = sum.plus(this.casePowerProvidingEntity(entity));
-        }
-        return sum;
+        return Objects.requireNonNull(piModel).getContainedPowerProvidingEntities().stream()
+                .map(this::casePowerProvidingEntity).reduce(PowerModelConstants.ZERO_POWER, Amount::plus);
     }
 }
