@@ -1,4 +1,4 @@
-package de.fz.power.interpreter.calculators.energy.tests;
+package de.fzi.power.interpreter.calculators.energy.tests;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

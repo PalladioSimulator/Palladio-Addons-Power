@@ -1,4 +1,4 @@
-package de.fz.power.interpreter.calculators.energy.tests;
+package de.fzi.power.interpreter.calculators.energy.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

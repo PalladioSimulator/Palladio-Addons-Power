@@ -1,4 +1,4 @@
-package de.fz.power.interpreter.calculators.energy.tests;
+package de.fzi.power.interpreter.calculators.energy.tests;
 
 import org.junit.After;
 import org.junit.Before;
