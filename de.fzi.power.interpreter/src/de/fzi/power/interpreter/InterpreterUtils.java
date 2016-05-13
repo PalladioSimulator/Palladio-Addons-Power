@@ -7,10 +7,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.commons.emfutils.EMFLoadHelper;
 import org.palladiosimulator.edp2.datastream.IDataSource;
@@ -64,7 +66,10 @@ public final class InterpreterUtils {
                 // method
                 // in case no fragment is present
                 // this is the case if point is a ReconfigurationMeasuringPoint instance
-                return RESOURCEENV_SWITCH.doSwitch(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI()));
+                return RESOURCEENV_SWITCH.doSwitch(Optional.ofNullable(point.eResource())
+                		.map(Resource::getResourceSet)
+                		.map(rs -> EMFLoadHelper.loadAndResolveEObject(rs, resourceUri))
+                		.orElse(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI())));
             }
             return null;
         }
@@ -181,7 +186,10 @@ public final class InterpreterUtils {
                     // method
                     // in case no fragment is present
                     // this is the case if point is a ReconfigurationMeasuringPoint instance
-                    return this.infSwitch.doSwitch(EMFLoadHelper.loadAndResolveEObject(mp.getResourceURI()));
+                	
+                    return this.infSwitch.doSwitch(Optional.ofNullable(resourceSet)
+                    		.map(rs -> EMFLoadHelper.loadAndResolveEObject(resourceSet, resourceUri))
+                    		.orElseGet(() -> EMFLoadHelper.loadAndResolveEObject(mp.getResourceURI())));
                 }
                 return null;
             }
