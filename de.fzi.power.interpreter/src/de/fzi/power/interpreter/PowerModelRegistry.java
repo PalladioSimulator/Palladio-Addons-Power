@@ -6,6 +6,7 @@ import static java.util.stream.Collectors.toMap;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Set;
 
@@ -128,7 +129,8 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      */
     public Map<AbstractPowerConsumingResource, Set<MetricDescription>> getRequiredMetricsForRegisteredCalculators() {
         return this.calculatorsPerResource.entrySet().stream().collect(collectingAndThen(
-                toMap(e -> e.getKey(), e -> e.getValue().getInputMetrics()), Collections::unmodifiableMap));
+                toMap((Entry<AbstractPowerConsumingResource, IResourcePowerModelCalculator> e) -> e.getKey(), 
+                	  (Entry<AbstractPowerConsumingResource, IResourcePowerModelCalculator> e) -> e.getValue().getInputMetrics()), Collections::unmodifiableMap));
     }
 
 }
