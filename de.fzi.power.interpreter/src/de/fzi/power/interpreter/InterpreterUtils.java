@@ -69,7 +69,7 @@ public final class InterpreterUtils {
                 return RESOURCEENV_SWITCH.doSwitch(Optional.ofNullable(point.eResource())
                 		.map(Resource::getResourceSet)
                 		.map(rs -> EMFLoadHelper.loadAndResolveEObject(rs, resourceUri))
-                		.orElse(EMFLoadHelper.loadAndResolveEObject(point.getResourceURI())));
+                		.orElseGet(() -> EMFLoadHelper.loadAndResolveEObject(point.getResourceURI())));
             }
             return null;
         }
