@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Regression
+Bundle-SymbolicName: de.fzi.power.regression.r
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fzi.power.regression.r.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.rosuda.JRI;bundle-version="1.0.0",
+ org.apache.log4j,
+ org.vedantatree.expressionoasis;bundle-version="1.0.0",
+ org.jscience;bundle-version="4.3.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: de.fzi.power.regression.r,
+ de.fzi.power.regression.r.expressionoasis,
+ de.fzi.power.regression.r.io 
