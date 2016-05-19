@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EDP2 Regression Derivation
+Bundle-SymbolicName: de.fzi.power.regression
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.palladiosimulator.edp2;bundle-version="2.0.0",
+ edu.rit;bundle-version="1.0.0",
+ org.vedantatree.expressionoasis,
+ de.fzi.power;bundle-version="1.0.0";visibility:=reexport,
+ org.apache.commons.collections15,
+ org.palladiosimulator.edp2.datastream,
+ org.palladiosimulator.metricspec,
+ org.eclipse.ui;bundle-version="3.107.0",
+ org.palladiosimulator.measurementframework;bundle-version="1.0.0",
+ org.palladiosimulator.edp2.util,
+ org.apache.commons.math3,
+ org.apache.commons.lang3;bundle-version="3.1.0",
+ de.fzi.power.regression.r
+Export-Package: de.fzi.power.regression.edp2
