@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="de.fzi.power.regression.ui.category.Models"
+            defaultHandler="de.fzi.power.regression.ui.PowerModelExtractorHandler"
+            description="Extract Power Model from Measurements stored in EDP2"
+            id="de.fzi.power.regression.ui.commands.ExtractPowerModel"
+            name="Extract Power Model">
+      </command>
+      <category
+            id="de.fzi.power.regression.ui.category.Models"
+            name="Models">
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:de.fzi.power.binding.presentation.BindingEditorID?after=additions">
+         <command
+               commandId="de.fzi.power.regression.ui.commands.ExtractPowerModel"
+               label="Extract Power Model from EDP2"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
