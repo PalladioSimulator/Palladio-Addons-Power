@@ -3,18 +3,18 @@ package de.fzi.power.regression.r.io;
 import java.util.Vector;
 
 import org.apache.log4j.Logger;
-import org.rosuda.JRI.REXP;
-import org.rosuda.JRI.Rengine;
+import org.rosuda.REngine.REXP;
+import org.rosuda.REngine.REXPMismatchException;
+import org.rosuda.REngine.REngineException;
+import org.rosuda.REngine.Rserve.RConnection;
+import org.rosuda.REngine.Rserve.RserveException;
 
 public class RRegressionConnectionImpl implements RRegressionConnection {
     /** The logger used by this class. */
     private static final Logger LOGGER = Logger.getLogger(RRegressionConnectionImpl.class.getName());
 
-    /** The text console of the connected R engine. */
-    private static RTextConsole rConsole = new RTextConsole();
-
     /** The R engine that is used by this class. */
-    private static Rengine rengine = null;
+    private static RConnection rengine;
     /** Global connection to the R engine. */
     private static RRegressionConnectionImpl rConnection = null;
     
@@ -30,12 +30,22 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
 
 	@Override
 	public void assign(String name, int[] array) {
-		rengine.assign(name, array);
+		try {
+            rengine.assign(name, array);
+        } catch (REngineException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 	}
 
 	@Override
 	public void assign(String name, String[] array) {
-		rengine.assign(name, array);
+		try {
+            rengine.assign(name, array);
+        } catch (REngineException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 		
 	}
 	
@@ -48,17 +58,14 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
      */
 	@Override
     public void checkPackageAvailability(final String packageName) {
-        String previousMessage = getLastConsoleMessage();
-        rengine.eval("options(warn=-1)");
-        rengine.eval("library(" + packageName + ")");
-        String result = getLastConsoleMessage();
-        if (!previousMessage.equals(result) && !result.startsWith("In Sys.setlocale")) {
-            throw new IllegalArgumentException("Library \"" + packageName + "\" is not available. Please "
-                    + "install the \"" + packageName + "\" package in your R " + "installation.\n Error details: "
-                    + result + "\n" + "Possible Solution: \n"
-                    + "If you are using Windows Vista check if the package is "
-                    + "in the installation path of R and not in the user path."
-                    + "This can be achieved by executing the R command " + "\"library\".");
+        try {
+            rengine.eval("options(warn=-1)");
+            rengine.eval("library(" + packageName + ")");
+        } catch (RserveException e) {
+            LOGGER.error("Error while loading the library '" + packageName + "'. "
+                    + "Use 'install.packages('" + packageName
+                    + "');' to install the missing library.");;
+            throw new IllegalStateException(e);
         }
     }
 	
@@ -76,41 +83,17 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
         // prop.put("jri.ignore.ule", "yes");
         // System.setProperties(prop);
         System.setProperty("jri.ignore.ule", "yes");
-
-        // just making sure we have the right version of everything
+        
         try {
-            if (!Rengine.versionCheck()) {
-                long javaVersion = Rengine.getVersion();
-                long rniVersion = Rengine.rniGetVersion();
-                LOGGER.error("Creating R engine ** Version mismatch - Java files (version "
-                        + javaVersion + ") do not " + "match library version (version " + rniVersion + ").");
-                // return; // keep on trying to get a more detailed error message
-            }
-        } catch (UnsatisfiedLinkError ule) {
-            LOGGER.error(
-                    "Could not load the dynamic link libaries that are " + "necessary to connect the sensorframework "
-                            + " to R 2.12. The JRI provided with this package is "
-                            + "designed for R 2.12.0, check the detailed "
-                            + "error message if a version conflict may have occured."
-                            + "Ensure jri.dll is within the java.library.path "
-                            + "variable and R's bin directory is on the system " + "path. Details: java.library.path="
-                            + System.getProperty("java.library.path") + ";errorMessage=" + ule.getMessage());
-            return;
+            rengine = new RConnection();
+        } catch (RserveException e) {
+            LOGGER.error("Creating R engine was not successful. Reason: " + e.toString());
         }
-
-        // 1) we pass the arguments from the command line
-        // 2) we won't use the main loop at first, we'll start it later
-        // (that's the "false" as second argument)
-        // 3) the callbacks are implemented by the TextConsole class
-        // above
-        rengine = new Rengine(new String[] {
-                "--vanilla", "--slave"
-        }, false, rConsole);
 
         // the engine creates R is a new thread, so we should wait until
         // it's ready
 
-        if (!rengine.waitForR()) {
+        if (!rengine.isConnected()) {
             LOGGER.error(
                             "Creating R engine ** Waiting for the R engine to come up "
                                     + "failed. Please check the R-output on the console for more details, as they are written to System.out and System.err");
@@ -119,7 +102,11 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
         }
 
         LOGGER.info("Connection to R established " + "successfully.");
-        prepareEnvironment();
+        try {
+            prepareEnvironment();
+        } catch (RserveException | REXPMismatchException e) {
+            LOGGER.error("Error while setting up environment. Reason: " + e.toString());
+        }
         checkPackageAvailability();
     }
     
@@ -164,8 +151,10 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
     /**
      * This method is used to prepare the R environment. Additionally, Information about the R
      * environment is gathered and logged with level debug.
+     * @throws RserveException 
+     * @throws REXPMismatchException 
      */
-    private void prepareEnvironment() {
+    private void prepareEnvironment() throws RserveException, REXPMismatchException {
         rengine.eval("Sys.setlocale(\"LC_ALL\", \"German_Germany.1252\")");
         rengine.eval("Sys.setlocale(\"LC_NUMERIC\", \"C\")");
         rengine.eval("rUser <- chartr(\"\\\\\", \"/\", " + "Sys.getenv(\"R_USER\"))");
@@ -178,14 +167,14 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
 
         REXP envContent = rengine.eval("Sys.getenv()");
         REXP envNames = rengine.eval("names(s <- Sys.getenv())");
-        String[] sEnvContent = envContent.asStringArray();
-        String[] sEnvNames = envNames.asStringArray();
+        String[] sEnvContent = envContent.asStrings();
+        String[] sEnvNames = envNames.asStrings();
         String locale = "";
         for (int number = 0; number < sEnvContent.length; number++) {
             locale += sEnvNames[number] + " = " + sEnvContent[number] + "\n";
         }
         REXP locales = rengine.eval("Sys.getlocale()");
-        String[] sLocales = locales.asStringArray();
+        String[] sLocales = locales.asStrings();
         locale += "\nLocalization information:\n";
         for (int number = 0; number < sLocales.length; number++) {
             locale += sLocales[number] + "\n";
@@ -210,11 +199,15 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
 
         String[] commands = rCommands.split("\n");
         String result = "";
-        REXP resultExp;
+        REXP resultExp = null;
         Vector<REXP> resultExpArray = new Vector<REXP>();
 
         for (String command : commands) {
-            resultExp = rengine.eval(command);
+            try {
+                resultExp = rengine.eval(command);
+            } catch (RserveException e) {
+                LOGGER.error("Error while evaluating " + command + ". Cause: " + e.toString());
+            }
             if (resultExp != null) {
                 result += resultExp.toString() + "\n";
                 resultExpArray.add(resultExp);
@@ -236,24 +229,16 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
     /*
      * (non-Javadoc)
      * 
-     * @see de.uka.ipd.sdq.sensorframework.visualisation.rvisualisation.utils.IRConnection#
-     * getLastConsoleMessage()
-     */
-    @Override
-    public String getLastConsoleMessage() {
-        return rConsole.getLastMessage();
-
-    }
-    
-    /*
-     * (non-Javadoc)
-     * 
      * @see
      * de.uka.ipd.sdq.sensorframework.visualisation.rvisualisation.utils.IRConnection#assign(java
      * .lang.String, double[])
      */
     @Override
     public void assign(final String name, final double[] array) {
-        rengine.assign(name, array);
+        try {
+            rengine.assign(name, array);
+        } catch (REngineException e) {
+            LOGGER.error("Error while assigning " + array + " to " + "name. Cause: " + e.toString());;
+        }
     }
 }

@@ -1,6 +1,6 @@
 package de.fzi.power.regression.r.io;
 
-public interface RRegressionConnection extends RConnection {
+public interface RRegressionConnection extends IRConnection {
 	
     /**
      * Stores an array in a R variable.

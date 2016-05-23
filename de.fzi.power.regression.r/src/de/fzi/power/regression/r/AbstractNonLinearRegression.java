@@ -11,11 +11,11 @@ import java.util.Map;
 import java.util.Vector;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Power;
 import javax.measure.quantity.Quantity;
 
-import org.jscience.physics.amount.Amount;
-import org.rosuda.JRI.REXP;
+import org.apache.log4j.Logger;
+import org.rosuda.REngine.REXP;
+import org.rosuda.REngine.REXPMismatchException;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import org.vedantatree.expressionoasis.expressions.IdentifierExpression;
@@ -33,7 +33,7 @@ import de.fzi.power.regression.r.expressionoasis.ExportTriple;
 import de.fzi.power.regression.r.expressionoasis.ExportTripleProvider;
 import de.fzi.power.regression.r.expressionoasis.ExportVisitor;
 import de.fzi.power.regression.r.expressionoasis.SimpleTriple;
-import de.fzi.power.regression.r.io.RConnection;
+import de.fzi.power.regression.r.io.IRConnection;
 import de.fzi.power.regression.r.io.RRegressionConnection;
 import de.fzi.power.regression.r.io.RRegressionConnectionImpl;
 import de.fzi.power.regression.r.io.RUtils;
@@ -56,6 +56,8 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
     private List<VariableMeasurements> measurements;
     private List<ConstantModelParameter<?, Q>> constants;
     private TargetMeasurements targetMetric;
+    
+    private static final Logger LOGGER = Logger.getLogger(AbstractNonLinearRegression.class.getName());
     
     public AbstractNonLinearRegression(Expression expression, List<VariableMeasurements> measurements, List<ConstantModelParameter<?, Q>> constants, TargetMeasurements targetMetric) {
         this.expression = expression;
@@ -100,13 +102,17 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
         String command = commandString.toString();
         
         Vector<REXP> rawResults = rConnection.execute(R_TARGET_NAME + " " + R_ASSIGNMENT_OPERATOR + command);        
-        String oldMessage = rConnection.getLastConsoleMessage(); 
         rawResults = rConnection.execute(buildReadResultsCommand(R_TARGET_NAME));
-        if (rawResults.isEmpty() && rConnection.getLastConsoleMessage() != "" && !rConnection.getLastConsoleMessage().equals(oldMessage))
-            throw new RuntimeException("RCommand failed: " + rConnection.getLastConsoleMessage());
         
-        double[] values = rawResults.get(0).asDoubleArray();
-        String[] names = rawResults.get(1).asStringArray();
+        double[] values = null;
+        String[] names = null;
+        try {
+            values = rawResults.get(0).asDoubles();
+            names = rawResults.get(1).asStrings();
+        } catch (REXPMismatchException e) {
+            LOGGER.error("Error converting regression results: " + e.toString());
+        }
+
         
         List<DoubleModelParameter<Q>> modelParameters = new ArrayList<DoubleModelParameter<Q>>();
         for (int i = 0; i < values.length; i++) {
@@ -185,8 +191,7 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
                     return new SimpleTriple( 
                             ((NumericExpression)expression).getValue().getValue().toString(), "", "");
                 } catch (ExpressionEngineException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    LOGGER.error("Could not instantiate expression: " + e.toString());
                 }
                 return null; //Wird nie aufgerufen, da getValue an dieser Stelle NIE eine ExpressionEngineException werfen wird
             }

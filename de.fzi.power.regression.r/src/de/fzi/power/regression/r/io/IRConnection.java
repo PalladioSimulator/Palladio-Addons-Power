@@ -3,7 +3,7 @@ package de.fzi.power.regression.r.io;
 
 import java.util.Vector;
 
-import org.rosuda.JRI.REXP;
+import org.rosuda.REngine.REXP;
 
 /**
  * Encapsulate the access to the R engine. Is responsible for the initialization of the R engine and
@@ -12,7 +12,7 @@ import org.rosuda.JRI.REXP;
  * @author groenda
  * @author strittmatter
  */
-public interface RConnection {
+public interface IRConnection {
 
     /**
      * Executes the command(s) in R.
@@ -32,9 +32,4 @@ public interface RConnection {
      *            Array to store in an R variable.
      */
     public abstract void assign(String name, double[] array);
-
-    /**
-     * @return the last message on the console of the connected R engine.
-     */
-    public abstract String getLastConsoleMessage();
 }
