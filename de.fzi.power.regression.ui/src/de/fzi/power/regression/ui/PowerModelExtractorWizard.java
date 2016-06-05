@@ -1,19 +1,18 @@
 package de.fzi.power.regression.ui;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-import org.eclipse.jface.dialogs.IDialogSettings;
-import org.eclipse.jface.wizard.IWizard;
-import org.eclipse.jface.wizard.IWizardContainer;
-import org.eclipse.jface.wizard.IWizardPage;
+import javax.measure.quantity.Power;
+
 import org.eclipse.jface.wizard.Wizard;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.widgets.Composite;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 
+import de.fzi.power.binding.FixedFactorValue;
 import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.regression.r.DoubleModelParameter;
 
 public class PowerModelExtractorWizard extends Wizard {
 
@@ -23,7 +22,7 @@ public class PowerModelExtractorWizard extends Wizard {
 
     public PowerModelExtractorWizard(ResourcePowerBinding resourcePowerBinding, Repositories repositories) {
         this.resourcePowerBinding = resourcePowerBinding;
-        this.runSelectionPage = new ExperimentRunSelectionPage(repositories, this.resourcePowerBinding);
+        this.runSelectionPage = new ExperimentRunSelectionPage(repositories);
         this.resultsPage = new ResultingPowerModelPage(runSelectionPage, this.resourcePowerBinding);
         addPage(runSelectionPage);
         addPage(resultsPage);
@@ -31,11 +30,23 @@ public class PowerModelExtractorWizard extends Wizard {
 
     @Override
     public boolean performFinish() {
-        return Arrays.stream(this.getPages()).allMatch(p -> p.isPageComplete());
+        List<DoubleModelParameter<Power>> params = this.resultsPage.getParams();
+        for(DoubleModelParameter<Power> curParam : params) {
+            FixedFactorValue matchingFactorValue = resourcePowerBinding.getFixedFactorValues()
+                    .stream().filter(p -> p.getBoundFactor().getName()
+                            .equals(curParam.getName())).findAny().get();
+            matchingFactorValue.setValue(curParam.getValue());
+        }
+        try {
+            resourcePowerBinding.eResource().save(Collections.EMPTY_MAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
     
-    public ExperimentGroup getSelectedExperimentGroup() {
-        return runSelectionPage.getSelectedExperimentGroup();
+    @Override
+    public boolean canFinish() {
+        return Arrays.stream(this.getPages()).allMatch(p -> p.isPageComplete());
     }
-
 }

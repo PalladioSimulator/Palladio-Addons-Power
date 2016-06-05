@@ -14,4 +14,6 @@ Require-Bundle: de.fzi.power.regression;bundle-version="1.0.0",
  org.palladiosimulator.edp2.ui,
  org.eclipse.ui;bundle-version="3.107.0",
  de.fzi.power.regression.r,
- org.eclipse.emf.edit.ui
+ org.eclipse.emf.edit.ui,
+ org.vedantatree.expressionoasis,
+ de.uka.ipd.sdq.workflow.launchconfig

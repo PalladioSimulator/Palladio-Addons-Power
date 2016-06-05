@@ -2,6 +2,7 @@ package de.fzi.power.regression.ui;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.measure.quantity.Power;
 
@@ -22,9 +23,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.Text;
 
 import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.regression.edp2.Edp2ModelConstructor;
 import de.fzi.power.regression.r.AbstractNonLinearRegression;
 import de.fzi.power.regression.r.DoubleModelParameter;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
@@ -40,6 +41,7 @@ public class ResultingPowerModelPage extends WizardPage {
     private Table table;
     private Composite container;
     private FormData parameterForm;
+    private List<DoubleModelParameter<Power>> params;
 
     public ResultingPowerModelPage(ExperimentRunSelectionPage runSelectionPage, ResourcePowerBinding resourcePowerBinding) {
         super("Confirm extracted Power Model");
@@ -99,20 +101,22 @@ public class ResultingPowerModelPage extends WizardPage {
     @Override
     public void setVisible(boolean visible) {
         super.setVisible(visible);  
-        if(visible) {            
+        if(visible) {
+            Edp2ModelConstructor constructor = new Edp2ModelConstructor(this.previousPage.getSelectedExperimentGroup());
+            AbstractNonLinearRegression<Power> model = constructor.constructPowerModel(this.powerModelBinding);
             
             String powerModelInfo = "Power Model: " + ((DeclarativePowerModelSpecification) this.powerModelBinding.getResourcePowerModelSpecification()).getFunctionalExpression();
             this.label = new Label(container, SWT.LEFT);
             FormData modelForm = new FormData();
             label.setLayoutData(modelForm);
             label.setText(powerModelInfo);
-            this.viewer.setInput(this.previousPage.getModelParameters());
+            this.params = model.deriveParameters();
+            this.viewer.setInput(this.params);
             TableColumn[] tableColumns = this.table.getColumns();
             for(int idx = 0; idx < tableColumns.length; idx++) {
                 tableColumns[idx].pack();
             }
             File plotFile;
-            AbstractNonLinearRegression<Power> model = this.previousPage.getPowerModel();
             try {
                 plotFile = model.generateVectorPlot(formData.width, formData.height, this.getShell().getFont().getFontData()[0].getHeight());
             } catch (IOException e) {
@@ -139,5 +143,9 @@ public class ResultingPowerModelPage extends WizardPage {
         column.setResizable(true);
         column.setMoveable(true);
         return viewerColumn;
+    }
+    
+    public List<DoubleModelParameter<Power>> getParams() {
+        return this.params;
     }
 }
