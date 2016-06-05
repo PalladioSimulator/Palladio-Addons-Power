@@ -25,7 +25,7 @@ public class RobustNonLinearSquaresRegression<Q extends Quantity> extends Abstra
     
     
     @Override
-    protected Iterable<String> getRequiredPackages() {
+    public Iterable<String> getRequiredPackages() {
         return Collections.singletonList(R_PACKAGE_NAME);
     }
 }

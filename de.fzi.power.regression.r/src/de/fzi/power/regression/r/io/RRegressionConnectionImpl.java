@@ -45,8 +45,7 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
         } catch (REngineException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-		
+        }		
 	}
 	
     /**

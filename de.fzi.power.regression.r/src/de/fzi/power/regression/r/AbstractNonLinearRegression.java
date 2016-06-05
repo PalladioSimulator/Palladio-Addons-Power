@@ -3,7 +3,6 @@ package de.fzi.power.regression.r;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -33,75 +32,35 @@ import de.fzi.power.regression.r.expressionoasis.ExportTriple;
 import de.fzi.power.regression.r.expressionoasis.ExportTripleProvider;
 import de.fzi.power.regression.r.expressionoasis.ExportVisitor;
 import de.fzi.power.regression.r.expressionoasis.SimpleTriple;
-import de.fzi.power.regression.r.io.IRConnection;
 import de.fzi.power.regression.r.io.RRegressionConnection;
 import de.fzi.power.regression.r.io.RRegressionConnectionImpl;
 import de.fzi.power.regression.r.io.RUtils;
 
 
-public abstract class AbstractNonLinearRegression<Q extends Quantity> {
+public abstract class AbstractNonLinearRegression<Q extends Quantity> extends AbstractRegression<Q> {
 
-    private static final String FIT_FNC = "fitFnc";
-    private static final String DATA_FRAME_NAME = "df";
-    private static final String R_REGRESSION_RELATIONHSIP_OPERATOR = "~";
-    private static final String R_PARAMETER_SEPARATOR = ", ";
-    private static final String R_START_VALUES_BLOCK = "start=list(";
-    private static final String R_START_VALUE_ASSIGNMENT_OPERATOR = "=";
-    private static final String R_BLOCK_END = ")";
-    private static final String R_COMMAND_POSTFIX = ", control=c(maxiter=1000));";
-    private static final String R_TARGET_NAME = "targetValue";
-    private static final String R_ASSIGNMENT_OPERATOR = " <- ";
     private static final String R_X_PARAM = "xParam";
     private Expression expression;
-    private List<VariableMeasurements> measurements;
     private List<ConstantModelParameter<?, Q>> constants;
-    private TargetMeasurements targetMetric;
+
     
     private static final Logger LOGGER = Logger.getLogger(AbstractNonLinearRegression.class.getName());
     
-    public AbstractNonLinearRegression(Expression expression, List<VariableMeasurements> measurements, List<ConstantModelParameter<?, Q>> constants, TargetMeasurements targetMetric) {
+    public AbstractNonLinearRegression(Expression expression, List<VariableMeasurements> measurements, List<ConstantModelParameter<?, Q>> constants, TargetMeasurements targetMetric) {        
+        super(targetMetric, measurements);
         this.expression = expression;
-        this.measurements = measurements;
-        this.constants = constants;
-        this.targetMetric = targetMetric;        
+        this.constants = constants;        
     }
     
-    public List<DoubleModelParameter<Q>> constructModel() {
+    public List<DoubleModelParameter<Q>> deriveParameters() {
+        constructModel();
+        List<DoubleModelParameter<Q>> modelParameters = getResults();
+        return modelParameters;
+    }
+
+    private List<DoubleModelParameter<Q>> getResults() {
         RRegressionConnection rConnection = RRegressionConnectionImpl.getRRegressionConnection();
-        ExportVisitor<String> visitor = new ExportVisitor<String>(createRCompatibleExportVisitorConfiguration());
-        RUtils.ensurePackageAvailability(getRequiredPackages(), rConnection);
-        expression.accept(visitor);
-        
-        String targetName = RUtils.sanitizeNameForR(targetMetric.getName());
-        rConnection.assign(targetName, targetMetric.getValues());
-        
-        StringBuilder dataFrameBuilder = new StringBuilder(DATA_FRAME_NAME + R_ASSIGNMENT_OPERATOR + "data.frame(");
-        
-        for(Measurements variableMeasurements : measurements) {
-            rConnection.assign(variableMeasurements.getName(), variableMeasurements.getValues());
-            dataFrameBuilder.append(variableMeasurements.getName() + R_PARAMETER_SEPARATOR);
-        }
-        
-        dataFrameBuilder.append(targetName);
-        
-        dataFrameBuilder.append(R_BLOCK_END);
-        
-        String dataFrameCommand = dataFrameBuilder.toString();
-        rConnection.execute(dataFrameCommand);
-        
-        StringBuilder commandString = new StringBuilder(getFunctionName());
-        commandString.append(RUtils.sanitizeNameForR(targetMetric.getName()));
-        commandString.append(R_REGRESSION_RELATIONHSIP_OPERATOR);
-        commandString.append(visitor.toString());
-        commandString.append(R_PARAMETER_SEPARATOR);
-        commandString.append("data = " + DATA_FRAME_NAME + R_PARAMETER_SEPARATOR);
-        commandString.append(R_START_VALUES_BLOCK);
-        appendRegressionStartValues(commandString, constants);
-        commandString.append(R_BLOCK_END);
-        commandString.append(R_COMMAND_POSTFIX);
-        String command = commandString.toString();
-        
-        Vector<REXP> rawResults = rConnection.execute(R_TARGET_NAME + " " + R_ASSIGNMENT_OPERATOR + command);        
+        Vector<REXP> rawResults;
         rawResults = rConnection.execute(buildReadResultsCommand(R_TARGET_NAME));
         
         double[] values = null;
@@ -112,7 +71,6 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
         } catch (REXPMismatchException e) {
             LOGGER.error("Error converting regression results: " + e.toString());
         }
-
         
         List<DoubleModelParameter<Q>> modelParameters = new ArrayList<DoubleModelParameter<Q>>();
         for (int i = 0; i < values.length; i++) {
@@ -124,9 +82,15 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
         return modelParameters;
     }
     
-    public abstract String getFunctionName();
+    @Override
+    public String getFormula() {
+        ExportVisitor<String> visitor = new ExportVisitor<String>(createRCompatibleExportVisitorConfiguration());
+        expression.accept(visitor);
+        return visitor.toString();
+    }
 
-    private void appendRegressionStartValues(StringBuilder commandString, List<ConstantModelParameter<?, Q>> constants) {
+    private String getRegressionStartValues(List<ConstantModelParameter<?, Q>> constants) {
+        StringBuilder commandString = new StringBuilder();
         Iterator<ConstantModelParameter<?, Q>> measurementsIt = constants.iterator();
         while (measurementsIt.hasNext()) {
             ConstantModelParameter<?, ? extends Quantity> next = measurementsIt.next();
@@ -134,9 +98,10 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
             commandString.append(R_START_VALUE_ASSIGNMENT_OPERATOR);
             commandString.append(next.getValue().getValue().toString());
             if(measurementsIt.hasNext()) {
-                commandString.append(R_PARAMETER_SEPARATOR);
+                commandString.append(R_PARAM_SEPARATOR);
             }
         }
+        return commandString.toString();
     }
 
     public Map<Class<?>, ExportTripleProvider<String>> createRCompatibleExportVisitorConfiguration() {
@@ -226,13 +191,17 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> {
         return rCommandBuilder.toString();
     }
 
-    protected Iterable<String> getRequiredPackages() {
+    public Iterable<String> getRequiredPackages() {
         return new ArrayList<String>(0);
     }
     
     private String buildReadResultsCommand(String resultName) {
         return "coef(" + resultName + ");\n"
                 + "names(coef(" + resultName + "));\n";
+    }
+    
+    protected String getAdditionalParameters() {
+        return R_ADDITIONAL_COMMAND + R_PARAM_SEPARATOR + R_START_VALUES_BLOCK + getRegressionStartValues(constants) + R_BLOCK_END;
     }
     
 }
