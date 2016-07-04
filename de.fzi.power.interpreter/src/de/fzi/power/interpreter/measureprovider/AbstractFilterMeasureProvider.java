@@ -50,7 +50,7 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
     /**
      * Gets the different metrics that can be used as input metrics.
      * 
-     * @return A {@link Collection} of singleton sets {@link MetricDescription}s, each of which
+     * @return A {@link Collection} of singleton sets of {@link MetricDescription}s, each of which
      *         containing an allowed input metric.
      */
     @Override
@@ -58,6 +58,12 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
         return getAllowedSourceMetrics().values().stream().map(Collections::singleton).collect(Collectors.toList());
     }
 
+    /**
+     * Gets the ids of the different metrics that can be used as input metrics.
+     * 
+     * @return A {@link Collection} of singleton sets of Strings, each of which containing an id of
+     *         an allowed input metric.
+     */
     @Override
     protected final Collection<Set<String>> getSourceMetricIds() {
         return getAllowedSourceMetrics().keySet().stream().map(Collections::singleton).collect(Collectors.toList());

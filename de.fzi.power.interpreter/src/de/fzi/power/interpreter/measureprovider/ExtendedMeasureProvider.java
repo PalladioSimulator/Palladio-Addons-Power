@@ -13,7 +13,7 @@ import de.fzi.power.interpreter.EvaluationScope;
 import de.fzi.power.interpreter.InterpreterUtils;
 
 /**
- * ExtendedMeasureProvider allow to extend the {@link EvaluationScope} with the capability to
+ * ExtendedMeasureProviders allow to extend the {@link EvaluationScope} with the capability to
  * automatically create additional metrics potentially from other existing metrics.
  */
 public abstract class ExtendedMeasureProvider implements IPropertyConfigurable {
@@ -24,9 +24,9 @@ public abstract class ExtendedMeasureProvider implements IPropertyConfigurable {
      * with different source metrics (or metric combinations) combinations to provide its results
      * this method returns a collection of sets.<br>
      * For instance, if a provider requires two metrics at the same time to provide its results, a
-     * collection with a set of these two should be returned. In contrast, if the provider need only
-     * either of the two, a collection of two singleton sets should be returned here. In case, no
-     * input metrics are required, the resulting collection should contain be empty or contain a
+     * collection with a set of these two should be returned. In contrast, if the provider needs
+     * only either of the two, a collection of two singleton sets should be returned here. In case,
+     * no input metrics are required, the resulting collection should contain empty or contain a
      * single, empty set.
      *
      * @return A {@link Collection} of the sets of required source metrics.
