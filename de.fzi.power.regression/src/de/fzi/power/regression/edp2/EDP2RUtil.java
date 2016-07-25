@@ -13,6 +13,7 @@ import javax.measure.quantity.Quantity;
 
 import org.apache.commons.math3.analysis.interpolation.LinearInterpolator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
+import org.apache.commons.math3.util.MathArrays;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
@@ -70,6 +71,7 @@ public class EDP2RUtil {
                targetVals[idx] = targetMeasure.doubleValue(targetMeasure.getUnit());
                idx++;
            }
+           MathArrays.sortInPlace(timeVals, targetVals);
            PolynomialSplineFunction interpolationFct = new LinearInterpolator().interpolate(timeVals, targetVals);
            double[] interpolatedTargetValues = new double[sortedPointsInTime.size()];
            Measurements curMeasurements;
@@ -80,8 +82,16 @@ public class EDP2RUtil {
            }
            idx = 0;
            for(Measure<Object,Quantity> curTime : sortedPointsInTime) {
-               // TODO unify unit handling so that all units have the same base unit.
-               interpolatedTargetValues[idx] = interpolationFct.value(curTime.doubleValue(curTime.getUnit()));
+               double curValue = curTime.doubleValue(curTime.getUnit());
+               // truncate
+               if(curValue < timeVals[0]) {
+                   interpolatedTargetValues[idx] = targetVals[0];
+               // upper bound    
+               } else if(curValue > timeVals[timeVals.length-1]) {
+                   interpolatedTargetValues[idx] = targetVals[targetVals.length-1];
+               } else {
+                   interpolatedTargetValues[idx] = interpolationFct.value(curValue);
+               }
                idx++;
            }
            resultingMeasurementsList.add(curMeasurements);

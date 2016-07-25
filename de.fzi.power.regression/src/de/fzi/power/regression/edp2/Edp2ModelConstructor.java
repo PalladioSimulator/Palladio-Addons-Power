@@ -140,7 +140,7 @@ public class Edp2ModelConstructor {
                         if(MetricSpecPackage.eINSTANCE.getNumericalBaseMetricDescription().isInstance(secondMetric)) {
                             NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) secondMetric;
                             for(MeasuredFactor curFactor : EcoreUtil.<MeasuredFactor>getObjectsByType(binding.getResourcePowerModelSpecification().getConsumptionFactors(), SpecificationPackage.eINSTANCE.getMeasuredFactor())) {
-                                if(baseMetric.getDefaultUnit().isCompatible(((NumericalBaseMetricDescription) curFactor.getMetricType()).getDefaultUnit())) {
+                                if(baseMetric.getId().equals(curFactor.getMetricType().getId())) {
                                     mappedFactors.put(dataSource, curFactor);
                                     continue;
                                 }
