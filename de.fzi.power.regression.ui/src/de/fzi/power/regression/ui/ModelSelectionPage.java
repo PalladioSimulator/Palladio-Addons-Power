@@ -30,6 +30,7 @@ public class ModelSelectionPage extends WizardPage {
     private Composite container;
     private Expression selectedExpression = null;
     private PowerModelRepositorySelectionPage repositorySelectionPage;
+    private boolean wasVisible = false;
 
     public ModelSelectionPage(ExperimentRunSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
         super("Select from extracted Power Models");
@@ -75,7 +76,7 @@ public class ModelSelectionPage extends WizardPage {
     @Override
     public void setVisible(boolean visible) {
         super.setVisible(visible);  
-        if(visible) {
+        if(visible && !wasVisible) {
             Edp2ModelConstructor constructor = new Edp2ModelConstructor(this.previousPage.getSelectedExperimentGroup());
             // TODO allow user to select repo. It can't be guaranteed that this collection is non-empty.
             PowerModelRepository modelRepo = this.repositorySelectionPage.getPowerModelRepository();
@@ -84,6 +85,7 @@ public class ModelSelectionPage extends WizardPage {
             viewer.setInput(eliteResults);
             container.layout();
         }
+        wasVisible = visible;
     }
     
     @Override

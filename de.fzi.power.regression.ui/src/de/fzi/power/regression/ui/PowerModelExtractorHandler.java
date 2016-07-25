@@ -1,9 +1,5 @@
 package de.fzi.power.regression.ui;
 
-import java.util.List;
-
-import javax.measure.quantity.Power;
-
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -17,13 +13,9 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.palladiosimulator.edp2.EDP2Plugin;
-import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.regression.edp2.Edp2ModelConstructor;
-import de.fzi.power.regression.r.AbstractNonLinearRegression;
-import de.fzi.power.regression.r.DoubleModelParameter;
 
 public class PowerModelExtractorHandler extends AbstractHandler {
 
