@@ -28,10 +28,17 @@ public class SymbolicRegression<Q extends Quantity> extends AbstractRegression<Q
     private static final String R_SIMPLIFY_PACKAGE = "Deriv";
     private static final String LAPPLY = "lapply(";
     private static final String R_ELITE = "elite";
+    private int numberOfSteps;
     
     public SymbolicRegression(List<VariableMeasurements> measurements,
             TargetMeasurements targetMetric) {
+        this(measurements, targetMetric, 4000);
+    }
+    
+    public SymbolicRegression(List<VariableMeasurements> measurements,
+            TargetMeasurements targetMetric, int numberOfSteps) {
         super(targetMetric, measurements);
+        this.numberOfSteps = numberOfSteps;
     }
 
     @Override
@@ -57,7 +64,7 @@ public class SymbolicRegression<Q extends Quantity> extends AbstractRegression<Q
     
     @Override
     protected String getAdditionalParameters() {
-        return "functionSet=arithmeticFunctionSet, stopCondition=makeStepsStopCondition(100)";
+        return "functionSet=arithmeticFunctionSet, stopCondition=makeStepsStopCondition("+ this.numberOfSteps + ")";
     }
     
     public List<Expression> getEliteResults() {
