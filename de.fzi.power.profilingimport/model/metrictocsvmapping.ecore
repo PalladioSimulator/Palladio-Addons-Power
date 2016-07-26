@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mapping" nsURI="http://www.fzi.de/ProfilingImport/1.0" nsPrefix="de.fzi.power.profilingimport">
+  <eClassifiers xsi:type="ecore:EClass" name="MappingRepository" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mappings" upperBound="-1"
+        eType="#//MetricToCsvMapping" containment="true" eOpposite="#//MetricToCsvMapping/repository"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="markerLog" lowerBound="1"
+        eType="#//MarkerLog" containment="true" eOpposite="#//MarkerLog/repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetricToCsvMapping" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="csvFileUri" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metric" lowerBound="1"
+        eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//MetricSetDescription"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//MappingRepository"
+        eOpposite="#//MappingRepository/mappings"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MarkerLog" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="csvFileUri" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//MappingRepository"
+        eOpposite="#//MappingRepository/markerLog"/>
+  </eClassifiers>
+</ecore:EPackage>
