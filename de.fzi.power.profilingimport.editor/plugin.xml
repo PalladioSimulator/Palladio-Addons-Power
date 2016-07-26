@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated metrictocsvmapping -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.fzi.power.profilingimport.mapping.presentation.MappingModelWizardID"
+            name="%_UI_MappingModelWizard_label"
+            class="de.fzi.power.profilingimport.mapping.presentation.MappingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MappingModelFile.gif">
+         <description>%_UI_MappingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated metrictocsvmapping -->
+      <editor
+            id="de.fzi.power.profilingimport.mapping.presentation.MappingEditorID"
+            name="%_UI_MappingEditor_label"
+            icon="icons/full/obj16/MappingModelFile.gif"
+            extensions="mapping"
+            class="de.fzi.power.profilingimport.mapping.presentation.MappingEditor"
+            contributorClass="de.fzi.power.profilingimport.mapping.presentation.MappingActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.fzi.power.profilingimport.mapping.presentation.MappingEditorID?after=additions">
+         <command
+               commandId="de.fzi.power.profilingimport.editor.importintoedp2"
+               label="Import Measurements into EDP2"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="de.fzi.power.profilingimport.editor.import"
+            name="Import">
+      </category>
+      <command
+            categoryId="de.fzi.power.profilingimport.editor.import"
+            defaultHandler="de.fzi.power.profilingimport.editor.wizard.ImportHandler"
+            id="de.fzi.power.profilingimport.editor.importintoedp2"
+            name="Import Measurements into EDP2">
+      </command>
+   </extension>
+
+</plugin>
