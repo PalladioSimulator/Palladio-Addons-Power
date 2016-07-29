@@ -141,6 +141,29 @@ public class MappingItemProviderAdapterFactory extends MappingAdapterFactory imp
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link de.fzi.power.profilingimport.mapping.ConversionDivisor} instances.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected ConversionDivisorItemProvider conversionDivisorItemProvider;
+
+    /**
+     * This creates an adapter for a {@link de.fzi.power.profilingimport.mapping.ConversionDivisor}.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Adapter createConversionDivisorAdapter() {
+        if (conversionDivisorItemProvider == null) {
+            conversionDivisorItemProvider = new ConversionDivisorItemProvider(this);
+        }
+
+        return conversionDivisorItemProvider;
+    }
+
+    /**
      * This returns the root adapter factory that contains this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -242,6 +265,7 @@ public class MappingItemProviderAdapterFactory extends MappingAdapterFactory imp
         if (mappingRepositoryItemProvider != null) mappingRepositoryItemProvider.dispose();
         if (metricToCsvMappingItemProvider != null) metricToCsvMappingItemProvider.dispose();
         if (markerLogItemProvider != null) markerLogItemProvider.dispose();
+        if (conversionDivisorItemProvider != null) conversionDivisorItemProvider.dispose();
     }
 
 }

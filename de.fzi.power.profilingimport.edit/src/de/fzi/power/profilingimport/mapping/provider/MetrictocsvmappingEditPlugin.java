@@ -8,6 +8,7 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.palladiosimulator.edp2.models.ExperimentData.provider.EDP2EditPlugin;
 import org.palladiosimulator.metricspec.provider.MetricSpecEditPlugin;
 
 /**
@@ -42,6 +43,7 @@ public final class MetrictocsvmappingEditPlugin extends EMFPlugin {
     public MetrictocsvmappingEditPlugin() {
         super
           (new ResourceLocator [] {
+             EDP2EditPlugin.INSTANCE,
              IdentifierEditPlugin.INSTANCE,
              MetricSpecEditPlugin.INSTANCE,
            });
