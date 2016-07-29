@@ -34,6 +34,19 @@
       </editor>
    </extension>
    <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="de.fzi.power.profilingimport.editor.importtoedp2"
+            name="Import">
+      </category>
+      <command
+            categoryId="de.fzi.power.profilingimport.editor.importtoedp2"
+            defaultHandler="de.fzi.power.profilingimport.editor.wizard.ImportHandler"
+            id="de.fzi.power.profilingimport.editor.importintoedp2"
+            name="Import Measurements into EDP2">
+      </command>
+   </extension>
+   <extension
          point="org.eclipse.ui.menus">
       <menuContribution
             allPopups="false"
@@ -45,18 +58,4 @@
          </command>
       </menuContribution>
    </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-      <category
-            id="de.fzi.power.profilingimport.editor.import"
-            name="Import">
-      </category>
-      <command
-            categoryId="de.fzi.power.profilingimport.editor.import"
-            defaultHandler="de.fzi.power.profilingimport.editor.wizard.ImportHandler"
-            id="de.fzi.power.profilingimport.editor.importintoedp2"
-            name="Import Measurements into EDP2">
-      </command>
-   </extension>
-
 </plugin>

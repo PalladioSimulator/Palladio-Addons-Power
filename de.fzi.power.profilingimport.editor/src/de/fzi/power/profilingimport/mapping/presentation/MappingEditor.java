@@ -160,6 +160,9 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import org.palladiosimulator.edp2.models.ExperimentData.provider.ExperimentDataItemProviderAdapterFactory;
+import org.palladiosimulator.edp2.models.Repository.provider.RepositoryItemProviderAdapterFactory;
+import org.palladiosimulator.edp2.models.measuringpoint.provider.MeasuringpointItemProviderAdapterFactory;
 import org.palladiosimulator.metricspec.provider.MetricSpecItemProviderAdapterFactory;
 
 
@@ -706,6 +709,9 @@ public class MappingEditor
 
         adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new MappingItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
+        adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new MetricSpecItemProviderAdapterFactory());
         adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
