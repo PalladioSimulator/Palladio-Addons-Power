@@ -2,6 +2,7 @@
  */
 package de.fzi.power.profilingimport.mapping.impl;
 
+import de.fzi.power.profilingimport.mapping.ConversionDivisor;
 import de.fzi.power.profilingimport.mapping.MappingFactory;
 import de.fzi.power.profilingimport.mapping.MappingPackage;
 import de.fzi.power.profilingimport.mapping.MappingRepository;
@@ -12,10 +13,17 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 
@@ -46,6 +54,13 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
      * @generated
      */
     private EClass markerLogEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass conversionDivisorEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -94,7 +109,9 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         isInited = true;
 
         // Initialize simple dependencies
-        MetricSpecPackage.eINSTANCE.eClass();
+        ExperimentDataPackage.eINSTANCE.eClass();
+        RepositoryPackage.eINSTANCE.eClass();
+        MeasuringpointPackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theMappingPackage.createPackageContents();
@@ -179,6 +196,33 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EReference getMetricToCsvMapping_ConversionDivisor() {
+        return (EReference)metricToCsvMappingEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMetricToCsvMapping_UnitString() {
+        return (EAttribute)metricToCsvMappingEClass.getEStructuralFeatures().get(4);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMetricToCsvMapping_Unit() {
+        return (EAttribute)metricToCsvMappingEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getMarkerLog() {
         return markerLogEClass;
     }
@@ -199,6 +243,42 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
      */
     public EReference getMarkerLog_Repository() {
         return (EReference)markerLogEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getConversionDivisor() {
+        return conversionDivisorEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getConversionDivisor_Value() {
+        return (EAttribute)conversionDivisorEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getConversionDivisor_ValueString() {
+        return (EAttribute)conversionDivisorEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getConversionDivisor_ResultingMetric() {
+        return (EReference)conversionDivisorEClass.getEStructuralFeatures().get(2);
     }
 
     /**
@@ -237,10 +317,18 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         createEAttribute(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__CSV_FILE_URI);
         createEReference(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__METRIC);
         createEReference(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__REPOSITORY);
+        createEReference(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__CONVERSION_DIVISOR);
+        createEAttribute(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__UNIT_STRING);
+        createEAttribute(metricToCsvMappingEClass, METRIC_TO_CSV_MAPPING__UNIT);
 
         markerLogEClass = createEClass(MARKER_LOG);
         createEAttribute(markerLogEClass, MARKER_LOG__CSV_FILE_URI);
         createEReference(markerLogEClass, MARKER_LOG__REPOSITORY);
+
+        conversionDivisorEClass = createEClass(CONVERSION_DIVISOR);
+        createEAttribute(conversionDivisorEClass, CONVERSION_DIVISOR__VALUE);
+        createEAttribute(conversionDivisorEClass, CONVERSION_DIVISOR__VALUE_STRING);
+        createEReference(conversionDivisorEClass, CONVERSION_DIVISOR__RESULTING_METRIC);
     }
 
     /**
@@ -269,6 +357,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         // Obtain other dependent packages
         IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
         MetricSpecPackage theMetricSpecPackage = (MetricSpecPackage)EPackage.Registry.INSTANCE.getEPackage(MetricSpecPackage.eNS_URI);
+        ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage)EPackage.Registry.INSTANCE.getEPackage(ExperimentDataPackage.eNS_URI);
 
         // Create type parameters
 
@@ -278,6 +367,7 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         mappingRepositoryEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         metricToCsvMappingEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
         markerLogEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        conversionDivisorEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
 
         // Initialize classes and features; add operations and parameters
         initEClass(mappingRepositoryEClass, MappingRepository.class, "MappingRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -288,10 +378,28 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         initEAttribute(getMetricToCsvMapping_CsvFileUri(), ecorePackage.getEString(), "csvFileUri", null, 1, 1, MetricToCsvMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMetricToCsvMapping_Metric(), theMetricSpecPackage.getMetricSetDescription(), null, "metric", null, 1, 1, MetricToCsvMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMetricToCsvMapping_Repository(), this.getMappingRepository(), this.getMappingRepository_Mappings(), "repository", null, 0, 1, MetricToCsvMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getMetricToCsvMapping_ConversionDivisor(), this.getConversionDivisor(), null, "conversionDivisor", null, 0, 1, MetricToCsvMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getMetricToCsvMapping_UnitString(), ecorePackage.getEString(), "unitString", null, 1, 1, MetricToCsvMapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        EGenericType g1 = createEGenericType(theMetricSpecPackage.getEJSUnit());
+        EGenericType g2 = createEGenericType();
+        g1.getETypeArguments().add(g2);
+        EGenericType g3 = createEGenericType(theMetricSpecPackage.getIJSQuantity());
+        g2.setEUpperBound(g3);
+        initEAttribute(getMetricToCsvMapping_Unit(), g1, "unit", null, 0, 1, MetricToCsvMapping.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
         initEClass(markerLogEClass, MarkerLog.class, "MarkerLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getMarkerLog_CsvFileUri(), ecorePackage.getEString(), "csvFileUri", null, 1, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMarkerLog_Repository(), this.getMappingRepository(), this.getMappingRepository_MarkerLog(), "repository", null, 0, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(conversionDivisorEClass, ConversionDivisor.class, "ConversionDivisor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        g1 = createEGenericType(theExperimentDataPackage.getEJSMeasure());
+        g2 = createEGenericType(ecorePackage.getEDoubleObject());
+        g1.getETypeArguments().add(g2);
+        g2 = createEGenericType(theMetricSpecPackage.getIJSQuantity());
+        g1.getETypeArguments().add(g2);
+        initEAttribute(getConversionDivisor_Value(), g1, "value", null, 1, 1, ConversionDivisor.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+        initEAttribute(getConversionDivisor_ValueString(), ecorePackage.getEString(), "valueString", null, 1, 1, ConversionDivisor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getConversionDivisor_ResultingMetric(), theMetricSpecPackage.getMetricSetDescription(), null, "resultingMetric", null, 1, 1, ConversionDivisor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         createResource(eNS_URI);

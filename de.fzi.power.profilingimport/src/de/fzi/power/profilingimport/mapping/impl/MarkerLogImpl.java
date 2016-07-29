@@ -9,6 +9,7 @@ import de.fzi.power.profilingimport.mapping.MarkerLog;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 

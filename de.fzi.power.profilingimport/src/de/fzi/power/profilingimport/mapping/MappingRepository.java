@@ -30,7 +30,7 @@ public interface MappingRepository extends Identifier {
      * It is bidirectional and its opposite is '{@link de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getRepository <em>Repository</em>}'.
      * <!-- begin-user-doc -->
      * <p>
-     * If the meaning of the '<em>Mappings</em>' reference list isn't clear,
+     * If the meaning of the '<em>Mappings</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->

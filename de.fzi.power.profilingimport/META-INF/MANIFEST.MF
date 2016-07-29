@@ -22,5 +22,6 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava;bundle-version="15.0.0",
  org.palladiosimulator.edp2.util,
  org.palladiosimulator.measurementframework,
- org.eclipse.ui.workbench
+ org.eclipse.ui.workbench,
+ org.palladiosimulator.pcm.edp2.measuringpoint;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

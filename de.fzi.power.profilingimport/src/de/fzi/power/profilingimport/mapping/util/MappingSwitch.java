@@ -89,6 +89,13 @@ public class MappingSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case MappingPackage.CONVERSION_DIVISOR: {
+                ConversionDivisor conversionDivisor = (ConversionDivisor)theEObject;
+                T result = caseConversionDivisor(conversionDivisor);
+                if (result == null) result = caseIdentifier(conversionDivisor);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             default: return defaultCase(theEObject);
         }
     }
@@ -135,6 +142,21 @@ public class MappingSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseMarkerLog(MarkerLog object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Conversion Divisor</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Conversion Divisor</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseConversionDivisor(ConversionDivisor object) {
         return null;
     }
 

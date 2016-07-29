@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
@@ -151,16 +150,40 @@ public interface MappingPackage extends EPackage {
     int METRIC_TO_CSV_MAPPING__REPOSITORY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
     /**
+     * The feature id for the '<em><b>Conversion Divisor</b></em>' containment reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METRIC_TO_CSV_MAPPING__CONVERSION_DIVISOR = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+
+    /**
+     * The feature id for the '<em><b>Unit String</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METRIC_TO_CSV_MAPPING__UNIT_STRING = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+
+    /**
+     * The feature id for the '<em><b>Unit</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int METRIC_TO_CSV_MAPPING__UNIT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
+
+    /**
      * The number of structural features of the '<em>Metric To Csv Mapping</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int METRIC_TO_CSV_MAPPING_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
-
-
-
+    int METRIC_TO_CSV_MAPPING_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 6;
 
     /**
      * The meta object id for the '{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl <em>Marker Log</em>}' class.
@@ -208,6 +231,60 @@ public interface MappingPackage extends EPackage {
      */
     int MARKER_LOG_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
+    /**
+     * The meta object id for the '{@link de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl <em>Conversion Divisor</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl
+     * @see de.fzi.power.profilingimport.mapping.impl.MappingPackageImpl#getConversionDivisor()
+     * @generated
+     */
+    int CONVERSION_DIVISOR = 3;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONVERSION_DIVISOR__ID = IdentifierPackage.IDENTIFIER__ID;
+
+    /**
+     * The feature id for the '<em><b>Value</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONVERSION_DIVISOR__VALUE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Value String</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONVERSION_DIVISOR__VALUE_STRING = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Resulting Metric</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONVERSION_DIVISOR__RESULTING_METRIC = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Conversion Divisor</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int CONVERSION_DIVISOR_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 
     /**
@@ -286,6 +363,39 @@ public interface MappingPackage extends EPackage {
     EReference getMetricToCsvMapping_Repository();
 
     /**
+     * Returns the meta object for the containment reference '{@link de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getConversionDivisor <em>Conversion Divisor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference '<em>Conversion Divisor</em>'.
+     * @see de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getConversionDivisor()
+     * @see #getMetricToCsvMapping()
+     * @generated
+     */
+    EReference getMetricToCsvMapping_ConversionDivisor();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getUnitString <em>Unit String</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Unit String</em>'.
+     * @see de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getUnitString()
+     * @see #getMetricToCsvMapping()
+     * @generated
+     */
+    EAttribute getMetricToCsvMapping_UnitString();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getUnit <em>Unit</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Unit</em>'.
+     * @see de.fzi.power.profilingimport.mapping.MetricToCsvMapping#getUnit()
+     * @see #getMetricToCsvMapping()
+     * @generated
+     */
+    EAttribute getMetricToCsvMapping_Unit();
+
+    /**
      * Returns the meta object for class '{@link de.fzi.power.profilingimport.mapping.MarkerLog <em>Marker Log</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -318,6 +428,49 @@ public interface MappingPackage extends EPackage {
     EReference getMarkerLog_Repository();
 
     /**
+     * Returns the meta object for class '{@link de.fzi.power.profilingimport.mapping.ConversionDivisor <em>Conversion Divisor</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Conversion Divisor</em>'.
+     * @see de.fzi.power.profilingimport.mapping.ConversionDivisor
+     * @generated
+     */
+    EClass getConversionDivisor();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.ConversionDivisor#getValue <em>Value</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value</em>'.
+     * @see de.fzi.power.profilingimport.mapping.ConversionDivisor#getValue()
+     * @see #getConversionDivisor()
+     * @generated
+     */
+    EAttribute getConversionDivisor_Value();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.ConversionDivisor#getValueString <em>Value String</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Value String</em>'.
+     * @see de.fzi.power.profilingimport.mapping.ConversionDivisor#getValueString()
+     * @see #getConversionDivisor()
+     * @generated
+     */
+    EAttribute getConversionDivisor_ValueString();
+
+    /**
+     * Returns the meta object for the reference '{@link de.fzi.power.profilingimport.mapping.ConversionDivisor#getResultingMetric <em>Resulting Metric</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Resulting Metric</em>'.
+     * @see de.fzi.power.profilingimport.mapping.ConversionDivisor#getResultingMetric()
+     * @see #getConversionDivisor()
+     * @generated
+     */
+    EReference getConversionDivisor_ResultingMetric();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -332,7 +485,6 @@ public interface MappingPackage extends EPackage {
      * <ul>
      *   <li>each class,</li>
      *   <li>each feature of each class,</li>
-     *   <li>each operation of each class,</li>
      *   <li>each enum,</li>
      *   <li>and each data type</li>
      * </ul>
@@ -401,6 +553,30 @@ public interface MappingPackage extends EPackage {
         EReference METRIC_TO_CSV_MAPPING__REPOSITORY = eINSTANCE.getMetricToCsvMapping_Repository();
 
         /**
+         * The meta object literal for the '<em><b>Conversion Divisor</b></em>' containment reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference METRIC_TO_CSV_MAPPING__CONVERSION_DIVISOR = eINSTANCE.getMetricToCsvMapping_ConversionDivisor();
+
+        /**
+         * The meta object literal for the '<em><b>Unit String</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute METRIC_TO_CSV_MAPPING__UNIT_STRING = eINSTANCE.getMetricToCsvMapping_UnitString();
+
+        /**
+         * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute METRIC_TO_CSV_MAPPING__UNIT = eINSTANCE.getMetricToCsvMapping_Unit();
+
+        /**
          * The meta object literal for the '{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl <em>Marker Log</em>}' class.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
@@ -425,6 +601,40 @@ public interface MappingPackage extends EPackage {
          * @generated
          */
         EReference MARKER_LOG__REPOSITORY = eINSTANCE.getMarkerLog_Repository();
+
+        /**
+         * The meta object literal for the '{@link de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl <em>Conversion Divisor</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl
+         * @see de.fzi.power.profilingimport.mapping.impl.MappingPackageImpl#getConversionDivisor()
+         * @generated
+         */
+        EClass CONVERSION_DIVISOR = eINSTANCE.getConversionDivisor();
+
+        /**
+         * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute CONVERSION_DIVISOR__VALUE = eINSTANCE.getConversionDivisor_Value();
+
+        /**
+         * The meta object literal for the '<em><b>Value String</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute CONVERSION_DIVISOR__VALUE_STRING = eINSTANCE.getConversionDivisor_ValueString();
+
+        /**
+         * The meta object literal for the '<em><b>Resulting Metric</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference CONVERSION_DIVISOR__RESULTING_METRIC = eINSTANCE.getConversionDivisor_ResultingMetric();
 
     }
 

@@ -2,6 +2,7 @@
  */
 package de.fzi.power.profilingimport.mapping.impl;
 
+import de.fzi.power.profilingimport.NonSILabels;
 import de.fzi.power.profilingimport.mapping.*;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,7 +24,7 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
      * Creates the default factory implementation.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     public static MappingFactory init() {
         try {
@@ -31,6 +32,7 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
             if (theMappingFactory != null) {
                 return theMappingFactory;
             }
+            NonSILabels.init();
         }
         catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
@@ -59,6 +61,7 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
             case MappingPackage.MAPPING_REPOSITORY: return (EObject)createMappingRepository();
             case MappingPackage.METRIC_TO_CSV_MAPPING: return (EObject)createMetricToCsvMapping();
             case MappingPackage.MARKER_LOG: return (EObject)createMarkerLog();
+            case MappingPackage.CONVERSION_DIVISOR: return (EObject)createConversionDivisor();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -92,6 +95,16 @@ public class MappingFactoryImpl extends EFactoryImpl implements MappingFactory {
     public MarkerLog createMarkerLog() {
         MarkerLogImpl markerLog = new MarkerLogImpl();
         return markerLog;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public ConversionDivisor createConversionDivisor() {
+        ConversionDivisorImpl conversionDivisor = new ConversionDivisorImpl();
+        return conversionDivisor;
     }
 
     /**

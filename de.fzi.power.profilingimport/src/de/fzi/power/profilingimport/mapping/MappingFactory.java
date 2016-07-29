@@ -49,6 +49,15 @@ public interface MappingFactory extends EFactory {
     MarkerLog createMarkerLog();
 
     /**
+     * Returns a new object of class '<em>Conversion Divisor</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Conversion Divisor</em>'.
+     * @generated
+     */
+    ConversionDivisor createConversionDivisor();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

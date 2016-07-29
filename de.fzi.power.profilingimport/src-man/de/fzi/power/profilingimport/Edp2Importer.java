@@ -10,11 +10,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.measure.Measure;
+import javax.measure.quantity.Quantity;
 import javax.measure.unit.SI;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataFactory;
@@ -97,15 +99,21 @@ public class Edp2Importer {
         run.setStartTime(new Date(minTimeStamp));
         run.setDuration(javax.measure.Measure.valueOf((maxTimeStamp-minTimeStamp)/1000d, SI.SECOND));
         for(Entry<MetricToCsvMapping, PeekingIterator<CSVRecord>> curEntry : metricsMap.entrySet()) {
-            final MetricSetDescription descr = curEntry.getKey().getMetric();
             final StringMeasuringPoint mPoint = MEASURING_POINT_FACTORY.createStringMeasuringPoint();
             mPoint.setMeasuringPoint(curLabel);
             mPoint.setMeasuringPointRepository(this.measuringPointRepo);
+            MetricToCsvMapping mapping = curEntry.getKey();
+            MetricSetDescription descr = null;
+            if(mapping.getConversionDivisor() != null) {
+                descr = mapping.getConversionDivisor().getResultingMetric();
+            } else {
+                descr = curEntry.getKey().getMetric();
+            }
             final MeasuringType mType = EXPERIMENT_DATA_FACTORY.createMeasuringType(mPoint, descr);
             mType.setExperimentGroup(group);
             experimentSetting.getMeasuringTypes().add(mType);
             PeekingIterator<CSVRecord> curIt = curEntry.getValue();
-            NumericalBaseMetricDescription metricDescription = (NumericalBaseMetricDescription) curEntry.getKey().getMetric().getSubsumedMetrics().get(1);
+            NumericalBaseMetricDescription metricDescription = (NumericalBaseMetricDescription) mapping.getMetric().getSubsumedMetrics().get(1);
             long curTime = 0;
             final Measurement measurement = EXPERIMENT_DATA_FACTORY.createMeasurement(mType);
             final MeasurementRange range = EXPERIMENT_DATA_FACTORY.createMeasurementRange(measurement);
@@ -124,8 +132,20 @@ public class Edp2Importer {
                 if(curTime > maxTimeStamp) {
                     break;
                 }
-                Measure<?,?> rawMeasure = javax.measure.Measure.valueOf(Double.parseDouble(curRecord.get(Constants.VALUE_LABEL)), metricDescription.getDefaultUnit());
-                final MeasuringValue m1 = new TupleMeasurement((MetricSetDescription) mType.getMetric(),
+                MetricSetDescription metric = null;
+                Measure<Double, ?> rawMeasure = javax.measure.Measure.valueOf(Double.parseDouble(curRecord.get(Constants.VALUE_LABEL)), mapping.getUnit());
+                if(mapping.getConversionDivisor() != null) {
+                    Measure<Double,Quantity> value = mapping.getConversionDivisor().getValue();
+                    Amount divAmount = Amount.valueOf(value.getValue(), value.getUnit());
+                    Amount rawAmount = Amount.valueOf(rawMeasure.getValue(), rawMeasure.getUnit());
+                    Amount tempResult = rawAmount.divide(divAmount);
+                    tempResult = tempResult.to(((NumericalBaseMetricDescription) mapping.getConversionDivisor().getResultingMetric().getSubsumedMetrics().get(1)).getDefaultUnit());
+                    rawMeasure = Measure.valueOf(tempResult.getEstimatedValue(), tempResult.getUnit());
+                    metric = mapping.getConversionDivisor().getResultingMetric();
+                } else {
+                    metric = (MetricSetDescription) mType.getMetric();
+                }
+                final MeasuringValue m1 = new TupleMeasurement(metric,
                         javax.measure.Measure.valueOf((curTime-minTimeStamp)/1000d, SI.SECOND), rawMeasure);
                 MeasurementsUtility.storeMeasurement(measurement, m1);
             }
