@@ -7,27 +7,25 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import de.fzi.power.binding.PowerBinding;
-import de.fzi.power.util.provider.EntityItemProvider;
-import de.fzi.power.util.provider.PowerEditPlugin;
+import de.fzi.power.binding.FixedFactorValueDimensionless;
 
 /**
- * This is the item provider adapter for a {@link de.fzi.power.binding.PowerBinding} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * This is the item provider adapter for a
+ * {@link de.fzi.power.binding.FixedFactorValueDimensionless} object. <!-- begin-user-doc --> <!--
+ * end-user-doc -->
  *
  * @generated
  */
-public class PowerBindingItemProvider extends EntityItemProvider {
+public class FixedFactorValueDimensionlessItemProvider extends AbstractFixedFactorValueItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      */
-    public PowerBindingItemProvider(final AdapterFactory adapterFactory) {
+    public FixedFactorValueDimensionlessItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -47,6 +45,17 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     }
 
     /**
+     * This returns FixedFactorValueDimensionless.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object getImage(final Object object) {
+        return this.overlayImage(object,
+                this.getResourceLocator().getImage("full/obj16/FixedFactorValueDimensionless"));
+    }
+
+    /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
      *
@@ -54,9 +63,9 @@ public class PowerBindingItemProvider extends EntityItemProvider {
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((PowerBinding) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_PowerBinding_type")
-                : this.getString("_UI_PowerBinding_type") + " " + label;
+        final String label = ((FixedFactorValueDimensionless) object).getId();
+        return label == null || label.length() == 0 ? this.getString("_UI_FixedFactorValueDimensionless_type")
+                : this.getString("_UI_FixedFactorValueDimensionless_type") + " " + label;
     }
 
     /**
@@ -81,17 +90,6 @@ public class PowerBindingItemProvider extends EntityItemProvider {
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
-    }
-
-    /**
-     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return PowerEditPlugin.INSTANCE;
     }
 
 }
