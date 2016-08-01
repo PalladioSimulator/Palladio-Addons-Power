@@ -47,4 +47,13 @@
     </consumptionFactors>
     <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_5v610GghEeWM8bUtzui0_Q" name="ConstantLoss"/>
   </powerModelSpecifications>
+  <powerModelSpecifications xsi:type="de.fzi.power:DeclarativePowerModelSpecification" id="_vSu1IBLOEeawp_3Ecfe76A" name="Polynomial BFEPM Paper" functionalExpression="a+b*Utilization+c*Utilization*Utilization+d*Utilization*Utilization*Utilization">
+    <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_zb0xcBLOEeawp_3Ecfe76A" name="a"/>
+    <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_0wdCEBLOEeawp_3Ecfe76A" name="b"/>
+    <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_1yJvoBLOEeawp_3Ecfe76A" name="c"/>
+    <consumptionFactors xsi:type="de.fzi.power:FixedFactor" id="_2PS-oBLOEeawp_3Ecfe76A" name="d"/>
+    <consumptionFactors xsi:type="de.fzi.power:MeasuredFactor" id="_2--vIRLOEeawp_3Ecfe76A" name="Utilization">
+      <metricType href="pathmap://METRIC_SPEC_MODELS/models/commonMetrics.metricspec#_QIb6cikUEeSuf8LV7cHLgA"/>
+    </consumptionFactors>
+  </powerModelSpecifications>
 </de.fzi.power:PowerModelRepository>
