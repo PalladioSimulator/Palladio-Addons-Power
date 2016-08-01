@@ -23,7 +23,7 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingResource;
@@ -38,8 +38,8 @@ public class LinearPowerModelCalculatorTest {
 
     private PowerConsumingResource resource;
     private ResourcePowerBinding binding;
-    private FixedFactorValue idleConsumption;
-    private FixedFactorValue maxConsumption;
+    private FixedFactorValuePower idleConsumption;
+    private FixedFactorValuePower maxConsumption;
     private LinearPowerModelCalculator calculatorUnderTest;
 
     @Before
@@ -49,12 +49,12 @@ public class LinearPowerModelCalculatorTest {
         this.binding.setResourcePowerModelSpecification(PowerModelConstants.LINEAR_POWER_MODEL);
         this.resource.setResourcePowerAssemblyContext(this.binding);
 
-        this.idleConsumption = BindingFactory.eINSTANCE.createFixedFactorValue();
+        this.idleConsumption = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.idleConsumption.setBoundFactor(PowerModelConstants.LINEAR_POWER_MODEL_MIN_CONSUMPTION);
         this.idleConsumption.setValue(Measure.valueOf(200.0, SI.WATT));
         this.binding.getFixedFactorValues().add(this.idleConsumption);
 
-        this.maxConsumption = BindingFactory.eINSTANCE.createFixedFactorValue();
+        this.maxConsumption = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.maxConsumption.setBoundFactor(PowerModelConstants.LINEAR_POWER_MODEL_MAX_CONSUMPTION);
         this.maxConsumption.setValue(Measure.valueOf(400.0, SI.WATT));
         binding.getFixedFactorValues().add(this.maxConsumption);
