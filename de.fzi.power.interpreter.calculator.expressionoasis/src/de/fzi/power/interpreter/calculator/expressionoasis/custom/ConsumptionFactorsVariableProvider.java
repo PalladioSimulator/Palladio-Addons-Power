@@ -10,10 +10,12 @@ import java.util.Map.Entry;
 import java.util.Objects;
 
 import javax.measure.Measure;
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.common.util.EList;
 import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
@@ -25,7 +27,10 @@ import org.vedantatree.expressionoasis.extensions.DefaultVariableProvider;
 import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.AbstractFixedFactorValue;
+import de.fzi.power.binding.FixedFactorValueDimensionless;
+import de.fzi.power.binding.FixedFactorValuePower;
+import de.fzi.power.binding.util.BindingSwitch;
 import de.fzi.power.interpreter.InterpreterUtils;
 import de.fzi.power.interpreter.calculator.expressionoasis.helper.ExpressionOasisHelper;
 import de.fzi.power.specification.ConsumptionFactor;
@@ -75,12 +80,12 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
     /**
      * Initializes a new instance of the {@link ConsumptionFactorsVariableProvider} class.
      * 
-     * @param fixedFactorValues
+     * @param eList
      *            An {@link Iterable} of {@link FixedFactorValue}s to be managed by this instance.
      * @param consumptionFactors
      *            An {@link Iterable} of {@link ConsumptionFactor}s to be managed by this instance.
      */
-    ConsumptionFactorsVariableProvider(Iterable<FixedFactorValue> fixedFactorValues,
+    ConsumptionFactorsVariableProvider(EList<AbstractFixedFactorValue<?>> eList,
             Iterable<ConsumptionFactor> consumptionFactors) {
         this.defaultUnits = new HashMap<>();
         this.measuredFactors = InterpreterUtils.createIdentifierMatchingHashMap();
@@ -89,9 +94,21 @@ final class ConsumptionFactorsVariableProvider extends DefaultVariableProvider {
         for (ConsumptionFactor consumptionFactor : consumptionFactors) {
             this.consumptionFactorSwitch.doSwitch(consumptionFactor);
         }
-        for (FixedFactorValue fixedFactorValue : fixedFactorValues) {
-            addVariable(fixedFactorValue.getBoundFactor().getName(),
-                    new ValueObject(fixedFactorValue.getValue().doubleValue(Power.UNIT), Type.DOUBLE));
+        for (AbstractFixedFactorValue<?> fixedFactorValue : eList) {
+            new BindingSwitch<Void>() {
+                public Void caseFixedFactorValueDimensionless(FixedFactorValueDimensionless factor) {
+                    Measure<Double, Dimensionless> measure = factor.getValue();
+                    addVariable(factor.getBoundFactor().getName(),
+                            new ValueObject(measure.doubleValue(measure.getUnit()), Type.DOUBLE));
+                    return null;
+                };
+                public Void caseFixedFactorValuePower(FixedFactorValuePower factor) {
+                    Measure<Double, Power> measure = factor.getValue();
+                    addVariable(factor.getBoundFactor().getName(),
+                            new ValueObject(measure.doubleValue(measure.getUnit()), Type.DOUBLE));
+                    return null;
+                };
+            }.doSwitch(fixedFactorValue);
         }
     }
 

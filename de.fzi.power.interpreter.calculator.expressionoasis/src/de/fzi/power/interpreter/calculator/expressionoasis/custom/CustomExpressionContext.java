@@ -7,6 +7,7 @@ import javax.measure.Measure;
 import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.common.util.EList;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.measurementframework.MeasuringValue;
@@ -16,7 +17,7 @@ import org.vedantatree.expressionoasis.ExpressionContext;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.interpreter.calculator.expressionoasis.ExpressionOasisDistributionPowerModelCalculator;
@@ -50,17 +51,17 @@ public class CustomExpressionContext extends ExpressionContext {
     /**
      * Initializes a new instance of the {@link CustomExpressionContext} class.
      * 
-     * @param fixedFactorValues
+     * @param eList
      *            An {@link Iterable} of {@link FixedFactorValue}s to be managed by this instance.
      * @param consumptionFactors
      *            An {@link Iterable} of {@link ConsumptionFactor}s to be managed by this instance.
      * @throws ExpressionEngineException
      *             In case something goes wrong in the super-constructor.
      */
-    public CustomExpressionContext(Iterable<FixedFactorValue> fixedFactorValues,
+    public CustomExpressionContext(EList<AbstractFixedFactorValue<?>> eList,
             Iterable<ConsumptionFactor> consumptionFactors) throws ExpressionEngineException {
         super();
-        this.variableProvider = new ConsumptionFactorsVariableProvider(fixedFactorValues, consumptionFactors);
+        this.variableProvider = new ConsumptionFactorsVariableProvider(eList, consumptionFactors);
         this.addVariableProvider(this.variableProvider);
         this.addFunctionProvider(new CustomFunctionProvider());
     }
