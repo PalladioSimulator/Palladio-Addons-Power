@@ -84,7 +84,7 @@ public class Edp2Importer {
                 experimentSetting = EXPERIMENT_DATA_FACTORY.createExperimentSetting(group, curLabel);
             }
             // Only add stable measurements. This should be made configurable via the wizard.
-            if(curLabel.endsWith(Constants.STABLE_SUFFIX)) {
+            if(curLabel.endsWith(Constants.MEASUREMENT_SUFFIX)) {
                 addResults(metricsMap, curLabel, minTimeStamp, maxTimeStamp, experimentSetting);
             }
             if(markerParser.hasNext()) {
@@ -133,21 +133,25 @@ public class Edp2Importer {
                     break;
                 }
                 MetricSetDescription metric = null;
-                Measure<Double, ?> rawMeasure = javax.measure.Measure.valueOf(Double.parseDouble(curRecord.get(Constants.VALUE_LABEL)), mapping.getUnit());
-                if(mapping.getConversionDivisor() != null) {
-                    Measure<Double,Quantity> value = mapping.getConversionDivisor().getValue();
-                    Amount divAmount = Amount.valueOf(value.getValue(), value.getUnit());
-                    Amount rawAmount = Amount.valueOf(rawMeasure.getValue(), rawMeasure.getUnit());
-                    Amount tempResult = rawAmount.divide(divAmount);
-                    tempResult = tempResult.to(((NumericalBaseMetricDescription) mapping.getConversionDivisor().getResultingMetric().getSubsumedMetrics().get(1)).getDefaultUnit());
-                    rawMeasure = Measure.valueOf(tempResult.getEstimatedValue(), tempResult.getUnit());
-                    metric = mapping.getConversionDivisor().getResultingMetric();
-                } else {
-                    metric = (MetricSetDescription) mType.getMetric();
+                Double curDoubleValue = Double.parseDouble(curRecord.get(Constants.VALUE_LABEL));
+                // We skip negative error measurements. E.g. LMG95 reports -2 on unsuccessful measurement.
+                if(curDoubleValue >= 0d) {
+                    Measure<Double, ?> rawMeasure = javax.measure.Measure.valueOf(curDoubleValue, mapping.getUnit());
+                    if(mapping.getConversionDivisor() != null) {
+                        Measure<Double,Quantity> value = mapping.getConversionDivisor().getValue();
+                        Amount divAmount = Amount.valueOf(value.getValue(), value.getUnit());
+                        Amount rawAmount = Amount.valueOf(rawMeasure.getValue(), rawMeasure.getUnit());
+                        Amount tempResult = rawAmount.divide(divAmount);
+                        tempResult = tempResult.to(((NumericalBaseMetricDescription) mapping.getConversionDivisor().getResultingMetric().getSubsumedMetrics().get(1)).getDefaultUnit());
+                        rawMeasure = Measure.valueOf(tempResult.getEstimatedValue(), tempResult.getUnit());
+                        metric = mapping.getConversionDivisor().getResultingMetric();
+                    } else {
+                        metric = (MetricSetDescription) mType.getMetric();
+                    }
+                    final MeasuringValue m1 = new TupleMeasurement(metric,
+                            javax.measure.Measure.valueOf((curTime-minTimeStamp)/1000d, SI.SECOND), rawMeasure);
+                    MeasurementsUtility.storeMeasurement(measurement, m1);
                 }
-                final MeasuringValue m1 = new TupleMeasurement(metric,
-                        javax.measure.Measure.valueOf((curTime-minTimeStamp)/1000d, SI.SECOND), rawMeasure);
-                MeasurementsUtility.storeMeasurement(measurement, m1);
             }
         }
     }
