@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.measure.quantity.Power;
+import javax.measure.quantity.Quantity;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
@@ -41,7 +42,7 @@ public class ResultingPowerModelPage extends WizardPage {
     private Table table;
     private Composite container;
     private FormData parameterForm;
-    private List<DoubleModelParameter<Power>> params;
+    private List<DoubleModelParameter<? extends Quantity>> params;
 
     public ResultingPowerModelPage(ExperimentRunSelectionPage runSelectionPage, ResourcePowerBinding resourcePowerBinding) {
         super("Confirm extracted Power Model");
@@ -145,7 +146,7 @@ public class ResultingPowerModelPage extends WizardPage {
         return viewerColumn;
     }
     
-    public List<DoubleModelParameter<Power>> getParams() {
+    public List<DoubleModelParameter<? extends Quantity>> getParams() {
         return this.params;
     }
 }

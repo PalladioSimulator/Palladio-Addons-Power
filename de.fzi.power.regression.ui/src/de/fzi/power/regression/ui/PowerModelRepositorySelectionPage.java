@@ -50,8 +50,8 @@ public class PowerModelRepositorySelectionPage extends WizardPage {
         container.setLayout(layout);
         setControl(container);
         this.textPowerModel = new Text(container, SWT.SINGLE | SWT.BORDER);
-        TabHelper.createFileInputSection(container, modifyListener, "Logical Data Centre Model", 
-                new String[] {"*.spec"}, this.textPowerModel, "Select the Logical Data Centre Model File", getShell(), "");
+        TabHelper.createFileInputSection(container, modifyListener, "Power Model Specification File", 
+                new String[] {"*.spec"}, this.textPowerModel, "Select the Power Model Specification File", getShell(), "");
     }
     
     public PowerModelRepository getPowerModelRepository() {

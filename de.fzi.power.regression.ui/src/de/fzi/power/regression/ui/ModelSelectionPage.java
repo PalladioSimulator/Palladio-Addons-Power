@@ -20,7 +20,9 @@ import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.regression.edp2.Edp2ModelConstructor;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import de.fzi.power.regression.r.SymbolicRegression;
+import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.PowerModelRepository;
+import de.fzi.power.specification.SpecificationFactory;
 
 public class ModelSelectionPage extends WizardPage {
 
@@ -31,6 +33,7 @@ public class ModelSelectionPage extends WizardPage {
     private Expression selectedExpression = null;
     private PowerModelRepositorySelectionPage repositorySelectionPage;
     private boolean wasVisible = false;
+    private DeclarativePowerModelSpecification spec;
 
     public ModelSelectionPage(ExperimentRunSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
         super("Select from extracted Power Models");
@@ -68,6 +71,8 @@ public class ModelSelectionPage extends WizardPage {
             @Override
             public void selectionChanged(SelectionChangedEvent event) {
                 selectedExpression = (Expression) ((StructuredSelection) event.getSelection()).getFirstElement();
+                spec.setFunctionalExpression(selectedExpression.toString());
+                ModelSelectionPage.this.getContainer().updateButtons();
             }
             
         });
@@ -80,7 +85,8 @@ public class ModelSelectionPage extends WizardPage {
             Edp2ModelConstructor constructor = new Edp2ModelConstructor(this.previousPage.getSelectedExperimentGroup());
             // TODO allow user to select repo. It can't be guaranteed that this collection is non-empty.
             PowerModelRepository modelRepo = this.repositorySelectionPage.getPowerModelRepository();
-            SymbolicRegression<Power> symbolicModel = constructor.constructSymbolicModel(repo, modelRepo);
+            this.spec = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
+            SymbolicRegression<Power> symbolicModel = constructor.constructSymbolicModel(repo, modelRepo, spec);
             List<Expression> eliteResults = symbolicModel.getEliteResults();
             viewer.setInput(eliteResults);
             container.layout();

@@ -6,11 +6,12 @@ import java.util.Collections;
 import java.util.List;
 
 import javax.measure.quantity.Power;
+import javax.measure.quantity.Quantity;
 
 import org.eclipse.jface.wizard.Wizard;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.regression.r.DoubleModelParameter;
 
@@ -30,9 +31,9 @@ public class PowerModelExtractorWizard extends Wizard {
 
     @Override
     public boolean performFinish() {
-        List<DoubleModelParameter<Power>> params = this.resultsPage.getParams();
-        for(DoubleModelParameter<Power> curParam : params) {
-            FixedFactorValue matchingFactorValue = resourcePowerBinding.getFixedFactorValues()
+        List<DoubleModelParameter<? extends Quantity>> params = this.resultsPage.getParams();
+        for(DoubleModelParameter<? extends Quantity> curParam : params) {
+            AbstractFixedFactorValue matchingFactorValue = resourcePowerBinding.getFixedFactorValues()
                     .stream().filter(p -> p.getBoundFactor().getName()
                             .equals(curParam.getName())).findAny().get();
             matchingFactorValue.setValue(curParam.getValue());

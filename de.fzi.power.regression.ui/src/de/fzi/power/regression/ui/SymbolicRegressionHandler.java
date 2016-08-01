@@ -24,7 +24,7 @@ public class SymbolicRegressionHandler extends AbstractHandler {
         final ISelection selection = HandlerUtil.getCurrentSelection(event);
         final TreeSelection treeSelection = (TreeSelection) selection;
         if(treeSelection.getFirstElement() instanceof PowerBindingRepository) {
-            PowerBindingRepository repo = (PowerBindingRepository) treeSelection.getFirstElement();
+            final PowerBindingRepository repo = (PowerBindingRepository) treeSelection.getFirstElement();
             Repositories repositories = EDP2Plugin.INSTANCE.getRepositories();
             Job job = new Job("Inferring symbolic power model from measurements in EDP2 repository") {
 
