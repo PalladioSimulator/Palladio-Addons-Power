@@ -10,42 +10,45 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
  *
  * <p>
  * The following features are supported:
- * <ul>
- *   <li>{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}</li>
- * </ul>
  * </p>
+ * <ul>
+ * <li>{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification
+ * <em>Resource Power Model Specification</em>}</li>
+ * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getResourcePowerBinding()
  * @model
  * @generated
  */
 public interface ResourcePowerBinding extends PowerFactorBinding {
-	/**
-	 * Returns the value of the '<em><b>Resource Power Model Specification</b></em>' reference. <!--
-	 * begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Resource Power Model Specification</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Resource Power Model Specification</em>' reference.
-	 * @see #setResourcePowerModelSpecification(ResourcePowerModelSpecification)
-	 * @see de.fzi.power.binding.BindingPackage#getResourcePowerBinding_ResourcePowerModelSpecification()
-	 * @model required="true"
-	 * @generated
-	 */
-	ResourcePowerModelSpecification getResourcePowerModelSpecification();
+    /**
+     * Returns the value of the '<em><b>Resource Power Model Specification</b></em>' reference. <!--
+     * begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Resource Power Model Specification</em>' reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Resource Power Model Specification</em>' reference.
+     * @see #setResourcePowerModelSpecification(ResourcePowerModelSpecification)
+     * @see de.fzi.power.binding.BindingPackage#getResourcePowerBinding_ResourcePowerModelSpecification()
+     * @model required="true"
+     * @generated
+     */
+    ResourcePowerModelSpecification getResourcePowerModelSpecification();
 
-	/**
-	 * Sets the value of the '{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Resource Power Model Specification</em>' reference.
-	 * @see #getResourcePowerModelSpecification()
-	 * @generated
-	 */
-	void setResourcePowerModelSpecification(
-			ResourcePowerModelSpecification value);
+    /**
+     * Sets the value of the '
+     * {@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification
+     * <em>Resource Power Model Specification</em>}' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @param value
+     *            the new value of the '<em>Resource Power Model Specification</em>' reference.
+     * @see #getResourcePowerModelSpecification()
+     * @generated
+     */
+    void setResourcePowerModelSpecification(ResourcePowerModelSpecification value);
 
 } // ResourcePowerBinding

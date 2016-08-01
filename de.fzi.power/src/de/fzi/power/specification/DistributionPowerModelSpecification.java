@@ -11,6 +11,5 @@ package de.fzi.power.specification;
  * @model
  * @generated
  */
-public interface DistributionPowerModelSpecification extends
-		PowerModelSpecification {
+public interface DistributionPowerModelSpecification extends PowerModelSpecification {
 } // DistributionPowerModelSpecification

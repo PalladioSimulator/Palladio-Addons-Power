@@ -7,6 +7,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Dimensionless" instanceClassName="javax.measure.quantity.Dimensionless"/>
   </eSubpackages>
   <eSubpackages name="specification" nsURI="http://www.fzi.de/Power/Specification/1.0"
       nsPrefix="de.fzi.power">
@@ -42,17 +43,10 @@
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="binding" nsURI="http://www.fzi.de/Power/Binding/1.0" nsPrefix="de.fzi.power">
-    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValue" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" lowerBound="1"
-          eType="#//specification/FixedFactor"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
-          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
-          <eTypeArguments eClassifier="#//util/Power"/>
-        </eGenericType>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerFactorBinding"
-          eOpposite="#//binding/PowerFactorBinding/fixedFactorValues"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValuePower">
+      <eGenericSuperTypes eClassifier="#//binding/AbstractFixedFactorValue">
+        <eTypeArguments eClassifier="#//util/Power"/>
+      </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerBindingRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerBindings" upperBound="-1"
@@ -83,7 +77,32 @@
     <eClassifiers xsi:type="ecore:EClass" name="PowerFactorBinding" abstract="true"
         eSuperTypes="#//binding/PowerBinding">
       <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues" upperBound="-1"
-          eType="#//binding/FixedFactorValue" containment="true" eOpposite="#//binding/FixedFactorValue/powerBinding"/>
+          containment="true" eOpposite="#//binding/AbstractFixedFactorValue/powerBinding">
+        <eGenericType eClassifier="#//binding/AbstractFixedFactorValue">
+          <eTypeArguments/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractFixedFactorValue" abstract="true"
+        eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eTypeParameters name="Q">
+        <eBounds eClassifier="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//IJSQuantity"/>
+      </eTypeParameters>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" lowerBound="1"
+          eType="#//specification/FixedFactor"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+          <eTypeArguments eTypeParameter="#//binding/AbstractFixedFactorValue/Q"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerBinding" eType="#//binding/PowerFactorBinding"
+          eOpposite="#//binding/PowerFactorBinding/fixedFactorValues"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValueDimensionless">
+      <eGenericSuperTypes eClassifier="#//binding/AbstractFixedFactorValue">
+        <eTypeArguments eClassifier="#//util/Dimensionless"/>
+      </eGenericSuperTypes>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="infrastructure" nsURI="http://www.fzi.de/Power/Infrastructure/1.0"
