@@ -10,7 +10,7 @@ import org.vedantatree.expressionoasis.expressions.Expression;
 public class RobustNonLinearSquaresRegression<Q extends Quantity> extends AbstractNonLinearRegression<Q> {
     
     public RobustNonLinearSquaresRegression(Expression expression, List<VariableMeasurements> measurements,
-            List<ConstantModelParameter<?, Q>> constants, TargetMeasurements targetMetric) {
+            List<ConstantModelParameter<?, ? extends Quantity>> constants, TargetMeasurements targetMetric) {
         super(expression, measurements, constants, targetMetric);
     }
 

@@ -30,7 +30,7 @@ public abstract class AbstractRegression<Q extends Quantity> {
     protected List<VariableMeasurements> measurements;
     
 
-    public AbstractRegression( TargetMeasurements targetMetric, List<VariableMeasurements> measurements) {
+    public AbstractRegression(TargetMeasurements targetMetric, List<VariableMeasurements> measurements) {
         this.targetMetric = targetMetric;
         this.measurements = measurements;
     }

@@ -41,24 +41,24 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> extends Ab
 
     private static final String R_X_PARAM = "xParam";
     private Expression expression;
-    private List<ConstantModelParameter<?, Q>> constants;
+    private List<ConstantModelParameter<?, ? extends Quantity>> constants;
 
     
     private static final Logger LOGGER = Logger.getLogger(AbstractNonLinearRegression.class.getName());
     
-    public AbstractNonLinearRegression(Expression expression, List<VariableMeasurements> measurements, List<ConstantModelParameter<?, Q>> constants, TargetMeasurements targetMetric) {        
+    public AbstractNonLinearRegression(Expression expression, List<VariableMeasurements> measurements, List<ConstantModelParameter<?, ? extends Quantity>> constants, TargetMeasurements targetMetric) {        
         super(targetMetric, measurements);
         this.expression = expression;
         this.constants = constants;        
     }
     
-    public List<DoubleModelParameter<Q>> deriveParameters() {
+    public List<DoubleModelParameter<? extends Quantity>> deriveParameters() {
         constructModel();
-        List<DoubleModelParameter<Q>> modelParameters = getResults();
+        List<DoubleModelParameter<? extends Quantity>> modelParameters = getResults();
         return modelParameters;
     }
 
-    private List<DoubleModelParameter<Q>> getResults() {
+    private List<DoubleModelParameter<? extends Quantity>> getResults() {
         RRegressionConnection rConnection = RRegressionConnectionImpl.getRRegressionConnection();
         Vector<REXP> rawResults;
         rawResults = rConnection.execute(buildReadResultsCommand(R_TARGET_NAME));
@@ -72,9 +72,9 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> extends Ab
             LOGGER.error("Error converting regression results: " + e.toString());
         }
         
-        List<DoubleModelParameter<Q>> modelParameters = new ArrayList<DoubleModelParameter<Q>>();
+        List<DoubleModelParameter<? extends Quantity>> modelParameters = new ArrayList<DoubleModelParameter<? extends Quantity>>();
         for (int i = 0; i < values.length; i++) {
-            modelParameters.add(new DoubleModelParameter<Q>(names[i], Measure.valueOf(values[i], constants.get(i).getUnit())));
+            modelParameters.add(new DoubleModelParameter(names[i], Measure.valueOf(values[i], constants.get(i).getUnit())));
         }
         
         if (values.length != names.length) throw new RuntimeException("The parameter name description and the values"
@@ -89,9 +89,9 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> extends Ab
         return visitor.toString();
     }
 
-    private String getRegressionStartValues(List<ConstantModelParameter<?, Q>> constants) {
+    private String getRegressionStartValues(List<ConstantModelParameter<?, ? extends Quantity>> constants) {
         StringBuilder commandString = new StringBuilder();
-        Iterator<ConstantModelParameter<?, Q>> measurementsIt = constants.iterator();
+        Iterator<ConstantModelParameter<?, ? extends Quantity>> measurementsIt = constants.iterator();
         while (measurementsIt.hasNext()) {
             ConstantModelParameter<?, ? extends Quantity> next = measurementsIt.next();
             commandString.append(RUtils.sanitizeNameForR(next.getName()));
