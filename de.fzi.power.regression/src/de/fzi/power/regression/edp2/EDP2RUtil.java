@@ -57,7 +57,7 @@ public class EDP2RUtil {
         
         List<Measurements> resultingMeasurementsList = new ArrayList<Measurements>();
 
-        measurements.forEach(m -> {
+        measurements.stream().filter(m -> mappedFactors.containsKey(m) || m.isCompatibleWith(MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE)).forEach(m -> {
            double[] timeVals = new double[m.getDataStream().size()];
            double[] targetVals = new double[timeVals.length];
            
@@ -74,10 +74,10 @@ public class EDP2RUtil {
            MathArrays.sortInPlace(timeVals, targetVals);
            PolynomialSplineFunction interpolationFct = new LinearInterpolator().interpolate(timeVals, targetVals);
            double[] interpolatedTargetValues = new double[sortedPointsInTime.size()];
-           Measurements curMeasurements;
+           Measurements curMeasurements = null;
            if(mappedFactors.containsKey(m)) {
                curMeasurements = new VariableMeasurements(mappedFactors.get(m).getName(), m.getDataStream().iterator().next().getMeasureForMetric(wantedMetric).getUnit(), interpolatedTargetValues);
-           } else {
+           } else if(m.isCompatibleWith(MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE)) {
                curMeasurements = new TargetMeasurements(TARGET_METRIC_NAME, m.getDataStream().iterator().next().getMeasureForMetric(targetMetric).getUnit(), interpolatedTargetValues);
            }
            idx = 0;

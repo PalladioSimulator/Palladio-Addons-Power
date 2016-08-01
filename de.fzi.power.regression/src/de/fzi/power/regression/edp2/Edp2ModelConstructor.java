@@ -12,7 +12,9 @@ import java.util.stream.Stream;
 
 import javax.measure.Measure;
 import javax.measure.converter.UnitConverter;
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
+import javax.measure.quantity.Quantity;
 
 import org.apache.commons.collections15.CollectionUtils;
 import org.apache.commons.collections15.Predicate;
@@ -39,10 +41,13 @@ import org.vedantatree.expressionoasis.ExpressionEngine;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
 import org.vedantatree.expressionoasis.expressions.Expression;
 
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValueDimensionless;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.binding.util.BindingSwitch;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -74,12 +79,25 @@ public class Edp2ModelConstructor {
             throw new IllegalArgumentException("Could not compile the expression \"" + expressionString + "\".", e);
         }
         
-        List<ConstantModelParameter<?, Power>> params = new ArrayList<ConstantModelParameter<?, Power>>();
-        for(FixedFactorValue value : binding.getFixedFactorValues()) {
-            Measure<Double, Power> curMeasure = value.getValue();
-            Amount<Power> valueAmount = Amount.valueOf(curMeasure.doubleValue(curMeasure.getUnit()), curMeasure.getUnit());
-            params.add(new DoubleModelParameter<Power>(value.getBoundFactor().getName(), 
-                    Measure.valueOf(valueAmount.getEstimatedValue(), valueAmount.getUnit())));
+        List<ConstantModelParameter<?, ? extends Quantity>> params = new ArrayList<ConstantModelParameter<?, ? extends Quantity>>();
+        for(AbstractFixedFactorValue<?> curValue : binding.getFixedFactorValues()) {
+            new BindingSwitch<Void>() {
+                public Void caseFixedFactorValuePower(FixedFactorValuePower value) {
+                    Measure<Double, Power> curMeasure = value.getValue();
+                    Amount<Power> valueAmount = Amount.valueOf(curMeasure.doubleValue(curMeasure.getUnit()), curMeasure.getUnit());
+                    params.add(new DoubleModelParameter<Power>(value.getBoundFactor().getName(), 
+                            Measure.valueOf(valueAmount.getEstimatedValue(), valueAmount.getUnit())));
+                    return null;
+                };
+                public Void caseFixedFactorValueDimensionless(FixedFactorValueDimensionless value) {
+                    Measure<Double, Dimensionless> curMeasure = value.getValue();
+                    Amount<Dimensionless> valueAmount = Amount.valueOf(curMeasure.doubleValue(curMeasure.getUnit()), curMeasure.getUnit());
+                    params.add(new DoubleModelParameter<Dimensionless>(value.getBoundFactor().getName(), 
+                            Measure.valueOf(valueAmount.getEstimatedValue(), valueAmount.getUnit())));
+                    return null;
+                };
+            }.doSwitch(curValue);
+
         }
         
         Pair<List<VariableMeasurements>, TargetMeasurements> resultPair = getMeasurementsFromRepository(binding);
@@ -87,11 +105,12 @@ public class Edp2ModelConstructor {
         return new RobustNonLinearSquaresRegression<Power>(expression, resultPair.getFirst(), params, resultPair.getSecond());
     }
     
-    public SymbolicRegression<Power> constructSymbolicModel(PowerBindingRepository repo, PowerModelRepository modelRepo) {
+    public SymbolicRegression<Power> constructSymbolicModel(PowerBindingRepository repo, PowerModelRepository modelRepo, DeclarativePowerModelSpecification spec) {
         List<NumericalBaseMetricDescription> availableMetrics = getAvailableMetrics().stream()
                 .filter(m -> !m.getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION.getId())).collect(Collectors.toList());
-        
-        DeclarativePowerModelSpecification spec = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
+        ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
+        binding.setResourcePowerModelSpecification(spec);
+        binding.setPowerBindingRepository(repo);
         for(NumericalBaseMetricDescription metric : availableMetrics) {
             MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
             factor.setMetricType(metric);
@@ -99,9 +118,6 @@ public class Edp2ModelConstructor {
             spec.getConsumptionFactors().add(factor);
         }
         spec.setPowermodelrepository(modelRepo);
-        ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
-        binding.setResourcePowerModelSpecification(spec);
-        binding.setPowerBindingRepository(repo);
         Pair<List<VariableMeasurements>, TargetMeasurements> resultPair = getMeasurementsFromRepository(binding);
         return new SymbolicRegression<Power>(resultPair.getFirst(), resultPair.getSecond());
     }
