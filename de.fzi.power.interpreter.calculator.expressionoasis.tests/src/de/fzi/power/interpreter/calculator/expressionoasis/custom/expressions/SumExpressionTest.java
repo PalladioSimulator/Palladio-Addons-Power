@@ -1,16 +1,18 @@
 package de.fzi.power.interpreter.calculator.expressionoasis.custom.expressions;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Power;
 import javax.measure.unit.SI;
 
-import org.hamcrest.CoreMatchers;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,7 +29,7 @@ import org.vedantatree.expressionoasis.extensions.DefaultVariableProvider;
 import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.interpreter.calculator.expressionoasis.custom.CustomExpressionContext;
 import de.fzi.power.specification.ConsumptionFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -49,7 +51,7 @@ public class SumExpressionTest {
         this.measuredFactor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
         this.measuredFactor.setName(MEASURED_FACTOR_NAME);
         this.measuredFactor.setMetricType(POWER_METRIC_DESCRIPTION);
-        Iterable<FixedFactorValue> fixedFactorValues = Collections.<FixedFactorValue> emptyList();
+        EList<AbstractFixedFactorValue<?>> fixedFactorValues = new BasicEList<>();
         List<ConsumptionFactor> consumptionFactors = new ArrayList<>();
         consumptionFactors.add(this.measuredFactor);
         this.context = new CustomExpressionContext(fixedFactorValues, consumptionFactors);
@@ -68,9 +70,9 @@ public class SumExpressionTest {
         DecimalExpression argument = new DecimalExpression();
         argument.initialize(this.context, new String("42"), true);
         this.expectedException.expect(ExpressionEngineException.class);
-        this.expectedException.expectCause(CoreMatchers.nullValue(Throwable.class));
-        this.expectedException.expectMessage(CoreMatchers
-                .startsWith("Operand is not supported by \"SUM\", for it does not contain any measured factor!"));
+        this.expectedException.expectCause(nullValue(Throwable.class));
+        this.expectedException.expectMessage(
+                startsWith("Operand is not supported by \"SUM\", for it does not contain any measured factor!"));
         // this should fail now
         new SumExpression().initialize(this.context, argument, true);
     }

@@ -1,5 +1,6 @@
 package de.fzi.power.interpreter.calculator.expressionoasis;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -12,7 +13,6 @@ import javax.measure.quantity.Power;
 import javax.measure.quantity.Quantity;
 import javax.measure.unit.NonSI;
 
-import org.hamcrest.CoreMatchers;
 import org.jscience.physics.amount.Amount;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +24,7 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingResource;
@@ -41,7 +41,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
     private ResourcePowerBinding binding;
     private MeasuredFactor measuredFactor;
     private FixedFactor fixedFactor;
-    private FixedFactorValue fixedFactorValue;
+    private FixedFactorValuePower fixedFactorValue;
     private ExpressionOasisResourcePowerModelCalculator calculatorUnderTest;
     private PowerConsumingResource powerConsumingResource;
 
@@ -67,7 +67,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
         this.binding.setName("ResourcePowerBinding");
         this.binding.setResourcePowerModelSpecification(this.powerModelSpecification);
 
-        this.fixedFactorValue = BindingFactory.eINSTANCE.createFixedFactorValue();
+        this.fixedFactorValue = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.fixedFactorValue.setBoundFactor(this.fixedFactor);
         this.fixedFactorValue.setPowerBinding(this.binding);
         this.binding.getFixedFactorValues().add(this.fixedFactorValue);
@@ -105,7 +105,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
         assertTrue(inputMetrics.size() == 1);
 
         MetricDescription inputMetric = inputMetrics.iterator().next();
-        assertThat(inputMetric, CoreMatchers.is(UTILIZATION_METRIC));
+        assertThat(inputMetric, is(UTILIZATION_METRIC));
     }
 
 }

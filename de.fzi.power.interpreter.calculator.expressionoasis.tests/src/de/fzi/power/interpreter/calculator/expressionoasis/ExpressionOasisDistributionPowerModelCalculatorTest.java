@@ -3,6 +3,7 @@ package de.fzi.power.interpreter.calculator.expressionoasis;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +11,6 @@ import javax.measure.Measure;
 import javax.measure.quantity.Power;
 import javax.measure.unit.SI;
 
-import org.apache.commons.collections15.map.HashedMap;
 import org.jscience.physics.amount.Amount;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
 import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.DistributionPowerBinding;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
@@ -39,7 +39,7 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
     private DistributionPowerBinding distributionBinding;
     private MeasuredFactor outletConsumption;
     private FixedFactor constantLoss;
-    private FixedFactorValue constantLossValue;
+    private FixedFactorValuePower constantLossValue;
 
     private List<PowerConsumingEntity> consumers;
 
@@ -66,7 +66,7 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
         this.constantLoss.setPowerModel(this.powerModelSpecification);
         this.powerModelSpecification.getConsumptionFactors().add(this.constantLoss);
 
-        this.constantLossValue = BindingFactory.eINSTANCE.createFixedFactorValue();
+        this.constantLossValue = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.constantLossValue.setBoundFactor(this.constantLoss);
         this.constantLossValue.setPowerBinding(this.distributionBinding);
         this.distributionBinding.getFixedFactorValues().add(this.constantLossValue);
@@ -94,7 +94,7 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
     public void testCalculate() {
         int individualConsumptionValue = 100;
         Amount<Power> individualConsumption = Amount.valueOf(individualConsumptionValue, Power.UNIT);
-        Map<PowerConsumingEntity, Amount<Power>> outletConsumptions = new HashedMap<>(CONSUMER_COUNT);
+        Map<PowerConsumingEntity, Amount<Power>> outletConsumptions = new HashMap<>(CONSUMER_COUNT);
         for (PowerConsumingEntity comsumer : this.consumers) {
             outletConsumptions.put(comsumer, individualConsumption);
         }

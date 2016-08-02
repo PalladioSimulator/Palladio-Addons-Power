@@ -4,9 +4,10 @@ import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,9 +20,7 @@ import org.vedantatree.expressionoasis.extensions.DefaultVariableProvider;
 import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.FixedFactorValue;
-import de.fzi.power.interpreter.calculator.expressionoasis.custom.CustomExpressionContext;
-import de.fzi.power.interpreter.calculator.expressionoasis.custom.MeasuredValuesCompositeValueObject;
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.specification.ConsumptionFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.SpecificationFactory;
@@ -40,7 +39,7 @@ public class CustomExpressionContextTest {
         this.measuredFactor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
         this.measuredFactor.setName(MEASURED_FACTOR_NAME);
         this.measuredFactor.setMetricType(POWER_METRIC_DESCRIPTION);
-        Iterable<FixedFactorValue> fixedFactorValues = Collections.<FixedFactorValue> emptyList();
+        EList<AbstractFixedFactorValue<?>> fixedFactorValues = new BasicEList<>();
         List<ConsumptionFactor> consumptionFactors = new ArrayList<>();
         consumptionFactors.add(this.measuredFactor);
         this.context = new CustomExpressionContext(fixedFactorValues, consumptionFactors);

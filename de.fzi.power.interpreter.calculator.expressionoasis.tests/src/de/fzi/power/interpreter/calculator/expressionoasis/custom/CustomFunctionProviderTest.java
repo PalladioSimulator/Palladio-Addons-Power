@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,7 +27,7 @@ import org.vedantatree.expressionoasis.grammar.Grammar;
 import org.vedantatree.expressionoasis.types.Type;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.specification.ConsumptionFactor;
 
 public class CustomFunctionProviderTest {
@@ -41,7 +43,7 @@ public class CustomFunctionProviderTest {
     @Before
     public void setUp() throws Exception {
         this.providerUnderTest = new CustomFunctionProvider();
-        Iterable<FixedFactorValue> fixedFactorValues = Collections.<FixedFactorValue> emptyList();
+        EList<AbstractFixedFactorValue<?>> fixedFactorValues = new BasicEList<>();
         Iterable<ConsumptionFactor> consumptionFactors = Collections.<ConsumptionFactor> emptyList();
         this.expressionContext = new CustomExpressionContext(fixedFactorValues, consumptionFactors);
     }
