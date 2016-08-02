@@ -5,7 +5,6 @@ import java.util.Objects;
 import org.eclipse.emf.ecore.EClass;
 
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.CalculatorFactory;
@@ -36,9 +35,9 @@ public class CalculatorFactoryImpl implements CalculatorFactory {
      *             In case {@code specification == null}.
      */
     @Override
-    public boolean isCompatibleWith(PowerModelSpecification specification) {
-        return Objects.requireNonNull(specification, "Given specification must not be null.")
-                .eClass() == COMPATIBLE_POWER_MODEL_SPEC_ECLASS;
+    public boolean isCompatibleWith(final PowerModelSpecification specification) {
+        return COMPATIBLE_POWER_MODEL_SPEC_ECLASS
+                .isInstance(Objects.requireNonNull(specification, "Given specification must not be null."));
     }
 
     @Override
@@ -48,14 +47,13 @@ public class CalculatorFactoryImpl implements CalculatorFactory {
 
     @Override
     public AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
-            PowerProvidingEntity forEntity) {
+            final PowerProvidingEntity forEntity) {
         return new ExpressionOasisDistributionPowerModelCalculator(
                 Objects.requireNonNull(forEntity, "Given PowerProvidingEntity must not be null."));
     }
 
     @Override
-    public IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(
-            final ResourcePowerBinding binding) {
+    public IResourcePowerModelCalculator instantiateResourcePowerModelCalculator(final ResourcePowerBinding binding) {
         return new ExpressionOasisResourcePowerModelCalculator(
                 Objects.requireNonNull(binding, "Given PowerConsumingResource must not be null."));
     }
