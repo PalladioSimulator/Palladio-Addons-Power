@@ -3,5 +3,6 @@
     <cq:property key="pass" value="anonymous"/>
     <cq:property key="user" value="anonymous"/>
     <cq:advisorNode namePattern="^de\.fzi\.power.*" sourceLevel="REQUIRE" useWorkspace="false"/>
+    <cq:advisorNode namePattern="^org\.vedantatree\.expressionoasis.*" sourceLevel="REQUIRE" useWorkspace="false"/>
     <cq:advisorNode namePattern=".*" sourceLevel="REJECT"/>
 </cq:componentQuery>
