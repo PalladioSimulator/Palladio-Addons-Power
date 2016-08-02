@@ -2,12 +2,14 @@
  */
 package de.fzi.power.binding.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -15,6 +17,10 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.fzi.power.binding.AbstractFixedFactorValue;
 import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.binding.util.BindingSwitch;
+import de.fzi.power.specification.FixedFactor;
+import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.util.provider.PowerEditPlugin;
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProvider;
 
@@ -137,5 +143,43 @@ public class AbstractFixedFactorValueItemProvider extends IdentifierItemProvider
     public ResourceLocator getResourceLocator() {
         return PowerEditPlugin.INSTANCE;
     }
+    
+    /**
+     * @generated NOT
+     */
+    @Override
+    protected ItemPropertyDescriptor createItemPropertyDescriptor(final AdapterFactory adapterFactory,
+            final ResourceLocator resourceLocator, final String displayName, final String description,
+            final org.eclipse.emf.ecore.EStructuralFeature feature, final boolean isSettable, final boolean multiLine,
+            final boolean sortChoices, final Object staticImage, final String category, final String[] filterFlags) {
+        return new ItemPropertyDescriptor(adapterFactory, resourceLocator, displayName, description, feature,
+                isSettable, multiLine, sortChoices, staticImage, category, filterFlags) {
+            @Override
+            public Collection<?> getChoiceOfValues(final Object object) {
+                final Collection<?> choiceOfValues = super.getChoiceOfValues(object);
+                if (choiceOfValues != null && object instanceof AbstractFixedFactorValue<?>) {
+                    final Collection<FixedFactor> limitedSelection = new ArrayList<FixedFactor>();
+                    final AbstractFixedFactorValue<?> curFactorValue = (AbstractFixedFactorValue<?>) object;
+                    if (curFactorValue.getPowerBinding() instanceof ResourcePowerBinding) {
+                        new BindingSwitch<Void>() {
+                            @Override
+                            public Void caseResourcePowerBinding(final ResourcePowerBinding binding) {
+                                for (final FixedFactor curFactor : EcoreUtil.<FixedFactor> getObjectsByType(
+                                        binding.getResourcePowerModelSpecification().getConsumptionFactors(),
+                                        SpecificationPackage.eINSTANCE.getFixedFactor())) {
+                                    if (choiceOfValues.contains(curFactor)) {
+                                        limitedSelection.add(curFactor);
+                                    }
+                                }
+                                return null;
+                            };
+                        }.doSwitch(curFactorValue.getPowerBinding());
+                        return limitedSelection;
+                    }
+                }
+                return choiceOfValues;
+            }
+        };
+    };
 
 }
