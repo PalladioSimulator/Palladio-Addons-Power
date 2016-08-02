@@ -4,5 +4,6 @@
     <cq:property key="user" value="anonymous"/>
     <cq:advisorNode namePattern="^de\.fzi\.power.*" sourceLevel="REQUIRE" useWorkspace="false"/>
     <cq:advisorNode namePattern="^org\.vedantatree\.expressionoasis.*" sourceLevel="REQUIRE" useWorkspace="false"/>
+    <cq:advisorNode namePattern="^org\.simpleframework\.xml.*" sourceLevel="REQUIRE" useWorkspace="false"/>
     <cq:advisorNode namePattern=".*" sourceLevel="REJECT"/>
 </cq:componentQuery>
