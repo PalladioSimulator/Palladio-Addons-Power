@@ -10,6 +10,7 @@ import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.MeasuringValue;
@@ -17,7 +18,8 @@ import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
@@ -59,7 +61,7 @@ public class LinearPowerModelCalculator extends AbstractResourcePowerModelCalcul
                     + PowerModelConstants.LINEAR_POWER_MODEL.eResource().getURI() + ".");
         }
 
-        for (FixedFactorValue value : binding.getFixedFactorValues()) {
+        for (FixedFactorValuePower value : EcoreUtil.<FixedFactorValuePower>getObjectsByType(binding.getFixedFactorValues(), BindingPackage.eINSTANCE.getFixedFactorValuePower())) {
             String boundFactorId = value.getBoundFactor().getId();
             Unit<Power> unit = value.getValue().getUnit();
             Amount<Power> valueInAmount = Amount.valueOf(value.getValue().doubleValue(unit), unit);

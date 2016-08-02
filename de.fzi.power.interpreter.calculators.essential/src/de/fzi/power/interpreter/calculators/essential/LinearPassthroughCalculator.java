@@ -6,10 +6,12 @@ import java.util.Objects;
 import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.jscience.physics.amount.Amount;
 
+import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.DistributionPowerBinding;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
@@ -47,7 +49,7 @@ public class LinearPassthroughCalculator extends AbstractDistributionPowerModelC
                     + PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getName() + ".");
         }
 
-        for (FixedFactorValue value : binding.getFixedFactorValues()) {
+        for (FixedFactorValuePower value : EcoreUtil.<FixedFactorValuePower>getObjectsByType(binding.getFixedFactorValues(), BindingPackage.eINSTANCE.getFixedFactorValuePower())) {
             if (value.getBoundFactor().getId()
                     .equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS.getId())) {
                 Unit<Power> unit = value.getValue().getUnit();

@@ -9,14 +9,15 @@ import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
@@ -35,7 +36,7 @@ public class NonlinearRegressionCalculator extends AbstractResourcePowerModelCal
                     + PowerModelConstants.NONLINEAR_REGRESSION_MODEL.eResource().getURI() + ".");
         }
         
-        for (FixedFactorValue value : binding.getFixedFactorValues()) {
+        for (FixedFactorValuePower value : EcoreUtil.<FixedFactorValuePower>getObjectsByType(binding.getFixedFactorValues(), BindingPackage.eINSTANCE.getFixedFactorValuePower())) {
             String boundFactorId = value.getBoundFactor().getId();
             Unit<Power> unit = value.getValue().getUnit();
             Amount valueInAmount = Amount.valueOf(value.getValue().doubleValue(unit), unit);
