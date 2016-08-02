@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
+  <rm:property key="resolveFrom" value="release"/>
   <rm:locator pattern="^org\.palladiosimulator\.experimentanalysis.*" searchPathRef="experimentanalysis" failOnError="false"/>
   <rm:locator pattern="^de\.fzi\.power.*" searchPathRef="Power" failOnError="false"/>
   <rm:locator pattern="^org\.codehouse\.stax.*" searchPathRef="Power" failOnError="false"/>

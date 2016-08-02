@@ -2,5 +2,6 @@
     <cq:rootRequest name="de.fzi.power.buckminster" componentType="eclipse.feature"/>
     <cq:property key="pass" value="anonymous"/>
     <cq:property key="user" value="anonymous"/>
-    <cq:advisorNode namePattern="^de\.fzi\.power.*" useWorkspace="false"/>
+    <cq:advisorNode namePattern="^de\.fzi\.power.*" sourceLevel="REQUIRE" useWorkspace="false"/>
+    <cq:advisorNode namePattern=".*" sourceLevel="REJECT"/>
 </cq:componentQuery>
