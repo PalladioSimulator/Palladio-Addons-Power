@@ -3,7 +3,7 @@
 package de.fzi.power.binding.tests;
 
 import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
@@ -21,7 +21,7 @@ public class FixedFactorValueTest extends TestCase {
      *
      * @generated
      */
-    protected FixedFactorValue fixture = null;
+    protected FixedFactorValuePower fixture = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -48,7 +48,7 @@ public class FixedFactorValueTest extends TestCase {
      * 
      * @generated
      */
-    protected void setFixture(final FixedFactorValue fixture) {
+    protected void setFixture(final FixedFactorValuePower fixture) {
         this.fixture = fixture;
     }
 
@@ -58,7 +58,7 @@ public class FixedFactorValueTest extends TestCase {
      * 
      * @generated
      */
-    protected FixedFactorValue getFixture() {
+    protected FixedFactorValuePower getFixture() {
         return this.fixture;
     }
 
@@ -70,7 +70,7 @@ public class FixedFactorValueTest extends TestCase {
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(BindingFactory.eINSTANCE.createFixedFactorValue());
+        this.setFixture(BindingFactory.eINSTANCE.createFixedFactorValuePower());
     }
 
     /**

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.FixedFactorValue;
+import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.util.BindingResourceFactoryImpl;
 
 /**
@@ -53,7 +53,7 @@ public class BindingExample {
             System.out.println("Enter a list of file paths or URIs that have content like this:");
             try {
                 final Resource resource = resourceSet.createResource(URI.createURI("http:///My.binding"));
-                final FixedFactorValue root = BindingFactory.eINSTANCE.createFixedFactorValue();
+                final FixedFactorValuePower root = BindingFactory.eINSTANCE.createFixedFactorValuePower();
                 resource.getContents().add(root);
                 resource.save(System.out, null);
             } catch (final IOException exception) {
