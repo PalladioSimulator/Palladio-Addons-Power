@@ -26,7 +26,7 @@ import de.fzi.power.specification.SpecificationFactory;
 
 public class ModelSelectionPage extends WizardPage {
 
-    private ExperimentRunSelectionPage previousPage;
+    private ExperimentGroupSelectionPage previousPage;
     private PowerBindingRepository repo;
     private ListViewer viewer;
     private Composite container;
@@ -35,7 +35,7 @@ public class ModelSelectionPage extends WizardPage {
     private boolean wasVisible = false;
     private DeclarativePowerModelSpecification spec;
 
-    public ModelSelectionPage(ExperimentRunSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
+    public ModelSelectionPage(ExperimentGroupSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
         super("Select from extracted Power Models");
         this.previousPage = runSelectionPage;
         this.repositorySelectionPage = repositorySelectionPage;

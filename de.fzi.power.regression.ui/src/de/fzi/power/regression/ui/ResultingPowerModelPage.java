@@ -33,7 +33,7 @@ import de.fzi.power.specification.DeclarativePowerModelSpecification;
 
 public class ResultingPowerModelPage extends WizardPage {
 
-    private ExperimentRunSelectionPage previousPage;
+    private ExperimentGroupSelectionPage previousPage;
     private ResourcePowerBinding powerModelBinding;
     private TableViewer viewer;
     private FormData formData;
@@ -44,7 +44,7 @@ public class ResultingPowerModelPage extends WizardPage {
     private FormData parameterForm;
     private List<DoubleModelParameter<? extends Quantity>> params;
 
-    public ResultingPowerModelPage(ExperimentRunSelectionPage runSelectionPage, ResourcePowerBinding resourcePowerBinding) {
+    public ResultingPowerModelPage(ExperimentGroupSelectionPage runSelectionPage, ResourcePowerBinding resourcePowerBinding) {
         super("Confirm extracted Power Model");
         this.previousPage = runSelectionPage;
         this.powerModelBinding = resourcePowerBinding;

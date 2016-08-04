@@ -16,7 +16,7 @@ public class SymbolicPowerModelExtractorWizard extends Wizard {
     private PowerModelRepositorySelectionPage repositorySelectionPage;
 
     public SymbolicPowerModelExtractorWizard(PowerBindingRepository repo, Repositories repositories) {
-        ExperimentRunSelectionPage runSelectionPage = new ExperimentRunSelectionPage(repositories);
+        ExperimentGroupSelectionPage runSelectionPage = new ExperimentGroupSelectionPage(repositories);
         this.repositorySelectionPage = new PowerModelRepositorySelectionPage();
         this.repo = repo;
         this.modelSelectionPage = new ModelSelectionPage(runSelectionPage, repositorySelectionPage, this.repo);

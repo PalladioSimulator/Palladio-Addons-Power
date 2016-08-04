@@ -20,7 +20,7 @@ import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
 import org.palladiosimulator.edp2.ui.views.navigator.NavigatorTreeStructureAdvisorImpl;
 
-public class ExperimentRunSelectionPage extends WizardPage {
+public class ExperimentGroupSelectionPage extends WizardPage {
 
     private Repositories repositories;
 
@@ -28,7 +28,7 @@ public class ExperimentRunSelectionPage extends WizardPage {
     
     private ExperimentGroup selectedExperimentGroup;
     
-    public ExperimentRunSelectionPage(Repositories repositories) {
+    public ExperimentGroupSelectionPage(Repositories repositories) {
         super("Select the Experiment Group containing the benchmarking data.");
         this.repositories = repositories;
         setPageComplete(false);

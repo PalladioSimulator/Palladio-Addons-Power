@@ -18,12 +18,12 @@ import de.fzi.power.regression.r.DoubleModelParameter;
 public class PowerModelExtractorWizard extends Wizard {
 
     private ResourcePowerBinding resourcePowerBinding;
-    private ExperimentRunSelectionPage runSelectionPage;
+    private ExperimentGroupSelectionPage runSelectionPage;
     private ResultingPowerModelPage resultsPage;
 
     public PowerModelExtractorWizard(ResourcePowerBinding resourcePowerBinding, Repositories repositories) {
         this.resourcePowerBinding = resourcePowerBinding;
-        this.runSelectionPage = new ExperimentRunSelectionPage(repositories);
+        this.runSelectionPage = new ExperimentGroupSelectionPage(repositories);
         this.resultsPage = new ResultingPowerModelPage(runSelectionPage, this.resourcePowerBinding);
         addPage(runSelectionPage);
         addPage(resultsPage);
