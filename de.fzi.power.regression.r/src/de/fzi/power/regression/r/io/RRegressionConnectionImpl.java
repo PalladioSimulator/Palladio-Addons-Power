@@ -205,7 +205,13 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
             try {
                 resultExp = rengine.eval(command);
             } catch (RserveException e) {
-                LOGGER.error("Error while evaluating " + command + ". Cause: " + e.toString());
+                String cause = null;
+                try {
+                    cause = rengine.eval("geterrmessage()").asString();
+                } catch (REXPMismatchException | RserveException e2) {
+                    cause = "Error while identifying cause: " + e2.getMessage();
+                }
+                LOGGER.error(String.format("Error for command \"%s\": %s", command, cause));
             }
             if (resultExp != null) {
                 result += resultExp.toString() + "\n";
