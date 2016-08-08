@@ -75,21 +75,21 @@ public class Edp2Importer {
         group.setRepository(repo);
         // TODO check if we need to include first new label
         ExperimentSetting experimentSetting = null;
+        String prevLabel = "";
         do {
             long minTimeStamp = markerParser.getCurTimeStamp();
             String curLabel = markerParser.getCurLabel();
             markerParser.moveToEnd();
             long maxTimeStamp = markerParser.getCurTimeStamp();
-            if(curLabel.endsWith(Constants.STARTED_SUFFIX) && !curLabel.startsWith(Constants.TARGET_LABEL)) {
-                experimentSetting = EXPERIMENT_DATA_FACTORY.createExperimentSetting(group, curLabel);
-            }
             // Only add stable measurements. This should be made configurable via the wizard.
-            if(curLabel.endsWith(Constants.MEASUREMENT_SUFFIX)) {
+            if(curLabel.endsWith(this.mappingRepo.getMarkerLog().getMeasurementSuffix()) && prevLabel.endsWith(this.mappingRepo.getMarkerLog().getStartSuffix())) {
+                experimentSetting = EXPERIMENT_DATA_FACTORY.createExperimentSetting(group, curLabel);
                 addResults(metricsMap, curLabel, minTimeStamp, maxTimeStamp, experimentSetting);
             }
             if(markerParser.hasNext()) {
                 markerParser.step();
             }
+            prevLabel = curLabel;
         } while (markerParser.hasNext());
     }
 

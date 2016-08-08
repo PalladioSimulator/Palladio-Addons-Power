@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.InternalEObject;
  * <ul>
  *   <li>{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl#getCsvFileUri <em>Csv File Uri</em>}</li>
  *   <li>{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl#getRepository <em>Repository</em>}</li>
+ *   <li>{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl#getStartSuffix <em>Start Suffix</em>}</li>
+ *   <li>{@link de.fzi.power.profilingimport.mapping.impl.MarkerLogImpl#getMeasurementSuffix <em>Measurement Suffix</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +39,25 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
      * @ordered
      */
     protected static final String CSV_FILE_URI_EDEFAULT = null;
+
+    /**
+     * The default value of the '{@link #getStartSuffix() <em>Start Suffix</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getStartSuffix()
+     * @generated
+     * @ordered
+     */
+    protected static final String START_SUFFIX_EDEFAULT = "started";
+    /**
+     * The default value of the '{@link #getMeasurementSuffix() <em>Measurement Suffix</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMeasurementSuffix()
+     * @generated
+     * @ordered
+     */
+    protected static final String MEASUREMENT_SUFFIX_EDEFAULT = "measurement";
 
     /**
      * <!-- begin-user-doc -->
@@ -108,6 +129,42 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
      * <!-- end-user-doc -->
      * @generated
      */
+    public String getStartSuffix() {
+        return (String)eDynamicGet(MappingPackage.MARKER_LOG__START_SUFFIX, MappingPackage.Literals.MARKER_LOG__START_SUFFIX, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setStartSuffix(String newStartSuffix) {
+        eDynamicSet(MappingPackage.MARKER_LOG__START_SUFFIX, MappingPackage.Literals.MARKER_LOG__START_SUFFIX, newStartSuffix);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getMeasurementSuffix() {
+        return (String)eDynamicGet(MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX, MappingPackage.Literals.MARKER_LOG__MEASUREMENT_SUFFIX, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMeasurementSuffix(String newMeasurementSuffix) {
+        eDynamicSet(MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX, MappingPackage.Literals.MARKER_LOG__MEASUREMENT_SUFFIX, newMeasurementSuffix);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     @Override
     public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
@@ -159,6 +216,10 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
                 return getCsvFileUri();
             case MappingPackage.MARKER_LOG__REPOSITORY:
                 return getRepository();
+            case MappingPackage.MARKER_LOG__START_SUFFIX:
+                return getStartSuffix();
+            case MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX:
+                return getMeasurementSuffix();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -176,6 +237,12 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
                 return;
             case MappingPackage.MARKER_LOG__REPOSITORY:
                 setRepository((MappingRepository)newValue);
+                return;
+            case MappingPackage.MARKER_LOG__START_SUFFIX:
+                setStartSuffix((String)newValue);
+                return;
+            case MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX:
+                setMeasurementSuffix((String)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -195,6 +262,12 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
             case MappingPackage.MARKER_LOG__REPOSITORY:
                 setRepository((MappingRepository)null);
                 return;
+            case MappingPackage.MARKER_LOG__START_SUFFIX:
+                setStartSuffix(START_SUFFIX_EDEFAULT);
+                return;
+            case MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX:
+                setMeasurementSuffix(MEASUREMENT_SUFFIX_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -211,6 +284,10 @@ public class MarkerLogImpl extends IdentifierImpl implements MarkerLog {
                 return CSV_FILE_URI_EDEFAULT == null ? getCsvFileUri() != null : !CSV_FILE_URI_EDEFAULT.equals(getCsvFileUri());
             case MappingPackage.MARKER_LOG__REPOSITORY:
                 return getRepository() != null;
+            case MappingPackage.MARKER_LOG__START_SUFFIX:
+                return START_SUFFIX_EDEFAULT == null ? getStartSuffix() != null : !START_SUFFIX_EDEFAULT.equals(getStartSuffix());
+            case MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX:
+                return MEASUREMENT_SUFFIX_EDEFAULT == null ? getMeasurementSuffix() != null : !MEASUREMENT_SUFFIX_EDEFAULT.equals(getMeasurementSuffix());
         }
         return super.eIsSet(featureID);
     }

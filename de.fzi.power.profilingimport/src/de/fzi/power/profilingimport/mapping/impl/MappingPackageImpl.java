@@ -250,6 +250,24 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
      * <!-- end-user-doc -->
      * @generated
      */
+    public EAttribute getMarkerLog_StartSuffix() {
+        return (EAttribute)markerLogEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMarkerLog_MeasurementSuffix() {
+        return (EAttribute)markerLogEClass.getEStructuralFeatures().get(3);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
     public EClass getConversionDivisor() {
         return conversionDivisorEClass;
     }
@@ -324,6 +342,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         markerLogEClass = createEClass(MARKER_LOG);
         createEAttribute(markerLogEClass, MARKER_LOG__CSV_FILE_URI);
         createEReference(markerLogEClass, MARKER_LOG__REPOSITORY);
+        createEAttribute(markerLogEClass, MARKER_LOG__START_SUFFIX);
+        createEAttribute(markerLogEClass, MARKER_LOG__MEASUREMENT_SUFFIX);
 
         conversionDivisorEClass = createEClass(CONVERSION_DIVISOR);
         createEAttribute(conversionDivisorEClass, CONVERSION_DIVISOR__VALUE);
@@ -390,6 +410,8 @@ public class MappingPackageImpl extends EPackageImpl implements MappingPackage {
         initEClass(markerLogEClass, MarkerLog.class, "MarkerLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getMarkerLog_CsvFileUri(), ecorePackage.getEString(), "csvFileUri", null, 1, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMarkerLog_Repository(), this.getMappingRepository(), this.getMappingRepository_MarkerLog(), "repository", null, 0, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getMarkerLog_StartSuffix(), ecorePackage.getEString(), "startSuffix", "started", 1, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getMarkerLog_MeasurementSuffix(), ecorePackage.getEString(), "measurementSuffix", "measurement", 1, 1, MarkerLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(conversionDivisorEClass, ConversionDivisor.class, "ConversionDivisor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         g1 = createEGenericType(theExperimentDataPackage.getEJSMeasure());

@@ -223,13 +223,31 @@ public interface MappingPackage extends EPackage {
     int MARKER_LOG__REPOSITORY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
     /**
+     * The feature id for the '<em><b>Start Suffix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MARKER_LOG__START_SUFFIX = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Measurement Suffix</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MARKER_LOG__MEASUREMENT_SUFFIX = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+
+    /**
      * The number of structural features of the '<em>Marker Log</em>' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-    int MARKER_LOG_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+    int MARKER_LOG_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
     /**
      * The meta object id for the '{@link de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl <em>Conversion Divisor</em>}' class.
@@ -428,6 +446,28 @@ public interface MappingPackage extends EPackage {
     EReference getMarkerLog_Repository();
 
     /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.MarkerLog#getStartSuffix <em>Start Suffix</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Start Suffix</em>'.
+     * @see de.fzi.power.profilingimport.mapping.MarkerLog#getStartSuffix()
+     * @see #getMarkerLog()
+     * @generated
+     */
+    EAttribute getMarkerLog_StartSuffix();
+
+    /**
+     * Returns the meta object for the attribute '{@link de.fzi.power.profilingimport.mapping.MarkerLog#getMeasurementSuffix <em>Measurement Suffix</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Measurement Suffix</em>'.
+     * @see de.fzi.power.profilingimport.mapping.MarkerLog#getMeasurementSuffix()
+     * @see #getMarkerLog()
+     * @generated
+     */
+    EAttribute getMarkerLog_MeasurementSuffix();
+
+    /**
      * Returns the meta object for class '{@link de.fzi.power.profilingimport.mapping.ConversionDivisor <em>Conversion Divisor</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -601,6 +641,22 @@ public interface MappingPackage extends EPackage {
          * @generated
          */
         EReference MARKER_LOG__REPOSITORY = eINSTANCE.getMarkerLog_Repository();
+
+        /**
+         * The meta object literal for the '<em><b>Start Suffix</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute MARKER_LOG__START_SUFFIX = eINSTANCE.getMarkerLog_StartSuffix();
+
+        /**
+         * The meta object literal for the '<em><b>Measurement Suffix</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute MARKER_LOG__MEASUREMENT_SUFFIX = eINSTANCE.getMarkerLog_MeasurementSuffix();
 
         /**
          * The meta object literal for the '{@link de.fzi.power.profilingimport.mapping.impl.ConversionDivisorImpl <em>Conversion Divisor</em>}' class.

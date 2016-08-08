@@ -15,6 +15,8 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * <ul>
  *   <li>{@link de.fzi.power.profilingimport.mapping.MarkerLog#getCsvFileUri <em>Csv File Uri</em>}</li>
  *   <li>{@link de.fzi.power.profilingimport.mapping.MarkerLog#getRepository <em>Repository</em>}</li>
+ *   <li>{@link de.fzi.power.profilingimport.mapping.MarkerLog#getStartSuffix <em>Start Suffix</em>}</li>
+ *   <li>{@link de.fzi.power.profilingimport.mapping.MarkerLog#getMeasurementSuffix <em>Measurement Suffix</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.profilingimport.mapping.MappingPackage#getMarkerLog()
@@ -75,5 +77,59 @@ public interface MarkerLog extends Identifier {
      * @generated
      */
     void setRepository(MappingRepository value);
+
+    /**
+     * Returns the value of the '<em><b>Start Suffix</b></em>' attribute.
+     * The default value is <code>"started"</code>.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Start Suffix</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Start Suffix</em>' attribute.
+     * @see #setStartSuffix(String)
+     * @see de.fzi.power.profilingimport.mapping.MappingPackage#getMarkerLog_StartSuffix()
+     * @model default="started" required="true"
+     * @generated
+     */
+    String getStartSuffix();
+
+    /**
+     * Sets the value of the '{@link de.fzi.power.profilingimport.mapping.MarkerLog#getStartSuffix <em>Start Suffix</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Start Suffix</em>' attribute.
+     * @see #getStartSuffix()
+     * @generated
+     */
+    void setStartSuffix(String value);
+
+    /**
+     * Returns the value of the '<em><b>Measurement Suffix</b></em>' attribute.
+     * The default value is <code>"measurement"</code>.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Measurement Suffix</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Measurement Suffix</em>' attribute.
+     * @see #setMeasurementSuffix(String)
+     * @see de.fzi.power.profilingimport.mapping.MappingPackage#getMarkerLog_MeasurementSuffix()
+     * @model default="measurement" required="true"
+     * @generated
+     */
+    String getMeasurementSuffix();
+
+    /**
+     * Sets the value of the '{@link de.fzi.power.profilingimport.mapping.MarkerLog#getMeasurementSuffix <em>Measurement Suffix</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Measurement Suffix</em>' attribute.
+     * @see #getMeasurementSuffix()
+     * @generated
+     */
+    void setMeasurementSuffix(String value);
 
 } // MarkerLog

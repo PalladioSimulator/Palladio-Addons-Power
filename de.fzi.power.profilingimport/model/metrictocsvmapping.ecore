@@ -35,6 +35,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//MappingRepository"
         eOpposite="#//MappingRepository/markerLog"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startSuffix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="started"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="measurementSuffix" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="measurement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConversionDivisor" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" changeable="false"
