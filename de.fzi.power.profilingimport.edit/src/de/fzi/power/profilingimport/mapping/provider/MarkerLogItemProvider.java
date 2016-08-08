@@ -50,6 +50,8 @@ public class MarkerLogItemProvider extends IdentifierItemProvider {
             super.getPropertyDescriptors(object);
 
             addCsvFileUriPropertyDescriptor(object);
+            addStartSuffixPropertyDescriptor(object);
+            addMeasurementSuffixPropertyDescriptor(object);
         }
         return itemPropertyDescriptors;
     }
@@ -68,6 +70,50 @@ public class MarkerLogItemProvider extends IdentifierItemProvider {
                  getString("_UI_MarkerLog_csvFileUri_feature"),
                  getString("_UI_PropertyDescriptor_description", "_UI_MarkerLog_csvFileUri_feature", "_UI_MarkerLog_type"),
                  MappingPackage.Literals.MARKER_LOG__CSV_FILE_URI,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Start Suffix feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addStartSuffixPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_MarkerLog_startSuffix_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_MarkerLog_startSuffix_feature", "_UI_MarkerLog_type"),
+                 MappingPackage.Literals.MARKER_LOG__START_SUFFIX,
+                 true,
+                 false,
+                 false,
+                 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+                 null,
+                 null));
+    }
+
+    /**
+     * This adds a property descriptor for the Measurement Suffix feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    protected void addMeasurementSuffixPropertyDescriptor(Object object) {
+        itemPropertyDescriptors.add
+            (createItemPropertyDescriptor
+                (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+                 getResourceLocator(),
+                 getString("_UI_MarkerLog_measurementSuffix_feature"),
+                 getString("_UI_PropertyDescriptor_description", "_UI_MarkerLog_measurementSuffix_feature", "_UI_MarkerLog_type"),
+                 MappingPackage.Literals.MARKER_LOG__MEASUREMENT_SUFFIX,
                  true,
                  false,
                  false,
@@ -115,6 +161,8 @@ public class MarkerLogItemProvider extends IdentifierItemProvider {
 
         switch (notification.getFeatureID(MarkerLog.class)) {
             case MappingPackage.MARKER_LOG__CSV_FILE_URI:
+            case MappingPackage.MARKER_LOG__START_SUFFIX:
+            case MappingPackage.MARKER_LOG__MEASUREMENT_SUFFIX:
                 fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
                 return;
         }
