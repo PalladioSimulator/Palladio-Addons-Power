@@ -126,8 +126,13 @@ public class Edp2Importer {
                 curRecord = curIt.next();
                 curTime = Long.parseLong(curRecord.get(Constants.TIME_LABEL));
             }
+            long lastTimeStamp = minTimeStamp;
             for(;curIt.hasNext();curRecord=curIt.next()) {
+                // handle delays/backwarps
                 curTime = Long.parseLong(curRecord.get(Constants.TIME_LABEL));
+                if(curTime-lastTimeStamp <= 0l) {
+                    continue;
+                }
                 // TODO move on all parsers correctly
                 if(curTime > maxTimeStamp) {
                     break;
@@ -152,6 +157,7 @@ public class Edp2Importer {
                             javax.measure.Measure.valueOf((curTime-minTimeStamp)/1000d, SI.SECOND), rawMeasure);
                     MeasurementsUtility.storeMeasurement(measurement, m1);
                 }
+                lastTimeStamp = curTime;
             }
         }
     }
