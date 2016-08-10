@@ -32,7 +32,7 @@ public class SymbolicRegression<Q extends Quantity> extends AbstractRegression<Q
     
     public SymbolicRegression(List<VariableMeasurements> measurements,
             TargetMeasurements targetMetric) {
-        this(measurements, targetMetric, 4000);
+        this(measurements, targetMetric, 10000);
     }
     
     public SymbolicRegression(List<VariableMeasurements> measurements,
@@ -64,7 +64,7 @@ public class SymbolicRegression<Q extends Quantity> extends AbstractRegression<Q
     
     @Override
     protected String getAdditionalParameters() {
-        return "functionSet=arithmeticFunctionSet, stopCondition=makeStepsStopCondition("+ this.numberOfSteps + ")";
+        return "functionSet=arithmeticFunctionSet, stopCondition=makeStepsStopCondition("+ this.numberOfSteps + ")" + R_PARAM_SEPARATOR + "penalizeGenotypeConstantIndividuals = TRUE";
     }
     
     public List<Expression> getEliteResults() {

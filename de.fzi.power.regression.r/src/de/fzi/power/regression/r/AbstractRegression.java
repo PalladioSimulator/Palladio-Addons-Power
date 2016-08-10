@@ -20,7 +20,7 @@ public abstract class AbstractRegression<Q extends Quantity> {
     protected static final String R_START_VALUES_BLOCK = "start=list(";
     protected static final String R_START_VALUE_ASSIGNMENT_OPERATOR = "=";
     protected static final String R_BLOCK_END = ")";
-    protected static final String R_ADDITIONAL_COMMAND = "control=c(maxiter=1000)";
+    protected static final String R_ADDITIONAL_COMMAND = "control=c(maxiter=1000, minFactor=1/2048)";
     private static final String R_COMMAND_POSTFIX = ");";
     protected static final String R_TARGET_NAME = "targetValue";
     protected static final String R_ASSIGNMENT_OPERATOR = " <- ";
@@ -61,12 +61,15 @@ public abstract class AbstractRegression<Q extends Quantity> {
         StringBuilder commandString = new StringBuilder(getFunctionName());
         commandString.append(RUtils.sanitizeNameForR(targetMetric.getName()));
         commandString.append(R_REGRESSION_RELATIONHSIP_OPERATOR);
-        commandString.append(formula);
+        // In parentheses due to issue with linear expressions that may manifest otherwise
+        commandString.append("(" + formula + ")");
         commandString.append(R_PARAM_SEPARATOR);
         commandString.append("data = " + DATA_FRAME_NAME);
         commandString.append(R_PARAM_SEPARATOR + getAdditionalParameters() + R_COMMAND_POSTFIX);
         String command = commandString.toString();
         
+        // Use the same random seed for all executions.
+        rConnection.execute("set.seed(47)");
         Vector<REXP> rawResults = rConnection.execute(R_TARGET_NAME + " " + R_ASSIGNMENT_OPERATOR + command);
     }
 

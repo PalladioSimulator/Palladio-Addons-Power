@@ -1,5 +1,6 @@
 package de.fzi.power.regression.r;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import org.vedantatree.expressionoasis.expressions.Expression;
 
 public class RobustNonLinearSquaresRegression<Q extends Quantity> extends AbstractNonLinearRegression<Q> {
     
+    private static final String MAXIT = "maxit=1000";
+
     public RobustNonLinearSquaresRegression(Expression expression, List<VariableMeasurements> measurements,
             List<ConstantModelParameter<?, ? extends Quantity>> constants, TargetMeasurements targetMetric) {
         super(expression, measurements, constants, targetMetric);
@@ -26,6 +29,11 @@ public class RobustNonLinearSquaresRegression<Q extends Quantity> extends Abstra
     
     @Override
     public Iterable<String> getRequiredPackages() {
-        return Collections.singletonList(R_PACKAGE_NAME);
+        return Arrays.asList(R_PACKAGE_NAME, "minpack.lm");
+    }
+    
+    @Override
+    protected String getAdditionalParameters() {
+        return super.getAdditionalParameters() + R_PARAM_SEPARATOR + MAXIT + R_PARAM_SEPARATOR + "method = \"M\"";
     }
 }
