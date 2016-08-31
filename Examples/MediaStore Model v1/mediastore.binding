@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" id="_pnz4UGnBEeSeo-pFM7s_nQ">
   <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" id="_-u70IWwTEeShkNmTEeIZtw" name="simpleLinear">
-    <fixedFactorValues id="_OsDNcAfDEeaG2snxyc_DQw" value="100 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_OsDNcAfDEeaG2snxyc_DQw" value="100 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw"/>
     </fixedFactorValues>
     <distributionPowerModel href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_fnnwUGnCEeSeo-pFM7s_nQ" name="Elsbeere CPU Linear">
-    <fixedFactorValues id="_lCL7kGnCEeSeo-pFM7s_nQ" value="477.259 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_lCL7kGnCEeSeo-pFM7s_nQ" value="477.259 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_rUmU0GnCEeSeo-pFM7s_nQ" value="331.967 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_rUmU0GnCEeSeo-pFM7s_nQ" value="331.967 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
     <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_ZbcSgIqeEeSWsKmwGgxORw" name="Elsbeere CPU Interpolation">
-    <fixedFactorValues id="_hdFNsIqeEeSWsKmwGgxORw" value="270.318 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_hdFNsIqeEeSWsKmwGgxORw" value="270.318 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez3XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_iBVKQIqeEeSWsKmwGgxORw" value="285.689 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_iBVKQIqeEeSWsKmwGgxORw" value="285.689 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfqy4XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_iaTD4IqeEeSWsKmwGgxORw" value="296.446 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_iaTD4IqeEeSWsKmwGgxORw" value="296.446 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy4XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_i9vvMIqeEeSWsKmwGgxORw" value="299.641 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_i9vvMIqeEeSWsKmwGgxORw" value="299.641 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy5XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_jXJGoIqeEeSWsKmwGgxORw" value="299.794 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_jXJGoIqeEeSWsKmwGgxORw" value="299.794 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy6XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_j31Y4IqeEeSWsKmwGgxORw" value="306.49 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_j31Y4IqeEeSWsKmwGgxORw" value="306.49 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy7XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_kb36EIqeEeSWsKmwGgxORw" value="312.544 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_kb36EIqeEeSWsKmwGgxORw" value="312.544 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy8XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_lJEXQIqeEeSWsKmwGgxORw" value="337.917 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_lJEXQIqeEeSWsKmwGgxORw" value="337.917 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy9XP"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_lh_0oIqeEeSWsKmwGgxORw" value="348.032 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_lh_0oIqeEeSWsKmwGgxORw" value="348.032 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy10P"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_mqP2IIqeEeSWsKmwGgxORw" value="350 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_mqP2IIqeEeSWsKmwGgxORw" value="350 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy11P"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_zvpmIIqeEeSWsKmwGgxORw" value="361.951 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_zvpmIIqeEeSWsKmwGgxORw" value="361.951 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy12P"/>
     </fixedFactorValues>
     <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYp_X61Wxp"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_I1hLsI7IEeSV6oBekNlovg" name="singleCPULinear">
-    <fixedFactorValues id="_Kz6LAI7IEeSV6oBekNlovg" value="341.048 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_Kz6LAI7IEeSV6oBekNlovg" value="341.048 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
-    <fixedFactorValues id="_MQWT0I7IEeSV6oBekNlovg" value="331.967 W">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_MQWT0I7IEeSV6oBekNlovg" value="331.967 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
     <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
