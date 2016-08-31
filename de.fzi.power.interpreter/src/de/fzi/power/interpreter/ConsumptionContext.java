@@ -1,11 +1,10 @@
 package de.fzi.power.interpreter;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.measure.quantity.Power;
 
@@ -13,13 +12,11 @@ import org.apache.commons.collections15.CollectionUtils;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
-import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
 
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
@@ -51,8 +48,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      * @param powerModelRegistry
      *            The registry that keeps track of the power models on a per-resource basis.
      */
-    private ConsumptionContext(PowerBindingRepository bindingRepository, AbstractEvaluationScope initialScope,
-            PowerModelRegistry powerModelRegistry) {
+    private ConsumptionContext(final PowerBindingRepository bindingRepository,
+            final AbstractEvaluationScope initialScope, final PowerModelRegistry powerModelRegistry) {
         if (bindingRepository == null || initialScope == null || powerModelRegistry == null) {
             throw new IllegalArgumentException("One of the given parameters was null!");
         }
@@ -81,8 +78,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      * @throws IllegalArgumentException
      *             In case any of the parameters is {@code null}.
      */
-    public static ConsumptionContext createConsumptionContext(PowerBindingRepository bindingRepository,
-            AbstractEvaluationScope initialScope, PowerModelRegistry powerModelRegistry) {
+    public static ConsumptionContext createConsumptionContext(final PowerBindingRepository bindingRepository,
+            final AbstractEvaluationScope initialScope, final PowerModelRegistry powerModelRegistry) {
         ConsumptionContext context = new ConsumptionContext(bindingRepository, initialScope, powerModelRegistry);
         return context;
     }
@@ -105,8 +102,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      * @see #createConsumptionContext(PowerBindingRepository, AbstractEvaluationScope,
      *      PowerModelRegistry)
      */
-    public static ConsumptionContext createConsumptionContext(PowerProvidingEntity ppe,
-            AbstractEvaluationScope initialScope, PowerModelRegistry powerModelRegistry) {
+    public static ConsumptionContext createConsumptionContext(final PowerProvidingEntity ppe,
+            final AbstractEvaluationScope initialScope, final PowerModelRegistry powerModelRegistry) {
 
         if (ppe == null || ppe.getDistributionPowerAssemblyContext() == null) {
             throw new IllegalArgumentException("PowerProvidingEntity is null or "
@@ -124,7 +121,7 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      *            The PowerConsumingResource for which the power consumption is being evaluated.
      * @return The power consumed by the resource.
      */
-    public Amount<Power> evaluateResourcePowerConsumption(AbstractPowerConsumingResource resource) {
+    public Amount<Power> evaluateResourcePowerConsumption(final AbstractPowerConsumingResource resource) {
         IResourcePowerModelCalculator calculator = this.powerModelRegistry
                 .getCalculator(Objects.requireNonNull(resource, "Given resource must not be null."));
         if (calculator == null) {
@@ -135,10 +132,10 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
         Collection<MeasuringValue> args = this.scope.getMeasurements(resource.getProcessingResourceSpecification());
         return calculator.calculate(args);
     }
-    
+
     /**
-     * Evaluates the power consumption of a passed stateful resource. The consumption is evaluated in context
-     * to the current EvaluationScope.
+     * Evaluates the power consumption of a passed stateful resource. The consumption is evaluated
+     * in context to the current EvaluationScope.
      * 
      * @param resource
      *            The PowerConsumingResource for which the power consumption is being evaluated.
@@ -170,8 +167,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      *             In case either of the arguments is {@code null}.
      */
     public Amount<Power> evaluateDistributionPowerConsumption(
-            PowerConsumingProvidingEntity powerConsumingProvidingEntity,
-            Map<PowerConsumingEntity, Amount<Power>> consumers) {
+            final PowerConsumingProvidingEntity powerConsumingProvidingEntity,
+            final Map<PowerConsumingEntity, Amount<Power>> consumers) {
         AbstractDistributionPowerModelCalculator distributionPowerCalculator = this.powerModelRegistry
                 .getCalculator(Objects.requireNonNull(powerConsumingProvidingEntity, "Given entity must not be null."));
         if (distributionPowerCalculator == null) {
@@ -179,8 +176,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
                     + "No corresponding calculator present in underlying power model registry!");
         }
         // sanity check
-        for (PowerConsumingEntity consumer : Objects.requireNonNull(consumers, "Map of consumers must not be null")
-                .keySet()) {
+        Objects.requireNonNull(consumers, "Map of consumers must not be null");
+        for (PowerConsumingEntity consumer : consumers.keySet()) {
             if (!powerConsumingProvidingEntity.getId().equals(consumer.getPowerProvidingEntity().getId())) {
                 throw new IllegalArgumentException("Power of " + consumer.getClass().getSimpleName() + "'"
                         + consumer.getName() + "' is not supplied by the given providing entity '"
@@ -213,30 +210,26 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      * calculators
      */
     private void updateRequiredMetrics() {
-        Map<AbstractPowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
+        Map<AbstractPowerConsumingResource, Set<MetricDescription>> requiredMetricsPerResource = powerModelRegistry
                 .getRequiredMetricsForRegisteredCalculators();
-        Map<ProcessingResourceSpecification, Set<MetricDescription>> prsRequiredMetrics = new HashMap<ProcessingResourceSpecification, Set<MetricDescription>>(
-                pcrRequiredMetrics.size());
 
-        for (Entry<AbstractPowerConsumingResource, Set<MetricDescription>> entry : pcrRequiredMetrics.entrySet()) {
-            prsRequiredMetrics.put(entry.getKey().getProcessingResourceSpecification(), entry.getValue());
-        }
-
-        scope.setResourceMetricsToEvaluate(prsRequiredMetrics);
+        this.scope.setResourceMetricsToEvaluate(requiredMetricsPerResource.entrySet().stream().collect(Collectors
+                .toMap(entry -> entry.getKey().getProcessingResourceSpecification(), entry -> entry.getValue())));
     }
 
     @Override
-    public void resourcePowerModelChanged(IResourcePowerModelCalculator calculator,
-            AbstractPowerConsumingResource affectedResource) {
+    public void resourcePowerModelChanged(final IResourcePowerModelCalculator calculator,
+            final AbstractPowerConsumingResource affectedResource) {
         // check if new calculator can work with the same metrics that are already
         // evaluated for the resource. Otherwise throw exception.
         // if necessary, the scope could be updated to evaluate different metrics here
         // currently that is not supported
 
-        Map<AbstractPowerConsumingResource, Set<MetricDescription>> pcrRequiredMetrics = powerModelRegistry
+        Map<AbstractPowerConsumingResource, Set<MetricDescription>> requiredMetricsPerResource = powerModelRegistry
                 .getRequiredMetricsForRegisteredCalculators();
 
-        if (!CollectionUtils.isSubCollection(calculator.getInputMetrics(), pcrRequiredMetrics.get(affectedResource))) {
+        if (!CollectionUtils.isSubCollection(calculator.getInputMetrics(),
+                requiredMetricsPerResource.get(affectedResource))) {
             throw new IllegalArgumentException("it is currently not possibly to change the "
                     + "power model calculator of a resource, if the new calculator requires "
                     + "different metrics to be evaluated!");
@@ -245,8 +238,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
     }
 
     @Override
-    public void distributionPowerModelChanged(AbstractDistributionPowerModelCalculator calculator,
-            PowerProvidingEntity affectedEntity) {
+    public void distributionPowerModelChanged(final AbstractDistributionPowerModelCalculator calculator,
+            final PowerProvidingEntity affectedEntity) {
         // nothing to do yet
     }
 
