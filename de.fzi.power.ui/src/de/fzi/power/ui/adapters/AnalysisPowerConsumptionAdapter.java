@@ -84,7 +84,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     }
 
     private static Collection<IDataSource> collectScopeDataSources(
-            Set<ProcessingResourceSpecification> processingResourceSpecs, ExperimentRun experimentRun) {
+            final Set<ProcessingResourceSpecification> processingResourceSpecs, final ExperimentRun experimentRun) {
 
         List<String> processingResourceSpecIds = processingResourceSpecs.stream()
                 .collect(mapping(ProcessingResourceSpecification::getId, toList()));
@@ -95,7 +95,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
     }
 
-    private static boolean isDataSource(Measurement measurement, List<String> processingResourceSpecIds) {
+    private static boolean isDataSource(final Measurement measurement, final List<String> processingResourceSpecIds) {
         MeasuringType type = measurement.getMeasuringType();
         boolean result = true;
         ProcessingResourceSpecification correspondingProcessingResourceSpecification = InterpreterUtils
@@ -122,7 +122,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
         return result;
     }
 
-    private static boolean isTagged(EMap<String, Object> measInfo) {
+    private static boolean isTagged(final EMap<String, Object> measInfo) {
         return measInfo.containsKey(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY)
                 && Boolean.logicalAnd(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_VALUE,
                         Boolean.valueOf(measInfo.get(SLIDING_WINDOW_BASED_MEASUREMENT_TAG_KEY).toString()));
@@ -136,15 +136,18 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     private MeasuringPoint createMeasuringPoint() {
         assert this.powerProvidingEntity.isPresent();
 
+        String ppeName = this.powerProvidingEntity.get().getName();
         StringMeasuringPoint mp = MeasuringpointFactory.eINSTANCE.createStringMeasuringPoint();
-        mp.setMeasuringPoint(this.powerProvidingEntity.get().getName());
-        mp.setStringRepresentation(this.powerProvidingEntity.get().getName());
+        // ensure that attribute is never null, fall back to empty string in case
+        // powerProvidingEntity has no name
+        mp.setMeasuringPoint(ppeName == null ? "" : ppeName);
+        mp.setStringRepresentation(mp.getMeasuringPoint());
 
         return mp;
     }
 
-    private Collection<MeasuringValue> obtainPowerConsumptionMeasurements(PowerBindingRepository bindingRepo,
-            Iterable<IDataSource> scopeDataSources) {
+    private Collection<MeasuringValue> obtainPowerConsumptionMeasurements(final PowerBindingRepository bindingRepo,
+            final Iterable<IDataSource> scopeDataSources) {
         assert this.powerProvidingEntity.isPresent();
 
         Collection<MeasuringValue> result = new ArrayList<>();
@@ -186,7 +189,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
 
         return new IDataStream<MeasuringValue>() {
             @Override
-            public boolean isCompatibleWith(MetricDescription other) {
+            public boolean isCompatibleWith(final MetricDescription other) {
                 return getMetricDesciption().equals(other);
             }
 
@@ -213,14 +216,14 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
         };
     }
 
-    public void setPowerProvidingEntity(PowerProvidingEntity powerProvidingEntity) {
+    public void setPowerProvidingEntity(final PowerProvidingEntity powerProvidingEntity) {
         this.powerProvidingEntity = Optional
                 .of(Objects.requireNonNull(powerProvidingEntity, "PowerProvidingEntity must not be null."));
 
         resetAdapter();
     }
 
-    public void setExperimentRun(ExperimentRun experimentRun) {
+    public void setExperimentRun(final ExperimentRun experimentRun) {
         this.experimentRun = Optional.of(Objects.requireNonNull(experimentRun, "ExperimentRun must not be null."));
 
         resetAdapter();
@@ -237,7 +240,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     }
 
     @Override
-    public void saveState(IMemento memento) {
+    public void saveState(final IMemento memento) {
     }
 
     @Override
@@ -259,7 +262,7 @@ public class AnalysisPowerConsumptionAdapter extends AbstractDataSource
     }
 
     @Override
-    public void propertyChanged(String key, Object oldValue, Object newValue) {
+    public void propertyChanged(final String key, final Object oldValue, final Object newValue) {
 
     }
 }
