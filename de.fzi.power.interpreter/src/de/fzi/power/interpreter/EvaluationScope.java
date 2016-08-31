@@ -1,15 +1,16 @@
 package de.fzi.power.interpreter;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.measure.Measure;
 
-import org.apache.commons.collections15.CollectionUtils;
-import org.apache.commons.collections15.Predicate;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.IDataStream;
 import org.palladiosimulator.measurementframework.MeasuringValue;
@@ -54,15 +55,18 @@ public final class EvaluationScope extends AbstractEvaluationScope {
      * @param experimentMeasurements
      *            set of measurement sources each collected on an active resource within the system.
      * @param extendedMeasureProviders
-     *            set of extended measurement providers, allowing to derive one metric from another
-     *            (e.g. {@link MetricDescriptionConstants}.UTILIZATION_TUPLE measurements from
-     *            {@link MetricDescriptionConstants}.STATE_OF_ACTIVE_RESOURCE_TUPLE measurements)
+     *            collection of extended measurement providers, allowing to derive one metric from
+     *            another (e.g. {@link MetricDescriptionConstants}.UTILIZATION_TUPLE measurements
+     *            from {@link MetricDescriptionConstants}.STATE_OF_ACTIVE_RESOURCE_TUPLE
+     *            measurements)
      * 
      * @return The created scope representing the context for the energy consumption evaluation.
+     * @throws NullPointerException
+     *             In case either of the arguments is {@code null}.
      */
-    public static EvaluationScope createScope(Iterable<IDataSource> experimentMeasurements,
-            Set<ExtendedMeasureProvider> extendedMeasureProviders) {
-
+    public static EvaluationScope createScope(final Iterable<IDataSource> experimentMeasurements,
+            final Collection<ExtendedMeasureProvider> extendedMeasureProviders) {
+        Objects.requireNonNull(experimentMeasurements, "Experiment measurements must be null.");
         EvaluationScope scope = new EvaluationScope();
 
         for (IDataSource source : experimentMeasurements) {
@@ -81,7 +85,8 @@ public final class EvaluationScope extends AbstractEvaluationScope {
             }
         }
 
-        scope.extendedMeasureProviders.addAll(extendedMeasureProviders);
+        scope.extendedMeasureProviders.addAll(Objects.requireNonNull(extendedMeasureProviders,
+                "Collection of extended measure providers must not be null."));
 
         scope.reset();
         return scope;
@@ -104,28 +109,24 @@ public final class EvaluationScope extends AbstractEvaluationScope {
      * de.fzi.power.interpreter.AbstractEvaluationScope#setResourceMetricsToEvaluate(java.util.Map)
      */
     @Override
-    public void setResourceMetricsToEvaluate(Map<ProcessingResourceSpecification, Set<MetricDescription>> metricsMap) {
+    public void setResourceMetricsToEvaluate(
+            final Map<ProcessingResourceSpecification, Set<MetricDescription>> metricsMap) {
+        Objects.requireNonNull(metricsMap, "Given map must not be null.");
         for (Entry<ProcessingResourceSpecification, Set<MetricDescription>> entry : metricsMap.entrySet()) {
-            Set<IDataSource> availableSourcesForResource = availableMeasurements.get(entry.getKey());
+            // avoid null being returned in case key not present
+            Set<IDataSource> availableSourcesForResource = this.availableMeasurements.getOrDefault(entry.getKey(),
+                    Collections.emptySet());
             Map<MetricDescription, IDataSource> availableDataExtended = InterpreterUtils
-                    .determineDataSourcesForAvailableMetrics(availableSourcesForResource, extendedMeasureProviders);
+                    .determineDataSourcesForAvailableMetrics(availableSourcesForResource,
+                            this.extendedMeasureProviders);
             Set<MetricDescription> extendedMetricSet = availableDataExtended.keySet();
 
-            for (final MetricDescription desc : entry.getValue()) {
-                MetricDescription description = CollectionUtils.find(extendedMetricSet,
-
-                        new Predicate<MetricDescription>() {
-                            @Override
-                            public boolean evaluate(MetricDescription arg0) {
-                                return InterpreterUtils.isRequiredMetricSatisfiedBy(desc, arg0);
-                            }
-
-                        });
-
-                if (description == null) {
-                    throw new IllegalArgumentException("No data source available for processing resource '"
-                            + entry.getKey().getId() + "' for the metric: " + desc.getName());
-                }
+            for (final MetricDescription soughtFor : entry.getValue()) {
+                MetricDescription description = extendedMetricSet.stream()
+                        .filter(metricDesc -> InterpreterUtils.isRequiredMetricSatisfiedBy(soughtFor, metricDesc))
+                        .findFirst().orElseThrow(
+                                () -> new IllegalArgumentException("No data source available for processing resource '"
+                                        + entry.getKey().getId() + "' for the metric: " + soughtFor.getName()));
 
                 this.resourceMeasurements.get(entry.getKey())
                         .add(availableDataExtended.get(description).<MeasuringValue> getDataStream());
