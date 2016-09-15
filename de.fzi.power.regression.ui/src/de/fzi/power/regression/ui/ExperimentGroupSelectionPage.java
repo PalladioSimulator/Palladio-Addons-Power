@@ -28,10 +28,14 @@ public class ExperimentGroupSelectionPage extends WizardPage {
     
     private ExperimentGroup selectedExperimentGroup;
     
+    private final static String TITLE = "Select the Experiment Group containing the benchmarking data.";
+    
     public ExperimentGroupSelectionPage(Repositories repositories) {
-        super("Select the Experiment Group containing the benchmarking data.");
+        super(TITLE);
         this.repositories = repositories;
         setPageComplete(false);
+        setTitle(TITLE);
+        setDescription("The selected Experiment Group serves as input for the following analysis.");
     }
 
     @Override

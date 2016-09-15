@@ -1,5 +1,6 @@
 package de.fzi.power.regression.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.measure.quantity.Power;
@@ -20,6 +21,8 @@ import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.regression.edp2.Edp2ModelConstructor;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import de.fzi.power.regression.r.SymbolicRegression;
+import de.fzi.power.regression.r.expressionoasis.ExpressionUtil;
+import de.fzi.power.regression.r.io.RUtils;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.PowerModelRepository;
 import de.fzi.power.specification.SpecificationFactory;
@@ -30,7 +33,7 @@ public class ModelSelectionPage extends WizardPage {
     private PowerBindingRepository repo;
     private ListViewer viewer;
     private Composite container;
-    private Expression selectedExpression = null;
+    private String selectedExpression = null;
     private PowerModelRepositorySelectionPage repositorySelectionPage;
     private boolean wasVisible = false;
     private DeclarativePowerModelSpecification spec;
@@ -70,8 +73,9 @@ public class ModelSelectionPage extends WizardPage {
 
             @Override
             public void selectionChanged(SelectionChangedEvent event) {
-                selectedExpression = (Expression) ((StructuredSelection) event.getSelection()).getFirstElement();
-                spec.setFunctionalExpression(selectedExpression.toString());
+                selectedExpression = (String) ((StructuredSelection) event.getSelection()).getFirstElement();
+                spec.setFunctionalExpression(selectedExpression);
+                spec.setName(spec.getFunctionalExpression());
                 ModelSelectionPage.this.getContainer().updateButtons();
             }
             
@@ -88,7 +92,11 @@ public class ModelSelectionPage extends WizardPage {
             this.spec = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
             SymbolicRegression<Power> symbolicModel = constructor.constructSymbolicModel(repo, modelRepo, spec);
             List<Expression> eliteResults = symbolicModel.getEliteResults();
-            viewer.setInput(eliteResults);
+            List<String> stringRepresentationElite = new ArrayList<String>();
+            for(Expression curExp : eliteResults) {
+                stringRepresentationElite.add(ExpressionUtil.convertToInputString(curExp));
+            }
+            viewer.setInput(stringRepresentationElite);
             container.layout();
         }
         wasVisible = visible;
@@ -97,10 +105,6 @@ public class ModelSelectionPage extends WizardPage {
     @Override
     public boolean isPageComplete() {
         return this.selectedExpression != null;
-    }
-    
-    public Expression getSelectedExpression() {
-        return selectedExpression;
     }
 
 }

@@ -15,7 +15,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 
+import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.specification.PowerModelRepository;
 
 public class PowerModelExtractorHandler extends AbstractHandler {
 
@@ -37,6 +39,20 @@ public class PowerModelExtractorHandler extends AbstractHandler {
             };
             job.setUser(true);
             job.schedule();
+        } else if(treeSelection.getFirstElement() instanceof PowerBindingRepository) {
+            Repositories repositories = EDP2Plugin.INSTANCE.getRepositories();
+            PowerBindingRepository bindingRepository = (PowerBindingRepository) treeSelection.getFirstElement();
+            Job job = new Job("Inferring power models from measurements in EDP2 repository") {
+
+                @Override
+                protected IStatus run(IProgressMonitor monitor) {
+                    openDialog(event, bindingRepository, repositories);
+                    return Status.OK_STATUS;
+                }
+                
+            };
+            job.setUser(true);
+            job.schedule();
         }
         
         return Status.OK;        
@@ -47,6 +63,18 @@ public class PowerModelExtractorHandler extends AbstractHandler {
         Display.getDefault().syncExec(new Runnable() {
             public void run() {
                 PowerModelExtractorWizard extractorWizard = new PowerModelExtractorWizard(resourcePowerBinding, repositories);
+                final WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveShell(event), extractorWizard);
+                dialog.setBlockOnOpen(true);
+                dialog.open();
+            }
+        });
+    }
+    
+    private void openDialog(ExecutionEvent event, PowerBindingRepository repository,
+            Repositories repositories) {
+        Display.getDefault().syncExec(new Runnable() {
+            public void run() {
+                PowerModelBatchExtractorWizard extractorWizard = new PowerModelBatchExtractorWizard(repository, repositories);
                 final WizardDialog dialog = new WizardDialog(HandlerUtil.getActiveShell(event), extractorWizard);
                 dialog.setBlockOnOpen(true);
                 dialog.open();

@@ -129,6 +129,12 @@ public class ResultingPowerModelPage extends WizardPage {
             modelForm.top = new FormAttachment(plotGroup, 4);
             this.parameterForm.top = new FormAttachment(label, 4);
             modelForm.width = formData.width;
+            String aicText = "AIC: " + Double.toString(model.getAIC());
+            Label aicLabel = new Label(container, SWT.LEFT);
+            FormData modelFormAic = new FormData();
+            aicLabel.setLayoutData(modelFormAic);
+            aicLabel.setText(aicText);
+            modelFormAic.top = new FormAttachment(table, 4);
             final Point newSize = this.getShell().computeSize(SWT.DEFAULT, SWT.DEFAULT, true);
             this.getShell().setSize(newSize);
             container.pack();
