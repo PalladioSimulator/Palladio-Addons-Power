@@ -8,9 +8,11 @@ import javax.measure.quantity.Quantity;
 
 import org.vedantatree.expressionoasis.expressions.Expression;
 
+import de.fzi.power.regression.r.io.RUtils;
+
 public class RobustNonLinearSquaresRegression<Q extends Quantity> extends AbstractNonLinearRegression<Q> {
     
-    private static final String MAXIT = "maxit=1000";
+    private static final String MAXIT = "maxit=5000";
 
     public RobustNonLinearSquaresRegression(Expression expression, List<VariableMeasurements> measurements,
             List<ConstantModelParameter<?, ? extends Quantity>> constants, TargetMeasurements targetMetric) {

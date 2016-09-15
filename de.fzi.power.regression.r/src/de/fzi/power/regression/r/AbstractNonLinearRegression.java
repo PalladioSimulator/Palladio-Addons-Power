@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.rosuda.REngine.REXP;
 import org.rosuda.REngine.REXPMismatchException;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
+import org.vedantatree.expressionoasis.expressions.DecimalExpression;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import org.vedantatree.expressionoasis.expressions.IdentifierExpression;
 import org.vedantatree.expressionoasis.expressions.NumericExpression;
@@ -202,6 +203,18 @@ public abstract class AbstractNonLinearRegression<Q extends Quantity> extends Ab
     
     protected String getAdditionalParameters() {
         return R_ADDITIONAL_COMMAND + R_PARAM_SEPARATOR + R_START_VALUES_BLOCK + getRegressionStartValues(constants) + R_BLOCK_END;
+    }
+    
+    public Double getAIC() {
+        RRegressionConnection rConnection = RRegressionConnectionImpl.getRRegressionConnection();
+        Vector<REXP> results = rConnection.execute("AIC(" + R_TARGET_NAME + R_BLOCK_END);
+        //Vector<REXP> results = rConnection.execute("BIC(" + R_TARGET_NAME + R_BLOCK_END);
+        try {
+            return results.get(0).asDouble();
+        } catch (REXPMismatchException e) {
+            LOGGER.error("Error calculating AIC: " + e.toString());
+        }
+        return null;
     }
     
 }

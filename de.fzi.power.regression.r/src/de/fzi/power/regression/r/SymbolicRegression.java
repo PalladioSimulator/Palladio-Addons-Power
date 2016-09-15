@@ -17,6 +17,7 @@ import org.rosuda.REngine.REXPString;
 import org.rosuda.REngine.RList;
 import org.vedantatree.expressionoasis.expressions.Expression;
 
+import de.fzi.power.regression.r.expressionoasis.ExportVisitor;
 import de.fzi.power.regression.r.expressionoasis.ExpressionUtil;
 import de.fzi.power.regression.r.io.RRegressionConnection;
 import de.fzi.power.regression.r.io.RRegressionConnectionImpl;
@@ -64,7 +65,7 @@ public class SymbolicRegression<Q extends Quantity> extends AbstractRegression<Q
     
     @Override
     protected String getAdditionalParameters() {
-        return "functionSet=arithmeticFunctionSet, stopCondition=makeStepsStopCondition("+ this.numberOfSteps + ")" + R_PARAM_SEPARATOR + "penalizeGenotypeConstantIndividuals = TRUE";
+        return "functionSet=mathFunctionSet, stopCondition=makeStepsStopCondition("+ this.numberOfSteps + ")" + R_PARAM_SEPARATOR + "penalizeGenotypeConstantIndividuals = TRUE";
     }
     
     public List<Expression> getEliteResults() {
