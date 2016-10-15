@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:de.fzi.power.binding.presentation.BindingEditorID?after=additions">
+         <command
+               commandId="org.palladiosimulator.profiling.evaluation.ui.command1"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="org.palladiosimulator.profiling.evaluation.ui.Evaluation"
+            name="Evaluation">
+      </category>
+      <command
+            categoryId="org.palladiosimulator.profiling.evaluation.ui.Evaluation"
+            defaultHandler="org.palladiosimulator.profiling.evaluation.ui.EvaluationExecutionHandler"
+            description="Evaluate the Accuracy of Power Models"
+            id="org.palladiosimulator.profiling.evaluation.ui.command1"
+            name="Evaluate Accuracy of Models">
+      </command>
+   </extension>
+
+</plugin>
