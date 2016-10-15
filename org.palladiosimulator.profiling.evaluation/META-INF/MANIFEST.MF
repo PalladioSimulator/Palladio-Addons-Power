@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Power Model Evaluation
+Bundle-SymbolicName: org.palladiosimulator.profiling.evaluation
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.fzi.power.interpreter;bundle-version="1.0.0",
+ org.palladiosimulator.edp2,
+ org.palladiosimulator.edp2.util,
+ de.fzi.power.interpreter.calculators.energy,
+ org.apache.commons.math3,
+ org.apache.commons.lang3
+Export-Package: org.palladiosimulator.profiling.evaluation
