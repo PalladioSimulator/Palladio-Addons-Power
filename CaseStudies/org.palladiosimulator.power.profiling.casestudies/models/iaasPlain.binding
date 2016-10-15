@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" id="_GEZl0JgGEeS8naF2VwaQgQ">
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_Hcn9AJgGEeS8naF2VwaQgQ" name="Linear CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_Rat90JgGEeS8naF2VwaQgQ" value="640.3446418724 W">
+      <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_jHYe4GOQEeWW76L-WpK6kQ"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_R18hQJgGEeS8naF2VwaQgQ" value="322.5812580006 W">
+      <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_hpdvYGOQEeWW76L-WpK6kQ"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_culCEn1gEeWUt_x9QCHofA"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" id="_I4tggZgGEeS8naF2VwaQgQ" name="loslessDistribution">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_kYZIwJgGEeS8naF2VwaQgQ" value="0 W">
+      <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw"/>
+    </fixedFactorValues>
+    <distributionPowerModel href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" id="_tuLC0Wd_EeWupMclJvipOQ" name="declarativePassthroughDistribution">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_Ac1ZwGgiEeWM8bUtzui0_Q" value="200 W">
+      <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_5v610GghEeWM8bUtzui0_Q"/>
+    </fixedFactorValues>
+    <distributionPowerModel href="declarativePowerModels.spec#_on3u0n1hEeWs5NTiSBh3Qw"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_qHMJUE9TEeaevdhGrMtmSA" name="LinearCpuHdd">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_r1eQEE9TEeaevdhGrMtmSA" value="315.9227932049 W">
+      <boundFactor href="declarativePowerModels.spec#_gcoBIH1gEeWUt_x9QCHofA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_siUvAE9TEeaevdhGrMtmSA" value="3.2089663442 W">
+      <boundFactor href="declarativePowerModels.spec#_hkCVIH1gEeWUt_x9QCHofA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_s6LOUE9TEeaevdhGrMtmSA" value="-156.2457604656 W">
+      <boundFactor href="declarativePowerModels.spec#_oUcZUE9TEeaevdhGrMtmSA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_BwsKME9UEeaevdhGrMtmSA" value="324.6206811261 W">
+      <boundFactor href="declarativePowerModels.spec#_AgXKwE9UEeaevdhGrMtmSA"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_K7tkwk9TEeaevdhGrMtmSA"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_aug6YFf_EearQ-4OHXGg0Q" name="Exponential CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_g2xSEFf_EearQ-4OHXGg0Q" value="246.0661973453 W">
+      <boundFactor href="declarativePowerModels.spec#_OzNuMFfMEeaJt52aq6__tg"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_jIutoFf_EearQ-4OHXGg0Q" value="343.6278624398 W">
+      <boundFactor href="declarativePowerModels.spec#_PeRdYFfMEeaJt52aq6__tg"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValueDimensionless" id="_hujOoVf_EearQ-4OHXGg0Q" value="0.4267977361">
+      <boundFactor href="declarativePowerModels.spec#_QASlUFfMEeaJt52aq6__tg"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_3tX0AlfLEeaJt52aq6__tg"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_nkiGYFgGEeaHDMHWpSqWyA" name="bfepm pow 3 CPU HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA" value="303.2518367585 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA2" value="687.1783304275 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA3" value="-368.633069277 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA4" value="-119.7300196728 W">
+      <boundFactor href="declarativePowerModels.spec#_QJRV0FgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA5" value="-1,413.7939053441 W">
+      <boundFactor href="declarativePowerModels.spec#_UjBkUFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA6" value="7,272.8374850251 W">
+      <boundFactor href="declarativePowerModels.spec#_VCfHgFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA7" value="-10,810.9857054041 W">
+      <boundFactor href="declarativePowerModels.spec#_VYho8FgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA8" value="195.7410984312 W">
+      <boundFactor href="declarativePowerModels.spec#_RU6pkFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA9" value="-168.744941439 W">
+      <boundFactor href="declarativePowerModels.spec#_Tb_q0FgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA1" value="40.9040712515 W">
+      <boundFactor href="declarativePowerModels.spec#_UCEzYFgGEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyA"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_1SWLsFh-EeaHDMHWpSqWyA" name="bfepm pow 2 CPU HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_-IzPAFh-EeaHDMHWpSqWyA" value="300.13689375 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_BqKc8Fh_EeaHDMHWpSqWyA" value="744.6565702808 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_CWohYFh_EeaHDMHWpSqWyA" value="-539.9155699483 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_CxpCYFh_EeaHDMHWpSqWyA" value="-956.3751023935 W">
+      <boundFactor href="declarativePowerModels.spec#_RU6pkFgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_DYni0Fh_EeaHDMHWpSqWyA" value="2,275.7430226317 W">
+      <boundFactor href="declarativePowerModels.spec#_Tb_q0FgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_ExDVYFh_EeaHDMHWpSqWyA" value="119.8157495661 W">
+      <boundFactor href="declarativePowerModels.spec#_UjBkUFgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_FU0JwFh_EeaHDMHWpSqWyA" value="-53.02513585 W">
+      <boundFactor href="declarativePowerModels.spec#_VCfHgFgGEeaHDMHWpSqWyA2"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyA2"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_TotwgF5OEeaTNvrtt1YobQ" name="bfepm pow 3 CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_aWtTEFgGEeaHDMHWpSqWyA" value="299.6741935552 W">
+      <boundFactor href="declarativePowerModels.spec#_OLazjkFgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_aWtTEFgGEeaHDMHWpSqWyA2" value="667.7791228071 W">
+      <boundFactor href="declarativePowerModels.spec#_O0a5j4FgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_aWtTEFgGEeaHDMHWpSqWyA3" value="-284.3353328623 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1azUFgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_aWtTEFgGEeaHDMHWpSqWyA4" value="-180.8343769061 W">
+      <boundFactor href="declarativePowerModels.spec#_QJaRV0FgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUaa8VgGEeaHDMHWpSqWyAC3"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_ibnkIF5OEeaTNvrtt1YobQ" name="bfepm pow 2 CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_bWtTEFgGEeaHDMHWpSqWyA" value="296.2822782192 W">
+      <boundFactor href="declarativePowerModels.spec#_OaLzjkFgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_bWtTEFgGEeaHDMHWpSqWyA2" value="751.4589196826 W">
+      <boundFactor href="declarativePowerModels.spec#_Oa05j4FgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_bWtTEFgGEeaHDMHWpSqWyA3" value="-541.1051438553 W">
+      <boundFactor href="declarativePowerModels.spec#_PaW1zUFgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgaGEeaHDMHWpSqWyAC2"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_nkiGYFgGEeaHDMHWpSqWyAe" name="bfepm pow 3 exp CPU HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGElaHDMHWpSqWyA" value="2,034.532577903 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA2e" value="612.992917239 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA3e" value="-399.9491275357 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA4e" value="-139.9047657931 W">
+      <boundFactor href="declarativePowerModels.spec#_QJRV0FgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA5e" value="165.15683577 W">
+      <boundFactor href="declarativePowerModels.spec#_RU6pkFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA6e" value="-169.3383847292 W">
+      <boundFactor href="declarativePowerModels.spec#_Tb_q0FgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA7e" value="29.0278634335 W">
+      <boundFactor href="declarativePowerModels.spec#_UCEzYFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA8e" value="428.4745040771 W">
+      <boundFactor href="declarativePowerModels.spec#_UjBkUFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA9e" value="8,108.1471198494 W">
+      <boundFactor href="declarativePowerModels.spec#_VCfHgFgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA1e" value="-10,365.8589605754 W">
+      <boundFactor href="declarativePowerModels.spec#_VYho8FgGEeaHDMHWpSqWyA3"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JraUa8VgGEeaHDMHWpSqWyA"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_nkiGYFgGEeaHDMHWpSqWyAe" name="bfepm pow 2 exp CPU HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b8" value="-280.2907542395 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a1"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b81" value="678.255188023 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b82" value="-602.5948908037 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b83" value="106.0263205616 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a4"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b84" value="-81.5303462043 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a5"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b85" value="-1,420.7603329203 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a6"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="6b61696706cc4160b7b6800c224c87b86" value="1,900.5174496665 W">
+      <boundFactor href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a7"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#de171b2699ec400fa24ba3975767d89a"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_w-d6YGOwEeasY7aA7v_rKA" name="bfepm pow exp CPU HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_eAL2AGOxEeasY7aA7v_rKA" value="302.3447751526 W">
+      <boundFactor href="declarativePowerModels.spec#03d67c321bcf4f7b8f05bee6148fc1981"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_fLOs0GOxEeasY7aA7v_rKA" value="119.5158260508 W">
+      <boundFactor href="declarativePowerModels.spec#03d67c321bcf4f7b8f05bee6148fc1982"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_fgJM4GOxEeasY7aA7v_rKA" value="2.5389461479 W">
+      <boundFactor href="declarativePowerModels.spec#03d67c321bcf4f7b8f05bee6148fc1984"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_f0fFMGOxEeasY7aA7v_rKA" value="-93.9699589122 W">
+      <boundFactor href="declarativePowerModels.spec#03d67c321bcf4f7b8f05bee6148fc1986"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#03d67c321bcf4f7b8f05bee6148fc198"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_7cj0wFiKEeaHDMHWpSqWyA" name="CPU pow with linear">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_-ARusFiKEeaHDMHWpSqWyA" value="300.0552652639 W">
+      <boundFactor href="declarativePowerModels.spec#_oE41cFiKEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_-6cQ4FiKEeaHDMHWpSqWyA" value="650.3589613415 W">
+      <boundFactor href="declarativePowerModels.spec#_pjzqgFiKEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="__Ur84FiKEeaHDMHWpSqWyA" value="-447.3978784433 W">
+      <boundFactor href="declarativePowerModels.spec#_qMFygFiKEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValueDimensionless" id="__r3t0ViKEeaHDMHWpSqWyA" value="2.3907546043">
+      <boundFactor href="declarativePowerModels.spec#_qqYRAFiKEeaHDMHWpSqWyA"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_iknq0liKEeaHDMHWpSqWyA"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_19U9YFi1EeanpcBednRjuQ" name="bfepm exponential">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_5jmggFi1EeanpcBednRjuQ" value="569.0182243592 W">
+      <boundFactor href="declarativePowerModels.spec#_uZk4EFi1EeanpcBednRjuQ"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_HGxKUGCoEeassfGRgSbDfw" value="0.6915485761 W">
+      <boundFactor href="declarativePowerModels.spec#_vDGWMFi1EeanpcBednRjuQ"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValueDimensionless" id="_6htHgVi1EeanpcBednRjuQ" value="0.8748582403">
+      <boundFactor href="declarativePowerModels.spec#_wBBXAFi1EeanpcBednRjuQ"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_YHGUgli1EeanpcBednRjuQ"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_CAom4F5LEeaTNvrtt1YobQ" name="bfepm pow 3 exp CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyAC3" value="225.1846434384 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qatTEFgGEeaHDMHWpSqWyAC3e" value="592.2777249561 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEegGEeaHDMHWpSqWyAC3e" value="-316.5574159061 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDaHWpSqWyAC3e" value="-201.193945047 W">
+      <boundFactor href="declarativePowerModels.spec#_QJRV0FgGEeaHDMHWpSqWyAC3"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyAC3"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_CAom4F5LEeaTNvrtt1YobQ2" name="bfepm pow 2 exp CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyAC2" value="218.2533129531 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qatTEFgGEeaHDMHWpSqWyAC2e" value="682.3562375034 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEegGEeaHDMHWpSqWyAC2e" value="-604.6725394697 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyAC2"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyAC2"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_CAom4F5LEeaTNvrtt1YobQ1" name="bfepm pow exp CPU">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyAC1" value="208.2626339188 W">
+      <boundFactor href="declarativePowerModels.spec#_OLzjkFgGEeaHDMHWpSqWyAC1"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qatTEFgGEeaHDMHWpSqWyAC1e" value="120.1321997993 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyAC1"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyAC1"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_WPOo4F7UEeaL4KL84kZkjw" name="Linear Power Model CPU Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_MTBMgF7WEeaL4KL84kZkjw" value="657.3034121661 W">
+      <boundFactor href="declarativePowerModels.spec#_hkCVIH1gEeWUt_x9QCHofAF"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_culCEn1gEeWUt_x9QCHofAF"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_q0fx0F7WEeaL4KL84kZkjw" name="Exponential CPU Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_szpmIF7WEeaL4KL84kZkjw" value="322.5933165947 W">
+      <boundFactor href="declarativePowerModels.spec#_PeRdYFfMEeaJt52aq6__tgF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValueDimensionless" id="_wbE_0V7WEeaL4KL84kZkjw" value="0.5507930728">
+      <boundFactor href="declarativePowerModels.spec#_QASlUFfMEeaJt52aq6__tgF"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_3tX0AlfLEeaJt52aq6__tgF"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_epVAAF7XEeaL4KL84kZkjw" name="Linear Power Model CPU HDD Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_r1eQEE9TEeaevdhGrMtmSAF" value="375.713043026 W">
+      <boundFactor href="declarativePowerModels.spec#_gcoBIH1gEeWUt_x9QCHofA2F"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_siUvAE9TEeaevdhGrMtmSAF" value="7.6796971941 W">
+      <boundFactor href="declarativePowerModels.spec#_hkCVIH1gEeWUt_x9QCHofA2F"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_s6LOUE9TEeaevdhGrMtmSAF" value="109.34831334 W">
+      <boundFactor href="declarativePowerModels.spec#_oUcZUE9TEeaevdhGrMtmSAF"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_K7tkwk9TEeaevdhGrMtmSAF"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_4a2bQF-xEea4g5v0XAu_EgF" name="bfepm pow 3 CPU HDD Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA2F" value="964.0642551071 W">
+      <boundFactor href="declarativePowerModels.spec#_O05j4FgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA3F" value="-1,039.0319218392 W">
+      <boundFactor href="declarativePowerModels.spec#_PW1zUFgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA4F" value="305.6193437043 W">
+      <boundFactor href="declarativePowerModels.spec#_QJRV0FgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA5F" value="-841.203652213 W">
+      <boundFactor href="declarativePowerModels.spec#_RU6pkFgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA6F" value="4,045.6978282052 W">
+      <boundFactor href="declarativePowerModels.spec#_Tb_q0FgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA7F" value="-5,614.158807757 W">
+      <boundFactor href="declarativePowerModels.spec#_UCEzYFgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA83" value="192.8966793331 W">
+      <boundFactor href="declarativePowerModels.spec#_UjBkUFgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA93" value="-199.092557902 W">
+      <boundFactor href="declarativePowerModels.spec#_VCfHgFgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_qWtTEFgGEeaHDMHWpSqWyA13" value="54.0442564907 W">
+      <boundFactor href="declarativePowerModels.spec#_VYho8FgGEeaHDMHWpSqWyAF"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#_JrUa8VgGEeaHDMHWpSqWyAF"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_ftq4MGIUEeassfGRgSbDfw" name="bfepm pow 2 CPU HDD Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b6950941" value="851.9099271628 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b69509411" value="-629.8820926475 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e2"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b69509412" value="-236.2066220544 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e3"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b69509413" value="548.3430076424 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e4"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b69509414" value="57.8647611863 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e5"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="08caaeaee90340808af2bf73b69509415" value="-36.1842919429 W">
+      <boundFactor href="declarativePowerModels.spec#3a19adc3db0b4b1dada1836d40e1056e6"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#74bba0d7d6b34c518bf3a45d4ec82823"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="567a5d6158a84bb19cb7e7e33960ae71" name="bfepm pow 3 exp CPU HDD Fixed Min">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae712" value="612.7355295522 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb631"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae713" value="-395.5497538066 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb632"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae714" value="-143.8081768689 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb633"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae715" value="-1,116.7759863585 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb634"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae716" value="3,734.4876372069 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb635"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae717" value="-2,824.4622981764 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb636"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae718" value="206.4646137088 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb637"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae719" value="-87.5490100863 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb638"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="567a5d6158a84bb19cb7e7e33960ae710" value="37.2042329617 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb639"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb63"/>
+  </powerBindings>
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_QOEpoGO0EeasY7aA7v_rKA" name="bfepm pow 3 exp CPU Fixed Min Linear HDD">
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="0eab9c61bdcc40bdb1c56493c20a5ba7" value="214.8027173855 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb631"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="0eab9c61bdcc40bdb1c56493c20a5ba71" value="721.6071618036 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb632"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="0eab9c61bdcc40bdb1c56493c20a5ba72" value="-885.7536060737 W">
+      <boundFactor href="declarativePowerModels.spec#11108a1ed84c42c3b9e384fa350deb633"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="0eab9c61bdcc40bdb1c56493c20a5ba73" value="5.2476699889 W">
+      <boundFactor href="declarativePowerModels.spec#0eab9c61bdcc40bdb1c56493c20a5ba75"/>
+    </fixedFactorValues>
+    <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="0eab9c61bdcc40bdb1c56493c20a5ba74" value="-225.01204897 W">
+      <boundFactor href="declarativePowerModels.spec#0eab9c61bdcc40bdb1c56493c20a5ba76"/>
+    </fixedFactorValues>
+    <resourcePowerModelSpecification href="declarativePowerModels.spec#0eab9c61bdcc40bdb1c56493c20a5ba7"/>
+  </powerBindings>
+</de.fzi.power:PowerBindingRepository>
