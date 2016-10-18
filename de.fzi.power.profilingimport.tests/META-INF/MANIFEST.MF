@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Profiling Import Tests
+Bundle-SymbolicName: de.fzi.power.profilingimport.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.junit,
+ de.fzi.power.profilingimport;bundle-version="1.0.0"
