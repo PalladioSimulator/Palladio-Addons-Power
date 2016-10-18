@@ -2,7 +2,9 @@
 <feature
       id="de.fzi.power.profilingimport.feature"
       label="Profiling Import Feature"
-      version="1.0.0.qualifier">
+      version="1.0.0.qualifier"
+      license-feature="org.palladiosimulator.license"
+      license-feature-version="1.0.0">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
