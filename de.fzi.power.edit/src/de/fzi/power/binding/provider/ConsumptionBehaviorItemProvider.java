@@ -7,28 +7,33 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.StatefulResourcePowerBinding;
+import de.fzi.power.binding.ConsumptionBehavior;
+import de.fzi.power.util.provider.EntityItemProvider;
+import de.fzi.power.util.provider.PowerEditPlugin;
+import tools.descartes.dlim.DlimFactory;
 
 /**
- * This is the item provider adapter for a {@link de.fzi.power.binding.StatefulResourcePowerBinding}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link de.fzi.power.binding.ConsumptionBehavior} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemProvider {
+public class ConsumptionBehaviorItemProvider extends EntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      */
-    public StatefulResourcePowerBindingItemProvider(final AdapterFactory adapterFactory) {
+    public ConsumptionBehaviorItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -43,8 +48,25 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
         if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
+            this.addUnitPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Unit feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addUnitPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_ConsumptionBehavior_unit_feature"),
+                this.getString("_UI_PropertyDescriptor_description", "_UI_ConsumptionBehavior_unit_feature",
+                        "_UI_ConsumptionBehavior_type"),
+                BindingPackage.Literals.CONSUMPTION_BEHAVIOR__UNIT, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
     }
 
     /**
@@ -60,7 +82,7 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
         if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
-            this.childrenFeatures.add(BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES);
+            this.childrenFeatures.add(BindingPackage.Literals.CONSUMPTION_BEHAVIOR__POWER_CURVE);
         }
         return this.childrenFeatures;
     }
@@ -79,13 +101,13 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
     }
 
     /**
-     * This returns StatefulResourcePowerBinding.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This returns ConsumptionBehavior.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/StatefulResourcePowerBinding"));
+        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/ConsumptionBehavior"));
     }
 
     /**
@@ -96,9 +118,9 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((StatefulResourcePowerBinding) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_StatefulResourcePowerBinding_type")
-                : this.getString("_UI_StatefulResourcePowerBinding_type") + " " + label;
+        final String label = ((ConsumptionBehavior) object).getName();
+        return label == null || label.length() == 0 ? this.getString("_UI_ConsumptionBehavior_type")
+                : this.getString("_UI_ConsumptionBehavior_type") + " " + label;
     }
 
     /**
@@ -112,8 +134,11 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(StatefulResourcePowerBinding.class)) {
-        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES:
+        switch (notification.getFeatureID(ConsumptionBehavior.class)) {
+        case BindingPackage.CONSUMPTION_BEHAVIOR__UNIT:
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            return;
+        case BindingPackage.CONSUMPTION_BEHAVIOR__POWER_CURVE:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
@@ -130,13 +155,19 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors
-                .add(this.createChildParameter(BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES,
-                        BindingFactory.eINSTANCE.createTransitionState()));
+        newChildDescriptors.add(this.createChildParameter(BindingPackage.Literals.CONSUMPTION_BEHAVIOR__POWER_CURVE,
+                DlimFactory.eINSTANCE.createSequence()));
+    }
 
-        newChildDescriptors
-                .add(this.createChildParameter(BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES,
-                        BindingFactory.eINSTANCE.createPowerState()));
+    /**
+     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return PowerEditPlugin.INSTANCE;
     }
 
 }

@@ -12,6 +12,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierEditPlugin;
 import de.uka.ipd.sdq.probfunction.provider.ProbabilityFunctionEditPlugin;
 import de.uka.ipd.sdq.stoex.provider.StoexEditPlugin;
 import de.uka.ipd.sdq.units.provider.UnitsEditPlugin;
+import tools.descartes.dlim.provider.DlimEditPlugin;
 
 /**
  * This is the central singleton for the Power edit plugin. <!-- begin-user-doc --> <!--
@@ -40,7 +41,7 @@ public final class PowerEditPlugin extends EMFPlugin {
      * @generated
      */
     public PowerEditPlugin() {
-        super(new ResourceLocator[] { EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
+        super(new ResourceLocator[] { DlimEditPlugin.INSTANCE, EDP2EditPlugin.INSTANCE, IdentifierEditPlugin.INSTANCE,
                 MetricSpecEditPlugin.INSTANCE, PalladioComponentModelEditPlugin.INSTANCE,
                 ProbabilityFunctionEditPlugin.INSTANCE, StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
     }

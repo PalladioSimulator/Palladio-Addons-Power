@@ -1,30 +1,33 @@
 /**
  */
-package de.fzi.power.specification.provider;
+package de.fzi.power.binding.provider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import de.fzi.power.specification.FixedFactor;
+import de.fzi.power.binding.AbstractPowerState;
+import de.fzi.power.util.provider.EntityItemProvider;
+import de.fzi.power.util.provider.PowerEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link de.fzi.power.specification.FixedFactor} object.
+ * This is the item provider adapter for a {@link de.fzi.power.binding.AbstractPowerState} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class FixedFactorItemProvider extends ConsumptionFactorItemProvider {
+public class AbstractPowerStateItemProvider extends EntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      */
-    public FixedFactorItemProvider(final AdapterFactory adapterFactory) {
+    public AbstractPowerStateItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -44,16 +47,6 @@ public class FixedFactorItemProvider extends ConsumptionFactorItemProvider {
     }
 
     /**
-     * This returns FixedFactor.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/FixedFactor"));
-    }
-
-    /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
      *
@@ -61,9 +54,9 @@ public class FixedFactorItemProvider extends ConsumptionFactorItemProvider {
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((FixedFactor) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_FixedFactor_type")
-                : this.getString("_UI_FixedFactor_type") + " " + label;
+        final String label = ((AbstractPowerState) object).getName();
+        return label == null || label.length() == 0 ? this.getString("_UI_AbstractPowerState_type")
+                : this.getString("_UI_AbstractPowerState_type") + " " + label;
     }
 
     /**
@@ -88,6 +81,17 @@ public class FixedFactorItemProvider extends ConsumptionFactorItemProvider {
     @Override
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return PowerEditPlugin.INSTANCE;
     }
 
 }

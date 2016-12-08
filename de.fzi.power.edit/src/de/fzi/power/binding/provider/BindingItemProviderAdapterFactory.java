@@ -238,6 +238,53 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
     }
 
     /**
+     * This keeps track of the one adapter used for all {@link de.fzi.power.binding.TransitionState}
+     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected TransitionStateItemProvider transitionStateItemProvider;
+
+    /**
+     * This creates an adapter for a {@link de.fzi.power.binding.TransitionState}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createTransitionStateAdapter() {
+        if (this.transitionStateItemProvider == null) {
+            this.transitionStateItemProvider = new TransitionStateItemProvider(this);
+        }
+
+        return this.transitionStateItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.binding.ConsumptionBehavior} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected ConsumptionBehaviorItemProvider consumptionBehaviorItemProvider;
+
+    /**
+     * This creates an adapter for a {@link de.fzi.power.binding.ConsumptionBehavior}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createConsumptionBehaviorAdapter() {
+        if (this.consumptionBehaviorItemProvider == null) {
+            this.consumptionBehaviorItemProvider = new ConsumptionBehaviorItemProvider(this);
+        }
+
+        return this.consumptionBehaviorItemProvider;
+    }
+
+    /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -352,14 +399,20 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
         if (this.distributionPowerBindingItemProvider != null) {
             this.distributionPowerBindingItemProvider.dispose();
         }
-        if (this.powerStateItemProvider != null) {
-            this.powerStateItemProvider.dispose();
-        }
         if (this.statefulResourcePowerBindingItemProvider != null) {
             this.statefulResourcePowerBindingItemProvider.dispose();
         }
         if (this.fixedFactorValueDimensionlessItemProvider != null) {
             this.fixedFactorValueDimensionlessItemProvider.dispose();
+        }
+        if (this.transitionStateItemProvider != null) {
+            this.transitionStateItemProvider.dispose();
+        }
+        if (this.consumptionBehaviorItemProvider != null) {
+            this.consumptionBehaviorItemProvider.dispose();
+        }
+        if (this.powerStateItemProvider != null) {
+            this.powerStateItemProvider.dispose();
         }
     }
 

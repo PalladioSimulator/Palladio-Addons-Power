@@ -143,7 +143,7 @@ public class AbstractFixedFactorValueItemProvider extends IdentifierItemProvider
     public ResourceLocator getResourceLocator() {
         return PowerEditPlugin.INSTANCE;
     }
-    
+
     /**
      * @generated NOT
      */
