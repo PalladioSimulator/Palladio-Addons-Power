@@ -2,7 +2,7 @@
  */
 package de.fzi.power.infrastructure;
 
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
 
 /**
@@ -34,12 +34,12 @@ public interface StatefulPowerConsumingResource extends AbstractPowerConsumingRe
      * <!-- end-user-doc -->
      *
      * @return the value of the '<em>Power State</em>' reference.
-     * @see #setPowerState(PowerState)
+     * @see #setPowerState(AbstractPowerState)
      * @see de.fzi.power.infrastructure.InfrastructurePackage#getStatefulPowerConsumingResource_PowerState()
      * @model required="true"
      * @generated
      */
-    PowerState getPowerState();
+    AbstractPowerState getPowerState();
 
     /**
      * Sets the value of the '
@@ -51,7 +51,7 @@ public interface StatefulPowerConsumingResource extends AbstractPowerConsumingRe
      * @see #getPowerState()
      * @generated
      */
-    void setPowerState(PowerState value);
+    void setPowerState(AbstractPowerState value);
 
     /**
      * Returns the value of the '<em><b>Stateful Resource Power Binding</b></em>' reference. <!--

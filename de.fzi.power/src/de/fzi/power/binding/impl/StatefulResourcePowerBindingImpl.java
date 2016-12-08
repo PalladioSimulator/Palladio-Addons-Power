@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.PowerState;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
 
 /**
@@ -54,8 +54,9 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
      */
     @Override
     @SuppressWarnings("unchecked")
-    public EList<PowerState> getPowerStates() {
-        return (EList<PowerState>) this.eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES,
+    public EList<AbstractPowerState> getPowerStates() {
+        return (EList<AbstractPowerState>) this.eDynamicGet(
+                BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES,
                 BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES, true, true);
     }
 
@@ -115,7 +116,7 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES:
             this.getPowerStates().clear();
-            this.getPowerStates().addAll((Collection<? extends PowerState>) newValue);
+            this.getPowerStates().addAll((Collection<? extends AbstractPowerState>) newValue);
             return;
         }
         super.eSet(featureID, newValue);

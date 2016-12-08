@@ -23,8 +23,9 @@ import org.eclipse.emf.common.util.EList;
 public interface StatefulResourcePowerBinding extends PowerBinding {
     /**
      * Returns the value of the '<em><b>Power States</b></em>' containment reference list. The list
-     * contents are of type {@link de.fzi.power.binding.PowerState}. It is bidirectional and its
-     * opposite is '{@link de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding
+     * contents are of type {@link de.fzi.power.binding.AbstractPowerState}. It is bidirectional and
+     * its opposite is '
+     * {@link de.fzi.power.binding.AbstractPowerState#getStatefulResourcePowerBinding
      * <em>Stateful Resource Power Binding</em>}'. <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power States</em>' containment reference list isn't clear, there
@@ -34,10 +35,10 @@ public interface StatefulResourcePowerBinding extends PowerBinding {
      *
      * @return the value of the '<em>Power States</em>' containment reference list.
      * @see de.fzi.power.binding.BindingPackage#getStatefulResourcePowerBinding_PowerStates()
-     * @see de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding
+     * @see de.fzi.power.binding.AbstractPowerState#getStatefulResourcePowerBinding
      * @model opposite="statefulResourcePowerBinding" containment="true" required="true"
      * @generated
      */
-    EList<PowerState> getPowerStates();
+    EList<AbstractPowerState> getPowerStates();
 
 } // StatefulResourcePowerBinding

@@ -31,6 +31,7 @@ import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -153,6 +154,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         isInited = true;
 
         // Initialize simple dependencies
+        DlimPackage.eINSTANCE.eClass();
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
@@ -568,9 +570,10 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
         this.initEClass(this.statefulPowerConsumingResourceEClass, StatefulPowerConsumingResource.class,
                 "StatefulPowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getStatefulPowerConsumingResource_PowerState(), theBindingPackage.getPowerState(),
-                null, "powerState", null, 1, 1, StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getStatefulPowerConsumingResource_PowerState(),
+                theBindingPackage.getAbstractPowerState(), null, "powerState", null, 1, 1,
+                StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEReference(this.getStatefulPowerConsumingResource_StatefulResourcePowerBinding(),
                 theBindingPackage.getStatefulResourcePowerBinding(), null, "statefulResourcePowerBinding", null, 1, 1,
                 StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,

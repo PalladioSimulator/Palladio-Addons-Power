@@ -4,7 +4,7 @@ package de.fzi.power.infrastructure.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
@@ -52,8 +52,9 @@ public class StatefulPowerConsumingResourceImpl extends AbstractPowerConsumingRe
      * @generated
      */
     @Override
-    public PowerState getPowerState() {
-        return (PowerState) this.eDynamicGet(InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE,
+    public AbstractPowerState getPowerState() {
+        return (AbstractPowerState) this.eDynamicGet(
+                InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE,
                 InfrastructurePackage.Literals.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE, true, true);
     }
 
@@ -62,8 +63,9 @@ public class StatefulPowerConsumingResourceImpl extends AbstractPowerConsumingRe
      *
      * @generated
      */
-    public PowerState basicGetPowerState() {
-        return (PowerState) this.eDynamicGet(InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE,
+    public AbstractPowerState basicGetPowerState() {
+        return (AbstractPowerState) this.eDynamicGet(
+                InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE,
                 InfrastructurePackage.Literals.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE, false, true);
     }
 
@@ -73,7 +75,7 @@ public class StatefulPowerConsumingResourceImpl extends AbstractPowerConsumingRe
      * @generated
      */
     @Override
-    public void setPowerState(final PowerState newPowerState) {
+    public void setPowerState(final AbstractPowerState newPowerState) {
         this.eDynamicSet(InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE,
                 InfrastructurePackage.Literals.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE, newPowerState);
     }
@@ -146,7 +148,7 @@ public class StatefulPowerConsumingResourceImpl extends AbstractPowerConsumingRe
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
         case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE:
-            this.setPowerState((PowerState) newValue);
+            this.setPowerState((AbstractPowerState) newValue);
             return;
         case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING:
             this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) newValue);
@@ -164,7 +166,7 @@ public class StatefulPowerConsumingResourceImpl extends AbstractPowerConsumingRe
     public void eUnset(final int featureID) {
         switch (featureID) {
         case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE:
-            this.setPowerState((PowerState) null);
+            this.setPowerState((AbstractPowerState) null);
             return;
         case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING:
             this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) null);

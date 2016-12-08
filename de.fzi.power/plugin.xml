@@ -68,6 +68,7 @@
             type="infrastructure"
             class="de.fzi.power.infrastructure.util.InfrastructureResourceFactoryImpl"/>
    </extension>
+
    <extension
          point="org.eclipse.emf.ecore.extension_parser">
       <parser

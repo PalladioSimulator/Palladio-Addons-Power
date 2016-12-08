@@ -16,8 +16,10 @@ import org.palladiosimulator.metricspec.MetricSpecPackage;
 import org.palladiosimulator.pcm.PcmPackage;
 
 import de.fzi.power.binding.AbstractFixedFactorValue;
+import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.ConsumptionBehavior;
 import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValueDimensionless;
 import de.fzi.power.binding.FixedFactorValuePower;
@@ -27,6 +29,7 @@ import de.fzi.power.binding.PowerFactorBinding;
 import de.fzi.power.binding.PowerState;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
+import de.fzi.power.binding.TransitionState;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
 import de.fzi.power.specification.SpecificationPackage;
@@ -34,6 +37,7 @@ import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -81,6 +85,13 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      *
      * @generated
      */
+    private EClass abstractPowerStateEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
     private EClass powerStateEClass = null;
 
     /**
@@ -110,6 +121,20 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * @generated
      */
     private EClass fixedFactorValueDimensionlessEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass transitionStateEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass consumptionBehaviorEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -163,6 +188,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         isInited = true;
 
         // Initialize simple dependencies
+        DlimPackage.eINSTANCE.eClass();
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();
@@ -297,6 +323,26 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * @generated
      */
     @Override
+    public EClass getAbstractPowerState() {
+        return this.abstractPowerStateEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getAbstractPowerState_StatefulResourcePowerBinding() {
+        return (EReference) this.abstractPowerStateEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public EClass getPowerState() {
         return this.powerStateEClass;
     }
@@ -308,16 +354,6 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      */
     @Override
     public EReference getPowerState_Binding() {
-        return (EReference) this.powerStateEClass.getEStructuralFeatures().get(1);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EReference getPowerState_StatefulResourcePowerBinding() {
         return (EReference) this.powerStateEClass.getEStructuralFeatures().get(0);
     }
 
@@ -417,6 +453,76 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * @generated
      */
     @Override
+    public EClass getTransitionState() {
+        return this.transitionStateEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getTransitionState_TransitionConsumption() {
+        return (EReference) this.transitionStateEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getTransitionState_InitialState() {
+        return (EReference) this.transitionStateEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getTransitionState_TargetState() {
+        return (EReference) this.transitionStateEClass.getEStructuralFeatures().get(2);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getConsumptionBehavior() {
+        return this.consumptionBehaviorEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getConsumptionBehavior_PowerCurve() {
+        return (EReference) this.consumptionBehaviorEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EAttribute getConsumptionBehavior_Unit() {
+        return (EAttribute) this.consumptionBehaviorEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public BindingFactory getBindingFactory() {
         return (BindingFactory) this.getEFactoryInstance();
     }
@@ -457,9 +563,8 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         this.createEReference(this.distributionPowerBindingEClass,
                 DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL);
 
-        this.powerStateEClass = this.createEClass(POWER_STATE);
-        this.createEReference(this.powerStateEClass, POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING);
-        this.createEReference(this.powerStateEClass, POWER_STATE__BINDING);
+        this.abstractPowerStateEClass = this.createEClass(ABSTRACT_POWER_STATE);
+        this.createEReference(this.abstractPowerStateEClass, ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING);
 
         this.statefulResourcePowerBindingEClass = this.createEClass(STATEFUL_RESOURCE_POWER_BINDING);
         this.createEReference(this.statefulResourcePowerBindingEClass, STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES);
@@ -473,6 +578,18 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         this.createEReference(this.abstractFixedFactorValueEClass, ABSTRACT_FIXED_FACTOR_VALUE__POWER_BINDING);
 
         this.fixedFactorValueDimensionlessEClass = this.createEClass(FIXED_FACTOR_VALUE_DIMENSIONLESS);
+
+        this.transitionStateEClass = this.createEClass(TRANSITION_STATE);
+        this.createEReference(this.transitionStateEClass, TRANSITION_STATE__TRANSITION_CONSUMPTION);
+        this.createEReference(this.transitionStateEClass, TRANSITION_STATE__INITIAL_STATE);
+        this.createEReference(this.transitionStateEClass, TRANSITION_STATE__TARGET_STATE);
+
+        this.consumptionBehaviorEClass = this.createEClass(CONSUMPTION_BEHAVIOR);
+        this.createEReference(this.consumptionBehaviorEClass, CONSUMPTION_BEHAVIOR__POWER_CURVE);
+        this.createEAttribute(this.consumptionBehaviorEClass, CONSUMPTION_BEHAVIOR__UNIT);
+
+        this.powerStateEClass = this.createEClass(POWER_STATE);
+        this.createEReference(this.powerStateEClass, POWER_STATE__BINDING);
     }
 
     /**
@@ -509,6 +626,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
                 .getEPackage(MetricSpecPackage.eNS_URI);
         final ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI);
+        final DlimPackage theDlimPackage = (DlimPackage) EPackage.Registry.INSTANCE.getEPackage(DlimPackage.eNS_URI);
 
         // Create type parameters
         final ETypeParameter abstractFixedFactorValueEClass_Q = this
@@ -527,7 +645,7 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         this.powerBindingEClass.getESuperTypes().add(theUtilPackage.getEntity());
         this.resourcePowerBindingEClass.getESuperTypes().add(this.getPowerFactorBinding());
         this.distributionPowerBindingEClass.getESuperTypes().add(this.getPowerFactorBinding());
-        this.powerStateEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        this.abstractPowerStateEClass.getESuperTypes().add(theUtilPackage.getEntity());
         this.statefulResourcePowerBindingEClass.getESuperTypes().add(this.getPowerBinding());
         this.powerFactorBindingEClass.getESuperTypes().add(this.getPowerBinding());
         this.abstractFixedFactorValueEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
@@ -535,6 +653,9 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
         g2 = this.createEGenericType(theUtilPackage.getDimensionless());
         g1.getETypeArguments().add(g2);
         this.fixedFactorValueDimensionlessEClass.getEGenericSuperTypes().add(g1);
+        this.transitionStateEClass.getESuperTypes().add(this.getAbstractPowerState());
+        this.consumptionBehaviorEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        this.powerStateEClass.getESuperTypes().add(this.getAbstractPowerState());
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.fixedFactorValuePowerEClass, FixedFactorValuePower.class, "FixedFactorValuePower",
@@ -568,20 +689,17 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
                 1, 1, DistributionPowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.powerStateEClass, PowerState.class, "PowerState", !IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerState_StatefulResourcePowerBinding(), this.getStatefulResourcePowerBinding(),
-                this.getStatefulResourcePowerBinding_PowerStates(), "statefulResourcePowerBinding", null, 0, 1,
-                PowerState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getPowerState_Binding(), this.getResourcePowerBinding(), null, "binding", null, 1, 1,
-                PowerState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEClass(this.abstractPowerStateEClass, AbstractPowerState.class, "AbstractPowerState", IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getAbstractPowerState_StatefulResourcePowerBinding(),
+                this.getStatefulResourcePowerBinding(), this.getStatefulResourcePowerBinding_PowerStates(),
+                "statefulResourcePowerBinding", null, 0, 1, AbstractPowerState.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.statefulResourcePowerBindingEClass, StatefulResourcePowerBinding.class,
                 "StatefulResourcePowerBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getStatefulResourcePowerBinding_PowerStates(), this.getPowerState(),
-                this.getPowerState_StatefulResourcePowerBinding(), "powerStates", null, 1, -1,
+        this.initEReference(this.getStatefulResourcePowerBinding_PowerStates(), this.getAbstractPowerState(),
+                this.getAbstractPowerState_StatefulResourcePowerBinding(), "powerStates", null, 1, -1,
                 StatefulResourcePowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -615,6 +733,35 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
         this.initEClass(this.fixedFactorValueDimensionlessEClass, FixedFactorValueDimensionless.class,
                 "FixedFactorValueDimensionless", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.transitionStateEClass, TransitionState.class, "TransitionState", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getTransitionState_TransitionConsumption(), this.getConsumptionBehavior(), null,
+                "transitionConsumption", null, 1, 1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getTransitionState_InitialState(), this.getPowerState(), null, "initialState", null, 1,
+                1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getTransitionState_TargetState(), this.getPowerState(), null, "targetState", null, 1,
+                1, TransitionState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.consumptionBehaviorEClass, ConsumptionBehavior.class, "ConsumptionBehavior", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getConsumptionBehavior_PowerCurve(), theDlimPackage.getSequence(), null, "powerCurve",
+                null, 1, 1, ConsumptionBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        g1 = this.createEGenericType(theMetricSpecPackage.getEJSUnit());
+        g2 = this.createEGenericType(theUtilPackage.getPower());
+        g1.getETypeArguments().add(g2);
+        this.initEAttribute(this.getConsumptionBehavior_Unit(), g1, "unit", null, 1, 1, ConsumptionBehavior.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.powerStateEClass, PowerState.class, "PowerState", !IS_ABSTRACT, !IS_INTERFACE,
+                IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getPowerState_Binding(), this.getResourcePowerBinding(), null, "binding", null, 1, 1,
+                PowerState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+                !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
         this.createResource(eNS_URI);

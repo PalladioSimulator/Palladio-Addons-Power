@@ -431,14 +431,14 @@ public interface BindingPackage extends EPackage {
     int DISTRIBUTION_POWER_BINDING_FEATURE_COUNT = POWER_FACTOR_BINDING_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '{@link de.fzi.power.binding.impl.PowerStateImpl
-     * <em>Power State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The meta object id for the '{@link de.fzi.power.binding.impl.AbstractPowerStateImpl
+     * <em>Abstract Power State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @see de.fzi.power.binding.impl.PowerStateImpl
-     * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerState()
+     * @see de.fzi.power.binding.impl.AbstractPowerStateImpl
+     * @see de.fzi.power.binding.impl.BindingPackageImpl#getAbstractPowerState()
      * @generated
      */
-    int POWER_STATE = 5;
+    int ABSTRACT_POWER_STATE = 5;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -447,7 +447,7 @@ public interface BindingPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POWER_STATE__ID = UtilPackage.ENTITY__ID;
+    int ABSTRACT_POWER_STATE__ID = UtilPackage.ENTITY__ID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -456,7 +456,7 @@ public interface BindingPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POWER_STATE__NAME = UtilPackage.ENTITY__NAME;
+    int ABSTRACT_POWER_STATE__NAME = UtilPackage.ENTITY__NAME;
 
     /**
      * The feature id for the '<em><b>Stateful Resource Power Binding</b></em>' container reference.
@@ -465,25 +465,26 @@ public interface BindingPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = UtilPackage.ENTITY_FEATURE_COUNT + 0;
+    int ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = UtilPackage.ENTITY_FEATURE_COUNT + 0;
 
     /**
-     * The feature id for the '<em><b>Binding</b></em>' reference. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The number of structural features of the '<em>Abstract Power State</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int POWER_STATE__BINDING = UtilPackage.ENTITY_FEATURE_COUNT + 1;
+    int ABSTRACT_POWER_STATE_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 1;
 
     /**
-     * The number of structural features of the '<em>Power State</em>' class. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * The meta object id for the '{@link de.fzi.power.binding.impl.PowerStateImpl
+     * <em>Power State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
+     * @see de.fzi.power.binding.impl.PowerStateImpl
+     * @see de.fzi.power.binding.impl.BindingPackageImpl#getPowerState()
      * @generated
-     * @ordered
      */
-    int POWER_STATE_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 2;
+    int POWER_STATE = 12;
 
     /**
      * The meta object id for the '{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl
@@ -599,6 +600,179 @@ public interface BindingPackage extends EPackage {
     int FIXED_FACTOR_VALUE_DIMENSIONLESS_FEATURE_COUNT = ABSTRACT_FIXED_FACTOR_VALUE_FEATURE_COUNT + 0;
 
     /**
+     * The meta object id for the '{@link de.fzi.power.binding.impl.TransitionStateImpl
+     * <em>Transition State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see de.fzi.power.binding.impl.TransitionStateImpl
+     * @see de.fzi.power.binding.impl.BindingPackageImpl#getTransitionState()
+     * @generated
+     */
+    int TRANSITION_STATE = 10;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__ID = ABSTRACT_POWER_STATE__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__NAME = ABSTRACT_POWER_STATE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Stateful Resource Power Binding</b></em>' container reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__STATEFUL_RESOURCE_POWER_BINDING = ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING;
+
+    /**
+     * The feature id for the '<em><b>Transition Consumption</b></em>' containment reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__TRANSITION_CONSUMPTION = ABSTRACT_POWER_STATE_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Initial State</b></em>' reference. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__INITIAL_STATE = ABSTRACT_POWER_STATE_FEATURE_COUNT + 1;
+
+    /**
+     * The feature id for the '<em><b>Target State</b></em>' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE__TARGET_STATE = ABSTRACT_POWER_STATE_FEATURE_COUNT + 2;
+
+    /**
+     * The number of structural features of the '<em>Transition State</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int TRANSITION_STATE_FEATURE_COUNT = ABSTRACT_POWER_STATE_FEATURE_COUNT + 3;
+
+    /**
+     * The meta object id for the '{@link de.fzi.power.binding.impl.ConsumptionBehaviorImpl
+     * <em>Consumption Behavior</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see de.fzi.power.binding.impl.ConsumptionBehaviorImpl
+     * @see de.fzi.power.binding.impl.BindingPackageImpl#getConsumptionBehavior()
+     * @generated
+     */
+    int CONSUMPTION_BEHAVIOR = 11;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONSUMPTION_BEHAVIOR__ID = UtilPackage.ENTITY__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONSUMPTION_BEHAVIOR__NAME = UtilPackage.ENTITY__NAME;
+
+    /**
+     * The feature id for the '<em><b>Power Curve</b></em>' containment reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONSUMPTION_BEHAVIOR__POWER_CURVE = UtilPackage.ENTITY_FEATURE_COUNT + 0;
+
+    /**
+     * The feature id for the '<em><b>Unit</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONSUMPTION_BEHAVIOR__UNIT = UtilPackage.ENTITY_FEATURE_COUNT + 1;
+
+    /**
+     * The number of structural features of the '<em>Consumption Behavior</em>' class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int CONSUMPTION_BEHAVIOR_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 2;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int POWER_STATE__ID = ABSTRACT_POWER_STATE__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int POWER_STATE__NAME = ABSTRACT_POWER_STATE__NAME;
+
+    /**
+     * The feature id for the '<em><b>Stateful Resource Power Binding</b></em>' container reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING;
+
+    /**
+     * The feature id for the '<em><b>Binding</b></em>' reference. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int POWER_STATE__BINDING = ABSTRACT_POWER_STATE_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Power State</em>' class. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int POWER_STATE_FEATURE_COUNT = ABSTRACT_POWER_STATE_FEATURE_COUNT + 1;
+
+    /**
      * Returns the meta object for class '{@link de.fzi.power.binding.FixedFactorValuePower
      * <em>Fixed Factor Value Power</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -697,6 +871,29 @@ public interface BindingPackage extends EPackage {
     EReference getDistributionPowerBinding_DistributionPowerModel();
 
     /**
+     * Returns the meta object for class '{@link de.fzi.power.binding.AbstractPowerState
+     * <em>Abstract Power State</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Abstract Power State</em>'.
+     * @see de.fzi.power.binding.AbstractPowerState
+     * @generated
+     */
+    EClass getAbstractPowerState();
+
+    /**
+     * Returns the meta object for the container reference '
+     * {@link de.fzi.power.binding.AbstractPowerState#getStatefulResourcePowerBinding
+     * <em>Stateful Resource Power Binding</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the container reference '<em>Stateful Resource Power Binding</em>
+     *         '.
+     * @see de.fzi.power.binding.AbstractPowerState#getStatefulResourcePowerBinding()
+     * @see #getAbstractPowerState()
+     * @generated
+     */
+    EReference getAbstractPowerState_StatefulResourcePowerBinding();
+
+    /**
      * Returns the meta object for class '{@link de.fzi.power.binding.PowerState
      * <em>Power State</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
@@ -716,19 +913,6 @@ public interface BindingPackage extends EPackage {
      * @generated
      */
     EReference getPowerState_Binding();
-
-    /**
-     * Returns the meta object for the container reference '
-     * {@link de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding
-     * <em>Stateful Resource Power Binding</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the container reference '<em>Stateful Resource Power Binding</em>
-     *         '.
-     * @see de.fzi.power.binding.PowerState#getStatefulResourcePowerBinding()
-     * @see #getPowerState()
-     * @generated
-     */
-    EReference getPowerState_StatefulResourcePowerBinding();
 
     /**
      * Returns the meta object for class '{@link de.fzi.power.binding.StatefulResourcePowerBinding
@@ -829,6 +1013,86 @@ public interface BindingPackage extends EPackage {
      * @generated
      */
     EClass getFixedFactorValueDimensionless();
+
+    /**
+     * Returns the meta object for class '{@link de.fzi.power.binding.TransitionState
+     * <em>Transition State</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Transition State</em>'.
+     * @see de.fzi.power.binding.TransitionState
+     * @generated
+     */
+    EClass getTransitionState();
+
+    /**
+     * Returns the meta object for the containment reference '
+     * {@link de.fzi.power.binding.TransitionState#getTransitionConsumption
+     * <em>Transition Consumption</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the containment reference '<em>Transition Consumption</em>'.
+     * @see de.fzi.power.binding.TransitionState#getTransitionConsumption()
+     * @see #getTransitionState()
+     * @generated
+     */
+    EReference getTransitionState_TransitionConsumption();
+
+    /**
+     * Returns the meta object for the reference '
+     * {@link de.fzi.power.binding.TransitionState#getInitialState <em>Initial State</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Initial State</em>'.
+     * @see de.fzi.power.binding.TransitionState#getInitialState()
+     * @see #getTransitionState()
+     * @generated
+     */
+    EReference getTransitionState_InitialState();
+
+    /**
+     * Returns the meta object for the reference '
+     * {@link de.fzi.power.binding.TransitionState#getTargetState <em>Target State</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Target State</em>'.
+     * @see de.fzi.power.binding.TransitionState#getTargetState()
+     * @see #getTransitionState()
+     * @generated
+     */
+    EReference getTransitionState_TargetState();
+
+    /**
+     * Returns the meta object for class '{@link de.fzi.power.binding.ConsumptionBehavior
+     * <em>Consumption Behavior</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Consumption Behavior</em>'.
+     * @see de.fzi.power.binding.ConsumptionBehavior
+     * @generated
+     */
+    EClass getConsumptionBehavior();
+
+    /**
+     * Returns the meta object for the reference '
+     * {@link de.fzi.power.binding.ConsumptionBehavior#getPowerCurve <em>Power Curve</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Power Curve</em>'.
+     * @see de.fzi.power.binding.ConsumptionBehavior#getPowerCurve()
+     * @see #getConsumptionBehavior()
+     * @generated
+     */
+    EReference getConsumptionBehavior_PowerCurve();
+
+    /**
+     * Returns the meta object for the attribute '
+     * {@link de.fzi.power.binding.ConsumptionBehavior#getUnit <em>Unit</em>}'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Unit</em>'.
+     * @see de.fzi.power.binding.ConsumptionBehavior#getUnit()
+     * @see #getConsumptionBehavior()
+     * @generated
+     */
+    EAttribute getConsumptionBehavior_Unit();
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
@@ -942,6 +1206,25 @@ public interface BindingPackage extends EPackage {
                 .getDistributionPowerBinding_DistributionPowerModel();
 
         /**
+         * The meta object literal for the '{@link de.fzi.power.binding.impl.AbstractPowerStateImpl
+         * <em>Abstract Power State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.binding.impl.AbstractPowerStateImpl
+         * @see de.fzi.power.binding.impl.BindingPackageImpl#getAbstractPowerState()
+         * @generated
+         */
+        EClass ABSTRACT_POWER_STATE = eINSTANCE.getAbstractPowerState();
+
+        /**
+         * The meta object literal for the '<em><b>Stateful Resource Power Binding</b></em>'
+         * container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE
+                .getAbstractPowerState_StatefulResourcePowerBinding();
+
+        /**
          * The meta object literal for the '{@link de.fzi.power.binding.impl.PowerStateImpl
          * <em>Power State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
@@ -958,15 +1241,6 @@ public interface BindingPackage extends EPackage {
          * @generated
          */
         EReference POWER_STATE__BINDING = eINSTANCE.getPowerState_Binding();
-
-        /**
-         * The meta object literal for the '<em><b>Stateful Resource Power Binding</b></em>'
-         * container reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EReference POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE
-                .getPowerState_StatefulResourcePowerBinding();
 
         /**
          * The meta object literal for the '
@@ -1054,6 +1328,66 @@ public interface BindingPackage extends EPackage {
          * @generated
          */
         EClass FIXED_FACTOR_VALUE_DIMENSIONLESS = eINSTANCE.getFixedFactorValueDimensionless();
+
+        /**
+         * The meta object literal for the '{@link de.fzi.power.binding.impl.TransitionStateImpl
+         * <em>Transition State</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.binding.impl.TransitionStateImpl
+         * @see de.fzi.power.binding.impl.BindingPackageImpl#getTransitionState()
+         * @generated
+         */
+        EClass TRANSITION_STATE = eINSTANCE.getTransitionState();
+
+        /**
+         * The meta object literal for the '<em><b>Transition Consumption</b></em>' containment
+         * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference TRANSITION_STATE__TRANSITION_CONSUMPTION = eINSTANCE.getTransitionState_TransitionConsumption();
+
+        /**
+         * The meta object literal for the '<em><b>Initial State</b></em>' reference feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference TRANSITION_STATE__INITIAL_STATE = eINSTANCE.getTransitionState_InitialState();
+
+        /**
+         * The meta object literal for the '<em><b>Target State</b></em>' reference feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference TRANSITION_STATE__TARGET_STATE = eINSTANCE.getTransitionState_TargetState();
+
+        /**
+         * The meta object literal for the '{@link de.fzi.power.binding.impl.ConsumptionBehaviorImpl
+         * <em>Consumption Behavior</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.binding.impl.ConsumptionBehaviorImpl
+         * @see de.fzi.power.binding.impl.BindingPackageImpl#getConsumptionBehavior()
+         * @generated
+         */
+        EClass CONSUMPTION_BEHAVIOR = eINSTANCE.getConsumptionBehavior();
+
+        /**
+         * The meta object literal for the '<em><b>Power Curve</b></em>' reference feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference CONSUMPTION_BEHAVIOR__POWER_CURVE = eINSTANCE.getConsumptionBehavior_PowerCurve();
+
+        /**
+         * The meta object literal for the '<em><b>Unit</b></em>' attribute feature. <!--
+         * begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EAttribute CONSUMPTION_BEHAVIOR__UNIT = eINSTANCE.getConsumptionBehavior_Unit();
 
     }
 

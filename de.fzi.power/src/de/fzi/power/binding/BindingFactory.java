@@ -83,6 +83,24 @@ public interface BindingFactory extends EFactory {
     FixedFactorValueDimensionless createFixedFactorValueDimensionless();
 
     /**
+     * Returns a new object of class '<em>Transition State</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Transition State</em>'.
+     * @generated
+     */
+    TransitionState createTransitionState();
+
+    /**
+     * Returns a new object of class '<em>Consumption Behavior</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Consumption Behavior</em>'.
+     * @generated
+     */
+    ConsumptionBehavior createConsumptionBehavior();
+
+    /**
      * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the package supported by this factory.

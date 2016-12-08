@@ -26,6 +26,7 @@ import de.fzi.power.util.NamedElement;
 import de.fzi.power.util.UtilFactory;
 import de.fzi.power.util.UtilPackage;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -113,6 +114,7 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         isInited = true;
 
         // Initialize simple dependencies
+        DlimPackage.eINSTANCE.eClass();
         ExperimentDataPackage.eINSTANCE.eClass();
         RepositoryPackage.eINSTANCE.eClass();
         MeasuringpointPackage.eINSTANCE.eClass();

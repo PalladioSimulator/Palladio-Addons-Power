@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.ConsumptionBehavior;
 import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValueDimensionless;
 import de.fzi.power.binding.FixedFactorValuePower;
@@ -17,6 +18,7 @@ import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.binding.PowerState;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
+import de.fzi.power.binding.TransitionState;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -67,12 +69,16 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
             return this.createResourcePowerBinding();
         case BindingPackage.DISTRIBUTION_POWER_BINDING:
             return this.createDistributionPowerBinding();
-        case BindingPackage.POWER_STATE:
-            return this.createPowerState();
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING:
             return this.createStatefulResourcePowerBinding();
         case BindingPackage.FIXED_FACTOR_VALUE_DIMENSIONLESS:
             return this.createFixedFactorValueDimensionless();
+        case BindingPackage.TRANSITION_STATE:
+            return this.createTransitionState();
+        case BindingPackage.CONSUMPTION_BEHAVIOR:
+            return this.createConsumptionBehavior();
+        case BindingPackage.POWER_STATE:
+            return this.createPowerState();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -153,6 +159,28 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
     public FixedFactorValueDimensionless createFixedFactorValueDimensionless() {
         final FixedFactorValueDimensionlessImpl fixedFactorValueDimensionless = new FixedFactorValueDimensionlessImpl();
         return fixedFactorValueDimensionless;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public TransitionState createTransitionState() {
+        final TransitionStateImpl transitionState = new TransitionStateImpl();
+        return transitionState;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ConsumptionBehavior createConsumptionBehavior() {
+        final ConsumptionBehaviorImpl consumptionBehavior = new ConsumptionBehaviorImpl();
+        return consumptionBehavior;
     }
 
     /**

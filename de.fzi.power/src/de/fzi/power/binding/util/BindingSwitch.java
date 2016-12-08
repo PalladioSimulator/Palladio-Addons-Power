@@ -9,7 +9,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import de.fzi.power.binding.AbstractFixedFactorValue;
+import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.BindingPackage;
+import de.fzi.power.binding.ConsumptionBehavior;
 import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValueDimensionless;
 import de.fzi.power.binding.FixedFactorValuePower;
@@ -19,6 +21,7 @@ import de.fzi.power.binding.PowerFactorBinding;
 import de.fzi.power.binding.PowerState;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
+import de.fzi.power.binding.TransitionState;
 import de.fzi.power.util.Entity;
 import de.fzi.power.util.NamedElement;
 import de.uka.ipd.sdq.identifier.Identifier;
@@ -164,17 +167,17 @@ public class BindingSwitch<T> extends Switch<T> {
             }
             return result;
         }
-        case BindingPackage.POWER_STATE: {
-            final PowerState powerState = (PowerState) theEObject;
-            T result = this.casePowerState(powerState);
+        case BindingPackage.ABSTRACT_POWER_STATE: {
+            final AbstractPowerState abstractPowerState = (AbstractPowerState) theEObject;
+            T result = this.caseAbstractPowerState(abstractPowerState);
             if (result == null) {
-                result = this.caseEntity(powerState);
+                result = this.caseEntity(abstractPowerState);
             }
             if (result == null) {
-                result = this.caseIdentifier(powerState);
+                result = this.caseIdentifier(abstractPowerState);
             }
             if (result == null) {
-                result = this.caseNamedElement(powerState);
+                result = this.caseNamedElement(abstractPowerState);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -240,6 +243,63 @@ public class BindingSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseIdentifier(fixedFactorValueDimensionless);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case BindingPackage.TRANSITION_STATE: {
+            final TransitionState transitionState = (TransitionState) theEObject;
+            T result = this.caseTransitionState(transitionState);
+            if (result == null) {
+                result = this.caseAbstractPowerState(transitionState);
+            }
+            if (result == null) {
+                result = this.caseEntity(transitionState);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(transitionState);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(transitionState);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case BindingPackage.CONSUMPTION_BEHAVIOR: {
+            final ConsumptionBehavior consumptionBehavior = (ConsumptionBehavior) theEObject;
+            T result = this.caseConsumptionBehavior(consumptionBehavior);
+            if (result == null) {
+                result = this.caseEntity(consumptionBehavior);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(consumptionBehavior);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(consumptionBehavior);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case BindingPackage.POWER_STATE: {
+            final PowerState powerState = (PowerState) theEObject;
+            T result = this.casePowerState(powerState);
+            if (result == null) {
+                result = this.caseAbstractPowerState(powerState);
+            }
+            if (result == null) {
+                result = this.caseEntity(powerState);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(powerState);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(powerState);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -331,6 +391,22 @@ public class BindingSwitch<T> extends Switch<T> {
     }
 
     /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Abstract Power State</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Abstract Power State</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAbstractPowerState(final AbstractPowerState object) {
+        return null;
+    }
+
+    /**
      * Returns the result of interpreting the object as an instance of '<em>Power State</em>'. <!--
      * begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
@@ -406,6 +482,37 @@ public class BindingSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseFixedFactorValueDimensionless(final FixedFactorValueDimensionless object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Transition State</em>'.
+     * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+     * terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Transition State</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseTransitionState(final TransitionState object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Consumption Behavior</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Consumption Behavior</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseConsumptionBehavior(final ConsumptionBehavior object) {
         return null;
     }
 
