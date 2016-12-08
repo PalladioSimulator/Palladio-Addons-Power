@@ -149,6 +149,7 @@ import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 import de.uka.ipd.sdq.probfunction.provider.ProbfunctionItemProviderAdapterFactory;
 import de.uka.ipd.sdq.stoex.provider.StoexItemProviderAdapterFactory;
 import de.uka.ipd.sdq.units.provider.UnitsItemProviderAdapterFactory;
+import tools.descartes.dlim.provider.DlimItemProviderAdapterFactory;
 
 /**
  * This is an example of a Binding model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -670,6 +671,7 @@ public class BindingEditor extends MultiPageEditorPart
         this.adapterFactory.addAdapterFactory(new SpecificationItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new BindingItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new InfrastructureItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new DlimItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new ExperimentDataItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new RepositoryItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new MeasuringpointItemProviderAdapterFactory());
