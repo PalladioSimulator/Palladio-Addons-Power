@@ -6,8 +6,8 @@ import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalcul
 import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 
 /**
- * Listener interface to be implemented by classes which want to be notified upon changes of
- * {@link PowerModelRegistry}s
+ * Listener interface to be implemented by classes which want to be 
+ * notified upon changes of {@link PowerModelRegistry}s
  * 
  * @author Sebastian Krach
  *
