@@ -25,10 +25,12 @@ import org.eclipse.net4j.util.ArrayUtil;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
+import org.palladiosimulator.edp2.filter.exponentialsmoothing.ExponentialDecayingFilter;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -149,7 +151,12 @@ public class Edp2ModelConstructor {
                     Map<IDataSource,MeasuredFactor> mappedFactors = new HashMap<IDataSource,MeasuredFactor>();
                     Collection<IDataSource> measurements = new ArrayList<IDataSource>();
                     for(Measurement curMeasurement : run.getMeasurement()) {
-                        final IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
+                        final String curId = curMeasurement.getMeasuringType().getMetric().getId();
+                        IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
+                        if(curId.equals(MetricDescriptionConstants.HDD_READ_RATE_TUPLE.getId()) ||
+                                curId.equals(MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE.getId())) {
+                            dataSource = new ExponentialDecayingFilter(dataSource, dataSource.getMetricDesciption());
+                        }
                         measurements.add(dataSource);
                         MetricSetDescription metricSet = (MetricSetDescription) dataSource.getMetricDesciption();
                         MetricDescription secondMetric = metricSet.getSubsumedMetrics().get(1);
