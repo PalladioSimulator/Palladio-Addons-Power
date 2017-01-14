@@ -9,5 +9,6 @@ Require-Bundle: de.fzi.power.interpreter;bundle-version="1.0.0",
  org.palladiosimulator.edp2.util,
  de.fzi.power.interpreter.calculators.energy,
  org.apache.commons.math3,
- org.apache.commons.lang3
+ org.apache.commons.lang3,
+ org.palladiosimulator.edp2.filter.exponentialsmoothing
 Export-Package: org.palladiosimulator.profiling.evaluation

@@ -3,6 +3,7 @@ package org.palladiosimulator.profiling.evaluation;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +20,7 @@ import org.apache.commons.math3.util.MathArrays;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
+import org.palladiosimulator.edp2.filter.exponentialsmoothing.ExponentialDecayingFilter;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
@@ -26,6 +28,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricDescription;
+import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
@@ -58,7 +61,7 @@ public class ImmediateConsumptionCalculator {
         PowerConsumingResource tempResource = InfrastructureFactory.eINSTANCE.createPowerConsumingResource();
         tempResource.setProcessingResourceSpecification(spec);
         tempResource.setResourcePowerAssemblyContext(binding);
-        Measurement powerMeasurement = run.getMeasurement().stream().filter(m -> MetricDescriptionUtility.metricDescriptionIdsEqual(m.getMeasuringType().getMetric(), MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE)).findAny().get();
+        Measurement powerMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE);
         ActiveResourceMeasuringPoint measuringPoint = PcmmeasuringpointFactory.eINSTANCE.createActiveResourceMeasuringPoint();
         measuringPoint.setStringRepresentation("");
         measuringPoint.setActiveResource(spec);
@@ -66,8 +69,15 @@ public class ImmediateConsumptionCalculator {
         Edp2DataTupleDataSource powerSource = new Edp2DataTupleDataSource(rawMeasurements);
         // Adjust measuring point
         run.getMeasurement().stream().forEach(m -> m.getMeasuringType().setMeasuringPoint(measuringPoint));
-        List<IDataSource> dataSources = run.getMeasurement().stream().filter(m -> !m.getId().equals(powerMeasurement.getId()))
+        Measurement hddWriteMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE);
+        Measurement hddReadMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.HDD_READ_RATE_TUPLE);
+        List<IDataSource> dataSourcesUnfiltered = run.getMeasurement().stream().filter(m -> !m.getId().equals(powerMeasurement.getId()) 
+                && !m.equals(hddWriteMeasurement) && !m.equals(hddReadMeasurement))
             .map( m -> m.getMeasurementRanges().get(0)).map(MeasurementRange::getRawMeasurements).map(Edp2DataTupleDataSource::new).collect(toList());
+        List<IDataSource> dataSources = new ArrayList<IDataSource>();
+        dataSources.addAll(dataSourcesUnfiltered);
+        dataSources.add(new ExponentialDecayingFilter(new Edp2DataTupleDataSource(hddWriteMeasurement.getMeasurementRanges().get(0).getRawMeasurements()), MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE));
+        dataSources.add(new ExponentialDecayingFilter(new Edp2DataTupleDataSource(hddReadMeasurement.getMeasurementRanges().get(0).getRawMeasurements()), MetricDescriptionConstants.HDD_READ_RATE_TUPLE));
         modelUpdaterSwitch.doSwitch(tempResource);
         
         // Get total energy consumption
@@ -116,5 +126,9 @@ public class ImmediateConsumptionCalculator {
 
         return new EvaluationResult(run.getExperimentSetting().getDescription(), totalEnergyConsumption, predictedTotalEnergyConsumption, 
                 Math.abs(predictedTotalEnergyConsumption - totalEnergyConsumption));
+    }
+
+    private Measurement getMeasurementForMetric(ExperimentRun run, MetricSetDescription metricSetDesc) {
+        return run.getMeasurement().stream().filter(m -> MetricDescriptionUtility.metricDescriptionIdsEqual(m.getMeasuringType().getMetric(), metricSetDesc)).findAny().get();
     }
 }
