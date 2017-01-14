@@ -15,13 +15,14 @@ public abstract class AbstractRegression<Q extends Quantity> {
 
     protected static final String FIT_FNC = "fitFnc";
     protected static final String DATA_FRAME_NAME = "df";
-    private static final String R_REGRESSION_RELATIONHSIP_OPERATOR = "~";
+    protected static final String R_REGRESSION_RELATIONHSIP_OPERATOR = "~";
     protected static final String R_PARAM_SEPARATOR = ", ";
-    protected static final String R_START_VALUES_BLOCK = "start=list(";
+    protected static final String R_START_PARAM_NAME_ASSIGN = "start=";
+    protected static final String R_START_VALUES_BLOCK = "list(";
     protected static final String R_START_VALUE_ASSIGNMENT_OPERATOR = "=";
     protected static final String R_BLOCK_END = ")";
-    protected static final String R_ADDITIONAL_COMMAND = "control=c(maxiter=1000, minFactor=1/2048)";
-    private static final String R_COMMAND_POSTFIX = ");";
+    protected static final String R_ADDITIONAL_COMMAND = "control=c(maxiter=5000, minFactor=1/4096)";
+    protected static final String R_COMMAND_POSTFIX = ");";
     protected static final String R_TARGET_NAME = "targetValue";
     protected static final String R_ASSIGNMENT_OPERATOR = " <- ";
     protected static final String R_ACCESSOR = "$";
@@ -57,7 +58,18 @@ public abstract class AbstractRegression<Q extends Quantity> {
         
         String dataFrameCommand = dataFrameBuilder.toString();
         rConnection.execute(dataFrameCommand);
+
         
+        StringBuilder commandString = constructRegularRegressionExpression(formula);
+        String command = commandString.toString();
+        
+        // Use the same random seed for all executions.
+        rConnection.execute("set.seed(47)");
+        
+        Vector<REXP> rawResults = rConnection.execute(R_TARGET_NAME + " " + R_ASSIGNMENT_OPERATOR + command);
+    }
+
+    private StringBuilder constructRegularRegressionExpression(String formula) {
         StringBuilder commandString = new StringBuilder(getFunctionName());
         commandString.append(RUtils.sanitizeNameForR(targetMetric.getName()));
         commandString.append(R_REGRESSION_RELATIONHSIP_OPERATOR);
@@ -66,11 +78,7 @@ public abstract class AbstractRegression<Q extends Quantity> {
         commandString.append(R_PARAM_SEPARATOR);
         commandString.append("data = " + DATA_FRAME_NAME);
         commandString.append(R_PARAM_SEPARATOR + getAdditionalParameters() + R_COMMAND_POSTFIX);
-        String command = commandString.toString();
-        
-        // Use the same random seed for all executions.
-        rConnection.execute("set.seed(47)");
-        Vector<REXP> rawResults = rConnection.execute(R_TARGET_NAME + " " + R_ASSIGNMENT_OPERATOR + command);
+        return commandString;
     }
 
     public abstract String getFormula();

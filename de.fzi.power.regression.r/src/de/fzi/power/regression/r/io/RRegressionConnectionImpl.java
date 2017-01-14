@@ -212,6 +212,7 @@ public class RRegressionConnectionImpl implements RRegressionConnection {
                     cause = "Error while identifying cause: " + e2.getMessage();
                 }
                 LOGGER.error(String.format("Error for command \"%s\": %s", command, cause));
+                throw new IllegalStateException(e);
             }
             if (resultExp != null) {
                 result += resultExp.toString() + "\n";
