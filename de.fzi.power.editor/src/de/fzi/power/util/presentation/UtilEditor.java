@@ -143,6 +143,7 @@ import org.palladiosimulator.pcm.usagemodel.provider.UsagemodelItemProviderAdapt
 import de.fzi.power.binding.provider.BindingItemProviderAdapterFactory;
 import de.fzi.power.infrastructure.provider.InfrastructureItemProviderAdapterFactory;
 import de.fzi.power.specification.provider.SpecificationItemProviderAdapterFactory;
+import de.fzi.power.state.provider.StateItemProviderAdapterFactory;
 import de.fzi.power.util.provider.UtilItemProviderAdapterFactory;
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
 import de.uka.ipd.sdq.probfunction.provider.ProbfunctionItemProviderAdapterFactory;
@@ -667,6 +668,7 @@ public class UtilEditor extends MultiPageEditorPart
 
         this.adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new UtilItemProviderAdapterFactory());
+        this.adapterFactory.addAdapterFactory(new StateItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new SpecificationItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new BindingItemProviderAdapterFactory());
         this.adapterFactory.addAdapterFactory(new InfrastructureItemProviderAdapterFactory());

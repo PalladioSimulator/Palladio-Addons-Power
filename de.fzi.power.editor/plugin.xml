@@ -108,6 +108,34 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
+            id="de.fzi.power.state.presentation.StateModelWizardID"
+            name="%_UI_StateModelWizard_label"
+            class="de.fzi.power.state.presentation.StateModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StateModelFile.gif">
+         <description>%_UI_StateModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated power -->
+      <editor
+            id="de.fzi.power.state.presentation.StateEditorID"
+            name="%_UI_StateEditor_label"
+            icon="icons/full/obj16/StateModelFile.gif"
+            extensions="state"
+            class="de.fzi.power.state.presentation.StateEditor"
+            contributorClass="de.fzi.power.state.presentation.StateActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated power -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
             id="de.fzi.power.specification.presentation.SpecificationModelWizardID"
             name="%_UI_SpecificationModelWizard_label"
             class="de.fzi.power.specification.presentation.SpecificationModelWizard"

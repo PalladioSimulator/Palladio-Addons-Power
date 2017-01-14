@@ -1,6 +1,6 @@
 /**
  */
-package de.fzi.power.binding.presentation;
+package de.fzi.power.state.presentation;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -153,11 +153,11 @@ import de.uka.ipd.sdq.units.provider.UnitsItemProviderAdapterFactory;
 import tools.descartes.dlim.provider.DlimItemProviderAdapterFactory;
 
 /**
- * This is an example of a Binding model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
+ * This is an example of a State model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class BindingEditor extends MultiPageEditorPart
+public class StateEditor extends MultiPageEditorPart
         implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
     /**
      * This keeps track of the editing domain that is used to track all changes to the model. <!--
@@ -306,18 +306,18 @@ public class BindingEditor extends MultiPageEditorPart
         @Override
         public void partActivated(final IWorkbenchPart p) {
             if (p instanceof ContentOutline) {
-                if (((ContentOutline) p).getCurrentPage() == BindingEditor.this.contentOutlinePage) {
-                    BindingEditor.this.getActionBarContributor().setActiveEditor(BindingEditor.this);
+                if (((ContentOutline) p).getCurrentPage() == StateEditor.this.contentOutlinePage) {
+                    StateEditor.this.getActionBarContributor().setActiveEditor(StateEditor.this);
 
-                    BindingEditor.this.setCurrentViewer(BindingEditor.this.contentOutlineViewer);
+                    StateEditor.this.setCurrentViewer(StateEditor.this.contentOutlineViewer);
                 }
             } else if (p instanceof PropertySheet) {
-                if (BindingEditor.this.propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
-                    BindingEditor.this.getActionBarContributor().setActiveEditor(BindingEditor.this);
-                    BindingEditor.this.handleActivate();
+                if (StateEditor.this.propertySheetPages.contains(((PropertySheet) p).getCurrentPage())) {
+                    StateEditor.this.getActionBarContributor().setActiveEditor(StateEditor.this);
+                    StateEditor.this.handleActivate();
                 }
-            } else if (p == BindingEditor.this) {
-                BindingEditor.this.handleActivate();
+            } else if (p == StateEditor.this) {
+                StateEditor.this.handleActivate();
             }
         }
 
@@ -396,18 +396,18 @@ public class BindingEditor extends MultiPageEditorPart
                 case Resource.RESOURCE__ERRORS:
                 case Resource.RESOURCE__WARNINGS: {
                     final Resource resource = (Resource) notification.getNotifier();
-                    final Diagnostic diagnostic = BindingEditor.this.analyzeResourceProblems(resource, null);
+                    final Diagnostic diagnostic = StateEditor.this.analyzeResourceProblems(resource, null);
                     if (diagnostic.getSeverity() != Diagnostic.OK) {
-                        BindingEditor.this.resourceToDiagnosticMap.put(resource, diagnostic);
+                        StateEditor.this.resourceToDiagnosticMap.put(resource, diagnostic);
                     } else {
-                        BindingEditor.this.resourceToDiagnosticMap.remove(resource);
+                        StateEditor.this.resourceToDiagnosticMap.remove(resource);
                     }
 
-                    if (BindingEditor.this.updateProblemIndication) {
-                        BindingEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    if (StateEditor.this.updateProblemIndication) {
+                        StateEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
                             @Override
                             public void run() {
-                                BindingEditor.this.updateProblemIndication();
+                                StateEditor.this.updateProblemIndication();
                             }
                         });
                     }
@@ -427,12 +427,12 @@ public class BindingEditor extends MultiPageEditorPart
         @Override
         protected void unsetTarget(final Resource target) {
             this.basicUnsetTarget(target);
-            BindingEditor.this.resourceToDiagnosticMap.remove(target);
-            if (BindingEditor.this.updateProblemIndication) {
-                BindingEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
+            StateEditor.this.resourceToDiagnosticMap.remove(target);
+            if (StateEditor.this.updateProblemIndication) {
+                StateEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
                     @Override
                     public void run() {
-                        BindingEditor.this.updateProblemIndication();
+                        StateEditor.this.updateProblemIndication();
                     }
                 });
             }
@@ -450,7 +450,7 @@ public class BindingEditor extends MultiPageEditorPart
             final IResourceDelta delta = event.getDelta();
             try {
                 class ResourceDeltaVisitor implements IResourceDeltaVisitor {
-                    protected ResourceSet resourceSet = BindingEditor.this.editingDomain.getResourceSet();
+                    protected ResourceSet resourceSet = StateEditor.this.editingDomain.getResourceSet();
                     protected Collection<Resource> changedResources = new ArrayList<Resource>();
                     protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
@@ -464,7 +464,7 @@ public class BindingEditor extends MultiPageEditorPart
                                 if (resource != null) {
                                     if (delta.getKind() == IResourceDelta.REMOVED) {
                                         this.removedResources.add(resource);
-                                    } else if (!BindingEditor.this.savedResources.remove(resource)) {
+                                    } else if (!StateEditor.this.savedResources.remove(resource)) {
                                         this.changedResources.add(resource);
                                     }
                                 }
@@ -488,24 +488,24 @@ public class BindingEditor extends MultiPageEditorPart
                 delta.accept(visitor);
 
                 if (!visitor.getRemovedResources().isEmpty()) {
-                    BindingEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    StateEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
                         @Override
                         public void run() {
-                            BindingEditor.this.removedResources.addAll(visitor.getRemovedResources());
-                            if (!BindingEditor.this.isDirty()) {
-                                BindingEditor.this.getSite().getPage().closeEditor(BindingEditor.this, false);
+                            StateEditor.this.removedResources.addAll(visitor.getRemovedResources());
+                            if (!StateEditor.this.isDirty()) {
+                                StateEditor.this.getSite().getPage().closeEditor(StateEditor.this, false);
                             }
                         }
                     });
                 }
 
                 if (!visitor.getChangedResources().isEmpty()) {
-                    BindingEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
+                    StateEditor.this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
                         @Override
                         public void run() {
-                            BindingEditor.this.changedResources.addAll(visitor.getChangedResources());
-                            if (BindingEditor.this.getSite().getPage().getActiveEditor() == BindingEditor.this) {
-                                BindingEditor.this.handleActivate();
+                            StateEditor.this.changedResources.addAll(visitor.getChangedResources());
+                            if (StateEditor.this.getSite().getPage().getActiveEditor() == StateEditor.this) {
+                                StateEditor.this.handleActivate();
                             }
                         }
                     });
@@ -535,7 +535,7 @@ public class BindingEditor extends MultiPageEditorPart
 
         if (!this.removedResources.isEmpty()) {
             if (this.handleDirtyConflict()) {
-                this.getSite().getPage().closeEditor(BindingEditor.this, false);
+                this.getSite().getPage().closeEditor(StateEditor.this, false);
             } else {
                 this.removedResources.clear();
                 this.changedResources.clear();
@@ -651,7 +651,7 @@ public class BindingEditor extends MultiPageEditorPart
      * 
      * @generated
      */
-    public BindingEditor() {
+    public StateEditor() {
         super();
         this.initializeEditingDomain();
     }
@@ -715,18 +715,18 @@ public class BindingEditor extends MultiPageEditorPart
         commandStack.addCommandStackListener(new CommandStackListener() {
             @Override
             public void commandStackChanged(final EventObject event) {
-                BindingEditor.this.getContainer().getDisplay().asyncExec(new Runnable() {
+                StateEditor.this.getContainer().getDisplay().asyncExec(new Runnable() {
                     @Override
                     public void run() {
-                        BindingEditor.this.firePropertyChange(IEditorPart.PROP_DIRTY);
+                        StateEditor.this.firePropertyChange(IEditorPart.PROP_DIRTY);
 
                         // Try to select the affected objects.
                         //
                         final Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
                         if (mostRecentCommand != null) {
-                            BindingEditor.this.setSelectionToViewer(mostRecentCommand.getAffectedObjects());
+                            StateEditor.this.setSelectionToViewer(mostRecentCommand.getAffectedObjects());
                         }
-                        for (final Iterator<PropertySheetPage> i = BindingEditor.this.propertySheetPages.iterator(); i
+                        for (final Iterator<PropertySheetPage> i = StateEditor.this.propertySheetPages.iterator(); i
                                 .hasNext();) {
                             final PropertySheetPage propertySheetPage = i.next();
                             if (propertySheetPage.getControl().isDisposed()) {
@@ -773,8 +773,8 @@ public class BindingEditor extends MultiPageEditorPart
                 public void run() {
                     // Try to select the items in the current content viewer of the editor.
                     //
-                    if (BindingEditor.this.currentViewer != null) {
-                        BindingEditor.this.currentViewer.setSelection(new StructuredSelection(theSelection.toArray()),
+                    if (StateEditor.this.currentViewer != null) {
+                        StateEditor.this.currentViewer.setSelection(new StructuredSelection(theSelection.toArray()),
                                 true);
                     }
                 }
@@ -888,7 +888,7 @@ public class BindingEditor extends MultiPageEditorPart
                     //
                     @Override
                     public void selectionChanged(final SelectionChangedEvent selectionChangedEvent) {
-                        BindingEditor.this.setSelection(selectionChangedEvent.getSelection());
+                        StateEditor.this.setSelection(selectionChangedEvent.getSelection());
                     }
                 };
             }
@@ -1017,7 +1017,7 @@ public class BindingEditor extends MultiPageEditorPart
             // Create a page for the selection tree view.
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         final Tree tree = new Tree(composite, SWT.MULTI);
@@ -1028,7 +1028,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1052,7 +1052,7 @@ public class BindingEditor extends MultiPageEditorPart
             // Create a page for the parent tree view.
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         final Tree tree = new Tree(composite, SWT.MULTI);
@@ -1063,7 +1063,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1081,7 +1081,7 @@ public class BindingEditor extends MultiPageEditorPart
             // This is the page for the list viewer
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         return new ListViewer(composite);
@@ -1090,7 +1090,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1106,7 +1106,7 @@ public class BindingEditor extends MultiPageEditorPart
             // This is the page for the tree viewer
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         return new TreeViewer(composite);
@@ -1115,7 +1115,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1133,7 +1133,7 @@ public class BindingEditor extends MultiPageEditorPart
             // This is the page for the table viewer.
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         return new TableViewer(composite);
@@ -1142,7 +1142,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1176,7 +1176,7 @@ public class BindingEditor extends MultiPageEditorPart
             // This is the page for the table tree viewer.
             //
             {
-                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), BindingEditor.this) {
+                final ViewerPane viewerPane = new ViewerPane(this.getSite().getPage(), StateEditor.this) {
                     @Override
                     public Viewer createViewer(final Composite composite) {
                         return new TreeViewer(composite);
@@ -1185,7 +1185,7 @@ public class BindingEditor extends MultiPageEditorPart
                     @Override
                     public void requestActivation() {
                         super.requestActivation();
-                        BindingEditor.this.setCurrentViewerPane(this);
+                        StateEditor.this.setCurrentViewerPane(this);
                     }
                 };
                 viewerPane.createControl(this.getContainer());
@@ -1219,7 +1219,7 @@ public class BindingEditor extends MultiPageEditorPart
             this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
                 @Override
                 public void run() {
-                    BindingEditor.this.setActivePage(0);
+                    StateEditor.this.setActivePage(0);
                 }
             });
         }
@@ -1234,7 +1234,7 @@ public class BindingEditor extends MultiPageEditorPart
             public void controlResized(final ControlEvent event) {
                 if (!this.guard) {
                     this.guard = true;
-                    BindingEditor.this.hideTabs();
+                    StateEditor.this.hideTabs();
                     this.guard = false;
                 }
             }
@@ -1243,7 +1243,7 @@ public class BindingEditor extends MultiPageEditorPart
         this.getSite().getShell().getDisplay().asyncExec(new Runnable() {
             @Override
             public void run() {
-                BindingEditor.this.updateProblemIndication();
+                StateEditor.this.updateProblemIndication();
             }
         });
     }
@@ -1330,26 +1330,29 @@ public class BindingEditor extends MultiPageEditorPart
                 @Override
                 public void createControl(final Composite parent) {
                     super.createControl(parent);
-                    BindingEditor.this.contentOutlineViewer = this.getTreeViewer();
-                    BindingEditor.this.contentOutlineViewer.addSelectionChangedListener(this);
+                    StateEditor.this.contentOutlineViewer = this.getTreeViewer();
+                    StateEditor.this.contentOutlineViewer.addSelectionChangedListener(this);
 
                     // Set up the tree viewer.
                     //
-                    BindingEditor.this.contentOutlineViewer
-                            .setContentProvider(new AdapterFactoryContentProvider(BindingEditor.this.adapterFactory));
-                    BindingEditor.this.contentOutlineViewer
-                            .setLabelProvider(new AdapterFactoryLabelProvider(BindingEditor.this.adapterFactory));
-                    BindingEditor.this.contentOutlineViewer.setInput(BindingEditor.this.editingDomain.getResourceSet());
+                    StateEditor.this.contentOutlineViewer
+                            .setContentProvider(new AdapterFactoryContentProvider(StateEditor.this.adapterFactory));
+                    StateEditor.this.contentOutlineViewer
+                            .setLabelProvider(new AdapterFactoryLabelProvider(StateEditor.this.adapterFactory));
+                    StateEditor.this.contentOutlineViewer.setInput(StateEditor.this.editingDomain.getResourceSet());
 
                     // Make sure our popups work.
                     //
-                    BindingEditor.this.createContextMenuFor(BindingEditor.this.contentOutlineViewer);
+                    StateEditor.this.createContextMenuFor(StateEditor.this.contentOutlineViewer);
 
-                    if (!BindingEditor.this.editingDomain.getResourceSet().getResources().isEmpty()) {
+                    if (!StateEditor.this.editingDomain.getResourceSet().getResources().isEmpty()) {
                         // Select the root object in the view.
                         //
-                        BindingEditor.this.contentOutlineViewer.setSelection(new StructuredSelection(
-                                BindingEditor.this.editingDomain.getResourceSet().getResources().get(0)), true);
+                        StateEditor.this.contentOutlineViewer
+                                .setSelection(
+                                        new StructuredSelection(
+                                                StateEditor.this.editingDomain.getResourceSet().getResources().get(0)),
+                                        true);
                     }
                 }
 
@@ -1357,13 +1360,13 @@ public class BindingEditor extends MultiPageEditorPart
                 public void makeContributions(final IMenuManager menuManager, final IToolBarManager toolBarManager,
                         final IStatusLineManager statusLineManager) {
                     super.makeContributions(menuManager, toolBarManager, statusLineManager);
-                    BindingEditor.this.contentOutlineStatusLineManager = statusLineManager;
+                    StateEditor.this.contentOutlineStatusLineManager = statusLineManager;
                 }
 
                 @Override
                 public void setActionBars(final IActionBars actionBars) {
                     super.setActionBars(actionBars);
-                    BindingEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
+                    StateEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
                 }
             }
 
@@ -1376,7 +1379,7 @@ public class BindingEditor extends MultiPageEditorPart
                 //
                 @Override
                 public void selectionChanged(final SelectionChangedEvent event) {
-                    BindingEditor.this.handleContentOutlineSelection(event.getSelection());
+                    StateEditor.this.handleContentOutlineSelection(event.getSelection());
                 }
             });
         }
@@ -1394,14 +1397,14 @@ public class BindingEditor extends MultiPageEditorPart
         final PropertySheetPage propertySheetPage = new ExtendedPropertySheetPage(this.editingDomain) {
             @Override
             public void setSelectionToViewer(final List<?> selection) {
-                BindingEditor.this.setSelectionToViewer(selection);
-                BindingEditor.this.setFocus();
+                StateEditor.this.setSelectionToViewer(selection);
+                StateEditor.this.setFocus();
             }
 
             @Override
             public void setActionBars(final IActionBars actionBars) {
                 super.setActionBars(actionBars);
-                BindingEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
+                StateEditor.this.getActionBarContributor().shareGlobalActions(this, actionBars);
             }
         };
         propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(this.adapterFactory));
@@ -1485,18 +1488,18 @@ public class BindingEditor extends MultiPageEditorPart
                 // Save the resources to the file system.
                 //
                 boolean first = true;
-                for (final Resource resource : BindingEditor.this.editingDomain.getResourceSet().getResources()) {
-                    if ((first || !resource.getContents().isEmpty() || BindingEditor.this.isPersisted(resource))
-                            && !BindingEditor.this.editingDomain.isReadOnly(resource)) {
+                for (final Resource resource : StateEditor.this.editingDomain.getResourceSet().getResources()) {
+                    if ((first || !resource.getContents().isEmpty() || StateEditor.this.isPersisted(resource))
+                            && !StateEditor.this.editingDomain.isReadOnly(resource)) {
                         try {
                             final long timeStamp = resource.getTimeStamp();
                             resource.save(saveOptions);
                             if (resource.getTimeStamp() != timeStamp) {
-                                BindingEditor.this.savedResources.add(resource);
+                                StateEditor.this.savedResources.add(resource);
                             }
                         } catch (final Exception exception) {
-                            BindingEditor.this.resourceToDiagnosticMap.put(resource,
-                                    BindingEditor.this.analyzeResourceProblems(resource, exception));
+                            StateEditor.this.resourceToDiagnosticMap.put(resource,
+                                    StateEditor.this.analyzeResourceProblems(resource, exception));
                         }
                         first = false;
                     }
