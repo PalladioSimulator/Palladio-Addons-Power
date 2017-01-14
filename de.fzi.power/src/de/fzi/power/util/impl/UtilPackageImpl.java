@@ -21,6 +21,8 @@ import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
 import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
+import de.fzi.power.state.StatePackage;
+import de.fzi.power.state.impl.StatePackageImpl;
 import de.fzi.power.util.Entity;
 import de.fzi.power.util.NamedElement;
 import de.fzi.power.util.UtilFactory;
@@ -121,6 +123,9 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
+        final StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(StatePackage.eNS_URI) instanceof StatePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(StatePackage.eNS_URI) : StatePackage.eINSTANCE);
         final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
@@ -135,12 +140,14 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
         // Create package meta-data objects
         theUtilPackage.createPackageContents();
+        theStatePackage.createPackageContents();
         theSpecificationPackage.createPackageContents();
         theBindingPackage.createPackageContents();
         theInfrastructurePackage.createPackageContents();
 
         // Initialize created meta-data
         theUtilPackage.initializePackageContents();
+        theStatePackage.initializePackageContents();
         theSpecificationPackage.initializePackageContents();
         theBindingPackage.initializePackageContents();
         theInfrastructurePackage.initializePackageContents();

@@ -15,10 +15,10 @@ import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValueDimensionless;
 import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.PowerBindingRepository;
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.PowerStateBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
-import de.fzi.power.binding.TransitionState;
+import de.fzi.power.binding.TransitionStateBinding;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -69,16 +69,16 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
             return this.createResourcePowerBinding();
         case BindingPackage.DISTRIBUTION_POWER_BINDING:
             return this.createDistributionPowerBinding();
-        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING:
-            return this.createStatefulResourcePowerBinding();
         case BindingPackage.FIXED_FACTOR_VALUE_DIMENSIONLESS:
             return this.createFixedFactorValueDimensionless();
-        case BindingPackage.TRANSITION_STATE:
-            return this.createTransitionState();
         case BindingPackage.CONSUMPTION_BEHAVIOR:
             return this.createConsumptionBehavior();
-        case BindingPackage.POWER_STATE:
-            return this.createPowerState();
+        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING:
+            return this.createStatefulResourcePowerBinding();
+        case BindingPackage.POWER_STATE_BINDING:
+            return this.createPowerStateBinding();
+        case BindingPackage.TRANSITION_STATE_BINDING:
+            return this.createTransitionStateBinding();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -134,9 +134,20 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
      * @generated
      */
     @Override
-    public PowerState createPowerState() {
-        final PowerStateImpl powerState = new PowerStateImpl();
-        return powerState;
+    public FixedFactorValueDimensionless createFixedFactorValueDimensionless() {
+        final FixedFactorValueDimensionlessImpl fixedFactorValueDimensionless = new FixedFactorValueDimensionlessImpl();
+        return fixedFactorValueDimensionless;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ConsumptionBehavior createConsumptionBehavior() {
+        final ConsumptionBehaviorImpl consumptionBehavior = new ConsumptionBehaviorImpl();
+        return consumptionBehavior;
     }
 
     /**
@@ -156,9 +167,9 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
      * @generated
      */
     @Override
-    public FixedFactorValueDimensionless createFixedFactorValueDimensionless() {
-        final FixedFactorValueDimensionlessImpl fixedFactorValueDimensionless = new FixedFactorValueDimensionlessImpl();
-        return fixedFactorValueDimensionless;
+    public PowerStateBinding createPowerStateBinding() {
+        final PowerStateBindingImpl powerStateBinding = new PowerStateBindingImpl();
+        return powerStateBinding;
     }
 
     /**
@@ -167,20 +178,9 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
      * @generated
      */
     @Override
-    public TransitionState createTransitionState() {
-        final TransitionStateImpl transitionState = new TransitionStateImpl();
-        return transitionState;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public ConsumptionBehavior createConsumptionBehavior() {
-        final ConsumptionBehaviorImpl consumptionBehavior = new ConsumptionBehaviorImpl();
-        return consumptionBehavior;
+    public TransitionStateBinding createTransitionStateBinding() {
+        final TransitionStateBindingImpl transitionStateBinding = new TransitionStateBindingImpl();
+        return transitionStateBinding;
     }
 
     /**

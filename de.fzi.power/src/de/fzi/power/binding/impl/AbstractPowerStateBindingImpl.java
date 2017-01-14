@@ -6,31 +6,32 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import de.fzi.power.binding.AbstractPowerState;
+import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
 import de.fzi.power.util.impl.EntityImpl;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Abstract Power State</b></em>'. <!-- end-user-doc -->
+ * <em><b>Abstract Power State Binding</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.AbstractPowerStateImpl#getStatefulResourcePowerBinding
+ * <li>
+ * {@link de.fzi.power.binding.impl.AbstractPowerStateBindingImpl#getStatefulResourcePowerBinding
  * <em>Stateful Resource Power Binding</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class AbstractPowerStateImpl extends EntityImpl implements AbstractPowerState {
+public abstract class AbstractPowerStateBindingImpl extends EntityImpl implements AbstractPowerStateBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected AbstractPowerStateImpl() {
+    protected AbstractPowerStateBindingImpl() {
         super();
     }
 
@@ -41,7 +42,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
      */
     @Override
     protected EClass eStaticClass() {
-        return BindingPackage.Literals.ABSTRACT_POWER_STATE;
+        return BindingPackage.Literals.ABSTRACT_POWER_STATE_BINDING;
     }
 
     /**
@@ -52,8 +53,8 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public StatefulResourcePowerBinding getStatefulResourcePowerBinding() {
         return (StatefulResourcePowerBinding) this.eDynamicGet(
-                BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING,
-                BindingPackage.Literals.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING, true, true);
+                BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
+                BindingPackage.Literals.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING, true, true);
     }
 
     /**
@@ -64,7 +65,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     public NotificationChain basicSetStatefulResourcePowerBinding(
             final StatefulResourcePowerBinding newStatefulResourcePowerBinding, NotificationChain msgs) {
         msgs = this.eBasicSetContainer((InternalEObject) newStatefulResourcePowerBinding,
-                BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING, msgs);
+                BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING, msgs);
         return msgs;
     }
 
@@ -75,8 +76,8 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
      */
     @Override
     public void setStatefulResourcePowerBinding(final StatefulResourcePowerBinding newStatefulResourcePowerBinding) {
-        this.eDynamicSet(BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING,
-                BindingPackage.Literals.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING,
+        this.eDynamicSet(BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
+                BindingPackage.Literals.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
                 newStatefulResourcePowerBinding);
     }
 
@@ -88,7 +89,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             if (this.eInternalContainer() != null) {
                 msgs = this.eBasicRemoveFromContainer(msgs);
             }
@@ -106,7 +107,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             return this.basicSetStatefulResourcePowerBinding(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -120,10 +121,10 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
         switch (this.eContainerFeatureID()) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             return this.eInternalContainer().eInverseRemove(this,
-                    BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATES, StatefulResourcePowerBinding.class,
-                    msgs);
+                    BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS,
+                    StatefulResourcePowerBinding.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
@@ -136,7 +137,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             return this.getStatefulResourcePowerBinding();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -150,7 +151,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) newValue);
             return;
         }
@@ -165,7 +166,7 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public void eUnset(final int featureID) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) null);
             return;
         }
@@ -180,10 +181,10 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
-        case BindingPackage.ABSTRACT_POWER_STATE__STATEFUL_RESOURCE_POWER_BINDING:
+        case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
             return this.getStatefulResourcePowerBinding() != null;
         }
         return super.eIsSet(featureID);
     }
 
-} // AbstractPowerStateImpl
+} // AbstractPowerStateBindingImpl

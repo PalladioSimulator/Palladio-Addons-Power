@@ -9,6 +9,30 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="Dimensionless" instanceClassName="javax.measure.quantity.Dimensionless"/>
   </eSubpackages>
+  <eSubpackages name="state" nsURI="http://www.fzi.de/Power/State/1.0" nsPrefix="de.fzi.power">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerStateRepository" eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateMachines" upperBound="-1"
+          eType="#//state/PowerStateMachine" containment="true" eOpposite="#//state/PowerStateMachine/powerStateRepository"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerState" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateMachine" eType="#//state/PowerStateMachine"
+          eOpposite="#//state/PowerStateMachine/powerStates"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionState" eSuperTypes="#//state/AbstractPowerState">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
+          eType="#//state/PowerState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
+          eType="#//state/PowerState"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerState" eSuperTypes="#//state/AbstractPowerState"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerStateMachine" eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateRepository"
+          eType="#//state/PowerStateRepository" eOpposite="#//state/PowerStateRepository/powerStateMachines"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStates" lowerBound="1"
+          upperBound="-1" eType="#//state/AbstractPowerState" containment="true" eOpposite="#//state/AbstractPowerState/powerStateMachine"/>
+    </eClassifiers>
+  </eSubpackages>
   <eSubpackages name="specification" nsURI="http://www.fzi.de/Power/Specification/1.0"
       nsPrefix="de.fzi.power">
     <eClassifiers xsi:type="ecore:EClass" name="PowerModelRepository" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
@@ -64,16 +88,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="distributionPowerModel"
           lowerBound="1" eType="#//specification/DistributionPowerModelSpecification"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerState" abstract="true"
-        eSuperTypes="#//util/Entity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
-          eType="#//binding/StatefulResourcePowerBinding" eOpposite="#//binding/StatefulResourcePowerBinding/powerStates"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StatefulResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStates" lowerBound="1"
-          upperBound="-1" eType="#//binding/AbstractPowerState" containment="true"
-          eOpposite="#//binding/AbstractPowerState/statefulResourcePowerBinding"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerFactorBinding" abstract="true"
         eSuperTypes="#//binding/PowerBinding">
       <eStructuralFeatures xsi:type="ecore:EReference" name="fixedFactorValues" upperBound="-1"
@@ -104,14 +118,6 @@
         <eTypeArguments eClassifier="#//util/Dimensionless"/>
       </eGenericSuperTypes>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TransitionState" eSuperTypes="#//binding/AbstractPowerState">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transitionConsumption"
-          lowerBound="1" eType="#//binding/ConsumptionBehavior" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="initialState" lowerBound="1"
-          eType="#//binding/PowerState"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" lowerBound="1"
-          eType="#//binding/PowerState"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConsumptionBehavior" eSuperTypes="#//util/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerCurve" lowerBound="1"
           eType="ecore:EClass platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore#//Sequence"
@@ -122,9 +128,27 @@
         </eGenericType>
       </eStructuralFeatures>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PowerState" eSuperTypes="#//binding/AbstractPowerState">
+    <eClassifiers xsi:type="ecore:EClass" name="StatefulResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateBindings" lowerBound="1"
+          upperBound="-1" eType="#//binding/AbstractPowerStateBinding" containment="true"
+          eOpposite="#//binding/AbstractPowerStateBinding/statefulResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerStateBinding" abstract="true"
+        eSuperTypes="#//util/Entity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
+          eType="#//binding/StatefulResourcePowerBinding" eOpposite="#//binding/StatefulResourcePowerBinding/powerStateBindings"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PowerStateBinding" eSuperTypes="#//binding/AbstractPowerStateBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerState" lowerBound="1"
+          eType="#//state/PowerState"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="binding" lowerBound="1"
           eType="#//binding/ResourcePowerBinding"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionStateBinding" eSuperTypes="#//binding/AbstractPowerStateBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transitionState" lowerBound="1"
+          eType="#//state/TransitionState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transitionConsumption"
+          lowerBound="1" eType="#//binding/ConsumptionBehavior" containment="true"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="infrastructure" nsURI="http://www.fzi.de/Power/Infrastructure/1.0"
@@ -170,7 +194,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StatefulPowerConsumingResource" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerState" lowerBound="1"
-          eType="#//binding/AbstractPowerState"/>
+          eType="#//binding/AbstractPowerStateBinding"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
           lowerBound="1" eType="#//binding/StatefulResourcePowerBinding"/>
     </eClassifiers>

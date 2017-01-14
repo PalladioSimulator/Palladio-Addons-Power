@@ -24,6 +24,14 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated power -->
       <package
+            uri="http://www.fzi.de/Power/State/1.0"
+            class="de.fzi.power.state.StatePackage"
+            genModel="model/power.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated power -->
+      <package
             uri="http://www.fzi.de/Power/Specification/1.0"
             class="de.fzi.power.specification.SpecificationPackage"
             genModel="model/power.genmodel"/>

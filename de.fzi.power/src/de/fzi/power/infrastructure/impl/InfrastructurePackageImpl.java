@@ -29,6 +29,8 @@ import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
+import de.fzi.power.state.StatePackage;
+import de.fzi.power.state.impl.StatePackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import tools.descartes.dlim.DlimPackage;
@@ -164,6 +166,9 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+        final StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(StatePackage.eNS_URI) instanceof StatePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(StatePackage.eNS_URI) : StatePackage.eINSTANCE);
         final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
@@ -175,12 +180,14 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         // Create package meta-data objects
         theInfrastructurePackage.createPackageContents();
         theUtilPackage.createPackageContents();
+        theStatePackage.createPackageContents();
         theSpecificationPackage.createPackageContents();
         theBindingPackage.createPackageContents();
 
         // Initialize created meta-data
         theInfrastructurePackage.initializePackageContents();
         theUtilPackage.initializePackageContents();
+        theStatePackage.initializePackageContents();
         theSpecificationPackage.initializePackageContents();
         theBindingPackage.initializePackageContents();
 
@@ -571,7 +578,7 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         this.initEClass(this.statefulPowerConsumingResourceEClass, StatefulPowerConsumingResource.class,
                 "StatefulPowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         this.initEReference(this.getStatefulPowerConsumingResource_PowerState(),
-                theBindingPackage.getAbstractPowerState(), null, "powerState", null, 1, 1,
+                theBindingPackage.getAbstractPowerStateBinding(), null, "powerState", null, 1, 1,
                 StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEReference(this.getStatefulPowerConsumingResource_StatefulResourcePowerBinding(),

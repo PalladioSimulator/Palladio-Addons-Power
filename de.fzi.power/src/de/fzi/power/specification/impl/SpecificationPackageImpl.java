@@ -27,6 +27,8 @@ import de.fzi.power.specification.PowerModelSpecification;
 import de.fzi.power.specification.ResourcePowerModelSpecification;
 import de.fzi.power.specification.SpecificationFactory;
 import de.fzi.power.specification.SpecificationPackage;
+import de.fzi.power.state.StatePackage;
+import de.fzi.power.state.impl.StatePackageImpl;
 import de.fzi.power.util.UtilPackage;
 import de.fzi.power.util.impl.UtilPackageImpl;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
@@ -156,6 +158,9 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
+        final StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
+                .getEPackage(StatePackage.eNS_URI) instanceof StatePackageImpl
+                        ? EPackage.Registry.INSTANCE.getEPackage(StatePackage.eNS_URI) : StatePackage.eINSTANCE);
         final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
@@ -167,12 +172,14 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         // Create package meta-data objects
         theSpecificationPackage.createPackageContents();
         theUtilPackage.createPackageContents();
+        theStatePackage.createPackageContents();
         theBindingPackage.createPackageContents();
         theInfrastructurePackage.createPackageContents();
 
         // Initialize created meta-data
         theSpecificationPackage.initializePackageContents();
         theUtilPackage.initializePackageContents();
+        theStatePackage.initializePackageContents();
         theBindingPackage.initializePackageContents();
         theInfrastructurePackage.initializePackageContents();
 

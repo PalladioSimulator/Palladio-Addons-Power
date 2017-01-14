@@ -56,15 +56,6 @@ public interface BindingFactory extends EFactory {
     DistributionPowerBinding createDistributionPowerBinding();
 
     /**
-     * Returns a new object of class '<em>Power State</em>'. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @return a new object of class '<em>Power State</em>'.
-     * @generated
-     */
-    PowerState createPowerState();
-
-    /**
      * Returns a new object of class '<em>Stateful Resource Power Binding</em>'. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
      *
@@ -74,6 +65,24 @@ public interface BindingFactory extends EFactory {
     StatefulResourcePowerBinding createStatefulResourcePowerBinding();
 
     /**
+     * Returns a new object of class '<em>Power State Binding</em>'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return a new object of class '<em>Power State Binding</em>'.
+     * @generated
+     */
+    PowerStateBinding createPowerStateBinding();
+
+    /**
+     * Returns a new object of class '<em>Transition State Binding</em>'. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Transition State Binding</em>'.
+     * @generated
+     */
+    TransitionStateBinding createTransitionStateBinding();
+
+    /**
      * Returns a new object of class '<em>Fixed Factor Value Dimensionless</em>'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
@@ -81,15 +90,6 @@ public interface BindingFactory extends EFactory {
      * @generated
      */
     FixedFactorValueDimensionless createFixedFactorValueDimensionless();
-
-    /**
-     * Returns a new object of class '<em>Transition State</em>'. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @return a new object of class '<em>Transition State</em>'.
-     * @generated
-     */
-    TransitionState createTransitionState();
 
     /**
      * Returns a new object of class '<em>Consumption Behavior</em>'. <!-- begin-user-doc --> <!--

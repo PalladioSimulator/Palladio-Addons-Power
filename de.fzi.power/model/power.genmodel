@@ -19,6 +19,25 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute power.ecore#//util/NamedElement/name"/>
       </genClasses>
     </nestedGenPackages>
+    <nestedGenPackages prefix="State" disposableProviderFactory="true" ecorePackage="power.ecore#//state">
+      <genClasses ecoreClass="power.ecore#//state/PowerStateRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//state/PowerStateRepository/powerStateMachines"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="power.ecore#//state/AbstractPowerState">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//state/AbstractPowerState/powerStateMachine"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//state/TransitionState">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference power.ecore#//state/TransitionState/initialState"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference power.ecore#//state/TransitionState/targetState"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//state/PowerState"/>
+      <genClasses ecoreClass="power.ecore#//state/PowerStateMachine">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//state/PowerStateMachine/powerStateRepository"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//state/PowerStateMachine/powerStates"/>
+      </genClasses>
+    </nestedGenPackages>
     <nestedGenPackages prefix="Specification" basePackage="de.fzi.power" resource="XML"
         disposableProviderFactory="true" fileExtensions="spec,specification" ecorePackage="power.ecore#//specification">
       <genClasses ecoreClass="power.ecore#//specification/PowerModelRepository">
@@ -59,14 +78,6 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference power.ecore#//binding/DistributionPowerBinding/distributionPowerModel"/>
       </genClasses>
-      <genClasses ecoreClass="power.ecore#//binding/PowerState">
-        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//binding/PowerState/statefulResourcePowerBinding"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true"
-            ecoreFeature="ecore:EReference power.ecore#//binding/PowerState/binding"/>
-      </genClasses>
-      <genClasses ecoreClass="power.ecore#//binding/StatefulResourcePowerBinding">
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/StatefulResourcePowerBinding/powerStates"/>
-      </genClasses>
       <genClasses image="false" ecoreClass="power.ecore#//binding/PowerFactorBinding">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/PowerFactorBinding/fixedFactorValues"/>
       </genClasses>
@@ -78,6 +89,27 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//binding/AbstractFixedFactorValue/powerBinding"/>
       </genClasses>
       <genClasses ecoreClass="power.ecore#//binding/FixedFactorValueDimensionless"/>
+      <genClasses ecoreClass="power.ecore#//binding/ConsumptionBehavior">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/ConsumptionBehavior/powerCurve"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute power.ecore#//binding/ConsumptionBehavior/unit"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//binding/StatefulResourcePowerBinding">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/StatefulResourcePowerBinding/powerStateBindings"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//binding/AbstractPowerStateBinding">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference power.ecore#//binding/AbstractPowerStateBinding/statefulResourcePowerBinding"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//binding/PowerStateBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference power.ecore#//binding/PowerStateBinding/powerState"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference power.ecore#//binding/PowerStateBinding/binding"/>
+      </genClasses>
+      <genClasses ecoreClass="power.ecore#//binding/TransitionStateBinding">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference power.ecore#//binding/TransitionStateBinding/transitionState"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference power.ecore#//binding/TransitionStateBinding/transitionConsumption"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages prefix="Infrastructure" basePackage="de.fzi.power" resource="XML"
         disposableProviderFactory="true" ecorePackage="power.ecore#//infrastructure">

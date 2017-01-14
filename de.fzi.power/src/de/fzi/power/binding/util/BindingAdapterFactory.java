@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import de.fzi.power.binding.AbstractFixedFactorValue;
-import de.fzi.power.binding.AbstractPowerState;
+import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.ConsumptionBehavior;
 import de.fzi.power.binding.DistributionPowerBinding;
@@ -19,10 +19,10 @@ import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.PowerBinding;
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.binding.PowerFactorBinding;
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.PowerStateBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
-import de.fzi.power.binding.TransitionState;
+import de.fzi.power.binding.TransitionStateBinding;
 import de.fzi.power.util.Entity;
 import de.fzi.power.util.NamedElement;
 import de.uka.ipd.sdq.identifier.Identifier;
@@ -105,16 +105,6 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseAbstractPowerState(final AbstractPowerState object) {
-            return BindingAdapterFactory.this.createAbstractPowerStateAdapter();
-        }
-
-        @Override
-        public Adapter caseStatefulResourcePowerBinding(final StatefulResourcePowerBinding object) {
-            return BindingAdapterFactory.this.createStatefulResourcePowerBindingAdapter();
-        }
-
-        @Override
         public Adapter casePowerFactorBinding(final PowerFactorBinding object) {
             return BindingAdapterFactory.this.createPowerFactorBindingAdapter();
         }
@@ -130,18 +120,28 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
         }
 
         @Override
-        public Adapter caseTransitionState(final TransitionState object) {
-            return BindingAdapterFactory.this.createTransitionStateAdapter();
-        }
-
-        @Override
         public Adapter caseConsumptionBehavior(final ConsumptionBehavior object) {
             return BindingAdapterFactory.this.createConsumptionBehaviorAdapter();
         }
 
         @Override
-        public Adapter casePowerState(final PowerState object) {
-            return BindingAdapterFactory.this.createPowerStateAdapter();
+        public Adapter caseStatefulResourcePowerBinding(final StatefulResourcePowerBinding object) {
+            return BindingAdapterFactory.this.createStatefulResourcePowerBindingAdapter();
+        }
+
+        @Override
+        public Adapter caseAbstractPowerStateBinding(final AbstractPowerStateBinding object) {
+            return BindingAdapterFactory.this.createAbstractPowerStateBindingAdapter();
+        }
+
+        @Override
+        public Adapter casePowerStateBinding(final PowerStateBinding object) {
+            return BindingAdapterFactory.this.createPowerStateBindingAdapter();
+        }
+
+        @Override
+        public Adapter caseTransitionStateBinding(final TransitionStateBinding object) {
+            return BindingAdapterFactory.this.createTransitionStateBindingAdapter();
         }
 
         @Override
@@ -253,34 +253,6 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fzi.power.binding.AbstractPowerState
-     * <em>Abstract Power State</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
-     * @see de.fzi.power.binding.AbstractPowerState
-     * @generated
-     */
-    public Adapter createAbstractPowerStateAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link de.fzi.power.binding.PowerState
-     * <em>Power State</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
-     * @see de.fzi.power.binding.PowerState
-     * @generated
-     */
-    public Adapter createPowerStateAdapter() {
-        return null;
-    }
-
-    /**
      * Creates a new adapter for an object of class '
      * {@link de.fzi.power.binding.StatefulResourcePowerBinding
      * <em>Stateful Resource Power Binding</em>}'. <!-- begin-user-doc --> This default
@@ -292,6 +264,50 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createStatefulResourcePowerBindingAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.binding.AbstractPowerStateBinding <em>Abstract Power State Binding</em>}
+     * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily
+     * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.binding.AbstractPowerStateBinding
+     * @generated
+     */
+    public Adapter createAbstractPowerStateBindingAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link de.fzi.power.binding.PowerStateBinding
+     * <em>Power State Binding</em>}'. <!-- begin-user-doc --> This default implementation returns
+     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+     * catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.binding.PowerStateBinding
+     * @generated
+     */
+    public Adapter createPowerStateBindingAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.binding.TransitionStateBinding <em>Transition State Binding</em>}'. <!--
+     * begin-user-doc --> This default implementation returns null so that we can easily ignore
+     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+     * end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.binding.TransitionStateBinding
+     * @generated
+     */
+    public Adapter createTransitionStateBindingAdapter() {
         return null;
     }
 
@@ -336,20 +352,6 @@ public class BindingAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createFixedFactorValueDimensionlessAdapter() {
-        return null;
-    }
-
-    /**
-     * Creates a new adapter for an object of class '{@link de.fzi.power.binding.TransitionState
-     * <em>Transition State</em>}'. <!-- begin-user-doc --> This default implementation returns null
-     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
-     * all the cases anyway. <!-- end-user-doc -->
-     *
-     * @return the new adapter.
-     * @see de.fzi.power.binding.TransitionState
-     * @generated
-     */
-    public Adapter createTransitionStateAdapter() {
         return null;
     }
 
