@@ -167,29 +167,6 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
     }
 
     /**
-     * This keeps track of the one adapter used for all {@link de.fzi.power.binding.PowerState}
-     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected PowerStateItemProvider powerStateItemProvider;
-
-    /**
-     * This creates an adapter for a {@link de.fzi.power.binding.PowerState}. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createPowerStateAdapter() {
-        if (this.powerStateItemProvider == null) {
-            this.powerStateItemProvider = new PowerStateItemProvider(this);
-        }
-
-        return this.powerStateItemProvider;
-    }
-
-    /**
      * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.StatefulResourcePowerBinding} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -215,6 +192,54 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
 
     /**
      * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.binding.PowerStateBinding} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected PowerStateBindingItemProvider powerStateBindingItemProvider;
+
+    /**
+     * This creates an adapter for a {@link de.fzi.power.binding.PowerStateBinding}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createPowerStateBindingAdapter() {
+        if (this.powerStateBindingItemProvider == null) {
+            this.powerStateBindingItemProvider = new PowerStateBindingItemProvider(this);
+        }
+
+        return this.powerStateBindingItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.binding.TransitionStateBinding} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected TransitionStateBindingItemProvider transitionStateBindingItemProvider;
+
+    /**
+     * This creates an adapter for a {@link de.fzi.power.binding.TransitionStateBinding}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createTransitionStateBindingAdapter() {
+        if (this.transitionStateBindingItemProvider == null) {
+            this.transitionStateBindingItemProvider = new TransitionStateBindingItemProvider(this);
+        }
+
+        return this.transitionStateBindingItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
      * {@link de.fzi.power.binding.FixedFactorValueDimensionless} instances. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -235,29 +260,6 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
         }
 
         return this.fixedFactorValueDimensionlessItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all {@link de.fzi.power.binding.TransitionState}
-     * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected TransitionStateItemProvider transitionStateItemProvider;
-
-    /**
-     * This creates an adapter for a {@link de.fzi.power.binding.TransitionState}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createTransitionStateAdapter() {
-        if (this.transitionStateItemProvider == null) {
-            this.transitionStateItemProvider = new TransitionStateItemProvider(this);
-        }
-
-        return this.transitionStateItemProvider;
     }
 
     /**
@@ -399,20 +401,20 @@ public class BindingItemProviderAdapterFactory extends BindingAdapterFactory
         if (this.distributionPowerBindingItemProvider != null) {
             this.distributionPowerBindingItemProvider.dispose();
         }
-        if (this.statefulResourcePowerBindingItemProvider != null) {
-            this.statefulResourcePowerBindingItemProvider.dispose();
-        }
         if (this.fixedFactorValueDimensionlessItemProvider != null) {
             this.fixedFactorValueDimensionlessItemProvider.dispose();
-        }
-        if (this.transitionStateItemProvider != null) {
-            this.transitionStateItemProvider.dispose();
         }
         if (this.consumptionBehaviorItemProvider != null) {
             this.consumptionBehaviorItemProvider.dispose();
         }
-        if (this.powerStateItemProvider != null) {
-            this.powerStateItemProvider.dispose();
+        if (this.statefulResourcePowerBindingItemProvider != null) {
+            this.statefulResourcePowerBindingItemProvider.dispose();
+        }
+        if (this.powerStateBindingItemProvider != null) {
+            this.powerStateBindingItemProvider.dispose();
+        }
+        if (this.transitionStateBindingItemProvider != null) {
+            this.transitionStateBindingItemProvider.dispose();
         }
     }
 

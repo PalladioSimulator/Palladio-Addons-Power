@@ -11,6 +11,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.fzi.power.binding.provider,
  de.fzi.power.infrastructure.provider,
  de.fzi.power.specification.provider,
+ de.fzi.power.state.provider,
  de.fzi.power.util.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit;visibility:=reexport,

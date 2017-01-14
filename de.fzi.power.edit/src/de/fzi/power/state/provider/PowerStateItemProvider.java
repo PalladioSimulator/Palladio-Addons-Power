@@ -1,20 +1,18 @@
 /**
  */
-package de.fzi.power.binding.provider;
+package de.fzi.power.state.provider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.state.PowerState;
 
 /**
- * This is the item provider adapter for a {@link de.fzi.power.binding.PowerState} object. <!--
+ * This is the item provider adapter for a {@link de.fzi.power.state.PowerState} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
@@ -41,24 +39,8 @@ public class PowerStateItemProvider extends AbstractPowerStateItemProvider {
         if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            this.addBindingPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Binding feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    protected void addBindingPropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_PowerState_binding_feature"),
-                this.getString("_UI_PropertyDescriptor_description", "_UI_PowerState_binding_feature",
-                        "_UI_PowerState_type"),
-                BindingPackage.Literals.POWER_STATE__BINDING, true, false, true, null, null, null));
     }
 
     /**

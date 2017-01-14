@@ -1,35 +1,37 @@
 /**
  */
-package de.fzi.power.binding.provider;
+package de.fzi.power.state.provider;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.BindingPackage;
-import de.fzi.power.binding.TransitionState;
+import de.fzi.power.state.PowerStateMachine;
+import de.fzi.power.state.StateFactory;
+import de.fzi.power.state.StatePackage;
+import de.fzi.power.util.provider.EntityItemProvider;
+import de.fzi.power.util.provider.PowerEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link de.fzi.power.binding.TransitionState} object. <!--
+ * This is the item provider adapter for a {@link de.fzi.power.state.PowerStateMachine} object. <!--
  * begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */
-public class TransitionStateItemProvider extends AbstractPowerStateItemProvider {
+public class PowerStateMachineItemProvider extends EntityItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @generated
      */
-    public TransitionStateItemProvider(final AdapterFactory adapterFactory) {
+    public PowerStateMachineItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
@@ -44,40 +46,8 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
         if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
-            this.addInitialStatePropertyDescriptor(object);
-            this.addTargetStatePropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
-    }
-
-    /**
-     * This adds a property descriptor for the Initial State feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    protected void addInitialStatePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_TransitionState_initialState_feature"),
-                this.getString("_UI_PropertyDescriptor_description", "_UI_TransitionState_initialState_feature",
-                        "_UI_TransitionState_type"),
-                BindingPackage.Literals.TRANSITION_STATE__INITIAL_STATE, true, false, true, null, null, null));
-    }
-
-    /**
-     * This adds a property descriptor for the Target State feature. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     */
-    protected void addTargetStatePropertyDescriptor(final Object object) {
-        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
-                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
-                this.getString("_UI_TransitionState_targetState_feature"),
-                this.getString("_UI_PropertyDescriptor_description", "_UI_TransitionState_targetState_feature",
-                        "_UI_TransitionState_type"),
-                BindingPackage.Literals.TRANSITION_STATE__TARGET_STATE, true, false, true, null, null, null));
     }
 
     /**
@@ -93,7 +63,7 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
     public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
         if (this.childrenFeatures == null) {
             super.getChildrenFeatures(object);
-            this.childrenFeatures.add(BindingPackage.Literals.TRANSITION_STATE__TRANSITION_CONSUMPTION);
+            this.childrenFeatures.add(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES);
         }
         return this.childrenFeatures;
     }
@@ -112,13 +82,13 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
     }
 
     /**
-     * This returns TransitionState.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * This returns PowerStateMachine.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/TransitionState"));
+        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/PowerStateMachine"));
     }
 
     /**
@@ -129,9 +99,9 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((TransitionState) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_TransitionState_type")
-                : this.getString("_UI_TransitionState_type") + " " + label;
+        final String label = ((PowerStateMachine) object).getName();
+        return label == null || label.length() == 0 ? this.getString("_UI_PowerStateMachine_type")
+                : this.getString("_UI_PowerStateMachine_type") + " " + label;
     }
 
     /**
@@ -145,8 +115,8 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
     public void notifyChanged(final Notification notification) {
         this.updateChildren(notification);
 
-        switch (notification.getFeatureID(TransitionState.class)) {
-        case BindingPackage.TRANSITION_STATE__TRANSITION_CONSUMPTION:
+        switch (notification.getFeatureID(PowerStateMachine.class)) {
+        case StatePackage.POWER_STATE_MACHINE__POWER_STATES:
             this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
@@ -163,9 +133,22 @@ public class TransitionStateItemProvider extends AbstractPowerStateItemProvider 
     protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors
-                .add(this.createChildParameter(BindingPackage.Literals.TRANSITION_STATE__TRANSITION_CONSUMPTION,
-                        BindingFactory.eINSTANCE.createConsumptionBehavior()));
+        newChildDescriptors.add(this.createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
+                StateFactory.eINSTANCE.createTransitionState()));
+
+        newChildDescriptors.add(this.createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
+                StateFactory.eINSTANCE.createPowerState()));
+    }
+
+    /**
+     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return PowerEditPlugin.INSTANCE;
     }
 
 }
