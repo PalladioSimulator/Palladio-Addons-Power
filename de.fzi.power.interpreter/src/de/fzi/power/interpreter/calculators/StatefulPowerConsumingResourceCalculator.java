@@ -15,15 +15,16 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 import de.fzi.power.binding.AbstractPowerState;
-import de.fzi.power.binding.PowerState;
+import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 
 public class StatefulPowerConsumingResourceCalculator implements IResourcePowerModelCalculator {
 
     private final StatefulPowerConsumingResource resource;
-    private final Map<AbstractPowerState, IResourcePowerModelCalculator> powerCalculatorsPerState;
+    private final Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState;
 
-    public StatefulPowerConsumingResourceCalculator(final StatefulPowerConsumingResource resource, Map<AbstractPowerState, IResourcePowerModelCalculator> powerCalculatorsPerState) {
+    public StatefulPowerConsumingResourceCalculator(final StatefulPowerConsumingResource resource,
+            Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState) {
         this.resource = resource;
         this.powerCalculatorsPerState = powerCalculatorsPerState;
     }
@@ -36,9 +37,10 @@ public class StatefulPowerConsumingResourceCalculator implements IResourcePowerM
     @Override
     public Set<MetricDescription> getInputMetrics() {
         Iterator<IResourcePowerModelCalculator> iterator = this.powerCalculatorsPerState.values().iterator();
-        if(!iterator.hasNext()) {
+        if (!iterator.hasNext()) {
             throw new IllegalStateException("There should be a non-empty power model for at least one state.");
-        };
+        }
+        ;
         return new HashSet<MetricDescription>(iterator.next().getInputMetrics());
     }
 

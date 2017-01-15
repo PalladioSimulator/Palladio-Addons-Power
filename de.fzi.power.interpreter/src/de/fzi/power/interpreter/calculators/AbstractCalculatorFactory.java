@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.Set;
 
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
