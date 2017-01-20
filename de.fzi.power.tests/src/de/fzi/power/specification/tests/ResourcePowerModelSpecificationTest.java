@@ -3,8 +3,6 @@
 package de.fzi.power.specification.tests;
 
 import de.fzi.power.specification.ResourcePowerModelSpecification;
-import de.fzi.power.specification.SpecificationFactory;
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
@@ -12,16 +10,7 @@ import junit.textui.TestRunner;
  * 
  * @generated
  */
-public class ResourcePowerModelSpecificationTest extends PowerModelSpecificationTest {
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public static void main(final String[] args) {
-        TestRunner.run(ResourcePowerModelSpecificationTest.class);
-    }
+public abstract class ResourcePowerModelSpecificationTest extends PowerModelSpecificationTest {
 
     /**
      * Constructs a new Resource Power Model Specification test case with the given name. <!--
@@ -42,28 +31,6 @@ public class ResourcePowerModelSpecificationTest extends PowerModelSpecification
     @Override
     protected ResourcePowerModelSpecification getFixture() {
         return (ResourcePowerModelSpecification) this.fixture;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @see junit.framework.TestCase#setUp()
-     * @generated
-     */
-    @Override
-    protected void setUp() throws Exception {
-        this.setFixture(SpecificationFactory.eINSTANCE.createResourcePowerModelSpecification());
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @see junit.framework.TestCase#tearDown()
-     * @generated
-     */
-    @Override
-    protected void tearDown() throws Exception {
-        this.setFixture(null);
     }
 
 } // ResourcePowerModelSpecificationTest

@@ -3,16 +3,16 @@
 package de.fzi.power.infrastructure.tests;
 
 import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
- * <em><b>Power Consuming Resource</b></em>'. <!-- end-user-doc -->
+ * <em><b>Stateful Power Consuming Resource</b></em>'. <!-- end-user-doc -->
  * 
  * @generated
  */
-public class PowerConsumingResourceTest extends AbstractPowerConsumingResourceTest {
+public class StatefulPowerConsumingResourceTest extends AbstractPowerConsumingResourceTest {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -20,28 +20,28 @@ public class PowerConsumingResourceTest extends AbstractPowerConsumingResourceTe
      * @generated
      */
     public static void main(final String[] args) {
-        TestRunner.run(PowerConsumingResourceTest.class);
+        TestRunner.run(StatefulPowerConsumingResourceTest.class);
     }
 
     /**
-     * Constructs a new Power Consuming Resource test case with the given name. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     * 
+     * Constructs a new Stateful Power Consuming Resource test case with the given name. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
-    public PowerConsumingResourceTest(final String name) {
+    public StatefulPowerConsumingResourceTest(final String name) {
         super(name);
     }
 
     /**
-     * Returns the fixture for this Power Consuming Resource test case. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the fixture for this Stateful Power Consuming Resource test case. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      * 
      * @generated
      */
     @Override
-    protected PowerConsumingResource getFixture() {
-        return (PowerConsumingResource) this.fixture;
+    protected StatefulPowerConsumingResource getFixture() {
+        return (StatefulPowerConsumingResource) this.fixture;
     }
 
     /**
@@ -52,7 +52,7 @@ public class PowerConsumingResourceTest extends AbstractPowerConsumingResourceTe
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(InfrastructureFactory.eINSTANCE.createPowerConsumingResource());
+        this.setFixture(InfrastructureFactory.eINSTANCE.createStatefulPowerConsumingResource());
     }
 
     /**
@@ -66,4 +66,4 @@ public class PowerConsumingResourceTest extends AbstractPowerConsumingResourceTe
         this.setFixture(null);
     }
 
-} // PowerConsumingResourceTest
+} // StatefulPowerConsumingResourceTest

@@ -1,18 +1,19 @@
 /**
  */
-package de.fzi.power.binding.tests;
+package de.fzi.power.state.tests;
 
-import de.fzi.power.binding.BindingFactory;
-import de.fzi.power.binding.ResourcePowerBinding;
+import de.fzi.power.state.PowerStateRepository;
+import de.fzi.power.state.StateFactory;
+import de.fzi.power.util.tests.EntityTest;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc --> A test case for the model object '<em><b>Resource Power Binding</b></em>
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Power State Repository</b></em>
  * '. <!-- end-user-doc -->
  * 
  * @generated
  */
-public class ResourcePowerBindingTest extends PowerFactorBindingTest {
+public class PowerStateRepositoryTest extends EntityTest {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -20,28 +21,28 @@ public class ResourcePowerBindingTest extends PowerFactorBindingTest {
      * @generated
      */
     public static void main(final String[] args) {
-        TestRunner.run(ResourcePowerBindingTest.class);
+        TestRunner.run(PowerStateRepositoryTest.class);
     }
 
     /**
-     * Constructs a new Resource Power Binding test case with the given name. <!-- begin-user-doc
+     * Constructs a new Power State Repository test case with the given name. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
      * 
      * @generated
      */
-    public ResourcePowerBindingTest(final String name) {
+    public PowerStateRepositoryTest(final String name) {
         super(name);
     }
 
     /**
-     * Returns the fixture for this Resource Power Binding test case. <!-- begin-user-doc --> <!--
+     * Returns the fixture for this Power State Repository test case. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      * 
      * @generated
      */
     @Override
-    protected ResourcePowerBinding getFixture() {
-        return (ResourcePowerBinding) this.fixture;
+    protected PowerStateRepository getFixture() {
+        return (PowerStateRepository) this.fixture;
     }
 
     /**
@@ -52,7 +53,7 @@ public class ResourcePowerBindingTest extends PowerFactorBindingTest {
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(BindingFactory.eINSTANCE.createResourcePowerBinding());
+        this.setFixture(StateFactory.eINSTANCE.createPowerStateRepository());
     }
 
     /**
@@ -66,4 +67,4 @@ public class ResourcePowerBindingTest extends PowerFactorBindingTest {
         this.setFixture(null);
     }
 
-} // ResourcePowerBindingTest
+} // PowerStateRepositoryTest

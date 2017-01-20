@@ -2,17 +2,17 @@
  */
 package de.fzi.power.specification.tests;
 
-import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.SpecificationFactory;
 import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc --> A test case for the model object '
- * <em><b>Declarative Power Model Specification</b></em>'. <!-- end-user-doc -->
+ * <em><b>Declarative Resource Power Model Specification</b></em>'. <!-- end-user-doc -->
  * 
  * @generated
  */
-public class DeclarativePowerModelSpecificationTest extends PowerModelSpecificationTest {
+public class DeclarativeResourcePowerModelSpecificationTest extends DeclarativePowerModelSpecificationTest {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -20,28 +20,28 @@ public class DeclarativePowerModelSpecificationTest extends PowerModelSpecificat
      * @generated
      */
     public static void main(final String[] args) {
-        TestRunner.run(DeclarativePowerModelSpecificationTest.class);
+        TestRunner.run(DeclarativeResourcePowerModelSpecificationTest.class);
     }
 
     /**
-     * Constructs a new Declarative Power Model Specification test case with the given name. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Constructs a new Declarative Resource Power Model Specification test case with the given
+     * name. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
-    public DeclarativePowerModelSpecificationTest(final String name) {
+    public DeclarativeResourcePowerModelSpecificationTest(final String name) {
         super(name);
     }
 
     /**
-     * Returns the fixture for this Declarative Power Model Specification test case. <!--
+     * Returns the fixture for this Declarative Resource Power Model Specification test case. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
-    protected DeclarativePowerModelSpecification getFixture() {
-        return (DeclarativePowerModelSpecification) this.fixture;
+    protected DeclarativeResourcePowerModelSpecification getFixture() {
+        return (DeclarativeResourcePowerModelSpecification) this.fixture;
     }
 
     /**
@@ -52,7 +52,7 @@ public class DeclarativePowerModelSpecificationTest extends PowerModelSpecificat
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification());
+        this.setFixture(SpecificationFactory.eINSTANCE.createDeclarativeResourcePowerModelSpecification());
     }
 
     /**
@@ -66,4 +66,4 @@ public class DeclarativePowerModelSpecificationTest extends PowerModelSpecificat
         this.setFixture(null);
     }
 
-} // DeclarativePowerModelSpecificationTest
+} // DeclarativeResourcePowerModelSpecificationTest
