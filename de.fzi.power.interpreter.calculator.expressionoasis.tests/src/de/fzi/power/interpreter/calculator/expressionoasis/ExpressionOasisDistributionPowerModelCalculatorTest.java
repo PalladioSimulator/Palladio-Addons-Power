@@ -24,6 +24,7 @@ import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -33,7 +34,7 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
 
     private static final int CONSUMER_COUNT = 4;
 
-    private DeclarativePowerModelSpecification powerModelSpecification;
+    private DeclarativeDistributionPowerModelSpecification powerModelSpecification;
     private ExpressionOasisDistributionPowerModelCalculator calculatorUnderTest;
     private PowerProvidingEntity powerProvidingEntity;
     private DistributionPowerBinding distributionBinding;
@@ -45,7 +46,7 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
 
     @Before
     public void setUp() throws Exception {
-        this.powerModelSpecification = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
+        this.powerModelSpecification = SpecificationFactory.eINSTANCE.createDeclarativeDistributionPowerModelSpecification();
         this.powerModelSpecification.setName("PowerModelSpec");
         this.powerModelSpecification.setFunctionalExpression(
                 "SUM(0.5 * POW(outletConsumption, 2)) +  SUM(2 * outletConsumption) + constantLoss");

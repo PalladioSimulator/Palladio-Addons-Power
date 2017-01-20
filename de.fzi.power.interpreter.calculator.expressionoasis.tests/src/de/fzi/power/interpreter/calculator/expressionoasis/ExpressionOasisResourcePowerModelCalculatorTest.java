@@ -29,6 +29,7 @@ import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.SpecificationFactory;
@@ -37,7 +38,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
 
     private static final MetricDescription UTILIZATION_METRIC = MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE;
 
-    private DeclarativePowerModelSpecification powerModelSpecification;
+    private DeclarativeResourcePowerModelSpecification powerModelSpecification;
     private ResourcePowerBinding binding;
     private MeasuredFactor measuredFactor;
     private FixedFactor fixedFactor;
@@ -47,7 +48,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
 
     @Before
     public void setUp() throws Exception {
-        this.powerModelSpecification = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
+        this.powerModelSpecification = SpecificationFactory.eINSTANCE.createDeclarativeResourcePowerModelSpecification();
         this.powerModelSpecification.setName("PowerModelSpec");
         this.powerModelSpecification
                 .setFunctionalExpression("(0.5 * measuredFactor * measuredFactor +  2 * measuredFactor) * fixedFactor");
