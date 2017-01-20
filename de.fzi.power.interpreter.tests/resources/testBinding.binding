@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" xmlns:identifier="http://sdq.ipd.uka.de/Identifier/2.1" identifier:id="_Ey4nUETHEeSB-oPaAunQcg">
-  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_GPH70ETHEeSB-oPaAunQcg" name="highEndCpu" resourcePowerModelSpecification="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ">
+<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" xmlns:de.fzi.power_1="http://www.fzi.de/Power/Specification/1.0" xmlns:identifier="http://sdq.ipd.uka.de/Identifier/2.1" identifier:id="_Ey4nUETHEeSB-oPaAunQcg">
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_GPH70ETHEeSB-oPaAunQcg" name="highEndCpu">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" identifier:id="_MEZtI0THEeSB-oPaAunQcg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA" value="600 W"/>
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" identifier:id="_qxDLIUWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA" value="400 W"/>
+    <resourcePowerModelSpecification xsi:type="de.fzi.power_1:BlackBoxResourcePowerModelSpecification" href="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
   </powerBindings>
-  <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" identifier:id="_GtCDAUTLEeS52Npf6Ife0Q" name="losslessDistribution" distributionPowerModel="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw">
+  <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" identifier:id="_GtCDAUTLEeS52Npf6Ife0Q" name="losslessDistribution">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" identifier:id="_sdNyAEWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw" value="0 W"/>
+    <distributionPowerModel  xsi:type="de.fzi.power_1:BlackBoxDistributionPowerModelSpecification" href="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
   </powerBindings>
-  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_wRNoEEWMEeSZH5zlL3RMGg" name="efficientCpu" resourcePowerModelSpecification="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ">
+  <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" identifier:id="_wRNoEEWMEeSZH5zlL3RMGg" name="efficientCpu">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" identifier:id="_ywGsYEWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_yosvQDgXEeS9Ksbwfez2QA" value="300 W"/>
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" identifier:id="_2KOC0EWMEeSZH5zlL3RMGg" boundFactor="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA" value="200 W"/>
+    <resourcePowerModelSpecification xsi:type="de.fzi.power_1:BlackBoxResourcePowerModelSpecification" href="platform:/plugin/de.fzi.power.specification.resources/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
   </powerBindings>
 </de.fzi.power:PowerBindingRepository>
