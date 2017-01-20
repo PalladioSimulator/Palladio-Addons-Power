@@ -6,8 +6,12 @@ package de.fzi.power.interpreter.calculators;
 import java.util.Collections;
 import java.util.Set;
 
+import org.eclipse.emf.ecore.EObject;
+
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
+import de.fzi.power.specification.BlackBoxPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxResourcePowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.PowerModelSpecification;
@@ -20,17 +24,17 @@ import de.fzi.power.specification.util.SpecificationSwitch;
  */
 public abstract class AbstractCalculatorFactory implements CalculatorFactory {
     private SpecificationSwitch<Boolean> SUPPORTED_POWERMODELS_SWITCH = 
-            new SpecificationSwitch<Boolean>() {
+            new SpecificationSwitch<Boolean>() { 
         
-        public Boolean caseDistributionPowerModelSpecification(DistributionPowerModelSpecification object) {
+        public Boolean caseBlackBoxDistributionPowerModelSpecification(de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification object) {
             return getSupportedDistributionPowerModelIds().contains(object.getId());
         };
         
-        public Boolean caseResourcePowerModelSpecification(ResourcePowerModelSpecification object) {
+        public Boolean caseBlackBoxResourcePowerModelSpecification(BlackBoxResourcePowerModelSpecification object) {
             return getSupportedResourcePowerModelIds().contains(object.getId());
         };
         
-        public Boolean caseDeclarativePowerModelSpecification(DeclarativePowerModelSpecification object) {
+        public Boolean defaultCase(EObject object) {
             return false;
         };
     };
