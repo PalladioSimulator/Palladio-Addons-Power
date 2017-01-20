@@ -48,7 +48,7 @@ public class TransitionStatePowerModelCalculator implements IResourcePowerModelC
 
     @Override
     public Amount<Power> calculate(final Collection<MeasuringValue> list) {
-        final NumericalBaseMetricDescription timeMetric = MetricDescriptionConstants.POINT_IN_TIME_METRIC;
+        final NumericalBaseMetricDescription timeMetric = (NumericalBaseMetricDescription) MetricDescriptionConstants.POINT_IN_TIME_METRIC;
         final Measure<Double, Duration> curTime = list.stream().map(m -> m.<Double, Duration> getMeasureForMetric(timeMetric))
                 .findAny().get();
         final double timeDiff = curTime.doubleValue(transitionStart.getUnit()) - transitionStart.doubleValue(transitionStart.getUnit());
