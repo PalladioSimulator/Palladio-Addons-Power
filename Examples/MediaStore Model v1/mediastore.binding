@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" id="_pnz4UGnBEeSeo-pFM7s_nQ">
+<de.fzi.power:PowerBindingRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Binding/1.0" xmlns:de.fzi.power_1="http://www.fzi.de/Power/Specification/1.0" id="_pnz4UGnBEeSeo-pFM7s_nQ">
   <powerBindings xsi:type="de.fzi.power:DistributionPowerBinding" id="_-u70IWwTEeShkNmTEeIZtw" name="simpleLinear">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_OsDNcAfDEeaG2snxyc_DQw" value="100 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_b_IXADqsEeSeEKsoUNmaIw"/>
     </fixedFactorValues>
-    <distributionPowerModel href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
+    <distributionPowerModel xsi:type="de.fzi.power_1:BlackBoxDistributionPowerModelSpecification" href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_EzkPUDqsEeSeEKsoUNmaIw"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_fnnwUGnCEeSeo-pFM7s_nQ" name="Elsbeere CPU Linear">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_lCL7kGnCEeSeo-pFM7s_nQ" value="477.259 W">
@@ -13,7 +13,7 @@
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_rUmU0GnCEeSeo-pFM7s_nQ" value="331.967 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
-    <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
+    <resourcePowerModelSpecification xsi:type="de.fzi.power_1:BlackBoxResourcePowerModelSpecification" href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_ZbcSgIqeEeSWsKmwGgxORw" name="Elsbeere CPU Interpolation">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_hdFNsIqeEeSWsKmwGgxORw" value="270.318 W">
@@ -49,7 +49,7 @@
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_zvpmIIqeEeSWsKmwGgxORw" value="361.951 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_yosvQDgZGeS9Ksbwfqy12P"/>
     </fixedFactorValues>
-    <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYp_X61Wxp"/>
+    <resourcePowerModelSpecification xsi:type="de.fzi.power_1:BlackBoxResourcePowerModelSpecification" href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYp_X61Wxp"/>
   </powerBindings>
   <powerBindings xsi:type="de.fzi.power:ResourcePowerBinding" id="_I1hLsI7IEeSV6oBekNlovg" name="singleCPULinear">
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_Kz6LAI7IEeSV6oBekNlovg" value="341.048 W">
@@ -58,6 +58,6 @@
     <fixedFactorValues xsi:type="de.fzi.power:FixedFactorValuePower" id="_MQWT0I7IEeSV6oBekNlovg" value="331.967 W">
       <boundFactor href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_vkR8ADgXEeS9Ksbwfez2QA"/>
     </fixedFactorValues>
-    <resourcePowerModelSpecification href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
+    <resourcePowerModelSpecification xsi:type="de.fzi.power_1:BlackBoxResourcePowerModelSpecification" href="pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec#_daqEMDgXEeSFuYf_V61WsQ"/>
   </powerBindings>
 </de.fzi.power:PowerBindingRepository>
