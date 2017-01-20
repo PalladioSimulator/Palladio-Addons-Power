@@ -96,57 +96,6 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link de.fzi.power.specification.ResourcePowerModelSpecification} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected ResourcePowerModelSpecificationItemProvider resourcePowerModelSpecificationItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link de.fzi.power.specification.ResourcePowerModelSpecification}. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createResourcePowerModelSpecificationAdapter() {
-        if (this.resourcePowerModelSpecificationItemProvider == null) {
-            this.resourcePowerModelSpecificationItemProvider = new ResourcePowerModelSpecificationItemProvider(this);
-        }
-
-        return this.resourcePowerModelSpecificationItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
-     * {@link de.fzi.power.specification.DistributionPowerModelSpecification} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected DistributionPowerModelSpecificationItemProvider distributionPowerModelSpecificationItemProvider;
-
-    /**
-     * This creates an adapter for a
-     * {@link de.fzi.power.specification.DistributionPowerModelSpecification}. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Adapter createDistributionPowerModelSpecificationAdapter() {
-        if (this.distributionPowerModelSpecificationItemProvider == null) {
-            this.distributionPowerModelSpecificationItemProvider = new DistributionPowerModelSpecificationItemProvider(
-                    this);
-        }
-
-        return this.distributionPowerModelSpecificationItemProvider;
-    }
-
-    /**
-     * This keeps track of the one adapter used for all
      * {@link de.fzi.power.specification.FixedFactor} instances. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -217,6 +166,110 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
         }
 
         return this.declarativePowerModelSpecificationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected DeclarativeResourcePowerModelSpecificationItemProvider declarativeResourcePowerModelSpecificationItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createDeclarativeResourcePowerModelSpecificationAdapter() {
+        if (this.declarativeResourcePowerModelSpecificationItemProvider == null) {
+            this.declarativeResourcePowerModelSpecificationItemProvider = new DeclarativeResourcePowerModelSpecificationItemProvider(
+                    this);
+        }
+
+        return this.declarativeResourcePowerModelSpecificationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification} instances.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected DeclarativeDistributionPowerModelSpecificationItemProvider declarativeDistributionPowerModelSpecificationItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createDeclarativeDistributionPowerModelSpecificationAdapter() {
+        if (this.declarativeDistributionPowerModelSpecificationItemProvider == null) {
+            this.declarativeDistributionPowerModelSpecificationItemProvider = new DeclarativeDistributionPowerModelSpecificationItemProvider(
+                    this);
+        }
+
+        return this.declarativeDistributionPowerModelSpecificationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification} instances.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected BlackBoxDistributionPowerModelSpecificationItemProvider blackBoxDistributionPowerModelSpecificationItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createBlackBoxDistributionPowerModelSpecificationAdapter() {
+        if (this.blackBoxDistributionPowerModelSpecificationItemProvider == null) {
+            this.blackBoxDistributionPowerModelSpecificationItemProvider = new BlackBoxDistributionPowerModelSpecificationItemProvider(
+                    this);
+        }
+
+        return this.blackBoxDistributionPowerModelSpecificationItemProvider;
+    }
+
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected BlackBoxResourcePowerModelSpecificationItemProvider blackBoxResourcePowerModelSpecificationItemProvider;
+
+    /**
+     * This creates an adapter for a
+     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createBlackBoxResourcePowerModelSpecificationAdapter() {
+        if (this.blackBoxResourcePowerModelSpecificationItemProvider == null) {
+            this.blackBoxResourcePowerModelSpecificationItemProvider = new BlackBoxResourcePowerModelSpecificationItemProvider(
+                    this);
+        }
+
+        return this.blackBoxResourcePowerModelSpecificationItemProvider;
     }
 
     /**
@@ -325,12 +378,6 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
         if (this.powerModelRepositoryItemProvider != null) {
             this.powerModelRepositoryItemProvider.dispose();
         }
-        if (this.resourcePowerModelSpecificationItemProvider != null) {
-            this.resourcePowerModelSpecificationItemProvider.dispose();
-        }
-        if (this.distributionPowerModelSpecificationItemProvider != null) {
-            this.distributionPowerModelSpecificationItemProvider.dispose();
-        }
         if (this.fixedFactorItemProvider != null) {
             this.fixedFactorItemProvider.dispose();
         }
@@ -339,6 +386,18 @@ public class SpecificationItemProviderAdapterFactory extends SpecificationAdapte
         }
         if (this.declarativePowerModelSpecificationItemProvider != null) {
             this.declarativePowerModelSpecificationItemProvider.dispose();
+        }
+        if (this.declarativeResourcePowerModelSpecificationItemProvider != null) {
+            this.declarativeResourcePowerModelSpecificationItemProvider.dispose();
+        }
+        if (this.declarativeDistributionPowerModelSpecificationItemProvider != null) {
+            this.declarativeDistributionPowerModelSpecificationItemProvider.dispose();
+        }
+        if (this.blackBoxDistributionPowerModelSpecificationItemProvider != null) {
+            this.blackBoxDistributionPowerModelSpecificationItemProvider.dispose();
+        }
+        if (this.blackBoxResourcePowerModelSpecificationItemProvider != null) {
+            this.blackBoxResourcePowerModelSpecificationItemProvider.dispose();
         }
     }
 

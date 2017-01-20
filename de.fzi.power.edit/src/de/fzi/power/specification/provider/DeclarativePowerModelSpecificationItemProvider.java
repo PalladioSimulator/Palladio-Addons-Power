@@ -22,7 +22,7 @@ import de.fzi.power.specification.SpecificationPackage;
  *
  * @generated
  */
-public class DeclarativePowerModelSpecificationItemProvider extends ResourcePowerModelSpecificationItemProvider {
+public class DeclarativePowerModelSpecificationItemProvider extends PowerModelSpecificationItemProvider {
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->

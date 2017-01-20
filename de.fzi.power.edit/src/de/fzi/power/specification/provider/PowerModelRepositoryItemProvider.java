@@ -135,15 +135,23 @@ public class PowerModelRepositoryItemProvider extends IdentifierItemProvider {
 
         newChildDescriptors.add(this.createChildParameter(
                 SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
-                SpecificationFactory.eINSTANCE.createResourcePowerModelSpecification()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
-                SpecificationFactory.eINSTANCE.createDistributionPowerModelSpecification()));
-
-        newChildDescriptors.add(this.createChildParameter(
-                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
                 SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification()));
+
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createDeclarativeResourcePowerModelSpecification()));
+
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createDeclarativeDistributionPowerModelSpecification()));
+
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createBlackBoxDistributionPowerModelSpecification()));
+
+        newChildDescriptors.add(this.createChildParameter(
+                SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
+                SpecificationFactory.eINSTANCE.createBlackBoxResourcePowerModelSpecification()));
     }
 
     /**
