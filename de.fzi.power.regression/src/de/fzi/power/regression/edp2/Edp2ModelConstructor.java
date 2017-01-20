@@ -51,6 +51,7 @@ import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.util.BindingSwitch;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.PowerModelRepository;
@@ -107,7 +108,7 @@ public class Edp2ModelConstructor {
         return new RobustNonLinearSquaresRegression<Power>(expression, resultPair.getFirst(), params, resultPair.getSecond());
     }
     
-    public SymbolicRegression<Power> constructSymbolicModel(PowerBindingRepository repo, PowerModelRepository modelRepo, DeclarativePowerModelSpecification spec) {
+    public SymbolicRegression<Power> constructSymbolicModel(PowerBindingRepository repo, PowerModelRepository modelRepo, DeclarativeResourcePowerModelSpecification spec) {
         List<NumericalBaseMetricDescription> availableMetrics = getAvailableMetrics().stream()
                 .filter(m -> !m.getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION.getId())).collect(Collectors.toList());
         ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
