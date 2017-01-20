@@ -56,6 +56,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
      */
     public ExtensibleCalculatorInstantiatorImpl() {
         this(new ITimeProvider() {
+            @Override
             public Amount<Duration> getCurrentTime() {
                 return Amount.valueOf(0, Duration.UNIT);
             }
