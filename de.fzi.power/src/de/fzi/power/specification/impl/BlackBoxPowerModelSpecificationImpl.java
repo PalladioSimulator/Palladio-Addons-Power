@@ -4,23 +4,23 @@ package de.fzi.power.specification.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import de.fzi.power.specification.ResourcePowerModelSpecification;
+import de.fzi.power.specification.BlackBoxPowerModelSpecification;
 import de.fzi.power.specification.SpecificationPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Resource Power Model Specification</b></em>'. <!-- end-user-doc -->
+ * <em><b>Black Box Power Model Specification</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpecificationImpl
-        implements ResourcePowerModelSpecification {
+public abstract class BlackBoxPowerModelSpecificationImpl extends PowerModelSpecificationImpl
+        implements BlackBoxPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected ResourcePowerModelSpecificationImpl() {
+    protected BlackBoxPowerModelSpecificationImpl() {
         super();
     }
 
@@ -31,7 +31,7 @@ public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpec
      */
     @Override
     protected EClass eStaticClass() {
-        return SpecificationPackage.Literals.RESOURCE_POWER_MODEL_SPECIFICATION;
+        return SpecificationPackage.Literals.BLACK_BOX_POWER_MODEL_SPECIFICATION;
     }
 
-} // ResourcePowerModelSpecificationImpl
+} // BlackBoxPowerModelSpecificationImpl

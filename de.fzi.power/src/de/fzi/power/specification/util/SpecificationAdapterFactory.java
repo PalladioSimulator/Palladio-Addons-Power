@@ -7,8 +7,13 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxResourcePowerModelSpecification;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -110,6 +115,35 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseDeclarativePowerModelSpecification(final DeclarativePowerModelSpecification object) {
             return SpecificationAdapterFactory.this.createDeclarativePowerModelSpecificationAdapter();
+        }
+
+        @Override
+        public Adapter caseDeclarativeResourcePowerModelSpecification(
+                final DeclarativeResourcePowerModelSpecification object) {
+            return SpecificationAdapterFactory.this.createDeclarativeResourcePowerModelSpecificationAdapter();
+        }
+
+        @Override
+        public Adapter caseDeclarativeDistributionPowerModelSpecification(
+                final DeclarativeDistributionPowerModelSpecification object) {
+            return SpecificationAdapterFactory.this.createDeclarativeDistributionPowerModelSpecificationAdapter();
+        }
+
+        @Override
+        public Adapter caseBlackBoxPowerModelSpecification(final BlackBoxPowerModelSpecification object) {
+            return SpecificationAdapterFactory.this.createBlackBoxPowerModelSpecificationAdapter();
+        }
+
+        @Override
+        public Adapter caseBlackBoxDistributionPowerModelSpecification(
+                final BlackBoxDistributionPowerModelSpecification object) {
+            return SpecificationAdapterFactory.this.createBlackBoxDistributionPowerModelSpecificationAdapter();
+        }
+
+        @Override
+        public Adapter caseBlackBoxResourcePowerModelSpecification(
+                final BlackBoxResourcePowerModelSpecification object) {
+            return SpecificationAdapterFactory.this.createBlackBoxResourcePowerModelSpecificationAdapter();
         }
 
         @Override
@@ -262,6 +296,81 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createDeclarativePowerModelSpecificationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
+     * <em>Declarative Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This
+     * default implementation returns null so that we can easily ignore cases; it's useful to ignore
+     * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
+     * @generated
+     */
+    public Adapter createDeclarativeResourcePowerModelSpecificationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * <em>Declarative Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This
+     * default implementation returns null so that we can easily ignore cases; it's useful to ignore
+     * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * @generated
+     */
+    public Adapter createDeclarativeDistributionPowerModelSpecificationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.BlackBoxPowerModelSpecification
+     * <em>Black Box Power Model Specification</em>}'. <!-- begin-user-doc --> This default
+     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.BlackBoxPowerModelSpecification
+     * @generated
+     */
+    public Adapter createBlackBoxPowerModelSpecificationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
+     * <em>Black Box Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This
+     * default implementation returns null so that we can easily ignore cases; it's useful to ignore
+     * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
+     * @generated
+     */
+    public Adapter createBlackBoxDistributionPowerModelSpecificationAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '
+     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
+     * <em>Black Box Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
+     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     *
+     * @return the new adapter.
+     * @see de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
+     * @generated
+     */
+    public Adapter createBlackBoxResourcePowerModelSpecificationAdapter() {
         return null;
     }
 

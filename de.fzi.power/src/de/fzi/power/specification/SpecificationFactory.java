@@ -29,24 +29,6 @@ public interface SpecificationFactory extends EFactory {
     PowerModelRepository createPowerModelRepository();
 
     /**
-     * Returns a new object of class '<em>Resource Power Model Specification</em>'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return a new object of class '<em>Resource Power Model Specification</em>'.
-     * @generated
-     */
-    ResourcePowerModelSpecification createResourcePowerModelSpecification();
-
-    /**
-     * Returns a new object of class '<em>Distribution Power Model Specification</em>'. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return a new object of class '<em>Distribution Power Model Specification</em>'.
-     * @generated
-     */
-    DistributionPowerModelSpecification createDistributionPowerModelSpecification();
-
-    /**
      * Returns a new object of class '<em>Fixed Factor</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -72,6 +54,42 @@ public interface SpecificationFactory extends EFactory {
      * @generated
      */
     DeclarativePowerModelSpecification createDeclarativePowerModelSpecification();
+
+    /**
+     * Returns a new object of class '<em>Declarative Resource Power Model Specification</em>'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Declarative Resource Power Model Specification</em>'.
+     * @generated
+     */
+    DeclarativeResourcePowerModelSpecification createDeclarativeResourcePowerModelSpecification();
+
+    /**
+     * Returns a new object of class '<em>Declarative Distribution Power Model Specification</em>'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Declarative Distribution Power Model Specification</em>'.
+     * @generated
+     */
+    DeclarativeDistributionPowerModelSpecification createDeclarativeDistributionPowerModelSpecification();
+
+    /**
+     * Returns a new object of class '<em>Black Box Distribution Power Model Specification</em>'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Black Box Distribution Power Model Specification</em>'.
+     * @generated
+     */
+    BlackBoxDistributionPowerModelSpecification createBlackBoxDistributionPowerModelSpecification();
+
+    /**
+     * Returns a new object of class '<em>Black Box Resource Power Model Specification</em>'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Black Box Resource Power Model Specification</em>'.
+     * @generated
+     */
+    BlackBoxResourcePowerModelSpecification createBlackBoxResourcePowerModelSpecification();
 
     /**
      * Returns the package supported by this factory. <!-- begin-user-doc --> <!-- end-user-doc -->

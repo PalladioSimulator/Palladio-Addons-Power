@@ -8,12 +8,14 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxResourcePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
-import de.fzi.power.specification.DistributionPowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.PowerModelRepository;
-import de.fzi.power.specification.ResourcePowerModelSpecification;
 import de.fzi.power.specification.SpecificationFactory;
 import de.fzi.power.specification.SpecificationPackage;
 
@@ -60,16 +62,20 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
         switch (eClass.getClassifierID()) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY:
             return this.createPowerModelRepository();
-        case SpecificationPackage.RESOURCE_POWER_MODEL_SPECIFICATION:
-            return this.createResourcePowerModelSpecification();
-        case SpecificationPackage.DISTRIBUTION_POWER_MODEL_SPECIFICATION:
-            return this.createDistributionPowerModelSpecification();
         case SpecificationPackage.FIXED_FACTOR:
             return this.createFixedFactor();
         case SpecificationPackage.MEASURED_FACTOR:
             return this.createMeasuredFactor();
         case SpecificationPackage.DECLARATIVE_POWER_MODEL_SPECIFICATION:
             return this.createDeclarativePowerModelSpecification();
+        case SpecificationPackage.DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION:
+            return this.createDeclarativeResourcePowerModelSpecification();
+        case SpecificationPackage.DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION:
+            return this.createDeclarativeDistributionPowerModelSpecification();
+        case SpecificationPackage.BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION:
+            return this.createBlackBoxDistributionPowerModelSpecification();
+        case SpecificationPackage.BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION:
+            return this.createBlackBoxResourcePowerModelSpecification();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -84,28 +90,6 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
     public PowerModelRepository createPowerModelRepository() {
         final PowerModelRepositoryImpl powerModelRepository = new PowerModelRepositoryImpl();
         return powerModelRepository;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public ResourcePowerModelSpecification createResourcePowerModelSpecification() {
-        final ResourcePowerModelSpecificationImpl resourcePowerModelSpecification = new ResourcePowerModelSpecificationImpl();
-        return resourcePowerModelSpecification;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public DistributionPowerModelSpecification createDistributionPowerModelSpecification() {
-        final DistributionPowerModelSpecificationImpl distributionPowerModelSpecification = new DistributionPowerModelSpecificationImpl();
-        return distributionPowerModelSpecification;
     }
 
     /**
@@ -139,6 +123,50 @@ public class SpecificationFactoryImpl extends EFactoryImpl implements Specificat
     public DeclarativePowerModelSpecification createDeclarativePowerModelSpecification() {
         final DeclarativePowerModelSpecificationImpl declarativePowerModelSpecification = new DeclarativePowerModelSpecificationImpl();
         return declarativePowerModelSpecification;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public DeclarativeResourcePowerModelSpecification createDeclarativeResourcePowerModelSpecification() {
+        final DeclarativeResourcePowerModelSpecificationImpl declarativeResourcePowerModelSpecification = new DeclarativeResourcePowerModelSpecificationImpl();
+        return declarativeResourcePowerModelSpecification;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public DeclarativeDistributionPowerModelSpecification createDeclarativeDistributionPowerModelSpecification() {
+        final DeclarativeDistributionPowerModelSpecificationImpl declarativeDistributionPowerModelSpecification = new DeclarativeDistributionPowerModelSpecificationImpl();
+        return declarativeDistributionPowerModelSpecification;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public BlackBoxDistributionPowerModelSpecification createBlackBoxDistributionPowerModelSpecification() {
+        final BlackBoxDistributionPowerModelSpecificationImpl blackBoxDistributionPowerModelSpecification = new BlackBoxDistributionPowerModelSpecificationImpl();
+        return blackBoxDistributionPowerModelSpecification;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public BlackBoxResourcePowerModelSpecification createBlackBoxResourcePowerModelSpecification() {
+        final BlackBoxResourcePowerModelSpecificationImpl blackBoxResourcePowerModelSpecification = new BlackBoxResourcePowerModelSpecificationImpl();
+        return blackBoxResourcePowerModelSpecification;
     }
 
     /**

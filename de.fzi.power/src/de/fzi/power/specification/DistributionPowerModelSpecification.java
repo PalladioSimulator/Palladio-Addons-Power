@@ -8,7 +8,7 @@ package de.fzi.power.specification;
  *
  *
  * @see de.fzi.power.specification.SpecificationPackage#getDistributionPowerModelSpecification()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface DistributionPowerModelSpecification extends PowerModelSpecification {

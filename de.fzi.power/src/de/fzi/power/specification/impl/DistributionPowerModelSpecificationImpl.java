@@ -13,7 +13,7 @@ import de.fzi.power.specification.SpecificationPackage;
  *
  * @generated
  */
-public class DistributionPowerModelSpecificationImpl extends PowerModelSpecificationImpl
+public abstract class DistributionPowerModelSpecificationImpl extends PowerModelSpecificationImpl
         implements DistributionPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->

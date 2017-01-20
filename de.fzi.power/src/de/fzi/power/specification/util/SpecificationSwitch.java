@@ -6,8 +6,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxResourcePowerModelSpecification;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -201,12 +206,6 @@ public class SpecificationSwitch<T> extends Switch<T> {
             final DeclarativePowerModelSpecification declarativePowerModelSpecification = (DeclarativePowerModelSpecification) theEObject;
             T result = this.caseDeclarativePowerModelSpecification(declarativePowerModelSpecification);
             if (result == null) {
-                result = this.caseResourcePowerModelSpecification(declarativePowerModelSpecification);
-            }
-            if (result == null) {
-                result = this.caseDistributionPowerModelSpecification(declarativePowerModelSpecification);
-            }
-            if (result == null) {
                 result = this.casePowerModelSpecification(declarativePowerModelSpecification);
             }
             if (result == null) {
@@ -217,6 +216,126 @@ public class SpecificationSwitch<T> extends Switch<T> {
             }
             if (result == null) {
                 result = this.caseNamedElement(declarativePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case SpecificationPackage.DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION: {
+            final DeclarativeResourcePowerModelSpecification declarativeResourcePowerModelSpecification = (DeclarativeResourcePowerModelSpecification) theEObject;
+            T result = this.caseDeclarativeResourcePowerModelSpecification(declarativeResourcePowerModelSpecification);
+            if (result == null) {
+                result = this.caseDeclarativePowerModelSpecification(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseResourcePowerModelSpecification(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.casePowerModelSpecification(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseEntity(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(declarativeResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case SpecificationPackage.DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION: {
+            final DeclarativeDistributionPowerModelSpecification declarativeDistributionPowerModelSpecification = (DeclarativeDistributionPowerModelSpecification) theEObject;
+            T result = this
+                    .caseDeclarativeDistributionPowerModelSpecification(declarativeDistributionPowerModelSpecification);
+            if (result == null) {
+                result = this.caseDeclarativePowerModelSpecification(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseDistributionPowerModelSpecification(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.casePowerModelSpecification(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseEntity(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(declarativeDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case SpecificationPackage.BLACK_BOX_POWER_MODEL_SPECIFICATION: {
+            final BlackBoxPowerModelSpecification blackBoxPowerModelSpecification = (BlackBoxPowerModelSpecification) theEObject;
+            T result = this.caseBlackBoxPowerModelSpecification(blackBoxPowerModelSpecification);
+            if (result == null) {
+                result = this.casePowerModelSpecification(blackBoxPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseEntity(blackBoxPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(blackBoxPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(blackBoxPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case SpecificationPackage.BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION: {
+            final BlackBoxDistributionPowerModelSpecification blackBoxDistributionPowerModelSpecification = (BlackBoxDistributionPowerModelSpecification) theEObject;
+            T result = this
+                    .caseBlackBoxDistributionPowerModelSpecification(blackBoxDistributionPowerModelSpecification);
+            if (result == null) {
+                result = this.caseDistributionPowerModelSpecification(blackBoxDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.casePowerModelSpecification(blackBoxDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseEntity(blackBoxDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(blackBoxDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(blackBoxDistributionPowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
+        case SpecificationPackage.BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION: {
+            final BlackBoxResourcePowerModelSpecification blackBoxResourcePowerModelSpecification = (BlackBoxResourcePowerModelSpecification) theEObject;
+            T result = this.caseBlackBoxResourcePowerModelSpecification(blackBoxResourcePowerModelSpecification);
+            if (result == null) {
+                result = this.caseResourcePowerModelSpecification(blackBoxResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.casePowerModelSpecification(blackBoxResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseEntity(blackBoxResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseIdentifier(blackBoxResourcePowerModelSpecification);
+            }
+            if (result == null) {
+                result = this.caseNamedElement(blackBoxResourcePowerModelSpecification);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -351,6 +470,91 @@ public class SpecificationSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseDeclarativePowerModelSpecification(final DeclarativePowerModelSpecification object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Declarative Resource Power Model Specification</em>'. <!-- begin-user-doc --> This
+     * implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Declarative Resource Power Model Specification</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDeclarativeResourcePowerModelSpecification(final DeclarativeResourcePowerModelSpecification object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Declarative Distribution Power Model Specification</em>'. <!-- begin-user-doc --> This
+     * implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Declarative Distribution Power Model Specification</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDeclarativeDistributionPowerModelSpecification(
+            final DeclarativeDistributionPowerModelSpecification object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Black Box Power Model Specification</em>'. <!-- begin-user-doc --> This implementation
+     * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Black Box Power Model Specification</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBlackBoxPowerModelSpecification(final BlackBoxPowerModelSpecification object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Black Box Distribution Power Model Specification</em>'. <!-- begin-user-doc --> This
+     * implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Black Box Distribution Power Model Specification</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBlackBoxDistributionPowerModelSpecification(final BlackBoxDistributionPowerModelSpecification object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Black Box Resource Power Model Specification</em>'. <!-- begin-user-doc --> This
+     * implementation returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Black Box Resource Power Model Specification</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBlackBoxResourcePowerModelSpecification(final BlackBoxResourcePowerModelSpecification object) {
         return null;
     }
 

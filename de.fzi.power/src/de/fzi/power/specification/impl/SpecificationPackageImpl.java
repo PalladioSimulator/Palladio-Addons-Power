@@ -17,8 +17,13 @@ import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.impl.BindingPackageImpl;
 import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.impl.InfrastructurePackageImpl;
+import de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxPowerModelSpecification;
+import de.fzi.power.specification.BlackBoxResourcePowerModelSpecification;
 import de.fzi.power.specification.ConsumptionFactor;
+import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
@@ -95,6 +100,41 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
      * @generated
      */
     private EClass declarativePowerModelSpecificationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass declarativeResourcePowerModelSpecificationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass declarativeDistributionPowerModelSpecificationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass blackBoxPowerModelSpecificationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass blackBoxDistributionPowerModelSpecificationEClass = null;
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EClass blackBoxResourcePowerModelSpecificationEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
@@ -337,6 +377,56 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
      * @generated
      */
     @Override
+    public EClass getDeclarativeResourcePowerModelSpecification() {
+        return this.declarativeResourcePowerModelSpecificationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getDeclarativeDistributionPowerModelSpecification() {
+        return this.declarativeDistributionPowerModelSpecificationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getBlackBoxPowerModelSpecification() {
+        return this.blackBoxPowerModelSpecificationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getBlackBoxDistributionPowerModelSpecification() {
+        return this.blackBoxDistributionPowerModelSpecificationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EClass getBlackBoxResourcePowerModelSpecification() {
+        return this.blackBoxResourcePowerModelSpecificationEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public SpecificationFactory getSpecificationFactory() {
         return (SpecificationFactory) this.getEFactoryInstance();
     }
@@ -383,6 +473,20 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         this.declarativePowerModelSpecificationEClass = this.createEClass(DECLARATIVE_POWER_MODEL_SPECIFICATION);
         this.createEAttribute(this.declarativePowerModelSpecificationEClass,
                 DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION);
+
+        this.declarativeResourcePowerModelSpecificationEClass = this
+                .createEClass(DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION);
+
+        this.declarativeDistributionPowerModelSpecificationEClass = this
+                .createEClass(DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION);
+
+        this.blackBoxPowerModelSpecificationEClass = this.createEClass(BLACK_BOX_POWER_MODEL_SPECIFICATION);
+
+        this.blackBoxDistributionPowerModelSpecificationEClass = this
+                .createEClass(BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION);
+
+        this.blackBoxResourcePowerModelSpecificationEClass = this
+                .createEClass(BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION);
     }
 
     /**
@@ -428,9 +532,20 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
         this.fixedFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
         this.consumptionFactorEClass.getESuperTypes().add(theUtilPackage.getEntity());
         this.measuredFactorEClass.getESuperTypes().add(this.getConsumptionFactor());
-        this.declarativePowerModelSpecificationEClass.getESuperTypes().add(this.getResourcePowerModelSpecification());
-        this.declarativePowerModelSpecificationEClass.getESuperTypes()
+        this.declarativePowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
+        this.declarativeResourcePowerModelSpecificationEClass.getESuperTypes()
+                .add(this.getDeclarativePowerModelSpecification());
+        this.declarativeResourcePowerModelSpecificationEClass.getESuperTypes()
+                .add(this.getResourcePowerModelSpecification());
+        this.declarativeDistributionPowerModelSpecificationEClass.getESuperTypes()
+                .add(this.getDeclarativePowerModelSpecification());
+        this.declarativeDistributionPowerModelSpecificationEClass.getESuperTypes()
                 .add(this.getDistributionPowerModelSpecification());
+        this.blackBoxPowerModelSpecificationEClass.getESuperTypes().add(this.getPowerModelSpecification());
+        this.blackBoxDistributionPowerModelSpecificationEClass.getESuperTypes()
+                .add(this.getDistributionPowerModelSpecification());
+        this.blackBoxResourcePowerModelSpecificationEClass.getESuperTypes()
+                .add(this.getResourcePowerModelSpecification());
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.powerModelRepositoryEClass, PowerModelRepository.class, "PowerModelRepository",
@@ -452,10 +567,10 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.resourcePowerModelSpecificationEClass, ResourcePowerModelSpecification.class,
-                "ResourcePowerModelSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "ResourcePowerModelSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.distributionPowerModelSpecificationEClass, DistributionPowerModelSpecification.class,
-                "DistributionPowerModelSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+                "DistributionPowerModelSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         this.initEClass(this.fixedFactorEClass, FixedFactor.class, "FixedFactor", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
@@ -480,6 +595,25 @@ public class SpecificationPackageImpl extends EPackageImpl implements Specificat
                 this.ecorePackage.getEString(), "functionalExpression", null, 1, 1,
                 DeclarativePowerModelSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
                 !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        this.initEClass(this.declarativeResourcePowerModelSpecificationEClass,
+                DeclarativeResourcePowerModelSpecification.class, "DeclarativeResourcePowerModelSpecification",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.declarativeDistributionPowerModelSpecificationEClass,
+                DeclarativeDistributionPowerModelSpecification.class, "DeclarativeDistributionPowerModelSpecification",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.blackBoxPowerModelSpecificationEClass, BlackBoxPowerModelSpecification.class,
+                "BlackBoxPowerModelSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.blackBoxDistributionPowerModelSpecificationEClass,
+                BlackBoxDistributionPowerModelSpecification.class, "BlackBoxDistributionPowerModelSpecification",
+                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.blackBoxResourcePowerModelSpecificationEClass,
+                BlackBoxResourcePowerModelSpecification.class, "BlackBoxResourcePowerModelSpecification", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
         this.createResource(eNS_URI);

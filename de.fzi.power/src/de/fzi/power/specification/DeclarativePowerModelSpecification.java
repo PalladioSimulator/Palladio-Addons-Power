@@ -18,8 +18,7 @@ package de.fzi.power.specification;
  * @model
  * @generated
  */
-public interface DeclarativePowerModelSpecification
-        extends ResourcePowerModelSpecification, DistributionPowerModelSpecification {
+public interface DeclarativePowerModelSpecification extends PowerModelSpecification {
     /**
      * Returns the value of the '<em><b>Functional Expression</b></em>' attribute. <!--
      * begin-user-doc -->

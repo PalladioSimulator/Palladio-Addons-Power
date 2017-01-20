@@ -427,7 +427,7 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION__ID = RESOURCE_POWER_MODEL_SPECIFICATION__ID;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION__ID = POWER_MODEL_SPECIFICATION__ID;
 
     /**
      * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -436,7 +436,7 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION__NAME = RESOURCE_POWER_MODEL_SPECIFICATION__NAME;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION__NAME = POWER_MODEL_SPECIFICATION__NAME;
 
     /**
      * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
@@ -445,7 +445,7 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = RESOURCE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
 
     /**
      * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
@@ -454,7 +454,7 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
 
     /**
      * The feature id for the '<em><b>Functional Expression</b></em>' attribute. <!-- begin-user-doc
@@ -463,8 +463,7 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT
-            + 0;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 0;
 
     /**
      * The number of structural features of the '<em>Declarative Power Model Specification</em>'
@@ -473,7 +472,318 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 1;
+    int DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 1;
+
+    /**
+     * The meta object id for the '
+     * {@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+     * <em>Declarative Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @see de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+     * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativeResourcePowerModelSpecification()
+     * @generated
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION = 8;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__ID = DECLARATIVE_POWER_MODEL_SPECIFICATION__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__NAME = DECLARATIVE_POWER_MODEL_SPECIFICATION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = DECLARATIVE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = DECLARATIVE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+    /**
+     * The feature id for the '<em><b>Functional Expression</b></em>' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION;
+
+    /**
+     * The number of structural features of the '
+     * <em>Declarative Resource Power Model Specification</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT
+            + 0;
+
+    /**
+     * The meta object id for the '
+     * {@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+     * <em>Declarative Distribution Power Model Specification</em>}' class. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+     * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativeDistributionPowerModelSpecification()
+     * @generated
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION = 9;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__ID = DECLARATIVE_POWER_MODEL_SPECIFICATION__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__NAME = DECLARATIVE_POWER_MODEL_SPECIFICATION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = DECLARATIVE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = DECLARATIVE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+    /**
+     * The feature id for the '<em><b>Functional Expression</b></em>' attribute. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION;
+
+    /**
+     * The number of structural features of the '
+     * <em>Declarative Distribution Power Model Specification</em>' class. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT
+            + 0;
+
+    /**
+     * The meta object id for the '
+     * {@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
+     * <em>Black Box Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @see de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
+     * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxPowerModelSpecification()
+     * @generated
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION = 10;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION__ID = POWER_MODEL_SPECIFICATION__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION__NAME = POWER_MODEL_SPECIFICATION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+    /**
+     * The number of structural features of the '<em>Black Box Power Model Specification</em>'
+     * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 0;
+
+    /**
+     * The meta object id for the '
+     * {@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+     * <em>Black Box Distribution Power Model Specification</em>}' class. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @see de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+     * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxDistributionPowerModelSpecification()
+     * @generated
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION = 11;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION__ID = DISTRIBUTION_POWER_MODEL_SPECIFICATION__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION__NAME = DISTRIBUTION_POWER_MODEL_SPECIFICATION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = DISTRIBUTION_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = DISTRIBUTION_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+    /**
+     * The number of structural features of the '
+     * <em>Black Box Distribution Power Model Specification</em>' class. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = DISTRIBUTION_POWER_MODEL_SPECIFICATION_FEATURE_COUNT
+            + 0;
+
+    /**
+     * The meta object id for the '
+     * {@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
+     * <em>Black Box Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @see de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
+     * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxResourcePowerModelSpecification()
+     * @generated
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION = 12;
+
+    /**
+     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION__ID = RESOURCE_POWER_MODEL_SPECIFICATION__ID;
+
+    /**
+     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION__NAME = RESOURCE_POWER_MODEL_SPECIFICATION__NAME;
+
+    /**
+     * The feature id for the '<em><b>Powermodelrepository</b></em>' container reference. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY = RESOURCE_POWER_MODEL_SPECIFICATION__POWERMODELREPOSITORY;
+
+    /**
+     * The feature id for the '<em><b>Consumption Factors</b></em>' containment reference list. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
+
+    /**
+     * The number of structural features of the '
+     * <em>Black Box Resource Power Model Specification</em>' class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT
+            + 0;
 
     /**
      * Returns the meta object for class '{@link de.fzi.power.specification.PowerModelRepository
@@ -632,6 +942,67 @@ public interface SpecificationPackage extends EPackage {
      * @generated
      */
     EAttribute getDeclarativePowerModelSpecification_FunctionalExpression();
+
+    /**
+     * Returns the meta object for class '
+     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
+     * <em>Declarative Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return the meta object for class '<em>Declarative Resource Power Model Specification</em>'.
+     * @see de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
+     * @generated
+     */
+    EClass getDeclarativeResourcePowerModelSpecification();
+
+    /**
+     * Returns the meta object for class '
+     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * <em>Declarative Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return the meta object for class '
+     *         <em>Declarative Distribution Power Model Specification</em>'.
+     * @see de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * @generated
+     */
+    EClass getDeclarativeDistributionPowerModelSpecification();
+
+    /**
+     * Returns the meta object for class '
+     * {@link de.fzi.power.specification.BlackBoxPowerModelSpecification
+     * <em>Black Box Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Black Box Power Model Specification</em>'.
+     * @see de.fzi.power.specification.BlackBoxPowerModelSpecification
+     * @generated
+     */
+    EClass getBlackBoxPowerModelSpecification();
+
+    /**
+     * Returns the meta object for class '
+     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
+     * <em>Black Box Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return the meta object for class '<em>Black Box Distribution Power Model Specification</em>
+     *         '.
+     * @see de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
+     * @generated
+     */
+    EClass getBlackBoxDistributionPowerModelSpecification();
+
+    /**
+     * Returns the meta object for class '
+     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
+     * <em>Black Box Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return the meta object for class '<em>Black Box Resource Power Model Specification</em>'.
+     * @see de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
+     * @generated
+     */
+    EClass getBlackBoxResourcePowerModelSpecification();
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
@@ -796,6 +1167,69 @@ public interface SpecificationPackage extends EPackage {
          */
         EAttribute DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = eINSTANCE
                 .getDeclarativePowerModelSpecification_FunctionalExpression();
+
+        /**
+         * The meta object literal for the '
+         * {@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+         * <em>Declarative Resource Power Model Specification</em>}' class. <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+         * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativeResourcePowerModelSpecification()
+         * @generated
+         */
+        EClass DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION = eINSTANCE
+                .getDeclarativeResourcePowerModelSpecification();
+
+        /**
+         * The meta object literal for the '
+         * {@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+         * <em>Declarative Distribution Power Model Specification</em>}' class. <!-- begin-user-doc
+         * --> <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+         * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getDeclarativeDistributionPowerModelSpecification()
+         * @generated
+         */
+        EClass DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION = eINSTANCE
+                .getDeclarativeDistributionPowerModelSpecification();
+
+        /**
+         * The meta object literal for the '
+         * {@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
+         * <em>Black Box Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
+         * end-user-doc -->
+         *
+         * @see de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
+         * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxPowerModelSpecification()
+         * @generated
+         */
+        EClass BLACK_BOX_POWER_MODEL_SPECIFICATION = eINSTANCE.getBlackBoxPowerModelSpecification();
+
+        /**
+         * The meta object literal for the '
+         * {@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+         * <em>Black Box Distribution Power Model Specification</em>}' class. <!-- begin-user-doc
+         * --> <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+         * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxDistributionPowerModelSpecification()
+         * @generated
+         */
+        EClass BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION = eINSTANCE
+                .getBlackBoxDistributionPowerModelSpecification();
+
+        /**
+         * The meta object literal for the '
+         * {@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
+         * <em>Black Box Resource Power Model Specification</em>}' class. <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         *
+         * @see de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
+         * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxResourcePowerModelSpecification()
+         * @generated
+         */
+        EClass BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION = eINSTANCE.getBlackBoxResourcePowerModelSpecification();
 
     }
 

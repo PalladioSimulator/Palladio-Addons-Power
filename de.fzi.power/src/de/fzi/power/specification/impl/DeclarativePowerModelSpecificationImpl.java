@@ -21,7 +21,7 @@ import de.fzi.power.specification.SpecificationPackage;
  *
  * @generated
  */
-public class DeclarativePowerModelSpecificationImpl extends ResourcePowerModelSpecificationImpl
+public class DeclarativePowerModelSpecificationImpl extends PowerModelSpecificationImpl
         implements DeclarativePowerModelSpecification {
     /**
      * The default value of the '{@link #getFunctionalExpression() <em>Functional Expression</em>}'

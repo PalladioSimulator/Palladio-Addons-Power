@@ -47,9 +47,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="consumptionFactors" upperBound="-1"
           eType="#//specification/ConsumptionFactor" containment="true" eOpposite="#//specification/ConsumptionFactor/powerModel"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerModelSpecification" eSuperTypes="#//specification/PowerModelSpecification"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerModelSpecification"
+    <eClassifiers xsi:type="ecore:EClass" name="ResourcePowerModelSpecification" abstract="true"
         eSuperTypes="#//specification/PowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DistributionPowerModelSpecification"
+        abstract="true" eSuperTypes="#//specification/PowerModelSpecification"/>
     <eClassifiers xsi:type="ecore:EClass" name="FixedFactor" eSuperTypes="#//specification/ConsumptionFactor"/>
     <eClassifiers xsi:type="ecore:EClass" name="ConsumptionFactor" abstract="true"
         eSuperTypes="#//util/Entity">
@@ -61,10 +62,20 @@
           eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeclarativePowerModelSpecification"
-        eSuperTypes="#//specification/ResourcePowerModelSpecification #//specification/DistributionPowerModelSpecification">
+        eSuperTypes="#//specification/PowerModelSpecification">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalExpression"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DeclarativeResourcePowerModelSpecification"
+        eSuperTypes="#//specification/DeclarativePowerModelSpecification #//specification/ResourcePowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DeclarativeDistributionPowerModelSpecification"
+        eSuperTypes="#//specification/DeclarativePowerModelSpecification #//specification/DistributionPowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxPowerModelSpecification" abstract="true"
+        eSuperTypes="#//specification/PowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxDistributionPowerModelSpecification"
+        eSuperTypes="#//specification/DistributionPowerModelSpecification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BlackBoxResourcePowerModelSpecification"
+        eSuperTypes="#//specification/ResourcePowerModelSpecification"/>
   </eSubpackages>
   <eSubpackages name="binding" nsURI="http://www.fzi.de/Power/Binding/1.0" nsPrefix="de.fzi.power">
     <eClassifiers xsi:type="ecore:EClass" name="FixedFactorValuePower">
