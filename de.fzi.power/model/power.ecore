@@ -140,6 +140,8 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StatefulResourcePowerBinding" eSuperTypes="#//binding/PowerBinding">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateMachine" lowerBound="1"
+          eType="#//state/PowerStateMachine"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerStateBindings" lowerBound="1"
           upperBound="-1" eType="#//binding/AbstractPowerStateBinding" containment="true"
           eOpposite="#//binding/AbstractPowerStateBinding/statefulResourcePowerBinding"/>

@@ -340,8 +340,18 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
      * @generated
      */
     @Override
-    public EReference getStatefulResourcePowerBinding_PowerStateBindings() {
+    public EReference getStatefulResourcePowerBinding_PowerStateMachine() {
         return (EReference) this.statefulResourcePowerBindingEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EReference getStatefulResourcePowerBinding_PowerStateBindings() {
+        return (EReference) this.statefulResourcePowerBindingEClass.getEStructuralFeatures().get(1);
     }
 
     /**
@@ -586,6 +596,8 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
         this.statefulResourcePowerBindingEClass = this.createEClass(STATEFUL_RESOURCE_POWER_BINDING);
         this.createEReference(this.statefulResourcePowerBindingEClass,
+                STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE);
+        this.createEReference(this.statefulResourcePowerBindingEClass,
                 STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS);
 
         this.abstractPowerStateBindingEClass = this.createEClass(ABSTRACT_POWER_STATE_BINDING);
@@ -744,6 +756,10 @@ public class BindingPackageImpl extends EPackageImpl implements BindingPackage {
 
         this.initEClass(this.statefulResourcePowerBindingEClass, StatefulResourcePowerBinding.class,
                 "StatefulResourcePowerBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getStatefulResourcePowerBinding_PowerStateMachine(),
+                theStatePackage.getPowerStateMachine(), null, "powerStateMachine", null, 1, 1,
+                StatefulResourcePowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEReference(this.getStatefulResourcePowerBinding_PowerStateBindings(),
                 this.getAbstractPowerStateBinding(), this.getAbstractPowerStateBinding_StatefulResourcePowerBinding(),
                 "powerStateBindings", null, 1, -1, StatefulResourcePowerBinding.class, !IS_TRANSIENT, !IS_VOLATILE,

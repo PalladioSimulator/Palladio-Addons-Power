@@ -611,13 +611,22 @@ public interface BindingPackage extends EPackage {
     int STATEFUL_RESOURCE_POWER_BINDING__POWER_BINDING_REPOSITORY = POWER_BINDING__POWER_BINDING_REPOSITORY;
 
     /**
+     * The feature id for the '<em><b>Power State Machine</b></em>' reference. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE = POWER_BINDING_FEATURE_COUNT + 0;
+
+    /**
      * The feature id for the '<em><b>Power State Bindings</b></em>' containment reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS = POWER_BINDING_FEATURE_COUNT + 0;
+    int STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS = POWER_BINDING_FEATURE_COUNT + 1;
 
     /**
      * The number of structural features of the '<em>Stateful Resource Power Binding</em>' class.
@@ -626,7 +635,7 @@ public interface BindingPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int STATEFUL_RESOURCE_POWER_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 1;
+    int STATEFUL_RESOURCE_POWER_BINDING_FEATURE_COUNT = POWER_BINDING_FEATURE_COUNT + 2;
 
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
@@ -879,6 +888,18 @@ public interface BindingPackage extends EPackage {
      * @generated
      */
     EClass getStatefulResourcePowerBinding();
+
+    /**
+     * Returns the meta object for the reference '
+     * {@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine
+     * <em>Power State Machine</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Power State Machine</em>'.
+     * @see de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine()
+     * @see #getStatefulResourcePowerBinding()
+     * @generated
+     */
+    EReference getStatefulResourcePowerBinding_PowerStateMachine();
 
     /**
      * Returns the meta object for the containment reference list '
@@ -1217,6 +1238,15 @@ public interface BindingPackage extends EPackage {
          * @generated
          */
         EClass STATEFUL_RESOURCE_POWER_BINDING = eINSTANCE.getStatefulResourcePowerBinding();
+
+        /**
+         * The meta object literal for the '<em><b>Power State Machine</b></em>' reference feature.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         *
+         * @generated
+         */
+        EReference STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE = eINSTANCE
+                .getStatefulResourcePowerBinding_PowerStateMachine();
 
         /**
          * The meta object literal for the '<em><b>Power State Bindings</b></em>' containment

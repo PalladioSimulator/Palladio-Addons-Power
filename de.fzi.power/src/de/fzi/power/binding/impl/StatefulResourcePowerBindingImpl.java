@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.StatefulResourcePowerBinding;
+import de.fzi.power.state.PowerStateMachine;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -21,6 +22,8 @@ import de.fzi.power.binding.StatefulResourcePowerBinding;
  * The following features are implemented:
  * </p>
  * <ul>
+ * <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateMachine
+ * <em>Power State Machine</em>}</li>
  * <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateBindings
  * <em>Power State Bindings</em>}</li>
  * </ul>
@@ -45,6 +48,38 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
     @Override
     protected EClass eStaticClass() {
         return BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public PowerStateMachine getPowerStateMachine() {
+        return (PowerStateMachine) this.eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+                BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public PowerStateMachine basicGetPowerStateMachine() {
+        return (PowerStateMachine) this.eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+                BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, false, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void setPowerStateMachine(final PowerStateMachine newPowerStateMachine) {
+        this.eDynamicSet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+                BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, newPowerStateMachine);
     }
 
     /**
@@ -100,6 +135,11 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
+        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
+            if (resolve) {
+                return this.getPowerStateMachine();
+            }
+            return this.basicGetPowerStateMachine();
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
             return this.getPowerStateBindings();
         }
@@ -115,6 +155,9 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
     @Override
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
+        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
+            this.setPowerStateMachine((PowerStateMachine) newValue);
+            return;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
             this.getPowerStateBindings().clear();
             this.getPowerStateBindings().addAll((Collection<? extends AbstractPowerStateBinding>) newValue);
@@ -131,6 +174,9 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
     @Override
     public void eUnset(final int featureID) {
         switch (featureID) {
+        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
+            this.setPowerStateMachine((PowerStateMachine) null);
+            return;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
             this.getPowerStateBindings().clear();
             return;
@@ -146,6 +192,8 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
+        case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
+            return this.basicGetPowerStateMachine() != null;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
             return !this.getPowerStateBindings().isEmpty();
         }
