@@ -13,8 +13,6 @@ import javax.measure.quantity.Power;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
-
-import de.fzi.power.binding.AbstractPowerState;
 import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 
