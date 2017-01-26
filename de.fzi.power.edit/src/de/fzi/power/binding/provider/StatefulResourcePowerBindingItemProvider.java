@@ -8,6 +8,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -43,8 +44,26 @@ public class StatefulResourcePowerBindingItemProvider extends PowerBindingItemPr
         if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
+            this.addPowerStateMachinePropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
+    }
+
+    /**
+     * This adds a property descriptor for the Power State Machine feature. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addPowerStateMachinePropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_StatefulResourcePowerBinding_powerStateMachine_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_StatefulResourcePowerBinding_powerStateMachine_feature",
+                        "_UI_StatefulResourcePowerBinding_type"),
+                BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, true, false, true, null,
+                null, null));
     }
 
     /**
