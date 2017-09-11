@@ -1,5 +1,6 @@
 package de.fzi.power.regression.edp2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -60,6 +61,7 @@ import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.regression.r.AbstractNonLinearRegression;
 import de.fzi.power.regression.r.ConstantModelParameter;
 import de.fzi.power.regression.r.DoubleModelParameter;
+import de.fzi.power.regression.r.EarthRegression;
 import de.fzi.power.regression.r.Measurements;
 import de.fzi.power.regression.r.RobustNonLinearSquaresRegression;
 import de.fzi.power.regression.r.SymbolicRegression;
@@ -123,6 +125,37 @@ public class Edp2ModelConstructor {
         spec.setPowermodelrepository(modelRepo);
         Pair<List<VariableMeasurements>, TargetMeasurements> resultPair = getMeasurementsFromRepository(binding);
         return new SymbolicRegression<Power>(resultPair.getFirst(), resultPair.getSecond());
+    }
+    
+    public EarthRegression<Power> constructEarthModel(PowerBindingRepository repo, PowerModelRepository modelRepo, 
+            DeclarativeResourcePowerModelSpecification spec) {
+        List<NumericalBaseMetricDescription> availableMetrics = getAvailableMetrics().stream()
+                .filter(m -> !m.getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION.getId())).collect(Collectors.toList());
+        ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
+        binding.setResourcePowerModelSpecification(spec);
+        binding.setPowerBindingRepository(repo);
+        for(NumericalBaseMetricDescription metric : availableMetrics) {
+            MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
+            factor.setMetricType(metric);
+            factor.setName(metric.getName().replace(" ", ""));
+            spec.getConsumptionFactors().add(factor);
+        }
+        spec.setPowermodelrepository(modelRepo);
+        Pair<List<VariableMeasurements>, TargetMeasurements> resultPair = getMeasurementsFromRepository(binding);
+        EarthRegression<Power> regression = new EarthRegression<Power>(resultPair.getSecond(), resultPair.getFirst());
+        String expression = null;;
+        try {
+            expression = regression.getMaximumForm();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        expression = expression.replaceAll("\n", "");
+        expression = expression.replaceAll(" ", "");
+        spec.setFunctionalExpression(expression);
+        spec.setName("EARTH model");
+        binding.setName("EARTH model");
+        return regression;
     }
     
     private List<NumericalBaseMetricDescription> getAvailableMetrics() {
