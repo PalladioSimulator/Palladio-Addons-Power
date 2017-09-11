@@ -12,14 +12,14 @@ import de.fzi.power.binding.PowerBindingRepository;
 public class SymbolicPowerModelExtractorWizard extends Wizard {
 
     private PowerBindingRepository repo;
-    private ModelSelectionPage modelSelectionPage;
+    private SymbolicModelSelectionPage modelSelectionPage;
     private PowerModelRepositorySelectionPage repositorySelectionPage;
 
     public SymbolicPowerModelExtractorWizard(PowerBindingRepository repo, Repositories repositories) {
         ExperimentGroupSelectionPage runSelectionPage = new ExperimentGroupSelectionPage(repositories);
         this.repositorySelectionPage = new PowerModelRepositorySelectionPage();
         this.repo = repo;
-        this.modelSelectionPage = new ModelSelectionPage(runSelectionPage, repositorySelectionPage, this.repo);
+        this.modelSelectionPage = new SymbolicModelSelectionPage(runSelectionPage, repositorySelectionPage, this.repo);
         addPage(runSelectionPage);
         addPage(repositorySelectionPage);
         addPage(modelSelectionPage);

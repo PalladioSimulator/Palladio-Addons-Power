@@ -15,19 +15,16 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.PowerBindingRepository;
-import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.regression.edp2.Edp2ModelConstructor;
 import org.vedantatree.expressionoasis.expressions.Expression;
 import de.fzi.power.regression.r.SymbolicRegression;
 import de.fzi.power.regression.r.expressionoasis.ExpressionUtil;
-import de.fzi.power.regression.r.io.RUtils;
-import de.fzi.power.specification.DeclarativePowerModelSpecification;
+import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.PowerModelRepository;
 import de.fzi.power.specification.SpecificationFactory;
 
-public class ModelSelectionPage extends WizardPage {
+public class SymbolicModelSelectionPage extends WizardPage {
 
     private ExperimentGroupSelectionPage previousPage;
     private PowerBindingRepository repo;
@@ -36,9 +33,9 @@ public class ModelSelectionPage extends WizardPage {
     private String selectedExpression = null;
     private PowerModelRepositorySelectionPage repositorySelectionPage;
     private boolean wasVisible = false;
-    private DeclarativePowerModelSpecification spec;
+    private DeclarativeResourcePowerModelSpecification spec;
 
-    public ModelSelectionPage(ExperimentGroupSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
+    public SymbolicModelSelectionPage(ExperimentGroupSelectionPage runSelectionPage, PowerModelRepositorySelectionPage repositorySelectionPage, PowerBindingRepository repo) {
         super("Select from extracted Power Models");
         this.previousPage = runSelectionPage;
         this.repositorySelectionPage = repositorySelectionPage;
@@ -76,7 +73,7 @@ public class ModelSelectionPage extends WizardPage {
                 selectedExpression = (String) ((StructuredSelection) event.getSelection()).getFirstElement();
                 spec.setFunctionalExpression(selectedExpression);
                 spec.setName(spec.getFunctionalExpression());
-                ModelSelectionPage.this.getContainer().updateButtons();
+                SymbolicModelSelectionPage.this.getContainer().updateButtons();
             }
             
         });
@@ -89,7 +86,7 @@ public class ModelSelectionPage extends WizardPage {
             Edp2ModelConstructor constructor = new Edp2ModelConstructor(this.previousPage.getSelectedExperimentGroup());
             // TODO allow user to select repo. It can't be guaranteed that this collection is non-empty.
             PowerModelRepository modelRepo = this.repositorySelectionPage.getPowerModelRepository();
-            this.spec = SpecificationFactory.eINSTANCE.createDeclarativePowerModelSpecification();
+            this.spec = SpecificationFactory.eINSTANCE.createDeclarativeResourcePowerModelSpecification();
             SymbolicRegression<Power> symbolicModel = constructor.constructSymbolicModel(repo, modelRepo, spec);
             List<Expression> eliteResults = symbolicModel.getEliteResults();
             List<String> stringRepresentationElite = new ArrayList<String>();

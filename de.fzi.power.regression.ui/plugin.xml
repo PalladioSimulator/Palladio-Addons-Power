@@ -30,6 +30,11 @@
                label="Use Symbolic Regression to Extract Power Model  from EDP2"
                style="push">
          </command>
+         <command
+               commandId="de.fzi.power.regression.ui.commands.ExtractEarthPowerModel"
+               label="Use Earth Regression to Extract Power Model  from EDP2"
+               style="push">
+         </command>
       </menuContribution>
    </extension>
    <extension
@@ -44,6 +49,20 @@
             description="Extract Symbolic Power Model from Measurements stored in EDP2"
             id="de.fzi.power.regression.ui.commands.ExtractSymbolicPowerModel"
             name="Extract Symbolic Power Model">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="de.fzi.power.regression.ui.category.Models"
+            name="Models">
+      </category>
+      <command
+            categoryId="de.fzi.power.regression.ui.category.Models"
+            defaultHandler="de.fzi.power.regression.ui.EarthRegressionHandler"
+            description="Extract Earth Power Model from Measurements stored in EDP2"
+            id="de.fzi.power.regression.ui.commands.ExtractEarthPowerModel"
+            name="Extract Earth Power Model">
       </command>
    </extension>
 
