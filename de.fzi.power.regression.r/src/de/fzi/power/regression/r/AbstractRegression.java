@@ -73,11 +73,15 @@ public abstract class AbstractRegression<Q extends Quantity> {
         StringBuilder commandString = new StringBuilder(getFunctionName());
         commandString.append(RUtils.sanitizeNameForR(targetMetric.getName()));
         commandString.append(R_REGRESSION_RELATIONHSIP_OPERATOR);
-        // In parentheses due to issue with linear expressions that may manifest otherwise
-        commandString.append("(" + formula + ")");
+        // TODO: check if parentheses needed due to issue with linear expressions that may manifest otherwise
+        commandString.append(formula);
         commandString.append(R_PARAM_SEPARATOR);
         commandString.append("data = " + DATA_FRAME_NAME);
-        commandString.append(R_PARAM_SEPARATOR + getAdditionalParameters() + R_COMMAND_POSTFIX);
+        String params = getAdditionalParameters();
+        if(params != null && !params.equals("")) {
+            commandString.append(R_PARAM_SEPARATOR + params);
+        }
+        commandString.append(R_COMMAND_POSTFIX);
         return commandString;
     }
 
