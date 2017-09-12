@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.measure.Measure;
 import javax.measure.quantity.Quantity;
@@ -27,6 +29,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasuringType;
 import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointFactory;
 import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
@@ -35,6 +38,8 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
+import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
+import org.palladiosimulator.pcmmeasuringpoint.PcmmeasuringpointFactory;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterators;
@@ -47,6 +52,7 @@ public class Edp2Importer {
     
     private static final MeasuringpointFactory MEASURING_POINT_FACTORY = MeasuringpointFactory.eINSTANCE;    
     private static final ExperimentDataFactory EXPERIMENT_DATA_FACTORY = ExperimentDataFactory.eINSTANCE;
+    private static final PcmmeasuringpointFactory EXTENDED_MEASURING_POINT_FACTORY = PcmmeasuringpointFactory.eINSTANCE;
 
     private MappingRepository mappingRepo;
 
@@ -82,7 +88,7 @@ public class Edp2Importer {
             markerParser.moveToEnd();
             long maxTimeStamp = markerParser.getCurTimeStamp();
             // Only add stable measurements. This should be made configurable via the wizard.
-            if(curLabel.endsWith(this.mappingRepo.getMarkerLog().getMeasurementSuffix()) && prevLabel.endsWith(this.mappingRepo.getMarkerLog().getStartSuffix())) {
+            if(curLabel.endsWith(this.mappingRepo.getMarkerLog().getMeasurementSuffix()) && (prevLabel.endsWith(this.mappingRepo.getMarkerLog().getStartSuffix()) || prevLabel.equals(""))) {
                 experimentSetting = EXPERIMENT_DATA_FACTORY.createExperimentSetting(group, curLabel);
                 addResults(metricsMap, curLabel, minTimeStamp, maxTimeStamp, experimentSetting);
             }
@@ -98,9 +104,20 @@ public class Edp2Importer {
         final ExperimentRun run = EXPERIMENT_DATA_FACTORY.createExperimentRun(experimentSetting);
         run.setStartTime(new Date(minTimeStamp));
         run.setDuration(javax.measure.Measure.valueOf((maxTimeStamp-minTimeStamp)/1000d, SI.SECOND));
+        Pattern cpuPattern = Pattern.compile(".?cpu[0-9]+");
         for(Entry<MetricToCsvMapping, PeekingIterator<CSVRecord>> curEntry : metricsMap.entrySet()) {
-            final StringMeasuringPoint mPoint = MEASURING_POINT_FACTORY.createStringMeasuringPoint();
-            mPoint.setMeasuringPoint(curLabel);
+            final MeasuringPoint mPoint;
+            Matcher matcher = cpuPattern.matcher(curEntry.getKey().getCsvFileUri());
+            if(matcher.find()) {
+                int cpuid = Integer.parseInt(matcher.group().substring(4));
+                ActiveResourceMeasuringPoint activeResourceMeasuringPoint = EXTENDED_MEASURING_POINT_FACTORY.createActiveResourceMeasuringPoint();
+                activeResourceMeasuringPoint.setReplicaID(cpuid);
+                mPoint = activeResourceMeasuringPoint;
+            } else {                
+                final StringMeasuringPoint stringMeasuringPoint = MEASURING_POINT_FACTORY.createStringMeasuringPoint();
+                stringMeasuringPoint.setMeasuringPoint(curLabel);
+                mPoint = stringMeasuringPoint;
+            }
             mPoint.setMeasuringPointRepository(this.measuringPointRepo);
             MetricToCsvMapping mapping = curEntry.getKey();
             MetricSetDescription descr = null;
