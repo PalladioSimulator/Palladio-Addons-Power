@@ -8,21 +8,18 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import javax.measure.Measure;
 import javax.measure.converter.UnitConverter;
 import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
 import javax.measure.quantity.Quantity;
 
-import org.apache.commons.collections15.CollectionUtils;
-import org.apache.commons.collections15.Predicate;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.math3.util.Pair;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.net4j.util.ArrayUtil;
 import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.edp2.datastream.IDataSource;
 import org.palladiosimulator.edp2.datastream.edp2source.Edp2DataTupleDataSource;
@@ -31,14 +28,15 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
-import org.palladiosimulator.metricspec.BaseMetricDescription;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
-import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecification;
+import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
+import org.palladiosimulator.pcmmeasuringpoint.util.PcmmeasuringpointSwitch;
 import org.vedantatree.expressionoasis.ExpressionContext;
 import org.vedantatree.expressionoasis.ExpressionEngine;
 import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
@@ -53,11 +51,12 @@ import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.util.BindingSwitch;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
-import de.fzi.power.specification.FixedFactor;
 import de.fzi.power.specification.MeasuredFactor;
 import de.fzi.power.specification.PowerModelRepository;
+import de.fzi.power.specification.ResourceReplicaMeasuredFactor;
 import de.fzi.power.specification.SpecificationFactory;
 import de.fzi.power.specification.SpecificationPackage;
+import de.fzi.power.specification.util.SpecificationSwitch;
 import de.fzi.power.regression.r.AbstractNonLinearRegression;
 import de.fzi.power.regression.r.ConstantModelParameter;
 import de.fzi.power.regression.r.DoubleModelParameter;
@@ -111,15 +110,25 @@ public class Edp2ModelConstructor {
     }
     
     public SymbolicRegression<Power> constructSymbolicModel(PowerBindingRepository repo, PowerModelRepository modelRepo, DeclarativeResourcePowerModelSpecification spec) {
-        List<NumericalBaseMetricDescription> availableMetrics = getAvailableMetrics().stream()
-                .filter(m -> !m.getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION.getId())).collect(Collectors.toList());
+        List<IDataSource> availableSources = getDatasourcesOfFirstRun().stream()
+                .filter(m -> !m.getMetricDesciption().getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE.getId())).collect(Collectors.toList());
         ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
         binding.setResourcePowerModelSpecification(spec);
         binding.setPowerBindingRepository(repo);
-        for(NumericalBaseMetricDescription metric : availableMetrics) {
+        for(IDataSource source : availableSources) {
             MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
-            factor.setMetricType(metric);
-            factor.setName(metric.getName().replace(" ", ""));
+            NumericalBaseMetricDescription curMetric = (NumericalBaseMetricDescription) ((MetricSetDescription) source.getMetricDesciption()).getSubsumedMetrics().get(1);
+            factor.setMetricType(curMetric);
+            String name = curMetric.getName().replace(" ", "");
+            name += new PcmmeasuringpointSwitch<String>() {
+                public String caseActiveResourceMeasuringPoint(ActiveResourceMeasuringPoint object) {
+                    return Integer.toString(object.getReplicaID());
+                };
+                public String defaultCase(EObject object) {
+                    return "";
+                };
+            }.doSwitch(source.getMeasuringPoint());
+            factor.setName(name);
             spec.getConsumptionFactors().add(factor);
         }
         spec.setPowermodelrepository(modelRepo);
@@ -129,21 +138,34 @@ public class Edp2ModelConstructor {
     
     public EarthRegression<Power> constructEarthModel(PowerBindingRepository repo, PowerModelRepository modelRepo, 
             DeclarativeResourcePowerModelSpecification spec) {
-        List<NumericalBaseMetricDescription> availableMetrics = getAvailableMetrics().stream()
-                .filter(m -> !m.getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION.getId())).collect(Collectors.toList());
+        List<IDataSource> availableSources = getDatasourcesOfFirstRun().stream()
+                .filter(m -> !m.getMetricDesciption().getId().equals(MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE.getId())).collect(Collectors.toList());
         ResourcePowerBinding binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
         binding.setResourcePowerModelSpecification(spec);
         binding.setPowerBindingRepository(repo);
-        for(NumericalBaseMetricDescription metric : availableMetrics) {
-            MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
-            factor.setMetricType(metric);
-            factor.setName(metric.getName().replace(" ", ""));
+        for(IDataSource source : availableSources) {
+            NumericalBaseMetricDescription curMetric = (NumericalBaseMetricDescription) ((MetricSetDescription) source.getMetricDesciption()).getSubsumedMetrics().get(1);
+            String name = curMetric.getName().replace(" ", "");
+            MeasuredFactor factor = new PcmmeasuringpointSwitch<MeasuredFactor>() {
+                public MeasuredFactor caseActiveResourceMeasuringPoint(ActiveResourceMeasuringPoint object) {
+                    ResourceReplicaMeasuredFactor factor = SpecificationFactory.eINSTANCE.createResourceReplicaMeasuredFactor();
+                    factor.setName(name + Integer.toString(object.getReplicaID()));
+                    factor.setReplicaId(object.getReplicaID());
+                    return factor;
+                };
+                public MeasuredFactor defaultCase(EObject object) {
+                    MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
+                    factor.setName(name);
+                    return factor;
+                };
+            }.doSwitch(source.getMeasuringPoint());
+            factor.setMetricType(curMetric);
             spec.getConsumptionFactors().add(factor);
         }
         spec.setPowermodelrepository(modelRepo);
         Pair<List<VariableMeasurements>, TargetMeasurements> resultPair = getMeasurementsFromRepository(binding);
         EarthRegression<Power> regression = new EarthRegression<Power>(resultPair.getSecond(), resultPair.getFirst());
-        String expression = null;;
+        String expression = null;
         try {
             expression = regression.getMaximumForm();
         } catch (IOException e) {
@@ -158,56 +180,22 @@ public class Edp2ModelConstructor {
         return regression;
     }
     
-    private List<NumericalBaseMetricDescription> getAvailableMetrics() {
-        List<NumericalBaseMetricDescription> availableMetrics = new LinkedList<NumericalBaseMetricDescription>();
-        for(ExperimentSetting workletResults : runResults.getExperimentSettings()) {
-            for(ExperimentRun run : workletResults.getExperimentRuns()) {
-                Map<IDataSource,MeasuredFactor> mappedFactors = new HashMap<IDataSource,MeasuredFactor>();
-                Collection<IDataSource> measurements = new ArrayList<IDataSource>();
-                for(Measurement curMeasurement : run.getMeasurement()) {
-                    final IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
-                    MetricSetDescription metricSet = (MetricSetDescription) dataSource.getMetricDesciption();
-                    MetricDescription secondMetric = metricSet.getSubsumedMetrics().get(1);
-                    NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) secondMetric;
-                    availableMetrics.add(baseMetric);
-                }
-                // TODO for now assume that all runs contain results for all runs.
-                return availableMetrics;
+    private List<IDataSource> getDatasourcesOfFirstRun() {
+        List<IDataSource> availableSources = new LinkedList<IDataSource>();
+        ExperimentSetting workletResults = runResults.getExperimentSettings().get(0);
+        for(ExperimentRun run : workletResults.getExperimentRuns()) {
+            for(Measurement curMeasurement : run.getMeasurement()) {
+                final IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
+                availableSources.add(dataSource);
             }
+            // TODO for now assume that all runs contain results for all runs.
+            return availableSources;
         }
         return null;
     }
 
     private Pair<List<VariableMeasurements>, TargetMeasurements> getMeasurementsFromRepository(ResourcePowerBinding binding) {
-            List<List<Measurements>> allMeasurements = new ArrayList<List<Measurements>>(); 
-            for(ExperimentSetting workletResults : runResults.getExperimentSettings()) {
-                for(ExperimentRun run : workletResults.getExperimentRuns()) {
-                    Map<IDataSource,MeasuredFactor> mappedFactors = new HashMap<IDataSource,MeasuredFactor>();
-                    Collection<IDataSource> measurements = new ArrayList<IDataSource>();
-                    for(Measurement curMeasurement : run.getMeasurement()) {
-                        final String curId = curMeasurement.getMeasuringType().getMetric().getId();
-                        IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
-                        if(curId.equals(MetricDescriptionConstants.HDD_READ_RATE_TUPLE.getId()) ||
-                                curId.equals(MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE.getId())) {
-                            dataSource = new ExponentialDecayingFilter(dataSource, dataSource.getMetricDesciption());
-                        }
-                        measurements.add(dataSource);
-                        MetricSetDescription metricSet = (MetricSetDescription) dataSource.getMetricDesciption();
-                        MetricDescription secondMetric = metricSet.getSubsumedMetrics().get(1);
-                        if(MetricSpecPackage.eINSTANCE.getNumericalBaseMetricDescription().isInstance(secondMetric)) {
-                            NumericalBaseMetricDescription baseMetric = (NumericalBaseMetricDescription) secondMetric;
-                            for(MeasuredFactor curFactor : EcoreUtil.<MeasuredFactor>getObjectsByType(binding.getResourcePowerModelSpecification().getConsumptionFactors(), SpecificationPackage.eINSTANCE.getMeasuredFactor())) {
-                                if(baseMetric.getId().equals(curFactor.getMetricType().getId())) {
-                                    mappedFactors.put(dataSource, curFactor);
-                                    continue;
-                                }
-                            }
-                        }
-                    }
-                    List<Measurements> curMeasurements = EDP2RUtil.combineDatasets(measurements, mappedFactors, MetricDescriptionConstants.POWER_CONSUMPTION);
-                    allMeasurements.add(curMeasurements);
-                }
-            }
+            List<List<Measurements>> allMeasurements = getMeasurementsForFixedValues(binding);
             
             List<Measurements> measurements = allMeasurements.stream().reduce((List<Measurements> a, List<Measurements> b) -> {
                 List<Measurements> result = new ArrayList<Measurements>();
@@ -224,5 +212,50 @@ public class Edp2ModelConstructor {
             TargetMeasurements targetMeasurements = measurements.stream().filter(m -> m instanceof TargetMeasurements).findAny().map(p -> (TargetMeasurements) p).get();
             return new Pair<List<VariableMeasurements>, TargetMeasurements>(variableMeasurements, targetMeasurements);
             
+    }
+
+    private List<List<Measurements>> getMeasurementsForFixedValues(ResourcePowerBinding binding) {
+        final List<List<Measurements>> allMeasurements = new ArrayList<List<Measurements>>(); 
+        for(ExperimentSetting workletResults : runResults.getExperimentSettings()) {
+            for(ExperimentRun run : workletResults.getExperimentRuns()) {
+                final Map<IDataSource,MeasuredFactor> mappedFactors = new HashMap<IDataSource,MeasuredFactor>();
+                final Collection<IDataSource> measurements = new ArrayList<IDataSource>();
+                for(Measurement curMeasurement : run.getMeasurement()) {
+                    final String curId = curMeasurement.getMeasuringType().getMetric().getId();
+                    IDataSource dataSource = new Edp2DataTupleDataSource(curMeasurement.getMeasurementRanges().get(0).getRawMeasurements());
+                    if(curId.equals(MetricDescriptionConstants.HDD_READ_RATE_TUPLE.getId()) ||
+                            curId.equals(MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE.getId())) {
+                        dataSource = new ExponentialDecayingFilter(dataSource, dataSource.getMetricDesciption());
+                    }
+                    measurements.add(dataSource);
+                    MetricSetDescription metricSet = (MetricSetDescription) dataSource.getMetricDesciption();
+                    MetricDescription secondMetric = metricSet.getSubsumedMetrics().get(1);
+                    if(MetricSpecPackage.eINSTANCE.getNumericalBaseMetricDescription().isInstance(secondMetric)) {
+                        final IDataSource passedSource = dataSource;
+                        for(MeasuredFactor curFactor : EcoreUtil.<MeasuredFactor>getObjectsByType(binding.getResourcePowerModelSpecification().getConsumptionFactors(), SpecificationPackage.eINSTANCE.getMeasuredFactor())) {
+                            if(MetricDescriptionUtility.isBaseMetricDescriptionSubsumedByMetricDescription(curFactor.getMetricType(), curMeasurement.getMeasuringType().getMetric())) {
+                                if(isSameResourceReplica(curFactor, passedSource.getMeasuringPoint())) {
+                                    mappedFactors.put(passedSource, curFactor);
+                                }
+                            }
+                        }
+                    }
+                }
+                List<Measurements> curMeasurements = EDP2RUtil.combineDatasets(measurements, mappedFactors, MetricDescriptionConstants.POWER_CONSUMPTION);
+                allMeasurements.add(curMeasurements);
+            }
+        }
+        return allMeasurements;
+    }
+
+    private boolean isSameResourceReplica(final MeasuredFactor curFactor, final MeasuringPoint measuringPoint) {
+        if(curFactor instanceof ResourceReplicaMeasuredFactor && measuringPoint instanceof ActiveResourceMeasuringPoint) {
+            ResourceReplicaMeasuredFactor replicatedFactor = (ResourceReplicaMeasuredFactor) curFactor;
+            ActiveResourceMeasuringPoint activeMeasuringPoint = (ActiveResourceMeasuringPoint) measuringPoint;
+            if(replicatedFactor.getReplicaId() == activeMeasuringPoint.getReplicaID()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

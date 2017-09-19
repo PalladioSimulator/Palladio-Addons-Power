@@ -33,7 +33,7 @@ public class EDP2RUtil {
             if(!MetricDescriptionUtility.isBaseMetricDescriptionSubsumedByMetricDescription(MetricDescriptionConstants.POINT_IN_TIME_METRIC, dataSource.getMetricDesciption())) {
                 throw new IllegalArgumentException("The passed metric " + dataSource.getMetricDesciption().getName() + " does not contain a time dimension.");
             }
-        });;
+        });
         SortedMap<Measure<Object,Quantity>, Iterator<IMeasureProvider>> nextValuesIterators = new TreeMap<Measure<Object,Quantity>, Iterator<IMeasureProvider>>();
         measurements.forEach(m -> {
             Iterator<IMeasureProvider> curIterator = m.getDataStream().iterator();
