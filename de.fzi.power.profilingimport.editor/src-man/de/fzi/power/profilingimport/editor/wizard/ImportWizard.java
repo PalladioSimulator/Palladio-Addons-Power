@@ -89,7 +89,7 @@ public class ImportWizard extends Wizard {
         boolean canFinish = false;
         if(this.dataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.IN_MEMORY_DATA_SOURCE)) {
             canFinish = true;
-        } else if(this.dataSourceTypePage.equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
+        } else if(this.dataSourceTypePage.getSelection().equals(SelectDataSourceTypePage.FILE_DATA_SOURCE)) {
             canFinish = this.discoverLocalDirectoryPage.getRepositoryOnFinish() != null;
         }
         return canFinish;
