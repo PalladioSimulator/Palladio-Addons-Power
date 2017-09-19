@@ -15,6 +15,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.palladiosimulator.edp2.EDP2Plugin;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentGroup;
 import org.palladiosimulator.edp2.models.Repository.Repositories;
 import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
@@ -64,7 +65,8 @@ public class ExperimentGroupSelectionPage extends WizardPage {
                     IStructuredSelection structuredSelection = (IStructuredSelection) selection;
                     Object selectedObject = structuredSelection.getFirstElement();
                     if(selectedObject instanceof ExperimentGroup) {
-                        selectedExperimentGroup = (ExperimentGroup) selectedObject;
+                        ExperimentGroup groupInBinding = (ExperimentGroup) selectedObject;
+                        selectedExperimentGroup = groupInBinding;
                         setPageComplete(true);
                     } else {
                         setPageComplete(false);
