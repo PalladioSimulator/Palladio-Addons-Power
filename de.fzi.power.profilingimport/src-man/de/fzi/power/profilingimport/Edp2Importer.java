@@ -1,11 +1,9 @@
 package de.fzi.power.profilingimport;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
@@ -41,7 +39,6 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.pcmmeasuringpoint.PcmmeasuringpointFactory;
 
-import com.google.common.base.Strings;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
 
@@ -130,11 +127,10 @@ public class Edp2Importer {
             mType.setExperimentGroup(group);
             experimentSetting.getMeasuringTypes().add(mType);
             PeekingIterator<CSVRecord> curIt = curEntry.getValue();
-            NumericalBaseMetricDescription metricDescription = (NumericalBaseMetricDescription) mapping.getMetric().getSubsumedMetrics().get(1);
             long curTime = 0;
             final Measurement measurement = EXPERIMENT_DATA_FACTORY.createMeasurement(mType);
             final MeasurementRange range = EXPERIMENT_DATA_FACTORY.createMeasurementRange(measurement);
-            measurement.getMeasurementRanges().add(range);
+            measurement.setMeasuringType(mType);
             run.getMeasurement().add(measurement);
             MeasurementsUtility.createDAOsForRawMeasurements(EXPERIMENT_DATA_FACTORY.createRawMeasurements(range));
             CSVRecord curRecord = null;
