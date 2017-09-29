@@ -26,28 +26,28 @@ import de.fzi.power.util.provider.PowerEditPlugin;
  */
 public class PowerStateMachineItemProvider extends EntityItemProvider {
     /**
-     * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
+     * This constructs an instance from a factory and a notifier.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
      * @generated
      */
-    public PowerStateMachineItemProvider(final AdapterFactory adapterFactory) {
+    public PowerStateMachineItemProvider(AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
     /**
-     * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
+     * This returns the property descriptors for the adapted class.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
-        if (this.itemPropertyDescriptors == null) {
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+        if (itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
         }
-        return this.itemPropertyDescriptors;
+        return itemPropertyDescriptors;
     }
 
     /**
@@ -60,21 +60,20 @@ public class PowerStateMachineItemProvider extends EntityItemProvider {
      * @generated
      */
     @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(final Object object) {
-        if (this.childrenFeatures == null) {
+    public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+        if (childrenFeatures == null) {
             super.getChildrenFeatures(object);
-            this.childrenFeatures.add(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES);
+            childrenFeatures.add(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES);
         }
-        return this.childrenFeatures;
+        return childrenFeatures;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    protected EStructuralFeature getChildFeature(final Object object, final Object child) {
+    protected EStructuralFeature getChildFeature(Object object, Object child) {
         // Check the type of the specified child object and return the proper feature to use for
         // adding (see {@link AddCommand}) it as a child.
 
@@ -82,13 +81,13 @@ public class PowerStateMachineItemProvider extends EntityItemProvider {
     }
 
     /**
-     * This returns PowerStateMachine.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * This returns PowerStateMachine.gif.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/PowerStateMachine"));
+    public Object getImage(Object object) {
+        return overlayImage(object, getResourceLocator().getImage("full/obj16/PowerStateMachine"));
     }
 
     /**
@@ -98,52 +97,51 @@ public class PowerStateMachineItemProvider extends EntityItemProvider {
      * @generated
      */
     @Override
-    public String getText(final Object object) {
-        final String label = ((PowerStateMachine) object).getName();
-        return label == null || label.length() == 0 ? this.getString("_UI_PowerStateMachine_type")
-                : this.getString("_UI_PowerStateMachine_type") + " " + label;
+    public String getText(Object object) {
+        String label = ((PowerStateMachine) object).getName();
+        return label == null || label.length() == 0 ? getString("_UI_PowerStateMachine_type")
+                : getString("_UI_PowerStateMachine_type") + " " + label;
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
-     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
-     * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public void notifyChanged(final Notification notification) {
-        this.updateChildren(notification);
+    public void notifyChanged(Notification notification) {
+        updateChildren(notification);
 
         switch (notification.getFeatureID(PowerStateMachine.class)) {
         case StatePackage.POWER_STATE_MACHINE__POWER_STATES:
-            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+            fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
             return;
         }
         super.notifyChanged(notification);
     }
 
     /**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
-     * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+     * that can be created under this object.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     @Override
-    protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
+    protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(this.createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
+        newChildDescriptors.add(createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
                 StateFactory.eINSTANCE.createTransitionState()));
 
-        newChildDescriptors.add(this.createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
+        newChildDescriptors.add(createChildParameter(StatePackage.Literals.POWER_STATE_MACHINE__POWER_STATES,
                 StateFactory.eINSTANCE.createPowerState()));
     }
 
     /**
-     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * Return the resource locator for this item provider's resources.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
      * @generated
      */
     @Override
