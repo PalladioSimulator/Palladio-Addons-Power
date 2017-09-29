@@ -21,7 +21,6 @@ import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import de.fzi.power.binding.BindingPackage;
 import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
 

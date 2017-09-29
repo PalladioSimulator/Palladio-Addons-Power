@@ -40,9 +40,8 @@ public class LinearPassthroughCalculator extends AbstractDistributionPowerModelC
      * @throws NullPointerException
      *             In case the required {@link FixedFactor} is not set.
      */
-    public LinearPassthroughCalculator(PowerProvidingEntity powerProvidingEntity) {
-        super(powerProvidingEntity);
-        DistributionPowerBinding binding = this.powerProvidingEntity.getDistributionPowerAssemblyContext();
+    public LinearPassthroughCalculator(final DistributionPowerBinding binding) {
+        super(binding);
         if (!binding.getDistributionPowerModel().getId()
                 .equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getId())) {
             throw new IllegalArgumentException("Referred model wasn't the linear power model from"

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractCalculatorFactory;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
@@ -50,16 +49,15 @@ public class EssentialCalculatorsFactory extends AbstractCalculatorFactory {
     
     @Override
     public AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
-            PowerProvidingEntity forEntity) {
+            DistributionPowerBinding binding) {
         AbstractDistributionPowerModelCalculator calculator = null;
-        DistributionPowerBinding context = forEntity.getDistributionPowerAssemblyContext();
         
-        if (context.getDistributionPowerModel().getId().equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getId())) {
-            calculator = new LinearPassthroughCalculator(forEntity);
+        if (binding.getDistributionPowerModel().getId().equals(PowerModelConstants.LINEAR_PASSTHROUGH_DISTRIBUTION.getId())) {
+            calculator = new LinearPassthroughCalculator(binding);
         } 
         
         return calculator != null ? calculator : 
-            super.instantiateDistributionPowerModelCalculator(forEntity);
+            super.instantiateDistributionPowerModelCalculator(binding);
     }
     
     
