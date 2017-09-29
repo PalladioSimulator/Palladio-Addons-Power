@@ -27,7 +27,7 @@ import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
 import de.fzi.power.specification.DeclarativeResourcePowerModelSpecification;
 import de.fzi.power.specification.FixedFactor;
@@ -44,7 +44,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
     private FixedFactor fixedFactor;
     private FixedFactorValuePower fixedFactorValue;
     private ExpressionOasisResourcePowerModelCalculator calculatorUnderTest;
-    private PowerConsumingResource powerConsumingResource;
+    private PowerConsumingResourceSet powerConsumingResource;
 
     @Before
     public void setUp() throws Exception {
@@ -74,7 +74,7 @@ public class ExpressionOasisResourcePowerModelCalculatorTest {
         this.binding.getFixedFactorValues().add(this.fixedFactorValue);
         this.fixedFactorValue.setValue(Measure.valueOf(200d, Power.UNIT));
 
-        this.powerConsumingResource = InfrastructureFactory.eINSTANCE.createPowerConsumingResource();
+        this.powerConsumingResource = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
         this.powerConsumingResource.setName("TestResource");
         this.powerConsumingResource.setId("ResourceId");
         this.powerConsumingResource.setResourcePowerAssemblyContext(this.binding);

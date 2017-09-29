@@ -22,7 +22,7 @@ import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification;
 import de.fzi.power.specification.DeclarativePowerModelSpecification;
@@ -81,14 +81,14 @@ public class ExpressionOasisDistributionPowerModelCalculatorTest {
 
         this.consumers = new ArrayList<PowerConsumingEntity>();
         for (int i = 0; i < CONSUMER_COUNT; ++i) {
-            PowerConsumingResource consumer = InfrastructureFactory.eINSTANCE.createPowerConsumingResource();
+            PowerConsumingResourceSet consumer = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
             consumer.setPowerProvidingEntity(this.powerProvidingEntity);
             this.powerProvidingEntity.getNestedPowerConsumingEntities().add(consumer);
             this.consumers.add(consumer);
         }
 
         this.calculatorUnderTest = (ExpressionOasisDistributionPowerModelCalculator) new CalculatorFactoryImpl()
-                .instantiateDistributionPowerModelCalculator(this.powerProvidingEntity);
+                .instantiateDistributionPowerModelCalculator(this.powerProvidingEntity.getDistributionPowerAssemblyContext());
     }
 
     @Test
