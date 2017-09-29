@@ -7,6 +7,7 @@ import javax.measure.quantity.Power;
 
 import org.jscience.physics.amount.Amount;
 
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
@@ -33,12 +34,11 @@ public class ExpressionOasisDistributionPowerModelCalculator extends AbstractDis
      * @throws NullPointerException
      *             In case the given argument is {@code null}.
      */
-    ExpressionOasisDistributionPowerModelCalculator(PowerProvidingEntity powerProvidingEntity) {
-        super(Objects.requireNonNull(powerProvidingEntity));
+    ExpressionOasisDistributionPowerModelCalculator(DistributionPowerBinding binding) {
+        super(Objects.requireNonNull(binding));
         this.calculator = new InternalExpressionOasisCalculator(
-                powerProvidingEntity.getDistributionPowerAssemblyContext(),
-                (DeclarativePowerModelSpecification) powerProvidingEntity.getDistributionPowerAssemblyContext()
-                        .getDistributionPowerModel());
+                binding,
+                (DeclarativePowerModelSpecification) binding.getDistributionPowerModel());
     }
 
     @Override

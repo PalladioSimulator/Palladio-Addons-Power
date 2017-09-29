@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.eclipse.emf.ecore.EClass;
 
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
@@ -47,9 +48,9 @@ public class CalculatorFactoryImpl implements CalculatorFactory {
 
     @Override
     public AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
-            final PowerProvidingEntity forEntity) {
+            final DistributionPowerBinding binding) {
         return new ExpressionOasisDistributionPowerModelCalculator(
-                Objects.requireNonNull(forEntity, "Given PowerProvidingEntity must not be null."));
+                Objects.requireNonNull(binding, "Given DistributionPowerBinding must not be null."));
     }
 
     @Override

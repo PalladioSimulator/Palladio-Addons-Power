@@ -10,8 +10,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.metricspec,
  org.palladiosimulator.measurementframework,
  de.fzi.power;bundle-version="1.0.0",
- org.vedantatree.expressionoasis
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+ org.vedantatree.expressionoasis,
+ org.apache.commons.math3
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-RegisterBuddy: org.vedantatree.expressionoasis
 Import-Package: org.apache.commons.collections15

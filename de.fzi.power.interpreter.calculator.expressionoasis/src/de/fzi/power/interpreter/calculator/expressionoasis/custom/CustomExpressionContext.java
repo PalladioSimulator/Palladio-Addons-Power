@@ -18,7 +18,6 @@ import org.vedantatree.expressionoasis.exceptions.ExpressionEngineException;
 import org.vedantatree.expressionoasis.types.ValueObject;
 
 import de.fzi.power.binding.AbstractFixedFactorValue;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.interpreter.calculator.expressionoasis.ExpressionOasisDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculator.expressionoasis.ExpressionOasisResourcePowerModelCalculator;
