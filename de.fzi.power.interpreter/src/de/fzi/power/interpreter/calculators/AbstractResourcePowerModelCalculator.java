@@ -10,7 +10,6 @@ import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 
 /**
  * Calculator responsible for evaluating the power consumption of a {@link ResourcePowerBinding}.

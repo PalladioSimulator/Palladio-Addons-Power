@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.specification.BlackBoxPowerModelSpecification;
@@ -59,7 +60,7 @@ public abstract class AbstractCalculatorFactory implements CalculatorFactory {
      */
     @Override
     public AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
-            PowerProvidingEntity forEntity) {
+            DistributionPowerBinding binding) {
         throw new UnsupportedOperationException("This calculator factory does not support"
                 + " the instantiation of distribution power model calculators");
     }

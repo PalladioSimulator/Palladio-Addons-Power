@@ -1,9 +1,7 @@
 package de.fzi.power.interpreter.calculators;
 
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
-import de.fzi.power.infrastructure.PowerConsumingResource;
-import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
 import de.fzi.power.specification.PowerModelSpecification;
 
 // TODO: Auto-generated Javadoc
@@ -34,7 +32,7 @@ public interface CalculatorFactory {
      * @return the abstract distribution power model calculator
      */
     public abstract AbstractDistributionPowerModelCalculator instantiateDistributionPowerModelCalculator(
-            PowerProvidingEntity forEntity);
+            DistributionPowerBinding binding);
 
     /**
      * Instantiate resource power model calculator.

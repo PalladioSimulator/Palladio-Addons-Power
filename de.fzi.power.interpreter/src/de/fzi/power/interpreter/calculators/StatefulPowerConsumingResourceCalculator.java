@@ -14,14 +14,14 @@ import org.jscience.physics.amount.Amount;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.metricspec.MetricDescription;
 import de.fzi.power.binding.AbstractPowerStateBinding;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 
 public class StatefulPowerConsumingResourceCalculator implements IResourcePowerModelCalculator {
 
-    private final StatefulPowerConsumingResource resource;
+    private final StatefulPowerConsumingResourceSet resource;
     private final Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState;
 
-    public StatefulPowerConsumingResourceCalculator(final StatefulPowerConsumingResource resource,
+    public StatefulPowerConsumingResourceCalculator(final StatefulPowerConsumingResourceSet resource,
             Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState) {
         this.resource = resource;
         this.powerCalculatorsPerState = powerCalculatorsPerState;

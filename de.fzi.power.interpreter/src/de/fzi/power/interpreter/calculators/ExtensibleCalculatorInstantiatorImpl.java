@@ -19,9 +19,9 @@ import de.fzi.power.binding.PowerStateBinding;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.binding.TransitionStateBinding;
 import de.fzi.power.binding.util.BindingSwitch;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 
 /**
  * Implements a central hub for creating power consumption calculators based on a set of registered
@@ -92,7 +92,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
      * (de.fzi.power.infrastructure.PowerConsumingResource)
      */
     @Override
-    public IResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResource resource) {
+    public IResourcePowerModelCalculator instantiateResourceCalculator(PowerConsumingResourceSet resource) {
         return this.instantiateResourceCalculator(resource.getResourcePowerAssemblyContext());
     }
 
@@ -117,7 +117,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
             PowerProvidingEntity ppe) {
         for (CalculatorFactory factory : factoryQueue) {
             if (factory.isCompatibleWith(ppe.getDistributionPowerAssemblyContext().getDistributionPowerModel())) {
-                return factory.instantiateDistributionPowerModelCalculator(ppe);
+                return factory.instantiateDistributionPowerModelCalculator(ppe.getDistributionPowerAssemblyContext());
             }
         }
 
@@ -126,7 +126,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
 
     @Override
     public IResourcePowerModelCalculator instantiateStatefulResourcePowerModelCalculator(
-            final StatefulPowerConsumingResource resource) {
+            final StatefulPowerConsumingResourceSet resource) {
         final Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState = new HashMap<AbstractPowerStateBinding, IResourcePowerModelCalculator>();
         for (AbstractPowerStateBinding curStateBinding : resource.getStatefulResourcePowerBinding()
                 .getPowerStateBindings()) {

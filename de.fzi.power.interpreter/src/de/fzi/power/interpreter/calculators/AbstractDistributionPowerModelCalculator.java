@@ -6,6 +6,7 @@ import javax.measure.quantity.Power;
 
 import org.jscience.physics.amount.Amount;
 
+import de.fzi.power.binding.DistributionPowerBinding;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
@@ -19,8 +20,8 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  */
 public abstract class AbstractDistributionPowerModelCalculator {
 
-    // The entity for which the calculator evaluates the power consumption.
-    protected PowerProvidingEntity powerProvidingEntity;
+    // The binding for which the calculator evaluates the power consumption.
+    DistributionPowerBinding binding;
 
     /**
      * Creates a calculator for a distribution power model that is associated with a
@@ -29,8 +30,8 @@ public abstract class AbstractDistributionPowerModelCalculator {
      * @param powerProvidingEntity
      *            The entity for which the distribution power model is created.
      */
-    public AbstractDistributionPowerModelCalculator(PowerProvidingEntity powerProvidingEntity) {
-        this.powerProvidingEntity = powerProvidingEntity;
+    public AbstractDistributionPowerModelCalculator(DistributionPowerBinding binding) {
+        this.binding = binding;
     }
 
     /**

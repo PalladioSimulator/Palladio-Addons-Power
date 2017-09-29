@@ -3,11 +3,11 @@ package de.fzi.power.interpreter;
 import java.util.Objects;
 
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.interpreter.calculators.CalculatorInstantiator;
 
@@ -96,14 +96,14 @@ public class PowerModelUpdaterSwitch extends InfrastructureSwitch<Void> {
      * @return Nothing.
      */
     @Override
-    public Void casePowerConsumingResource(final PowerConsumingResource powerConsumingResource) {
+    public Void casePowerConsumingResourceSet(final PowerConsumingResourceSet powerConsumingResource) {
         this.registry.updateResourcePowerModel(powerConsumingResource,
                 this.calcInstantiator.instantiateResourceCalculator(powerConsumingResource));
         return null;
     }
 
     @Override
-    public Void caseStatefulPowerConsumingResource(final StatefulPowerConsumingResource powerConsumingResource) {
+    public Void caseStatefulPowerConsumingResourceSet(final StatefulPowerConsumingResourceSet powerConsumingResource) {
         this.registry.updateStatefulPowerConsumingResource(powerConsumingResource,
                 this.calcInstantiator.instantiateStatefulResourcePowerModelCalculator(powerConsumingResource));
         return null;

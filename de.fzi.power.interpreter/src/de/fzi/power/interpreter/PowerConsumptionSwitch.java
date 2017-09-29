@@ -16,11 +16,11 @@ import org.jscience.physics.amount.Amount;
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
@@ -156,12 +156,12 @@ public final class PowerConsumptionSwitch extends InfrastructureSwitch<Amount<Po
      * @return The amount of power consumed by the resource.
      */
     @Override
-    public Amount<Power> casePowerConsumingResource(final PowerConsumingResource resource) {
+    public Amount<Power> casePowerConsumingResourceSet(final PowerConsumingResourceSet resource) {
         return this.consumptionContext.evaluateResourcePowerConsumption(resource);
     }
 
     @Override
-    public Amount<Power> caseStatefulPowerConsumingResource(final StatefulPowerConsumingResource resource) {
+    public Amount<Power> caseStatefulPowerConsumingResourceSet(final StatefulPowerConsumingResourceSet resource) {
         return this.consumptionContext.evaluateStatefulResourcePowerConsumption(resource);
     }
 

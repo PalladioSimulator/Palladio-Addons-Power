@@ -14,9 +14,9 @@ import org.palladiosimulator.commons.designpatterns.AbstractObservable;
 import org.palladiosimulator.metricspec.MetricDescription;
 
 import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.AbstractResourcePowerModelCalculator;
 import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
@@ -50,7 +50,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
      * @param resourceCalculator
      *            The calculator used to evaluate the power consumption of a resource.
      */
-    public void updateResourcePowerModel(PowerConsumingResource powerConsumingResource,
+    public void updateResourcePowerModel(PowerConsumingResourceSet powerConsumingResource,
             IResourcePowerModelCalculator resourceCalculator) {
         if (resourceCalculator == null || powerConsumingResource == null) {
             throw new IllegalArgumentException("Parameters must not be null.");
@@ -63,7 +63,7 @@ public class PowerModelRegistry extends AbstractObservable<PowerModelRegistryCha
 
     }
 
-    public void updateStatefulPowerConsumingResource(StatefulPowerConsumingResource powerConsumingResource,
+    public void updateStatefulPowerConsumingResource(StatefulPowerConsumingResourceSet powerConsumingResource,
             IResourcePowerModelCalculator resourceCalculator) {
         if (!calculatorsPerResource.containsKey(powerConsumingResource)
                 || !calculatorsPerResource.get(powerConsumingResource).equals(resourceCalculator)) {

@@ -28,9 +28,9 @@ import org.palladiosimulator.pcmmeasuringpoint.ActiveResourceMeasuringPoint;
 import org.palladiosimulator.pcmmeasuringpoint.util.PcmmeasuringpointSwitch;
 
 import de.fzi.power.infrastructure.PowerConsumingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
 import de.fzi.power.interpreter.measureprovider.ExtendedMeasureProvider;
 import de.uka.ipd.sdq.identifier.Identifier;
@@ -113,15 +113,16 @@ public final class InterpreterUtils {
 
         // process leaf
         @Override
-        public Set<ProcessingResourceSpecification> casePowerConsumingResource(PowerConsumingResource resource) {
-            return Collections.singleton(resource.getProcessingResourceSpecification());
-
+        public Set<ProcessingResourceSpecification> casePowerConsumingResourceSet(PowerConsumingResourceSet resource) {
+            // TODO: Allow more than one resource.
+            return Collections.singleton(resource.getProcessingResourceSpecifications().get(0));
         }
 
         @Override
-        public Set<ProcessingResourceSpecification> caseStatefulPowerConsumingResource(
-                StatefulPowerConsumingResource resource) {
-            return Collections.singleton(resource.getProcessingResourceSpecification());
+        public Set<ProcessingResourceSpecification> caseStatefulPowerConsumingResourceSet(
+                StatefulPowerConsumingResourceSet resource) {
+            // TODO allow for more than one processing resource.
+            return Collections.singleton(resource.getProcessingResourceSpecifications().get(0));
         };
 
         @Override

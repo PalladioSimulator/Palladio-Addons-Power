@@ -18,7 +18,7 @@ import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.interpreter.calculators.AbstractDistributionPowerModelCalculator;
 import de.fzi.power.interpreter.calculators.IResourcePowerModelCalculator;
 import de.fzi.power.specification.DistributionPowerModelSpecification;
@@ -129,7 +129,8 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
                     + "No corresponding calculator present in underlying power model registry!");
         }
 
-        Collection<MeasuringValue> args = this.scope.getMeasurements(resource.getProcessingResourceSpecification());
+        // TODO: Allow for more than one processing resource.
+        Collection<MeasuringValue> args = this.scope.getMeasurements(resource.getProcessingResourceSpecifications().get(0));
         return calculator.calculate(args);
     }
 
@@ -141,7 +142,7 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
      *            The PowerConsumingResource for which the power consumption is being evaluated.
      * @return The power consumed by the resource.
      */
-    public Amount<Power> evaluateStatefulResourcePowerConsumption(final StatefulPowerConsumingResource resource) {
+    public Amount<Power> evaluateStatefulResourcePowerConsumption(final StatefulPowerConsumingResourceSet resource) {
         return this.evaluateResourcePowerConsumption(resource);
     }
 
@@ -213,8 +214,9 @@ public final class ConsumptionContext implements PowerModelRegistryChangeListene
         Map<AbstractPowerConsumingResource, Set<MetricDescription>> requiredMetricsPerResource = powerModelRegistry
                 .getRequiredMetricsForRegisteredCalculators();
 
+        // TODO allow for more than 1 resource.
         this.scope.setResourceMetricsToEvaluate(requiredMetricsPerResource.entrySet().stream().collect(Collectors
-                .toMap(entry -> entry.getKey().getProcessingResourceSpecification(), entry -> entry.getValue())));
+                .toMap(entry -> entry.getKey().getProcessingResourceSpecifications().get(0), entry -> entry.getValue())));
     }
 
     @Override

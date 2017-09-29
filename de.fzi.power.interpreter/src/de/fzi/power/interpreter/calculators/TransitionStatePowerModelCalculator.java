@@ -18,22 +18,22 @@ import org.palladiosimulator.metricspec.NumericalBaseMetricDescription;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
 import de.fzi.power.binding.TransitionStateBinding;
 import de.fzi.power.infrastructure.InfrastructurePackage;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import tools.descartes.dlim.generator.ModelEvaluator;
 
 public class TransitionStatePowerModelCalculator implements IResourcePowerModelCalculator {
     private final ModelEvaluator evaluator;
     private final Unit<Power> targetUnit;
 
-    public TransitionStatePowerModelCalculator(final StatefulPowerConsumingResource resource,
+    public TransitionStatePowerModelCalculator(final StatefulPowerConsumingResourceSet resource,
             final TransitionStateBinding stateBinding, final ITimeProvider provider) {
         resource.eAdapters().add(new EContentAdapter() {
             @Override
             public void notifyChanged(Notification notification) {
                 if (notification.getEventType() == Notification.SET
-                        && InfrastructurePackage.eINSTANCE.getStatefulPowerConsumingResource()
+                        && InfrastructurePackage.eINSTANCE.getStatefulPowerConsumingResourceSet()
                                 .isInstance(notification.getNotifier())
-                        && InfrastructurePackage.eINSTANCE.getStatefulPowerConsumingResource_PowerState()
+                        && InfrastructurePackage.eINSTANCE.getStatefulPowerConsumingResourceSet_PowerState()
                                 .equals(notification.getFeature())) {
                     transitionStart = provider.getCurrentTime();
                 }
