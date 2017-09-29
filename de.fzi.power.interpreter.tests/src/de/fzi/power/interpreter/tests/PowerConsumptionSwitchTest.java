@@ -31,7 +31,7 @@ import org.palladiosimulator.pcmmeasuringpoint.PcmmeasuringpointFactory;
 import de.fzi.power.binding.PowerBindingRepository;
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.interpreter.ConsumptionContext;
@@ -65,8 +65,8 @@ public class PowerConsumptionSwitchTest {
     private MountedPowerDistributionUnit mountedPdu;
     private MountedPowerDistributionUnit nestedMountedPdu1;
     private MountedPowerDistributionUnit nestedMountedPdu2;
-    private PowerConsumingResource cpu1;
-    private PowerConsumingResource cpu2;
+    private PowerConsumingResourceSet cpu1;
+    private PowerConsumingResourceSet cpu2;
     private PowerModelRegistry modelRegistry;
     private ActiveResourceMeasuringPoint cpu1MeasuringPoint;
     private ActiveResourceMeasuringPoint cpu2MeasuringPoint;
@@ -120,14 +120,14 @@ public class PowerConsumptionSwitchTest {
         this.mountedPdu = (MountedPowerDistributionUnit) nestedPces.get(0);
         this.nestedMountedPdu2 = (MountedPowerDistributionUnit) nestedPces.get(1);
         this.nestedMountedPdu1 = (MountedPowerDistributionUnit) this.mountedPdu.getNestedPowerConsumingEntities().get(0);
-        this.cpu1 = (PowerConsumingResource) this.nestedMountedPdu1.getNestedPowerConsumingEntities().get(0);
-        this.cpu2 = (PowerConsumingResource) this.nestedMountedPdu2.getNestedPowerConsumingEntities().get(0);
+        this.cpu1 = (PowerConsumingResourceSet) this.nestedMountedPdu1.getNestedPowerConsumingEntities().get(0);
+        this.cpu2 = (PowerConsumingResourceSet) this.nestedMountedPdu2.getNestedPowerConsumingEntities().get(0);
 
         this.windowLength = Measure.valueOf(10d, SI.SECOND);
         this.cpu1MeasuringPoint = PcmmeasuringpointFactory.eINSTANCE.createActiveResourceMeasuringPoint();
-        this.cpu1MeasuringPoint.setActiveResource(this.cpu1.getProcessingResourceSpecification());
+        this.cpu1MeasuringPoint.setActiveResource(this.cpu1.getProcessingResourceSpecifications().get(0));
         this.cpu2MeasuringPoint = PcmmeasuringpointFactory.eINSTANCE.createActiveResourceMeasuringPoint();
-        this.cpu2MeasuringPoint.setActiveResource(this.cpu2.getProcessingResourceSpecification());
+        this.cpu2MeasuringPoint.setActiveResource(this.cpu2.getProcessingResourceSpecifications().get(0));
 
         this.measurementsCpu1 = new MockStateOfActiveResourceTupleDataSource(this.windowLength, this.cpu1MeasuringPoint);
         this.measurementsCpu2 = new MockStateOfActiveResourceTupleDataSource(this.windowLength, this.cpu2MeasuringPoint);

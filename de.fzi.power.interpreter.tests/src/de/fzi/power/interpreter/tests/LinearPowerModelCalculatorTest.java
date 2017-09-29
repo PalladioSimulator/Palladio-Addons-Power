@@ -26,7 +26,7 @@ import de.fzi.power.binding.BindingFactory;
 import de.fzi.power.binding.FixedFactorValuePower;
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.interpreter.calculators.essential.LinearPowerModelCalculator;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
@@ -36,7 +36,7 @@ import de.fzi.power.specification.resources.PowerModelConstants;
  */
 public class LinearPowerModelCalculatorTest {
 
-    private PowerConsumingResource resource;
+    private PowerConsumingResourceSet resource;
     private ResourcePowerBinding binding;
     private FixedFactorValuePower idleConsumption;
     private FixedFactorValuePower maxConsumption;
@@ -44,7 +44,7 @@ public class LinearPowerModelCalculatorTest {
 
     @Before
     public void setUp() {
-        this.resource = InfrastructureFactory.eINSTANCE.createPowerConsumingResource();
+        this.resource = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
         this.binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
         this.binding.setResourcePowerModelSpecification(PowerModelConstants.LINEAR_POWER_MODEL);
         this.resource.setResourcePowerAssemblyContext(this.binding);
