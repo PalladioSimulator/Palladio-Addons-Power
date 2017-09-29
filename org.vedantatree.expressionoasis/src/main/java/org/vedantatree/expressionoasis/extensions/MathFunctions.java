@@ -102,6 +102,30 @@ public class MathFunctions
 	{
 		return value1 == null || value2 == null ? null : Math.max( value1, value2 );
 	}
+	
+    /**
+     * Returns the maximum of two numbers.
+     * 
+     * @param value1
+     * @param value2
+     * @return
+     */
+    public static Double max(Double value1, Long value2)
+    {
+        return value1 == null || value2 == null ? null : Math.max(value1, value2.doubleValue());
+    }
+    
+    /**
+     * Returns the maximum of two numbers.
+     * 
+     * @param value1
+     * @param value2
+     * @return
+     */
+    public static Double max(Long value1, Double value2)
+    {
+        return value1 == null || value2 == null ? null : Math.max(value1.doubleValue(), value2);
+    }
 
 	/**
 	 * Returns the maximum of two numbers.
