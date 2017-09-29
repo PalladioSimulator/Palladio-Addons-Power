@@ -3,7 +3,7 @@
 package de.fzi.power.infrastructure.tests;
 
 import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import junit.textui.TestRunner;
 
 /**
@@ -40,8 +40,8 @@ public class StatefulPowerConsumingResourceTest extends AbstractPowerConsumingRe
      * @generated
      */
     @Override
-    protected StatefulPowerConsumingResource getFixture() {
-        return (StatefulPowerConsumingResource) this.fixture;
+    protected StatefulPowerConsumingResourceSet getFixture() {
+        return (StatefulPowerConsumingResourceSet) this.fixture;
     }
 
     /**
@@ -52,7 +52,7 @@ public class StatefulPowerConsumingResourceTest extends AbstractPowerConsumingRe
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(InfrastructureFactory.eINSTANCE.createStatefulPowerConsumingResource());
+        this.setFixture(InfrastructureFactory.eINSTANCE.createStatefulPowerConsumingResourceSet());
     }
 
     /**
