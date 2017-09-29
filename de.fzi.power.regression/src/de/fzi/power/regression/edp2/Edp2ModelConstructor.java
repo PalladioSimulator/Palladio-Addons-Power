@@ -29,6 +29,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.ExperimentSetting;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPoint;
+import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
@@ -146,19 +147,8 @@ public class Edp2ModelConstructor {
         for(IDataSource source : availableSources) {
             NumericalBaseMetricDescription curMetric = (NumericalBaseMetricDescription) ((MetricSetDescription) source.getMetricDesciption()).getSubsumedMetrics().get(1);
             String name = curMetric.getName().replace(" ", "");
-            MeasuredFactor factor = new PcmmeasuringpointSwitch<MeasuredFactor>() {
-                public MeasuredFactor caseActiveResourceMeasuringPoint(ActiveResourceMeasuringPoint object) {
-                    ResourceReplicaMeasuredFactor factor = SpecificationFactory.eINSTANCE.createResourceReplicaMeasuredFactor();
-                    factor.setName(name + Integer.toString(object.getReplicaID()));
-                    factor.setReplicaId(object.getReplicaID());
-                    return factor;
-                };
-                public MeasuredFactor defaultCase(EObject object) {
-                    MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
-                    factor.setName(name);
-                    return factor;
-                };
-            }.doSwitch(source.getMeasuringPoint());
+            MeasuredFactor factor = SpecificationFactory.eINSTANCE.createMeasuredFactor();
+            factor.setName(name);
             factor.setMetricType(curMetric);
             spec.getConsumptionFactors().add(factor);
         }
@@ -235,6 +225,8 @@ public class Edp2ModelConstructor {
                         for(MeasuredFactor curFactor : EcoreUtil.<MeasuredFactor>getObjectsByType(binding.getResourcePowerModelSpecification().getConsumptionFactors(), SpecificationPackage.eINSTANCE.getMeasuredFactor())) {
                             if(MetricDescriptionUtility.isBaseMetricDescriptionSubsumedByMetricDescription(curFactor.getMetricType(), curMeasurement.getMeasuringType().getMetric())) {
                                 if(isSameResourceReplica(curFactor, passedSource.getMeasuringPoint())) {
+                                    mappedFactors.put(passedSource, curFactor);
+                                } else if(passedSource.getMeasuringPoint() instanceof StringMeasuringPoint) {
                                     mappedFactors.put(passedSource, curFactor);
                                 }
                             }
