@@ -2,47 +2,39 @@
  */
 package de.fzi.power.infrastructure.impl;
 
+import de.fzi.power.infrastructure.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.InfrastructurePackage;
-import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
-import de.fzi.power.infrastructure.PowerConsumingResource;
-import de.fzi.power.infrastructure.PowerDistributionUnit;
-import de.fzi.power.infrastructure.PowerInfrastructureRepository;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
-
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class InfrastructureFactoryImpl extends EFactoryImpl implements InfrastructureFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public static InfrastructureFactory init() {
         try {
-            final InfrastructureFactory theInfrastructureFactory = (InfrastructureFactory) EPackage.Registry.INSTANCE
+            InfrastructureFactory theInfrastructureFactory = (InfrastructureFactory) EPackage.Registry.INSTANCE
                     .getEFactory(InfrastructurePackage.eNS_URI);
             if (theInfrastructureFactory != null) {
                 return theInfrastructureFactory;
             }
-        } catch (final Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new InfrastructureFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public InfrastructureFactoryImpl() {
@@ -51,22 +43,21 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public EObject create(final EClass eClass) {
+    public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
         case InfrastructurePackage.POWER_DISTRIBUTION_UNIT:
-            return this.createPowerDistributionUnit();
+            return (EObject) createPowerDistributionUnit();
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT:
-            return this.createMountedPowerDistributionUnit();
+            return (EObject) createMountedPowerDistributionUnit();
         case InfrastructurePackage.POWER_INFRASTRUCTURE_REPOSITORY:
-            return this.createPowerInfrastructureRepository();
-        case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE:
-            return this.createStatefulPowerConsumingResource();
-        case InfrastructurePackage.POWER_CONSUMING_RESOURCE:
-            return this.createPowerConsumingResource();
+            return (EObject) createPowerInfrastructureRepository();
+        case InfrastructurePackage.STATEFUL_POWER_CONSUMING_RESOURCE_SET:
+            return (EObject) createStatefulPowerConsumingResourceSet();
+        case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET:
+            return (EObject) createPowerConsumingResourceSet();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -74,72 +65,65 @@ public class InfrastructureFactoryImpl extends EFactoryImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerDistributionUnit createPowerDistributionUnit() {
-        final PowerDistributionUnitImpl powerDistributionUnit = new PowerDistributionUnitImpl();
+        PowerDistributionUnitImpl powerDistributionUnit = new PowerDistributionUnitImpl();
         return powerDistributionUnit;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public MountedPowerDistributionUnit createMountedPowerDistributionUnit() {
-        final MountedPowerDistributionUnitImpl mountedPowerDistributionUnit = new MountedPowerDistributionUnitImpl();
+        MountedPowerDistributionUnitImpl mountedPowerDistributionUnit = new MountedPowerDistributionUnitImpl();
         return mountedPowerDistributionUnit;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public PowerConsumingResource createPowerConsumingResource() {
-        final PowerConsumingResourceImpl powerConsumingResource = new PowerConsumingResourceImpl();
-        return powerConsumingResource;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerInfrastructureRepository createPowerInfrastructureRepository() {
-        final PowerInfrastructureRepositoryImpl powerInfrastructureRepository = new PowerInfrastructureRepositoryImpl();
+        PowerInfrastructureRepositoryImpl powerInfrastructureRepository = new PowerInfrastructureRepositoryImpl();
         return powerInfrastructureRepository;
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public StatefulPowerConsumingResource createStatefulPowerConsumingResource() {
-        final StatefulPowerConsumingResourceImpl statefulPowerConsumingResource = new StatefulPowerConsumingResourceImpl();
-        return statefulPowerConsumingResource;
+    public StatefulPowerConsumingResourceSet createStatefulPowerConsumingResourceSet() {
+        StatefulPowerConsumingResourceSetImpl statefulPowerConsumingResourceSet = new StatefulPowerConsumingResourceSetImpl();
+        return statefulPowerConsumingResourceSet;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public PowerConsumingResourceSet createPowerConsumingResourceSet() {
+        PowerConsumingResourceSetImpl powerConsumingResourceSet = new PowerConsumingResourceSetImpl();
+        return powerConsumingResourceSet;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public InfrastructurePackage getInfrastructurePackage() {
-        return (InfrastructurePackage) this.getEPackage();
+        return (InfrastructurePackage) getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @deprecated
      * @generated
      */

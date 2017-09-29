@@ -18,31 +18,29 @@ import de.fzi.power.util.UtilPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public static UtilFactory init() {
         try {
-            final UtilFactory theUtilFactory = (UtilFactory) EPackage.Registry.INSTANCE
-                    .getEFactory(UtilPackage.eNS_URI);
+            UtilFactory theUtilFactory = (UtilFactory) EPackage.Registry.INSTANCE.getEFactory(UtilPackage.eNS_URI);
             if (theUtilFactory != null) {
                 return theUtilFactory;
             }
-        } catch (final Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new UtilFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public UtilFactoryImpl() {
@@ -51,14 +49,13 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public EObject create(final EClass eClass) {
+    public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
         case UtilPackage.NAMED_ELEMENT:
-            return this.createNamedElement();
+            return (EObject) createNamedElement();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -66,16 +63,15 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object createFromString(final EDataType eDataType, final String initialValue) {
+    public Object createFromString(EDataType eDataType, String initialValue) {
         switch (eDataType.getClassifierID()) {
         case UtilPackage.POWER:
-            return this.createPowerFromString(eDataType, initialValue);
+            return createPowerFromString(eDataType, initialValue);
         case UtilPackage.DIMENSIONLESS:
-            return this.createDimensionlessFromString(eDataType, initialValue);
+            return createDimensionlessFromString(eDataType, initialValue);
         default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -83,16 +79,15 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public String convertToString(final EDataType eDataType, final Object instanceValue) {
+    public String convertToString(EDataType eDataType, Object instanceValue) {
         switch (eDataType.getClassifierID()) {
         case UtilPackage.POWER:
-            return this.convertPowerToString(eDataType, instanceValue);
+            return convertPowerToString(eDataType, instanceValue);
         case UtilPackage.DIMENSIONLESS:
-            return this.convertDimensionlessToString(eDataType, instanceValue);
+            return convertDimensionlessToString(eDataType, instanceValue);
         default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -100,64 +95,57 @@ public class UtilFactoryImpl extends EFactoryImpl implements UtilFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public NamedElement createNamedElement() {
-        final NamedElementImpl namedElement = new NamedElementImpl();
+        NamedElementImpl namedElement = new NamedElementImpl();
         return namedElement;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public Power createPowerFromString(final EDataType eDataType, final String initialValue) {
+    public Power createPowerFromString(EDataType eDataType, String initialValue) {
         return (Power) super.createFromString(eDataType, initialValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public String convertPowerToString(final EDataType eDataType, final Object instanceValue) {
+    public String convertPowerToString(EDataType eDataType, Object instanceValue) {
         return super.convertToString(eDataType, instanceValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public Dimensionless createDimensionlessFromString(final EDataType eDataType, final String initialValue) {
+    public Dimensionless createDimensionlessFromString(EDataType eDataType, String initialValue) {
         return (Dimensionless) super.createFromString(eDataType, initialValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public String convertDimensionlessToString(final EDataType eDataType, final Object instanceValue) {
+    public String convertDimensionlessToString(EDataType eDataType, Object instanceValue) {
         return super.convertToString(eDataType, instanceValue);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public UtilPackage getUtilPackage() {
-        return (UtilPackage) this.getEPackage();
+        return (UtilPackage) getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @deprecated
      * @generated
      */

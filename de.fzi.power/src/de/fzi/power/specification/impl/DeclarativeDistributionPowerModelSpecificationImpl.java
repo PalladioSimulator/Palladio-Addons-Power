@@ -17,7 +17,6 @@ public class DeclarativeDistributionPowerModelSpecificationImpl extends Declarat
         implements DeclarativeDistributionPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected DeclarativeDistributionPowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public class DeclarativeDistributionPowerModelSpecificationImpl extends Declarat
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

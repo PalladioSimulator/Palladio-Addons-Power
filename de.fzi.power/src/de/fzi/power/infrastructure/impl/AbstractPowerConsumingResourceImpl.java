@@ -7,6 +7,8 @@ import org.palladiosimulator.pcm.resourceenvironment.ProcessingResourceSpecifica
 
 import de.fzi.power.infrastructure.AbstractPowerConsumingResource;
 import de.fzi.power.infrastructure.InfrastructurePackage;
+import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -15,9 +17,7 @@ import de.fzi.power.infrastructure.InfrastructurePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>
- * {@link de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl#getProcessingResourceSpecification
- * <em>Processing Resource Specification</em>}</li>
+ *   <li>{@link de.fzi.power.infrastructure.impl.AbstractPowerConsumingResourceImpl#getProcessingResourceSpecifications <em>Processing Resource Specifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -26,7 +26,6 @@ public abstract class AbstractPowerConsumingResourceImpl extends PowerConsumingE
         implements AbstractPowerConsumingResource {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected AbstractPowerConsumingResourceImpl() {
@@ -35,7 +34,6 @@ public abstract class AbstractPowerConsumingResourceImpl extends PowerConsumingE
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -44,70 +42,43 @@ public abstract class AbstractPowerConsumingResourceImpl extends PowerConsumingE
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public ProcessingResourceSpecification getProcessingResourceSpecification() {
-        return (ProcessingResourceSpecification) this.eDynamicGet(
-                InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                InfrastructurePackage.Literals.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
+    @SuppressWarnings("unchecked")
+    public EList<ProcessingResourceSpecification> getProcessingResourceSpecifications() {
+        return (EList<ProcessingResourceSpecification>) eDynamicGet(
+                InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS,
+                InfrastructurePackage.Literals.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS,
                 true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public ProcessingResourceSpecification basicGetProcessingResourceSpecification() {
-        return (ProcessingResourceSpecification) this.eDynamicGet(
-                InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                InfrastructurePackage.Literals.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                false, true);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setProcessingResourceSpecification(
-            final ProcessingResourceSpecification newProcessingResourceSpecification) {
-        this.eDynamicSet(InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                InfrastructurePackage.Literals.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION,
-                newProcessingResourceSpecification);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
-        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            if (resolve) {
-                return this.getProcessingResourceSpecification();
-            }
-            return this.basicGetProcessingResourceSpecification();
+        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS:
+            return getProcessingResourceSpecifications();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
+    @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
-        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            this.setProcessingResourceSpecification((ProcessingResourceSpecification) newValue);
+        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS:
+            getProcessingResourceSpecifications().clear();
+            getProcessingResourceSpecifications()
+                    .addAll((Collection<? extends ProcessingResourceSpecification>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -115,14 +86,13 @@ public abstract class AbstractPowerConsumingResourceImpl extends PowerConsumingE
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
-        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            this.setProcessingResourceSpecification((ProcessingResourceSpecification) null);
+        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS:
+            getProcessingResourceSpecifications().clear();
             return;
         }
         super.eUnset(featureID);
@@ -130,14 +100,13 @@ public abstract class AbstractPowerConsumingResourceImpl extends PowerConsumingE
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
-        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION:
-            return this.basicGetProcessingResourceSpecification() != null;
+        case InfrastructurePackage.ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS:
+            return !getProcessingResourceSpecifications().isEmpty();
         }
         return super.eIsSet(featureID);
     }

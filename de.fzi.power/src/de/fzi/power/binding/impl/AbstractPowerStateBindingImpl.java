@@ -18,9 +18,7 @@ import de.fzi.power.util.impl.EntityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>
- * {@link de.fzi.power.binding.impl.AbstractPowerStateBindingImpl#getStatefulResourcePowerBinding
- * <em>Stateful Resource Power Binding</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.AbstractPowerStateBindingImpl#getStatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,7 +26,6 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class AbstractPowerStateBindingImpl extends EntityImpl implements AbstractPowerStateBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected AbstractPowerStateBindingImpl() {
@@ -37,7 +34,6 @@ public abstract class AbstractPowerStateBindingImpl extends EntityImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -47,82 +43,74 @@ public abstract class AbstractPowerStateBindingImpl extends EntityImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public StatefulResourcePowerBinding getStatefulResourcePowerBinding() {
-        return (StatefulResourcePowerBinding) this.eDynamicGet(
+        return (StatefulResourcePowerBinding) eDynamicGet(
                 BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
                 BindingPackage.Literals.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public NotificationChain basicSetStatefulResourcePowerBinding(
-            final StatefulResourcePowerBinding newStatefulResourcePowerBinding, NotificationChain msgs) {
-        msgs = this.eBasicSetContainer((InternalEObject) newStatefulResourcePowerBinding,
+            StatefulResourcePowerBinding newStatefulResourcePowerBinding, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject) newStatefulResourcePowerBinding,
                 BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setStatefulResourcePowerBinding(final StatefulResourcePowerBinding newStatefulResourcePowerBinding) {
-        this.eDynamicSet(BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
+    public void setStatefulResourcePowerBinding(StatefulResourcePowerBinding newStatefulResourcePowerBinding) {
+        eDynamicSet(BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
                 BindingPackage.Literals.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING,
                 newStatefulResourcePowerBinding);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            return this.basicSetStatefulResourcePowerBinding((StatefulResourcePowerBinding) otherEnd, msgs);
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            return basicSetStatefulResourcePowerBinding((StatefulResourcePowerBinding) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            return this.basicSetStatefulResourcePowerBinding(null, msgs);
+            return basicSetStatefulResourcePowerBinding(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+        switch (eContainerFeatureID()) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            return this.eInternalContainer().eInverseRemove(this,
+            return eInternalContainer().eInverseRemove(this,
                     BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS,
                     StatefulResourcePowerBinding.class, msgs);
         }
@@ -131,28 +119,26 @@ public abstract class AbstractPowerStateBindingImpl extends EntityImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            return this.getStatefulResourcePowerBinding();
+            return getStatefulResourcePowerBinding();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) newValue);
+            setStatefulResourcePowerBinding((StatefulResourcePowerBinding) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -160,14 +146,13 @@ public abstract class AbstractPowerStateBindingImpl extends EntityImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            this.setStatefulResourcePowerBinding((StatefulResourcePowerBinding) null);
+            setStatefulResourcePowerBinding((StatefulResourcePowerBinding) null);
             return;
         }
         super.eUnset(featureID);
@@ -175,14 +160,13 @@ public abstract class AbstractPowerStateBindingImpl extends EntityImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING__STATEFUL_RESOURCE_POWER_BINDING:
-            return this.getStatefulResourcePowerBinding() != null;
+            return getStatefulResourcePowerBinding() != null;
         }
         return super.eIsSet(featureID);
     }

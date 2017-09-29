@@ -22,31 +22,30 @@ import de.fzi.power.binding.TransitionStateBinding;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public static BindingFactory init() {
         try {
-            final BindingFactory theBindingFactory = (BindingFactory) EPackage.Registry.INSTANCE
+            BindingFactory theBindingFactory = (BindingFactory) EPackage.Registry.INSTANCE
                     .getEFactory(BindingPackage.eNS_URI);
             if (theBindingFactory != null) {
                 return theBindingFactory;
             }
-        } catch (final Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new BindingFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public BindingFactoryImpl() {
@@ -55,30 +54,29 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public EObject create(final EClass eClass) {
+    public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
         case BindingPackage.FIXED_FACTOR_VALUE_POWER:
-            return this.createFixedFactorValuePower();
+            return (EObject) createFixedFactorValuePower();
         case BindingPackage.POWER_BINDING_REPOSITORY:
-            return this.createPowerBindingRepository();
+            return (EObject) createPowerBindingRepository();
         case BindingPackage.RESOURCE_POWER_BINDING:
-            return this.createResourcePowerBinding();
+            return (EObject) createResourcePowerBinding();
         case BindingPackage.DISTRIBUTION_POWER_BINDING:
-            return this.createDistributionPowerBinding();
+            return (EObject) createDistributionPowerBinding();
         case BindingPackage.FIXED_FACTOR_VALUE_DIMENSIONLESS:
-            return this.createFixedFactorValueDimensionless();
+            return (EObject) createFixedFactorValueDimensionless();
         case BindingPackage.CONSUMPTION_BEHAVIOR:
-            return this.createConsumptionBehavior();
+            return (EObject) createConsumptionBehavior();
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING:
-            return this.createStatefulResourcePowerBinding();
+            return (EObject) createStatefulResourcePowerBinding();
         case BindingPackage.POWER_STATE_BINDING:
-            return this.createPowerStateBinding();
+            return (EObject) createPowerStateBinding();
         case BindingPackage.TRANSITION_STATE_BINDING:
-            return this.createTransitionStateBinding();
+            return (EObject) createTransitionStateBinding();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -86,116 +84,105 @@ public class BindingFactoryImpl extends EFactoryImpl implements BindingFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public FixedFactorValuePower createFixedFactorValuePower() {
-        final FixedFactorValuePowerImpl fixedFactorValuePower = new FixedFactorValuePowerImpl();
+        FixedFactorValuePowerImpl fixedFactorValuePower = new FixedFactorValuePowerImpl();
         return fixedFactorValuePower;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerBindingRepository createPowerBindingRepository() {
-        final PowerBindingRepositoryImpl powerBindingRepository = new PowerBindingRepositoryImpl();
+        PowerBindingRepositoryImpl powerBindingRepository = new PowerBindingRepositoryImpl();
         return powerBindingRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public ResourcePowerBinding createResourcePowerBinding() {
-        final ResourcePowerBindingImpl resourcePowerBinding = new ResourcePowerBindingImpl();
+        ResourcePowerBindingImpl resourcePowerBinding = new ResourcePowerBindingImpl();
         return resourcePowerBinding;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public DistributionPowerBinding createDistributionPowerBinding() {
-        final DistributionPowerBindingImpl distributionPowerBinding = new DistributionPowerBindingImpl();
+        DistributionPowerBindingImpl distributionPowerBinding = new DistributionPowerBindingImpl();
         return distributionPowerBinding;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public FixedFactorValueDimensionless createFixedFactorValueDimensionless() {
-        final FixedFactorValueDimensionlessImpl fixedFactorValueDimensionless = new FixedFactorValueDimensionlessImpl();
+        FixedFactorValueDimensionlessImpl fixedFactorValueDimensionless = new FixedFactorValueDimensionlessImpl();
         return fixedFactorValueDimensionless;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public ConsumptionBehavior createConsumptionBehavior() {
-        final ConsumptionBehaviorImpl consumptionBehavior = new ConsumptionBehaviorImpl();
+        ConsumptionBehaviorImpl consumptionBehavior = new ConsumptionBehaviorImpl();
         return consumptionBehavior;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public StatefulResourcePowerBinding createStatefulResourcePowerBinding() {
-        final StatefulResourcePowerBindingImpl statefulResourcePowerBinding = new StatefulResourcePowerBindingImpl();
+        StatefulResourcePowerBindingImpl statefulResourcePowerBinding = new StatefulResourcePowerBindingImpl();
         return statefulResourcePowerBinding;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerStateBinding createPowerStateBinding() {
-        final PowerStateBindingImpl powerStateBinding = new PowerStateBindingImpl();
+        PowerStateBindingImpl powerStateBinding = new PowerStateBindingImpl();
         return powerStateBinding;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public TransitionStateBinding createTransitionStateBinding() {
-        final TransitionStateBindingImpl transitionStateBinding = new TransitionStateBindingImpl();
+        TransitionStateBindingImpl transitionStateBinding = new TransitionStateBindingImpl();
         return transitionStateBinding;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public BindingPackage getBindingPackage() {
-        return (BindingPackage) this.getEPackage();
+        return (BindingPackage) getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @deprecated
      * @generated
      */

@@ -18,8 +18,7 @@ import de.fzi.power.util.impl.EntityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.state.impl.AbstractPowerStateImpl#getPowerStateMachine
- * <em>Power State Machine</em>}</li>
+ *   <li>{@link de.fzi.power.state.impl.AbstractPowerStateImpl#getPowerStateMachine <em>Power State Machine</em>}</li>
  * </ul>
  *
  * @generated
@@ -27,7 +26,6 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class AbstractPowerStateImpl extends EntityImpl implements AbstractPowerState {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected AbstractPowerStateImpl() {
@@ -36,7 +34,6 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -46,80 +43,71 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerStateMachine getPowerStateMachine() {
-        return (PowerStateMachine) this.eDynamicGet(StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE,
+        return (PowerStateMachine) eDynamicGet(StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE,
                 StatePackage.Literals.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public NotificationChain basicSetPowerStateMachine(final PowerStateMachine newPowerStateMachine,
-            NotificationChain msgs) {
-        msgs = this.eBasicSetContainer((InternalEObject) newPowerStateMachine,
+    public NotificationChain basicSetPowerStateMachine(PowerStateMachine newPowerStateMachine, NotificationChain msgs) {
+        msgs = eBasicSetContainer((InternalEObject) newPowerStateMachine,
                 StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setPowerStateMachine(final PowerStateMachine newPowerStateMachine) {
-        this.eDynamicSet(StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE,
+    public void setPowerStateMachine(PowerStateMachine newPowerStateMachine) {
+        eDynamicSet(StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE,
                 StatePackage.Literals.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE, newPowerStateMachine);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            return this.basicSetPowerStateMachine((PowerStateMachine) otherEnd, msgs);
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            return basicSetPowerStateMachine((PowerStateMachine) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            return this.basicSetPowerStateMachine(null, msgs);
+            return basicSetPowerStateMachine(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+        switch (eContainerFeatureID()) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            return this.eInternalContainer().eInverseRemove(this, StatePackage.POWER_STATE_MACHINE__POWER_STATES,
+            return eInternalContainer().eInverseRemove(this, StatePackage.POWER_STATE_MACHINE__POWER_STATES,
                     PowerStateMachine.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
@@ -127,28 +115,26 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            return this.getPowerStateMachine();
+            return getPowerStateMachine();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            this.setPowerStateMachine((PowerStateMachine) newValue);
+            setPowerStateMachine((PowerStateMachine) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -156,14 +142,13 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            this.setPowerStateMachine((PowerStateMachine) null);
+            setPowerStateMachine((PowerStateMachine) null);
             return;
         }
         super.eUnset(featureID);
@@ -171,14 +156,13 @@ public abstract class AbstractPowerStateImpl extends EntityImpl implements Abstr
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case StatePackage.ABSTRACT_POWER_STATE__POWER_STATE_MACHINE:
-            return this.getPowerStateMachine() != null;
+            return getPowerStateMachine() != null;
         }
         return super.eIsSet(featureID);
     }

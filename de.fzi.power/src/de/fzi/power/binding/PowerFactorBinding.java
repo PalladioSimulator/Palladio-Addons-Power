@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues
- * <em>Fixed Factor Values</em>}</li>
+ *   <li>{@link de.fzi.power.binding.PowerFactorBinding#getFixedFactorValues <em>Fixed Factor Values</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getPowerFactorBinding()

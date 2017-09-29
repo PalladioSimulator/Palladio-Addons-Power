@@ -16,7 +16,6 @@ import de.fzi.power.specification.SpecificationPackage;
 public class FixedFactorImpl extends ConsumptionFactorImpl implements FixedFactor {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected FixedFactorImpl() {
@@ -25,7 +24,6 @@ public class FixedFactorImpl extends ConsumptionFactorImpl implements FixedFacto
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

@@ -18,8 +18,7 @@ import de.fzi.power.util.impl.EntityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getPowerBindingRepository
- * <em>Power Binding Repository</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.PowerBindingImpl#getPowerBindingRepository <em>Power Binding Repository</em>}</li>
  * </ul>
  *
  * @generated
@@ -27,7 +26,6 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class PowerBindingImpl extends EntityImpl implements PowerBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerBindingImpl() {
@@ -36,7 +34,6 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -46,111 +43,101 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerBindingRepository getPowerBindingRepository() {
-        return (PowerBindingRepository) this.eDynamicGet(BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY,
+        return (PowerBindingRepository) eDynamicGet(BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY,
                 BindingPackage.Literals.POWER_BINDING__POWER_BINDING_REPOSITORY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public NotificationChain basicSetPowerBindingRepository(final PowerBindingRepository newPowerBindingRepository,
+    public NotificationChain basicSetPowerBindingRepository(PowerBindingRepository newPowerBindingRepository,
             NotificationChain msgs) {
-        msgs = this.eBasicSetContainer((InternalEObject) newPowerBindingRepository,
+        msgs = eBasicSetContainer((InternalEObject) newPowerBindingRepository,
                 BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setPowerBindingRepository(final PowerBindingRepository newPowerBindingRepository) {
-        this.eDynamicSet(BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY,
+    public void setPowerBindingRepository(PowerBindingRepository newPowerBindingRepository) {
+        eDynamicSet(BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY,
                 BindingPackage.Literals.POWER_BINDING__POWER_BINDING_REPOSITORY, newPowerBindingRepository);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            return this.basicSetPowerBindingRepository((PowerBindingRepository) otherEnd, msgs);
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            return basicSetPowerBindingRepository((PowerBindingRepository) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return this.basicSetPowerBindingRepository(null, msgs);
+            return basicSetPowerBindingRepository(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+        switch (eContainerFeatureID()) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return this.eInternalContainer().eInverseRemove(this,
-                    BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS, PowerBindingRepository.class, msgs);
+            return eInternalContainer().eInverseRemove(this, BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+                    PowerBindingRepository.class, msgs);
         }
         return super.eBasicRemoveFromContainerFeature(msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return this.getPowerBindingRepository();
+            return getPowerBindingRepository();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            this.setPowerBindingRepository((PowerBindingRepository) newValue);
+            setPowerBindingRepository((PowerBindingRepository) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -158,14 +145,13 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            this.setPowerBindingRepository((PowerBindingRepository) null);
+            setPowerBindingRepository((PowerBindingRepository) null);
             return;
         }
         super.eUnset(featureID);
@@ -173,14 +159,13 @@ public abstract class PowerBindingImpl extends EntityImpl implements PowerBindin
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING__POWER_BINDING_REPOSITORY:
-            return this.getPowerBindingRepository() != null;
+            return getPowerBindingRepository() != null;
         }
         return super.eIsSet(featureID);
     }

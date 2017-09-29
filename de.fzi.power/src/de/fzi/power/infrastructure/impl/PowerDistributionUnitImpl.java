@@ -16,7 +16,6 @@ import de.fzi.power.infrastructure.PowerDistributionUnit;
 public class PowerDistributionUnitImpl extends PowerConsumingProvidingEntityImpl implements PowerDistributionUnit {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerDistributionUnitImpl() {
@@ -25,7 +24,6 @@ public class PowerDistributionUnitImpl extends PowerConsumingProvidingEntityImpl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

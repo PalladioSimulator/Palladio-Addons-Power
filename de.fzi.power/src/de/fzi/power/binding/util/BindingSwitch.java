@@ -32,21 +32,20 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- *
  * @see de.fzi.power.binding.BindingPackage
  * @generated
  */
 public class BindingSwitch<T> extends Switch<T> {
     /**
-     * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached model package
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     protected static BindingPackage modelPackage;
 
     /**
-     * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the switch.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public BindingSwitch() {
@@ -56,290 +55,228 @@ public class BindingSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
+     * Checks whether this is a switch for the given package.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param ePackage
-     *            the package in question.
+     * @param ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
     @Override
-    protected boolean isSwitchFor(final EPackage ePackage) {
+    protected boolean isSwitchFor(EPackage ePackage) {
         return ePackage == modelPackage;
     }
 
     /**
-     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
-     * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
     @Override
-    protected T doSwitch(final int classifierID, final EObject theEObject) {
+    protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
         case BindingPackage.FIXED_FACTOR_VALUE_POWER: {
-            final FixedFactorValuePower fixedFactorValuePower = (FixedFactorValuePower) theEObject;
-            T result = this.caseFixedFactorValuePower(fixedFactorValuePower);
-            if (result == null) {
-                result = this.caseAbstractFixedFactorValue(fixedFactorValuePower);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(fixedFactorValuePower);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            FixedFactorValuePower fixedFactorValuePower = (FixedFactorValuePower) theEObject;
+            T result = caseFixedFactorValuePower(fixedFactorValuePower);
+            if (result == null)
+                result = caseAbstractFixedFactorValue(fixedFactorValuePower);
+            if (result == null)
+                result = caseIdentifier(fixedFactorValuePower);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.POWER_BINDING_REPOSITORY: {
-            final PowerBindingRepository powerBindingRepository = (PowerBindingRepository) theEObject;
-            T result = this.casePowerBindingRepository(powerBindingRepository);
-            if (result == null) {
-                result = this.caseIdentifier(powerBindingRepository);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerBindingRepository powerBindingRepository = (PowerBindingRepository) theEObject;
+            T result = casePowerBindingRepository(powerBindingRepository);
+            if (result == null)
+                result = caseIdentifier(powerBindingRepository);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.POWER_BINDING: {
-            final PowerBinding powerBinding = (PowerBinding) theEObject;
-            T result = this.casePowerBinding(powerBinding);
-            if (result == null) {
-                result = this.caseEntity(powerBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerBinding powerBinding = (PowerBinding) theEObject;
+            T result = casePowerBinding(powerBinding);
+            if (result == null)
+                result = caseEntity(powerBinding);
+            if (result == null)
+                result = caseIdentifier(powerBinding);
+            if (result == null)
+                result = caseNamedElement(powerBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.RESOURCE_POWER_BINDING: {
-            final ResourcePowerBinding resourcePowerBinding = (ResourcePowerBinding) theEObject;
-            T result = this.caseResourcePowerBinding(resourcePowerBinding);
-            if (result == null) {
-                result = this.casePowerFactorBinding(resourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.casePowerBinding(resourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(resourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(resourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(resourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            ResourcePowerBinding resourcePowerBinding = (ResourcePowerBinding) theEObject;
+            T result = caseResourcePowerBinding(resourcePowerBinding);
+            if (result == null)
+                result = casePowerFactorBinding(resourcePowerBinding);
+            if (result == null)
+                result = casePowerBinding(resourcePowerBinding);
+            if (result == null)
+                result = caseEntity(resourcePowerBinding);
+            if (result == null)
+                result = caseIdentifier(resourcePowerBinding);
+            if (result == null)
+                result = caseNamedElement(resourcePowerBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.DISTRIBUTION_POWER_BINDING: {
-            final DistributionPowerBinding distributionPowerBinding = (DistributionPowerBinding) theEObject;
-            T result = this.caseDistributionPowerBinding(distributionPowerBinding);
-            if (result == null) {
-                result = this.casePowerFactorBinding(distributionPowerBinding);
-            }
-            if (result == null) {
-                result = this.casePowerBinding(distributionPowerBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(distributionPowerBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(distributionPowerBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(distributionPowerBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            DistributionPowerBinding distributionPowerBinding = (DistributionPowerBinding) theEObject;
+            T result = caseDistributionPowerBinding(distributionPowerBinding);
+            if (result == null)
+                result = casePowerFactorBinding(distributionPowerBinding);
+            if (result == null)
+                result = casePowerBinding(distributionPowerBinding);
+            if (result == null)
+                result = caseEntity(distributionPowerBinding);
+            if (result == null)
+                result = caseIdentifier(distributionPowerBinding);
+            if (result == null)
+                result = caseNamedElement(distributionPowerBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.POWER_FACTOR_BINDING: {
-            final PowerFactorBinding powerFactorBinding = (PowerFactorBinding) theEObject;
-            T result = this.casePowerFactorBinding(powerFactorBinding);
-            if (result == null) {
-                result = this.casePowerBinding(powerFactorBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(powerFactorBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerFactorBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerFactorBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerFactorBinding powerFactorBinding = (PowerFactorBinding) theEObject;
+            T result = casePowerFactorBinding(powerFactorBinding);
+            if (result == null)
+                result = casePowerBinding(powerFactorBinding);
+            if (result == null)
+                result = caseEntity(powerFactorBinding);
+            if (result == null)
+                result = caseIdentifier(powerFactorBinding);
+            if (result == null)
+                result = caseNamedElement(powerFactorBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.ABSTRACT_FIXED_FACTOR_VALUE: {
-            final AbstractFixedFactorValue<?> abstractFixedFactorValue = (AbstractFixedFactorValue<?>) theEObject;
-            T result = this.caseAbstractFixedFactorValue(abstractFixedFactorValue);
-            if (result == null) {
-                result = this.caseIdentifier(abstractFixedFactorValue);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            AbstractFixedFactorValue<?> abstractFixedFactorValue = (AbstractFixedFactorValue<?>) theEObject;
+            T result = caseAbstractFixedFactorValue(abstractFixedFactorValue);
+            if (result == null)
+                result = caseIdentifier(abstractFixedFactorValue);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.FIXED_FACTOR_VALUE_DIMENSIONLESS: {
-            final FixedFactorValueDimensionless fixedFactorValueDimensionless = (FixedFactorValueDimensionless) theEObject;
-            T result = this.caseFixedFactorValueDimensionless(fixedFactorValueDimensionless);
-            if (result == null) {
-                result = this.caseAbstractFixedFactorValue(fixedFactorValueDimensionless);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(fixedFactorValueDimensionless);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            FixedFactorValueDimensionless fixedFactorValueDimensionless = (FixedFactorValueDimensionless) theEObject;
+            T result = caseFixedFactorValueDimensionless(fixedFactorValueDimensionless);
+            if (result == null)
+                result = caseAbstractFixedFactorValue(fixedFactorValueDimensionless);
+            if (result == null)
+                result = caseIdentifier(fixedFactorValueDimensionless);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.CONSUMPTION_BEHAVIOR: {
-            final ConsumptionBehavior consumptionBehavior = (ConsumptionBehavior) theEObject;
-            T result = this.caseConsumptionBehavior(consumptionBehavior);
-            if (result == null) {
-                result = this.caseEntity(consumptionBehavior);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(consumptionBehavior);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(consumptionBehavior);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            ConsumptionBehavior consumptionBehavior = (ConsumptionBehavior) theEObject;
+            T result = caseConsumptionBehavior(consumptionBehavior);
+            if (result == null)
+                result = caseEntity(consumptionBehavior);
+            if (result == null)
+                result = caseIdentifier(consumptionBehavior);
+            if (result == null)
+                result = caseNamedElement(consumptionBehavior);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING: {
-            final StatefulResourcePowerBinding statefulResourcePowerBinding = (StatefulResourcePowerBinding) theEObject;
-            T result = this.caseStatefulResourcePowerBinding(statefulResourcePowerBinding);
-            if (result == null) {
-                result = this.casePowerBinding(statefulResourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(statefulResourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(statefulResourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(statefulResourcePowerBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            StatefulResourcePowerBinding statefulResourcePowerBinding = (StatefulResourcePowerBinding) theEObject;
+            T result = caseStatefulResourcePowerBinding(statefulResourcePowerBinding);
+            if (result == null)
+                result = casePowerBinding(statefulResourcePowerBinding);
+            if (result == null)
+                result = caseEntity(statefulResourcePowerBinding);
+            if (result == null)
+                result = caseIdentifier(statefulResourcePowerBinding);
+            if (result == null)
+                result = caseNamedElement(statefulResourcePowerBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.ABSTRACT_POWER_STATE_BINDING: {
-            final AbstractPowerStateBinding abstractPowerStateBinding = (AbstractPowerStateBinding) theEObject;
-            T result = this.caseAbstractPowerStateBinding(abstractPowerStateBinding);
-            if (result == null) {
-                result = this.caseEntity(abstractPowerStateBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(abstractPowerStateBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(abstractPowerStateBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            AbstractPowerStateBinding abstractPowerStateBinding = (AbstractPowerStateBinding) theEObject;
+            T result = caseAbstractPowerStateBinding(abstractPowerStateBinding);
+            if (result == null)
+                result = caseEntity(abstractPowerStateBinding);
+            if (result == null)
+                result = caseIdentifier(abstractPowerStateBinding);
+            if (result == null)
+                result = caseNamedElement(abstractPowerStateBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.POWER_STATE_BINDING: {
-            final PowerStateBinding powerStateBinding = (PowerStateBinding) theEObject;
-            T result = this.casePowerStateBinding(powerStateBinding);
-            if (result == null) {
-                result = this.caseAbstractPowerStateBinding(powerStateBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(powerStateBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerStateBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerStateBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerStateBinding powerStateBinding = (PowerStateBinding) theEObject;
+            T result = casePowerStateBinding(powerStateBinding);
+            if (result == null)
+                result = caseAbstractPowerStateBinding(powerStateBinding);
+            if (result == null)
+                result = caseEntity(powerStateBinding);
+            if (result == null)
+                result = caseIdentifier(powerStateBinding);
+            if (result == null)
+                result = caseNamedElement(powerStateBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case BindingPackage.TRANSITION_STATE_BINDING: {
-            final TransitionStateBinding transitionStateBinding = (TransitionStateBinding) theEObject;
-            T result = this.caseTransitionStateBinding(transitionStateBinding);
-            if (result == null) {
-                result = this.caseAbstractPowerStateBinding(transitionStateBinding);
-            }
-            if (result == null) {
-                result = this.caseEntity(transitionStateBinding);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(transitionStateBinding);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(transitionStateBinding);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            TransitionStateBinding transitionStateBinding = (TransitionStateBinding) theEObject;
+            T result = caseTransitionStateBinding(transitionStateBinding);
+            if (result == null)
+                result = caseAbstractPowerStateBinding(transitionStateBinding);
+            if (result == null)
+                result = caseEntity(transitionStateBinding);
+            if (result == null)
+                result = caseIdentifier(transitionStateBinding);
+            if (result == null)
+                result = caseNamedElement(transitionStateBinding);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         default:
-            return this.defaultCase(theEObject);
+            return defaultCase(theEObject);
         }
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Fixed Factor Value Power</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Fixed Factor Value Power</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Fixed Factor Value Power</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Fixed Factor Value Power</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseFixedFactorValuePower(final FixedFactorValuePower object) {
+    public T caseFixedFactorValuePower(FixedFactorValuePower object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Power Binding Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Power Binding Repository</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Power Binding Repository</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Power Binding Repository</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerBindingRepository(final PowerBindingRepository object) {
+    public T casePowerBindingRepository(PowerBindingRepository object) {
         return null;
     }
 
@@ -347,174 +284,142 @@ public class BindingSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Power Binding</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
+     * @param object the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Power Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerBinding(final PowerBinding object) {
+    public T casePowerBinding(PowerBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Resource Power Binding</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Resource Power Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Resource Power Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Resource Power Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseResourcePowerBinding(final ResourcePowerBinding object) {
+    public T caseResourcePowerBinding(ResourcePowerBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Distribution Power Binding</em>'. <!-- begin-user-doc --> This implementation returns
+     * Returns the result of interpreting the object as an instance of '<em>Distribution Power Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Distribution Power Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Distribution Power Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseDistributionPowerBinding(final DistributionPowerBinding object) {
+    public T caseDistributionPowerBinding(DistributionPowerBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Stateful Resource Power Binding</em>'. <!-- begin-user-doc --> This implementation
+     * Returns the result of interpreting the object as an instance of '<em>Stateful Resource Power Binding</em>'.
+     * <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Stateful Resource Power Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Stateful Resource Power Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseStatefulResourcePowerBinding(final StatefulResourcePowerBinding object) {
+    public T caseStatefulResourcePowerBinding(StatefulResourcePowerBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Abstract Power State Binding</em>'. <!-- begin-user-doc --> This implementation returns
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Power State Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Abstract Power State Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Power State Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAbstractPowerStateBinding(final AbstractPowerStateBinding object) {
+    public T caseAbstractPowerStateBinding(AbstractPowerStateBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Power State Binding</em>
-     * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+     * Returns the result of interpreting the object as an instance of '<em>Power State Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Power State Binding</em>
-     *         '.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Power State Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerStateBinding(final PowerStateBinding object) {
+    public T casePowerStateBinding(PowerStateBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Transition State Binding</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Transition State Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Transition State Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Transition State Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseTransitionStateBinding(final TransitionStateBinding object) {
+    public T caseTransitionStateBinding(TransitionStateBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Power Factor Binding</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Power Factor Binding</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Power Factor Binding</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Power Factor Binding</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerFactorBinding(final PowerFactorBinding object) {
+    public T casePowerFactorBinding(PowerFactorBinding object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Abstract Fixed Factor Value</em>'. <!-- begin-user-doc --> This implementation returns
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Fixed Factor Value</em>'.
+     * <!-- begin-user-doc --> This implementation returns
      * null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Abstract Fixed Factor Value</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Fixed Factor Value</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public <Q extends Quantity> T caseAbstractFixedFactorValue(final AbstractFixedFactorValue<Q> object) {
+    public <Q extends Quantity> T caseAbstractFixedFactorValue(AbstractFixedFactorValue<Q> object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Fixed Factor Value Dimensionless</em>'. <!-- begin-user-doc --> This implementation
+     * Returns the result of interpreting the object as an instance of '<em>Fixed Factor Value Dimensionless</em>'.
+     * <!-- begin-user-doc --> This implementation
      * returns null; returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Fixed Factor Value Dimensionless</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Fixed Factor Value Dimensionless</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseFixedFactorValueDimensionless(final FixedFactorValueDimensionless object) {
+    public T caseFixedFactorValueDimensionless(FixedFactorValueDimensionless object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Consumption Behavior</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Consumption Behavior</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Consumption Behavior</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Consumption Behavior</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseConsumptionBehavior(final ConsumptionBehavior object) {
+    public T caseConsumptionBehavior(ConsumptionBehavior object) {
         return null;
     }
 
@@ -529,7 +434,7 @@ public class BindingSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(final Identifier object) {
+    public T caseIdentifier(Identifier object) {
         return null;
     }
 
@@ -537,14 +442,12 @@ public class BindingSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
+     * @param object the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNamedElement(final NamedElement object) {
+    public T caseNamedElement(NamedElement object) {
         return null;
     }
 
@@ -559,7 +462,7 @@ public class BindingSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEntity(final Entity object) {
+    public T caseEntity(Entity object) {
         return null;
     }
 
@@ -575,7 +478,7 @@ public class BindingSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(final EObject object) {
+    public T defaultCase(EObject object) {
         return null;
     }
 

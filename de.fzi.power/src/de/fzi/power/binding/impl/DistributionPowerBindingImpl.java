@@ -15,8 +15,7 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel
- * <em>Distribution Power Model</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.DistributionPowerBindingImpl#getDistributionPowerModel <em>Distribution Power Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -24,7 +23,6 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
 public class DistributionPowerBindingImpl extends PowerFactorBindingImpl implements DistributionPowerBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected DistributionPowerBindingImpl() {
@@ -33,7 +31,6 @@ public class DistributionPowerBindingImpl extends PowerFactorBindingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -43,66 +40,60 @@ public class DistributionPowerBindingImpl extends PowerFactorBindingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public DistributionPowerModelSpecification getDistributionPowerModel() {
-        return (DistributionPowerModelSpecification) this.eDynamicGet(
+        return (DistributionPowerModelSpecification) eDynamicGet(
                 BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
                 BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public DistributionPowerModelSpecification basicGetDistributionPowerModel() {
-        return (DistributionPowerModelSpecification) this.eDynamicGet(
+        return (DistributionPowerModelSpecification) eDynamicGet(
                 BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
                 BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setDistributionPowerModel(final DistributionPowerModelSpecification newDistributionPowerModel) {
-        this.eDynamicSet(BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
+    public void setDistributionPowerModel(DistributionPowerModelSpecification newDistributionPowerModel) {
+        eDynamicSet(BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
                 BindingPackage.Literals.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL,
                 newDistributionPowerModel);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            if (resolve) {
-                return this.getDistributionPowerModel();
-            }
-            return this.basicGetDistributionPowerModel();
+            if (resolve)
+                return getDistributionPowerModel();
+            return basicGetDistributionPowerModel();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            this.setDistributionPowerModel((DistributionPowerModelSpecification) newValue);
+            setDistributionPowerModel((DistributionPowerModelSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -110,14 +101,13 @@ public class DistributionPowerBindingImpl extends PowerFactorBindingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            this.setDistributionPowerModel((DistributionPowerModelSpecification) null);
+            setDistributionPowerModel((DistributionPowerModelSpecification) null);
             return;
         }
         super.eUnset(featureID);
@@ -125,14 +115,13 @@ public class DistributionPowerBindingImpl extends PowerFactorBindingImpl impleme
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.DISTRIBUTION_POWER_BINDING__DISTRIBUTION_POWER_MODEL:
-            return this.basicGetDistributionPowerModel() != null;
+            return basicGetDistributionPowerModel() != null;
         }
         return super.eIsSet(featureID);
     }

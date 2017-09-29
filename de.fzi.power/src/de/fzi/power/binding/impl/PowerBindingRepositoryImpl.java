@@ -22,8 +22,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.PowerBindingRepositoryImpl#getPowerBindings
- * <em>Power Bindings</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.PowerBindingRepositoryImpl#getPowerBindings <em>Power Bindings</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,7 +30,6 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerBindingRepository {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerBindingRepositoryImpl() {
@@ -40,7 +38,6 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -50,74 +47,66 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     @SuppressWarnings("unchecked")
     public EList<PowerBinding> getPowerBindings() {
-        return (EList<PowerBinding>) this.eDynamicGet(BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
+        return (EList<PowerBinding>) eDynamicGet(BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS,
                 BindingPackage.Literals.POWER_BINDING_REPOSITORY__POWER_BINDINGS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPowerBindings()).basicAdd(otherEnd,
-                    msgs);
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) getPowerBindings()).basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return ((InternalEList<?>) this.getPowerBindings()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getPowerBindings()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return this.getPowerBindings();
+            return getPowerBindings();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            this.getPowerBindings().clear();
-            this.getPowerBindings().addAll((Collection<? extends PowerBinding>) newValue);
+            getPowerBindings().clear();
+            getPowerBindings().addAll((Collection<? extends PowerBinding>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -125,14 +114,13 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            this.getPowerBindings().clear();
+            getPowerBindings().clear();
             return;
         }
         super.eUnset(featureID);
@@ -140,14 +128,13 @@ public class PowerBindingRepositoryImpl extends IdentifierImpl implements PowerB
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.POWER_BINDING_REPOSITORY__POWER_BINDINGS:
-            return !this.getPowerBindings().isEmpty();
+            return !getPowerBindings().isEmpty();
         }
         return super.eIsSet(featureID);
     }

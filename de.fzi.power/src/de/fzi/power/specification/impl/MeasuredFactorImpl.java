@@ -15,8 +15,7 @@ import de.fzi.power.specification.SpecificationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.specification.impl.MeasuredFactorImpl#getMetricType <em>Metric Type</em>}
- * </li>
+ *   <li>{@link de.fzi.power.specification.impl.MeasuredFactorImpl#getMetricType <em>Metric Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -24,7 +23,6 @@ import de.fzi.power.specification.SpecificationPackage;
 public class MeasuredFactorImpl extends ConsumptionFactorImpl implements MeasuredFactor {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected MeasuredFactorImpl() {
@@ -33,7 +31,6 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -43,63 +40,57 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public NumericalBaseMetricDescription getMetricType() {
-        return (NumericalBaseMetricDescription) this.eDynamicGet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
+        return (NumericalBaseMetricDescription) eDynamicGet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
                 SpecificationPackage.Literals.MEASURED_FACTOR__METRIC_TYPE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public NumericalBaseMetricDescription basicGetMetricType() {
-        return (NumericalBaseMetricDescription) this.eDynamicGet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
+        return (NumericalBaseMetricDescription) eDynamicGet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
                 SpecificationPackage.Literals.MEASURED_FACTOR__METRIC_TYPE, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setMetricType(final NumericalBaseMetricDescription newMetricType) {
-        this.eDynamicSet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
+    public void setMetricType(NumericalBaseMetricDescription newMetricType) {
+        eDynamicSet(SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE,
                 SpecificationPackage.Literals.MEASURED_FACTOR__METRIC_TYPE, newMetricType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            if (resolve) {
-                return this.getMetricType();
-            }
-            return this.basicGetMetricType();
+            if (resolve)
+                return getMetricType();
+            return basicGetMetricType();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            this.setMetricType((NumericalBaseMetricDescription) newValue);
+            setMetricType((NumericalBaseMetricDescription) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -107,14 +98,13 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            this.setMetricType((NumericalBaseMetricDescription) null);
+            setMetricType((NumericalBaseMetricDescription) null);
             return;
         }
         super.eUnset(featureID);
@@ -122,14 +112,13 @@ public class MeasuredFactorImpl extends ConsumptionFactorImpl implements Measure
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case SpecificationPackage.MEASURED_FACTOR__METRIC_TYPE:
-            return this.basicGetMetricType() != null;
+            return basicGetMetricType() != null;
         }
         return super.eIsSet(featureID);
     }

@@ -22,8 +22,7 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.specification.impl.PowerModelRepositoryImpl#getPowerModelSpecifications
- * <em>Power Model Specifications</em>}</li>
+ *   <li>{@link de.fzi.power.specification.impl.PowerModelRepositoryImpl#getPowerModelSpecifications <em>Power Model Specifications</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,7 +30,6 @@ import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerModelRepository {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerModelRepositoryImpl() {
@@ -40,7 +38,6 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -50,29 +47,26 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     @SuppressWarnings("unchecked")
     public EList<PowerModelSpecification> getPowerModelSpecifications() {
-        return (EList<PowerModelSpecification>) this.eDynamicGet(
+        return (EList<PowerModelSpecification>) eDynamicGet(
                 SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS,
                 SpecificationPackage.Literals.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPowerModelSpecifications())
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) getPowerModelSpecifications())
                     .basicAdd(otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -80,45 +74,41 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            return ((InternalEList<?>) this.getPowerModelSpecifications()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getPowerModelSpecifications()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            return this.getPowerModelSpecifications();
+            return getPowerModelSpecifications();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            this.getPowerModelSpecifications().clear();
-            this.getPowerModelSpecifications().addAll((Collection<? extends PowerModelSpecification>) newValue);
+            getPowerModelSpecifications().clear();
+            getPowerModelSpecifications().addAll((Collection<? extends PowerModelSpecification>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -126,14 +116,13 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            this.getPowerModelSpecifications().clear();
+            getPowerModelSpecifications().clear();
             return;
         }
         super.eUnset(featureID);
@@ -141,14 +130,13 @@ public class PowerModelRepositoryImpl extends IdentifierImpl implements PowerMod
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case SpecificationPackage.POWER_MODEL_REPOSITORY__POWER_MODEL_SPECIFICATIONS:
-            return !this.getPowerModelSpecifications().isEmpty();
+            return !getPowerModelSpecifications().isEmpty();
         }
         return super.eIsSet(featureID);
     }

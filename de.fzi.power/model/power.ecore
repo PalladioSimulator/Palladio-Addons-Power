@@ -197,21 +197,22 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerConsumingResource" abstract="true"
         eSuperTypes="#//infrastructure/PowerConsumingEntity">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecification"
-          ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecifications"
+          ordered="false" lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerInfrastructureRepository">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedPowerProvidingEntities"
           upperBound="-1" eType="#//infrastructure/PowerProvidingEntity" containment="true"
           eOpposite="#//infrastructure/PowerProvidingEntity/powerInfrastructureModel"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StatefulPowerConsumingResource" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
+    <eClassifiers xsi:type="ecore:EClass" name="StatefulPowerConsumingResourceSet"
+        eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerState" lowerBound="1"
           eType="#//binding/AbstractPowerStateBinding"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="statefulResourcePowerBinding"
           lowerBound="1" eType="#//binding/StatefulResourcePowerBinding"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResource" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
+    <eClassifiers xsi:type="ecore:EClass" name="PowerConsumingResourceSet" eSuperTypes="#//infrastructure/AbstractPowerConsumingResource">
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourcePowerAssemblyContext"
           eType="#//binding/ResourcePowerBinding"/>
     </eClassifiers>

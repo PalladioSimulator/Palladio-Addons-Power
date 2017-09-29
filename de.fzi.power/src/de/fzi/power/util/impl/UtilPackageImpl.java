@@ -32,47 +32,42 @@ import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass entityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass namedElementEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EDataType powerEDataType = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EDataType dimensionlessEDataType = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
-     * value.
-     * <p>
-     * Note: the correct way to create the package is via the static factory method {@link #init
-     * init()}, which also performs initialization of the package, or returns the registered
-     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+     * package URI value.
+     * <p>Note: the correct way to create the package is via the static
+     * factory method {@link #init init()}, which also performs
+     * initialization of the package, or returns the registered package,
+     * if one already exists.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.util.UtilPackage#eNS_URI
      * @see #init()
@@ -84,32 +79,27 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
-     * upon which it depends.
-     *
-     * <p>
-     * This method is used to initialize {@link UtilPackage#eINSTANCE} when that field is accessed.
-     * Clients should not invoke it directly. Instead, they should simply access that field to
-     * obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+     * 
+     * <p>This method is used to initialize {@link UtilPackage#eINSTANCE} when that field is accessed.
+     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
      * @generated
      */
     public static UtilPackage init() {
-        if (isInited) {
+        if (isInited)
             return (UtilPackage) EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-        }
 
         // Obtain or create and register package
-        final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
+        UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof UtilPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
                         : new UtilPackageImpl());
 
@@ -123,17 +113,17 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
-        final StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
+        StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(StatePackage.eNS_URI) instanceof StatePackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(StatePackage.eNS_URI) : StatePackage.eINSTANCE);
-        final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
+        SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
                         : SpecificationPackage.eINSTANCE);
-        final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
+        BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
-        final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
+        InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(InfrastructurePackage.eNS_URI) instanceof InfrastructurePackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI)
                         : InfrastructurePackage.eINSTANCE);
@@ -162,120 +152,110 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getEntity() {
-        return this.entityEClass;
+        return entityEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getNamedElement() {
-        return this.namedElementEClass;
+        return namedElementEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EAttribute getNamedElement_Name() {
-        return (EAttribute) this.namedElementEClass.getEStructuralFeatures().get(0);
+        return (EAttribute) namedElementEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EDataType getPower() {
-        return this.powerEDataType;
+        return powerEDataType;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EDataType getDimensionless() {
-        return this.dimensionlessEDataType;
+        return dimensionlessEDataType;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public UtilFactory getUtilFactory() {
-        return (UtilFactory) this.getEFactoryInstance();
+        return (UtilFactory) getEFactoryInstance();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package. This method is guarded to have no affect on
-     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the meta-model objects for the package.  This method is
+     * guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public void createPackageContents() {
-        if (this.isCreated) {
+        if (isCreated)
             return;
-        }
-        this.isCreated = true;
+        isCreated = true;
 
         // Create classes and their features
-        this.entityEClass = this.createEClass(ENTITY);
+        entityEClass = createEClass(ENTITY);
 
-        this.namedElementEClass = this.createEClass(NAMED_ELEMENT);
-        this.createEAttribute(this.namedElementEClass, NAMED_ELEMENT__NAME);
+        namedElementEClass = createEClass(NAMED_ELEMENT);
+        createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
         // Create data types
-        this.powerEDataType = this.createEDataType(POWER);
-        this.dimensionlessEDataType = this.createEDataType(DIMENSIONLESS);
+        powerEDataType = createEDataType(POWER);
+        dimensionlessEDataType = createEDataType(DIMENSIONLESS);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model. This method is guarded to have
-     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Complete the initialization of the package and its meta-model.  This
+     * method is guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public void initializePackageContents() {
-        if (this.isInitialized) {
+        if (isInitialized)
             return;
-        }
-        this.isInitialized = true;
+        isInitialized = true;
 
         // Initialize package
-        this.setName(eNAME);
-        this.setNsPrefix(eNS_PREFIX);
-        this.setNsURI(eNS_URI);
+        setName(eNAME);
+        setNsPrefix(eNS_PREFIX);
+        setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        final IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
+        IdentifierPackage theIdentifierPackage = (IdentifierPackage) EPackage.Registry.INSTANCE
                 .getEPackage(IdentifierPackage.eNS_URI);
 
         // Create type parameters
@@ -283,26 +263,24 @@ public class UtilPackageImpl extends EPackageImpl implements UtilPackage {
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.entityEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
-        this.entityEClass.getESuperTypes().add(this.getNamedElement());
+        entityEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+        entityEClass.getESuperTypes().add(this.getNamedElement());
 
         // Initialize classes and features; add operations and parameters
-        this.initEClass(this.entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE,
-                IS_GENERATED_INSTANCE_CLASS);
+        initEClass(entityEClass, Entity.class, "Entity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        this.initEClass(this.namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE,
+        initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getNamedElement_Name(), this.ecorePackage.getEString(), "name", null, 0, 1,
-                NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class,
+                !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize data types
-        this.initEDataType(this.powerEDataType, Power.class, "Power", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        this.initEDataType(this.dimensionlessEDataType, Dimensionless.class, "Dimensionless", IS_SERIALIZABLE,
+        initEDataType(powerEDataType, Power.class, "Power", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+        initEDataType(dimensionlessEDataType, Dimensionless.class, "Dimensionless", IS_SERIALIZABLE,
                 !IS_GENERATED_INSTANCE_CLASS);
 
         // Create resource
-        this.createResource(eNS_URI);
+        createResource(eNS_URI);
     }
 
 } // UtilPackageImpl

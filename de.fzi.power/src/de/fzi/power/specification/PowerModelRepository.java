@@ -14,8 +14,7 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications
- * <em>Power Model Specifications</em>}</li>
+ *   <li>{@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications <em>Power Model Specifications</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.specification.SpecificationPackage#getPowerModelRepository()
@@ -24,18 +23,15 @@ import de.uka.ipd.sdq.identifier.Identifier;
  */
 public interface PowerModelRepository extends Identifier {
     /**
-     * Returns the value of the '<em><b>Power Model Specifications</b></em>' containment reference
-     * list. The list contents are of type
-     * {@link de.fzi.power.specification.PowerModelSpecification}. It is bidirectional and its
-     * opposite is '
-     * {@link de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository
-     * <em>Powermodelrepository</em>}'. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power Model Specifications</b></em>' containment reference list.
+     * The list contents are of type {@link de.fzi.power.specification.PowerModelSpecification}.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository <em>Powermodelrepository</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power Model Specifications</em>' containment reference list isn't
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power Model Specifications</em>' containment reference list.
      * @see de.fzi.power.specification.SpecificationPackage#getPowerModelRepository_PowerModelSpecifications()
      * @see de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository

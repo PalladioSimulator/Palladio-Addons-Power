@@ -12,10 +12,8 @@ import de.fzi.power.state.TransitionState;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.TransitionStateBinding#getTransitionState
- * <em>Transition State</em>}</li>
- * <li>{@link de.fzi.power.binding.TransitionStateBinding#getTransitionConsumption
- * <em>Transition Consumption</em>}</li>
+ *   <li>{@link de.fzi.power.binding.TransitionStateBinding#getTransitionState <em>Transition State</em>}</li>
+ *   <li>{@link de.fzi.power.binding.TransitionStateBinding#getTransitionConsumption <em>Transition Consumption</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getTransitionStateBinding()
@@ -24,14 +22,14 @@ import de.fzi.power.state.TransitionState;
  */
 public interface TransitionStateBinding extends AbstractPowerStateBinding {
     /**
-     * Returns the value of the '<em><b>Transition State</b></em>' reference. <!-- begin-user-doc
+     * Returns the value of the '<em><b>Transition State</b></em>' reference.
+     * <!-- begin-user-doc
      * -->
      * <p>
      * If the meaning of the '<em>Transition State</em>' reference isn't clear, there really should
      * be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Transition State</em>' reference.
      * @see #setTransitionState(TransitionState)
      * @see de.fzi.power.binding.BindingPackage#getTransitionStateBinding_TransitionState()
@@ -41,11 +39,9 @@ public interface TransitionStateBinding extends AbstractPowerStateBinding {
     TransitionState getTransitionState();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.TransitionStateBinding#getTransitionState
-     * <em>Transition State</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Transition State</em>' reference.
+     * Sets the value of the '{@link de.fzi.power.binding.TransitionStateBinding#getTransitionState <em>Transition State</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Transition State</em>' reference.
      * @see #getTransitionState()
      * @generated
      */
@@ -69,13 +65,10 @@ public interface TransitionStateBinding extends AbstractPowerStateBinding {
     ConsumptionBehavior getTransitionConsumption();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.binding.TransitionStateBinding#getTransitionConsumption
-     * <em>Transition Consumption</em>}' containment reference. <!-- begin-user-doc --> <!--
+     * Sets the value of the '{@link de.fzi.power.binding.TransitionStateBinding#getTransitionConsumption <em>Transition Consumption</em>}' containment reference.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Transition Consumption</em>' containment reference.
+     * @param value the new value of the '<em>Transition Consumption</em>' containment reference.
      * @see #getTransitionConsumption()
      * @generated
      */

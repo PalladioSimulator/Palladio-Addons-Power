@@ -17,7 +17,6 @@ public abstract class DistributionPowerModelSpecificationImpl extends PowerModel
         implements DistributionPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected DistributionPowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public abstract class DistributionPowerModelSpecificationImpl extends PowerModel
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

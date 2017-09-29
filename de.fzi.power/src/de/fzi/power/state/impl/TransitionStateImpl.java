@@ -15,9 +15,8 @@ import de.fzi.power.state.TransitionState;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.state.impl.TransitionStateImpl#getInitialState <em>Initial State</em>}
- * </li>
- * <li>{@link de.fzi.power.state.impl.TransitionStateImpl#getTargetState <em>Target State</em>}</li>
+ *   <li>{@link de.fzi.power.state.impl.TransitionStateImpl#getInitialState <em>Initial State</em>}</li>
+ *   <li>{@link de.fzi.power.state.impl.TransitionStateImpl#getTargetState <em>Target State</em>}</li>
  * </ul>
  *
  * @generated
@@ -25,7 +24,6 @@ import de.fzi.power.state.TransitionState;
 public class TransitionStateImpl extends AbstractPowerStateImpl implements TransitionState {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected TransitionStateImpl() {
@@ -34,7 +32,6 @@ public class TransitionStateImpl extends AbstractPowerStateImpl implements Trans
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -44,103 +41,93 @@ public class TransitionStateImpl extends AbstractPowerStateImpl implements Trans
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerState getInitialState() {
-        return (PowerState) this.eDynamicGet(StatePackage.TRANSITION_STATE__INITIAL_STATE,
+        return (PowerState) eDynamicGet(StatePackage.TRANSITION_STATE__INITIAL_STATE,
                 StatePackage.Literals.TRANSITION_STATE__INITIAL_STATE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public PowerState basicGetInitialState() {
-        return (PowerState) this.eDynamicGet(StatePackage.TRANSITION_STATE__INITIAL_STATE,
+        return (PowerState) eDynamicGet(StatePackage.TRANSITION_STATE__INITIAL_STATE,
                 StatePackage.Literals.TRANSITION_STATE__INITIAL_STATE, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setInitialState(final PowerState newInitialState) {
-        this.eDynamicSet(StatePackage.TRANSITION_STATE__INITIAL_STATE,
-                StatePackage.Literals.TRANSITION_STATE__INITIAL_STATE, newInitialState);
+    public void setInitialState(PowerState newInitialState) {
+        eDynamicSet(StatePackage.TRANSITION_STATE__INITIAL_STATE, StatePackage.Literals.TRANSITION_STATE__INITIAL_STATE,
+                newInitialState);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerState getTargetState() {
-        return (PowerState) this.eDynamicGet(StatePackage.TRANSITION_STATE__TARGET_STATE,
+        return (PowerState) eDynamicGet(StatePackage.TRANSITION_STATE__TARGET_STATE,
                 StatePackage.Literals.TRANSITION_STATE__TARGET_STATE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public PowerState basicGetTargetState() {
-        return (PowerState) this.eDynamicGet(StatePackage.TRANSITION_STATE__TARGET_STATE,
+        return (PowerState) eDynamicGet(StatePackage.TRANSITION_STATE__TARGET_STATE,
                 StatePackage.Literals.TRANSITION_STATE__TARGET_STATE, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setTargetState(final PowerState newTargetState) {
-        this.eDynamicSet(StatePackage.TRANSITION_STATE__TARGET_STATE,
-                StatePackage.Literals.TRANSITION_STATE__TARGET_STATE, newTargetState);
+    public void setTargetState(PowerState newTargetState) {
+        eDynamicSet(StatePackage.TRANSITION_STATE__TARGET_STATE, StatePackage.Literals.TRANSITION_STATE__TARGET_STATE,
+                newTargetState);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case StatePackage.TRANSITION_STATE__INITIAL_STATE:
-            if (resolve) {
-                return this.getInitialState();
-            }
-            return this.basicGetInitialState();
+            if (resolve)
+                return getInitialState();
+            return basicGetInitialState();
         case StatePackage.TRANSITION_STATE__TARGET_STATE:
-            if (resolve) {
-                return this.getTargetState();
-            }
-            return this.basicGetTargetState();
+            if (resolve)
+                return getTargetState();
+            return basicGetTargetState();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case StatePackage.TRANSITION_STATE__INITIAL_STATE:
-            this.setInitialState((PowerState) newValue);
+            setInitialState((PowerState) newValue);
             return;
         case StatePackage.TRANSITION_STATE__TARGET_STATE:
-            this.setTargetState((PowerState) newValue);
+            setTargetState((PowerState) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -148,17 +135,16 @@ public class TransitionStateImpl extends AbstractPowerStateImpl implements Trans
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case StatePackage.TRANSITION_STATE__INITIAL_STATE:
-            this.setInitialState((PowerState) null);
+            setInitialState((PowerState) null);
             return;
         case StatePackage.TRANSITION_STATE__TARGET_STATE:
-            this.setTargetState((PowerState) null);
+            setTargetState((PowerState) null);
             return;
         }
         super.eUnset(featureID);
@@ -166,16 +152,15 @@ public class TransitionStateImpl extends AbstractPowerStateImpl implements Trans
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case StatePackage.TRANSITION_STATE__INITIAL_STATE:
-            return this.basicGetInitialState() != null;
+            return basicGetInitialState() != null;
         case StatePackage.TRANSITION_STATE__TARGET_STATE:
-            return this.basicGetTargetState() != null;
+            return basicGetTargetState() != null;
         }
         return super.eIsSet(featureID);
     }

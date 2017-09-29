@@ -15,8 +15,7 @@ import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl#getResourceContainer
- * <em>Resource Container</em>}</li>
+ *   <li>{@link de.fzi.power.infrastructure.impl.MountedPowerDistributionUnitImpl#getResourceContainer <em>Resource Container</em>}</li>
  * </ul>
  *
  * @generated
@@ -25,7 +24,6 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl
         implements MountedPowerDistributionUnit {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected MountedPowerDistributionUnitImpl() {
@@ -34,7 +32,6 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -44,66 +41,60 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public ResourceContainer getResourceContainer() {
-        return (ResourceContainer) this.eDynamicGet(
+        return (ResourceContainer) eDynamicGet(
                 InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
                 InfrastructurePackage.Literals.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public ResourceContainer basicGetResourceContainer() {
-        return (ResourceContainer) this.eDynamicGet(
+        return (ResourceContainer) eDynamicGet(
                 InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
                 InfrastructurePackage.Literals.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setResourceContainer(final ResourceContainer newResourceContainer) {
-        this.eDynamicSet(InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
+    public void setResourceContainer(ResourceContainer newResourceContainer) {
+        eDynamicSet(InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
                 InfrastructurePackage.Literals.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER,
                 newResourceContainer);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            if (resolve) {
-                return this.getResourceContainer();
-            }
-            return this.basicGetResourceContainer();
+            if (resolve)
+                return getResourceContainer();
+            return basicGetResourceContainer();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            this.setResourceContainer((ResourceContainer) newValue);
+            setResourceContainer((ResourceContainer) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -111,14 +102,13 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            this.setResourceContainer((ResourceContainer) null);
+            setResourceContainer((ResourceContainer) null);
             return;
         }
         super.eUnset(featureID);
@@ -126,14 +116,13 @@ public class MountedPowerDistributionUnitImpl extends PowerDistributionUnitImpl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case InfrastructurePackage.MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER:
-            return this.basicGetResourceContainer() != null;
+            return basicGetResourceContainer() != null;
         }
         return super.eIsSet(featureID);
     }

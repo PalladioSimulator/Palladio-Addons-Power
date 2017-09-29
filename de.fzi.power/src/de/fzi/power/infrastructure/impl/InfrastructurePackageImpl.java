@@ -22,11 +22,11 @@ import de.fzi.power.infrastructure.InfrastructurePackage;
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
 import de.fzi.power.infrastructure.PowerConsumingProvidingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerInfrastructureRepository;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
-import de.fzi.power.infrastructure.StatefulPowerConsumingResource;
+import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
 import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.impl.SpecificationPackageImpl;
 import de.fzi.power.state.StatePackage;
@@ -37,82 +37,74 @@ import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class InfrastructurePackageImpl extends EPackageImpl implements InfrastructurePackage {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass powerDistributionUnitEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass powerConsumingProvidingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass powerProvidingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass powerConsumingEntityEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass mountedPowerDistributionUnitEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass abstractPowerConsumingResourceEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EClass powerConsumingResourceEClass = null;
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private EClass powerInfrastructureRepositoryEClass = null;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    private EClass statefulPowerConsumingResourceEClass = null;
+    private EClass statefulPowerConsumingResourceSetEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass powerConsumingResourceSetEClass = null;
 
     /**
      * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
-     * value.
-     * <p>
-     * Note: the correct way to create the package is via the static factory method {@link #init
-     * init()}, which also performs initialization of the package, or returns the registered
-     * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+     * package URI value.
+     * <p>Note: the correct way to create the package is via the static
+     * factory method {@link #init init()}, which also performs
+     * initialization of the package, or returns the registered package,
+     * if one already exists.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see org.eclipse.emf.ecore.EPackage.Registry
      * @see de.fzi.power.infrastructure.InfrastructurePackage#eNS_URI
      * @see #init()
@@ -124,32 +116,27 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private static boolean isInited = false;
 
     /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others
-     * upon which it depends.
-     *
-     * <p>
-     * This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is
-     * accessed. Clients should not invoke it directly. Instead, they should simply access that
-     * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+     * 
+     * <p>This method is used to initialize {@link InfrastructurePackage#eINSTANCE} when that field is accessed.
+     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
      * @generated
      */
     public static InfrastructurePackage init() {
-        if (isInited) {
+        if (isInited)
             return (InfrastructurePackage) EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-        }
 
         // Obtain or create and register package
-        final InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
+        InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl) (EPackage.Registry.INSTANCE
                 .get(eNS_URI) instanceof InfrastructurePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
                         : new InfrastructurePackageImpl());
 
@@ -163,17 +150,17 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         PcmPackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
-        final UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
+        UtilPackageImpl theUtilPackage = (UtilPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(UtilPackage.eNS_URI) instanceof UtilPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI) : UtilPackage.eINSTANCE);
-        final StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
+        StatePackageImpl theStatePackage = (StatePackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(StatePackage.eNS_URI) instanceof StatePackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(StatePackage.eNS_URI) : StatePackage.eINSTANCE);
-        final SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
+        SpecificationPackageImpl theSpecificationPackage = (SpecificationPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(SpecificationPackage.eNS_URI) instanceof SpecificationPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(SpecificationPackage.eNS_URI)
                         : SpecificationPackage.eINSTANCE);
-        final BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
+        BindingPackageImpl theBindingPackage = (BindingPackageImpl) (EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI) instanceof BindingPackageImpl
                         ? EPackage.Registry.INSTANCE.getEPackage(BindingPackage.eNS_URI) : BindingPackage.eINSTANCE);
 
@@ -201,302 +188,274 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getPowerDistributionUnit() {
-        return this.powerDistributionUnitEClass;
+        return powerDistributionUnitEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getPowerConsumingProvidingEntity() {
-        return this.powerConsumingProvidingEntityEClass;
+        return powerConsumingProvidingEntityEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getPowerProvidingEntity() {
-        return this.powerProvidingEntityEClass;
+        return powerProvidingEntityEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getPowerProvidingEntity_NestedPowerConsumingEntities() {
-        return (EReference) this.powerProvidingEntityEClass.getEStructuralFeatures().get(0);
+        return (EReference) powerProvidingEntityEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EAttribute getPowerProvidingEntity_SuppliablePeakPower() {
-        return (EAttribute) this.powerProvidingEntityEClass.getEStructuralFeatures().get(1);
+        return (EAttribute) powerProvidingEntityEClass.getEStructuralFeatures().get(1);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getPowerProvidingEntity_PowerInfrastructureModel() {
-        return (EReference) this.powerProvidingEntityEClass.getEStructuralFeatures().get(2);
+        return (EReference) powerProvidingEntityEClass.getEStructuralFeatures().get(2);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getPowerProvidingEntity_DistributionPowerAssemblyContext() {
-        return (EReference) this.powerProvidingEntityEClass.getEStructuralFeatures().get(3);
+        return (EReference) powerProvidingEntityEClass.getEStructuralFeatures().get(3);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getPowerConsumingEntity() {
-        return this.powerConsumingEntityEClass;
+        return powerConsumingEntityEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getPowerConsumingEntity_PowerProvidingEntity() {
-        return (EReference) this.powerConsumingEntityEClass.getEStructuralFeatures().get(0);
+        return (EReference) powerConsumingEntityEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getMountedPowerDistributionUnit() {
-        return this.mountedPowerDistributionUnitEClass;
+        return mountedPowerDistributionUnitEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getMountedPowerDistributionUnit_ResourceContainer() {
-        return (EReference) this.mountedPowerDistributionUnitEClass.getEStructuralFeatures().get(0);
+        return (EReference) mountedPowerDistributionUnitEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getAbstractPowerConsumingResource() {
-        return this.abstractPowerConsumingResourceEClass;
+        return abstractPowerConsumingResourceEClass;
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public EReference getAbstractPowerConsumingResource_ProcessingResourceSpecification() {
-        return (EReference) this.abstractPowerConsumingResourceEClass.getEStructuralFeatures().get(0);
+    public EReference getAbstractPowerConsumingResource_ProcessingResourceSpecifications() {
+        return (EReference) abstractPowerConsumingResourceEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EClass getPowerConsumingResource() {
-        return this.powerConsumingResourceEClass;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public EReference getPowerConsumingResource_ResourcePowerAssemblyContext() {
-        return (EReference) this.powerConsumingResourceEClass.getEStructuralFeatures().get(0);
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EClass getPowerInfrastructureRepository() {
-        return this.powerInfrastructureRepositoryEClass;
+        return powerInfrastructureRepositoryEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public EReference getPowerInfrastructureRepository_ContainedPowerProvidingEntities() {
-        return (EReference) this.powerInfrastructureRepositoryEClass.getEStructuralFeatures().get(0);
+        return (EReference) powerInfrastructureRepositoryEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public EClass getStatefulPowerConsumingResource() {
-        return this.statefulPowerConsumingResourceEClass;
+    public EClass getStatefulPowerConsumingResourceSet() {
+        return statefulPowerConsumingResourceSetEClass;
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public EReference getStatefulPowerConsumingResource_PowerState() {
-        return (EReference) this.statefulPowerConsumingResourceEClass.getEStructuralFeatures().get(0);
+    public EReference getStatefulPowerConsumingResourceSet_PowerState() {
+        return (EReference) statefulPowerConsumingResourceSetEClass.getEStructuralFeatures().get(0);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-    @Override
-    public EReference getStatefulPowerConsumingResource_StatefulResourcePowerBinding() {
-        return (EReference) this.statefulPowerConsumingResourceEClass.getEStructuralFeatures().get(1);
+    public EReference getStatefulPowerConsumingResourceSet_StatefulResourcePowerBinding() {
+        return (EReference) statefulPowerConsumingResourceSetEClass.getEStructuralFeatures().get(1);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getPowerConsumingResourceSet() {
+        return powerConsumingResourceSetEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getPowerConsumingResourceSet_ResourcePowerAssemblyContext() {
+        return (EReference) powerConsumingResourceSetEClass.getEStructuralFeatures().get(0);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public InfrastructureFactory getInfrastructureFactory() {
-        return (InfrastructureFactory) this.getEFactoryInstance();
+        return (InfrastructureFactory) getEFactoryInstance();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private boolean isCreated = false;
 
     /**
-     * Creates the meta-model objects for the package. This method is guarded to have no affect on
-     * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the meta-model objects for the package.  This method is
+     * guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public void createPackageContents() {
-        if (this.isCreated) {
+        if (isCreated)
             return;
-        }
-        this.isCreated = true;
+        isCreated = true;
 
         // Create classes and their features
-        this.powerDistributionUnitEClass = this.createEClass(POWER_DISTRIBUTION_UNIT);
+        powerDistributionUnitEClass = createEClass(POWER_DISTRIBUTION_UNIT);
 
-        this.powerConsumingProvidingEntityEClass = this.createEClass(POWER_CONSUMING_PROVIDING_ENTITY);
+        powerConsumingProvidingEntityEClass = createEClass(POWER_CONSUMING_PROVIDING_ENTITY);
 
-        this.powerProvidingEntityEClass = this.createEClass(POWER_PROVIDING_ENTITY);
-        this.createEReference(this.powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES);
-        this.createEAttribute(this.powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER);
-        this.createEReference(this.powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL);
-        this.createEReference(this.powerProvidingEntityEClass,
-                POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT);
+        powerProvidingEntityEClass = createEClass(POWER_PROVIDING_ENTITY);
+        createEReference(powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES);
+        createEAttribute(powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__SUPPLIABLE_PEAK_POWER);
+        createEReference(powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__POWER_INFRASTRUCTURE_MODEL);
+        createEReference(powerProvidingEntityEClass, POWER_PROVIDING_ENTITY__DISTRIBUTION_POWER_ASSEMBLY_CONTEXT);
 
-        this.powerConsumingEntityEClass = this.createEClass(POWER_CONSUMING_ENTITY);
-        this.createEReference(this.powerConsumingEntityEClass, POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY);
+        powerConsumingEntityEClass = createEClass(POWER_CONSUMING_ENTITY);
+        createEReference(powerConsumingEntityEClass, POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY);
 
-        this.mountedPowerDistributionUnitEClass = this.createEClass(MOUNTED_POWER_DISTRIBUTION_UNIT);
-        this.createEReference(this.mountedPowerDistributionUnitEClass,
-                MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER);
+        mountedPowerDistributionUnitEClass = createEClass(MOUNTED_POWER_DISTRIBUTION_UNIT);
+        createEReference(mountedPowerDistributionUnitEClass, MOUNTED_POWER_DISTRIBUTION_UNIT__RESOURCE_CONTAINER);
 
-        this.abstractPowerConsumingResourceEClass = this.createEClass(ABSTRACT_POWER_CONSUMING_RESOURCE);
-        this.createEReference(this.abstractPowerConsumingResourceEClass,
-                ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATION);
+        abstractPowerConsumingResourceEClass = createEClass(ABSTRACT_POWER_CONSUMING_RESOURCE);
+        createEReference(abstractPowerConsumingResourceEClass,
+                ABSTRACT_POWER_CONSUMING_RESOURCE__PROCESSING_RESOURCE_SPECIFICATIONS);
 
-        this.powerInfrastructureRepositoryEClass = this.createEClass(POWER_INFRASTRUCTURE_REPOSITORY);
-        this.createEReference(this.powerInfrastructureRepositoryEClass,
+        powerInfrastructureRepositoryEClass = createEClass(POWER_INFRASTRUCTURE_REPOSITORY);
+        createEReference(powerInfrastructureRepositoryEClass,
                 POWER_INFRASTRUCTURE_REPOSITORY__CONTAINED_POWER_PROVIDING_ENTITIES);
 
-        this.statefulPowerConsumingResourceEClass = this.createEClass(STATEFUL_POWER_CONSUMING_RESOURCE);
-        this.createEReference(this.statefulPowerConsumingResourceEClass,
-                STATEFUL_POWER_CONSUMING_RESOURCE__POWER_STATE);
-        this.createEReference(this.statefulPowerConsumingResourceEClass,
-                STATEFUL_POWER_CONSUMING_RESOURCE__STATEFUL_RESOURCE_POWER_BINDING);
+        statefulPowerConsumingResourceSetEClass = createEClass(STATEFUL_POWER_CONSUMING_RESOURCE_SET);
+        createEReference(statefulPowerConsumingResourceSetEClass, STATEFUL_POWER_CONSUMING_RESOURCE_SET__POWER_STATE);
+        createEReference(statefulPowerConsumingResourceSetEClass,
+                STATEFUL_POWER_CONSUMING_RESOURCE_SET__STATEFUL_RESOURCE_POWER_BINDING);
 
-        this.powerConsumingResourceEClass = this.createEClass(POWER_CONSUMING_RESOURCE);
-        this.createEReference(this.powerConsumingResourceEClass,
-                POWER_CONSUMING_RESOURCE__RESOURCE_POWER_ASSEMBLY_CONTEXT);
+        powerConsumingResourceSetEClass = createEClass(POWER_CONSUMING_RESOURCE_SET);
+        createEReference(powerConsumingResourceSetEClass,
+                POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     private boolean isInitialized = false;
 
     /**
-     * Complete the initialization of the package and its meta-model. This method is guarded to have
-     * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Complete the initialization of the package and its meta-model.  This
+     * method is guarded to have no affect on any invocation but its first.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public void initializePackageContents() {
-        if (this.isInitialized) {
+        if (isInitialized)
             return;
-        }
-        this.isInitialized = true;
+        isInitialized = true;
 
         // Initialize package
-        this.setName(eNAME);
-        this.setNsPrefix(eNS_PREFIX);
-        this.setNsURI(eNS_URI);
+        setName(eNAME);
+        setNsPrefix(eNS_PREFIX);
+        setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        final UtilPackage theUtilPackage = (UtilPackage) EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
-        final ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
+        UtilPackage theUtilPackage = (UtilPackage) EPackage.Registry.INSTANCE.getEPackage(UtilPackage.eNS_URI);
+        ExperimentDataPackage theExperimentDataPackage = (ExperimentDataPackage) EPackage.Registry.INSTANCE
                 .getEPackage(ExperimentDataPackage.eNS_URI);
-        final BindingPackage theBindingPackage = (BindingPackage) EPackage.Registry.INSTANCE
+        BindingPackage theBindingPackage = (BindingPackage) EPackage.Registry.INSTANCE
                 .getEPackage(BindingPackage.eNS_URI);
-        final ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage) EPackage.Registry.INSTANCE
+        ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage) EPackage.Registry.INSTANCE
                 .getEPackage(ResourceenvironmentPackage.eNS_URI);
 
         // Create type parameters
@@ -504,97 +463,96 @@ public class InfrastructurePackageImpl extends EPackageImpl implements Infrastru
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.powerDistributionUnitEClass.getESuperTypes().add(this.getPowerConsumingProvidingEntity());
-        this.powerConsumingProvidingEntityEClass.getESuperTypes().add(this.getPowerConsumingEntity());
-        this.powerConsumingProvidingEntityEClass.getESuperTypes().add(this.getPowerProvidingEntity());
-        this.powerProvidingEntityEClass.getESuperTypes().add(theUtilPackage.getEntity());
-        this.powerConsumingEntityEClass.getESuperTypes().add(theUtilPackage.getEntity());
-        this.mountedPowerDistributionUnitEClass.getESuperTypes().add(this.getPowerDistributionUnit());
-        this.abstractPowerConsumingResourceEClass.getESuperTypes().add(this.getPowerConsumingEntity());
-        this.statefulPowerConsumingResourceEClass.getESuperTypes().add(this.getAbstractPowerConsumingResource());
-        this.powerConsumingResourceEClass.getESuperTypes().add(this.getAbstractPowerConsumingResource());
+        powerDistributionUnitEClass.getESuperTypes().add(this.getPowerConsumingProvidingEntity());
+        powerConsumingProvidingEntityEClass.getESuperTypes().add(this.getPowerConsumingEntity());
+        powerConsumingProvidingEntityEClass.getESuperTypes().add(this.getPowerProvidingEntity());
+        powerProvidingEntityEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        powerConsumingEntityEClass.getESuperTypes().add(theUtilPackage.getEntity());
+        mountedPowerDistributionUnitEClass.getESuperTypes().add(this.getPowerDistributionUnit());
+        abstractPowerConsumingResourceEClass.getESuperTypes().add(this.getPowerConsumingEntity());
+        statefulPowerConsumingResourceSetEClass.getESuperTypes().add(this.getAbstractPowerConsumingResource());
+        powerConsumingResourceSetEClass.getESuperTypes().add(this.getAbstractPowerConsumingResource());
 
         // Initialize classes and features; add operations and parameters
-        this.initEClass(this.powerDistributionUnitEClass, PowerDistributionUnit.class, "PowerDistributionUnit",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEClass(powerDistributionUnitEClass, PowerDistributionUnit.class, "PowerDistributionUnit", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        this.initEClass(this.powerConsumingProvidingEntityEClass, PowerConsumingProvidingEntity.class,
+        initEClass(powerConsumingProvidingEntityEClass, PowerConsumingProvidingEntity.class,
                 "PowerConsumingProvidingEntity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-        this.initEClass(this.powerProvidingEntityEClass, PowerProvidingEntity.class, "PowerProvidingEntity",
-                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerProvidingEntity_NestedPowerConsumingEntities(), this.getPowerConsumingEntity(),
+        initEClass(powerProvidingEntityEClass, PowerProvidingEntity.class, "PowerProvidingEntity", IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getPowerProvidingEntity_NestedPowerConsumingEntities(), this.getPowerConsumingEntity(),
                 this.getPowerConsumingEntity_PowerProvidingEntity(), "nestedPowerConsumingEntities", null, 0, -1,
                 PowerProvidingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        final EGenericType g1 = this.createEGenericType(theExperimentDataPackage.getEJSMeasure());
-        EGenericType g2 = this.createEGenericType();
+        EGenericType g1 = createEGenericType(theExperimentDataPackage.getEJSMeasure());
+        EGenericType g2 = createEGenericType();
         g1.getETypeArguments().add(g2);
-        g2 = this.createEGenericType(theUtilPackage.getPower());
+        g2 = createEGenericType(theUtilPackage.getPower());
         g1.getETypeArguments().add(g2);
-        this.initEAttribute(this.getPowerProvidingEntity_SuppliablePeakPower(), g1, "suppliablePeakPower", "", 0, 1,
+        initEAttribute(getPowerProvidingEntity_SuppliablePeakPower(), g1, "suppliablePeakPower", "", 0, 1,
                 PowerProvidingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
                 IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-        this.initEReference(this.getPowerProvidingEntity_PowerInfrastructureModel(),
-                this.getPowerInfrastructureRepository(),
+        initEReference(getPowerProvidingEntity_PowerInfrastructureModel(), this.getPowerInfrastructureRepository(),
                 this.getPowerInfrastructureRepository_ContainedPowerProvidingEntities(), "powerInfrastructureModel",
                 null, 0, 1, PowerProvidingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getPowerProvidingEntity_DistributionPowerAssemblyContext(),
+        initEReference(getPowerProvidingEntity_DistributionPowerAssemblyContext(),
                 theBindingPackage.getDistributionPowerBinding(), null, "distributionPowerAssemblyContext", null, 0, 1,
                 PowerProvidingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.powerConsumingEntityEClass, PowerConsumingEntity.class, "PowerConsumingEntity",
-                IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerConsumingEntity_PowerProvidingEntity(), this.getPowerProvidingEntity(),
+        initEClass(powerConsumingEntityEClass, PowerConsumingEntity.class, "PowerConsumingEntity", IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getPowerConsumingEntity_PowerProvidingEntity(), this.getPowerProvidingEntity(),
                 this.getPowerProvidingEntity_NestedPowerConsumingEntities(), "powerProvidingEntity", null, 0, 1,
                 PowerConsumingEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        this.initEClass(this.mountedPowerDistributionUnitEClass, MountedPowerDistributionUnit.class,
+        initEClass(mountedPowerDistributionUnitEClass, MountedPowerDistributionUnit.class,
                 "MountedPowerDistributionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getMountedPowerDistributionUnit_ResourceContainer(),
+        initEReference(getMountedPowerDistributionUnit_ResourceContainer(),
                 theResourceenvironmentPackage.getResourceContainer(), null, "resourceContainer", null, 1, 1,
                 MountedPowerDistributionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-        this.initEClass(this.abstractPowerConsumingResourceEClass, AbstractPowerConsumingResource.class,
+        initEClass(abstractPowerConsumingResourceEClass, AbstractPowerConsumingResource.class,
                 "AbstractPowerConsumingResource", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getAbstractPowerConsumingResource_ProcessingResourceSpecification(),
+        initEReference(getAbstractPowerConsumingResource_ProcessingResourceSpecifications(),
                 theResourceenvironmentPackage.getProcessingResourceSpecification(), null,
-                "processingResourceSpecification", null, 1, 1, AbstractPowerConsumingResource.class, !IS_TRANSIENT,
+                "processingResourceSpecifications", null, 1, -1, AbstractPowerConsumingResource.class, !IS_TRANSIENT,
                 !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
                 !IS_ORDERED);
 
-        this.initEClass(this.powerInfrastructureRepositoryEClass, PowerInfrastructureRepository.class,
+        initEClass(powerInfrastructureRepositoryEClass, PowerInfrastructureRepository.class,
                 "PowerInfrastructureRepository", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerInfrastructureRepository_ContainedPowerProvidingEntities(),
+        initEReference(getPowerInfrastructureRepository_ContainedPowerProvidingEntities(),
                 this.getPowerProvidingEntity(), this.getPowerProvidingEntity_PowerInfrastructureModel(),
                 "containedPowerProvidingEntities", null, 0, -1, PowerInfrastructureRepository.class, !IS_TRANSIENT,
                 !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
                 IS_ORDERED);
 
-        this.initEClass(this.statefulPowerConsumingResourceEClass, StatefulPowerConsumingResource.class,
-                "StatefulPowerConsumingResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getStatefulPowerConsumingResource_PowerState(),
+        initEClass(statefulPowerConsumingResourceSetEClass, StatefulPowerConsumingResourceSet.class,
+                "StatefulPowerConsumingResourceSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEReference(getStatefulPowerConsumingResourceSet_PowerState(),
                 theBindingPackage.getAbstractPowerStateBinding(), null, "powerState", null, 1, 1,
-                StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                StatefulPowerConsumingResourceSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getStatefulPowerConsumingResource_StatefulResourcePowerBinding(),
+        initEReference(getStatefulPowerConsumingResourceSet_StatefulResourcePowerBinding(),
                 theBindingPackage.getStatefulResourcePowerBinding(), null, "statefulResourcePowerBinding", null, 1, 1,
-                StatefulPowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                StatefulPowerConsumingResourceSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-        this.initEClass(this.powerConsumingResourceEClass, PowerConsumingResource.class, "PowerConsumingResource",
+        initEClass(powerConsumingResourceSetEClass, PowerConsumingResourceSet.class, "PowerConsumingResourceSet",
                 !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getPowerConsumingResource_ResourcePowerAssemblyContext(),
+        initEReference(getPowerConsumingResourceSet_ResourcePowerAssemblyContext(),
                 theBindingPackage.getResourcePowerBinding(), null, "resourcePowerAssemblyContext", null, 0, 1,
-                PowerConsumingResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+                PowerConsumingResourceSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
                 IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Create resource
-        this.createResource(eNS_URI);
+        createResource(eNS_URI);
     }
 
 } // InfrastructurePackageImpl

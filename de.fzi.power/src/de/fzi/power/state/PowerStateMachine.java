@@ -14,9 +14,8 @@ import de.fzi.power.util.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.state.PowerStateMachine#getPowerStateRepository
- * <em>Power State Repository</em>}</li>
- * <li>{@link de.fzi.power.state.PowerStateMachine#getPowerStates <em>Power States</em>}</li>
+ *   <li>{@link de.fzi.power.state.PowerStateMachine#getPowerStateRepository <em>Power State Repository</em>}</li>
+ *   <li>{@link de.fzi.power.state.PowerStateMachine#getPowerStates <em>Power States</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.state.StatePackage#getPowerStateMachine()
@@ -25,16 +24,14 @@ import de.fzi.power.util.Entity;
  */
 public interface PowerStateMachine extends Entity {
     /**
-     * Returns the value of the '<em><b>Power State Repository</b></em>' container reference. It is
-     * bidirectional and its opposite is '
-     * {@link de.fzi.power.state.PowerStateRepository#getPowerStateMachines
-     * <em>Power State Machines</em>}'. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power State Repository</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.state.PowerStateRepository#getPowerStateMachines <em>Power State Machines</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power State Repository</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power State Repository</em>' container reference.
      * @see #setPowerStateRepository(PowerStateRepository)
      * @see de.fzi.power.state.StatePackage#getPowerStateMachine_PowerStateRepository()
@@ -45,28 +42,25 @@ public interface PowerStateMachine extends Entity {
     PowerStateRepository getPowerStateRepository();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.state.PowerStateMachine#getPowerStateRepository
-     * <em>Power State Repository</em>}' container reference. <!-- begin-user-doc --> <!--
+     * Sets the value of the '{@link de.fzi.power.state.PowerStateMachine#getPowerStateRepository <em>Power State Repository</em>}' container reference.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Power State Repository</em>' container reference.
+     * @param value the new value of the '<em>Power State Repository</em>' container reference.
      * @see #getPowerStateRepository()
      * @generated
      */
     void setPowerStateRepository(PowerStateRepository value);
 
     /**
-     * Returns the value of the '<em><b>Power States</b></em>' containment reference list. The list
-     * contents are of type {@link de.fzi.power.state.AbstractPowerState}. It is bidirectional and
-     * its opposite is '{@link de.fzi.power.state.AbstractPowerState#getPowerStateMachine
-     * <em>Power State Machine</em>}'. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power States</b></em>' containment reference list.
+     * The list contents are of type {@link de.fzi.power.state.AbstractPowerState}.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.state.AbstractPowerState#getPowerStateMachine <em>Power State Machine</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power States</em>' containment reference list isn't clear, there
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power States</em>' containment reference list.
      * @see de.fzi.power.state.StatePackage#getPowerStateMachine_PowerStates()
      * @see de.fzi.power.state.AbstractPowerState#getPowerStateMachine

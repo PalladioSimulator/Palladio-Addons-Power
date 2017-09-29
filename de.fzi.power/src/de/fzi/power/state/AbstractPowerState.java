@@ -12,8 +12,7 @@ import de.fzi.power.util.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.state.AbstractPowerState#getPowerStateMachine
- * <em>Power State Machine</em>}</li>
+ *   <li>{@link de.fzi.power.state.AbstractPowerState#getPowerStateMachine <em>Power State Machine</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.state.StatePackage#getAbstractPowerState()
@@ -22,15 +21,14 @@ import de.fzi.power.util.Entity;
  */
 public interface AbstractPowerState extends Entity {
     /**
-     * Returns the value of the '<em><b>Power State Machine</b></em>' container reference. It is
-     * bidirectional and its opposite is '{@link de.fzi.power.state.PowerStateMachine#getPowerStates
-     * <em>Power States</em>}'. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power State Machine</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.state.PowerStateMachine#getPowerStates <em>Power States</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power State Machine</em>' container reference isn't clear, there
      * really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power State Machine</em>' container reference.
      * @see #setPowerStateMachine(PowerStateMachine)
      * @see de.fzi.power.state.StatePackage#getAbstractPowerState_PowerStateMachine()

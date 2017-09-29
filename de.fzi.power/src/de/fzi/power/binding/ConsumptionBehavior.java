@@ -16,8 +16,8 @@ import tools.descartes.dlim.Sequence;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.ConsumptionBehavior#getPowerCurve <em>Power Curve</em>}</li>
- * <li>{@link de.fzi.power.binding.ConsumptionBehavior#getUnit <em>Unit</em>}</li>
+ *   <li>{@link de.fzi.power.binding.ConsumptionBehavior#getPowerCurve <em>Power Curve</em>}</li>
+ *   <li>{@link de.fzi.power.binding.ConsumptionBehavior#getUnit <em>Unit</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getConsumptionBehavior()
@@ -43,39 +43,34 @@ public interface ConsumptionBehavior extends Entity {
     Sequence getPowerCurve();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.ConsumptionBehavior#getPowerCurve
-     * <em>Power Curve</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Power Curve</em>' containment reference.
+     * Sets the value of the '{@link de.fzi.power.binding.ConsumptionBehavior#getPowerCurve <em>Power Curve</em>}' containment reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Power Curve</em>' containment reference.
      * @see #getPowerCurve()
      * @generated
      */
     void setPowerCurve(Sequence value);
 
     /**
-     * Returns the value of the '<em><b>Unit</b></em>' attribute. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Unit</b></em>' attribute.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Unit</em>' attribute isn't clear, there really should be more of a
      * description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Unit</em>' attribute.
      * @see #setUnit(Unit)
      * @see de.fzi.power.binding.BindingPackage#getConsumptionBehavior_Unit()
-     * @model dataType="org.palladiosimulator.metricspec.EJSUnit<de.fzi.power.util.Power>"
-     *        required="true"
+     * @model dataType="org.palladiosimulator.metricspec.EJSUnit<de.fzi.power.util.Power>" required="true"
      * @generated
      */
     Unit<Power> getUnit();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.ConsumptionBehavior#getUnit <em>Unit</em>}
-     * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Unit</em>' attribute.
+     * Sets the value of the '{@link de.fzi.power.binding.ConsumptionBehavior#getUnit <em>Unit</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Unit</em>' attribute.
      * @see #getUnit()
      * @generated
      */

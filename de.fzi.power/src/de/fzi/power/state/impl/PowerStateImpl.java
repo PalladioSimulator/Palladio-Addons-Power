@@ -16,7 +16,6 @@ import de.fzi.power.state.StatePackage;
 public class PowerStateImpl extends AbstractPowerStateImpl implements PowerState {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerStateImpl() {
@@ -25,7 +24,6 @@ public class PowerStateImpl extends AbstractPowerStateImpl implements PowerState
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

@@ -17,7 +17,6 @@ public class BlackBoxResourcePowerModelSpecificationImpl extends ResourcePowerMo
         implements BlackBoxResourcePowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected BlackBoxResourcePowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public class BlackBoxResourcePowerModelSpecificationImpl extends ResourcePowerMo
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

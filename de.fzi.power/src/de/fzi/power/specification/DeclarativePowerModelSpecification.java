@@ -10,8 +10,7 @@ package de.fzi.power.specification;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression
- * <em>Functional Expression</em>}</li>
+ *   <li>{@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression <em>Functional Expression</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.specification.SpecificationPackage#getDeclarativePowerModelSpecification()
@@ -37,12 +36,9 @@ public interface DeclarativePowerModelSpecification extends PowerModelSpecificat
     String getFunctionalExpression();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression
-     * <em>Functional Expression</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Functional Expression</em>' attribute.
+     * Sets the value of the '{@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression <em>Functional Expression</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Functional Expression</em>' attribute.
      * @see #getFunctionalExpression()
      * @generated
      */

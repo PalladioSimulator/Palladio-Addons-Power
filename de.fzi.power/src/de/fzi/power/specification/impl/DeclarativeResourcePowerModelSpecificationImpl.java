@@ -17,7 +17,6 @@ public class DeclarativeResourcePowerModelSpecificationImpl extends DeclarativeP
         implements DeclarativeResourcePowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected DeclarativeResourcePowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public class DeclarativeResourcePowerModelSpecificationImpl extends DeclarativeP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

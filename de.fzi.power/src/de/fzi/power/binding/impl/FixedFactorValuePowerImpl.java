@@ -18,7 +18,6 @@ import de.fzi.power.binding.FixedFactorValuePower;
 public class FixedFactorValuePowerImpl extends AbstractFixedFactorValueImpl<Power> implements FixedFactorValuePower {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected FixedFactorValuePowerImpl() {
@@ -27,7 +26,6 @@ public class FixedFactorValuePowerImpl extends AbstractFixedFactorValueImpl<Powe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

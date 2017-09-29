@@ -15,8 +15,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl#getResourcePowerModelSpecification
- * <em>Resource Power Model Specification</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.ResourcePowerBindingImpl#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}</li>
  * </ul>
  *
  * @generated
@@ -24,7 +23,6 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
 public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements ResourcePowerBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected ResourcePowerBindingImpl() {
@@ -33,7 +31,6 @@ public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -43,67 +40,60 @@ public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public ResourcePowerModelSpecification getResourcePowerModelSpecification() {
-        return (ResourcePowerModelSpecification) this.eDynamicGet(
+        return (ResourcePowerModelSpecification) eDynamicGet(
                 BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
                 BindingPackage.Literals.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public ResourcePowerModelSpecification basicGetResourcePowerModelSpecification() {
-        return (ResourcePowerModelSpecification) this.eDynamicGet(
+        return (ResourcePowerModelSpecification) eDynamicGet(
                 BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
                 BindingPackage.Literals.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setResourcePowerModelSpecification(
-            final ResourcePowerModelSpecification newResourcePowerModelSpecification) {
-        this.eDynamicSet(BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
+    public void setResourcePowerModelSpecification(ResourcePowerModelSpecification newResourcePowerModelSpecification) {
+        eDynamicSet(BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
                 BindingPackage.Literals.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION,
                 newResourcePowerModelSpecification);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            if (resolve) {
-                return this.getResourcePowerModelSpecification();
-            }
-            return this.basicGetResourcePowerModelSpecification();
+            if (resolve)
+                return getResourcePowerModelSpecification();
+            return basicGetResourcePowerModelSpecification();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            this.setResourcePowerModelSpecification((ResourcePowerModelSpecification) newValue);
+            setResourcePowerModelSpecification((ResourcePowerModelSpecification) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -111,14 +101,13 @@ public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            this.setResourcePowerModelSpecification((ResourcePowerModelSpecification) null);
+            setResourcePowerModelSpecification((ResourcePowerModelSpecification) null);
             return;
         }
         super.eUnset(featureID);
@@ -126,14 +115,13 @@ public class ResourcePowerBindingImpl extends PowerFactorBindingImpl implements 
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.RESOURCE_POWER_BINDING__RESOURCE_POWER_MODEL_SPECIFICATION:
-            return this.basicGetResourcePowerModelSpecification() != null;
+            return basicGetResourcePowerModelSpecification() != null;
         }
         return super.eIsSet(featureID);
     }

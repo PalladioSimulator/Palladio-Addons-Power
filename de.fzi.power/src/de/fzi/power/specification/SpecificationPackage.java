@@ -92,9 +92,9 @@ public interface SpecificationPackage extends EPackage {
     int POWER_MODEL_REPOSITORY_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.PowerModelSpecificationImpl
-     * <em>Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.PowerModelSpecificationImpl <em>Power Model
+     * Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see de.fzi.power.specification.impl.PowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelSpecification()
@@ -148,10 +148,9 @@ public interface SpecificationPackage extends EPackage {
     int POWER_MODEL_SPECIFICATION_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 2;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
-     * <em>Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl <em>Resource
+     * Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getResourcePowerModelSpecification()
@@ -205,8 +204,8 @@ public interface SpecificationPackage extends EPackage {
     int RESOURCE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 0;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
      * <em>Distribution Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -308,8 +307,8 @@ public interface SpecificationPackage extends EPackage {
     int CONSUMPTION_FACTOR_FEATURE_COUNT = UtilPackage.ENTITY_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '{@link de.fzi.power.specification.impl.FixedFactorImpl
-     * <em>Fixed Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * The meta object id for the '{@link de.fzi.power.specification.impl.FixedFactorImpl <em>Fixed
+     * Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see de.fzi.power.specification.impl.FixedFactorImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getFixedFactor()
@@ -409,8 +408,8 @@ public interface SpecificationPackage extends EPackage {
     int MEASURED_FACTOR_FEATURE_COUNT = CONSUMPTION_FACTOR_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
      * <em>Declarative Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -475,8 +474,8 @@ public interface SpecificationPackage extends EPackage {
     int DECLARATIVE_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 1;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
      * <em>Declarative Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
@@ -532,9 +531,8 @@ public interface SpecificationPackage extends EPackage {
     int DECLARATIVE_RESOURCE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION;
 
     /**
-     * The number of structural features of the '
-     * <em>Declarative Resource Power Model Specification</em>' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The number of structural features of the '<em>Declarative Resource Power Model
+     * Specification</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -543,8 +541,8 @@ public interface SpecificationPackage extends EPackage {
             + 0;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
      * <em>Declarative Distribution Power Model Specification</em>}' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -600,9 +598,8 @@ public interface SpecificationPackage extends EPackage {
     int DECLARATIVE_DISTRIBUTION_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION = DECLARATIVE_POWER_MODEL_SPECIFICATION__FUNCTIONAL_EXPRESSION;
 
     /**
-     * The number of structural features of the '
-     * <em>Declarative Distribution Power Model Specification</em>' class. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The number of structural features of the '<em>Declarative Distribution Power Model
+     * Specification</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -611,10 +608,9 @@ public interface SpecificationPackage extends EPackage {
             + 0;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
-     * <em>Black Box Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl <em>Black Box
+     * Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
      * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxPowerModelSpecification()
@@ -668,8 +664,8 @@ public interface SpecificationPackage extends EPackage {
     int BLACK_BOX_POWER_MODEL_SPECIFICATION_FEATURE_COUNT = POWER_MODEL_SPECIFICATION_FEATURE_COUNT + 0;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
      * <em>Black Box Distribution Power Model Specification</em>}' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
@@ -716,9 +712,8 @@ public interface SpecificationPackage extends EPackage {
     int BLACK_BOX_DISTRIBUTION_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = DISTRIBUTION_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
 
     /**
-     * The number of structural features of the '
-     * <em>Black Box Distribution Power Model Specification</em>' class. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * The number of structural features of the '<em>Black Box Distribution Power Model
+     * Specification</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -727,9 +722,9 @@ public interface SpecificationPackage extends EPackage {
             + 0;
 
     /**
-     * The meta object id for the '
-     * {@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
-     * <em>Black Box Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
+     * The meta object id for the
+     * '{@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl <em>Black
+     * Box Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
      * @see de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
@@ -775,9 +770,8 @@ public interface SpecificationPackage extends EPackage {
     int BLACK_BOX_RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS = RESOURCE_POWER_MODEL_SPECIFICATION__CONSUMPTION_FACTORS;
 
     /**
-     * The number of structural features of the '
-     * <em>Black Box Resource Power Model Specification</em>' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * The number of structural features of the '<em>Black Box Resource Power Model
+     * Specification</em>' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
@@ -796,12 +790,12 @@ public interface SpecificationPackage extends EPackage {
     EClass getPowerModelRepository();
 
     /**
-     * Returns the meta object for the containment reference list '
-     * {@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications
-     * <em>Power Model Specifications</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the meta object for the containment reference list
+     * '{@link de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications <em>Power
+     * Model Specifications</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @return the meta object for the containment reference list '
-     *         <em>Power Model Specifications</em>'.
+     * @return the meta object for the containment reference list '<em>Power Model
+     *         Specifications</em>'.
      * @see de.fzi.power.specification.PowerModelRepository#getPowerModelSpecifications()
      * @see #getPowerModelRepository()
      * @generated
@@ -819,8 +813,8 @@ public interface SpecificationPackage extends EPackage {
     EClass getPowerModelSpecification();
 
     /**
-     * Returns the meta object for the container reference '
-     * {@link de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository
+     * Returns the meta object for the container reference
+     * '{@link de.fzi.power.specification.PowerModelSpecification#getPowermodelrepository
      * <em>Powermodelrepository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the container reference '<em>Powermodelrepository</em>'.
@@ -831,8 +825,8 @@ public interface SpecificationPackage extends EPackage {
     EReference getPowerModelSpecification_Powermodelrepository();
 
     /**
-     * Returns the meta object for the containment reference list '
-     * {@link de.fzi.power.specification.PowerModelSpecification#getConsumptionFactors
+     * Returns the meta object for the containment reference list
+     * '{@link de.fzi.power.specification.PowerModelSpecification#getConsumptionFactors
      * <em>Consumption Factors</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the containment reference list '<em>Consumption Factors</em>'.
@@ -843,9 +837,9 @@ public interface SpecificationPackage extends EPackage {
     EReference getPowerModelSpecification_ConsumptionFactors();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.ResourcePowerModelSpecification
-     * <em>Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.ResourcePowerModelSpecification <em>Resource Power Model
+     * Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Resource Power Model Specification</em>'.
      * @see de.fzi.power.specification.ResourcePowerModelSpecification
@@ -854,10 +848,9 @@ public interface SpecificationPackage extends EPackage {
     EClass getResourcePowerModelSpecification();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.DistributionPowerModelSpecification
-     * <em>Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-     * -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.DistributionPowerModelSpecification <em>Distribution Power
+     * Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Distribution Power Model Specification</em>'.
      * @see de.fzi.power.specification.DistributionPowerModelSpecification
@@ -866,8 +859,8 @@ public interface SpecificationPackage extends EPackage {
     EClass getDistributionPowerModelSpecification();
 
     /**
-     * Returns the meta object for class '{@link de.fzi.power.specification.FixedFactor
-     * <em>Fixed Factor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the meta object for class '{@link de.fzi.power.specification.FixedFactor <em>Fixed
+     * Factor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Fixed Factor</em>'.
      * @see de.fzi.power.specification.FixedFactor
@@ -886,8 +879,8 @@ public interface SpecificationPackage extends EPackage {
     EClass getConsumptionFactor();
 
     /**
-     * Returns the meta object for the container reference '
-     * {@link de.fzi.power.specification.ConsumptionFactor#getPowerModel <em>Power Model</em>}'.
+     * Returns the meta object for the container reference
+     * '{@link de.fzi.power.specification.ConsumptionFactor#getPowerModel <em>Power Model</em>}'.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the container reference '<em>Power Model</em>'.
@@ -920,10 +913,9 @@ public interface SpecificationPackage extends EPackage {
     EReference getMeasuredFactor_MetricType();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.DeclarativePowerModelSpecification
-     * <em>Declarative Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-     * -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.DeclarativePowerModelSpecification <em>Declarative Power
+     * Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Declarative Power Model Specification</em>'.
      * @see de.fzi.power.specification.DeclarativePowerModelSpecification
@@ -932,8 +924,8 @@ public interface SpecificationPackage extends EPackage {
     EClass getDeclarativePowerModelSpecification();
 
     /**
-     * Returns the meta object for the attribute '
-     * {@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression
+     * Returns the meta object for the attribute
+     * '{@link de.fzi.power.specification.DeclarativePowerModelSpecification#getFunctionalExpression
      * <em>Functional Expression</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for the attribute '<em>Functional Expression</em>'.
@@ -944,10 +936,9 @@ public interface SpecificationPackage extends EPackage {
     EAttribute getDeclarativePowerModelSpecification_FunctionalExpression();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
-     * <em>Declarative Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification <em>Declarative
+     * Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Declarative Resource Power Model Specification</em>'.
      * @see de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
@@ -956,22 +947,22 @@ public interface SpecificationPackage extends EPackage {
     EClass getDeclarativeResourcePowerModelSpecification();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
      * <em>Declarative Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *
-     * @return the meta object for class '
-     *         <em>Declarative Distribution Power Model Specification</em>'.
+     * @return the meta object for class '<em>Declarative Distribution Power Model
+     *         Specification</em>'.
      * @see de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
      * @generated
      */
     EClass getDeclarativeDistributionPowerModelSpecification();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.BlackBoxPowerModelSpecification
-     * <em>Black Box Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.BlackBoxPowerModelSpecification <em>Black Box Power Model
+     * Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Black Box Power Model Specification</em>'.
      * @see de.fzi.power.specification.BlackBoxPowerModelSpecification
@@ -980,23 +971,21 @@ public interface SpecificationPackage extends EPackage {
     EClass getBlackBoxPowerModelSpecification();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
-     * <em>Black Box Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification <em>Black Box
+     * Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @return the meta object for class '<em>Black Box Distribution Power Model Specification</em>
-     *         '.
+     * @return the meta object for class '<em>Black Box Distribution Power Model
+     *         Specification</em>'.
      * @see de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
      * @generated
      */
     EClass getBlackBoxDistributionPowerModelSpecification();
 
     /**
-     * Returns the meta object for class '
-     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
-     * <em>Black Box Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the meta object for class
+     * '{@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification <em>Black Box
+     * Resource Power Model Specification</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Black Box Resource Power Model Specification</em>'.
      * @see de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
@@ -1027,9 +1016,9 @@ public interface SpecificationPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.PowerModelRepositoryImpl
-         * <em>Power Model Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.PowerModelRepositoryImpl <em>Power Model
+         * Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.PowerModelRepositoryImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelRepository()
@@ -1047,9 +1036,9 @@ public interface SpecificationPackage extends EPackage {
                 .getPowerModelRepository_PowerModelSpecifications();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.PowerModelSpecificationImpl
-         * <em>Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.PowerModelSpecificationImpl <em>Power Model
+         * Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.PowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getPowerModelSpecification()
@@ -1076,10 +1065,9 @@ public interface SpecificationPackage extends EPackage {
                 .getPowerModelSpecification_ConsumptionFactors();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
-         * <em>Resource Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
-         * end-user-doc -->
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl <em>Resource
+         * Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.ResourcePowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getResourcePowerModelSpecification()
@@ -1088,8 +1076,8 @@ public interface SpecificationPackage extends EPackage {
         EClass RESOURCE_POWER_MODEL_SPECIFICATION = eINSTANCE.getResourcePowerModelSpecification();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.DistributionPowerModelSpecificationImpl
          * <em>Distribution Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
          *
@@ -1110,9 +1098,9 @@ public interface SpecificationPackage extends EPackage {
         EClass FIXED_FACTOR = eINSTANCE.getFixedFactor();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.ConsumptionFactorImpl <em>Consumption Factor</em>}
-         * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.ConsumptionFactorImpl <em>Consumption
+         * Factor</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.ConsumptionFactorImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getConsumptionFactor()
@@ -1129,8 +1117,8 @@ public interface SpecificationPackage extends EPackage {
         EReference CONSUMPTION_FACTOR__POWER_MODEL = eINSTANCE.getConsumptionFactor_PowerModel();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.MeasuredFactorImpl <em>Measured Factor</em>}'
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.MeasuredFactorImpl <em>Measured Factor</em>}'
          * class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.MeasuredFactorImpl
@@ -1148,8 +1136,8 @@ public interface SpecificationPackage extends EPackage {
         EReference MEASURED_FACTOR__METRIC_TYPE = eINSTANCE.getMeasuredFactor_MetricType();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.DeclarativePowerModelSpecificationImpl
          * <em>Declarative Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
          *
@@ -1169,8 +1157,8 @@ public interface SpecificationPackage extends EPackage {
                 .getDeclarativePowerModelSpecification_FunctionalExpression();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.DeclarativeResourcePowerModelSpecificationImpl
          * <em>Declarative Resource Power Model Specification</em>}' class. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          *
@@ -1182,8 +1170,8 @@ public interface SpecificationPackage extends EPackage {
                 .getDeclarativeResourcePowerModelSpecification();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.DeclarativeDistributionPowerModelSpecificationImpl
          * <em>Declarative Distribution Power Model Specification</em>}' class. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
          *
@@ -1195,10 +1183,9 @@ public interface SpecificationPackage extends EPackage {
                 .getDeclarativeDistributionPowerModelSpecification();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
-         * <em>Black Box Power Model Specification</em>}' class. <!-- begin-user-doc --> <!--
-         * end-user-doc -->
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl <em>Black Box
+         * Power Model Specification</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see de.fzi.power.specification.impl.BlackBoxPowerModelSpecificationImpl
          * @see de.fzi.power.specification.impl.SpecificationPackageImpl#getBlackBoxPowerModelSpecification()
@@ -1207,8 +1194,8 @@ public interface SpecificationPackage extends EPackage {
         EClass BLACK_BOX_POWER_MODEL_SPECIFICATION = eINSTANCE.getBlackBoxPowerModelSpecification();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.BlackBoxDistributionPowerModelSpecificationImpl
          * <em>Black Box Distribution Power Model Specification</em>}' class. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
          *
@@ -1220,8 +1207,8 @@ public interface SpecificationPackage extends EPackage {
                 .getBlackBoxDistributionPowerModelSpecification();
 
         /**
-         * The meta object literal for the '
-         * {@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
+         * The meta object literal for the
+         * '{@link de.fzi.power.specification.impl.BlackBoxResourcePowerModelSpecificationImpl
          * <em>Black Box Resource Power Model Specification</em>}' class. <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          *

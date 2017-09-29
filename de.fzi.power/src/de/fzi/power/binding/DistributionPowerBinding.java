@@ -12,8 +12,7 @@ import de.fzi.power.specification.DistributionPowerModelSpecification;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel
- * <em>Distribution Power Model</em>}</li>
+ *   <li>{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel <em>Distribution Power Model</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getDistributionPowerBinding()
@@ -39,12 +38,9 @@ public interface DistributionPowerBinding extends PowerFactorBinding {
     DistributionPowerModelSpecification getDistributionPowerModel();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel
-     * <em>Distribution Power Model</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Distribution Power Model</em>' reference.
+     * Sets the value of the '{@link de.fzi.power.binding.DistributionPowerBinding#getDistributionPowerModel <em>Distribution Power Model</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Distribution Power Model</em>' reference.
      * @see #getDistributionPowerModel()
      * @generated
      */

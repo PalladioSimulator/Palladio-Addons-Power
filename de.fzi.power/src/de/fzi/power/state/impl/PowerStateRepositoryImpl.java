@@ -22,8 +22,7 @@ import de.fzi.power.util.impl.EntityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.state.impl.PowerStateRepositoryImpl#getPowerStateMachines
- * <em>Power State Machines</em>}</li>
+ *   <li>{@link de.fzi.power.state.impl.PowerStateRepositoryImpl#getPowerStateMachines <em>Power State Machines</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,7 +30,6 @@ import de.fzi.power.util.impl.EntityImpl;
 public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRepository {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerStateRepositoryImpl() {
@@ -40,7 +38,6 @@ public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -50,28 +47,25 @@ public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     @SuppressWarnings("unchecked")
     public EList<PowerStateMachine> getPowerStateMachines() {
-        return (EList<PowerStateMachine>) this.eDynamicGet(StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES,
+        return (EList<PowerStateMachine>) eDynamicGet(StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES,
                 StatePackage.Literals.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPowerStateMachines()).basicAdd(otherEnd,
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) getPowerStateMachines()).basicAdd(otherEnd,
                     msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -79,45 +73,41 @@ public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            return ((InternalEList<?>) this.getPowerStateMachines()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getPowerStateMachines()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            return this.getPowerStateMachines();
+            return getPowerStateMachines();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            this.getPowerStateMachines().clear();
-            this.getPowerStateMachines().addAll((Collection<? extends PowerStateMachine>) newValue);
+            getPowerStateMachines().clear();
+            getPowerStateMachines().addAll((Collection<? extends PowerStateMachine>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -125,14 +115,13 @@ public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            this.getPowerStateMachines().clear();
+            getPowerStateMachines().clear();
             return;
         }
         super.eUnset(featureID);
@@ -140,14 +129,13 @@ public class PowerStateRepositoryImpl extends EntityImpl implements PowerStateRe
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case StatePackage.POWER_STATE_REPOSITORY__POWER_STATE_MACHINES:
-            return !this.getPowerStateMachines().isEmpty();
+            return !getPowerStateMachines().isEmpty();
         }
         return super.eIsSet(featureID);
     }

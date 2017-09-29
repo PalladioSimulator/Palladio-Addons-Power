@@ -17,31 +17,29 @@ import de.fzi.power.state.TransitionState;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class StateFactoryImpl extends EFactoryImpl implements StateFactory {
     /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public static StateFactory init() {
         try {
-            final StateFactory theStateFactory = (StateFactory) EPackage.Registry.INSTANCE
-                    .getEFactory(StatePackage.eNS_URI);
+            StateFactory theStateFactory = (StateFactory) EPackage.Registry.INSTANCE.getEFactory(StatePackage.eNS_URI);
             if (theStateFactory != null) {
                 return theStateFactory;
             }
-        } catch (final Exception exception) {
+        } catch (Exception exception) {
             EcorePlugin.INSTANCE.log(exception);
         }
         return new StateFactoryImpl();
     }
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public StateFactoryImpl() {
@@ -50,20 +48,19 @@ public class StateFactoryImpl extends EFactoryImpl implements StateFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public EObject create(final EClass eClass) {
+    public EObject create(EClass eClass) {
         switch (eClass.getClassifierID()) {
         case StatePackage.POWER_STATE_REPOSITORY:
-            return this.createPowerStateRepository();
+            return (EObject) createPowerStateRepository();
         case StatePackage.TRANSITION_STATE:
-            return this.createTransitionState();
+            return (EObject) createTransitionState();
         case StatePackage.POWER_STATE:
-            return this.createPowerState();
+            return (EObject) createPowerState();
         case StatePackage.POWER_STATE_MACHINE:
-            return this.createPowerStateMachine();
+            return (EObject) createPowerStateMachine();
         default:
             throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -71,61 +68,55 @@ public class StateFactoryImpl extends EFactoryImpl implements StateFactory {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerStateRepository createPowerStateRepository() {
-        final PowerStateRepositoryImpl powerStateRepository = new PowerStateRepositoryImpl();
+        PowerStateRepositoryImpl powerStateRepository = new PowerStateRepositoryImpl();
         return powerStateRepository;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public TransitionState createTransitionState() {
-        final TransitionStateImpl transitionState = new TransitionStateImpl();
+        TransitionStateImpl transitionState = new TransitionStateImpl();
         return transitionState;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerState createPowerState() {
-        final PowerStateImpl powerState = new PowerStateImpl();
+        PowerStateImpl powerState = new PowerStateImpl();
         return powerState;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerStateMachine createPowerStateMachine() {
-        final PowerStateMachineImpl powerStateMachine = new PowerStateMachineImpl();
+        PowerStateMachineImpl powerStateMachine = new PowerStateMachineImpl();
         return powerStateMachine;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public StatePackage getStatePackage() {
-        return (StatePackage) this.getEPackage();
+        return (StatePackage) getEPackage();
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @deprecated
      * @generated
      */

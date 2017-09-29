@@ -22,10 +22,8 @@ import de.fzi.power.state.PowerStateMachine;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateMachine
- * <em>Power State Machine</em>}</li>
- * <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateBindings
- * <em>Power State Bindings</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateMachine <em>Power State Machine</em>}</li>
+ *   <li>{@link de.fzi.power.binding.impl.StatefulResourcePowerBindingImpl#getPowerStateBindings <em>Power State Bindings</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,7 +31,6 @@ import de.fzi.power.state.PowerStateMachine;
 public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implements StatefulResourcePowerBinding {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected StatefulResourcePowerBindingImpl() {
@@ -42,7 +39,6 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -52,61 +48,55 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerStateMachine getPowerStateMachine() {
-        return (PowerStateMachine) this.eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+        return (PowerStateMachine) eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
                 BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public PowerStateMachine basicGetPowerStateMachine() {
-        return (PowerStateMachine) this.eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+        return (PowerStateMachine) eDynamicGet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
                 BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, false, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setPowerStateMachine(final PowerStateMachine newPowerStateMachine) {
-        this.eDynamicSet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
+    public void setPowerStateMachine(PowerStateMachine newPowerStateMachine) {
+        eDynamicSet(BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE,
                 BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE, newPowerStateMachine);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     @SuppressWarnings("unchecked")
     public EList<AbstractPowerStateBinding> getPowerStateBindings() {
-        return (EList<AbstractPowerStateBinding>) this.eDynamicGet(
+        return (EList<AbstractPowerStateBinding>) eDynamicGet(
                 BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS,
                 BindingPackage.Literals.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            return ((InternalEList<InternalEObject>) (InternalEList<?>) this.getPowerStateBindings()).basicAdd(otherEnd,
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) getPowerStateBindings()).basicAdd(otherEnd,
                     msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -114,53 +104,48 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            return ((InternalEList<?>) this.getPowerStateBindings()).basicRemove(otherEnd, msgs);
+            return ((InternalEList<?>) getPowerStateBindings()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
-            if (resolve) {
-                return this.getPowerStateMachine();
-            }
-            return this.basicGetPowerStateMachine();
+            if (resolve)
+                return getPowerStateMachine();
+            return basicGetPowerStateMachine();
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            return this.getPowerStateBindings();
+            return getPowerStateBindings();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
-            this.setPowerStateMachine((PowerStateMachine) newValue);
+            setPowerStateMachine((PowerStateMachine) newValue);
             return;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            this.getPowerStateBindings().clear();
-            this.getPowerStateBindings().addAll((Collection<? extends AbstractPowerStateBinding>) newValue);
+            getPowerStateBindings().clear();
+            getPowerStateBindings().addAll((Collection<? extends AbstractPowerStateBinding>) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -168,17 +153,16 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
-            this.setPowerStateMachine((PowerStateMachine) null);
+            setPowerStateMachine((PowerStateMachine) null);
             return;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            this.getPowerStateBindings().clear();
+            getPowerStateBindings().clear();
             return;
         }
         super.eUnset(featureID);
@@ -186,16 +170,15 @@ public class StatefulResourcePowerBindingImpl extends PowerBindingImpl implement
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_MACHINE:
-            return this.basicGetPowerStateMachine() != null;
+            return basicGetPowerStateMachine() != null;
         case BindingPackage.STATEFUL_RESOURCE_POWER_BINDING__POWER_STATE_BINDINGS:
-            return !this.getPowerStateBindings().isEmpty();
+            return !getPowerStateBindings().isEmpty();
         }
         return super.eIsSet(featureID);
     }

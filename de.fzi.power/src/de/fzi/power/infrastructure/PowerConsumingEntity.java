@@ -12,8 +12,7 @@ import de.fzi.power.util.Entity;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity
- * <em>Power Providing Entity</em>}</li>
+ *   <li>{@link de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity <em>Power Providing Entity</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.infrastructure.InfrastructurePackage#getPowerConsumingEntity()
@@ -22,16 +21,14 @@ import de.fzi.power.util.Entity;
  */
 public interface PowerConsumingEntity extends Entity {
     /**
-     * Returns the value of the '<em><b>Power Providing Entity</b></em>' container reference. It is
-     * bidirectional and its opposite is '
-     * {@link de.fzi.power.infrastructure.PowerProvidingEntity#getNestedPowerConsumingEntities
-     * <em>Nested Power Consuming Entities</em>}'. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power Providing Entity</b></em>' container reference.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.infrastructure.PowerProvidingEntity#getNestedPowerConsumingEntities <em>Nested Power Consuming Entities</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power Providing Entity</em>' container reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power Providing Entity</em>' container reference.
      * @see #setPowerProvidingEntity(PowerProvidingEntity)
      * @see de.fzi.power.infrastructure.InfrastructurePackage#getPowerConsumingEntity_PowerProvidingEntity()
@@ -42,13 +39,10 @@ public interface PowerConsumingEntity extends Entity {
     PowerProvidingEntity getPowerProvidingEntity();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity
-     * <em>Power Providing Entity</em>}' container reference. <!-- begin-user-doc --> <!--
+     * Sets the value of the '{@link de.fzi.power.infrastructure.PowerConsumingEntity#getPowerProvidingEntity <em>Power Providing Entity</em>}' container reference.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Power Providing Entity</em>' container reference.
+     * @param value the new value of the '<em>Power Providing Entity</em>' container reference.
      * @see #getPowerProvidingEntity()
      * @generated
      */

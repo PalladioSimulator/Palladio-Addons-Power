@@ -181,8 +181,8 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.PowerModelRepository <em>Power Model Repository</em>}'.
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.PowerModelRepository <em>Power Model Repository</em>}'.
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
@@ -196,11 +196,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.PowerModelSpecification <em>Power Model Specification</em>}
-     * '. <!-- begin-user-doc --> This default implementation returns null so that we can easily
-     * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.PowerModelSpecification <em>Power Model
+     * Specification</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.PowerModelSpecification
@@ -211,11 +211,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.ResourcePowerModelSpecification
-     * <em>Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
-     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.ResourcePowerModelSpecification <em>Resource Power Model
+     * Specification</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.ResourcePowerModelSpecification
@@ -226,11 +226,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.DistributionPowerModelSpecification
-     * <em>Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This default
-     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.DistributionPowerModelSpecification <em>Distribution Power
+     * Model Specification</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.DistributionPowerModelSpecification
@@ -285,11 +285,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.DeclarativePowerModelSpecification
-     * <em>Declarative Power Model Specification</em>}'. <!-- begin-user-doc --> This default
-     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.DeclarativePowerModelSpecification <em>Declarative Power
+     * Model Specification</em>}'. <!-- begin-user-doc --> This default implementation returns null
+     * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+     * all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.DeclarativePowerModelSpecification
@@ -300,11 +300,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
-     * <em>Declarative Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This
-     * default implementation returns null so that we can easily ignore cases; it's useful to ignore
-     * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.DeclarativeResourcePowerModelSpecification <em>Declarative
+     * Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
+     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.DeclarativeResourcePowerModelSpecification
@@ -315,8 +315,8 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.DeclarativeDistributionPowerModelSpecification
      * <em>Declarative Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This
      * default implementation returns null so that we can easily ignore cases; it's useful to ignore
      * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -330,11 +330,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.BlackBoxPowerModelSpecification
-     * <em>Black Box Power Model Specification</em>}'. <!-- begin-user-doc --> This default
-     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
-     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.BlackBoxPowerModelSpecification <em>Black Box Power Model
+     * Specification</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.BlackBoxPowerModelSpecification
@@ -345,11 +345,11 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
-     * <em>Black Box Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This
-     * default implementation returns null so that we can easily ignore cases; it's useful to ignore
-     * a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification <em>Black Box
+     * Distribution Power Model Specification</em>}'. <!-- begin-user-doc --> This default
+     * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
+     * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.specification.BlackBoxDistributionPowerModelSpecification
@@ -360,9 +360,9 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification
-     * <em>Black Box Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
+     * Creates a new adapter for an object of class
+     * '{@link de.fzi.power.specification.BlackBoxResourcePowerModelSpecification <em>Black Box
+     * Resource Power Model Specification</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
@@ -389,10 +389,10 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement
-     * <em>Named Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so
-     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
-     * the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.NamedElement <em>Named
+     * Element</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+     * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+     * cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.util.NamedElement
@@ -403,10 +403,10 @@ public class SpecificationAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity <em>Entity</em>
-     * }'. <!-- begin-user-doc --> This default implementation returns null so that we can easily
-     * ignore cases; it's useful to ignore a case when inheritance will catch all the cases anyway.
-     * <!-- end-user-doc -->
+     * Creates a new adapter for an object of class '{@link de.fzi.power.util.Entity
+     * <em>Entity</em>}'. <!-- begin-user-doc --> This default implementation returns null so that
+     * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+     * cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see de.fzi.power.util.Entity

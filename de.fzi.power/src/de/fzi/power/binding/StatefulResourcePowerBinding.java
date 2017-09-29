@@ -14,10 +14,8 @@ import de.fzi.power.state.PowerStateMachine;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine
- * <em>Power State Machine</em>}</li>
- * <li>{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateBindings
- * <em>Power State Bindings</em>}</li>
+ *   <li>{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine <em>Power State Machine</em>}</li>
+ *   <li>{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateBindings <em>Power State Bindings</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getStatefulResourcePowerBinding()
@@ -26,14 +24,14 @@ import de.fzi.power.state.PowerStateMachine;
  */
 public interface StatefulResourcePowerBinding extends PowerBinding {
     /**
-     * Returns the value of the '<em><b>Power State Machine</b></em>' reference. <!-- begin-user-doc
+     * Returns the value of the '<em><b>Power State Machine</b></em>' reference.
+     * <!-- begin-user-doc
      * -->
      * <p>
      * If the meaning of the '<em>Power State Machine</em>' reference isn't clear, there really
      * should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power State Machine</em>' reference.
      * @see #setPowerStateMachine(PowerStateMachine)
      * @see de.fzi.power.binding.BindingPackage#getStatefulResourcePowerBinding_PowerStateMachine()
@@ -43,12 +41,9 @@ public interface StatefulResourcePowerBinding extends PowerBinding {
     PowerStateMachine getPowerStateMachine();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine
-     * <em>Power State Machine</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Power State Machine</em>' reference.
+     * Sets the value of the '{@link de.fzi.power.binding.StatefulResourcePowerBinding#getPowerStateMachine <em>Power State Machine</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Power State Machine</em>' reference.
      * @see #getPowerStateMachine()
      * @generated
      */
@@ -56,16 +51,14 @@ public interface StatefulResourcePowerBinding extends PowerBinding {
 
     /**
      * Returns the value of the '<em><b>Power State Bindings</b></em>' containment reference list.
-     * The list contents are of type {@link de.fzi.power.binding.AbstractPowerStateBinding}. It is
-     * bidirectional and its opposite is '
-     * {@link de.fzi.power.binding.AbstractPowerStateBinding#getStatefulResourcePowerBinding
-     * <em>Stateful Resource Power Binding</em>}'. <!-- begin-user-doc -->
+     * The list contents are of type {@link de.fzi.power.binding.AbstractPowerStateBinding}.
+     * It is bidirectional and its opposite is '{@link de.fzi.power.binding.AbstractPowerStateBinding#getStatefulResourcePowerBinding <em>Stateful Resource Power Binding</em>}'.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power State Bindings</em>' containment reference list isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power State Bindings</em>' containment reference list.
      * @see de.fzi.power.binding.BindingPackage#getStatefulResourcePowerBinding_PowerStateBindings()
      * @see de.fzi.power.binding.AbstractPowerStateBinding#getStatefulResourcePowerBinding

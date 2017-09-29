@@ -17,7 +17,6 @@ public abstract class BlackBoxPowerModelSpecificationImpl extends PowerModelSpec
         implements BlackBoxPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected BlackBoxPowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public abstract class BlackBoxPowerModelSpecificationImpl extends PowerModelSpec
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

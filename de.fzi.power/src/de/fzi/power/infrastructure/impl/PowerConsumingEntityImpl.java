@@ -18,8 +18,7 @@ import de.fzi.power.util.impl.EntityImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl#getPowerProvidingEntity
- * <em>Power Providing Entity</em>}</li>
+ *   <li>{@link de.fzi.power.infrastructure.impl.PowerConsumingEntityImpl#getPowerProvidingEntity <em>Power Providing Entity</em>}</li>
  * </ul>
  *
  * @generated
@@ -27,7 +26,6 @@ import de.fzi.power.util.impl.EntityImpl;
 public abstract class PowerConsumingEntityImpl extends EntityImpl implements PowerConsumingEntity {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected PowerConsumingEntityImpl() {
@@ -36,7 +34,6 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -46,81 +43,72 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public PowerProvidingEntity getPowerProvidingEntity() {
-        return (PowerProvidingEntity) this.eDynamicGet(
-                InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY,
+        return (PowerProvidingEntity) eDynamicGet(InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY,
                 InfrastructurePackage.Literals.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
-    public NotificationChain basicSetPowerProvidingEntity(final PowerProvidingEntity newPowerProvidingEntity,
+    public NotificationChain basicSetPowerProvidingEntity(PowerProvidingEntity newPowerProvidingEntity,
             NotificationChain msgs) {
-        msgs = this.eBasicSetContainer((InternalEObject) newPowerProvidingEntity,
+        msgs = eBasicSetContainer((InternalEObject) newPowerProvidingEntity,
                 InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY, msgs);
         return msgs;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setPowerProvidingEntity(final PowerProvidingEntity newPowerProvidingEntity) {
-        this.eDynamicSet(InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY,
+    public void setPowerProvidingEntity(PowerProvidingEntity newPowerProvidingEntity) {
+        eDynamicSet(InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY,
                 InfrastructurePackage.Literals.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY, newPowerProvidingEntity);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, NotificationChain msgs) {
+    public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            if (this.eInternalContainer() != null) {
-                msgs = this.eBasicRemoveFromContainer(msgs);
-            }
-            return this.basicSetPowerProvidingEntity((PowerProvidingEntity) otherEnd, msgs);
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            return basicSetPowerProvidingEntity((PowerProvidingEntity) otherEnd, msgs);
         }
         return super.eInverseAdd(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
-            final NotificationChain msgs) {
+    public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            return this.basicSetPowerProvidingEntity(null, msgs);
+            return basicSetPowerProvidingEntity(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public NotificationChain eBasicRemoveFromContainerFeature(final NotificationChain msgs) {
-        switch (this.eContainerFeatureID()) {
+    public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+        switch (eContainerFeatureID()) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            return this.eInternalContainer().eInverseRemove(this,
+            return eInternalContainer().eInverseRemove(this,
                     InfrastructurePackage.POWER_PROVIDING_ENTITY__NESTED_POWER_CONSUMING_ENTITIES,
                     PowerProvidingEntity.class, msgs);
         }
@@ -129,28 +117,26 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            return this.getPowerProvidingEntity();
+            return getPowerProvidingEntity();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            this.setPowerProvidingEntity((PowerProvidingEntity) newValue);
+            setPowerProvidingEntity((PowerProvidingEntity) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -158,14 +144,13 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            this.setPowerProvidingEntity((PowerProvidingEntity) null);
+            setPowerProvidingEntity((PowerProvidingEntity) null);
             return;
         }
         super.eUnset(featureID);
@@ -173,14 +158,13 @@ public abstract class PowerConsumingEntityImpl extends EntityImpl implements Pow
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case InfrastructurePackage.POWER_CONSUMING_ENTITY__POWER_PROVIDING_ENTITY:
-            return this.getPowerProvidingEntity() != null;
+            return getPowerProvidingEntity() != null;
         }
         return super.eIsSet(featureID);
     }

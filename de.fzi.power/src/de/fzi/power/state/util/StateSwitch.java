@@ -22,21 +22,20 @@ import de.uka.ipd.sdq.identifier.Identifier;
  * each class of the model, starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
- *
  * @see de.fzi.power.state.StatePackage
  * @generated
  */
 public class StateSwitch<T> extends Switch<T> {
     /**
-     * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The cached model package
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     protected static StatePackage modelPackage;
 
     /**
-     * Creates an instance of the switch. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Creates an instance of the switch.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public StateSwitch() {
@@ -46,154 +45,124 @@ public class StateSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Checks whether this is a switch for the given package. <!-- begin-user-doc --> <!--
+     * Checks whether this is a switch for the given package.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param ePackage
-     *            the package in question.
+     * @param ePackage the package in question.
      * @return whether this is a switch for the given package.
      * @generated
      */
     @Override
-    protected boolean isSwitchFor(final EPackage ePackage) {
+    protected boolean isSwitchFor(EPackage ePackage) {
         return ePackage == modelPackage;
     }
 
     /**
-     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result;
-     * it yields that result. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @return the first non-null result returned by a <code>caseXXX</code> call.
      * @generated
      */
     @Override
-    protected T doSwitch(final int classifierID, final EObject theEObject) {
+    protected T doSwitch(int classifierID, EObject theEObject) {
         switch (classifierID) {
         case StatePackage.POWER_STATE_REPOSITORY: {
-            final PowerStateRepository powerStateRepository = (PowerStateRepository) theEObject;
-            T result = this.casePowerStateRepository(powerStateRepository);
-            if (result == null) {
-                result = this.caseEntity(powerStateRepository);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerStateRepository);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerStateRepository);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerStateRepository powerStateRepository = (PowerStateRepository) theEObject;
+            T result = casePowerStateRepository(powerStateRepository);
+            if (result == null)
+                result = caseEntity(powerStateRepository);
+            if (result == null)
+                result = caseIdentifier(powerStateRepository);
+            if (result == null)
+                result = caseNamedElement(powerStateRepository);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case StatePackage.ABSTRACT_POWER_STATE: {
-            final AbstractPowerState abstractPowerState = (AbstractPowerState) theEObject;
-            T result = this.caseAbstractPowerState(abstractPowerState);
-            if (result == null) {
-                result = this.caseEntity(abstractPowerState);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(abstractPowerState);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(abstractPowerState);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            AbstractPowerState abstractPowerState = (AbstractPowerState) theEObject;
+            T result = caseAbstractPowerState(abstractPowerState);
+            if (result == null)
+                result = caseEntity(abstractPowerState);
+            if (result == null)
+                result = caseIdentifier(abstractPowerState);
+            if (result == null)
+                result = caseNamedElement(abstractPowerState);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case StatePackage.TRANSITION_STATE: {
-            final TransitionState transitionState = (TransitionState) theEObject;
-            T result = this.caseTransitionState(transitionState);
-            if (result == null) {
-                result = this.caseAbstractPowerState(transitionState);
-            }
-            if (result == null) {
-                result = this.caseEntity(transitionState);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(transitionState);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(transitionState);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            TransitionState transitionState = (TransitionState) theEObject;
+            T result = caseTransitionState(transitionState);
+            if (result == null)
+                result = caseAbstractPowerState(transitionState);
+            if (result == null)
+                result = caseEntity(transitionState);
+            if (result == null)
+                result = caseIdentifier(transitionState);
+            if (result == null)
+                result = caseNamedElement(transitionState);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case StatePackage.POWER_STATE: {
-            final PowerState powerState = (PowerState) theEObject;
-            T result = this.casePowerState(powerState);
-            if (result == null) {
-                result = this.caseAbstractPowerState(powerState);
-            }
-            if (result == null) {
-                result = this.caseEntity(powerState);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerState);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerState);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerState powerState = (PowerState) theEObject;
+            T result = casePowerState(powerState);
+            if (result == null)
+                result = caseAbstractPowerState(powerState);
+            if (result == null)
+                result = caseEntity(powerState);
+            if (result == null)
+                result = caseIdentifier(powerState);
+            if (result == null)
+                result = caseNamedElement(powerState);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         case StatePackage.POWER_STATE_MACHINE: {
-            final PowerStateMachine powerStateMachine = (PowerStateMachine) theEObject;
-            T result = this.casePowerStateMachine(powerStateMachine);
-            if (result == null) {
-                result = this.caseEntity(powerStateMachine);
-            }
-            if (result == null) {
-                result = this.caseIdentifier(powerStateMachine);
-            }
-            if (result == null) {
-                result = this.caseNamedElement(powerStateMachine);
-            }
-            if (result == null) {
-                result = this.defaultCase(theEObject);
-            }
+            PowerStateMachine powerStateMachine = (PowerStateMachine) theEObject;
+            T result = casePowerStateMachine(powerStateMachine);
+            if (result == null)
+                result = caseEntity(powerStateMachine);
+            if (result == null)
+                result = caseIdentifier(powerStateMachine);
+            if (result == null)
+                result = caseNamedElement(powerStateMachine);
+            if (result == null)
+                result = defaultCase(theEObject);
             return result;
         }
         default:
-            return this.defaultCase(theEObject);
+            return defaultCase(theEObject);
         }
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Power State Repository</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Power State Repository</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Power State Repository</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Power State Repository</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerStateRepository(final PowerStateRepository object) {
+    public T casePowerStateRepository(PowerStateRepository object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '
-     * <em>Abstract Power State</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * Returns the result of interpreting the object as an instance of '<em>Abstract Power State</em>'.
+     * <!-- begin-user-doc --> This implementation returns null;
      * returning a non-null result will terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '
-     *         <em>Abstract Power State</em>'.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Abstract Power State</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseAbstractPowerState(final AbstractPowerState object) {
+    public T caseAbstractPowerState(AbstractPowerState object) {
         return null;
     }
 
@@ -201,14 +170,12 @@ public class StateSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Transition State</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
+     * @param object the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Transition State</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseTransitionState(final TransitionState object) {
+    public T caseTransitionState(TransitionState object) {
         return null;
     }
 
@@ -223,23 +190,20 @@ public class StateSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerState(final PowerState object) {
+    public T casePowerState(PowerState object) {
         return null;
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Power State Machine</em>
-     * '. <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
+     * Returns the result of interpreting the object as an instance of '<em>Power State Machine</em>'.
+     * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Power State Machine</em>
-     *         '.
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Power State Machine</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T casePowerStateMachine(final PowerStateMachine object) {
+    public T casePowerStateMachine(PowerStateMachine object) {
         return null;
     }
 
@@ -254,7 +218,7 @@ public class StateSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseIdentifier(final Identifier object) {
+    public T caseIdentifier(Identifier object) {
         return null;
     }
 
@@ -262,14 +226,12 @@ public class StateSwitch<T> extends Switch<T> {
      * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
      * <!-- begin-user-doc --> This implementation returns null; returning a non-null result will
      * terminate the switch. <!-- end-user-doc -->
-     *
-     * @param object
-     *            the target of the switch.
+     * @param object the target of the switch.
      * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseNamedElement(final NamedElement object) {
+    public T caseNamedElement(NamedElement object) {
         return null;
     }
 
@@ -284,7 +246,7 @@ public class StateSwitch<T> extends Switch<T> {
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseEntity(final Entity object) {
+    public T caseEntity(Entity object) {
         return null;
     }
 
@@ -300,7 +262,7 @@ public class StateSwitch<T> extends Switch<T> {
      * @generated
      */
     @Override
-    public T defaultCase(final EObject object) {
+    public T defaultCase(EObject object) {
         return null;
     }
 

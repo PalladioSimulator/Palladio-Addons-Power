@@ -12,8 +12,8 @@ import de.fzi.power.state.PowerState;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.PowerStateBinding#getPowerState <em>Power State</em>}</li>
- * <li>{@link de.fzi.power.binding.PowerStateBinding#getBinding <em>Binding</em>}</li>
+ *   <li>{@link de.fzi.power.binding.PowerStateBinding#getPowerState <em>Power State</em>}</li>
+ *   <li>{@link de.fzi.power.binding.PowerStateBinding#getBinding <em>Binding</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getPowerStateBinding()
@@ -22,13 +22,13 @@ import de.fzi.power.state.PowerState;
  */
 public interface PowerStateBinding extends AbstractPowerStateBinding {
     /**
-     * Returns the value of the '<em><b>Power State</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Power State</b></em>' reference.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Power State</em>' reference isn't clear, there really should be
      * more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Power State</em>' reference.
      * @see #setPowerState(PowerState)
      * @see de.fzi.power.binding.BindingPackage#getPowerStateBinding_PowerState()
@@ -38,24 +38,22 @@ public interface PowerStateBinding extends AbstractPowerStateBinding {
     PowerState getPowerState();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.PowerStateBinding#getPowerState
-     * <em>Power State</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Power State</em>' reference.
+     * Sets the value of the '{@link de.fzi.power.binding.PowerStateBinding#getPowerState <em>Power State</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Power State</em>' reference.
      * @see #getPowerState()
      * @generated
      */
     void setPowerState(PowerState value);
 
     /**
-     * Returns the value of the '<em><b>Binding</b></em>' reference. <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Binding</b></em>' reference.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Binding</em>' reference isn't clear, there really should be more
      * of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
      * @return the value of the '<em>Binding</em>' reference.
      * @see #setBinding(ResourcePowerBinding)
      * @see de.fzi.power.binding.BindingPackage#getPowerStateBinding_Binding()
@@ -65,11 +63,9 @@ public interface PowerStateBinding extends AbstractPowerStateBinding {
     ResourcePowerBinding getBinding();
 
     /**
-     * Sets the value of the '{@link de.fzi.power.binding.PowerStateBinding#getBinding
-     * <em>Binding</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Binding</em>' reference.
+     * Sets the value of the '{@link de.fzi.power.binding.PowerStateBinding#getBinding <em>Binding</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Binding</em>' reference.
      * @see #getBinding()
      * @generated
      */

@@ -10,8 +10,7 @@ import javax.measure.quantity.Dimensionless;
  *
  *
  * @see de.fzi.power.binding.BindingPackage#getFixedFactorValueDimensionless()
- * @model superTypes=
- *        "de.fzi.power.binding.AbstractFixedFactorValue<de.fzi.power.util.Dimensionless>"
+ * @model superTypes="de.fzi.power.binding.AbstractFixedFactorValue<de.fzi.power.util.Dimensionless>"
  * @generated
  */
 public interface FixedFactorValueDimensionless extends AbstractFixedFactorValue<Dimensionless> {

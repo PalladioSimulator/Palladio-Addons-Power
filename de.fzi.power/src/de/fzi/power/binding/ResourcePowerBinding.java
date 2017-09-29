@@ -12,8 +12,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification
- * <em>Resource Power Model Specification</em>}</li>
+ *   <li>{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}</li>
  * </ul>
  *
  * @see de.fzi.power.binding.BindingPackage#getResourcePowerBinding()
@@ -39,13 +38,10 @@ public interface ResourcePowerBinding extends PowerFactorBinding {
     ResourcePowerModelSpecification getResourcePowerModelSpecification();
 
     /**
-     * Sets the value of the '
-     * {@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification
-     * <em>Resource Power Model Specification</em>}' reference. <!-- begin-user-doc --> <!--
+     * Sets the value of the '{@link de.fzi.power.binding.ResourcePowerBinding#getResourcePowerModelSpecification <em>Resource Power Model Specification</em>}' reference.
+     * <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @param value
-     *            the new value of the '<em>Resource Power Model Specification</em>' reference.
+     * @param value the new value of the '<em>Resource Power Model Specification</em>' reference.
      * @see #getResourcePowerModelSpecification()
      * @generated
      */

@@ -17,7 +17,6 @@ public class BlackBoxDistributionPowerModelSpecificationImpl extends Distributio
         implements BlackBoxDistributionPowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected BlackBoxDistributionPowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public class BlackBoxDistributionPowerModelSpecificationImpl extends Distributio
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

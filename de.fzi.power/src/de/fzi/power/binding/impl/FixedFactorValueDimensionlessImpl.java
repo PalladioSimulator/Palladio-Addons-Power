@@ -19,7 +19,6 @@ public class FixedFactorValueDimensionlessImpl extends AbstractFixedFactorValueI
         implements FixedFactorValueDimensionless {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected FixedFactorValueDimensionlessImpl() {
@@ -28,7 +27,6 @@ public class FixedFactorValueDimensionlessImpl extends AbstractFixedFactorValueI
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

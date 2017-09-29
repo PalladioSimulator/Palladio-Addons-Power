@@ -17,7 +17,6 @@ public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpec
         implements ResourcePowerModelSpecification {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected ResourcePowerModelSpecificationImpl() {
@@ -26,7 +25,6 @@ public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpec
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override

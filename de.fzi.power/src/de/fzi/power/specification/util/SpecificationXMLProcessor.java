@@ -11,16 +11,16 @@ import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
 import de.fzi.power.specification.SpecificationPackage;
 
 /**
- * This class contains helper methods to serialize and deserialize XML documents <!-- begin-user-doc
+ * This class contains helper methods to serialize and deserialize XML documents
+ * <!-- begin-user-doc
  * --> <!-- end-user-doc -->
- *
  * @generated
  */
 public class SpecificationXMLProcessor extends XMLProcessor {
 
     /**
-     * Public constructor to instantiate the helper. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Public constructor to instantiate the helper.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     public SpecificationXMLProcessor() {
@@ -36,12 +36,12 @@ public class SpecificationXMLProcessor extends XMLProcessor {
      */
     @Override
     protected Map<String, Resource.Factory> getRegistrations() {
-        if (this.registrations == null) {
+        if (registrations == null) {
             super.getRegistrations();
-            this.registrations.put(XML_EXTENSION, new SpecificationResourceFactoryImpl());
-            this.registrations.put(STAR_EXTENSION, new SpecificationResourceFactoryImpl());
+            registrations.put(XML_EXTENSION, new SpecificationResourceFactoryImpl());
+            registrations.put(STAR_EXTENSION, new SpecificationResourceFactoryImpl());
         }
-        return this.registrations;
+        return registrations;
     }
 
 } // SpecificationXMLProcessor
