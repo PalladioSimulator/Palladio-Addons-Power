@@ -38,7 +38,7 @@ public class EarthRegression<Q extends Quantity> extends AbstractRegression<Q> {
 
     @Override
     protected String getAdditionalParameters() {
-        return "fast.k=5" + R_PARAM_SEPARATOR + "degree=8";
+        return "fast.k=20" + R_PARAM_SEPARATOR + "degree=8";
     }
     
     public String getMaximumForm() throws IOException {
