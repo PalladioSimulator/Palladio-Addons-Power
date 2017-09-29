@@ -101,20 +101,11 @@ public class Edp2Importer {
         final ExperimentRun run = EXPERIMENT_DATA_FACTORY.createExperimentRun(experimentSetting);
         run.setStartTime(new Date(minTimeStamp));
         run.setDuration(javax.measure.Measure.valueOf((maxTimeStamp-minTimeStamp)/1000d, SI.SECOND));
-        Pattern cpuPattern = Pattern.compile(".?cpu[0-9]+");
         for(Entry<MetricToCsvMapping, PeekingIterator<CSVRecord>> curEntry : metricsMap.entrySet()) {
-            final MeasuringPoint mPoint;
-            Matcher matcher = cpuPattern.matcher(curEntry.getKey().getCsvFileUri());
-            if(matcher.find()) {
-                int cpuid = Integer.parseInt(matcher.group().substring(4));
-                ActiveResourceMeasuringPoint activeResourceMeasuringPoint = EXTENDED_MEASURING_POINT_FACTORY.createActiveResourceMeasuringPoint();
-                activeResourceMeasuringPoint.setReplicaID(cpuid);
-                mPoint = activeResourceMeasuringPoint;
-            } else {                
-                final StringMeasuringPoint stringMeasuringPoint = MEASURING_POINT_FACTORY.createStringMeasuringPoint();
-                stringMeasuringPoint.setMeasuringPoint(curLabel);
-                mPoint = stringMeasuringPoint;
-            }
+            final MeasuringPoint mPoint;           
+            final StringMeasuringPoint stringMeasuringPoint = MEASURING_POINT_FACTORY.createStringMeasuringPoint();
+            stringMeasuringPoint.setMeasuringPoint(curLabel);
+            mPoint = stringMeasuringPoint;
             mPoint.setMeasuringPointRepository(this.measuringPointRepo);
             MetricToCsvMapping mapping = curEntry.getKey();
             MetricSetDescription descr = null;
