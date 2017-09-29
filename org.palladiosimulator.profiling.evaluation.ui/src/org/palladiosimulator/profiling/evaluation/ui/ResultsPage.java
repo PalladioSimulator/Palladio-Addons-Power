@@ -30,6 +30,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.measure.Measure;
+import javax.measure.unit.SI;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.text.Document;
@@ -79,6 +82,7 @@ public class ResultsPage extends WizardPage {
             Pattern pattern = Pattern.compile("/workloads/(.*?)_");
             String previousDescriptor = "";
             Map<ResourcePowerBinding, EvaluationResult> aggregateMap = new HashMap<ResourcePowerBinding, EvaluationResult>();
+            long curValue = 0;
             for(ExperimentRun run : runs) {           
                 final String curDescription = run.getExperimentSetting().getDescription();
                 final Matcher curMatcher = pattern.matcher(curDescription);
@@ -91,11 +95,6 @@ public class ResultsPage extends WizardPage {
                     equalMatches = curMatcher.group(1).equals(prevMatcher.group(1));
                 }
                 if(!(previousDescriptor.equals("RT_CURVE") || previousDescriptor.startsWith("TargetLevel")) &&(!equalMatches || (!curMatches && !headerEqual))) {
-                    if(prevMatches && !headerEqual) {
-                        addHeader(builder,prevMatcher.group().substring(0, prevMatcher.group().length()-1));
-                    } else {
-                        addHeader(builder,curDescription);
-                    }
                     for(ResourcePowerBinding binding : bindings) {
                         if(aggregateMap.get(binding) != null) {
                             EvaluationResult prevAggregate = aggregateMap.get(binding);
@@ -103,6 +102,11 @@ public class ResultsPage extends WizardPage {
                         }
                         EvaluationResult aggregate = new EvaluationResult(this.getDescription(), 0d, 0d, 0d);
                         aggregateMap.put(binding, aggregate);
+                    }
+                    if(prevMatches && !headerEqual) {
+                        addHeader(builder,prevMatcher.group().substring(0, prevMatcher.group().length()-1) + "\t" + run.getDuration().to(SI.MILLI(SI.SECOND)));
+                    } else {
+                        addHeader(builder,curDescription + "\t" + run.getDuration().to(SI.MILLI(SI.SECOND)));
                     }
                 }
                 for(ResourcePowerBinding binding : bindings) {
@@ -116,11 +120,11 @@ public class ResultsPage extends WizardPage {
 
             final Matcher prevMatcher = pattern.matcher(previousDescriptor);
             boolean prevMatches = prevMatcher.find();
-            if(prevMatches) {
-                addHeader(builder, prevMatcher.group(1));
-            } else {
-                addHeader(builder, previousDescriptor);
-            }
+//            if(prevMatches) {
+//                addHeader(builder, prevMatcher.group(1));
+//            } else {
+//                addHeader(builder, previousDescriptor);
+//            }
             for(ResourcePowerBinding binding : bindings) {
                 addResult(builder, binding, aggregateMap.get(binding));
             }
