@@ -14,6 +14,7 @@ import javax.measure.quantity.Power;
 import org.apache.commons.collections15.IteratorUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.math3.analysis.integration.SimpsonIntegrator;
+import org.apache.commons.math3.analysis.interpolation.LinearInterpolator;
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
 import org.apache.commons.math3.util.MathArrays;
@@ -25,6 +26,7 @@ import org.palladiosimulator.edp2.models.ExperimentData.ExperimentRun;
 import org.palladiosimulator.edp2.models.ExperimentData.Measurement;
 import org.palladiosimulator.edp2.models.ExperimentData.MeasurementRange;
 import org.palladiosimulator.edp2.models.ExperimentData.RawMeasurements;
+import org.palladiosimulator.edp2.models.measuringpoint.StringMeasuringPoint;
 import org.palladiosimulator.edp2.util.MetricDescriptionUtility;
 import org.palladiosimulator.measurementframework.measureprovider.IMeasureProvider;
 import org.palladiosimulator.metricspec.MetricDescription;
@@ -38,7 +40,7 @@ import org.palladiosimulator.pcmmeasuringpoint.PcmmeasuringpointFactory;
 
 import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
-import de.fzi.power.infrastructure.PowerConsumingResource;
+import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.interpreter.ConsumptionContext;
 import de.fzi.power.interpreter.EvaluationScope;
 import de.fzi.power.interpreter.PowerConsumptionSwitch;
@@ -58,17 +60,21 @@ public class ImmediateConsumptionCalculator {
         final PowerModelUpdaterSwitch modelUpdaterSwitch = new PowerModelUpdaterSwitch(registry,
                 new ExtensibleCalculatorInstantiatorImpl());
         ProcessingResourceSpecification spec = ResourceenvironmentFactory.eINSTANCE.createProcessingResourceSpecification();
-        PowerConsumingResource tempResource = InfrastructureFactory.eINSTANCE.createPowerConsumingResource();
-        tempResource.setProcessingResourceSpecification(spec);
+        PowerConsumingResourceSet tempResource = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
+        tempResource.getProcessingResourceSpecifications().add(spec);
         tempResource.setResourcePowerAssemblyContext(binding);
         Measurement powerMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.POWER_CONSUMPTION_TUPLE);
         ActiveResourceMeasuringPoint measuringPoint = PcmmeasuringpointFactory.eINSTANCE.createActiveResourceMeasuringPoint();
-        measuringPoint.setStringRepresentation("");
         measuringPoint.setActiveResource(spec);
+        measuringPoint.setReplicaID(-1);
         RawMeasurements rawMeasurements = powerMeasurement.getMeasurementRanges().get(0).getRawMeasurements();
         Edp2DataTupleDataSource powerSource = new Edp2DataTupleDataSource(rawMeasurements);
         // Adjust measuring point
-        run.getMeasurement().stream().forEach(m -> m.getMeasuringType().setMeasuringPoint(measuringPoint));
+        run.getMeasurement().stream().map(m -> m.getMeasuringType().getMeasuringPoint()).filter(m -> m instanceof ActiveResourceMeasuringPoint)
+            .map(ActiveResourceMeasuringPoint.class::cast).forEach(m -> m.setActiveResource(spec));
+        run.getMeasurement().stream().filter(m -> m.getMeasuringType().getMeasuringPoint() instanceof StringMeasuringPoint)
+            .forEach(m -> m.getMeasuringType().setMeasuringPoint(measuringPoint));
+        
         Measurement hddWriteMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.HDD_WRITE_RATE_TUPLE);
         Measurement hddReadMeasurement = getMeasurementForMetric(run, MetricDescriptionConstants.HDD_READ_RATE_TUPLE);
         List<IDataSource> dataSourcesUnfiltered = run.getMeasurement().stream().filter(m -> !m.getId().equals(powerMeasurement.getId()) 
@@ -116,7 +122,7 @@ public class ImmediateConsumptionCalculator {
         double[] powerPred = ArrayUtils.toPrimitive(powerPredicted.stream().map(p -> p.to(POWER.getDefaultUnit()).getEstimatedValue()).toArray(s -> new Double[s]));
         double[] timePred = ArrayUtils.toPrimitive(timePredicted.stream().map(t -> t.doubleValue(Duration.UNIT)).toArray(s -> new Double[s]));
         MathArrays.sortInPlace(timePred, powerPred);
-        PolynomialSplineFunction powerPredInterpolator = (new SplineInterpolator()).interpolate(timePred, powerPred);
+        PolynomialSplineFunction powerPredInterpolator = (new LinearInterpolator()).interpolate(timePred, powerPred);
         // TODO upper bound determined to prevent out-of-bounds calculations
         double tMin = Math.max(timeValues[0], timePred[0]);
         double tMax = timeValues[timeValues.length-1];
