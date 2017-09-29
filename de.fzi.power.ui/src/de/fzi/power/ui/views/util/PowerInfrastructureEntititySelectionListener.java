@@ -8,7 +8,6 @@ import org.eclipse.ui.IWorkbenchPart;
 
 import de.fzi.power.infrastructure.MountedPowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerConsumingEntity;
-import de.fzi.power.infrastructure.PowerConsumingResource;
 import de.fzi.power.infrastructure.PowerDistributionUnit;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.util.InfrastructureSwitch;
