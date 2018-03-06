@@ -68,7 +68,9 @@ public abstract class ExtendedMeasureProvider implements IPropertyConfigurable {
             Collection<MetricDescription> availableSourceMetrics) {
         Objects.requireNonNull(desiredMetric, "Desired target metric must not be null.");
         Objects.requireNonNull(availableSourceMetrics, "Set of available source metrics must not be null.");
-
+        if(getSourceMetrics().isEmpty()) {
+        	return true;
+        }
         if (getTargetMetrics().stream()
                 .anyMatch(metric -> InterpreterUtils.isRequiredMetricSatisfiedBy(desiredMetric, metric))) {
             Collection<String> metricIds = availableSourceMetrics.stream().map(MetricDescription::getId)

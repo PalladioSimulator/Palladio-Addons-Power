@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.palladiosimulator.edp2.datastream.IDataSource;
+import org.palladiosimulator.edp2.datastream.filter.AbstractAdapter;
 import org.palladiosimulator.edp2.datastream.filter.AbstractFilter;
 import org.palladiosimulator.metricspec.MetricDescription;
 
@@ -16,17 +17,17 @@ import org.palladiosimulator.metricspec.MetricDescription;
  * supports the combination of a single input and a single output metric.<br>
  * Yet, it is possible that more than one metric can be used as input.
  * 
- * The measure provider relays property configuration to the encapsulated filter.
+ * The measure provider relays property configuration to the encapsulated adapter.
  * 
  * @author Sebastian Krach, Florian Rosenthal
  *
  */
 public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvider {
 
-    private final AbstractFilter filter;
+    private final AbstractAdapter adapter;
 
-    public AbstractFilterMeasureProvider(AbstractFilter filter) {
-        this.filter = Objects.requireNonNull(filter, "Filter to use must not be null.");
+    public AbstractFilterMeasureProvider(AbstractAdapter adapter) {
+        this.adapter = Objects.requireNonNull(adapter, "Filter to use must not be null.");
     }
 
     /**
@@ -42,8 +43,8 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
      * @return A collection of the different supported input metrics, mapped by their corresponding
      *         ids. <br>
      *         For each contained metric it should hold that: <br>
-     *         {@code filter.canAccept(dataSource) == true <=> this.getSourceMetrics().contains(dataSource.getMetricDescription())}
-     *         , where {@code filter} is the {@link AbstractFilter} associated with this instance.
+     *         {@code adapter.canAccept(dataSource) == true <=> this.getSourceMetrics().contains(dataSource.getMetricDescription())}
+     *         , where {@code adapter} is the {@link AbstractFilter} associated with this instance.
      */
     protected abstract Map<String, MetricDescription> getAllowedSourceMetrics();
 
@@ -81,9 +82,9 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
     @Override
     public IDataSource getDataSource(Set<IDataSource> availableDataSources) {
         for (IDataSource source : availableDataSources) {
-            if (filter.canAccept(source)) {
-                filter.setDataSource(source);
-                return filter;
+            if (adapter.canAccept(source)) {
+                adapter.setDataSource(source);
+                return adapter;
             }
         }
         return null;
@@ -91,42 +92,42 @@ public abstract class AbstractFilterMeasureProvider extends ExtendedMeasureProvi
 
     @Override
     public Set<String> getKeys() {
-        return filter.getKeys();
+        return adapter.getKeys();
     }
 
     @Override
     public Class<?> getPropertyType(String key) {
-        return filter.getPropertyType(key);
+        return adapter.getPropertyType(key);
     }
 
     @Override
     public Map<String, Object> getProperties() {
-        return filter.getProperties();
+        return adapter.getProperties();
     }
 
     @Override
     public void setProperties(Map<String, Object> properties) {
-        filter.setProperties(properties);
+        adapter.setProperties(properties);
     }
 
     @Override
     public Map<? extends String, ? extends Object> getDefaultConfiguration() {
-        return filter.getDefaultConfiguration();
+        return adapter.getDefaultConfiguration();
     }
 
     @Override
     public boolean isPropertyNotSet(String key) {
-        return filter.isPropertyNotSet(key);
+        return adapter.isPropertyNotSet(key);
     }
 
     @Override
     public void unsetProperty(String key) {
-        filter.unsetProperty(key);
+        adapter.unsetProperty(key);
     }
 
     @SuppressWarnings("rawtypes")
     @Override
     public Object getAdapter(Class adapter) {
-        return filter.getAdapter(adapter);
+        return this.adapter.getAdapter(adapter);
     }
 }
