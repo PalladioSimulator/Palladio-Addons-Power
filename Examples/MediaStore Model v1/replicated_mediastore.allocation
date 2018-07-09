@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.1" id="_7tZc0G_kEeS7GKaoZ24ozQ" entityName="defaultAllocation">
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_7tZc0G_kEeS7GKaoZ24ozQ" entityName="defaultAllocation">
   <targetResourceEnvironment_Allocation href="mediastore-three-servers.resourceenvironment#/"/>
   <system_Allocation href="replicated_mediastore.system#_yezpsG5QEd-P3_YMIIvGXQ"/>
   <allocationContexts_Allocation id="_Uvw7IGXbEeCes9hvlOTf6A" entityName="Allocation_Assembly_WebGUI &lt;WebGUI> &lt;WebGUI>">

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <de.fzi.power:PowerInfrastructureRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:de.fzi.power="http://www.fzi.de/Power/Infrastructure/1.0">
   <containedPowerProvidingEntities xsi:type="de.fzi.power:PowerDistributionUnit" id="_lsuB8GwVEeSE6r8Ptqymfw" suppliablePeakPower="700 W">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_72cZsWnGEeSh2vTNwPD9LA" name="PsuAppServer3" suppliablePeakPower="380 W">
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResourceSet" id="_UIyjQmnHEeSh2vTNwPD9LA">
+        <processingResourceSpecifications href="mediastore-three-servers.resourceenvironment#_rhxXJXMjEeSkNqLDBNz7nQ"/>
+        <resourcePowerAssemblyContext href="mediastore.binding#_fnnwUGnCEeSeo-pFM7s_nQ"/>
+      </nestedPowerConsumingEntities>
+      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
+      <resourceContainer href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    </nestedPowerConsumingEntities>
     <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_7TtgEWnGEeSh2vTNwPD9LA" name="PsuAppServer2" suppliablePeakPower="450 W">
-      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_TLFk4mnHEeSh2vTNwPD9LA">
-        <processingResourceSpecification href="mediastore-three-servers.resourceenvironment#_rhwwG3MjEeSkNqLDBNz7nQ"/>
+      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResourceSet" id="_TLFk4mnHEeSh2vTNwPD9LA">
+        <processingResourceSpecifications href="mediastore-three-servers.resourceenvironment#_rhwwG3MjEeSkNqLDBNz7nQ"/>
         <resourcePowerAssemblyContext href="mediastore.binding#_fnnwUGnCEeSeo-pFM7s_nQ"/>
       </nestedPowerConsumingEntities>
       <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
       <resourceContainer href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ2"/>
     </nestedPowerConsumingEntities>
-    <nestedPowerConsumingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_3iwx4XMlEeSROK97vjuoHA" name="PsuAppServer1">
-      <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_4pCdcnMlEeSROK97vjuoHA">
-        <processingResourceSpecification href="mediastore-three-servers.resourceenvironment#_rhwwFHMjEeSkNqLDBNz7nQ"/>
-        <resourcePowerAssemblyContext href="mediastore.binding#_fnnwUGnCEeSeo-pFM7s_nQ"/>
-      </nestedPowerConsumingEntities>
-      <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
-      <resourceContainer href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
-    </nestedPowerConsumingEntities>
     <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
   </containedPowerProvidingEntities>
-  <containedPowerProvidingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_72cZsWnGEeSh2vTNwPD9LA" name="PsuAppServer3" suppliablePeakPower="380 W">
-    <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResource" id="_UIyjQmnHEeSh2vTNwPD9LA">
-      <processingResourceSpecification href="mediastore-three-servers.resourceenvironment#_rhxXJXMjEeSkNqLDBNz7nQ"/>
+  <containedPowerProvidingEntities xsi:type="de.fzi.power:MountedPowerDistributionUnit" id="_3iwx4XMlEeSROK97vjuoHA" name="PsuAppServer1">
+    <nestedPowerConsumingEntities xsi:type="de.fzi.power:PowerConsumingResourceSet" id="_4pCdcnMlEeSROK97vjuoHA">
+      <processingResourceSpecifications href="mediastore-three-servers.resourceenvironment#_rhwwFHMjEeSkNqLDBNz7nQ"/>
       <resourcePowerAssemblyContext href="mediastore.binding#_fnnwUGnCEeSeo-pFM7s_nQ"/>
     </nestedPowerConsumingEntities>
     <distributionPowerAssemblyContext href="mediastore.binding#_-u70IWwTEeShkNmTEeIZtw"/>
-    <resourceContainer href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ3"/>
+    <resourceContainer href="mediastore-three-servers.resourceenvironment#_B_SDEW5TEd-P3_YMIIvGXQ"/>
   </containedPowerProvidingEntities>
 </de.fzi.power:PowerInfrastructureRepository>
