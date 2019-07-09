@@ -96,7 +96,7 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 <unit id="javassist" version="3.13.0.GA_v201209210905"/>
 <unit id="org.apache.xalan" version="2.7.1.v201005080400"/>
-<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20180525155205/repository/"/>
+<repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190602212107/repository"/>
 </location>
 </locations>
 </target>
