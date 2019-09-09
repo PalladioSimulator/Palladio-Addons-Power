@@ -1,4 +1,3 @@
-palladioBuild {
-	webserverDir = 'palladio/addons/power'
-	updateSiteLocation = 'releng/org.palladiosimulator.power.updatesite/target/repository'
+PalladioPipeline {
+    deployUpdatesite 'releng/org.palladiosimulator.power.updatesite/target/repository'
 }
