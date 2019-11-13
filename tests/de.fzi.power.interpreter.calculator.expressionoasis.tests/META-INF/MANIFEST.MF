@@ -13,5 +13,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.fzi.power.interpreter.calculator.expressionoasis,
  org.palladiosimulator.measurementframework,
  de.fzi.power.interpreter
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy

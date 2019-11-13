@@ -4,7 +4,7 @@ Bundle-ClassPath: .
 Bundle-Name: Essential Calculators
 Bundle-SymbolicName: de.fzi.power.interpreter.calculators.essential;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: de.fzi.power.interpreter;visibility:=reexport,
  de.fzi.power.specification.resources,
  org.palladiosimulator.edp2.util
