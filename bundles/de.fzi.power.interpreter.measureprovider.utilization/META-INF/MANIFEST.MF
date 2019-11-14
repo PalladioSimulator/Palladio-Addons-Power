@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-ClassPath: .
 Bundle-Name: UtilizationFilterMeasureProvider
 Bundle-SymbolicName: de.fzi.power.interpreter.measureprovider.utilization;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 4.2.0.qualifier
 Bundle-Activator: de.fzi.power.interpreter.measureprovider.utilization.Activator
 Require-Bundle: org.eclipse.ui;visibility:=reexport,
  de.fzi.power.interpreter;visibility:=reexport,

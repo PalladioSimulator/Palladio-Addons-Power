@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-ClassPath: .
 Bundle-Name: Powermodel Constants
 Bundle-SymbolicName: de.fzi.power.specification.resources;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 4.2.0.qualifier
 Bundle-Activator: de.fzi.power.specification.resources.Activator
 Require-Bundle: org.eclipse.ui;visibility:=reexport,
  org.eclipse.core.runtime;visibility:=reexport,
