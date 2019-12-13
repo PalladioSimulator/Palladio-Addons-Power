@@ -8,13 +8,13 @@ Require-Bundle: org.eclipse.ui,
  org.apache.commons.logging,
  org.apache.log4j,
  org.junit,
- org.apache.xerces,
  org.simpleframework.xml_2.7.1;bundle-version="2.7.1",
  javassist;bundle-version="3.13.0",
  org.apache.xalan;bundle-version="2.7.1",
  org.codehouse.stax_1.2.0;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ lib/org.apache.xerces_2.9.0.v201101211617.jar
 Export-Package: org.vedantatree.expressionoasis,
  org.vedantatree.expressionoasis.config,
  org.vedantatree.expressionoasis.exceptions,
