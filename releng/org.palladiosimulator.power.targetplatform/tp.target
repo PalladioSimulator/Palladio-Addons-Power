@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?><target name="org.palladiosimulator.power Target Platform" sequenceNumber="1">
 <locations>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" refresh="true">
 <unit id="LIMBO_DLIM.feature.group" version="0.16.1.201606230914"/>
-<repository location="http://se2.informatik.uni-wuerzburg.de/eclipse/limbo/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-p2mirror-dlim/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.edp2.feature.feature.group" version="1.0.0.201712071336"/>
