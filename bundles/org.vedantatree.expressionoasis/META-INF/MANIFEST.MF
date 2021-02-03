@@ -2,16 +2,16 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: ExpressionOasis
 Bundle-SymbolicName: org.vedantatree.expressionoasis
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 5.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.apache.commons.logging,
  org.apache.log4j,
  org.junit,
- org.simpleframework.xml_2.7.1;bundle-version="2.7.1",
+ org.simpleframework.xml_2.7.1;bundle-version="5.0.0",
  javassist;bundle-version="3.13.0",
  org.apache.xalan;bundle-version="2.7.1",
- org.codehouse.stax_1.2.0;bundle-version="1.2.0"
+ org.codehouse.stax_1.2.0;bundle-version="5.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ClassPath: .,
  lib/org.apache.xerces_2.9.0.v201101211617.jar

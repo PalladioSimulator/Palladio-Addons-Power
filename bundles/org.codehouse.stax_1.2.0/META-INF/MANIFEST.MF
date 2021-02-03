@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Stax
 Bundle-SymbolicName: org.codehouse.stax_1.2.0
-Bundle-Version: 1.2.0
+Bundle-Version: 5.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: com.bea.xml.stream,
  com.bea.xml.stream.events,

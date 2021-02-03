@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Interpreter
 Bundle-SymbolicName: de.fzi.power.interpreter;singleton:=true
-Bundle-Version: 4.3.0.qualifier
+Bundle-Version: 5.0.0.qualifier
 Bundle-Activator: de.fzi.power.interpreter.Activator
-Require-Bundle: de.fzi.power;bundle-version="4.3.0";visibility:=reexport,
+Require-Bundle: de.fzi.power;bundle-version="5.0.0";visibility:=reexport,
  org.jscience;bundle-version="4.1.3";visibility:=reexport,
  org.palladiosimulator.measurementframework;visibility:=reexport,
  org.palladiosimulator.edp2.datastream;visibility:=reexport,
