@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-ClassPath: .
 Bundle-Name: Tests
 Bundle-SymbolicName: de.fzi.power.interpreter.tests
-Bundle-Version: 5.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-Activator: de.fzi.power.interpreter.tests.Activator
 Require-Bundle: org.junit;bundle-version="4.11.0",
  de.fzi.power.interpreter.measureprovider.utilization,

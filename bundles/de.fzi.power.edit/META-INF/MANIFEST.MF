@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.fzi.power.edit;singleton:=true
-Bundle-Version: 5.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.fzi.power.util.provider.PowerEditPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -32,6 +32,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.units;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
  org.jscience,
- de.fzi.power;bundle-version="5.0.0";visibility:=reexport,
+ de.fzi.power;bundle-version="5.1.0";visibility:=reexport,
  org.eclipse.emf.cdo.edit
 Bundle-ActivationPolicy: lazy
