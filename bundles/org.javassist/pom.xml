@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.palladiosimulator.power</groupId>
+    <artifactId>parent</artifactId>
+    <version>5.2.1-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>org.javassist</artifactId>
+  <version>3.30.2-SNAPSHOT</version>
+  
+  <packaging>eclipse-plugin</packaging>
+
+  <properties>
+    <javassist-version>3.30.2-GA</javassist-version>
+  </properties>
+	
+  <dependencies>
+	<dependency>
+	  <groupId>org.javassist</groupId>
+	  <artifactId>javassist</artifactId>
+	  <version>${javassist-version}</version>
+	  <scope>provided</scope>
+	</dependency>    
+	<dependency>
+	  <groupId>org.javassist</groupId>
+	  <artifactId>javassist</artifactId>
+	  <version>${javassist-version}</version>
+          <classifier>sources</classifier>
+	  <scope>provided</scope>
+	</dependency>    
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeArtifactIds>javassist</includeArtifactIds>
+              <outputDirectory>${basedir}/lib</outputDirectory>
+              <stripVersion>true</stripVersion>
+              <overWriteReleases>true</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <overWriteIfNewer>true</overWriteIfNewer>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

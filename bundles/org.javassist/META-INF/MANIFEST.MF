@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javassist
+Bundle-SymbolicName: org.javassist
+Bundle-Version: 3.30.2.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ClassPath: lib/javassist.jar
