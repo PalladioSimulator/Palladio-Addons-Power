@@ -10,11 +10,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.measure.Measure;
-import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Power;
 import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.jscience.physics.amount.Amount;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +30,7 @@ import de.fzi.power.binding.ResourcePowerBinding;
 import de.fzi.power.infrastructure.InfrastructureFactory;
 import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.interpreter.calculators.essential.LinearPowerModelCalculator;
+import de.fzi.power.specification.SpecificationPackage;
 import de.fzi.power.specification.resources.PowerModelConstants;
 
 /**
@@ -44,6 +47,11 @@ public class LinearPowerModelCalculatorTest {
 
     @Before
     public void setUp() {
+        Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+        reg.getExtensionToFactoryMap()
+            .put("spec", new XMIResourceFactoryImpl());
+        EPackage.Registry.INSTANCE.put(SpecificationPackage.eNS_URI, SpecificationPackage.eINSTANCE);
+
         this.resource = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
         this.binding = BindingFactory.eINSTANCE.createResourcePowerBinding();
         this.binding.setResourcePowerModelSpecification(PowerModelConstants.LINEAR_POWER_MODEL);
@@ -52,12 +60,14 @@ public class LinearPowerModelCalculatorTest {
         this.idleConsumption = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.idleConsumption.setBoundFactor(PowerModelConstants.LINEAR_POWER_MODEL_MIN_CONSUMPTION);
         this.idleConsumption.setValue(Measure.valueOf(200.0, SI.WATT));
-        this.binding.getFixedFactorValues().add(this.idleConsumption);
+        this.binding.getFixedFactorValues()
+            .add(this.idleConsumption);
 
         this.maxConsumption = BindingFactory.eINSTANCE.createFixedFactorValuePower();
         this.maxConsumption.setBoundFactor(PowerModelConstants.LINEAR_POWER_MODEL_MAX_CONSUMPTION);
         this.maxConsumption.setValue(Measure.valueOf(400.0, SI.WATT));
-        binding.getFixedFactorValues().add(this.maxConsumption);
+        binding.getFixedFactorValues()
+            .add(this.maxConsumption);
 
         this.calculatorUnderTest = new LinearPowerModelCalculator(this.resource.getResourcePowerAssemblyContext());
     }
@@ -78,12 +88,13 @@ public class LinearPowerModelCalculatorTest {
         Set<MeasuringValue> input = new HashSet<>();
         input.add(this.createUtilizationTupleMeasurement(utilizationValue));
         Amount<Power> resLowUtil = this.calculatorUnderTest.calculate(input);
-        assertTrue(resLowUtil.approximates(Amount.valueOf(200.0, SI.WATT).times(utilizationValue)
-                .plus(Amount.valueOf(200.0, SI.WATT))));
+        assertTrue(resLowUtil.approximates(Amount.valueOf(200.0, SI.WATT)
+            .times(utilizationValue)
+            .plus(Amount.valueOf(200.0, SI.WATT))));
     }
 
     private MeasuringValue createUtilizationTupleMeasurement(double utilizationValue) {
-        return new BasicMeasurement<Double, Dimensionless>(Measure.valueOf(utilizationValue, Unit.ONE),
+        return new BasicMeasurement<>(Measure.valueOf(utilizationValue, Unit.ONE),
                 MetricDescriptionConstants.UTILIZATION_OF_ACTIVE_RESOURCE);
     }
 }
