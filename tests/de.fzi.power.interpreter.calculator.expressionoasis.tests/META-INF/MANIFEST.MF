@@ -1,17 +1,13 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Tests
+Bundle-Name: de.fzi.power.interpreter.calculator.expressionoasis.tests
 Bundle-SymbolicName: de.fzi.power.interpreter.calculator.expressionoasis.tests
 Bundle-Version: 5.1.0.qualifier
-Bundle-Activator: de.fzi.power.interpreter.calculator.expressionoasis.Activator
+Fragment-Host: de.fzi.power.interpreter.calculator.expressionoasis;bundle-version="5.1"
 Require-Bundle: org.eclipse.core.runtime,
  org.junit;bundle-version="4.11.0",
  org.vedantatree.expressionoasis,
  de.fzi.power,
  de.fzi.power.specification.resources,
  org.jscience,
- de.fzi.power.interpreter.calculator.expressionoasis,
- org.palladiosimulator.measurementframework,
  de.fzi.power.interpreter
-Bundle-RequiredExecutionEnvironment: JavaSE-11
-Bundle-ActivationPolicy: lazy
