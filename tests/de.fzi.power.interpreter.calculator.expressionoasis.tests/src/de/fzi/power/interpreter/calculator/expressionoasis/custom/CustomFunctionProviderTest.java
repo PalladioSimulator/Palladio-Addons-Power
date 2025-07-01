@@ -115,7 +115,7 @@ public class CustomFunctionProviderTest {
     @Test
     public void testGetFunctionValueSQRTComposite() throws ExpressionEngineException {
         String functionName = SQRT;
-        ValueObject[] params = new ValueObject[2];
+        ValueObject[] params = new ValueObject[1];
         params[0] = new MeasuredValuesCompositeValueObject(Arrays.asList(100d, 100d));
 
         ValueObject result = this.providerUnderTest.getFunctionValue(functionName, params);
