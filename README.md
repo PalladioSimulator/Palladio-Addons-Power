@@ -1,12 +1,5 @@
 # Palladio-Addons-Power
 
-***Archived due to:***
-* *Main developer not active in this organization*
-* *No dependencies to other projects*
-* *Not used by others in this organization*
-* *No active development since 2017*
-
-
 The Power Consumption Analyzer tooling supports the analysis of power and energy consumption of software systems defined in PCM. 
 Power distribution characteristics are defined using instances of the Power Consumption model. 
 The Power Consumption model references PCM's Resource Environment Model and annotates each resource and ResourceContainer with its consumption characteristics.
