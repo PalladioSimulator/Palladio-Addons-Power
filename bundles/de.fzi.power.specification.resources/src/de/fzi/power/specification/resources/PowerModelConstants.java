@@ -1,6 +1,6 @@
 package de.fzi.power.specification.resources;
 
-import java.net.URL;
+import java.io.IOException;
 import java.util.Collections;
 
 import javax.measure.quantity.Energy;
@@ -9,7 +9,6 @@ import javax.measure.unit.NonSI;
 import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
-import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -25,8 +24,7 @@ import de.fzi.power.specification.ResourcePowerModelSpecification;
 
 public final class PowerModelConstants {
 
-    // public static final String PATHMAP_POWER_MODEL_MODELS_COMMON_POWER_MODELS_POWERMODEL =
-    // "pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec";
+    public static final String PATHMAP_POWER_MODEL_MODELS_COMMON_POWER_MODELS_POWERMODEL = "pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec";
 
     // Constants for linear power model, TODO consolidate
     public static final ResourcePowerModelSpecification LINEAR_POWER_MODEL;
@@ -63,55 +61,52 @@ public final class PowerModelConstants {
     public static final DeclarativePowerModelSpecification DECLARATIVE_LINEAR_PASSTHROUGH_MODEL;
 
     static {
+
         final ResourceSet resourceSet = new ResourceSetImpl();
+        final Resource resource = resourceSet
+                .createResource(URI.createURI(PATHMAP_POWER_MODEL_MODELS_COMMON_POWER_MODELS_POWERMODEL, true));
         try {
-            ClassLoader classLoader = PowerModelConstants.class.getClassLoader();
-            URL resourceURL = classLoader.getResource("commonSpecification.spec");
-
-            URL resourceFileURL = FileLocator.toFileURL(resourceURL);
-            URI resourceFileURI = URI.createURI(resourceFileURL.toURI()
-                .toString());
-            final Resource resource = resourceSet.createResource(resourceFileURI);
             resource.load(Collections.EMPTY_MAP);
-
-            // TODO load models per hierarchy, not per ID for nested
-            // elements/attributes?
-            LINEAR_POWER_MODEL = (ResourcePowerModelSpecification) resource.getEObject("_daqEMDgXEeSFuYf_V61WsQ");
-            LINEAR_POWER_MODEL_MIN_CONSUMPTION = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez2QA");
-            LINEAR_POWER_MODEL_MAX_CONSUMPTION = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfez2QA");
-            LINEAR_POWER_MODEL_UTILIZATION = (MeasuredFactor) resource.getEObject("_2l6y0jnEEeSXp6PobgrWpg");
-            LINEAR_PASSTHROUGH_DISTRIBUTION = (DistributionPowerModelSpecification) resource
-                .getEObject("_EzkPUDqsEeSeEKsoUNmaIw");
-            LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS = (ConsumptionFactor) resource
-                .getEObject("_b_IXADqsEeSeEKsoUNmaIw");
-
-            NONLINEAR_REGRESSION_MODEL = (ResourcePowerModelSpecification) resource
-                .getEObject("_daqEMDgXEeSFuYp_X61Wsr");
-            NONLINEAR_REGRESSION_MODEL_MIN_CONSUMPTION = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez3NA");
-            NONLINEAR_REGRESSION_MODEL_MAX_CONSUMPTION = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfqy4NA");
-            NONLINEAR_REGRESSION_MODEL_EXPONENT = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy4NA");
-            NONLINEAR_REGRESSION_MODEL_UTILIZATION = (MeasuredFactor) resource.getEObject("_2l6y0jnEEeSWp6PobgrW4NA");
-
-            INTERPOLATION_MODEL = (ResourcePowerModelSpecification) resource.getEObject("_daqEMDgXEeSFuYp_X61Wxp");
-            INTERPOLATION_0_UTIL = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez3XP");
-            INTERPOLATION_10_UTIL = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfqy4XP");
-            INTERPOLATION_20_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy4XP");
-            INTERPOLATION_30_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy5XP");
-            INTERPOLATION_40_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy6XP");
-            INTERPOLATION_50_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy7XP");
-            INTERPOLATION_60_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy8XP");
-            INTERPOLATION_70_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy9XP");
-            INTERPOLATION_80_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy10P");
-            INTERPOLATION_90_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy11P");
-            INTERPOLATION_100_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy12P");
-
-            DECLARATIVE_LINEAR_POWER_MODEL = (DeclarativePowerModelSpecification) resource
-                .getEObject("_R_P5QmOQEeWW76L-WpK6kQ");
-            DECLARATIVE_LINEAR_PASSTHROUGH_MODEL = (DeclarativePowerModelSpecification) resource
-                .getEObject("_iIhDwGd-EeWSzN49MVDdQw");
-        } catch (Exception e) {
+        } catch (final IOException e) {
+            // TODO Auto-generated catch block. Use eclipse error log instead?
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
+
+        // TODO load models per hierarchy, not per ID for nested
+        // elements/attributes?
+        LINEAR_POWER_MODEL = (ResourcePowerModelSpecification) resource.getEObject("_daqEMDgXEeSFuYf_V61WsQ");
+        LINEAR_POWER_MODEL_MIN_CONSUMPTION = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez2QA");
+        LINEAR_POWER_MODEL_MAX_CONSUMPTION = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfez2QA");
+        LINEAR_POWER_MODEL_UTILIZATION = (MeasuredFactor) resource.getEObject("_2l6y0jnEEeSXp6PobgrWpg");
+        LINEAR_PASSTHROUGH_DISTRIBUTION = (DistributionPowerModelSpecification) resource
+                .getEObject("_EzkPUDqsEeSeEKsoUNmaIw");
+        LINEAR_PASSTHROUGH_DISTRIBUTION_CONSTANT_LOSS = (ConsumptionFactor) resource
+                .getEObject("_b_IXADqsEeSeEKsoUNmaIw");
+
+        NONLINEAR_REGRESSION_MODEL = (ResourcePowerModelSpecification) resource.getEObject("_daqEMDgXEeSFuYp_X61Wsr");
+        NONLINEAR_REGRESSION_MODEL_MIN_CONSUMPTION = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez3NA");
+        NONLINEAR_REGRESSION_MODEL_MAX_CONSUMPTION = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfqy4NA");
+        NONLINEAR_REGRESSION_MODEL_EXPONENT = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy4NA");
+        NONLINEAR_REGRESSION_MODEL_UTILIZATION = (MeasuredFactor) resource.getEObject("_2l6y0jnEEeSWp6PobgrW4NA");
+
+        INTERPOLATION_MODEL = (ResourcePowerModelSpecification) resource.getEObject("_daqEMDgXEeSFuYp_X61Wxp");
+        INTERPOLATION_0_UTIL = (FixedFactor) resource.getEObject("_vkR8ADgXEeS9Ksbwfez3XP");
+        INTERPOLATION_10_UTIL = (FixedFactor) resource.getEObject("_yosvQDgXEeS9Ksbwfqy4XP");
+        INTERPOLATION_20_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy4XP");
+        INTERPOLATION_30_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy5XP");
+        INTERPOLATION_40_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy6XP");
+        INTERPOLATION_50_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy7XP");
+        INTERPOLATION_60_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy8XP");
+        INTERPOLATION_70_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy9XP");
+        INTERPOLATION_80_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy10P");
+        INTERPOLATION_90_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy11P");
+        INTERPOLATION_100_UTIL = (FixedFactor) resource.getEObject("_yosvQDgZGeS9Ksbwfqy12P");
+
+        DECLARATIVE_LINEAR_POWER_MODEL = (DeclarativePowerModelSpecification) resource
+                .getEObject("_R_P5QmOQEeWW76L-WpK6kQ");
+        DECLARATIVE_LINEAR_PASSTHROUGH_MODEL = (DeclarativePowerModelSpecification) resource
+                .getEObject("_iIhDwGd-EeWSzN49MVDdQw");
     }
 
     public static final Amount<Power> ZERO_POWER = Amount.valueOf(0, SI.WATT);
@@ -119,7 +114,6 @@ public final class PowerModelConstants {
     /**
      * A {@link Unit} instance denoting the energy unit watt-hours ({@code Wh}).
      */
-    public static final Unit<Energy> WATT_HOURS = SI.WATT.times(NonSI.HOUR)
-        .asType(Energy.class);
+    public static final Unit<Energy> WATT_HOURS = SI.WATT.times(NonSI.HOUR).asType(Energy.class);
     // TODO more stuff
 }

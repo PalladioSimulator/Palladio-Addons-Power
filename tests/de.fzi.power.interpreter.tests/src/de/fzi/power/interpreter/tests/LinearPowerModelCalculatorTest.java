@@ -5,6 +5,9 @@ package de.fzi.power.interpreter.tests;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,8 +17,12 @@ import javax.measure.quantity.Power;
 import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.URIMappingRegistryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.jscience.physics.amount.Amount;
 import org.junit.Before;
@@ -46,11 +53,21 @@ public class LinearPowerModelCalculatorTest {
     private LinearPowerModelCalculator calculatorUnderTest;
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException, URISyntaxException {
         Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+        Registry packageRegistry = EPackage.Registry.INSTANCE;
         reg.getExtensionToFactoryMap()
             .put("spec", new XMIResourceFactoryImpl());
-        EPackage.Registry.INSTANCE.put(SpecificationPackage.eNS_URI, SpecificationPackage.eINSTANCE);
+        packageRegistry.put(SpecificationPackage.eNS_URI, SpecificationPackage.eINSTANCE);
+
+        ClassLoader classLoader = PowerModelConstants.class.getClassLoader();
+        URL resourceURL = classLoader.getResource("commonSpecification.spec");
+        URL resourceFileURL = FileLocator.toFileURL(resourceURL);
+        URI resourceFileURI = URI.createURI(resourceFileURL.toURI()
+            .toString());
+        URI sourceURI = URI.createURI("pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec");
+        URI targetURI = resourceFileURI;
+        URIMappingRegistryImpl.INSTANCE.put(sourceURI, targetURI);
 
         this.resource = InfrastructureFactory.eINSTANCE.createPowerConsumingResourceSet();
         this.binding = BindingFactory.eINSTANCE.createResourcePowerBinding();

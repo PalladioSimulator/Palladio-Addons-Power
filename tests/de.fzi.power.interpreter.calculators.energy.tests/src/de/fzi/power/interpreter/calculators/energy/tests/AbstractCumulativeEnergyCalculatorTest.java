@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.net.URL;
+
 import javax.measure.quantity.Duration;
 import javax.measure.quantity.Energy;
 import javax.measure.quantity.Power;
@@ -11,8 +13,11 @@ import javax.measure.unit.NonSI;
 import javax.measure.unit.SI;
 import javax.measure.unit.Unit;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.impl.URIMappingRegistryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.jscience.physics.amount.Amount;
 import org.junit.After;
@@ -23,6 +28,7 @@ import org.junit.rules.ExpectedException;
 
 import de.fzi.power.interpreter.calculators.energy.AbstractCumulativeEnergyCalculator;
 import de.fzi.power.specification.SpecificationPackage;
+import de.fzi.power.specification.resources.PowerModelConstants;
 
 public abstract class AbstractCumulativeEnergyCalculatorTest {
 
@@ -40,6 +46,15 @@ public abstract class AbstractCumulativeEnergyCalculatorTest {
         reg.getExtensionToFactoryMap()
             .put("spec", new XMIResourceFactoryImpl());
         EPackage.Registry.INSTANCE.put(SpecificationPackage.eNS_URI, SpecificationPackage.eINSTANCE);
+
+        ClassLoader classLoader = PowerModelConstants.class.getClassLoader();
+        URL resourceURL = classLoader.getResource("commonSpecification.spec");
+        URL resourceFileURL = FileLocator.toFileURL(resourceURL);
+        URI resourceFileURI = URI.createURI(resourceFileURL.toURI()
+            .toString());
+        URI sourceURI = URI.createURI("pathmap://POWER_MODELS_MODELS/models/commonSpecification.spec");
+        URI targetURI = resourceFileURI;
+        URIMappingRegistryImpl.INSTANCE.put(sourceURI, targetURI);
 
         this.calculatorUnderTest = new MockEnergyCalculator();
     }
