@@ -12,7 +12,6 @@ import java.util.PriorityQueue;
 import javax.measure.quantity.Duration;
 
 import org.jscience.physics.amount.Amount;
-import org.palladiosimulator.commons.eclipseutils.ExtensionHelper;
 
 import de.fzi.power.binding.AbstractPowerStateBinding;
 import de.fzi.power.binding.PowerStateBinding;
@@ -22,6 +21,7 @@ import de.fzi.power.binding.util.BindingSwitch;
 import de.fzi.power.infrastructure.PowerConsumingResourceSet;
 import de.fzi.power.infrastructure.PowerProvidingEntity;
 import de.fzi.power.infrastructure.StatefulPowerConsumingResourceSet;
+import de.fzi.power.interpreter.util.IExtensionHelper;
 
 /**
  * Implements a central hub for creating power consumption calculators based on a set of registered
@@ -39,7 +39,7 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
 
     ITimeProvider timeProvider;
 
-    protected final PriorityQueue<CalculatorFactory> factoryQueue = new PriorityQueue<CalculatorFactory>(DEFAULT_SIZE,
+    protected final PriorityQueue<CalculatorFactory> factoryQueue = new PriorityQueue<>(DEFAULT_SIZE,
             new Comparator<CalculatorFactory>() {
 
                 @Override
@@ -54,13 +54,13 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
      * {@link #ExtensibleCalculatorInstantiatorImpl(ITimeProvider)} using a placeholder
      * {@link ITimeProvider} that always defaults to 0.
      */
-    public ExtensibleCalculatorInstantiatorImpl() {
+    public ExtensibleCalculatorInstantiatorImpl(IExtensionHelper extensionHelper) {
         this(new ITimeProvider() {
             @Override
             public Amount<Duration> getCurrentTime() {
                 return Amount.valueOf(0, Duration.UNIT);
             }
-        });
+        }, extensionHelper);
     }
 
     /**
@@ -72,14 +72,14 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
      *            The time provider used for time-dependent Power Consumption Calculators like
      *            {@link TransitionStatePowerModelCalculator}.
      */
-    public ExtensibleCalculatorInstantiatorImpl(final ITimeProvider provider) {
+    public ExtensibleCalculatorInstantiatorImpl(final ITimeProvider provider, IExtensionHelper extensionHelper) {
         this.timeProvider = provider;
-        retrieveFactories();
+        retrieveFactories(extensionHelper);
     }
 
-    private void retrieveFactories() {
+    private void retrieveFactories(IExtensionHelper extensionHelper) {
         // retrieve all registered calculator factories
-        Collection<CalculatorFactory> factories = ExtensionHelper.getExecutableExtensions(
+        Collection<CalculatorFactory> factories = extensionHelper.getExecutableExtensions(
                 CALCULATOR_FACTORY_EXTENSION_POINT, CALCULATOR_FACTORY_ELEMENT_NAME, CALCULATOR_FACTORY_ATTRIBUTE_NAME);
         this.factoryQueue.addAll(factories);
     }
@@ -116,7 +116,8 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
     public AbstractDistributionPowerModelCalculator instantiatePowerProvidingEntityCalculator(
             PowerProvidingEntity ppe) {
         for (CalculatorFactory factory : factoryQueue) {
-            if (factory.isCompatibleWith(ppe.getDistributionPowerAssemblyContext().getDistributionPowerModel())) {
+            if (factory.isCompatibleWith(ppe.getDistributionPowerAssemblyContext()
+                .getDistributionPowerModel())) {
                 return factory.instantiateDistributionPowerModelCalculator(ppe.getDistributionPowerAssemblyContext());
             }
         }
@@ -127,16 +128,18 @@ public class ExtensibleCalculatorInstantiatorImpl implements CalculatorInstantia
     @Override
     public IResourcePowerModelCalculator instantiateStatefulResourcePowerModelCalculator(
             final StatefulPowerConsumingResourceSet resource) {
-        final Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState = new HashMap<AbstractPowerStateBinding, IResourcePowerModelCalculator>();
+        final Map<AbstractPowerStateBinding, IResourcePowerModelCalculator> powerCalculatorsPerState = new HashMap<>();
         for (AbstractPowerStateBinding curStateBinding : resource.getStatefulResourcePowerBinding()
-                .getPowerStateBindings()) {
+            .getPowerStateBindings()) {
             new BindingSwitch<Void>() {
+                @Override
                 public Void casePowerStateBinding(PowerStateBinding state) {
                     ResourcePowerBinding binding = state.getBinding();
                     powerCalculatorsPerState.put(state, instantiateResourceCalculator(binding));
                     return null;
                 }
 
+                @Override
                 public Void caseTransitionStateBinding(TransitionStateBinding state) {
                     powerCalculatorsPerState.put(state,
                             new TransitionStatePowerModelCalculator(resource, state, timeProvider));

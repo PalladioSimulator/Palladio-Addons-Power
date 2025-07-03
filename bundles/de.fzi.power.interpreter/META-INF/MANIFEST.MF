@@ -22,4 +22,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: de.fzi.power.interpreter,
  de.fzi.power.interpreter.calculators,
- de.fzi.power.interpreter.measureprovider
+ de.fzi.power.interpreter.measureprovider,
+ de.fzi.power.interpreter.util

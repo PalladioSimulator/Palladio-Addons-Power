@@ -120,5 +120,12 @@
 		<repository location="https://updatesite.mdsd.tools/library-emfeditutils/releases/latest/"/>
 	</location>
 
+	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+		<repository location="https://updatesite.mdsd.tools/thirdparty-library/nightly"/>
+		<unit id="org.mockito.core-with-junit-extension.feature.feature.group" version="0.0.0"/>
+		<unit id="net.bytebuddy.byte-buddy.feature.feature.group" version="0.0.0"/>
+		<unit id="org.hamcrest" version="0.0.0"/>
+    </location>
+
   </locations>
 </target>

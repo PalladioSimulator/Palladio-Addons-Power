@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-ClassPath: .
-Bundle-Name: Tests
+Bundle-Name: de.fzi.power.interpreter.tests
 Bundle-SymbolicName: de.fzi.power.interpreter.tests
 Bundle-Version: 5.1.0.qualifier
 Bundle-Activator: de.fzi.power.interpreter.tests.Activator
@@ -17,7 +17,11 @@ Require-Bundle: org.junit;bundle-version="4.11.0",
  org.palladiosimulator.pcm;bundle-version="4.0.0",
  org.palladiosimulator.experimentanalysis.utilizationfilter,
  org.palladiosimulator.metricspec.resources;bundle-version="1.0.0",
- org.palladiosimulator.recorderframework;bundle-version="2.0.1"
+ org.palladiosimulator.recorderframework;bundle-version="2.0.1",
+ org.mockito.mockito-merged;bundle-version="3.3.3",
+ net.bytebuddy.byte-buddy;bundle-version="1.10.9",
+ net.bytebuddy.byte-buddy-agent;bundle-version="1.10.9",
+ org.objenesis;bundle-version="2.6.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: de.fzi.power.interpreter.tests,
