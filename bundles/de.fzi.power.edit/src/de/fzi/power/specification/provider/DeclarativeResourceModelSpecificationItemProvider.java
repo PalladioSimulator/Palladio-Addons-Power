@@ -9,7 +9,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import de.fzi.power.specification.DeclarativeResourceModelSpecification;
+import de.fzi.power.util.NamedElement;
 
 /**
  * This is the item provider adapter for a
@@ -52,8 +52,8 @@ public class DeclarativeResourceModelSpecificationItemProvider extends Declarati
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object,
-                this.getResourceLocator().getImage("full/obj16/DeclarativeResourceModelSpecification"));
+        return this.overlayImage(object, this.getResourceLocator()
+            .getImage("full/obj16/DeclarativeResourceModelSpecification"));
     }
 
     /**
@@ -64,7 +64,7 @@ public class DeclarativeResourceModelSpecificationItemProvider extends Declarati
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((DeclarativeResourceModelSpecification) object).getName();
+        final String label = ((NamedElement) object).getName();
         return label == null || label.length() == 0 ? this.getString("_UI_DeclarativeResourceModelSpecification_type")
                 : this.getString("_UI_DeclarativeResourceModelSpecification_type") + " " + label;
     }
