@@ -131,7 +131,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ConsumptionBehavior" eSuperTypes="#//util/Entity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="powerCurve" lowerBound="1"
-          eType="ecore:EClass platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore#//Sequence"
+          eType="ecore:EClass platform:/plugin/tools.descartes.dlim/model/dlim.ecore#//Sequence"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1">
         <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//EJSUnit">
