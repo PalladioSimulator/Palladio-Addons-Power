@@ -2,34 +2,39 @@
  */
 package de.fzi.power.specification.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.fzi.power.specification.ResourcePowerModelSpecification;
 import de.fzi.power.specification.SpecificationPackage;
 
+import org.eclipse.emf.ecore.EClass;
+
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Resource Power Model Specification</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Resource Power Model Specification</b></em>'.
+ * <!-- end-user-doc -->
  *
  * @generated
  */
-public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpecificationImpl
-        implements ResourcePowerModelSpecification {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    protected ResourcePowerModelSpecificationImpl() {
-        super();
-    }
+public abstract class ResourcePowerModelSpecificationImpl extends PowerModelSpecificationImpl implements ResourcePowerModelSpecification
+{
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResourcePowerModelSpecificationImpl()
+	{
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return SpecificationPackage.Literals.RESOURCE_POWER_MODEL_SPECIFICATION;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return SpecificationPackage.Literals.RESOURCE_POWER_MODEL_SPECIFICATION;
+	}
 
-} // ResourcePowerModelSpecificationImpl
+} //ResourcePowerModelSpecificationImpl

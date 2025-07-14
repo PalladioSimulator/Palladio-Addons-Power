@@ -22,120 +22,126 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class PowerConsumingResourceSetImpl extends AbstractPowerConsumingResourceImpl
-        implements PowerConsumingResourceSet {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    protected PowerConsumingResourceSetImpl() {
-        super();
-    }
+public class PowerConsumingResourceSetImpl extends AbstractPowerConsumingResourceImpl implements PowerConsumingResourceSet
+{
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PowerConsumingResourceSetImpl()
+	{
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET;
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public ResourcePowerBinding getResourcePowerAssemblyContext() {
-        return (ResourcePowerBinding) eDynamicGet(
-                InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, true,
-                true);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourcePowerBinding getResourcePowerAssemblyContext()
+	{
+		return (ResourcePowerBinding)eDynamicGet(InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, true, true);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public ResourcePowerBinding basicGetResourcePowerAssemblyContext() {
-        return (ResourcePowerBinding) eDynamicGet(
-                InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, false,
-                true);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ResourcePowerBinding basicGetResourcePowerAssemblyContext()
+	{
+		return (ResourcePowerBinding)eDynamicGet(InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, false, true);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    public void setResourcePowerAssemblyContext(ResourcePowerBinding newResourcePowerAssemblyContext) {
-        eDynamicSet(InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT,
-                newResourcePowerAssemblyContext);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setResourcePowerAssemblyContext(ResourcePowerBinding newResourcePowerAssemblyContext)
+	{
+		eDynamicSet(InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, InfrastructurePackage.Literals.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT, newResourcePowerAssemblyContext);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public Object eGet(int featureID, boolean resolve, boolean coreType) {
-        switch (featureID) {
-        case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            if (resolve)
-                return getResourcePowerAssemblyContext();
-            return basicGetResourcePowerAssemblyContext();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
+				if (resolve) return getResourcePowerAssemblyContext();
+				return basicGetResourcePowerAssemblyContext();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void eSet(int featureID, Object newValue) {
-        switch (featureID) {
-        case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            setResourcePowerAssemblyContext((ResourcePowerBinding) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
+				setResourcePowerAssemblyContext((ResourcePowerBinding)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public void eUnset(int featureID) {
-        switch (featureID) {
-        case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            setResourcePowerAssemblyContext((ResourcePowerBinding) null);
-            return;
-        }
-        super.eUnset(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
+				setResourcePowerAssemblyContext((ResourcePowerBinding)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
-    public boolean eIsSet(int featureID) {
-        switch (featureID) {
-        case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
-            return basicGetResourcePowerAssemblyContext() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case InfrastructurePackage.POWER_CONSUMING_RESOURCE_SET__RESOURCE_POWER_ASSEMBLY_CONTEXT:
+				return basicGetResourcePowerAssemblyContext() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //PowerConsumingResourceSetImpl
