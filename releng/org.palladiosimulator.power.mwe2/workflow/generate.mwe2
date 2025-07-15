@@ -1,7 +1,6 @@
-module org.palladiosimulator.pcm.confidentiality.context.mwe2
+module de.fzi.power.mwe2
 
 import org.eclipse.emf.mwe.utils.StandaloneSetup
-import org.eclipse.emf.mwe.utils.DirectoryCleaner
 import org.eclipse.emf.mwe2.ecore.EcoreGenerator
 import tools.mdsd.ecoreworkflow.mwe2lib.bean.EclipseRCPSupportingStandaloneSetup
 import tools.mdsd.ecoreworkflow.mwe2lib.component.*

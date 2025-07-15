@@ -1,0 +1,20 @@
+module de.fzi.power.mwe2
+
+import tools.mdsd.ecoreworkflow.mwe2lib.bean.EclipseRCPSupportingStandaloneSetup
+import tools.mdsd.ecoreworkflow.mwe2lib.component.URISupportingDirectoryCleaner
+
+var workspaceRoot = "../../"
+
+Workflow {
+	bean = EclipseRCPSupportingStandaloneSetup {
+		scanClassPath = true
+		platformUri = workspaceRoot		
+	}
+
+	component = URISupportingDirectoryCleaner {
+		directory = "platform:/resource/de.fzi.power/src-gen"
+		//directory = "platform:/resource/de.fzi.power.edit/src"
+		//directory = "platform:/resource/de.fzi.power.edior/src"
+		exclude = ".gitkeep"
+	}
+}
