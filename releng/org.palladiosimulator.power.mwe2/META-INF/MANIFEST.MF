@@ -5,14 +5,21 @@ Bundle-SymbolicName: org.palladiosimulator.power.mwe2
 Bundle-Version: 5.2.1.qualifier
 Automatic-Module-Name: org.palladiosimulator.power.mwe2
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Require-Bundle: org.eclipse.emf.mwe2.launch,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.mwe2.lib,
+ org.eclipse.emf.mwe2.launch,
  org.eclipse.xtext.xtext.generator,
+ org.eclipse.uml2.codegen.ecore,
  org.apache.log4j,
  org.apache.commons.logging,
- org.eclipse.uml2.codegen.ecore,
  tools.mdsd.ecoreworkflow.mwe2lib,
  de.uka.ipd.sdq.identifier,
  org.palladiosimulator.pcm,
- tools.mdsd.ecoreworkflow.mwe2lib,
- org.eclipse.emf.mwe2.lib,
- org.eclipse.core.runtime
+ tools.descartes.dlim;bundle-version="0.17.0",
+ org.jscience;bundle-version="4.3.1",
+ org.palladiosimulator.metricspec,
+ org.palladiosimulator.pcm,
+ de.uka.ipd.sdq.probfunction,
+ de.uka.ipd.sdq.stoex,
+ de.uka.ipd.sdq.units
+ 
