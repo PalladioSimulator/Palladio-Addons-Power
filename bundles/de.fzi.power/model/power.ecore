@@ -59,7 +59,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MeasuredFactor" eSuperTypes="#//specification/ConsumptionFactor">
       <eStructuralFeatures xsi:type="ecore:EReference" name="metricType" lowerBound="1"
-          eType="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
+          eType="ecore:EClass platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#//NumericalBaseMetricDescription"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="DeclarativePowerModelSpecification"
         eSuperTypes="#//specification/PowerModelSpecification">
@@ -111,12 +111,12 @@
     <eClassifiers xsi:type="ecore:EClass" name="AbstractFixedFactorValue" abstract="true"
         eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
       <eTypeParameters name="Q">
-        <eBounds eClassifier="ecore:EClass ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//IJSQuantity"/>
+        <eBounds eClassifier="ecore:EClass platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#//IJSQuantity"/>
       </eTypeParameters>
       <eStructuralFeatures xsi:type="ecore:EReference" name="boundFactor" lowerBound="1"
           eType="#//specification/FixedFactor"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
+        <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
           <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
           <eTypeArguments eTypeParameter="#//binding/AbstractFixedFactorValue/Q"/>
         </eGenericType>
@@ -134,7 +134,7 @@
           eType="ecore:EClass platform:/plugin/tools.descartes.dlim/model/dlim.ecore#//Sequence"
           containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" lowerBound="1">
-        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.metricspec/model/metricspec.ecore#//EJSUnit">
+        <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore#//EJSUnit">
           <eTypeArguments eClassifier="#//util/Power"/>
         </eGenericType>
       </eStructuralFeatures>
@@ -176,7 +176,7 @@
           containment="true" eOpposite="#//infrastructure/PowerConsumingEntity/powerProvidingEntity"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="suppliablePeakPower"
           ordered="false" defaultValueLiteral="">
-        <eGenericType eClassifier="ecore:EDataType ../../org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
+        <eGenericType eClassifier="ecore:EDataType platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore#//ExperimentData/EJSMeasure">
           <eTypeArguments/>
           <eTypeArguments eClassifier="#//util/Power"/>
         </eGenericType>
@@ -193,12 +193,12 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MountedPowerDistributionUnit" eSuperTypes="#//infrastructure/PowerDistributionUnit">
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceContainer" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+          lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AbstractPowerConsumingResource" abstract="true"
         eSuperTypes="#//infrastructure/PowerConsumingEntity">
       <eStructuralFeatures xsi:type="ecore:EReference" name="processingResourceSpecifications"
-          ordered="false" lowerBound="1" upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
+          ordered="false" lowerBound="1" upperBound="-1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ProcessingResourceSpecification"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="PowerInfrastructureRepository">
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedPowerProvidingEntities"
