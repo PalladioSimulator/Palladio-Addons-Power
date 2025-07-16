@@ -111,6 +111,25 @@
       <repository location="https://updatesite.palladio-simulator.com/palladio-qual-sensorframework/nightly/"/>
     </location>
 
+
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+      <repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/releases/latest/"/>
+      <unit id="org.palladiosimulator.monitorrepository.feature.feature.group" version="0.0.0"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+      <repository location="https://updatesite.palladio-simulator.com/palladio-qual-monitorrepository/nightly/"/>
+      <unit id="org.palladiosimulator.monitorrepository.feature.feature.group" version="0.0.0"/>
+    </location>
+
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
+      <repository location="https://updatesite.palladio-simulator.com/palladio-addons-servicelevelobjectives/releases/latest/"/>
+      <unit id="org.palladiosimulator.servicelevelobjective.feature.feature.group" version="0.0.0"/>
+    </location>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
+      <repository location="https://updatesite.palladio-simulator.com/palladio-addons-servicelevelobjectives/nightly/"/>
+      <unit id="org.palladiosimulator.servicelevelobjective.feature.feature.group" version="0.0.0"/>
+    </location>
+
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly">
         	<unit id="tools.mdsd.library.emfeditutils.feature.feature.group" version="0.0.0"/>
         	<repository location="https://updatesite.mdsd.tools/library-emfeditutils/nightly/"/>
