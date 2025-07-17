@@ -153,7 +153,7 @@ Workflow {
 		//srcPath = "platform:/resource/de.fzi.power/src"
 		srcPath = "platform:/resource/de.fzi.power/src-gen"
 		//srcPath = "platform:/resource/de.fzi.power.edit/src"
-		srcPath = "platform:/resource/de.fzi.power.edior/src"
+		srcPath = "platform:/resource/de.fzi.power.edior/src-gen"
 		//srcPath = "src-gen"
 	}
 	
