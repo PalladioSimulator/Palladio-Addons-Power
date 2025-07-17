@@ -14,6 +14,6 @@ Workflow {
 	component = URISupportingDirectoryCleaner {
 		directory = "platform:/resource/de.fzi.power/src-gen"
 		//directory = "platform:/resource/de.fzi.power.edit/src"
-		//directory = "platform:/resource/de.fzi.power.edior/src"
+		directory = "platform:/resource/de.fzi.power.editor/src"
 	}
 }

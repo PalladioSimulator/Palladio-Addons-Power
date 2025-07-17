@@ -148,13 +148,13 @@ Workflow {
 	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = false
-		generateEditor = false
+		generateEditor = true
 		genModel = "platform:/resource/de.fzi.power/model/power.genmodel"
 		//srcPath = "platform:/resource/de.fzi.power/src"
-		//srcPath = "platform:/resource/de.fzi.power/src-gen"
+		srcPath = "platform:/resource/de.fzi.power/src-gen"
 		//srcPath = "platform:/resource/de.fzi.power.edit/src"
-		//srcPath = "platform:/resource/de.fzi.power.edior/src"
-		srcPath = "src-gen"
+		srcPath = "platform:/resource/de.fzi.power.edior/src"
+		//srcPath = "src-gen"
 	}
 	
 //	component = GapPatternPostProcessor {

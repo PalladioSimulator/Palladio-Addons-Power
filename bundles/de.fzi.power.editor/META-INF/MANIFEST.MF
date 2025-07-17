@@ -2,12 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: de.fzi.power.editor;singleton:=true
+Automatic-Module-Name: de.fzi.power.editor
 Bundle-Version: 5.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: de.fzi.power.util.presentation.PowerEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: de.fzi.power.binding.presentation,
  de.fzi.power.infrastructure.presentation,
  de.fzi.power.specification.presentation,
@@ -27,5 +28,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.probfunction.edit;visibility:=reexport,
  de.uka.ipd.sdq.stoex.edit;visibility:=reexport,
  de.uka.ipd.sdq.units.edit;visibility:=reexport,
+ org.eclipse.emf.ecore.edit;visibility:=reexport,
  de.fzi.power;bundle-version="5.1.0"
 Bundle-ActivationPolicy: lazy
