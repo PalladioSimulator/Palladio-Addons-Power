@@ -76,6 +76,42 @@ Workflow {
 		}
 
 		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel"
+			onStandalone = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.genmodel"
+		}
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore"
+			onStandalone = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.ecore"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel"
+			onStandalone = "platform:/resource/org.palladiosimulator.metricspec/model/metricspec.genmodel"
+		}
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.ecore"
+			onStandalone = "platform:/resource/org.palladiosimulator.metricspec/model/metricspec.ecore"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel"
+			onStandalone = "platform:/resource/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel"
+		}
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.monitorrepository/model/monitorrepository.ecore"
+			onStandalone = "platform:/resource/org.palladiosimulator.monitorrepository/model/monitorrepository.ecore"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel"
+			onStandalone = "platform:/resource/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel"
+		}
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.ecore"
+			onStandalone = "platform:/resource/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.ecore"
+		}
+
+		uriMap = ContextDependentMapping {
 			onRunningPlatform = "platform:/plugin/tools.descartes.dlim/model/dlim.genmodel"
 			onStandalone = "platform:/resource/tools.descartes.dlim/model/dlim.genmodel"
 		}
@@ -98,6 +134,10 @@ Workflow {
 		registerGenModelFile = "platform:/resource/org.palladiosimulator.pcm/model/pcm.genmodel"
 		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel"
 		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.stoex/model/stoex.genmodel"
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.genmodel"
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.metricspec/model/metricspec.genmodel"
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel"
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel"
 		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.units/model/Units.genmodel"
 		registerGenModelFile = "platform:/resource/tools.descartes.dlim/model/dlim.genmodel"
 		
