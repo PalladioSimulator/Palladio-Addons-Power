@@ -20,5 +20,5 @@ Export-Package: javassist,
  javassist.tools.web,
  javassist.util,
  javassist.util.proxy
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ClassPath: lib/javassist.jar

@@ -12,7 +12,7 @@ Require-Bundle: org.eclipse.ui;visibility:=reexport,
  org.palladiosimulator.edp2.datastream;visibility:=reexport,
  org.palladiosimulator.measurementframework;visibility:=reexport,
  de.fzi.power.ui;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 Export-Package: de.fzi.power.interpreter.measureprovider.utilization,
  de.fzi.power.interpreter.measureprovider.utilization.ui
