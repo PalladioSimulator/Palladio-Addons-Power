@@ -12,7 +12,7 @@ Require-Bundle: org.junit;bundle-version="4.11.0",
  org.palladiosimulator.pcm,
  org.palladiosimulator.metricspec.resources,
  org.palladiosimulator.recorderframework,
- org.mockito.mockito-merged;bundle-version="3.3.3",
- net.bytebuddy.byte-buddy;bundle-version="1.10.9",
- net.bytebuddy.byte-buddy-agent;bundle-version="1.10.9",
- org.objenesis;bundle-version="2.6.0"
+ org.mockito.mockito-core,
+ net.bytebuddy.byte-buddy,
+ net.bytebuddy.byte-buddy-agent,
+ org.objenesis
